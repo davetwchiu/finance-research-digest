@@ -41,6 +41,12 @@
       <div class="card">
         <h2>Watchlist (Editable)</h2>
         <div id="watchlistChips" class="chips"></div>
+        <h3>Signal meaning</h3>
+        <div class="row">
+          <span class="chip" style="border-color:#2f8f6a;color:#35d08a">Green = Routine</span>
+          <span class="chip" style="border-color:#8d6f1d;color:#fbbf24">Yellow = Watch</span>
+          <span class="chip" style="border-color:#8f3a3a;color:#ff7b7b">Red = High alert</span>
+        </div>
         <div class="row">
           <input id="tickerInput" placeholder="Add ticker (e.g. AMD)" maxlength="10" />
           <button class="btn" onclick="addTicker()">Add</button>
