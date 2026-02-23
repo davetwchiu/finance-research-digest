@@ -3,129 +3,145 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Finance Research Digest</title>
+  <title>David | Finance Toolbox v1</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; margin: 24px; line-height: 1.5; color: #111; }
-    h1,h2,h3 { margin: 0 0 10px; }
-    .muted { color: #666; font-size: 14px; }
-    .card { border: 1px solid #e6e6e6; border-radius: 12px; padding: 16px; margin: 12px 0; }
-    ul { margin-top: 8px; }
-    .tag { display:inline-block; padding:2px 8px; border-radius:999px; background:#f3f4f6; margin-right:6px; margin-bottom:6px; font-size:12px; }
-    table { width:100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { border-bottom:1px solid #eee; padding:8px; text-align:left; vertical-align:top; }
-    .small { font-size: 13px; color: #555; }
+    :root {
+      --bg: #0b1020;
+      --panel: #121936;
+      --panel-2: #0f1530;
+      --text: #e8ecff;
+      --muted: #a7b0d6;
+      --accent: #7aa2ff;
+      --good: #37d399;
+      --warn: #fbbf24;
+      --bad: #f87171;
+      --line: #243059;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, #090e1d 0%, #0c1330 100%);
+      color: var(--text);
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .topbar {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+      background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px;
+    }
+    .title { font-size: 22px; font-weight: 700; }
+    .muted { color: var(--muted); font-size: 13px; }
+    .grid { display: grid; gap: 14px; margin-top: 14px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    h2 { margin: 0 0 10px; font-size: 16px; }
+    h3 { margin: 0 0 8px; font-size: 14px; color: var(--muted); font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      padding: 6px 10px; border-radius: 999px; border: 1px solid #334074; background: var(--panel-2);
+      font-size: 12px;
+    }
+    a.btn {
+      display: inline-block; text-decoration: none; color: #08112f; background: var(--accent);
+      font-weight: 600; padding: 10px 12px; border-radius: 10px; margin-right: 8px;
+    }
+    a.btn.ghost {
+      color: var(--text); background: transparent; border: 1px solid #3a4c88;
+    }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 6px 0; }
+    .signal { display: inline-block; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+    .good { background: rgba(55,211,153,.18); color: var(--good); }
+    .warn { background: rgba(251,191,36,.16); color: var(--warn); }
+    .bad { background: rgba(248,113,113,.16); color: var(--bad); }
+    .table { width: 100%; border-collapse: collapse; }
+    .table th, .table td { border-bottom: 1px solid #2a3768; padding: 8px; text-align: left; font-size: 13px; }
+    .footer { margin-top: 16px; font-size: 12px; color: var(--muted); }
+    @media (max-width: 980px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <h1>Finance Research Digest</h1>
-  <div class="muted">Updated: 2026-02-23 23:58 (Asia/Hong_Kong)</div>
-
-  <div class="card">
-    <h2>Watchlist</h2>
-    <div>
-      <span class="tag">AAPL</span><span class="tag">AVGO</span><span class="tag">BBAI</span><span class="tag">KTOS</span><span class="tag">MSFT</span>
-      <span class="tag">NVDA</span><span class="tag">ONDS</span><span class="tag">PLTR</span><span class="tag">RDW</span><span class="tag">RKLB</span>
-      <span class="tag">TSLA</span><span class="tag">TSM</span><span class="tag">UUUU</span><span class="tag">GOOG</span><span class="tag">IBM</span><span class="tag">BRK.B</span>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <div class="title">Finance Toolbox v1</div>
+        <div class="muted">Built for David • Daily research + breaking alerts</div>
+      </div>
+      <div class="muted">Last updated: 2026-02-23 (HKT)</div>
     </div>
-  </div>
 
-  <div class="card">
-    <h2>1) Macro &amp; Rates</h2>
-    <ul>
-      <li><strong>Tariffs back in focus:</strong> CNBC/FT feeds show renewed U.S. tariff escalation headlines and legal/policy uncertainty after Supreme Court-related tariff developments.</li>
-      <li><strong>Risk tone mixed:</strong> FT item flow points to softer equities / firmer gold on trade uncertainty; Reuters highlights "sell America" pressure and NVIDIA earnings as a macro risk-event.</li>
-      <li><strong>Rates regime still data-dependent:</strong> No fresh Fed decision in last 24h; latest Fed flow remains January FOMC minutes context + speaker remarks from prior days.</li>
-    </ul>
-  </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <h2>Latest Report</h2>
+        <p class="muted">Detailed daily finance report (macro, watchlist, TA trial, scenarios).</p>
+        <a class="btn" href="./index.html">Open latest</a>
+      </div>
+      <div class="card">
+        <h2>Breaking Alerts</h2>
+        <p class="muted">Material events only (earnings shocks, legal/regulatory, large moves).</p>
+        <a class="btn ghost" href="./reports/breaking/">Open timeline</a>
+      </div>
+      <div class="card">
+        <h2>Archive</h2>
+        <p class="muted">Daily snapshots for backtesting your decision process.</p>
+        <a class="btn ghost" href="./reports/">Open archive</a>
+      </div>
+    </div>
 
-  <div class="card">
-    <h2>2) Watchlist ticker-specific developments (last 24h focus)</h2>
-    <ul>
-      <li><strong>NVDA:</strong> Reuters/Yahoo market previews flag NVIDIA earnings as the key near-term AI-complex catalyst.</li>
-      <li><strong>TSLA:</strong> Reuters (Feb 20) reported cheaper Cybertruck variant + Cyberbeast price cut; demand/margin trade-off still central.</li>
-      <li><strong>PLTR:</strong> External coverage continues around potential large U.S. government deal headlines (needs primary-source confirmation).</li>
-      <li><strong>GOOG:</strong> CNBC feed highlighted Google spinout Aalyria funding (space communications theme adjacency).</li>
-      <li><strong>BBAI:</strong> Company alert cycle points to March 2 earnings date; legal-noise headlines remain overhang.</li>
-      <li><strong>KTOS / ONDS / RDW / RKLB:</strong> Defense/space complex remains event-sensitive; no single confirmed step-change item in top official feeds today.</li>
-      <li><strong>AAPL, AVGO, MSFT, TSM, UUUU, IBM, BRK.B:</strong> No high-confidence, ticker-specific step-change captured from priority official feeds in this pass.</li>
-    </ul>
-  </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>Watchlist</h2>
+        <div class="chips">
+          <span class="chip">AAPL</span><span class="chip">AVGO</span><span class="chip">BBAI</span><span class="chip">KTOS</span>
+          <span class="chip">MSFT</span><span class="chip">NVDA</span><span class="chip">ONDS</span><span class="chip">PLTR</span>
+          <span class="chip">RDW</span><span class="chip">RKLB</span><span class="chip">TSLA</span><span class="chip">TSM</span>
+          <span class="chip">UUUU</span><span class="chip">GOOG</span><span class="chip">IBM</span><span class="chip">BRK.B</span>
+        </div>
+        <h3 style="margin-top:12px;">Signal policy</h3>
+        <ul>
+          <li><span class="signal bad">High alert</span> Security/regulatory/earnings shock likely to change positioning.</li>
+          <li><span class="signal warn">Watch</span> Important but not thesis-changing yet.</li>
+          <li><span class="signal good">Routine</span> Informational update; low urgency.</li>
+        </ul>
+      </div>
 
-  <div class="card">
-    <h2>3) Policy / regulatory updates</h2>
-    <ul>
-      <li><strong>Federal Reserve:</strong> Feed shows no new same-day monetary-policy action; latest key item remains Jan 27–28 FOMC minutes (published Feb 18).</li>
-      <li><strong>ECB:</strong> No new policy-rate decision in last 24h; latest releases emphasize speeches/interviews and digital-euro workstream.</li>
-      <li><strong>SEC:</strong> Most recent press item (Feb 18 ET): proposed amendments to reduce reporting burdens for fund portfolio holdings.</li>
-      <li><strong>Trade policy:</strong> FT/CNBC flow indicates material cross-asset sensitivity to U.S. tariff legal/political path.</li>
-    </ul>
-  </div>
+      <div class="card">
+        <h2>TA Trial Panel</h2>
+        <p class="muted">Current pilot names for chart + scenario view:</p>
+        <table class="table">
+          <thead>
+            <tr><th>Ticker</th><th>Focus</th><th>Framework</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>NVDA</td><td>Earnings-read-through bellwether</td><td>Daily + 4H trend / levels / invalidation</td></tr>
+            <tr><td>TSLA</td><td>Demand-margin-regulatory crosscurrents</td><td>Daily + 4H trend / levels / invalidation</td></tr>
+            <tr><td>PLTR</td><td>Contract momentum vs valuation sensitivity</td><td>Daily + 4H trend / levels / invalidation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-  <div class="card">
-    <h2>4) Bullish / Bearish implications by ticker</h2>
-    <table>
-      <thead><tr><th>Ticker</th><th>Bullish read</th><th>Bearish read</th></tr></thead>
-      <tbody>
-        <tr><td>AAPL</td><td>Defensive mega-cap quality if macro risk rises.</td><td>Tariff/supply-chain and valuation sensitivity if rates reprice up.</td></tr>
-        <tr><td>AVGO</td><td>AI networking/datacenter demand backdrop remains supportive.</td><td>Crowded AI trade; multiple compression risk on growth disappointment.</td></tr>
-        <tr><td>BBAI</td><td>Earnings catalyst (Mar 2) could reset narrative if execution improves.</td><td>Legal/noise overhang and financing-quality concerns persist.</td></tr>
-        <tr><td>KTOS</td><td>Defense spend/geopolitical bid supports unmanned-defense names.</td><td>Program timing/contract lumpiness risk.</td></tr>
-        <tr><td>MSFT</td><td>Enterprise AI/cloud resilience in risk-off tape.</td><td>High expectations leave little room for guidance misses.</td></tr>
-        <tr><td>NVDA</td><td>Earnings upside could re-accelerate AI complex leadership.</td><td>Any margin/backlog/slowing-demand hint could hit entire semi basket.</td></tr>
-        <tr><td>ONDS</td><td>Drone/defense adoption theme remains constructive.</td><td>Execution liquidity and customer concentration risk.</td></tr>
-        <tr><td>PLTR</td><td>Gov/defense contract momentum supports growth durability.</td><td>Valuation rich; headline-driven reversals likely on weaker deal confirmation.</td></tr>
-        <tr><td>RDW</td><td>Space infrastructure demand + strategic funding cycle support.</td><td>Funding cycle volatility and contract timing variability.</td></tr>
-        <tr><td>RKLB</td><td>Launch + space systems optionality offers upside on execution.</td><td>Mission cadence and capex intensity can pressure sentiment.</td></tr>
-        <tr><td>TSLA</td><td>Price actions may support volume recovery; AI/autonomy optionality.</td><td>Price cuts pressure auto gross margin; regulatory/legal AV risk.</td></tr>
-        <tr><td>TSM</td><td>AI foundry demand remains structural support.</td><td>Geopolitics and cyclicality remain key risk premia.</td></tr>
-        <tr><td>UUUU</td><td>Nuclear/critical-mineral policy tailwind potential.</td><td>Commodity-price volatility and permitting/policy timing risk.</td></tr>
-        <tr><td>GOOG</td><td>AI infra/ecosystem and moonshot monetization adjacency.</td><td>Regulatory/antitrust and capex efficiency scrutiny.</td></tr>
-        <tr><td>IBM</td><td>Defensive cash flow + enterprise AI positioning.</td><td>Relative growth lag vs hyperscaler peers.</td></tr>
-        <tr><td>BRK.B</td><td>Cash optionality + diversified risk-off ballast.</td><td>If risk-on resumes sharply, relative upside can lag beta names.</td></tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="card">
+      <h2>How to use (quick)</h2>
+      <ol>
+        <li>Read this page during commute for priority framing.</li>
+        <li>Open latest full report for detailed scenario analysis.</li>
+        <li>Check breaking timeline only when high-alert appears.</li>
+        <li>Use archive to compare narrative consistency over time.</li>
+      </ol>
+    </div>
 
-  <div class="card">
-    <h2>TA Trial (NVDA / TSLA / PLTR)</h2>
-    <table>
-      <thead><tr><th>Ticker</th><th>Trend (Daily + 4H)</th><th>Support / Resistance</th><th>Candles &amp; Momentum</th><th>Scenarios (bull/base/bear + invalidation)</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>NVDA</td>
-          <td>Daily: uptrend<br/>4H: uptrend</td>
-          <td>S: 171.0 / 170.3<br/>R: 193.7 / 194.5</td>
-          <td>Latest daily candle: doji-like (indecision near highs). RSI: D 56.6, 4H 61.6 (constructive, not deeply overbought).</td>
-          <td><strong>Bull:</strong> break/hold &gt;194.5; <strong>Base:</strong> 171-194.5 range; <strong>Bear:</strong> lose 171.0. <strong>Bull invalidation:</strong> sustained close &lt;171.</td>
-        </tr>
-        <tr>
-          <td>TSLA</td>
-          <td>Daily: downtrend<br/>4H: downtrend</td>
-          <td>S: 399.2 / 387.5<br/>R: 452.4 then major 492-499</td>
-          <td>Latest daily candle: wide range continuation. RSI: D 42.8, 4H 36.8 (weak, near oversold 4H).</td>
-          <td><strong>Bull:</strong> reclaim &gt;452.4; <strong>Base:</strong> 387.5-452.4 chop/rebound attempts; <strong>Bear:</strong> break &lt;387.5. <strong>Bull invalidation:</strong> failure below 399 after bounce.</td>
-        </tr>
-        <tr>
-          <td>PLTR</td>
-          <td>Daily: downtrend<br/>4H: downtrend</td>
-          <td>S: 127.3 / 126.2<br/>R: 170.6 (near-term trigger), overhead 195+</td>
-          <td>Latest daily candle: range candle after decline. RSI: D 33.9, 4H 38.0 (weak; approaching oversold zone).</td>
-          <td><strong>Bull:</strong> recover and hold &gt;170.6; <strong>Base:</strong> 126.2-170.6 stabilization band; <strong>Bear:</strong> break &lt;126.2. <strong>Bull invalidation:</strong> new breakdown under 126.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="small">TA levels are mechanically derived from recent price structure (yfinance daily + 4H proxy from 1H bars), for monitoring—not investment advice.</div>
-  </div>
-
-  <div class="card">
-    <h2>Top 5 actionable follow-up checks (next session)</h2>
-    <ol>
-      <li>Pre/post-NVDA earnings: consensus revisions, implied move, and supplier/customer read-through (AVGO, TSM, MSFT, GOOG).</li>
-      <li>Tariff policy tracker: concrete rate/scope changes and company-specific exposure mapping for AAPL/TSLA/TSM/AVGO.</li>
-      <li>Validate PLTR government-deal headlines against primary filings/official contract notices.</li>
-      <li>Build event calendar (next 14 days) for all 16 watchlist names: earnings, product events, lockups, and key court/reg items.</li>
-      <li>Mailbox alert integration: ingest last-24h market/news alerts and tag each to watchlist tickers with confidence score.</li>
-    </ol>
+    <div class="footer">
+      v1 scaffold is live. Next v2 can add: ticker tabs, confidence scores, and a compact “today’s action map”.
+    </div>
   </div>
 </body>
 </html>
