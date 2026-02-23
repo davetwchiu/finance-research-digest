@@ -39,6 +39,7 @@
         <h2>Latest Report — Executive Summary</h2>
         <div id="execSummaryMacro" class="muted">Macro: loading...</div>
         <div id="execSummaryPolicy" class="muted" style="margin-top:6px">Policy: loading...</div>
+        <div id="execSummaryDelta" class="muted" style="margin-top:6px">Change vs yesterday: loading...</div>
         <div class="row" style="margin-top:10px">
           <a class="btn" id="latestReportBtn" href="./reports/2026-02-24.html">Open full report</a>
         </div>
@@ -161,6 +162,7 @@ async function loadSignals(){
 async function loadExecSummary(){
   const m=document.getElementById('execSummaryMacro');
   const p=document.getElementById('execSummaryPolicy');
+  const d=document.getElementById('execSummaryDelta');
   const b=document.getElementById('latestReportBtn');
   try{
     const r = await fetch('./summary.json?ts='+Date.now(), {cache:'no-store'});
@@ -168,10 +170,12 @@ async function loadExecSummary(){
     const j = await r.json();
     m.textContent = `Macro: ${j.macro || 'No macro summary yet.'}`;
     p.textContent = `Policy: ${j.policy || 'No policy summary yet.'}`;
+    d.textContent = `Change vs yesterday: ${j.delta || 'No delta summary yet.'}`;
     if(j.latestReportPath){ b.href = j.latestReportPath; }
   }catch{
     m.textContent = 'Macro: Summary will appear after next report run.';
     p.textContent = 'Policy: Summary will appear after next report run.';
+    d.textContent = 'Change vs yesterday: Summary will appear after next report run.';
   }
 }
 
