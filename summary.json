@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-02-24T01:54:00+08:00",
-  "macro": "Rates are still restrictive but no longer in panic repricing mode: US 10Y is around 4.0229997634887695 (1w -0.81%). Equities show constructive but selective risk appetite (S&P 500 1w +0.01%, Nasdaq 1w +0.32%). WTI near 66.18000030517578 keeps inflation upside risk alive but not dominant.",
-  "policy": "Policy path remains headline-sensitive: Fed communication is data-dependent, while US export-control and defense-procurement headlines remain key swing factors for semis and aerospace/defense names.",
-  "delta": "Compared with yesterday, positioning still favors quality AI platforms, but tactical risk is higher in small/mid-cap defense-space names where liquidity gaps can widen quickly.",
+  "updatedAt": "2026-02-24T06:36:08+08:00",
+  "macro": "Global macro is in a late-cycle disinflation tug-of-war, not a clean risk-on trend. US 10Y is 4.03% (-0.67% 1w), with equities diverging (S&P 500 +0.02% 1w, Nasdaq +0.36% 1w). VIX at 21.01 (+1.99% 1w) says volatility is contained but not complacent. Oil at 66.29 (+5.41% 1w) and DXY 97.72 (+0.87% 1w) keep the inflation/financial-conditions channel alive.",
+  "policy": "Policy path remains a three-body problem: Fed reaction function (growth vs inflation), US fiscal/defense outlays, and export-control enforcement for AI/advanced compute. Base case is slower easing and data-dependent communication; upside inflation surprises delay cuts and pressure duration-sensitive growth. Any tightening in chip/export rules would hit semiconductor supply chains first, then AI capex expectations.",
+  "delta": "Versus the prior run, leadership is narrower: mega-cap quality is more resilient while high-beta defense/space/AI-adjacent small caps are showing wider intraday dispersion. That raises execution risk and favors staged entries over single-shot positioning.",
   "latestReportPath": "./reports/2026-02-24.html"
 }
