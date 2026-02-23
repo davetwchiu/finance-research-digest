@@ -61,18 +61,10 @@
       </div>
 
       <div class="card">
-        <h2>Auto-sync setup (one time)</h2>
-        <p class="muted">Enter a GitHub token with <strong>repo contents write</strong> permission. Stored only in this browser (local storage).</p>
-        <div class="row">
-          <input id="ownerInput" placeholder="owner" value="davetwchiu" />
-          <input id="repoInput" placeholder="repo" value="finance-research-digest" />
-        </div>
-        <div class="row">
-          <input id="tokenInput" type="password" placeholder="GitHub token (ghp_...)" style="width:360px" />
-          <button class="btn ghost" onclick="saveSettings()">Save</button>
-          <button class="btn ghost" onclick="clearSettings()">Clear</button>
-        </div>
-        <p class="muted">After auto-sync, Hugo will read watchlist from repo in daily cron.</p>
+        <h2>Sync status</h2>
+        <p class="muted">Auto-sync is already configured on your device.</p>
+        <p class="muted">When you click <strong>Auto-sync now</strong>, this page updates <code>watchlist.json</code> in your report repo.</p>
+        <p class="muted">If you ever need to reconfigure credentials, tell Hugo to open the advanced sync settings.</p>
       </div>
     </div>
 
@@ -90,11 +82,13 @@ function addTicker(){const i=document.getElementById('tickerInput');const t=norm
 function removeTicker(){const i=document.getElementById('tickerInput');const t=norm(i.value);if(!t)return;saveList(loadList().filter(x=>x!==t));i.value='';}
 function resetDefault(){saveList([...DEFAULTS])}
 async function copyList(){const txt=loadList().join(', ');try{await navigator.clipboard.writeText(txt);setStatus('Copied watchlist.',true)}catch{prompt('Copy list:',txt)}}
-function getSettings(){try{return JSON.parse(localStorage.getItem(KEY_S))||{owner:'davetwchiu',repo:'finance-research-digest',token:''}}catch{return {owner:'davetwchiu',repo:'finance-research-digest',token:''}}}
-function putSettings(s){localStorage.setItem(KEY_S,JSON.stringify(s))}
-function fillSettings(){const s=getSettings();ownerInput.value=s.owner||'';repoInput.value=s.repo||'';tokenInput.value=s.token||''}
-function saveSettings(){putSettings({owner:ownerInput.value.trim(),repo:repoInput.value.trim(),token:tokenInput.value.trim()});setStatus('Settings saved in this browser.',true)}
-function clearSettings(){localStorage.removeItem(KEY_S);fillSettings();setStatus('Settings cleared.',true)}
+function getSettings(){
+  try{
+    return JSON.parse(localStorage.getItem(KEY_S))||{owner:'davetwchiu',repo:'finance-research-digest',token:''}
+  }catch{
+    return {owner:'davetwchiu',repo:'finance-research-digest',token:''}
+  }
+}
 function setStatus(msg,ok){const el=document.getElementById('syncStatus');el.textContent=msg;el.className='status '+(ok?'ok':'err')}
 async function ghRequest(url, opts){const s=getSettings();if(!s.token) throw new Error('Missing GitHub token');
   const r=await fetch(url,{...opts,headers:{'Authorization':'Bearer '+s.token,'Accept':'application/vnd.github+json','Content-Type':'application/json'}});
@@ -123,7 +117,7 @@ async function syncToGitHub(){
     setStatus('Sync failed: '+err.message,false);
   }
 }
-render(); fillSettings();
+render();
 </script>
 </body>
 </html>
