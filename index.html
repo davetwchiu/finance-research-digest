@@ -43,6 +43,7 @@
     <div class="grid grid-2">
       <div class="card">
         <h2>Watchlist (Editable)</h2>
+        <p class="muted">Tap any ticker to open its dedicated analysis page.</p>
         <div id="watchlistChips" class="chips"></div>
         <h3>Signal meaning</h3>
         <div class="row">
@@ -86,11 +87,15 @@ function render(){
   const box=document.getElementById('watchlistChips');
   box.innerHTML='';
   list.forEach(t=>{
+    const a=document.createElement('a');
+    a.href = `./tickers/${encodeURIComponent(t)}.html`;
+    a.style.textDecoration='none';
     const s=document.createElement('span');
     s.className='chip '+signalClass(SIGNALS[t]);
-    s.title = `signal: ${SIGNALS[t]||'watch'}`;
+    s.title = `Open ${t} analysis • signal: ${SIGNALS[t]||'watch'}`;
     s.textContent=t;
-    box.appendChild(s);
+    a.appendChild(s);
+    box.appendChild(a);
   });
 }
 function norm(v){return v.trim().toUpperCase()}
