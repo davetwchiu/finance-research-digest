@@ -1,88 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AAPL | Deep Dive</title>
-  <style>
-    :root { --bg:#0c1330; --panel:#121936; --line:#2a3768; --text:#e8ecff; --muted:#a7b0d6; --accent:#9bb8ff; }
-    body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:var(--bg);color:var(--text);line-height:1.55}
-    a{color:var(--accent)}
-    .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center}
-    .muted{color:var(--muted);font-size:13px}
-    .nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
-    .pill{display:inline-block;padding:6px 10px;border:1px solid #334074;border-radius:999px;background:#0f1530;color:var(--text);text-decoration:none;font-size:12px}
-    .card{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;background:var(--panel)}
-    h1{margin:0 0 4px} h2{margin:0 0 8px;font-size:18px}
-    ul{margin:6px 0 0 18px;padding:0} li{margin:6px 0}
-    .chart-wrap{height:480px;border:1px solid #334074;border-radius:10px;overflow:hidden}
-    iframe{width:100%;height:100%;border:0;background:#0b1020}
-  </style>
-</head>
-<body>
-  <div class="top">
-    <div>
-      <a href="../index.html">← Back to toolbox</a>
-      <h1>AAPL — Full Analysis</h1>
-      <div class="muted">Signal: ROUTINE · Auto-updated by daily digest pipeline.</div>
-    </div>
-    <div class="muted">Ticker: AAPL</div>
-  </div>
-
-  <div class="nav">
-    <a class="pill" href="#chart">1H Chart</a>
-    <a class="pill" href="#thesis">Thesis</a>
-    <a class="pill" href="#catalysts">Catalysts</a>
-    <a class="pill" href="#risks">Risks</a>
-    <a class="pill" href="#ta">TA</a>
-    <a class="pill" href="#scenario">Scenario Map</a>
-    <a class="pill" href="#changes">Latest Changes vs Yesterday</a>
-  </div>
-
-  <section id="chart" class="card">
-    <h2>Hourly Chart (1H)</h2>
-    <div class="chart-wrap">
-      <iframe src="https://s.tradingview.com/widgetembed/?symbol=NASDAQ:AAPL&interval=60&hidesidetoolbar=1&hidetoptoolbar=0&symboledit=1&saveimage=1&theme=dark&style=1&timezone=Asia%2FHong_Kong&withdateranges=1&hideideas=1"></iframe>
-    </div>
-    <p class="muted">If the embedded chart fails, open directly: <a href="https://www.tradingview.com/chart/?symbol=NASDAQ:AAPL">NASDAQ:AAPL on TradingView</a>.</p>
-  </section>
-
-  <section id="thesis" class="card">
-    <h2>Thesis Snapshot</h2>
-    <p>Current signal is <strong>ROUTINE</strong>. Main live narrative: Post-earnings digestion after strong holiday quarter; setup hinges on services durability and China channel stabilization.</p>
-  </section>
-
-  <section id="catalysts" class="card">
-    <h2>Catalysts & Timeline</h2>
-    <ul>
-      <li>Latest catalyst: Post-earnings digestion after strong holiday quarter; setup hinges on services durability and China channel stabilization.</li>
-      <li>Signal status: ROUTINE</li>
-      <li>Next check: confirm with primary source (filing/IR/official release).</li>
-    </ul>
-  </section>
-
-  <section id="risks" class="card">
-    <h2>Risk Matrix</h2>
-    <p>Primary risk is multiple compression if macro/rates move against growth. Monitor estimate revisions and guidance language.</p>
-  </section>
-
-  <section id="ta" class="card">
-    <h2>Technical Analysis</h2>
-    <ul>
-      <li>Use the 1H chart above for intraday structure and reaction points.</li>
-      <li>For swing context, compare with daily trend notes from the main report.</li>
-      <li>Focus on invalidation first: where thesis is wrong, not just where upside is.</li>
-    </ul>
-  </section>
-
-  <section id="scenario" class="card">
-    <h2>Bull / Base / Bear Map</h2>
-    <p>Bull: steady execution with stable macro. Base: range-bound with selective upside. Bear: macro shock triggers valuation reset.</p>
-  </section>
-
-  <section id="changes" class="card">
-    <h2>Latest Changes vs Yesterday</h2>
-    <p>Updated from latest daily report (2026-02-24): signal ROUTINE; catalyst text refreshed.</p>
-  </section>
-</body>
-</html>
+<!doctype html><html lang='en'><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1'/><title>AAPL | Deep Dive</title>
+<style>:root{--bg:#0c1330;--panel:#121936;--line:#2a3768;--text:#e8ecff;--muted:#a7b0d6;--accent:#9bb8ff;}body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:var(--bg);color:var(--text);line-height:1.55}a{color:var(--accent)} .card{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;background:var(--panel)} .muted{color:var(--muted)} .chart-wrap{height:480px;border:1px solid #334074;border-radius:10px;overflow:hidden} iframe{width:100%;height:100%;border:0;background:#0b1020} .chip{padding:2px 8px;border-radius:999px;border:1px solid #334074;font-size:12px}</style></head><body>
+<p><a href='../index.html'>← Back to toolbox</a> · <a href='../reports/2026-02-24.html'>Daily report</a></p>
+<h1>AAPL — Full Analysis</h1><p class='muted'>Signal: <span class='chip'>ROUTINE</span> · Regime: range (up) · Last close: 268.09 (+1.33%)</p>
+<section class='card'><h2>TradingView 1H Chart</h2><div class='chart-wrap'><iframe src='https://s.tradingview.com/widgetembed/?symbol=NASDAQ:AAPL&interval=60&hidesidetoolbar=1&theme=dark&style=1&timezone=Asia%2FHong_Kong&withdateranges=1&hideideas=1'></iframe></div><p class='muted'>Direct link: <a href='https://www.tradingview.com/chart/?symbol=NASDAQ:AAPL'>NASDAQ:AAPL</a></p></section>
+<section class='card'><h2>Plain-language candle read</h2><p>A directional bullish candle: buyers controlled most of the session and closed above the open.</p></section>
+<section class='card'><h2>Actionable TA levels</h2><ul><li><strong>Trigger:</strong> 281.75</li><li><strong>Invalidation:</strong> 262.04</li><li><strong>Target-1:</strong> 289.78</li><li><strong>Target-2:</strong> 296.47</li></ul></section>
+<section class='card'><h2>24h Playbook (breakout / pullback / breakdown)</h2>
+<ul>
+<li><strong>Breakout (next 24h):</strong> trigger above <strong>281.75</strong>. <em>Confirmation</em>: 1H close above trigger and follow-through candle that holds prior breakout bar low. <em>Negation</em>: quick rejection and close back below trigger.</li>
+<li><strong>Pullback buy zone:</strong> around <strong>266.03</strong>. <em>Confirmation</em>: long lower wick / bullish reversal close near VWAP-equivalent intraday mean. <em>Negation</em>: close below <strong>262.04</strong>.</li>
+<li><strong>Breakdown risk:</strong> below <strong>249.05</strong>. <em>Confirmation</em>: expansion in range and weak close near session lows. <em>Negation</em>: reclaim of breakdown level within same/next session.</li>
+</ul>
+</section>
+<section class='card'><h2>Bull / Base / Bear for this ticker</h2><ul><li><strong>Bull:</strong> Price accepts above trigger and extends toward target-1 then target-2.</li><li><strong>Base:</strong> Range behavior around pullback zone; multiple tests but no decisive close through invalidation.</li><li><strong>Bear:</strong> Breakdown confirms under support and rallies fail to reclaim breakdown trigger.</li></ul></section>
+<section class='card'><h2>Confidence score: 78/100</h2><ul><li>Trend clarity is up (20D above price, 50D available).</li><li>Realized volatility proxy (ATR) is about 2.5% of price.</li><li>Level quality is anchored to 20-day structure, so confidence is higher for short-horizon execution than for multi-month forecasting.</li></ul></section>
+<p class='muted'>Updated: 2026-02-24T01:54:00+08:00</p></body></html>

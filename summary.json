@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-02-24T01:10:00+08:00",
-  "macro": "Tariff-policy uncertainty remains the main cross-asset driver; AI/semis are still highly event-sensitive.",
-  "policy": "No fresh same-day Fed/ECB regime shift; trade-policy implementation risk is still the key volatility source.",
-  "delta": "Risk tone remains cautious; no clear policy de-escalation yet, with watchlist still skewed toward event-driven volatility.",
+  "updatedAt": "2026-02-24T01:54:00+08:00",
+  "macro": "Rates are still restrictive but no longer in panic repricing mode: US 10Y is around 4.0229997634887695 (1w -0.81%). Equities show constructive but selective risk appetite (S&P 500 1w +0.01%, Nasdaq 1w +0.32%). WTI near 66.18000030517578 keeps inflation upside risk alive but not dominant.",
+  "policy": "Policy path remains headline-sensitive: Fed communication is data-dependent, while US export-control and defense-procurement headlines remain key swing factors for semis and aerospace/defense names.",
+  "delta": "Compared with yesterday, positioning still favors quality AI platforms, but tactical risk is higher in small/mid-cap defense-space names where liquidity gaps can widen quickly.",
   "latestReportPath": "./reports/2026-02-24.html"
 }
