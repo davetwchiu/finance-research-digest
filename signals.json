@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-24T06:36:08+08:00",
+  "updatedAt": "2026-02-24T07:22:18+08:00",
   "legend": {
     "routine": "Green",
     "watch": "Yellow",
@@ -8,12 +8,12 @@
   "signals": {
     "AAPL": "routine",
     "AVGO": "routine",
-    "BBAI": "routine",
+    "BBAI": "watch",
     "KTOS": "routine",
-    "MSFT": "routine",
+    "MSFT": "watch",
     "NVDA": "routine",
     "ONDS": "routine",
-    "PLTR": "routine",
+    "PLTR": "watch",
     "RDW": "routine",
     "RKLB": "routine",
     "TSLA": "high",
