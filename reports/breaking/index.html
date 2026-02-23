@@ -9,41 +9,96 @@
     a{color:#9bb8ff}
     li{margin:10px 0}
     .muted{color:#a7b0d6}
+    details{margin-top:16px;border:1px solid #2a3768;border-radius:10px;padding:10px 12px;background:#121936}
+    summary{cursor:pointer;color:#a7b0d6}
   </style>
 </head>
 <body>
   <h1>Breaking Alerts Timeline</h1>
-  <p class='muted'>Material alerts are archived here. If a link is missing, refresh in 1–2 minutes (GitHub Pages cache/build delay).</p>
+  <p class='muted'>Latest alerts appear first. Notes older than 10 days are moved to the archive section below.</p>
 
-  <h2 style='font-size:18px'>All breaking notes</h2>
+  <h2 style='font-size:18px'>Latest breaking notes</h2>
   <ul id='breakingList'>
     <li class='muted'>Loading timeline...</li>
   </ul>
 
+  <details id='archiveBox' open>
+    <summary id='archiveSummary'>Archive (older than 10 days)</summary>
+    <ul id='archiveList'>
+      <li class='muted'>Loading archive...</li>
+    </ul>
+  </details>
+
 <script>
+function toMs(it){
+  try{
+    // expected format: YYYY-MM-DD HH:MM HKT — ...
+    const s = (it.time || '').replace(' HKT','');
+    // interpret as Asia/Hong_Kong local-like timestamp
+    const iso = s.replace(' ', 'T') + ':00+08:00';
+    const ms = Date.parse(iso);
+    return Number.isFinite(ms) ? ms : 0;
+  }catch{return 0}
+}
+
 async function loadBreaking(){
   try{
     const iRes = await fetch('./breaking_index.json?ts='+Date.now(), {cache:'no-store'});
     if(!iRes.ok) throw new Error('missing manifest');
     const idx = await iRes.json();
 
+    const now = Date.now();
+    const tenDaysMs = 10 * 24 * 60 * 60 * 1000;
+
+    const items = (idx.items || []).slice().sort((a,b)=>toMs(b)-toMs(a));
+    const recent = [];
+    const archived = [];
+
+    for(const it of items){
+      const age = now - toMs(it);
+      if(age > tenDaysMs) archived.push(it); else recent.push(it);
+    }
+
     const ul = document.getElementById('breakingList');
     ul.innerHTML = '';
-    (idx.items || []).forEach(it => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = it.path;
-      a.textContent = `${it.time} — ${it.title}`;
-      li.appendChild(a);
-      ul.appendChild(li);
-    });
+    if(!recent.length){
+      ul.innerHTML = '<li class="muted">No recent breaking notes.</li>';
+    } else {
+      recent.forEach(it => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = it.path;
+        a.textContent = `${it.time} — ${it.title}`;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+    }
     const back = document.createElement('li');
     const backA = document.createElement('a');
     backA.href='../../index.html'; backA.textContent='← Back to toolbox';
     back.appendChild(backA); ul.appendChild(back);
+
+    const archiveList = document.getElementById('archiveList');
+    const archiveSummary = document.getElementById('archiveSummary');
+    archiveList.innerHTML = '';
+    if(!archived.length){
+      archiveSummary.textContent = 'Archive (older than 10 days) — empty';
+      archiveList.innerHTML = '<li class="muted">No archived breaking notes yet.</li>';
+    } else {
+      archiveSummary.textContent = `Archive (older than 10 days) — ${archived.length} item(s)`;
+      archived.forEach(it => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = it.path;
+        a.textContent = `${it.time} — ${it.title}`;
+        li.appendChild(a);
+        archiveList.appendChild(li);
+      });
+    }
   }catch{
     const ul = document.getElementById('breakingList');
     ul.innerHTML = '<li class="muted">No timeline manifest yet.</li><li><a href="../../index.html">← Back to toolbox</a></li>';
+    document.getElementById('archiveList').innerHTML = '<li class="muted">No archive data yet.</li>';
   }
 }
 loadBreaking();
