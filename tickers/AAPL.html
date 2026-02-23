@@ -1,1 +1,85 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AAPL Analysis</title><style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.5}a{color:#9bb8ff}.card{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:10px 0}.muted{color:#a7b0d6}</style></head><body><a href="../index.html">← Back to toolbox</a><h1>AAPL — Full Analysis</h1><p class="muted">This page is reserved for ticker-specific deep analysis from the daily report pipeline.</p><div class="card"><h2>1) Thesis snapshot</h2><p>Will be auto-filled by daily report generator.</p></div><div class="card"><h2>2) Catalysts & timeline</h2><p>Will be auto-filled by daily report generator.</p></div><div class="card"><h2>3) Risk matrix</h2><p>Will be auto-filled by daily report generator.</p></div><div class="card"><h2>4) TA (if applicable)</h2><p>Will be auto-filled by daily report generator.</p></div><div class="card"><h2>5) Bull / Base / Bear</h2><p>Will be auto-filled by daily report generator.</p></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AAPL | Deep Dive</title>
+  <style>
+    :root { --bg:#0c1330; --panel:#121936; --line:#2a3768; --text:#e8ecff; --muted:#a7b0d6; --accent:#9bb8ff; }
+    body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:var(--bg);color:var(--text);line-height:1.55}
+    a{color:var(--accent)}
+    .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center}
+    .muted{color:var(--muted);font-size:13px}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+    .pill{display:inline-block;padding:6px 10px;border:1px solid #334074;border-radius:999px;background:#0f1530;color:var(--text);text-decoration:none;font-size:12px}
+    .card{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;background:var(--panel)}
+    h1{margin:0 0 4px} h2{margin:0 0 8px;font-size:18px}
+    ul{margin:6px 0 0 18px;padding:0} li{margin:6px 0}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div>
+      <a href="../index.html">← Back to toolbox</a>
+      <h1>AAPL — Full Analysis</h1>
+      <div class="muted">Auto-updated by daily digest pipeline.</div>
+    </div>
+    <div class="muted">Ticker: AAPL</div>
+  </div>
+
+  <div class="nav">
+    <a class="pill" href="#thesis">Thesis</a>
+    <a class="pill" href="#catalysts">Catalysts</a>
+    <a class="pill" href="#risks">Risks</a>
+    <a class="pill" href="#ta">TA</a>
+    <a class="pill" href="#scenario">Scenario Map</a>
+    <a class="pill" href="#changes">Latest Changes vs Yesterday</a>
+  </div>
+
+  <section id="thesis" class="card">
+    <h2>Thesis Snapshot</h2>
+    <p class="muted">To be populated each run with conviction, edge, and key dependency chain.</p>
+  </section>
+
+  <section id="catalysts" class="card">
+    <h2>Catalysts & Timeline</h2>
+    <ul>
+      <li class="muted">Earnings / guidance events</li>
+      <li class="muted">Product / contract / policy milestones</li>
+      <li class="muted">Macro linkages relevant to AAPL</li>
+    </ul>
+  </section>
+
+  <section id="risks" class="card">
+    <h2>Risk Matrix</h2>
+    <ul>
+      <li class="muted">Execution risk</li>
+      <li class="muted">Valuation / sentiment risk</li>
+      <li class="muted">Regulatory / legal risk</li>
+      <li class="muted">Macro / rates / FX sensitivity</li>
+    </ul>
+  </section>
+
+  <section id="ta" class="card">
+    <h2>Technical Analysis</h2>
+    <ul>
+      <li class="muted">Daily trend, key support/resistance, momentum</li>
+      <li class="muted">4H trend and near-term invalidation levels</li>
+    </ul>
+  </section>
+
+  <section id="scenario" class="card">
+    <h2>Bull / Base / Bear Map</h2>
+    <ul>
+      <li class="muted">Bull case trigger and target zone</li>
+      <li class="muted">Base case path and holding assumptions</li>
+      <li class="muted">Bear case trigger and downside map</li>
+    </ul>
+  </section>
+
+  <section id="changes" class="card">
+    <h2>Latest Changes vs Yesterday</h2>
+    <p class="muted">Delta view: new catalysts, level shifts, and scenario probability changes will be written here daily.</p>
+  </section>
+</body>
+</html>
