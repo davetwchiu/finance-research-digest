@@ -3,25 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>David | Finance Toolbox v1.1</title>
+  <title>David | Finance Toolbox v2</title>
   <style>
-    :root { --bg:#0b1020; --panel:#121936; --panel2:#0f1530; --text:#e8ecff; --muted:#a7b0d6; --accent:#7aa2ff; --line:#243059; }
+    :root { --bg:#0b1020; --panel:#121936; --panel2:#0f1530; --text:#e8ecff; --muted:#a7b0d6; --accent:#7aa2ff; --line:#243059; --ok:#35d08a; --err:#ff7b7b; }
     *{box-sizing:border-box} body{margin:0;font-family:Inter,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#090e1d,#0c1330);color:var(--text)}
-    .wrap{max-width:1200px;margin:0 auto;padding:20px}.topbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-    .title{font-size:22px;font-weight:700}.muted{color:var(--muted);font-size:13px}.grid{display:grid;gap:14px;margin-top:14px}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px} h2{margin:0 0 10px;font-size:16px} h3{margin:10px 0 8px;font-size:14px;color:var(--muted)}
+    .wrap{max-width:1200px;margin:0 auto;padding:20px}
+    .topbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+    .title{font-size:22px;font-weight:700}.muted{color:var(--muted);font-size:13px}
+    .grid{display:grid;gap:14px;margin-top:14px}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+    h2{margin:0 0 10px;font-size:16px} h3{margin:10px 0 8px;font-size:14px;color:var(--muted)}
     .chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:6px 10px;border-radius:999px;border:1px solid #334074;background:var(--panel2);font-size:12px}
     a.btn,button.btn{display:inline-block;text-decoration:none;color:#08112f;background:var(--accent);font-weight:600;padding:9px 12px;border-radius:10px;margin-right:8px;border:0;cursor:pointer}
     a.btn.ghost,button.btn.ghost{color:var(--text);background:transparent;border:1px solid #3a4c88}
     input{background:#0a1130;border:1px solid #304278;border-radius:8px;color:var(--text);padding:8px 10px;width:220px}
-    .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.footer{margin-top:16px;font-size:12px;color:var(--muted)}
+    .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+    .status{font-size:12px;margin-top:10px}
+    .ok{color:var(--ok)} .err{color:var(--err)}
+    .footer{margin-top:16px;font-size:12px;color:var(--muted)}
     @media (max-width:980px){.grid-3,.grid-2{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="topbar">
-      <div><div class="title">Finance Toolbox v1.1</div><div class="muted">Built for David • Daily research + breaking alerts</div></div>
+      <div><div class="title">Finance Toolbox v2</div><div class="muted">Auto-sync watchlist to GitHub repo</div></div>
       <div class="muted">Last updated: 2026-02-24 (HKT)</div>
     </div>
 
@@ -35,46 +41,83 @@
       <div class="card">
         <h2>Watchlist (Editable)</h2>
         <div id="watchlistChips" class="chips"></div>
-        <h3>Edit</h3>
         <div class="row">
           <input id="tickerInput" placeholder="Add ticker (e.g. AMD)" maxlength="10" />
           <button class="btn" onclick="addTicker()">Add</button>
           <button class="btn ghost" onclick="removeTicker()">Remove</button>
-        </div>
-        <div class="row" style="margin-top:8px">
-          <button class="btn ghost" onclick="copyList()">Copy list</button>
-          <button class="btn" onclick="syncPrompt()">Sync to Hugo</button>
           <button class="btn ghost" onclick="resetDefault()">Reset default</button>
-          <span class="muted">This saves on this device/browser.</span>
         </div>
+        <div class="row">
+          <button class="btn ghost" onclick="copyList()">Copy list</button>
+          <button class="btn" onclick="syncToGitHub()">Auto-sync now</button>
+        </div>
+        <div id="syncStatus" class="status muted">Auto-sync writes to <code>watchlist.json</code> in your GitHub repo.</div>
       </div>
 
       <div class="card">
-        <h2>TA Trial Panel</h2>
-        <p class="muted">Pilot names: NVDA / TSLA / PLTR (daily + 4H trend, levels, invalidation).</p>
-        <p class="muted">Tip: after editing watchlist, send me “update cron watchlist to: ...” and I’ll sync automation.</p>
+        <h2>Auto-sync setup (one time)</h2>
+        <p class="muted">Enter a GitHub token with <strong>repo contents write</strong> permission. Stored only in this browser (local storage).</p>
+        <div class="row">
+          <input id="ownerInput" placeholder="owner" value="davetwchiu" />
+          <input id="repoInput" placeholder="repo" value="finance-research-digest" />
+        </div>
+        <div class="row">
+          <input id="tokenInput" type="password" placeholder="GitHub token (ghp_...)" style="width:360px" />
+          <button class="btn ghost" onclick="saveSettings()">Save</button>
+          <button class="btn ghost" onclick="clearSettings()">Clear</button>
+        </div>
+        <p class="muted">After auto-sync, Hugo will read watchlist from repo in daily cron.</p>
       </div>
     </div>
 
-    <div class="footer">v1.1 added local watchlist editor.</div>
+    <div class="footer">v2: one-click GitHub sync for watchlist.json</div>
   </div>
 
 <script>
-const DEFAULTS=["AAPL","AVGO","BBAI","KTOS","MSFT","NVDA","ONDS","PLTR","RDW","RKLB","TSLA","TSM","UUUU","GOOG","IBM","BRK.B"];
-function load(){try{return JSON.parse(localStorage.getItem('watchlist_v1'))||DEFAULTS}catch{return DEFAULTS}}
-function save(list){localStorage.setItem('watchlist_v1',JSON.stringify(list));render()}
-function render(){const list=load();const box=document.getElementById('watchlistChips');box.innerHTML='';list.forEach(t=>{const s=document.createElement('span');s.className='chip';s.textContent=t;box.appendChild(s);});}
+const DEFAULTS=["AAPL","AVGO","BBAI","KTOS","MSFT","NVDA","ONDS","PLTR","RDW","RKLB","TSLA","TSM","UUUU","GOOG","IBM","BRK.B","LITE"];
+const KEY_W='watchlist_v2'; const KEY_S='watchlist_sync_settings_v1';
+function loadList(){try{return JSON.parse(localStorage.getItem(KEY_W))||DEFAULTS}catch{return DEFAULTS}}
+function saveList(list){localStorage.setItem(KEY_W,JSON.stringify(list));render()}
+function render(){const list=loadList();const box=document.getElementById('watchlistChips');box.innerHTML='';list.forEach(t=>{const s=document.createElement('span');s.className='chip';s.textContent=t;box.appendChild(s);});}
 function norm(v){return v.trim().toUpperCase()}
-function addTicker(){const i=document.getElementById('tickerInput');const t=norm(i.value);if(!t)return;const list=load();if(!list.includes(t)){list.push(t);save(list);}i.value='';}
-function removeTicker(){const i=document.getElementById('tickerInput');const t=norm(i.value);if(!t)return;const list=load().filter(x=>x!==t);save(list);i.value='';}
-function resetDefault(){save([...DEFAULTS]);}
-async function copyList(){const txt=load().join(', ');try{await navigator.clipboard.writeText(txt);alert('Copied: '+txt)}catch{prompt('Copy list:',txt)}}
-async function syncPrompt(){
-  const txt = `Sync watchlist to cron: ${load().join(', ')}`;
-  try{await navigator.clipboard.writeText(txt);alert('Sync message copied. Paste this into Telegram to Hugo:\n\n'+txt)}
-  catch{prompt('Copy this and send to Hugo:',txt)}
+function addTicker(){const i=document.getElementById('tickerInput');const t=norm(i.value);if(!t)return;const list=loadList();if(!list.includes(t)){list.push(t);saveList(list);}i.value='';}
+function removeTicker(){const i=document.getElementById('tickerInput');const t=norm(i.value);if(!t)return;saveList(loadList().filter(x=>x!==t));i.value='';}
+function resetDefault(){saveList([...DEFAULTS])}
+async function copyList(){const txt=loadList().join(', ');try{await navigator.clipboard.writeText(txt);setStatus('Copied watchlist.',true)}catch{prompt('Copy list:',txt)}}
+function getSettings(){try{return JSON.parse(localStorage.getItem(KEY_S))||{owner:'davetwchiu',repo:'finance-research-digest',token:''}}catch{return {owner:'davetwchiu',repo:'finance-research-digest',token:''}}}
+function putSettings(s){localStorage.setItem(KEY_S,JSON.stringify(s))}
+function fillSettings(){const s=getSettings();ownerInput.value=s.owner||'';repoInput.value=s.repo||'';tokenInput.value=s.token||''}
+function saveSettings(){putSettings({owner:ownerInput.value.trim(),repo:repoInput.value.trim(),token:tokenInput.value.trim()});setStatus('Settings saved in this browser.',true)}
+function clearSettings(){localStorage.removeItem(KEY_S);fillSettings();setStatus('Settings cleared.',true)}
+function setStatus(msg,ok){const el=document.getElementById('syncStatus');el.textContent=msg;el.className='status '+(ok?'ok':'err')}
+async function ghRequest(url, opts){const s=getSettings();if(!s.token) throw new Error('Missing GitHub token');
+  const r=await fetch(url,{...opts,headers:{'Authorization':'Bearer '+s.token,'Accept':'application/vnd.github+json','Content-Type':'application/json'}});
+  if(!r.ok){const t=await r.text();throw new Error('GitHub API '+r.status+': '+t.slice(0,220));}
+  return r.json();
 }
-render();
+async function syncToGitHub(){
+  try{
+    const s=getSettings(); if(!s.owner||!s.repo) throw new Error('Missing owner/repo settings');
+    setStatus('Syncing watchlist.json to GitHub...',true);
+    const path='watchlist.json';
+    let sha=null;
+    try{
+      const cur=await ghRequest(`https://api.github.com/repos/${s.owner}/${s.repo}/contents/${path}`,{method:'GET'});
+      sha=cur.sha||null;
+    }catch(e){/* file may not exist yet */}
+    const payload={
+      message:`Update watchlist.json from toolbox`,
+      content:btoa(unescape(encodeURIComponent(JSON.stringify({watchlist:loadList(),updatedAt:new Date().toISOString()},null,2)))) ,
+      branch:'main'
+    };
+    if(sha) payload.sha=sha;
+    await ghRequest(`https://api.github.com/repos/${s.owner}/${s.repo}/contents/${path}`,{method:'PUT',body:JSON.stringify(payload)});
+    setStatus('Auto-sync successful. watchlist.json updated in repo.',true);
+  }catch(err){
+    setStatus('Sync failed: '+err.message,false);
+  }
+}
+render(); fillSettings();
 </script>
 </body>
 </html>
