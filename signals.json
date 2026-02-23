@@ -1,27 +1,26 @@
 {
-  "updatedAt": "2026-02-24T00:45:00+08:00",
+  "updatedAt": "2026-02-24T00:58:00+08:00",
   "legend": {
     "routine": "Green",
     "watch": "Yellow",
     "high": "Red"
   },
   "signals": {
-    "AAPL": "watch",
+    "AAPL": "routine",
     "AVGO": "watch",
-    "BBAI": "watch",
+    "BBAI": "high",
     "KTOS": "watch",
-    "MSFT": "watch",
-    "NVDA": "watch",
-    "ONDS": "watch",
+    "MSFT": "routine",
+    "NVDA": "high",
+    "ONDS": "high",
     "PLTR": "watch",
-    "RDW": "watch",
+    "RDW": "high",
     "RKLB": "watch",
     "TSLA": "watch",
     "TSM": "watch",
-    "UUUU": "watch",
-    "GOOG": "watch",
-    "IBM": "watch",
-    "BRK.B": "watch",
-    "LITE": "watch"
+    "UUUU": "high",
+    "GOOG": "routine",
+    "IBM": "routine",
+    "BRK.B": "routine"
   }
 }

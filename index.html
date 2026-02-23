@@ -31,11 +31,11 @@
   <div class="wrap">
     <div class="topbar">
       <div><div class="title">Finance Toolbox v2</div><div class="muted">Auto-sync watchlist to GitHub repo</div></div>
-      <div class="muted">Last updated: 2026-02-24 (HKT)</div>
+      <div class="muted">Last updated: 2026-02-24 00:58 (HKT)</div>
     </div>
 
     <div class="grid grid-3">
-      <div class="card"><h2>Latest Report</h2><p class="muted">Detailed daily finance report.</p><a class="btn" href="./index.html">Open latest</a></div>
+      <div class="card"><h2>Latest Report</h2><p class="muted">Detailed daily finance report.</p><a class="btn" href="./reports/2026-02-24.html">Open latest</a></div>
       <div class="card"><h2>Breaking Alerts</h2><p class="muted">Material events only.</p><a class="btn ghost" href="./reports/breaking/">Open timeline</a></div>
       <div class="card"><h2>Archive</h2><p class="muted">Daily snapshots.</p><a class="btn ghost" href="./reports/">Open archive</a></div>
     </div>
@@ -76,7 +76,7 @@
   </div>
 
 <script>
-const DEFAULTS=["AAPL","AVGO","BBAI","KTOS","MSFT","NVDA","ONDS","PLTR","RDW","RKLB","TSLA","TSM","UUUU","GOOG","IBM","BRK.B","LITE"];
+const DEFAULTS=["AAPL","AVGO","BBAI","KTOS","MSFT","NVDA","ONDS","PLTR","RDW","RKLB","TSLA","TSM","UUUU","GOOG","IBM","BRK.B"];
 const KEY_W='watchlist_v2'; const KEY_S='watchlist_sync_settings_v1';
 let SIGNALS={};
 function loadList(){try{return JSON.parse(localStorage.getItem(KEY_W))||DEFAULTS}catch{return DEFAULTS}}
