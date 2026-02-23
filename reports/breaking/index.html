@@ -9,21 +9,11 @@
     a{color:#9bb8ff}
     li{margin:10px 0}
     .muted{color:#a7b0d6}
-    .card{border:1px solid #2a3768;border-radius:12px;padding:14px;background:#121936;margin:14px 0}
-    .stamp{font-size:12px;color:#a7b0d6;margin-bottom:8px}
-    .pill{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid #8f3a3a;color:#ff7b7b;font-size:11px}
   </style>
 </head>
 <body>
   <h1>Breaking Alerts Timeline</h1>
   <p class='muted'>Material alerts are archived here. If a link is missing, refresh in 1–2 minutes (GitHub Pages cache/build delay).</p>
-
-  <div class='card'>
-    <div class='stamp'><span class='pill'>Executive Summary</span> <span id='newsTime'>Loading...</span></div>
-    <h2 id='newsTitle' style='margin:0 0 8px;font-size:18px'>Loading latest breaking alert...</h2>
-    <div id='newsSummary' class='muted'>Please wait.</div>
-    <div style='margin-top:10px'><a id='newsLink' href='./'>Open full breaking note</a></div>
-  </div>
 
   <h2 style='font-size:18px'>All breaking notes</h2>
   <ul id='breakingList'>
@@ -33,18 +23,9 @@
 <script>
 async function loadBreaking(){
   try{
-    const [sRes, iRes] = await Promise.all([
-      fetch('./breaking_summary.json?ts='+Date.now(), {cache:'no-store'}),
-      fetch('./breaking_index.json?ts='+Date.now(), {cache:'no-store'})
-    ]);
-    if(!sRes.ok || !iRes.ok) throw new Error('missing manifest');
-    const s = await sRes.json();
+    const iRes = await fetch('./breaking_index.json?ts='+Date.now(), {cache:'no-store'});
+    if(!iRes.ok) throw new Error('missing manifest');
     const idx = await iRes.json();
-
-    document.getElementById('newsTime').textContent = s.time || 'N/A';
-    document.getElementById('newsTitle').textContent = s.title || 'No latest alert';
-    document.getElementById('newsSummary').textContent = s.summary || 'No summary available.';
-    document.getElementById('newsLink').href = s.path || './';
 
     const ul = document.getElementById('breakingList');
     ul.innerHTML = '';
@@ -61,9 +42,6 @@ async function loadBreaking(){
     backA.href='../../index.html'; backA.textContent='← Back to toolbox';
     back.appendChild(backA); ul.appendChild(back);
   }catch{
-    document.getElementById('newsTime').textContent = 'N/A';
-    document.getElementById('newsTitle').textContent = 'No breaking summary manifest found yet.';
-    document.getElementById('newsSummary').textContent = 'Next breaking run should generate it automatically.';
     const ul = document.getElementById('breakingList');
     ul.innerHTML = '<li class="muted">No timeline manifest yet.</li><li><a href="../../index.html">← Back to toolbox</a></li>';
   }
