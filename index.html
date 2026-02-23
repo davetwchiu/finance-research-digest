@@ -44,7 +44,13 @@
           <a class="btn" id="latestReportBtn" href="./reports/2026-02-24.html">Open full report</a>
         </div>
       </div>
-      <div class="card"><h2>Breaking Alerts</h2><p class="muted">Material events only.</p><a class="btn ghost" href="./reports/breaking/">Open timeline</a></div>
+      <div class="card">
+        <h2>Breaking Alerts — Executive Summary</h2>
+        <div id="frontBreakingTime" class="muted">Time: loading...</div>
+        <div id="frontBreakingTitle" class="muted" style="margin-top:6px">Title: loading...</div>
+        <div id="frontBreakingSummary" class="muted" style="margin-top:6px">Summary: loading...</div>
+        <div class="row" style="margin-top:10px"><a class="btn ghost" href="./reports/breaking/">Open timeline</a></div>
+      </div>
       <div class="card"><h2>Archive</h2><p class="muted">Daily snapshots.</p><a class="btn ghost" href="./reports/">Open archive</a></div>
     </div>
 
@@ -179,8 +185,27 @@ async function loadExecSummary(){
   }
 }
 
+async function loadFrontBreaking(){
+  const t=document.getElementById('frontBreakingTime');
+  const h=document.getElementById('frontBreakingTitle');
+  const s=document.getElementById('frontBreakingSummary');
+  try{
+    const r = await fetch('./reports/breaking/breaking_summary.json?ts='+Date.now(), {cache:'no-store'});
+    if(!r.ok) throw new Error('no breaking summary');
+    const j = await r.json();
+    t.textContent = `Time: ${j.time || 'N/A'}`;
+    h.textContent = `Title: ${j.title || 'No title'}`;
+    s.textContent = `Summary: ${j.summary || 'No summary.'}`;
+  }catch{
+    t.textContent = 'Time: no recent breaking alert';
+    h.textContent = 'Title: no recent breaking alert';
+    s.textContent = 'Summary: waiting for next material event.';
+  }
+}
+
 loadSignals();
 loadExecSummary();
+loadFrontBreaking();
 </script>
 </body>
 </html>
