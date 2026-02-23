@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "id": "2026-02-24-0629-tesla-dmv-lawsuit",
+      "time": "2026-02-24 06:29 HKT",
+      "createdAt": "2026-02-24T06:29:00+08:00",
+      "title": "Tesla sues California DMV over false-advertising ruling",
+      "summary": "Material regulatory/legal development for TSLA as it challenges California DMV's ruling related to Autopilot/FSD marketing claims.",
+      "path": "./items/2026-02-24-0629-tesla-dmv-lawsuit.md"
+    },
+    {
+      "id": "2026-02-24-0628-ibm-anthropic-selloff",
+      "time": "2026-02-24 06:28 HKT",
+      "createdAt": "2026-02-24T06:28:00+08:00",
+      "title": "IBM drops ~13% on Anthropic COBOL-tooling disruption narrative",
+      "summary": "IBM suffered an unusually large single-session decline as investors repriced legacy modernization exposure after Anthropic's COBOL automation update.",
+      "path": "./items/2026-02-24-0628-ibm-anthropic-selloff.md"
+    },
+    {
       "id": "2026-02-24-0128-tariff-riskoff",
       "time": "2026-02-24 01:28 HKT",
       "createdAt": "2026-02-24T01:28:00+08:00",
