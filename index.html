@@ -43,6 +43,7 @@
         </div>
         <div class="row" style="margin-top:8px">
           <button class="btn ghost" onclick="copyList()">Copy list</button>
+          <button class="btn" onclick="syncPrompt()">Sync to Hugo</button>
           <button class="btn ghost" onclick="resetDefault()">Reset default</button>
           <span class="muted">This saves on this device/browser.</span>
         </div>
@@ -68,6 +69,11 @@ function addTicker(){const i=document.getElementById('tickerInput');const t=norm
 function removeTicker(){const i=document.getElementById('tickerInput');const t=norm(i.value);if(!t)return;const list=load().filter(x=>x!==t);save(list);i.value='';}
 function resetDefault(){save([...DEFAULTS]);}
 async function copyList(){const txt=load().join(', ');try{await navigator.clipboard.writeText(txt);alert('Copied: '+txt)}catch{prompt('Copy list:',txt)}}
+async function syncPrompt(){
+  const txt = `Sync watchlist to cron: ${load().join(', ')}`;
+  try{await navigator.clipboard.writeText(txt);alert('Sync message copied. Paste this into Telegram to Hugo:\n\n'+txt)}
+  catch{prompt('Copy this and send to Hugo:',txt)}
+}
 render();
 </script>
 </body>
