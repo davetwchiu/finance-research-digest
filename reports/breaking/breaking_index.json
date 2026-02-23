@@ -1,14 +1,20 @@
 {
   "items": [
     {
-      "time": "2026-02-24 00:28 HKT",
-      "title": "Macro trade-policy shock (U.S. tariffs legal whipsaw)",
-      "path": "./2026-02-24.md"
+      "id": "2026-02-24-0128-tariff-riskoff",
+      "time": "2026-02-24 01:28 HKT",
+      "createdAt": "2026-02-24T01:28:00+08:00",
+      "title": "Update: tariff shock broadens into deeper risk-off move",
+      "summary": "Follow-through selling indicates tariff-policy shock is now an active de-risking event. Most exposed watchlist names: NVDA, AVGO, TSLA, AAPL, MSFT, GOOG, TSM.",
+      "path": "./items/2026-02-24-0128-tariff-riskoff.md"
     },
     {
-      "time": "2026-02-24 01:28 HKT",
-      "title": "Update: tariff shock broadens into deeper risk-off move",
-      "path": "./2026-02-24.md"
+      "id": "2026-02-24-0028-tariff-shock",
+      "time": "2026-02-24 00:28 HKT",
+      "createdAt": "2026-02-24T00:28:00+08:00",
+      "title": "Macro trade-policy shock (U.S. tariffs legal whipsaw)",
+      "summary": "Policy whipsaw around U.S. tariffs increased uncertainty and triggered a risk-off tone.",
+      "path": "./items/2026-02-24-0028-tariff-shock.md"
     }
   ]
 }

@@ -15,30 +15,28 @@
 </head>
 <body>
   <h1>Breaking Alerts Timeline</h1>
-  <p class='muted'>Latest alerts appear first. Notes older than 10 days are moved to the archive section below.</p>
+  <p class='muted'>Latest alerts appear first. Each alert is stored as an individual file.</p>
 
   <h2 style='font-size:18px'>Latest breaking notes</h2>
-  <ul id='breakingList'>
-    <li class='muted'>Loading timeline...</li>
-  </ul>
+  <ul id='breakingList'><li class='muted'>Loading timeline...</li></ul>
 
   <details id='archiveBox' open>
     <summary id='archiveSummary'>Archive (older than 10 days)</summary>
-    <ul id='archiveList'>
-      <li class='muted'>Loading archive...</li>
-    </ul>
+    <ul id='archiveList'><li class='muted'>Loading archive...</li></ul>
   </details>
 
 <script>
 function toMs(it){
-  try{
-    // expected format: YYYY-MM-DD HH:MM HKT — ...
-    const s = (it.time || '').replace(' HKT','');
-    // interpret as Asia/Hong_Kong local-like timestamp
-    const iso = s.replace(' ', 'T') + ':00+08:00';
-    const ms = Date.parse(iso);
-    return Number.isFinite(ms) ? ms : 0;
-  }catch{return 0}
+  if (it.createdAt) {
+    const ms = Date.parse(it.createdAt);
+    if (Number.isFinite(ms)) return ms;
+  }
+  if (it.time) {
+    const clean = it.time.replace(' HKT','');
+    const ms = Date.parse(clean.replace(' ', 'T') + ':00+08:00');
+    if (Number.isFinite(ms)) return ms;
+  }
+  return 0;
 }
 
 async function loadBreaking(){
@@ -49,29 +47,34 @@ async function loadBreaking(){
 
     const now = Date.now();
     const tenDaysMs = 10 * 24 * 60 * 60 * 1000;
-
     const items = (idx.items || []).slice().sort((a,b)=>toMs(b)-toMs(a));
+
     const recent = [];
     const archived = [];
-
-    for(const it of items){
+    for (const it of items) {
       const age = now - toMs(it);
-      if(age > tenDaysMs) archived.push(it); else recent.push(it);
+      if (age > tenDaysMs) archived.push(it); else recent.push(it);
     }
 
     const ul = document.getElementById('breakingList');
     ul.innerHTML = '';
-    if(!recent.length){
+    if (!recent.length) {
       ul.innerHTML = '<li class="muted">No recent breaking notes.</li>';
     } else {
-      recent.forEach(it => {
+      for (const it of recent) {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = it.path;
         a.textContent = `${it.time} — ${it.title}`;
         li.appendChild(a);
+        if (it.summary) {
+          const d = document.createElement('div');
+          d.className = 'muted';
+          d.textContent = it.summary;
+          li.appendChild(d);
+        }
         ul.appendChild(li);
-      });
+      }
     }
     const back = document.createElement('li');
     const backA = document.createElement('a');
@@ -81,23 +84,22 @@ async function loadBreaking(){
     const archiveList = document.getElementById('archiveList');
     const archiveSummary = document.getElementById('archiveSummary');
     archiveList.innerHTML = '';
-    if(!archived.length){
+    if (!archived.length) {
       archiveSummary.textContent = 'Archive (older than 10 days) — empty';
       archiveList.innerHTML = '<li class="muted">No archived breaking notes yet.</li>';
     } else {
       archiveSummary.textContent = `Archive (older than 10 days) — ${archived.length} item(s)`;
-      archived.forEach(it => {
+      for (const it of archived) {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = it.path;
         a.textContent = `${it.time} — ${it.title}`;
         li.appendChild(a);
         archiveList.appendChild(li);
-      });
+      }
     }
-  }catch{
-    const ul = document.getElementById('breakingList');
-    ul.innerHTML = '<li class="muted">No timeline manifest yet.</li><li><a href="../../index.html">← Back to toolbox</a></li>';
+  } catch {
+    document.getElementById('breakingList').innerHTML = '<li class="muted">No timeline manifest yet.</li><li><a href="../../index.html">← Back to toolbox</a></li>';
     document.getElementById('archiveList').innerHTML = '<li class="muted">No archive data yet.</li>';
   }
 }
