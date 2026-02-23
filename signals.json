@@ -1,0 +1,27 @@
+{
+  "updatedAt": "2026-02-24T00:45:00+08:00",
+  "legend": {
+    "routine": "Green",
+    "watch": "Yellow",
+    "high": "Red"
+  },
+  "signals": {
+    "AAPL": "watch",
+    "AVGO": "watch",
+    "BBAI": "watch",
+    "KTOS": "watch",
+    "MSFT": "watch",
+    "NVDA": "watch",
+    "ONDS": "watch",
+    "PLTR": "watch",
+    "RDW": "watch",
+    "RKLB": "watch",
+    "TSLA": "watch",
+    "TSM": "watch",
+    "UUUU": "watch",
+    "GOOG": "watch",
+    "IBM": "watch",
+    "BRK.B": "watch",
+    "LITE": "watch"
+  }
+}

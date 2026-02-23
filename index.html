@@ -14,6 +14,9 @@
     .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
     h2{margin:0 0 10px;font-size:16px} h3{margin:10px 0 8px;font-size:14px;color:var(--muted)}
     .chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:6px 10px;border-radius:999px;border:1px solid #334074;background:var(--panel2);font-size:12px}
+    .chip.routine{border-color:#2f8f6a;color:#35d08a}
+    .chip.watch{border-color:#8d6f1d;color:#fbbf24}
+    .chip.high{border-color:#8f3a3a;color:#ff7b7b}
     a.btn,button.btn{display:inline-block;text-decoration:none;color:#08112f;background:var(--accent);font-weight:600;padding:9px 12px;border-radius:10px;margin-right:8px;border:0;cursor:pointer}
     a.btn.ghost,button.btn.ghost{color:var(--text);background:transparent;border:1px solid #3a4c88}
     input{background:#0a1130;border:1px solid #304278;border-radius:8px;color:var(--text);padding:8px 10px;width:220px}
@@ -74,9 +77,22 @@
 <script>
 const DEFAULTS=["AAPL","AVGO","BBAI","KTOS","MSFT","NVDA","ONDS","PLTR","RDW","RKLB","TSLA","TSM","UUUU","GOOG","IBM","BRK.B","LITE"];
 const KEY_W='watchlist_v2'; const KEY_S='watchlist_sync_settings_v1';
+let SIGNALS={};
 function loadList(){try{return JSON.parse(localStorage.getItem(KEY_W))||DEFAULTS}catch{return DEFAULTS}}
 function saveList(list){localStorage.setItem(KEY_W,JSON.stringify(list));render()}
-function render(){const list=loadList();const box=document.getElementById('watchlistChips');box.innerHTML='';list.forEach(t=>{const s=document.createElement('span');s.className='chip';s.textContent=t;box.appendChild(s);});}
+function signalClass(s){const v=(s||'watch').toLowerCase(); if(v==='routine') return 'routine'; if(v==='high') return 'high'; return 'watch';}
+function render(){
+  const list=loadList();
+  const box=document.getElementById('watchlistChips');
+  box.innerHTML='';
+  list.forEach(t=>{
+    const s=document.createElement('span');
+    s.className='chip '+signalClass(SIGNALS[t]);
+    s.title = `signal: ${SIGNALS[t]||'watch'}`;
+    s.textContent=t;
+    box.appendChild(s);
+  });
+}
 function norm(v){return v.trim().toUpperCase()}
 function addTicker(){const i=document.getElementById('tickerInput');const t=norm(i.value);if(!t)return;const list=loadList();if(!list.includes(t)){list.push(t);saveList(list);}i.value='';}
 function removeTicker(){const i=document.getElementById('tickerInput');const t=norm(i.value);if(!t)return;saveList(loadList().filter(x=>x!==t));i.value='';}
@@ -117,7 +133,20 @@ async function syncToGitHub(){
     setStatus('Sync failed: '+err.message,false);
   }
 }
-render();
+
+async function loadSignals(){
+  try{
+    const r = await fetch('./signals.json?ts='+Date.now(), {cache:'no-store'});
+    if(!r.ok) throw new Error('no signals');
+    const j = await r.json();
+    SIGNALS = j.signals || {};
+  }catch{
+    SIGNALS = {};
+  }
+  render();
+}
+
+loadSignals();
 </script>
 </body>
 </html>
