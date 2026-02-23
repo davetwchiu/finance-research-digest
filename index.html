@@ -35,7 +35,14 @@
     </div>
 
     <div class="grid grid-3">
-      <div class="card"><h2>Latest Report</h2><p class="muted">Detailed daily finance report.</p><a class="btn" href="./reports/2026-02-24.html">Open latest</a></div>
+      <div class="card">
+        <h2>Latest Report — Executive Summary</h2>
+        <div id="execSummaryMacro" class="muted">Macro: loading...</div>
+        <div id="execSummaryPolicy" class="muted" style="margin-top:6px">Policy: loading...</div>
+        <div class="row" style="margin-top:10px">
+          <a class="btn" id="latestReportBtn" href="./reports/2026-02-24.html">Open full report</a>
+        </div>
+      </div>
       <div class="card"><h2>Breaking Alerts</h2><p class="muted">Material events only.</p><a class="btn ghost" href="./reports/breaking/">Open timeline</a></div>
       <div class="card"><h2>Archive</h2><p class="muted">Daily snapshots.</p><a class="btn ghost" href="./reports/">Open archive</a></div>
     </div>
@@ -151,7 +158,25 @@ async function loadSignals(){
   render();
 }
 
+async function loadExecSummary(){
+  const m=document.getElementById('execSummaryMacro');
+  const p=document.getElementById('execSummaryPolicy');
+  const b=document.getElementById('latestReportBtn');
+  try{
+    const r = await fetch('./summary.json?ts='+Date.now(), {cache:'no-store'});
+    if(!r.ok) throw new Error('no summary');
+    const j = await r.json();
+    m.textContent = `Macro: ${j.macro || 'No macro summary yet.'}`;
+    p.textContent = `Policy: ${j.policy || 'No policy summary yet.'}`;
+    if(j.latestReportPath){ b.href = j.latestReportPath; }
+  }catch{
+    m.textContent = 'Macro: Summary will appear after next report run.';
+    p.textContent = 'Policy: Summary will appear after next report run.';
+  }
+}
+
 loadSignals();
+loadExecSummary();
 </script>
 </body>
 </html>
