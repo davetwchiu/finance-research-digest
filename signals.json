@@ -1,172 +1,179 @@
 {
-  "AAPL": {
-    "last_close": 266.18,
-    "trigger": 280.9,
-    "invalidation": 252.86,
-    "target1": 294.92,
-    "target2": 308.94,
-    "regime": "uptrend",
-    "signal": "WATCH",
-    "change_pct": 0.6
+  "updatedAt": "2026-02-24T10:31:00+08:00",
+  "signals": {
+    "AAPL": {
+      "last_close": 266.18,
+      "trigger": 280.9,
+      "invalidation": 252.86,
+      "target1": 294.92,
+      "target2": 308.94,
+      "regime": "uptrend",
+      "signal": "WATCH",
+      "change_pct": 0.6
+    },
+    "AVGO": {
+      "last_close": 330.34,
+      "trigger": 347.38,
+      "invalidation": 304.97,
+      "target1": 368.58,
+      "target2": 389.79,
+      "regime": "range (mixed)",
+      "signal": "WATCH",
+      "change_pct": -0.69
+    },
+    "BBAI": {
+      "last_close": 3.71,
+      "trigger": 6.22,
+      "invalidation": 3.67,
+      "target1": 7.49,
+      "target2": 8.77,
+      "regime": "downtrend",
+      "signal": "RISK-OFF",
+      "change_pct": -3.89
+    },
+    "KTOS": {
+      "last_close": 94.31,
+      "trigger": 119.24,
+      "invalidation": 84.4,
+      "target1": 136.66,
+      "target2": 154.08,
+      "regime": "range (mixed)",
+      "signal": "WATCH",
+      "change_pct": -1.84
+    },
+    "MSFT": {
+      "last_close": 384.47,
+      "trigger": 486.45,
+      "invalidation": 380.63,
+      "target1": 539.36,
+      "target2": 592.27,
+      "regime": "downtrend",
+      "signal": "RISK-OFF",
+      "change_pct": -3.21
+    },
+    "NVDA": {
+      "last_close": 191.55,
+      "trigger": 194.44,
+      "invalidation": 170.16,
+      "target1": 206.58,
+      "target2": 218.72,
+      "regime": "uptrend",
+      "signal": "BUY",
+      "change_pct": 0.91
+    },
+    "ONDS": {
+      "last_close": 10.19,
+      "trigger": 12.39,
+      "invalidation": 8.4,
+      "target1": 14.39,
+      "target2": 16.38,
+      "regime": "downtrend",
+      "signal": "RISK-OFF",
+      "change_pct": 1.6
+    },
+    "PLTR": {
+      "last_close": 130.6,
+      "trigger": 169.14,
+      "invalidation": 127.84,
+      "target1": 189.79,
+      "target2": 210.44,
+      "regime": "downtrend",
+      "signal": "RISK-OFF",
+      "change_pct": -3.43
+    },
+    "RDW": {
+      "last_close": 8.12,
+      "trigger": 14.34,
+      "invalidation": 7.81,
+      "target1": 17.61,
+      "target2": 20.87,
+      "regime": "range (mixed)",
+      "signal": "WATCH",
+      "change_pct": 1.63
+    },
+    "RKLB": {
+      "last_close": 70.21,
+      "trigger": 89.46,
+      "invalidation": 65.35,
+      "target1": 101.51,
+      "target2": 113.57,
+      "regime": "downtrend",
+      "signal": "RISK-OFF",
+      "change_pct": -0.92
+    },
+    "TSLA": {
+      "last_close": 399.83,
+      "trigger": 439.55,
+      "invalidation": 393.24,
+      "target1": 462.71,
+      "target2": 485.86,
+      "regime": "downtrend",
+      "signal": "RISK-OFF",
+      "change_pct": -2.91
+    },
+    "TSM": {
+      "last_close": 370.04,
+      "trigger": 377.83,
+      "invalidation": 322.48,
+      "target1": 405.5,
+      "target2": 433.18,
+      "regime": "uptrend",
+      "signal": "WATCH",
+      "change_pct": -0.13
+    },
+    "UUUU": {
+      "last_close": 21.02,
+      "trigger": 28.0,
+      "invalidation": 19.39,
+      "target1": 32.3,
+      "target2": 36.61,
+      "regime": "range (mixed)",
+      "signal": "WATCH",
+      "change_pct": -1.55
+    },
+    "GOOG": {
+      "last_close": 311.69,
+      "trigger": 348.35,
+      "invalidation": 299.79,
+      "target1": 372.63,
+      "target2": 396.91,
+      "regime": "range (mixed)",
+      "signal": "WATCH",
+      "change_pct": -1.02
+    },
+    "IBM": {
+      "last_close": 223.35,
+      "trigger": 317.88,
+      "invalidation": 221.12,
+      "target1": 366.26,
+      "target2": 414.64,
+      "regime": "downtrend",
+      "signal": "RISK-OFF",
+      "change_pct": -13.15
+    },
+    "BRK.B": {
+      "last_close": 494.09,
+      "trigger": 513.17,
+      "invalidation": 468.76,
+      "target1": 535.38,
+      "target2": 557.58,
+      "regime": "range (mixed)",
+      "signal": "WATCH",
+      "change_pct": -0.82
+    },
+    "LITE": {
+      "last_close": 674.73,
+      "trigger": 681.48,
+      "invalidation": 329.13,
+      "target1": 857.65,
+      "target2": 1033.83,
+      "regime": "uptrend",
+      "signal": "BUY",
+      "change_pct": 1.04
+    }
   },
-  "AVGO": {
-    "last_close": 330.34,
-    "trigger": 347.38,
-    "invalidation": 304.97,
-    "target1": 368.58,
-    "target2": 389.79,
-    "regime": "range (mixed)",
-    "signal": "WATCH",
-    "change_pct": -0.69
-  },
-  "BBAI": {
-    "last_close": 3.71,
-    "trigger": 6.22,
-    "invalidation": 3.67,
-    "target1": 7.49,
-    "target2": 8.77,
-    "regime": "downtrend",
-    "signal": "RISK-OFF",
-    "change_pct": -3.89
-  },
-  "KTOS": {
-    "last_close": 94.31,
-    "trigger": 119.24,
-    "invalidation": 84.4,
-    "target1": 136.66,
-    "target2": 154.08,
-    "regime": "range (mixed)",
-    "signal": "WATCH",
-    "change_pct": -1.84
-  },
-  "MSFT": {
-    "last_close": 384.47,
-    "trigger": 486.45,
-    "invalidation": 380.63,
-    "target1": 539.36,
-    "target2": 592.27,
-    "regime": "downtrend",
-    "signal": "RISK-OFF",
-    "change_pct": -3.21
-  },
-  "NVDA": {
-    "last_close": 191.55,
-    "trigger": 194.44,
-    "invalidation": 170.16,
-    "target1": 206.58,
-    "target2": 218.72,
-    "regime": "uptrend",
-    "signal": "BUY",
-    "change_pct": 0.91
-  },
-  "ONDS": {
-    "last_close": 10.19,
-    "trigger": 12.39,
-    "invalidation": 8.4,
-    "target1": 14.39,
-    "target2": 16.38,
-    "regime": "downtrend",
-    "signal": "RISK-OFF",
-    "change_pct": 1.6
-  },
-  "PLTR": {
-    "last_close": 130.6,
-    "trigger": 169.14,
-    "invalidation": 127.84,
-    "target1": 189.79,
-    "target2": 210.44,
-    "regime": "downtrend",
-    "signal": "RISK-OFF",
-    "change_pct": -3.43
-  },
-  "RDW": {
-    "last_close": 8.12,
-    "trigger": 14.34,
-    "invalidation": 7.81,
-    "target1": 17.61,
-    "target2": 20.87,
-    "regime": "range (mixed)",
-    "signal": "WATCH",
-    "change_pct": 1.63
-  },
-  "RKLB": {
-    "last_close": 70.21,
-    "trigger": 89.46,
-    "invalidation": 65.35,
-    "target1": 101.51,
-    "target2": 113.57,
-    "regime": "downtrend",
-    "signal": "RISK-OFF",
-    "change_pct": -0.92
-  },
-  "TSLA": {
-    "last_close": 399.83,
-    "trigger": 439.55,
-    "invalidation": 393.24,
-    "target1": 462.71,
-    "target2": 485.86,
-    "regime": "downtrend",
-    "signal": "RISK-OFF",
-    "change_pct": -2.91
-  },
-  "TSM": {
-    "last_close": 370.04,
-    "trigger": 377.83,
-    "invalidation": 322.48,
-    "target1": 405.5,
-    "target2": 433.18,
-    "regime": "uptrend",
-    "signal": "WATCH",
-    "change_pct": -0.13
-  },
-  "UUUU": {
-    "last_close": 21.02,
-    "trigger": 28.0,
-    "invalidation": 19.39,
-    "target1": 32.3,
-    "target2": 36.61,
-    "regime": "range (mixed)",
-    "signal": "WATCH",
-    "change_pct": -1.55
-  },
-  "GOOG": {
-    "last_close": 311.69,
-    "trigger": 348.35,
-    "invalidation": 299.79,
-    "target1": 372.63,
-    "target2": 396.91,
-    "regime": "range (mixed)",
-    "signal": "WATCH",
-    "change_pct": -1.02
-  },
-  "IBM": {
-    "last_close": 223.35,
-    "trigger": 317.88,
-    "invalidation": 221.12,
-    "target1": 366.26,
-    "target2": 414.64,
-    "regime": "downtrend",
-    "signal": "RISK-OFF",
-    "change_pct": -13.15
-  },
-  "BRK.B": {
-    "last_close": 494.09,
-    "trigger": 513.17,
-    "invalidation": 468.76,
-    "target1": 535.38,
-    "target2": 557.58,
-    "regime": "range (mixed)",
-    "signal": "WATCH",
-    "change_pct": -0.82
-  },
-  "LITE": {
-    "last_close": 674.73,
-    "trigger": 681.48,
-    "invalidation": 329.13,
-    "target1": 857.65,
-    "target2": 1033.83,
-    "regime": "uptrend",
-    "signal": "BUY",
-    "change_pct": 1.04
+  "symbolMappings": {
+    "PLTR": "NASDAQ:PLTR",
+    "UUUU": "AMEX:UUUU"
   }
 }
