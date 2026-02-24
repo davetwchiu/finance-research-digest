@@ -1,26 +1,172 @@
 {
-  "updatedAt": "2026-02-24T08:50:00+08:00",
-  "legend": {
-    "routine": "Green",
-    "watch": "Yellow",
-    "high": "Red"
+  "AAPL": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 282.38,
+    "invalidation": 250.41,
+    "target1": 298.36,
+    "target2": 314.35,
+    "last_close": 266.395,
+    "change_pct": 0
   },
-  "signals": {
-    "AAPL": "routine",
-    "AVGO": "routine",
-    "BBAI": "watch",
-    "KTOS": "routine",
-    "MSFT": "watch",
-    "NVDA": "routine",
-    "ONDS": "routine",
-    "PLTR": "watch",
-    "RDW": "routine",
-    "RKLB": "routine",
-    "TSLA": "high",
-    "TSM": "routine",
-    "UUUU": "routine",
-    "GOOG": "routine",
-    "IBM": "high",
-    "BRK.B": "routine"
+  "AVGO": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 350.23,
+    "invalidation": 310.59,
+    "target1": 370.06,
+    "target2": 389.88,
+    "last_close": 330.41,
+    "change_pct": 0
+  },
+  "BBAI": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 3.93,
+    "invalidation": 3.49,
+    "target1": 4.16,
+    "target2": 4.38,
+    "last_close": 3.71,
+    "change_pct": 0
+  },
+  "KTOS": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 100.1,
+    "invalidation": 88.76,
+    "target1": 105.76,
+    "target2": 111.43,
+    "last_close": 94.43,
+    "change_pct": 0
+  },
+  "MSFT": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 407.68,
+    "invalidation": 361.52,
+    "target1": 430.75,
+    "target2": 453.83,
+    "last_close": 384.6,
+    "change_pct": 0
+  },
+  "NVDA": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 203.14,
+    "invalidation": 180.14,
+    "target1": 214.64,
+    "target2": 226.14,
+    "last_close": 191.6434,
+    "change_pct": 0
+  },
+  "ONDS": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 10.79,
+    "invalidation": 9.57,
+    "target1": 11.4,
+    "target2": 12.01,
+    "last_close": 10.18,
+    "change_pct": 0
+  },
+  "PLTR": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 138.44,
+    "invalidation": 122.77,
+    "target1": 146.28,
+    "target2": 154.12,
+    "last_close": 130.606,
+    "change_pct": 0
+  },
+  "RDW": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 8.61,
+    "invalidation": 7.63,
+    "target1": 9.09,
+    "target2": 9.58,
+    "last_close": 8.12,
+    "change_pct": 0
+  },
+  "RKLB": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 74.4,
+    "invalidation": 65.98,
+    "target1": 78.61,
+    "target2": 82.82,
+    "last_close": 70.19,
+    "change_pct": 0
+  },
+  "TSLA": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 423.84,
+    "invalidation": 375.86,
+    "target1": 447.83,
+    "target2": 471.82,
+    "last_close": 399.85,
+    "change_pct": 0
+  },
+  "TSM": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 392.24,
+    "invalidation": 347.84,
+    "target1": 414.44,
+    "target2": 436.65,
+    "last_close": 370.04,
+    "change_pct": 0
+  },
+  "UUUU": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 22.28,
+    "invalidation": 19.76,
+    "target1": 23.54,
+    "target2": 24.8,
+    "last_close": 21.02,
+    "change_pct": 0
+  },
+  "GOOG": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 330.4,
+    "invalidation": 293.0,
+    "target1": 349.1,
+    "target2": 367.81,
+    "last_close": 311.7,
+    "change_pct": 0
+  },
+  "IBM": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 236.75,
+    "invalidation": 209.95,
+    "target1": 250.15,
+    "target2": 263.55,
+    "last_close": 223.35,
+    "change_pct": 0
+  },
+  "BRK.B": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 523.74,
+    "invalidation": 464.44,
+    "target1": 553.38,
+    "target2": 583.03,
+    "last_close": 494.09,
+    "change_pct": 0
+  },
+  "LITE": {
+    "signal": "WATCH",
+    "regime": "range (mixed)",
+    "trigger": 715.9,
+    "invalidation": 634.86,
+    "target1": 756.43,
+    "target2": 796.95,
+    "last_close": 675.38,
+    "change_pct": 0
   }
 }
