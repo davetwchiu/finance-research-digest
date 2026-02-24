@@ -1,6 +1,7 @@
 {
-  "run": 3,
+  "run": 1,
   "boost": {
-    "TSLA": 1
+    "TSLA": 2,
+    "IBM": 2
   }
 }
