@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "id": "2026-02-24-1529-tesla-autopilot-verdict-upheld",
+      "time": "2026-02-24 15:29 HKT",
+      "createdAt": "2026-02-24T15:29:00+08:00",
+      "title": "Tesla $243M Autopilot crash verdict upheld by U.S. judge",
+      "summary": "Material TSLA legal development: federal judge upheld a $243M Autopilot-related jury verdict, extending litigation overhang for autonomy strategy.",
+      "path": "./items/2026-02-24-1529-tesla-autopilot-verdict-upheld.md"
+    },
+    {
       "id": "2026-02-24-0629-tesla-dmv-lawsuit",
       "time": "2026-02-24 06:29 HKT",
       "createdAt": "2026-02-24T06:29:00+08:00",
