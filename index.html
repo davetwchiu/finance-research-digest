@@ -21,7 +21,8 @@
     .chip.watch{border-color:#8d6f1d;color:#fbbf24}
     .chip.high{border-color:#8f3a3a;color:#ff7b7b}
     a.btn,button.btn{display:inline-block;text-decoration:none;color:#08112f;background:var(--accent);font-weight:600;padding:9px 12px;border-radius:10px;margin-right:8px;border:0;cursor:pointer}
-    a.btn.ghost,button.btn.ghost{color:var(--text);background:transparent;border:1px solid #3a4c88}
+    a.btn.ghost,button.btn.ghost{color:#08112f;background:var(--accent);border:0}
+    .wl-btn.btn.ghost{color:var(--text);background:transparent;border:1px solid #3a4c88}
     input{background:#0a1130;border:1px solid #304278;border-radius:8px;color:var(--text);padding:8px 10px;width:220px}
     .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
     .status{font-size:12px;margin-top:10px}
@@ -114,13 +115,13 @@
         </div>
         <div class="row">
           <input id="tickerInput" placeholder="Add ticker (e.g. AMD)" maxlength="10" />
-          <button class="btn" onclick="addTicker()">Add</button>
-          <button class="btn ghost" onclick="removeTicker()">Remove</button>
-          <button class="btn ghost" onclick="resetDefault()">Reset default</button>
+          <button class="btn wl-btn" onclick="addTicker()">Add</button>
+          <button class="btn ghost wl-btn" onclick="removeTicker()">Remove</button>
+          <button class="btn ghost wl-btn" onclick="resetDefault()">Reset default</button>
         </div>
         <div class="row">
-          <button class="btn ghost" onclick="copyList()">Copy list</button>
-          <button class="btn" onclick="syncToGitHub()">Auto-sync now</button>
+          <button class="btn ghost wl-btn" onclick="copyList()">Copy list</button>
+          <button class="btn wl-btn" onclick="syncToGitHub()">Auto-sync now</button>
         </div>
         <div id="syncStatus" class="status muted">Auto-sync writes to <code>watchlist.json</code> in your GitHub repo.</div>
       </div>
