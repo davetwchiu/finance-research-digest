@@ -40,15 +40,7 @@
     document.body.classList.toggle('light', eff==='light');
     const btn=document.getElementById('themeToggle');
     if(btn) btn.textContent='Theme: '+mode.toUpperCase();
-    document.querySelectorAll('.site-brand').forEach(b=>{
-      const img=b.querySelector('img'); const text=b.querySelector('a');
-      if(!img) return;
-      const mark=img.getAttribute('data-mark')||img.src;
-      const horiz=img.getAttribute('data-horizontal')||mark.replace('logo-mark.png','logo-horizontal.png');
-      img.setAttribute('data-mark',mark); img.setAttribute('data-horizontal',horiz);
-      if(eff==='light'){ img.src=horiz; if(text) text.style.display='none'; }
-      else { img.src=mark; if(text) text.style.display=''; }
-    });
+    // Keep brand icon consistent across themes (avoid mode flicker/inconsistency).
   }
   function cycle(){ const cur=saved(); const next=cur==='auto'?'dark':cur==='dark'?'light':'auto'; localStorage.setItem(KEY,next); apply(); }
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{ if(saved()==='auto') apply(); });
