@@ -53,12 +53,6 @@
       </div>
       <div class="card"><h2>Archive</h2><p class="muted">Daily snapshots.</p><a class="btn ghost" href="./reports/">Open archive</a></div>
       <div class="card">
-        <h2>Grand Model v0.1 — Executive Summary</h2>
-        <div id="modelSummaryThesis" class="muted">Thesis: loading...</div>
-        <div id="modelSummaryFocus" class="muted" style="margin-top:6px">Focus: loading...</div>
-        <div class="row" style="margin-top:10px"><a class="btn ghost" id="modelSummaryBtn" href="./model/notes.html">Open model notes</a></div>
-      </div>
-      <div class="card">
         <h2>AI Industry Research — Executive Summary</h2>
         <div id="aiSummaryMarket" class="muted">Market trend: loading...</div>
         <div id="aiSummaryTech" class="muted" style="margin-top:6px">Tech/breakthrough: loading...</div>
@@ -106,7 +100,7 @@
       </div>
     </div>
 
-    <div class="footer">v2.4: watchlist auto-sync, front-page executive summaries, breaking timeline auto-update, and clickable ticker deep-dives</div>
+    <div class="footer">v2.4: watchlist auto-sync, front-page executive summaries, breaking timeline auto-update, and clickable ticker deep-dives · <a href="./model/notes.html">Advanced model notes</a></div>
   </div>
 
 <script>
@@ -287,22 +281,6 @@ async function loadDefenceSummary(){
   }
 }
 
-async function loadModelSummary(){
-  const t=document.getElementById('modelSummaryThesis');
-  const f=document.getElementById('modelSummaryFocus');
-  const b=document.getElementById('modelSummaryBtn');
-  try{
-    const res = await fetch('./model/summary.json?ts='+Date.now(), {cache:'no-store'});
-    if(!res.ok) throw new Error('no model summary');
-    const j = await res.json();
-    t.textContent = `Thesis: ${j.thesis || 'No thesis yet.'}`;
-    f.textContent = `Focus: ${j.focus || 'No focus yet.'}`;
-    if(j.latestPath){ b.href = j.latestPath; }
-  }catch{
-    t.textContent = 'Thesis: model summary will appear after model sync run.';
-    f.textContent = 'Focus: initializing ontology-backed state tracking.';
-  }
-}
 
 (async ()=>{
   await syncWatchlistFromRepo();
@@ -311,7 +289,6 @@ async function loadModelSummary(){
   loadFrontBreaking();
   loadAISummary();
   loadDefenceSummary();
-  loadModelSummary();
 })();
 </script>
 </body>
