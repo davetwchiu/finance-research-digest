@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-02-24T07:22:18+08:00",
-  "macro": "Macro regime remains two-way rather than a one-direction melt-up. US 10Y is 4.03 (-0.67% 1w), S&P 500 +0.02% 1w, Nasdaq +0.36% 1w, VIX at 21.01 (+1.99% 1w). WTI 66.27 (+5.37% 1w) and DXY 97.70 (+0.84% 1w) keep financial conditions from easing too quickly.",
-  "policy": "Policy is still dominated by the Fed inflation-vs-growth balancing act, US fiscal/defense spending persistence, and semiconductor export-control implementation risk. Portfolio implication: keep a core in cash-flow durable leaders, and treat high-beta tactical entries as confirmation-dependent trades rather than valuation-only buys.",
-  "delta": "Versus the prior run, dispersion is widening again: mega-cap AI beneficiaries are more resilient while smaller defense/space names trade with larger intraday swings. That usually argues for staggered entries, pre-defined invalidations, and faster de-risking on failed breakouts.",
+  "updatedAt": "2026-02-24T08:30:00+08:00",
+  "macro": "Global macro is still a selective risk-on regime, not a broad melt-up: yields are off highs but not loose enough to underwrite indiscriminate multiple expansion. Dollar firmness and oil volatility keep inflation-risk tails alive, so cross-asset conditions remain fragile.",
+  "policy": "Key policy vectors are Fed timing uncertainty, US defense/fiscal persistence, and semiconductor export-control implementation risk. Portfolio implication: keep core exposure in high-cash-flow leaders, and only add high-beta names on confirmed structure + volume.",
+  "delta": "Compared with the prior run, the tape still shows widening dispersion: mega-cap quality absorbs shocks better while smaller thematic names whipsaw around catalysts. Execution focus stays on staged entries, hard invalidations, and faster de-risking on failed breakouts.",
   "latestReportPath": "./reports/2026-02-24.html"
 }
