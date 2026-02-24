@@ -59,6 +59,13 @@
         <div id="aiSummaryRisk" class="muted" style="margin-top:6px">Risk focus: loading...</div>
         <div class="row" style="margin-top:10px"><a class="btn ghost" id="aiResearchBtn" href="./ai-research/latest.html">Open full research notebook</a></div>
       </div>
+      <div class="card">
+        <h2>Defence Industry Research — Executive Summary</h2>
+        <div id="defSummaryMarket" class="muted">Market trend: loading...</div>
+        <div id="defSummaryTech" class="muted" style="margin-top:6px">Tech/program shift: loading...</div>
+        <div id="defSummaryRisk" class="muted" style="margin-top:6px">Risk focus: loading...</div>
+        <div class="row" style="margin-top:10px"><a class="btn ghost" id="defResearchBtn" href="./defence-research/latest.html">Open full research notebook</a></div>
+      </div>
     </div>
 
     <div class="grid grid-2">
@@ -254,12 +261,33 @@ async function loadAISummary(){
   }
 }
 
+async function loadDefenceSummary(){
+  const m=document.getElementById('defSummaryMarket');
+  const t=document.getElementById('defSummaryTech');
+  const r=document.getElementById('defSummaryRisk');
+  const b=document.getElementById('defResearchBtn');
+  try{
+    const res = await fetch('./defence-research/summary.json?ts='+Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('no defence summary');
+    const j = await res.json();
+    m.textContent = `Market trend: ${j.market || 'No summary yet.'}`;
+    t.textContent = `Tech/program shift: ${j.tech || 'No summary yet.'}`;
+    r.textContent = `Risk focus: ${j.risk || 'No summary yet.'}`;
+    if(j.latestPath){ b.href = j.latestPath; }
+  }catch{
+    m.textContent = 'Market trend: summary will appear after first Defence research run.';
+    t.textContent = 'Tech/program shift: summary will appear after first Defence research run.';
+    r.textContent = 'Risk focus: summary will appear after first Defence research run.';
+  }
+}
+
 (async ()=>{
   await syncWatchlistFromRepo();
   await loadSignals();
   loadExecSummary();
   loadFrontBreaking();
   loadAISummary();
+  loadDefenceSummary();
 })();
 </script>
 </body>
