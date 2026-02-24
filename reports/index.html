@@ -13,7 +13,15 @@
     document.body.classList.toggle('light', eff==='light');
     const btn=document.getElementById('themeToggle');
     if(btn) btn.textContent='Theme: '+mode.toUpperCase();
-    // Keep brand icon consistent across themes (avoid mode flicker/inconsistency).
+    // Use full logo lockup variants by theme: dark banner on dark mode, transparent lockup on light mode.
+    document.querySelectorAll('.site-brand img').forEach(img=>{
+      const base = img.getAttribute('src') || '';
+      const light = img.getAttribute('data-light') || base.replace('logo-banner-dark.png','logo-horizontal.png');
+      const dark = img.getAttribute('data-dark') || base.replace('logo-horizontal.png','logo-banner-dark.png');
+      img.setAttribute('data-light', light);
+      img.setAttribute('data-dark', dark);
+      img.src = (eff==='light') ? light : dark;
+    });
   }
   function cycle(){ const cur=saved(); const next=cur==='auto'?'dark':cur==='dark'?'light':'auto'; localStorage.setItem(KEY,next); apply(); }
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{ if(saved()==='auto') apply(); });
