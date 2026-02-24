@@ -103,7 +103,8 @@ let SIGNALS={};
 function loadList(){try{return JSON.parse(localStorage.getItem(KEY_W))||DEFAULTS}catch{return DEFAULTS}}
 function saveList(list){localStorage.setItem(KEY_W,JSON.stringify(list));render()}
 function signalClass(s){
-  const v=(s||'watch').toLowerCase();
+  const raw = (s && typeof s === 'object') ? (s.signal || s.value || 'watch') : (s || 'watch');
+  const v=String(raw).toLowerCase();
   if(v==='routine' || v==='buy' || v==='positive') return 'routine';
   if(v==='high' || v==='risk-off' || v==='sell' || v==='negative') return 'high';
   return 'watch';
@@ -170,7 +171,11 @@ async function loadSignals(){
     const r = await fetch('./signals.json?ts='+Date.now(), {cache:'no-store'});
     if(!r.ok) throw new Error('no signals');
     const j = await r.json();
-    SIGNALS = j.signals || j || {};
+    if (j.signals && typeof j.signals === 'object') {
+      SIGNALS = j.signals;
+    } else {
+      SIGNALS = j || {};
+    }
   }catch{
     SIGNALS = {};
   }
@@ -197,9 +202,12 @@ async function loadExecSummary(){
     const r = await fetch('./summary.json?ts='+Date.now(), {cache:'no-store'});
     if(!r.ok) throw new Error('no summary');
     const j = await r.json();
-    m.textContent = `Macro: ${j.macro || 'No macro summary yet.'}`;
-    p.textContent = `Policy: ${j.policy || 'No policy summary yet.'}`;
-    d.textContent = `Change vs yesterday: ${j.delta || 'No delta summary yet.'}`;
+    const macro = j.macro || (Array.isArray(j.watchlist) ? `Market snapshot across ${j.watchlist.length} tracked names updated.` : 'No macro summary yet.');
+    const policy = j.policy || 'Policy summary pending next macro-format run.';
+    const delta = j.delta || (j.updated_at ? `Data refresh timestamp: ${j.updated_at}` : 'No delta summary yet.');
+    m.textContent = `Macro: ${macro}`;
+    p.textContent = `Policy: ${policy}`;
+    d.textContent = `Change vs yesterday: ${delta}`;
     if(j.latestReportPath){ b.href = j.latestReportPath; }
   }catch{
     m.textContent = 'Macro: Summary will appear after next report run.';
