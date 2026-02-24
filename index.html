@@ -52,6 +52,13 @@
         <div class="row" style="margin-top:10px"><a class="btn ghost" href="./reports/breaking/">Open timeline</a></div>
       </div>
       <div class="card"><h2>Archive</h2><p class="muted">Daily snapshots.</p><a class="btn ghost" href="./reports/">Open archive</a></div>
+      <div class="card">
+        <h2>AI Industry Research — Executive Summary</h2>
+        <div id="aiSummaryMarket" class="muted">Market trend: loading...</div>
+        <div id="aiSummaryTech" class="muted" style="margin-top:6px">Tech/breakthrough: loading...</div>
+        <div id="aiSummaryRisk" class="muted" style="margin-top:6px">Risk focus: loading...</div>
+        <div class="row" style="margin-top:10px"><a class="btn ghost" id="aiResearchBtn" href="./ai-research/latest.html">Open full research notebook</a></div>
+      </div>
     </div>
 
     <div class="grid grid-2">
@@ -203,9 +210,30 @@ async function loadFrontBreaking(){
   }
 }
 
+async function loadAISummary(){
+  const m=document.getElementById('aiSummaryMarket');
+  const t=document.getElementById('aiSummaryTech');
+  const r=document.getElementById('aiSummaryRisk');
+  const b=document.getElementById('aiResearchBtn');
+  try{
+    const res = await fetch('./ai-research/summary.json?ts='+Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('no ai summary');
+    const j = await res.json();
+    m.textContent = `Market trend: ${j.market || 'No summary yet.'}`;
+    t.textContent = `Tech/breakthrough: ${j.tech || 'No summary yet.'}`;
+    r.textContent = `Risk focus: ${j.risk || 'No summary yet.'}`;
+    if(j.latestPath){ b.href = j.latestPath; }
+  }catch{
+    m.textContent = 'Market trend: summary will appear after first AI research run.';
+    t.textContent = 'Tech/breakthrough: summary will appear after first AI research run.';
+    r.textContent = 'Risk focus: summary will appear after first AI research run.';
+  }
+}
+
 loadSignals();
 loadExecSummary();
 loadFrontBreaking();
+loadAISummary();
 </script>
 </body>
 </html>
