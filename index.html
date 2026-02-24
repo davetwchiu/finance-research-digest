@@ -97,12 +97,17 @@
   </div>
 
 <script>
-const DEFAULTS=["AAPL","AVGO","BBAI","KTOS","MSFT","NVDA","ONDS","PLTR","RDW","RKLB","TSLA","TSM","UUUU","GOOG","IBM","BRK.B"];
+const DEFAULTS=["AAPL","AVGO","BBAI","KTOS","MSFT","NVDA","ONDS","PLTR","RDW","RKLB","TSLA","TSM","UUUU","GOOG","IBM","BRK.B","LITE"];
 const KEY_W='watchlist_v2'; const KEY_S='watchlist_sync_settings_v1';
 let SIGNALS={};
 function loadList(){try{return JSON.parse(localStorage.getItem(KEY_W))||DEFAULTS}catch{return DEFAULTS}}
 function saveList(list){localStorage.setItem(KEY_W,JSON.stringify(list));render()}
-function signalClass(s){const v=(s||'watch').toLowerCase(); if(v==='routine') return 'routine'; if(v==='high') return 'high'; return 'watch';}
+function signalClass(s){
+  const v=(s||'watch').toLowerCase();
+  if(v==='routine' || v==='buy' || v==='positive') return 'routine';
+  if(v==='high' || v==='risk-off' || v==='sell' || v==='negative') return 'high';
+  return 'watch';
+}
 function render(){
   const list=loadList();
   const box=document.getElementById('watchlistChips');
@@ -165,11 +170,22 @@ async function loadSignals(){
     const r = await fetch('./signals.json?ts='+Date.now(), {cache:'no-store'});
     if(!r.ok) throw new Error('no signals');
     const j = await r.json();
-    SIGNALS = j.signals || {};
+    SIGNALS = j.signals || j || {};
   }catch{
     SIGNALS = {};
   }
   render();
+}
+
+async function syncWatchlistFromRepo(){
+  try{
+    const r = await fetch('./watchlist.json?ts='+Date.now(), {cache:'no-store'});
+    if(!r.ok) return;
+    const j = await r.json();
+    if(Array.isArray(j.watchlist) && j.watchlist.length){
+      localStorage.setItem(KEY_W, JSON.stringify(j.watchlist));
+    }
+  }catch{}
 }
 
 async function loadExecSummary(){
@@ -230,10 +246,13 @@ async function loadAISummary(){
   }
 }
 
-loadSignals();
-loadExecSummary();
-loadFrontBreaking();
-loadAISummary();
+(async ()=>{
+  await syncWatchlistFromRepo();
+  await loadSignals();
+  loadExecSummary();
+  loadFrontBreaking();
+  loadAISummary();
+})();
 </script>
 </body>
 </html>
