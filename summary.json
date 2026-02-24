@@ -1,7 +1,7 @@
 {
-  "macro": "Selective risk-on persists, but long-end yield volatility keeps valuation pressure elevated across duration-heavy growth.",
-  "policy": "AI export controls, defense procurement cadence, and strategic-industrial policy remain the key transmission channels into earnings expectations.",
-  "delta": "Upgraded to Alpha layer framework: market-data/catalyst/evidence/signal v0.2 now embedded per ticker; risk budgeting tightened on fragile high-beta names.",
+  "macro": "Selective risk-on remains intact, but duration sensitivity is elevated; maintain conditional risk with rates/breadth confirmation.",
+  "policy": "Export controls, defense procurement cadence, and strategic industrial policy remain primary earnings-transmission channels.",
+  "delta": "Alpha layers refreshed (market data, catalyst calendar, evidence quality, signal v0.2); conviction now scaled by liquidity + volatility fragility.",
   "latestReportPath": "./reports/2026-02-24.html",
-  "updatedAt": "2026-02-24T14:46:47+08:00"
+  "updatedAt": "2026-02-24T19:05:14+08:00"
 }
