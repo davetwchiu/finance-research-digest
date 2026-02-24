@@ -1,54 +1,54 @@
 {
   "date": "2026-02-24",
-  "updated_at": "2026-02-24T09:12:13+08:00",
+  "updated_at": "2026-02-24T09:41:25.910127+08:00",
   "watchlist": [
     {
       "ticker": "AAPL",
       "signal": "WATCH",
-      "last_close": 266.395,
-      "regime": "range (mixed)"
+      "last_close": 266.18,
+      "regime": "uptrend"
     },
     {
       "ticker": "AVGO",
       "signal": "WATCH",
-      "last_close": 330.41,
+      "last_close": 330.34,
       "regime": "range (mixed)"
     },
     {
       "ticker": "BBAI",
-      "signal": "WATCH",
+      "signal": "RISK-OFF",
       "last_close": 3.71,
-      "regime": "range (mixed)"
+      "regime": "downtrend"
     },
     {
       "ticker": "KTOS",
       "signal": "WATCH",
-      "last_close": 94.43,
+      "last_close": 94.31,
       "regime": "range (mixed)"
     },
     {
       "ticker": "MSFT",
-      "signal": "WATCH",
-      "last_close": 384.6,
-      "regime": "range (mixed)"
+      "signal": "RISK-OFF",
+      "last_close": 384.47,
+      "regime": "downtrend"
     },
     {
       "ticker": "NVDA",
-      "signal": "WATCH",
-      "last_close": 191.6434,
-      "regime": "range (mixed)"
+      "signal": "BUY",
+      "last_close": 191.55,
+      "regime": "uptrend"
     },
     {
       "ticker": "ONDS",
-      "signal": "WATCH",
-      "last_close": 10.18,
-      "regime": "range (mixed)"
+      "signal": "RISK-OFF",
+      "last_close": 10.19,
+      "regime": "downtrend"
     },
     {
       "ticker": "PLTR",
-      "signal": "WATCH",
-      "last_close": 130.606,
-      "regime": "range (mixed)"
+      "signal": "RISK-OFF",
+      "last_close": 130.6,
+      "regime": "downtrend"
     },
     {
       "ticker": "RDW",
@@ -58,21 +58,21 @@
     },
     {
       "ticker": "RKLB",
-      "signal": "WATCH",
-      "last_close": 70.19,
-      "regime": "range (mixed)"
+      "signal": "RISK-OFF",
+      "last_close": 70.21,
+      "regime": "downtrend"
     },
     {
       "ticker": "TSLA",
-      "signal": "WATCH",
-      "last_close": 399.85,
-      "regime": "range (mixed)"
+      "signal": "RISK-OFF",
+      "last_close": 399.83,
+      "regime": "downtrend"
     },
     {
       "ticker": "TSM",
       "signal": "WATCH",
       "last_close": 370.04,
-      "regime": "range (mixed)"
+      "regime": "uptrend"
     },
     {
       "ticker": "UUUU",
@@ -83,14 +83,14 @@
     {
       "ticker": "GOOG",
       "signal": "WATCH",
-      "last_close": 311.7,
+      "last_close": 311.69,
       "regime": "range (mixed)"
     },
     {
       "ticker": "IBM",
-      "signal": "WATCH",
+      "signal": "RISK-OFF",
       "last_close": 223.35,
-      "regime": "range (mixed)"
+      "regime": "downtrend"
     },
     {
       "ticker": "BRK.B",
@@ -100,9 +100,9 @@
     },
     {
       "ticker": "LITE",
-      "signal": "WATCH",
-      "last_close": 675.38,
-      "regime": "range (mixed)"
+      "signal": "BUY",
+      "last_close": 674.73,
+      "regime": "uptrend"
     }
   ]
 }
