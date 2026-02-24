@@ -1,7 +1,30 @@
 {
-  "updatedAt": "2026-02-24T08:45:00+08:00",
-  "macro": "Global macro is still a selective risk-on regime, not a broad melt-up: yields are off highs but not loose enough to underwrite indiscriminate multiple expansion. Dollar firmness and oil volatility keep inflation-risk tails alive, so cross-asset conditions remain fragile.",
-  "policy": "Key policy vectors are Fed timing uncertainty, US defense/fiscal persistence, and semiconductor export-control implementation risk. Portfolio implication: keep core exposure in high-cash-flow leaders, and only add high-beta names on confirmed structure + volume.",
-  "delta": "Compared with the prior run, the tape still shows widening dispersion: mega-cap quality absorbs shocks better while smaller thematic names whipsaw around catalysts. Execution focus stays on staged entries, hard invalidations, and faster de-risking on failed breakouts.",
-  "latestReportPath": "./reports/2026-02-24.html"
+  "date": "2026-02-24",
+  "updatedAt": "2026-02-24T08:50:00+08:00",
+  "scope": "macro-policy-regime and portfolio implications",
+  "deepDive": [
+    "BBAI",
+    "MSFT",
+    "PLTR",
+    "TSLA",
+    "IBM"
+  ],
+  "watchlist": [
+    "AAPL",
+    "AVGO",
+    "BBAI",
+    "KTOS",
+    "MSFT",
+    "NVDA",
+    "ONDS",
+    "PLTR",
+    "RDW",
+    "RKLB",
+    "TSLA",
+    "TSM",
+    "UUUU",
+    "GOOG",
+    "IBM",
+    "BRK.B"
+  ]
 }
