@@ -1,0 +1,30 @@
+{
+  "version": "v0.1",
+  "updatedAt": "2026-02-24T11:26:16.512648+08:00",
+  "objects": [
+    "ticker",
+    "signal_snapshot",
+    "fundamental_snapshot",
+    "event",
+    "macro_regime",
+    "thesis_state",
+    "source_record"
+  ],
+  "states": [
+    "Accumulation",
+    "Confirmation",
+    "Extended",
+    "Fragile",
+    "Breakdown",
+    "Repair"
+  ],
+  "scoreRange": "0-100",
+  "scoreKeys": [
+    "fundamental_strength",
+    "technical_structure",
+    "event_risk_opportunity",
+    "macro_fit",
+    "conviction",
+    "fragility"
+  ]
+}

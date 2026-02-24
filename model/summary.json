@@ -1,0 +1,6 @@
+{
+  "updatedAt": "2026-02-24T11:26:16.512651+08:00",
+  "thesis": "V0.1 model initialized: combining regime + fundamentals + TA + event risk into consistent daily state transitions.",
+  "focus": "Track state changes and score deltas, not one-off narratives.",
+  "latestPath": "./model/notes.html"
+}
