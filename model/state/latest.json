@@ -1,223 +1,121 @@
 {
   "AAPL": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512330+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "AVGO": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512585+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "BBAI": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512592+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "KTOS": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512597+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "MSFT": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512601+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "NVDA": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512604+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "ONDS": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512608+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "PLTR": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512612+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "RDW": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512615+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "RKLB": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512619+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "TSLA": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512622+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "TSM": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512626+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "UUUU": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512630+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "GOOG": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512633+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "IBM": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512637+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "BRK.B": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512640+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   },
   "LITE": {
-    "state": "Accumulation",
-    "scores": {
-      "fundamental_strength": 55,
-      "technical_structure": 55,
-      "event_risk_opportunity": 50,
-      "macro_fit": 50,
-      "conviction": 53,
-      "fragility": 47
-    },
-    "signal": "WATCH",
-    "updatedAt": "2026-02-24T11:26:16.512644+08:00"
+    "state": "Caution",
+    "conviction": 50,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-02-24T14:46:47+08:00"
   }
 }
