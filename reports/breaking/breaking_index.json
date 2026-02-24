@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "id": "2026-02-24-1858-us-tariff-10pct-effective",
+      "time": "2026-02-24 18:58 HKT",
+      "createdAt": "2026-02-24T18:58:00+08:00",
+      "title": "U.S. implements additional 10% tariff on non-exempt goods",
+      "summary": "Material macro update: Reuters reported an additional 10% U.S. tariff on non-exempt imports, sustaining tariff-driven risk-off and watchlist supply-chain sensitivity.",
+      "path": "./items/2026-02-24-1858-us-tariff-10pct-effective.md"
+    },
+    {
       "id": "2026-02-24-1529-tesla-autopilot-verdict-upheld",
       "time": "2026-02-24 15:29 HKT",
       "createdAt": "2026-02-24T15:29:00+08:00",
