@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-02-24T09:12:13+08:00",
-  "market": "AI is shifting from capacity race to economics race: winners are increasingly those with distribution, workflow ownership, and measurable pilot-to-production conversion.",
-  "tech": "Monetization is strongest in inference efficiency, workflow-native copilots, and governed enterprise deployment; benchmark-only progress and generic agents remain overhyped.",
-  "risk": "Key downside is capex/payback mismatch amplified by export controls, power constraints, and regulatory liability uncertainty if revenue quality lags spend.",
+  "updatedAt": "2026-02-24T09:30:00+08:00",
+  "market": "AI demand remains real but valuation leadership is rotating from capacity winners to workflow owners that can prove pilot-to-production conversion and recurring economics.",
+  "tech": "Monetization is strongest in inference efficiency, governed enterprise deployment, and workflow-native software; benchmark theater and generic autonomous-agent claims remain ahead of realized value.",
+  "risk": "Main downside is capex/payback mismatch compounded by export-control shocks, power bottlenecks, and regulatory liability shifts before cash-flow quality is proven.",
   "latestPath": "./ai-research/latest.html"
 }
