@@ -1,3 +1,33 @@
 <!doctype html><html><body>
+  <button id="themeToggle" aria-label="Toggle theme">Theme: AUTO</button>
   <div class="site-brand"><img src="../assets/brand/logo-mark.png" alt="Atlas Market Intelligence"/><a href="../index.html">Atlas Market Intelligence</a></div>
-<h1>Archive</h1><ul><li><a href='2026-02-24.html'>2026-02-24.html</a></li></ul></body></html>
+<h1>Archive</h1><ul><li><a href='2026-02-24.html'>2026-02-24.html</a></li></ul>
+<script>
+(function(){
+  const KEY='ami_theme_mode';
+  function saved(){ return localStorage.getItem(KEY)||'auto'; }
+  function effective(mode){ if(mode==='auto'){ return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'; } return mode; }
+  function apply(){
+    const mode=saved();
+    const eff=effective(mode);
+    document.body.classList.toggle('light', eff==='light');
+    const btn=document.getElementById('themeToggle');
+    if(btn) btn.textContent='Theme: '+mode.toUpperCase();
+    document.querySelectorAll('.site-brand').forEach(b=>{
+      const img=b.querySelector('img'); const text=b.querySelector('a');
+      if(!img) return;
+      const mark=img.getAttribute('data-mark')||img.src;
+      const horiz=img.getAttribute('data-horizontal')||mark.replace('logo-mark.png','logo-horizontal.png');
+      img.setAttribute('data-mark',mark); img.setAttribute('data-horizontal',horiz);
+      if(eff==='light'){ img.src=horiz; if(text) text.style.display='none'; }
+      else { img.src=mark; if(text) text.style.display=''; }
+    });
+  }
+  function cycle(){ const cur=saved(); const next=cur==='auto'?'dark':cur==='dark'?'light':'auto'; localStorage.setItem(KEY,next); apply(); }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{ if(saved()==='auto') apply(); });
+  const btn=document.getElementById('themeToggle'); if(btn) btn.addEventListener('click',cycle);
+  apply();
+})();
+</script>
+
+</body></html>

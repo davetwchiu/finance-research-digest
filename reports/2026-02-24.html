@@ -1,4 +1,12 @@
-<!doctype html><html lang='en'><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width,initial-scale=1'/><title>Daily Finance Report | 2026-02-24</title><style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.65}a{color:#9bb8ff}.card{border:1px solid #2a3768;background:#121936;border-radius:12px;padding:16px;margin:12px 0}table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #2a3768;padding:8px;text-align:left}.muted{color:#a7b0d6}h1,h2,h3{line-height:1.35}</style></head><body><p><a href='../index.html'>← Back</a> · <a href='./index.html'>Archive index</a></p><h1>Daily Investment Research Digest — 2026-02-24 10:31 HKT</h1><p class='muted'>Macro/policy/regime + portfolio implications only. Plain-language long-form brief with scenario tree, cross-asset linkages, and monitoring checklist.</p>
+<!doctype html><html lang='en'><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width,initial-scale=1'/><title>Daily Finance Report | 2026-02-24</title><style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.65}a{color:#9bb8ff}.card{border:1px solid #2a3768;background:#121936;border-radius:12px;padding:16px;margin:12px 0}table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #2a3768;padding:8px;text-align:left}.muted{color:#a7b0d6}h1,h2,h3{line-height:1.35}
+    #themeToggle{position:fixed;right:14px;bottom:14px;z-index:9999;padding:8px 10px;border-radius:10px;border:1px solid #2a3768;background:#101a3f;color:#e8ecff;font-size:12px;cursor:pointer}
+    body.light{background:#f5f7ff !important;color:#0f1b33 !important}
+    body.light .card, body.light .topbar, body.light .site-brand, body.light details{background:#ffffff !important;border-color:#d6deef !important;color:#0f1b33 !important}
+    body.light .muted, body.light .site-brand a{color:#4b5d85 !important}
+    body.light a{color:#2f5bd3 !important}
+    body.light #themeToggle{background:#ffffff;color:#0f1b33;border-color:#d6deef}
+  </style></head><body>
+  <button id="themeToggle" aria-label="Toggle theme">Theme: AUTO</button><p><a href='../index.html'>← Back</a> · <a href='./index.html'>Archive index</a></p><h1>Daily Investment Research Digest — 2026-02-24 10:31 HKT</h1><p class='muted'>Macro/policy/regime + portfolio implications only. Plain-language long-form brief with scenario tree, cross-asset linkages, and monitoring checklist.</p>
 
 <div class='card'><h2>Executive framing</h2><p>Today’s market is being set by three interacting forces: policy uncertainty around technology controls and defense procurement, a rates regime where long-end bond supply still matters as much as central-bank guidance, and an equity tape that is rewarding verified cash-flow durability while punishing narrative-only growth. The most useful way to read this regime is not “risk-on versus risk-off” in one dimension, but “policy duration” versus “funding duration.” Policy duration describes how long a policy headline can drive earnings expectations; funding duration describes how long valuation can stay elevated when real yields are not falling. Right now, policy duration is high for AI infrastructure, defense software, and strategic manufacturing, but funding duration is fragile for the highest-multiple cohort.</p><p>For David’s watchlist, that means the portfolio should avoid binary positioning and instead run a barbell. One side is quality compounders and strategic bottlenecks with earnings visibility (mega-cap platform names, cash-generative semis, insurers/allocators). The other side is event-driven growth where upside can be large but must be sized as options-like risk (space/defense adjacencies, smaller AI names, uranium cycle plays). The middle—expensive names without near-term catalyst clarity—should be kept light because this is where multiple compression hurts most when yields rise or policy headlines cool.</p><p>The practical interpretation: keep net exposure constructive but selective, add risk only where both fundamentals and tape agree, and keep explicit hedge plans tied to rates and policy pathways rather than generic “market fear.”</p></div>
 
@@ -20,4 +28,33 @@
 
 <div class='card'><h2>Sources (macro/policy)</h2><ul><li>Reuters (2026-02-24): China AI-chip enforcement headline context — <a href='https://www.reuters.com/world/china/chinas-deepseek-trained-ai-model-nvidias-best-chip-despite-us-ban-official-says-2026-02-24/'>link</a></li><li>Reuters (2026-02-12): Long-end U.S. Treasury supply/yield dynamics — <a href='https://www.reuters.com/business/long-us-treasury-yields-rise-later-year-supply-postpone-fed-balance-sheet-2026-02-12/'>link</a></li><li>Reuters (2026-02-02): Defense spending/procurement acceleration narrative — <a href='https://www.reuters.com/business/aerospace-defense/us-defense-firms-boost-spending-after-trump-calls-expedited-arms-deliveries-2026-02-02/'>link</a></li><li>Federal Reserve (2026-01-28 minutes): Policy-path sensitivity and inflation-risk language — <a href='https://www.federalreserve.gov/monetarypolicy/fomcminutes20260128.htm'>link</a></li></ul></div>
 
-<p class='muted'>Updated: 2026-02-24T10:31:00+08:00</p></body></html>
+<p class='muted'>Updated: 2026-02-24T10:31:00+08:00</p>
+<script>
+(function(){
+  const KEY='ami_theme_mode';
+  function saved(){ return localStorage.getItem(KEY)||'auto'; }
+  function effective(mode){ if(mode==='auto'){ return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'; } return mode; }
+  function apply(){
+    const mode=saved();
+    const eff=effective(mode);
+    document.body.classList.toggle('light', eff==='light');
+    const btn=document.getElementById('themeToggle');
+    if(btn) btn.textContent='Theme: '+mode.toUpperCase();
+    document.querySelectorAll('.site-brand').forEach(b=>{
+      const img=b.querySelector('img'); const text=b.querySelector('a');
+      if(!img) return;
+      const mark=img.getAttribute('data-mark')||img.src;
+      const horiz=img.getAttribute('data-horizontal')||mark.replace('logo-mark.png','logo-horizontal.png');
+      img.setAttribute('data-mark',mark); img.setAttribute('data-horizontal',horiz);
+      if(eff==='light'){ img.src=horiz; if(text) text.style.display='none'; }
+      else { img.src=mark; if(text) text.style.display=''; }
+    });
+  }
+  function cycle(){ const cur=saved(); const next=cur==='auto'?'dark':cur==='dark'?'light':'auto'; localStorage.setItem(KEY,next); apply(); }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{ if(saved()==='auto') apply(); });
+  const btn=document.getElementById('themeToggle'); if(btn) btn.addEventListener('click',cycle);
+  apply();
+})();
+</script>
+
+</body></html>

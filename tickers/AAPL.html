@@ -4,7 +4,15 @@
     .site-brand{display:flex;align-items:center;gap:10px;margin:0 0 14px 0;padding:8px 10px;border:1px solid #2a3768;border-radius:10px;background:#101a3f}
     .site-brand img{height:28px;width:28px;object-fit:contain;border-radius:6px;background:#eaf0ff;padding:3px}
     .site-brand a{color:#9bb8ff;text-decoration:none;font-size:13px}
+  
+    #themeToggle{position:fixed;right:14px;bottom:14px;z-index:9999;padding:8px 10px;border-radius:10px;border:1px solid #2a3768;background:#101a3f;color:#e8ecff;font-size:12px;cursor:pointer}
+    body.light{background:#f5f7ff !important;color:#0f1b33 !important}
+    body.light .card, body.light .topbar, body.light .site-brand, body.light details{background:#ffffff !important;border-color:#d6deef !important;color:#0f1b33 !important}
+    body.light .muted, body.light .site-brand a{color:#4b5d85 !important}
+    body.light a{color:#2f5bd3 !important}
+    body.light #themeToggle{background:#ffffff;color:#0f1b33;border-color:#d6deef}
   </style></head><body>
+  <button id="themeToggle" aria-label="Toggle theme">Theme: AUTO</button>
   <div class="site-brand"><img src="../assets/brand/logo-mark.png" alt="Atlas Market Intelligence"/><a href="../index.html">Atlas Market Intelligence</a></div>
 
 <p><a href='../index.html'>← Back to toolbox</a> · <a href='../reports/2026-02-24.html'>Daily report</a></p>
@@ -24,4 +32,33 @@
 <h3>F) Integrated thesis verdict</h3><p><strong>Verdict:</strong> Maintain constructive stance. Company execution indicators (growth/margins), industry structure (competition + supply chain), and macro-policy regime (rates/export controls/procurement) imply asymmetric upside only when both fundamentals and tape confirm.</p>
 </section>
 <section class='card'><h2>TA (secondary, actionable)</h2><ul><li><strong>Trigger:</strong> 280.9</li><li><strong>Invalidation:</strong> 252.86</li><li><strong>Target-1/2:</strong> 294.92 / 308.94</li><li><strong>Regime:</strong> uptrend</li><li><strong>Breakout setup:</strong> Close above trigger with volume confirmation; <strong>negation:</strong> close back below trigger within 1-2 sessions.</li><li><strong>Pullback setup:</strong> Reclaim and hold above prior support near invalidation; <strong>negation:</strong> decisive close below invalidation.</li><li><strong>Breakdown setup:</strong> Two closes below invalidation; <strong>negation:</strong> fast reclaim with broad risk-on tape.</li><li><strong>Confidence:</strong> 68/100 (drivers: trend quality, macro-rate backdrop, catalyst clarity).</li></ul></section>
-<p class='muted'>Updated: 2026-02-24T10:31:00+08:00</p></body></html>
+<p class='muted'>Updated: 2026-02-24T10:31:00+08:00</p>
+<script>
+(function(){
+  const KEY='ami_theme_mode';
+  function saved(){ return localStorage.getItem(KEY)||'auto'; }
+  function effective(mode){ if(mode==='auto'){ return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'; } return mode; }
+  function apply(){
+    const mode=saved();
+    const eff=effective(mode);
+    document.body.classList.toggle('light', eff==='light');
+    const btn=document.getElementById('themeToggle');
+    if(btn) btn.textContent='Theme: '+mode.toUpperCase();
+    document.querySelectorAll('.site-brand').forEach(b=>{
+      const img=b.querySelector('img'); const text=b.querySelector('a');
+      if(!img) return;
+      const mark=img.getAttribute('data-mark')||img.src;
+      const horiz=img.getAttribute('data-horizontal')||mark.replace('logo-mark.png','logo-horizontal.png');
+      img.setAttribute('data-mark',mark); img.setAttribute('data-horizontal',horiz);
+      if(eff==='light'){ img.src=horiz; if(text) text.style.display='none'; }
+      else { img.src=mark; if(text) text.style.display=''; }
+    });
+  }
+  function cycle(){ const cur=saved(); const next=cur==='auto'?'dark':cur==='dark'?'light':'auto'; localStorage.setItem(KEY,next); apply(); }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{ if(saved()==='auto') apply(); });
+  const btn=document.getElementById('themeToggle'); if(btn) btn.addEventListener('click',cycle);
+  apply();
+})();
+</script>
+
+</body></html>
