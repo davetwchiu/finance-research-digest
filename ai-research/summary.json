@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-02-24T09:30:00+08:00",
-  "market": "AI demand remains real but valuation leadership is rotating from capacity winners to workflow owners that can prove pilot-to-production conversion and recurring economics.",
-  "tech": "Monetization is strongest in inference efficiency, governed enterprise deployment, and workflow-native software; benchmark theater and generic autonomous-agent claims remain ahead of realized value.",
-  "risk": "Main downside is capex/payback mismatch compounded by export-control shocks, power bottlenecks, and regulatory liability shifts before cash-flow quality is proven.",
+  "updatedAt": "2026-02-25T09:30:00+08:00",
+  "market": "AI is still a structural growth cycle, but 2026 leadership depends on production conversion and cash-flow quality rather than headline model launches.",
+  "tech": "Value is shifting toward inference efficiency, integrated enterprise workflows, and governance-ready deployment; pure benchmark gains monetize less reliably on their own.",
+  "risk": "Primary risk is capex outrunning monetization, amplified by export-control shifts, grid/power constraints, and faster-than-expected pricing compression.",
   "latestPath": "./ai-research/latest.html"
 }
