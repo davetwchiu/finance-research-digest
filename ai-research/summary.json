@@ -1,7 +1,7 @@
 {
   "updatedAt": "2026-02-25T09:30:00+08:00",
-  "market": "AI is still a structural growth cycle, but 2026 leadership depends on production conversion and cash-flow quality rather than headline model launches.",
-  "tech": "Value is shifting toward inference efficiency, integrated enterprise workflows, and governance-ready deployment; pure benchmark gains monetize less reliably on their own.",
-  "risk": "Primary risk is capex outrunning monetization, amplified by export-control shifts, grid/power constraints, and faster-than-expected pricing compression.",
+  "market": "AI remains a structural growth cycle, but 2026 equity leadership should rotate toward firms that convert adoption into visible cash-flow quality, not just capex scale or benchmark headlines.",
+  "tech": "Monetization is shifting from raw model novelty to workflow-embedded AI with strong inference efficiency, governance controls, and distribution moats across enterprise surfaces.",
+  "risk": "Top downside is capex outrunning monetization, amplified by export-control shifts, power/grid bottlenecks, and faster model-layer commoditization that pressures pricing.",
   "latestPath": "./ai-research/latest.html"
 }
