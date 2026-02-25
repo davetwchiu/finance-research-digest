@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "id": "2026-02-25-1127-tsla-hiring-bias-lawsuit",
+      "time": "2026-02-25 11:27 HKT",
+      "createdAt": "2026-02-25T11:27:00+08:00",
+      "title": "U.S. judge lets anti-American hiring-bias lawsuit against Tesla proceed",
+      "summary": "Material TSLA legal development: Reuters reports a U.S. judge declined to dismiss a hiring-discrimination suit, extending litigation/regulatory overhang.",
+      "path": "./items/2026-02-25-1127-tsla-hiring-bias-lawsuit.md"
+    },
+    {
+      "id": "2026-02-25-1128-us-tariff-15pct-plan",
+      "time": "2026-02-25 11:28 HKT",
+      "createdAt": "2026-02-25T11:28:00+08:00",
+      "title": "White House says U.S. is working to raise temporary global tariff from 10% to 15%",
+      "summary": "Material macro policy escalation: Reuters says the administration is working to lift the temporary tariff rate to 15%, raising cross-asset risk premium.",
+      "path": "./items/2026-02-25-1128-us-tariff-15pct-plan.md"
+    },
+    {
       "id": "2026-02-24-1858-us-tariff-10pct-effective",
       "time": "2026-02-24 18:58 HKT",
       "createdAt": "2026-02-24T18:58:00+08:00",
