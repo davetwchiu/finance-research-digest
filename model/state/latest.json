@@ -1,121 +1,121 @@
 {
   "AAPL": {
     "state": "Caution",
-    "conviction": 46,
-    "fragility": 54,
-    "delta": -4,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "conviction": 54,
+    "fragility": 46,
+    "delta": 1,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "AVGO": {
-    "state": "Defensive",
-    "conviction": 38,
-    "fragility": 58,
-    "delta": -12,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Caution",
+    "conviction": 47,
+    "fragility": 53,
+    "delta": -1,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "BBAI": {
-    "state": "Defensive",
-    "conviction": 46,
-    "fragility": 85,
-    "delta": -4,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Constructive",
+    "conviction": 59,
+    "fragility": 51,
+    "delta": 3,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "KTOS": {
-    "state": "Defensive",
-    "conviction": 28,
-    "fragility": 85,
-    "delta": -22,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Caution",
+    "conviction": 49,
+    "fragility": 61,
+    "delta": -3,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "MSFT": {
     "state": "Caution",
-    "conviction": 43,
-    "fragility": 61,
-    "delta": -7,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "conviction": 52,
+    "fragility": 48,
+    "delta": 1,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "NVDA": {
     "state": "Caution",
-    "conviction": 43,
-    "fragility": 58,
-    "delta": -7,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "conviction": 51,
+    "fragility": 49,
+    "delta": 0,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "ONDS": {
-    "state": "Defensive",
-    "conviction": 40,
-    "fragility": 85,
-    "delta": -10,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Caution",
+    "conviction": 54,
+    "fragility": 56,
+    "delta": 1,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "PLTR": {
-    "state": "Defensive",
-    "conviction": 35,
-    "fragility": 76,
-    "delta": -15,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Caution",
+    "conviction": 48,
+    "fragility": 62,
+    "delta": -1,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "RDW": {
-    "state": "Defensive",
-    "conviction": 43,
-    "fragility": 85,
-    "delta": -7,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Caution",
+    "conviction": 57,
+    "fragility": 53,
+    "delta": 2,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "RKLB": {
-    "state": "Defensive",
-    "conviction": 35,
-    "fragility": 85,
-    "delta": -15,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Caution",
+    "conviction": 49,
+    "fragility": 61,
+    "delta": 0,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "TSLA": {
     "state": "Caution",
-    "conviction": 46,
-    "fragility": 56,
-    "delta": -4,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "conviction": 54,
+    "fragility": 46,
+    "delta": 2,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "TSM": {
-    "state": "Caution",
-    "conviction": 48,
-    "fragility": 66,
-    "delta": -2,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Constructive",
+    "conviction": 58,
+    "fragility": 42,
+    "delta": 3,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "UUUU": {
-    "state": "Defensive",
-    "conviction": 48,
-    "fragility": 85,
-    "delta": -2,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Constructive",
+    "conviction": 65,
+    "fragility": 45,
+    "delta": 6,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "GOOG": {
     "state": "Caution",
-    "conviction": 43,
-    "fragility": 48,
-    "delta": -7,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "conviction": 50,
+    "fragility": 50,
+    "delta": 0,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "IBM": {
-    "state": "Defensive",
-    "conviction": 41,
-    "fragility": 85,
-    "delta": -9,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "state": "Constructive",
+    "conviction": 61,
+    "fragility": 49,
+    "delta": 2,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "BRK.B": {
     "state": "Caution",
-    "conviction": 44,
-    "fragility": 43,
-    "delta": -6,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "conviction": 50,
+    "fragility": 50,
+    "delta": 0,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   },
   "LITE": {
     "state": "Caution",
-    "conviction": 43,
-    "fragility": 70,
-    "delta": -7,
-    "updatedAt": "2026-02-25T08:29:48+08:00"
+    "conviction": 54,
+    "fragility": 56,
+    "delta": 1,
+    "updatedAt": "2026-02-25T11:34:34+08:00"
   }
 }

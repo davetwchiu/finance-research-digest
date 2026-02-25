@@ -1,13 +1,20 @@
 {
-  "run": 2,
+  "run": 3,
   "boost": {
-    "TSLA": 1,
-    "IBM": 1
+    "TSLA": 2,
+    "IBM": 2,
+    "MSFT": 2,
+    "NVDA": 2,
+    "GOOG": 2,
+    "AVGO": 2,
+    "AAPL": 2,
+    "TSM": 2
   },
-  "lastRunAt": "2026-02-25T08:29:48+08:00",
+  "lastRunAt": "2026-02-25T11:34:34+08:00",
   "lastUnusual": [
     "BBAI",
     "TSM",
-    "UUUU"
+    "UUUU",
+    "IBM"
   ]
 }
