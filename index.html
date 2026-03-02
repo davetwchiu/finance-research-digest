@@ -69,6 +69,15 @@
       <div class="muted" id="siteLastUpdated">Last updated: loading…</div>
     </div>
 
+    <div class="card" id="atlasLocalIntel" style="margin-top:14px">
+      <h2>Atlas Local Intelligence</h2>
+      <div id="atlasIntelFreshness" class="muted">Snapshot: loading...</div>
+      <div id="atlasIntelBreadth" class="muted" style="margin-top:6px">Breadth: loading...</div>
+      <div id="atlasIntelRisk" class="muted" style="margin-top:6px">Risk: loading...</div>
+      <div id="atlasIntelMovers" class="muted" style="margin-top:6px">Top movers: loading...</div>
+      <div id="atlasIntelVol" class="muted" style="margin-top:6px">Top volatility: loading...</div>
+    </div>
+
     <div class="grid grid-3">
       <div class="card">
         <h2>Latest Report — Executive Summary</h2>
@@ -265,6 +274,51 @@ function setLastUpdated(updatedAt){
   }
 }
 
+function fmtHKT(ts){
+  if(!ts) return 'unavailable';
+  const dt = new Date(ts);
+  if(Number.isNaN(dt.getTime())) return ts;
+  return dt.toLocaleString('en-GB', {
+    timeZone: 'Asia/Hong_Kong',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hour12: false
+  }).replace(',', '') + ' HKT';
+}
+
+async function loadAtlasLocalIntelligence(){
+  const freshness=document.getElementById('atlasIntelFreshness');
+  const breadth=document.getElementById('atlasIntelBreadth');
+  const risk=document.getElementById('atlasIntelRisk');
+  const movers=document.getElementById('atlasIntelMovers');
+  const vol=document.getElementById('atlasIntelVol');
+
+  try{
+    const r = await fetch('./data/cache/atlas_snapshot.json?ts='+Date.now(), {cache:'no-store'});
+    if(!r.ok) throw new Error('no snapshot');
+    const j = await r.json();
+
+    const b = j.breadth || {};
+    const rk = j.risk || {};
+    const universe = b.universe ?? j?.count?.valid ?? 0;
+
+    freshness.textContent = `Snapshot: ${fmtHKT(j.generated_at)}${j.source_generated_at ? ` (signals source ${fmtHKT(j.source_generated_at)})` : ''}`;
+    breadth.textContent = `Breadth: ${b.above_sma20 ?? 0}/${universe} above SMA20, ${b.above_sma50 ?? 0}/${universe} above SMA50.`;
+    risk.textContent = `Risk: avg RSI ${rk.avg_rsi14 ?? 'n/a'}; overbought ${rk.overbought_rsi70 ?? 0}, oversold ${rk.oversold_rsi30 ?? 0}.`;
+
+    const topMovers = Array.isArray(j.top_movers_proxy) ? j.top_movers_proxy.slice(0,3).map(x=>`${x.ticker} ${x.close_vs_sma20_pct>0?'+':''}${x.close_vs_sma20_pct}%`) : [];
+    movers.textContent = topMovers.length ? `Top movers (vs SMA20): ${topMovers.join(' · ')}` : 'Top movers: n/a';
+
+    const topVol = Array.isArray(j.top_volatility) ? j.top_volatility.slice(0,3).map(x=>`${x.ticker} ${x.atr14_pct_of_close}% ATR`) : [];
+    vol.textContent = topVol.length ? `Top volatility: ${topVol.join(' · ')}` : 'Top volatility: n/a';
+  }catch{
+    freshness.textContent = 'Snapshot: local snapshot not generated yet.';
+    breadth.textContent = 'Breadth: run local pipeline to populate local breadth metrics.';
+    risk.textContent = 'Risk: run local pipeline to populate local RSI risk view.';
+    movers.textContent = 'Top movers: unavailable until snapshot exists.';
+    vol.textContent = 'Top volatility: unavailable until snapshot exists.';
+  }
+}
+
 async function loadExecSummary(){
   const m=document.getElementById('execSummaryMacro');
   const p=document.getElementById('execSummaryPolicy');
@@ -352,6 +406,7 @@ async function loadDefenceSummary(){
 (async ()=>{
   await syncWatchlistFromRepo();
   await loadSignals();
+  loadAtlasLocalIntelligence();
   loadExecSummary();
   loadFrontBreaking();
   loadAISummary();

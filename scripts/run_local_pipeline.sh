@@ -8,4 +8,8 @@ python3 scripts/local_signal_pipeline.py \
   --watchlist watchlist.json \
   --output data/cache/signals_local.json
 
-echo "Local pipeline complete: data/cache/signals_local.json"
+python3 scripts/build_atlas_snapshot.py \
+  --input data/cache/signals_local.json \
+  --output data/cache/atlas_snapshot.json
+
+echo "Local pipeline complete: data/cache/signals_local.json + data/cache/atlas_snapshot.json"
