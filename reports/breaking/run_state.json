@@ -1,5 +1,5 @@
 {
-  "run": 10,
+  "run": 11,
   "boost": {
     "TSLA": 2,
     "IBM": 2,
@@ -10,9 +10,12 @@
     "AAPL": 2,
     "TSM": 2
   },
-  "lastRunAt": "2026-03-02T20:40:00+08:00",
-  "lastUnusual": [],
-  "lastStatus": "no_new_material",
-  "lastConfidence": "moderate",
-  "lastSourceQuality": "high_macro_mixed_single_name"
+  "lastRunAt": "2026-03-02T21:40:00+08:00",
+  "lastUnusual": [
+    "macro_riskoff_refresh",
+    "ktos_relative_strength"
+  ],
+  "lastStatus": "material_alert",
+  "lastConfidence": "high",
+  "lastSourceQuality": "high"
 }

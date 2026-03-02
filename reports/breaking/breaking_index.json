@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "id": "2026-03-02-2140-macro-riskoff-refresh-ktos-bid",
+      "time": "2026-03-02 21:40 HKT",
+      "createdAt": "2026-03-02T21:40:00+08:00",
+      "title": "Material macro risk-off refresh; KTOS relative beneficiary",
+      "summary": "Reuters reports U.S. futures down >1% amid prolonged Middle East conflict risk; defense beta outperformed with KTOS up premarket, reinforcing macro-led positioning regime.",
+      "path": "./items/2026-03-02-2140-macro-riskoff-refresh-ktos-bid.md"
+    },
+    {
       "id": "2026-02-26-0557-nvda-q4-results-beat-q1-guide-above",
       "time": "2026-02-26 05:57 HKT",
       "createdAt": "2026-02-26T05:57:00+08:00",
@@ -89,6 +97,6 @@
       "path": "./items/2026-02-24-0028-tariff-shock.md"
     }
   ],
-  "lastCheckedAt": "2026-03-02T20:40:00+08:00",
-  "lastCheckStatus": "no_new_material"
+  "lastCheckedAt": "2026-03-02T21:40:00+08:00",
+  "lastCheckStatus": "material_alert"
 }

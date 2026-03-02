@@ -1,11 +1,11 @@
 {
-  "time": "2026-02-26 05:57 HKT",
-  "title": "NVIDIA posts strong Q4 results; Q1 revenue guide above consensus",
-  "summary": "Material watchlist catalyst: NVIDIA reported Q4 FY2026 revenue of $68.1B and guided Q1 to $78B \u00b12%, above pre-print consensus and likely supportive for AI-capex complex (NVDA/AVGO/TSM/MSFT/GOOG).",
-  "path": "./2026-02-26.md",
+  "time": "2026-03-02 21:40 HKT",
+  "title": "Material macro risk-off refresh; KTOS relative beneficiary",
+  "summary": "Reuters reports U.S. futures down >1% on prolonged Middle East conflict risk, with defense strength including KTOS premarket outperformance; regime pressure on high-duration watchlist tech remains active.",
+  "path": "./2026-03-02.md",
   "confidence": "high",
-  "lastCheckedAt": "2026-03-02T20:40:00+08:00",
-  "lastCheckStatus": "no_new_material",
-  "lastCheckConfidence": "moderate",
-  "lastCheckSourceQuality": "high_macro_mixed_single_name"
+  "lastCheckedAt": "2026-03-02T21:40:00+08:00",
+  "lastCheckStatus": "material_alert",
+  "lastCheckConfidence": "high",
+  "lastCheckSourceQuality": "high"
 }
