@@ -1,11 +1,11 @@
 {
-  "time": "2026-03-02 21:40 HKT",
-  "title": "Material macro risk-off refresh; KTOS relative beneficiary",
-  "summary": "Reuters reports U.S. futures down >1% on prolonged Middle East conflict risk, with defense strength including KTOS premarket outperformance; regime pressure on high-duration watchlist tech remains active.",
+  "time": "2026-03-02 22:40 HKT",
+  "title": "No new material event (monitor pass)",
+  "summary": "No fresh multi-source thesis-changing watchlist catalyst; macro oil/geopolitical risk regime remains the active driver.",
   "path": "./2026-03-02.md",
-  "confidence": "high",
-  "lastCheckedAt": "2026-03-02T21:40:00+08:00",
-  "lastCheckStatus": "material_alert",
-  "lastCheckConfidence": "high",
-  "lastCheckSourceQuality": "high"
+  "confidence": "moderate",
+  "lastCheckedAt": "2026-03-02T22:40:00+08:00",
+  "lastCheckStatus": "no_material",
+  "lastCheckConfidence": "moderate",
+  "lastCheckSourceQuality": "mixed"
 }
