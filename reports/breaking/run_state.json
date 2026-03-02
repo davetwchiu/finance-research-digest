@@ -1,5 +1,5 @@
 {
-  "run": 17,
+  "run": 18,
   "boost": {
     "TSLA": 2,
     "IBM": 2,
@@ -10,7 +10,7 @@
     "AAPL": 2,
     "TSM": 2
   },
-  "lastRunAt": "2026-03-03T06:40:00+08:00",
+  "lastRunAt": "2026-03-03T07:40:00+08:00",
   "lastUnusual": [],
   "lastStatus": "no_material",
   "lastConfidence": "moderate-high",
