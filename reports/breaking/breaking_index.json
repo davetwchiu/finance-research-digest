@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "id": "2026-02-26-0557-nvda-q4-results-beat-q1-guide-above",
+      "time": "2026-02-26 05:57 HKT",
+      "createdAt": "2026-02-26T05:57:00+08:00",
+      "title": "NVIDIA posts strong Q4 results; Q1 revenue guide above consensus",
+      "summary": "Material watchlist catalyst: NVIDIA reported Q4 FY2026 revenue of $68.1B and guided Q1 to $78B ±2%, above pre-print consensus and likely supportive for AI-capex complex (NVDA/AVGO/TSM/MSFT/GOOG).",
+      "path": "./items/2026-02-26-0557-nvda-q4-results-beat-q1-guide-above.md"
+    },
+    {
+      "id": "2026-02-25-2157-ustr-15plus",
+      "time": "2026-02-25 21:57 HKT",
+      "createdAt": "2026-02-25T21:57:00+08:00",
+      "title": "USTR says U.S. tariff rate will rise to 15% or higher for some countries",
+      "summary": "Material macro escalation: Reuters reports USTR signaled some country rates move from 10% to 15%+, increasing policy-risk premium across globally exposed watchlist names.",
+      "path": "./items/2026-02-25-2157-ustr-15plus.md"
+    },
+    {
+      "id": "2026-02-25-1257-nvda-h200-china-provisional",
+      "time": "2026-02-25 12:57 HKT",
+      "createdAt": "2026-02-25T12:57:00+08:00",
+      "title": "Provisional: U.S. official says no Nvidia H200 chips sold to Chinese customers yet",
+      "summary": "Single-source Reuters official comment suggests continued U.S.-China AI-chip export friction, keeping NVDA/TSM ecosystem policy risk premium active.",
+      "path": "./items/2026-02-25-1257-nvda-h200-china-provisional.md"
+    },
+    {
       "id": "2026-02-25-1127-tsla-hiring-bias-lawsuit",
       "time": "2026-02-25 11:27 HKT",
       "createdAt": "2026-02-25T11:27:00+08:00",
@@ -64,5 +88,7 @@
       "summary": "Policy whipsaw around U.S. tariffs increased uncertainty and triggered a risk-off tone.",
       "path": "./items/2026-02-24-0028-tariff-shock.md"
     }
-  ]
+  ],
+  "lastCheckedAt": "2026-03-02T18:08:00+08:00",
+  "lastCheckStatus": "no_new_material"
 }
