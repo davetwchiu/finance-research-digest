@@ -1,7 +1,7 @@
 {
-  "macro": "Regime remains selective risk-on but policy volatility and real-yield sensitivity are keeping tail risks elevated; process discipline is the edge.",
-  "policy": "Trade/tariff signaling and industrial-policy execution remain the fastest transmission channels into margins, valuation, and cross-asset risk premium.",
-  "delta": "Alpha layers refreshed with market data, catalysts, evidence quality, and signal v0.2; deep-dive routing uses HIGH/near-catalyst/unusual move + two-run breaking-news persistence.",
-  "latestReportPath": "./reports/2026-02-25.html",
-  "updatedAt": "2026-02-25T11:34:34+08:00"
+  "macro": "Regime remains conditional risk-on: opportunities persist, but policy and real-yield shocks require evidence-weighted sizing and strict invalidation discipline.",
+  "policy": "Trade/industrial policy uncertainty is still the fastest path into valuation and guidance risk; treat medium-sized policy frictions as cumulative macro pressure.",
+  "delta": "Alpha layers refreshed (market data/catalysts/evidence/signal v0.2), deep-dive routing uses HIGH + unusual-move + near-catalyst logic with breaking-news persistence tracking in state.",
+  "latestReportPath": "./reports/2026-03-02.html",
+  "updatedAt": "2026-03-02T14:49:54+08:00"
 }
