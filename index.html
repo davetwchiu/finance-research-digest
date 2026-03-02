@@ -66,7 +66,7 @@
   <div class="wrap">
     <div class="topbar">
       <div class="brand"><img src="./assets/brand/logo-mark.png" alt="Atlas Market Intelligence logo"/><div><div class="title">Atlas Market Intelligence</div><div class="muted">Auto-sync watchlist, breaking summary, and ticker deep-dives</div></div></div>
-      <div class="muted">Last updated: 2026-02-24 07:22 (HKT)</div>
+      <div class="muted" id="siteLastUpdated">Last updated: loading…</div>
     </div>
 
     <div class="grid grid-3">
@@ -135,7 +135,7 @@
       </div>
     </div>
 
-    <div class="footer">v2.5: alpha upgrades in progress (market/catalyst/evidence layers, signal v0.2, reliability hardening) · <a href="./model/notes.html">Advanced model notes</a> · <a href="./model/notes.html">Advanced model notes</a></div>
+    <div class="footer">v2.5: alpha upgrades in progress (market/catalyst/evidence layers, signal v0.2, reliability hardening) · <a href="./model/notes.html">Advanced model notes</a></div>
   </div>
 
 <script>
@@ -235,6 +235,36 @@ async function syncWatchlistFromRepo(){
   }catch{}
 }
 
+function setLastUpdated(updatedAt){
+  const el=document.getElementById('siteLastUpdated');
+  if(!el) return;
+  if(!updatedAt){
+    el.textContent='Last updated: unavailable';
+    el.className='muted err';
+    return;
+  }
+  const dt = new Date(updatedAt);
+  const valid = !Number.isNaN(dt.getTime());
+  if(!valid){
+    el.textContent=`Last updated: ${updatedAt}`;
+    el.className='muted';
+    return;
+  }
+  const ageHours = (Date.now() - dt.getTime()) / 36e5;
+  const hkt = dt.toLocaleString('en-GB', {
+    timeZone: 'Asia/Hong_Kong',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hour12: false
+  }).replace(',', '');
+  if(ageHours > 24){
+    el.textContent=`Last updated: ${hkt} HKT (stale >24h)`;
+    el.className='muted err';
+  }else{
+    el.textContent=`Last updated: ${hkt} HKT`;
+    el.className='muted ok';
+  }
+}
+
 async function loadExecSummary(){
   const m=document.getElementById('execSummaryMacro');
   const p=document.getElementById('execSummaryPolicy');
@@ -250,11 +280,13 @@ async function loadExecSummary(){
     m.textContent = `Macro: ${macro}`;
     p.textContent = `Policy: ${policy}`;
     d.textContent = `Change vs yesterday: ${delta}`;
+    setLastUpdated(j.updated_at || null);
     if(j.latestReportPath){ b.href = j.latestReportPath; }
   }catch{
     m.textContent = 'Macro: Summary will appear after next report run.';
     p.textContent = 'Policy: Summary will appear after next report run.';
     d.textContent = 'Change vs yesterday: Summary will appear after next report run.';
+    setLastUpdated(null);
   }
 }
 
