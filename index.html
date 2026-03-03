@@ -347,7 +347,13 @@ async function loadAtlasDeepLocalAnalysis(){
     const sq = j.signal_quality || {};
     const themeObj = j.themes || {};
 
-    headline.textContent = `(${fmtHKT(j.generated_at)})`;
+    const generatedDt = new Date(j.generated_at || '');
+    const generatedValid = !Number.isNaN(generatedDt.getTime());
+    const ageHours = generatedValid ? ((Date.now() - generatedDt.getTime()) / 36e5) : null;
+    const stale = ageHours !== null && ageHours > 24;
+
+    headline.textContent = `(${fmtHKT(j.generated_at)}${stale ? ' · stale >24h' : ''})`;
+    headline.className = generatedValid ? (stale ? 'err' : 'ok') : 'muted';
     regime.textContent = `Regime: ${(mr.label||'n/a').toUpperCase()} | score ${mr.composite_score ?? 'n/a'} (breadth ${comp.breadth ?? 'n/a'}, momentum ${comp.momentum ?? 'n/a'}, volatility ${comp.volatility ?? 'n/a'}).`;
     triage.textContent = `Triage: ${(tq.high_attention||[]).length} high_attention · ${(tq.watch||[]).length} watch · ${(tq.low_priority||[]).length} low_priority.`;
     quality.textContent = `Quality: missing ${sq.missing_data_pct ?? 'n/a'}% · stale ${sq.stale_indicator_pct ?? 'n/a'}%.`;
