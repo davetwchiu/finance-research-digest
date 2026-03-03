@@ -1,24 +1,25 @@
 <!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>TSLA</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.58}a{color:#9bb8ff;word-break:break-all}.card{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}.muted{color:#a7b0d6}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #2a3768;padding:8px;text-align:left}</style></head><body>
 <p><a href='../index.html'>← Back</a> · <a href='../reports/2026-03-03.html'>Daily report</a></p>
 <h1>TSLA — Deep Pilot v3</h1>
-<p class='muted'>Last generated (UTC): 2026-03-03T02:59:03.165016+00:00 · Last generated (HKT): 2026-03-03T10:59:03.165016+08:00 · Fundamentals as-of: 2026-03-03</p>
+<p class='muted'>Last generated (UTC): 2026-03-03T03:56:34.648433+00:00 · Last generated (HKT): 2026-03-03T11:56:34.648433+08:00 · Fundamentals as-of: 2026-03-03</p>
+<div class='card'><h2>Layman summary (read this first)</h2><p><strong>YELLOW — Mixed setup, tactical only</strong></p><p>Simple read: score is <strong>51/100</strong>. This setup is rule-based, so the same inputs produce the same verdict every time.</p><ul><li><strong>If bullish continuation appears:</strong> Daily close > 434.41 with volume expansion vs 20D average.</li><li><strong>If setup fails:</strong> Two consecutive closes < 406.31.</li><li><strong>Upside roadmap:</strong> Target ladder: 435.59 (+8%) then trail toward +15% if breadth stays risk-on.</li></ul></div>
 <div class='card'><h2>Deterministic verdict</h2><p><strong>YELLOW — Mixed setup, tactical only</strong></p><p>Total score: <strong>51/100</strong> (TA 22/50 + Fundamentals 29/50).</p><ul><li>TA score 22/50 from trend (close vs SMA20/SMA50), momentum (RSI14), and realized volatility (ATR%).</li><li>Fundamentals score 29/50 from growth, cash generation, margins, valuation, and balance-sheet buffer.</li><li>Deterministic total score 51/100 → verdict bucket: YELLOW — Mixed setup, tactical only.</li><li>All thresholds are static and reproducible; no LLM-based scoring is used.</li></ul></div>
-<div class='card'><h2>Action framework (rule-based)</h2><ul><li><strong>Trigger:</strong> Daily close > 434.41 with volume expansion vs 20D average.</li><li><strong>Invalidation:</strong> Two consecutive closes < 406.31.</li><li><strong>Targets:</strong> Target ladder: 435.59 (+8%) then trail toward +15% if breadth stays risk-on.</li></ul></div>
-<div class='card'><h2>Technical block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
+<details class='card'><summary><strong>Technical evidence (expand)</strong></summary>
+<div><h2>Technical block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
 <tr><td>Close</td><td>403.3200</td><td>Reference close used in all trigger math.</td></tr>
 <tr><td>SMA20</td><td>412.4955</td><td>Short trend control line.</td></tr>
 <tr><td>SMA50</td><td>434.4080</td><td>Intermediate trend control line.</td></tr>
 <tr><td>RSI14</td><td>41.75</td><td>Momentum state; 50-68 preferred for continuation quality.</td></tr>
 <tr><td>ATR14</td><td>14.3693</td><td>Absolute volatility estimate.</td></tr>
 <tr><td>ATR % of close</td><td>3.56%</td><td>Risk normalization for position sizing.</td></tr></table></div>
-<div class='card'><h2>Fundamentals block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Role in score</th></tr>
+<div><h2>Fundamentals block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Role in score</th></tr>
 <tr><td>Revenue growth YoY</td><td>12.0%</td><td>Growth durability bucket.</td></tr>
 <tr><td>FCF margin</td><td>7.0%</td><td>Cash conversion quality.</td></tr>
 <tr><td>Gross margin</td><td>18.0%</td><td>Pricing power/moat proxy.</td></tr>
 <tr><td>Forward P/E</td><td>66.0x</td><td>Valuation pressure indicator.</td></tr>
 <tr><td>PEG</td><td>2.50x</td><td>Growth-adjusted valuation guardrail.</td></tr>
 <tr><td>Net cash</td><td>21.0B</td><td>Balance-sheet shock absorber.</td></tr></table>
-<p class='muted'>Primary references: <a href='https://www.sec.gov/edgar/search/#/q=Tesla%252C%2520Inc'>https://www.sec.gov/edgar/search/#/q=Tesla%252C%2520Inc</a> · <a href='https://ir.tesla.com/'>https://ir.tesla.com/</a> · <a href='https://finance.yahoo.com/quote/TSLA/financials'>https://finance.yahoo.com/quote/TSLA/financials</a></p></div>
+<p class='muted'>Primary references: <a href='https://www.sec.gov/edgar/search/#/q=Tesla%252C%2520Inc'>https://www.sec.gov/edgar/search/#/q=Tesla%252C%2520Inc</a> · <a href='https://ir.tesla.com/'>https://ir.tesla.com/</a> · <a href='https://finance.yahoo.com/quote/TSLA/financials'>https://finance.yahoo.com/quote/TSLA/financials</a></p></div></details>
 <div class='card'><h2>Risk map</h2><ol>
 <li>Macro rate shock: if 10Y yields reprice +25bp quickly, high-duration multiple names compress first.</li>
 <li>Earnings guide miss: score must be recomputed immediately if forward growth assumptions break.</li>

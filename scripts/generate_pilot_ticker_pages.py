@@ -140,23 +140,24 @@ def build_page(ticker: str, sig: Dict[str, Any], f: Dict[str, Any], report_path:
 <p><a href='../index.html'>← Back</a> · <a href='../{report_path}'>Daily report</a></p>
 <h1>{ticker} — Deep Pilot v3</h1>
 <p class='muted'>Last generated (UTC): {generated_at_utc} · Last generated (HKT): {generated_at_hkt} · Fundamentals as-of: {f.get('as_of','N/A')}</p>
+<div class='card'><h2>Layman summary (read this first)</h2><p><strong>{verdict}</strong></p><p>Simple read: score is <strong>{score.total}/100</strong>. This setup is rule-based, so the same inputs produce the same verdict every time.</p><ul><li><strong>If bullish continuation appears:</strong> {trigger}</li><li><strong>If setup fails:</strong> {invalidation}</li><li><strong>Upside roadmap:</strong> {targets}</li></ul></div>
 <div class='card'><h2>Deterministic verdict</h2><p><strong>{verdict}</strong></p><p>Total score: <strong>{score.total}/100</strong> (TA {score.ta}/50 + Fundamentals {score.fundamentals}/50).</p><ul>{''.join([f'<li>{e}</li>' for e in evidence])}</ul></div>
-<div class='card'><h2>Action framework (rule-based)</h2><ul><li><strong>Trigger:</strong> {trigger}</li><li><strong>Invalidation:</strong> {invalidation}</li><li><strong>Targets:</strong> {targets}</li></ul></div>
-<div class='card'><h2>Technical block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
+<details class='card'><summary><strong>Technical evidence (expand)</strong></summary>
+<div><h2>Technical block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
 <tr><td>Close</td><td>{_fmt(m['close'],4)}</td><td>Reference close used in all trigger math.</td></tr>
 <tr><td>SMA20</td><td>{_fmt(m['sma20'],4)}</td><td>Short trend control line.</td></tr>
 <tr><td>SMA50</td><td>{_fmt(m['sma50'],4)}</td><td>Intermediate trend control line.</td></tr>
 <tr><td>RSI14</td><td>{_fmt(m['rsi14'],2)}</td><td>Momentum state; 50-68 preferred for continuation quality.</td></tr>
 <tr><td>ATR14</td><td>{_fmt(m['atr14'],4)}</td><td>Absolute volatility estimate.</td></tr>
 <tr><td>ATR % of close</td><td>{_fmt(m['atr_pct'],2)}%</td><td>Risk normalization for position sizing.</td></tr></table></div>
-<div class='card'><h2>Fundamentals block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Role in score</th></tr>
+<div><h2>Fundamentals block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Role in score</th></tr>
 <tr><td>Revenue growth YoY</td><td>{_fmt(m['rev_growth'],1)}%</td><td>Growth durability bucket.</td></tr>
 <tr><td>FCF margin</td><td>{_fmt(m['fcf_margin'],1)}%</td><td>Cash conversion quality.</td></tr>
 <tr><td>Gross margin</td><td>{_fmt(m['gross_margin'],1)}%</td><td>Pricing power/moat proxy.</td></tr>
 <tr><td>Forward P/E</td><td>{_fmt(m['forward_pe'],1)}x</td><td>Valuation pressure indicator.</td></tr>
 <tr><td>PEG</td><td>{_fmt(m['peg'],2)}x</td><td>Growth-adjusted valuation guardrail.</td></tr>
 <tr><td>Net cash</td><td>{_fmt(m['net_cash_b'],1)}B</td><td>Balance-sheet shock absorber.</td></tr></table>
-<p class='muted'>Primary references: {links}</p></div>
+<p class='muted'>Primary references: {links}</p></div></details>
 <div class='card'><h2>Risk map</h2><ol>
 <li>Macro rate shock: if 10Y yields reprice +25bp quickly, high-duration multiple names compress first.</li>
 <li>Earnings guide miss: score must be recomputed immediately if forward growth assumptions break.</li>
