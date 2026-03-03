@@ -21,6 +21,11 @@ from typing import Dict, List, Optional, Tuple
 
 YAHOO_CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
 
+# Input watchlist ticker -> Yahoo chart symbol normalization.
+YAHOO_TICKER_ALIASES = {
+    "BRK.B": "BRK-B",
+}
+
 
 def load_watchlist(path: Path) -> List[str]:
     data = json.loads(path.read_text(encoding="utf-8"))
@@ -155,8 +160,9 @@ def atr14(highs: List[float], lows: List[float], closes: List[float], period: in
 
 
 def compute_for_ticker(ticker: str, range_: str) -> dict:
+    yahoo_ticker = YAHOO_TICKER_ALIASES.get(ticker, ticker)
     try:
-        payload = fetch_chart(ticker, range_=range_)
+        payload = fetch_chart(yahoo_ticker, range_=range_)
         result = payload.get("chart", {}).get("result", [])
         if not result:
             raise ValueError("No chart result")
@@ -183,6 +189,7 @@ def compute_for_ticker(ticker: str, range_: str) -> dict:
 
         return {
             "ok": True,
+            "source_ticker": yahoo_ticker,
             "latest": {
                 "open": opens[-1],
                 "high": highs[-1],
@@ -200,9 +207,9 @@ def compute_for_ticker(ticker: str, range_: str) -> dict:
             "samples": len(rows),
         }
     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as e:
-        return {"ok": False, "error": str(e)}
+        return {"ok": False, "source_ticker": yahoo_ticker, "error": str(e)}
     except Exception as e:  # safety net
-        return {"ok": False, "error": f"Unexpected error: {e}"}
+        return {"ok": False, "source_ticker": yahoo_ticker, "error": f"Unexpected error: {e}"}
 
 
 def round_floats(obj):

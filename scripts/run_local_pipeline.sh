@@ -36,9 +36,15 @@ python3 scripts/build_atlas_deep_analysis.py \
   --input data/cache/signals_local.json \
   --output data/cache/atlas_deep_analysis.json
 
+# Rebuild archive index each cycle so newest report appears automatically.
+python3 scripts/rebuild_reports_index.py
+
+# Fail fast if latest report contains repeated long paragraphs.
+python3 scripts/report_dup_guard.py --reports-dir reports --min-len 120 --max-duplicates 0
+
 # Bump visible website version every update cycle.
 python3 scripts/site_version.py \
   --file data/cache/site_version.json \
   --base 2.5.0
 
-echo "Local pipeline complete: archived previous snapshots in $ARCHIVE_DIR; refreshed signals/snapshot/deep-analysis; bumped site version metadata."
+echo "Local pipeline complete: archived previous snapshots in $ARCHIVE_DIR; refreshed signals/snapshot/deep-analysis; rebuilt report archive index; passed duplicate guard; bumped site version metadata."

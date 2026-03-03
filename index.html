@@ -69,6 +69,12 @@
       <div class="muted" id="siteLastUpdated">Last updated: loading…</div>
     </div>
 
+    <div class="card" id="globalFreshnessCard" style="margin-top:12px">
+      <h2>System Freshness</h2>
+      <div id="globalFreshnessVerdict" class="muted">Verdict: loading...</div>
+      <div id="globalFreshnessDetail" class="muted" style="margin-top:6px">Details: loading...</div>
+    </div>
+
     <div class="card" id="atlasLocalIntel" style="margin-top:14px">
       <h2>Atlas Local Intelligence</h2>
       <div id="atlasIntelFreshness" class="muted">Snapshot: loading...</div>
@@ -470,6 +476,59 @@ async function loadDefenceSummary(){
   }
 }
 
+function _hoursOld(iso){
+  const dt = new Date(iso || '');
+  if(isNaN(dt.getTime())) return null;
+  return (Date.now() - dt.getTime()) / 36e5;
+}
+
+async function loadGlobalFreshness(){
+  const verdictEl = document.getElementById('globalFreshnessVerdict');
+  const detailEl = document.getElementById('globalFreshnessDetail');
+  if(!verdictEl || !detailEl) return;
+
+  let summaryHours = null, snapHours = null, deepHours = null;
+  try{
+    const s = await fetch('./summary.json?ts='+Date.now(), {cache:'no-store'});
+    if(s.ok){
+      const j = await s.json();
+      summaryHours = _hoursOld(j.updatedAt);
+    }
+  }catch{}
+
+  try{
+    const r = await fetch('./data/cache/atlas_snapshot.json?ts='+Date.now(), {cache:'no-store'});
+    if(r.ok){
+      const j = await r.json();
+      snapHours = _hoursOld(j.generated_at);
+    }
+  }catch{}
+
+  try{
+    const r = await fetch('./data/cache/atlas_deep_analysis.json?ts='+Date.now(), {cache:'no-store'});
+    if(r.ok){
+      const j = await r.json();
+      deepHours = _hoursOld(j.generated_at);
+    }
+  }catch{}
+
+  const vals = [summaryHours, snapHours, deepHours].filter(v => v !== null);
+  if(!vals.length){
+    verdictEl.textContent = 'Verdict: DEGRADED (freshness data unavailable)';
+    detailEl.textContent = 'Details: summary/snapshot/deep timestamps not readable.';
+    return;
+  }
+
+  const maxH = Math.max(...vals);
+  const hasMissing = [summaryHours, snapHours, deepHours].some(v => v === null);
+  let verdict = 'FRESH';
+  if(maxH > 24) verdict = 'STALE';
+  else if(maxH > 8 || hasMissing) verdict = 'DEGRADED';
+
+  verdictEl.textContent = `Verdict: ${verdict} (max age ${maxH.toFixed(1)}h)`;
+  detailEl.textContent = `Details: summary=${summaryHours===null?'n/a':summaryHours.toFixed(1)+'h'}, snapshot=${snapHours===null?'n/a':snapHours.toFixed(1)+'h'}, deep=${deepHours===null?'n/a':deepHours.toFixed(1)+'h'}.`;
+}
+
 async function loadWebsiteVersion(){
   const v=document.getElementById('websiteVersion');
   if(!v) return;
@@ -492,6 +551,7 @@ async function loadWebsiteVersion(){
   loadFrontBreaking();
   loadAISummary();
   loadDefenceSummary();
+  loadGlobalFreshness();
   loadWebsiteVersion();
 })();
 </script>
