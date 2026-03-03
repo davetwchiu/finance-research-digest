@@ -3,402 +3,177 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Industry Research Notebook — February 2026</title>
+  <title>AI Industry Research Notebook — 2026-03-03</title>
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <style>
-    :root {
-      --bg: #0b1020;
-      --card: #121a33;
-      --ink: #e9eeff;
-      --muted: #aab6df;
-      --line: #2a396c;
-      --accent: #9bc1ff;
-      --bull: #8cf0b5;
-      --bear: #ffb1b1;
-      --warn: #ffd68a;
-    }
-    body { margin: 0; padding: 28px; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif; background: var(--bg); color: var(--ink); line-height: 1.62; }
-    .container { max-width: 1220px; margin: 0 auto; }
-    a { color: var(--accent); }
-    h1,h2,h3 { line-height: 1.28; }
-    h1 { margin: 0 0 12px; font-size: 2rem; }
-    h2 { margin: 28px 0 10px; font-size: 1.36rem; }
-    h3 { margin: 20px 0 8px; font-size: 1.05rem; color: #c8d7ff; }
-    p { margin: 10px 0; }
-    ul,ol { margin: 8px 0 12px 20px; }
-    li { margin: 5px 0; }
-    .muted { color: var(--muted); }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin: 12px 0; }
-    .kpi { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 10px; margin: 12px 0; }
-    .pill { border-radius: 999px; padding: 3px 10px; font-size: .82rem; border: 1px solid var(--line); display: inline-block; margin-bottom: 6px; }
-    .bull { color: var(--bull); border-color: #2a5a3d; }
-    .bear { color: var(--bear); border-color: #65333c; }
-    .warn { color: var(--warn); border-color: #705a31; }
-    table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: .93rem; }
-    th,td { border: 1px solid var(--line); padding: 9px 10px; vertical-align: top; text-align: left; }
-    th { background: #172248; }
-    .small { font-size: .9rem; }
-    .site-brand{display:flex;align-items:center;margin:0 0 14px 0;padding:8px 10px;border:1px solid #2a3768;border-radius:10px;background:#101a3f}
-    .site-brand img{height:30px;width:auto;object-fit:contain;border-radius:6px;background:transparent;padding:0}
-    .site-brand a{color:#9bb8ff;text-decoration:none;font-size:13px;display:inline-flex;align-items:center}
-    #themeToggle{position:fixed;right:14px;bottom:14px;z-index:9999;padding:8px 10px;border-radius:10px;border:1px solid #2a3768;background:#101a3f;color:#e8ecff;font-size:12px;cursor:pointer}
-    body.light{background:#f5f7ff !important;color:#0f1b33 !important}
-    body.light .card, body.light .site-brand, body.light details{background:#ffffff !important;border-color:#d6deef !important;color:#0f1b33 !important}
-    body.light .muted, body.light .site-brand a{color:#4b5d85 !important}
-    body.light a{color:#2f5bd3 !important}
-    body.light #themeToggle{background:#ffffff;color:#0f1b33;border-color:#d6deef}
+    :root { --bg:#0b1020; --card:#121a33; --ink:#e9eeff; --muted:#aab6df; --line:#2a396c; --accent:#9bc1ff; --fact:#8cf0b5; --view:#ffd68a; --scn:#ffb1b1; }
+    body { margin:0; padding:28px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.62; }
+    .container { max-width:1220px; margin:0 auto; }
+    a { color:var(--accent); }
+    h1,h2,h3 { line-height:1.28; }
+    h1 { margin:0 0 12px; font-size:2rem; }
+    h2 { margin:24px 0 8px; font-size:1.28rem; }
+    h3 { margin:14px 0 6px; font-size:1.02rem; color:#c8d7ff; }
+    .muted{ color:var(--muted); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; margin:12px 0; }
+    .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.82rem;margin:2px 6px 6px 0}
+    .fact{color:var(--fact);border-color:#2a5a3d}.view{color:var(--view);border-color:#705a31}.scn{color:var(--scn);border-color:#65333c}
+    table{width:100%;border-collapse:collapse;margin:10px 0 14px}.th,th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top}th{background:#172248}
+    .small{font-size:.92rem}
   </style>
 </head>
 <body>
-  <button id="themeToggle" aria-label="Toggle theme">Theme: AUTO</button>
-  <div class="site-brand"><a href="../index.html" aria-label="Atlas Market Intelligence home"><img src="../assets/brand/logo-horizontal.png" alt="Atlas Market Intelligence"/></a></div>
+<div class="container">
+  <p><a href="../index.html">← Back to toolbox</a></p>
+  <h1>AI Industry Research Notebook (Investor Practical Edition)</h1>
+  <p class="muted">Prepared for David • Tuesday, 03 Mar 2026 (09:30 HKT run) • Focus: what is proving economically durable vs what is still narrative-driven.</p>
 
-  <div class="container">
-    <p><a href="../index.html">← Back to toolbox</a></p>
-    <h1>AI Industry Research Notebook (in-depth, plain-language)</h1>
-    <p class="muted">Prepared for David • Wednesday, 25 Feb 2026 (09:30 HKT run) • Objective: deep strategic map of where AI value is real, where it is fragile, and what to monitor to avoid narrative traps.</p>
-
-    <div class="card">
-      <h2>How to use this notebook</h2>
-      <p>This is written as a working investment memo, not a hype digest. The core question: <strong>which parts of AI can convert technical progress into repeatable free cash flow, and which parts are likely to become commoditized utilities?</strong></p>
-      <p>Public data availability is uneven in early 2026. Where exact numbers are still noisy, this notebook emphasizes <strong>decision quality</strong>: unit economics, bottleneck mapping, policy paths, and falsifiable signposts.</p>
-      <div class="kpi">
-        <div><span class="pill bull">Primary call</span><br/>AI remains a multi-year platform shift, but market leadership is rotating from raw model spectacle to workflow control + cost discipline.</div>
-        <div><span class="pill warn">Base case</span><br/>2026 is a “proof-of-economics” year: strong capex continues, but valuation spreads widen sharply based on monetization quality.</div>
-        <div><span class="pill bear">Main risk</span><br/>If capex growth remains extreme while conversion-to-production lags, de-rating can hit both infrastructure and software simultaneously.</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>(1) Executive thesis and key calls</h2>
-      <h3>Thesis in one sentence</h3>
-      <p>The AI cycle is moving from <strong>scarcity economics</strong> (who can get chips) to <strong>operating economics</strong> (who can deliver reliable outcomes at acceptable cost under governance constraints).</p>
-
-      <h3>Five key calls (high conviction)</h3>
-      <ol>
-        <li><strong>The next durable profit pool is enterprise workflow ownership, not standalone chatbot subscriptions.</strong> Benchmarks still matter, but buyers are paying for measurable task completion, integration depth, and legal/compliance confidence.</li>
-        <li><strong>Compute remains structurally attractive, but no longer “automatic multiple expansion.”</strong> NVDA/TSM/AVGO chains can keep compounding fundamentals, but valuation now depends on utilization durability, customer concentration, and substitution pace (custom silicon, architecture shifts).</li>
-        <li><strong>Inference efficiency is now a first-order strategic moat.</strong> Distillation, routing, quantization, caching, and hardware-software co-design are direct gross-margin levers; companies ignoring this will report AI growth with weak incremental profitability.</li>
-        <li><strong>Pilot-to-production conversion is the KPI that matters in 2026.</strong> “We signed X pilots” is low-signal. High-signal is conversion within two quarters, active usage depth, and expansion into core operating budgets.</li>
-        <li><strong>Geopolitics + power are regime variables, not side risks.</strong> Export controls, packaging choke points, and grid interconnection constraints can move earnings trajectories more than product launches.</li>
-      </ol>
-
-      <h3>Practical implications for listed ecosystem names</h3>
-      <ul>
-        <li><strong>Infrastructure complex (NVDA, AVGO, TSM, memory, optics, cooling, power infra):</strong> still core structural winners, but dispersion widens as supply catches up and procurement becomes more selective.</li>
-        <li><strong>Hyperscalers/platforms (MSFT, AMZN, GOOG, META, ORCL):</strong> capex intensity has reset higher; investors will demand cleaner linkage between AI demand, utilization, and margin durability.</li>
-        <li><strong>Enterprise software/workflow control (MSFT suite stack, CRM/ERP ecosystems, service management, cyber/identity):</strong> likely best 12–24 month risk-adjusted monetization path if AI attaches to existing distribution.</li>
-        <li><strong>Services/integration layer (IBM, Accenture peers, domain-focused implementers, PLTR-style deployment platforms):</strong> strong demand where governance + change management are hard, but labor intensity caps margin unless automation improves delivery model.</li>
-        <li><strong>Device-edge ecosystem (AAPL, AI PCs/phones, secure edge):</strong> underappreciated if on-device + private-cloud architecture improves privacy, latency, and retention economics.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>(2) Industry map by value chain (compute → models → software/apps → enterprise services)</h2>
-      <table>
-        <tr><th>Layer</th><th>Economic role</th><th>Representative exposures</th><th>Current profit quality</th><th>Structural fragility</th></tr>
-        <tr><td><strong>Compute</strong></td><td>Accelerators, foundry, CoWoS/advanced packaging, HBM, networking, optical interconnect, cooling/power</td><td>NVDA, TSM, AVGO, memory + optical chains, infra REIT/power-linked beneficiaries</td><td>Highest near-term dollar capture</td><td>Concentration risk, policy restrictions, eventual utilization normalization</td></tr>
-        <tr><td><strong>Model layer</strong></td><td>Foundation models, alignment/safety, eval stacks, fine-tuning infra</td><td>Frontier labs + hyperscaler internal models + open-model ecosystems</td><td>Strategic, but standalone monetization uneven</td><td>Capability diffusion + API price compression</td></tr>
-        <tr><td><strong>Software/apps</strong></td><td>Copilots, domain agents, workflow automation, data/analytics assistants</td><td>MSFT/GOOG productivity, CRM/ERP suites, vertical AI vendors</td><td>Most attractive medium-term if deeply embedded</td><td>Fast feature cloning for shallow wrappers</td></tr>
-        <tr><td><strong>Enterprise services</strong></td><td>Implementation, governance, model risk controls, process redesign</td><td>Consulting/SI + specialized deployment platforms</td><td>Demand resilient in regulated sectors</td><td>Labor-heavy model + pricing pressure toward outcomes</td></tr>
-      </table>
-
-      <h3>Where value migration is happening now</h3>
-      <p><strong>2023–2025:</strong> value concentrated in scarce compute and frontier-model novelty.<br/>
-      <strong>2026 onward:</strong> value broadens toward <em>cross-layer control systems</em>—cloud + model + data rights + identity + workflow + audit trail.</p>
-
-      <h3>What this means for portfolio construction</h3>
-      <p>Treat “AI” as a portfolio of linked but different businesses. The cycle is no longer one beta trade. You need separate books for: (1) supply scarcity beneficiaries, (2) monetization converters, (3) regulatory/sovereignty-adapted operators.</p>
-    </div>
-
-    <div class="card">
-      <h2>(3) Demand analysis: enterprise adoption, consumer uptake, pricing power, pilot → production</h2>
-      <h3>Enterprise adoption is broad; production maturity is uneven</h3>
-      <p>Survey evidence and field commentary indicate high experimentation and rising regular use, but uneven conversion to large-scale production with robust controls. McKinsey’s 2025 work highlights that many firms are “rewiring” operating models, yet only a subset report clear EBIT impact pathways.</p>
-
-      <h3>Where conversion is strongest today</h3>
-      <ul>
-        <li><strong>Customer operations:</strong> AI-assisted resolution, triage, knowledge retrieval, QA, and post-call workflow automation.</li>
-        <li><strong>Software engineering:</strong> coding copilots tied to test coverage, bug reduction, and deployment-cycle acceleration.</li>
-        <li><strong>Document-heavy regulated workflows:</strong> claims, underwriting support, KYC/onboarding, legal drafting, compliance review.</li>
-        <li><strong>Enterprise search + retrieval:</strong> permissioned, policy-aware access to internal knowledge with auditable logs.</li>
-      </ul>
-
-      <h3>Where demand still looks fragile</h3>
-      <ul>
-        <li>Generic chat overlays without workflow integration.</li>
-        <li>“Fully autonomous” multi-step agents with weak exception handling.</li>
-        <li>Consumer paid tiers where novelty usage is high but habit depth is shallow.</li>
-      </ul>
-
-      <h3>Pricing power: where it exists and where it fades</h3>
-      <p>Pricing power is strongest when AI can be attached to hard KPIs (cost-per-case down, cycle-time down, conversion up, error rates down, audit pass rates up). It fades rapidly when value proposition is generic text/image generation with low switching friction.</p>
-      <table>
-        <tr><th>Demand segment</th><th>Likely pricing power</th><th>Reason</th></tr>
-        <tr><td>Regulated workflow automation</td><td>High</td><td>Outcome-linked ROI + compliance burden + integration depth</td></tr>
-        <tr><td>Embedded productivity AI in incumbent suites</td><td>Medium-High</td><td>Distribution leverage + contract bundling</td></tr>
-        <tr><td>Developer tools with measurable velocity gains</td><td>Medium</td><td>Strong value but competitive crowding risk</td></tr>
-        <tr><td>Standalone generic assistant apps</td><td>Low</td><td>High substitutability + price anchoring by low-cost alternatives</td></tr>
-      </table>
-
-      <h3>Core KPI framework for 2026 demand quality</h3>
-      <ol>
-        <li>Pilot conversion rate within 6 months</li>
-        <li>Share of deployments in operating budgets (vs innovation budget)</li>
-        <li>90-day active usage depth by role</li>
-        <li>Renewal + expansion net of serving costs</li>
-        <li>Measured human rework rate after AI outputs</li>
-      </ol>
-
-      <p><strong>Analyst view:</strong> companies that disclose these metrics deserve premium multiples over peers reporting only AI seat counts or “engagement anecdotes.”</p>
-    </div>
-
-    <div class="card">
-      <h2>(4) Supply analysis: chips, packaging, cloud capacity, power/energy, talent bottlenecks</h2>
-      <h3>Chips and advanced packaging</h3>
-      <p>Frontier accelerator demand remains robust, but bottlenecks are increasingly system-level: advanced packaging throughput, HBM availability, server integration speed, and rack-level power/cooling architecture. This favors scale buyers with priority allocation and integrated deployment muscle.</p>
-
-      <h3>Cloud capacity buildout: from scarcity to utilization debate</h3>
-      <p>Hyperscaler capex has structurally stepped up. The critical debate is no longer “will they spend?” but “can they keep utilization high while preserving margins?”
-      Reported commentary from hyperscalers has increasingly centered on tokens-per-watt economics and throughput efficiency, signaling a shift from pure expansion to productivity of compute fleets.</p>
-
-      <h3>Power and energy are now hard constraints</h3>
-      <p>IEA’s 2025 energy-AI analysis estimates data center electricity consumption at ~415 TWh in 2024 and projects ~945 TWh by 2030 in the base case, with AI-accelerated workloads as a key driver. That means infrastructure bottlenecks are no longer only semiconductor bottlenecks; they are <strong>grid, permitting, cooling, and interconnection</strong> bottlenecks too.</p>
-
-      <h3>Talent bottleneck has shifted</h3>
-      <p>The limiting human resource in 2026 is less “elite model scientist” and more “enterprise deployment operator”: platform engineers, AI governance leads, security architects, and domain process owners who can run reliable production systems.</p>
-
-      <h3>Supply-side conclusion</h3>
-      <p>Supply stress is improving vs peak panic, but remains constrained in quieter ways. The next bottleneck cycle is subtler and operational—not just chip headline scarcity.</p>
-    </div>
-
-    <div class="card">
-      <h2>(5) Technology frontier and practical breakthroughs (what is hype vs monetizing)</h2>
-      <h3>What is monetizing now</h3>
-      <ul>
-        <li><strong>AI copilots tied to workflow systems of record</strong> (developer, support, productivity, operations).</li>
-        <li><strong>Enterprise retrieval + policy-aware orchestration</strong> (access control + auditability + low hallucination tolerance).</li>
-        <li><strong>Inference cost engineering stack</strong> (quantization, caching, routing, speculative decoding, distillation).</li>
-        <li><strong>Practical multimodal</strong> in document, voice, and visual enterprise pipelines.</li>
-      </ul>
-
-      <h3>What remains mostly hype (for now)</h3>
-      <ul>
-        <li>Claims of broad unattended autonomous execution across messy enterprise processes.</li>
-        <li>Benchmark-first narratives with weak production reliability metrics.</li>
-        <li>Consumer AI features that demo well but do not establish durable usage loops.</li>
-      </ul>
-
-      <h3>Important frontier truth: capability is compounding, but unit value per capability point is falling</h3>
-      <p>Stanford HAI’s 2025 AI Index highlights steep inference-cost decline for GPT-3.5-equivalent quality over 2022–2024. This is bullish for adoption, but it also means raw model capability can commoditize faster unless paired with distribution, data rights, or workflow lock-in.</p>
-
-      <h3>Breakthroughs to monitor over next 12 months</h3>
-      <ol>
-        <li><strong>Reliable reasoning + tool-use under enterprise constraints</strong> (determinism, policy boundaries, post-hoc traceability).</li>
-        <li><strong>Edge/private deployment maturity</strong> for low-latency and data sovereignty use cases.</li>
-        <li><strong>Governance automation tooling</strong> (continuous eval, policy simulation, incident response orchestration).</li>
-      </ol>
-
-      <p><strong>Analyst view:</strong> the market still overpays for “model theater” and underpays for “boring AI plumbing” that actually protects margins and retention.</p>
-    </div>
-
-    <div class="card">
-      <h2>(6) Competitive dynamics and moats by segment</h2>
-      <table>
-        <tr><th>Segment</th><th>Moat sources that matter</th><th>How moats decay</th><th>Current assessment</th></tr>
-        <tr><td>Compute ecosystems</td><td>Software stack lock-in, developer tooling, full-system optimization, roadmap visibility</td><td>Custom silicon adoption, open alternatives, buyer concentration pressure</td><td><strong>Strong</strong>, but increasingly scrutinized</td></tr>
-        <tr><td>Foundation model providers</td><td>Reliability, safety stack, enterprise trust, ecosystem integrations</td><td>Quality convergence, lower-cost substitutes, rapid open-model progress</td><td><strong>Mixed</strong> unless paired with distribution</td></tr>
-        <tr><td>Enterprise application vendors</td><td>Workflow embedding, data gravity, procurement trust, change-management footprint</td><td>Feature cloning by platforms, weak activation, low switching cost if shallow embed</td><td><strong>Best medium-term moat potential</strong></td></tr>
-        <tr><td>Enterprise services/SI</td><td>Domain-specific transformation capability, governance execution at scale</td><td>Labor compression from AI tools, client insourcing</td><td><strong>Durable demand</strong>, margin selective</td></tr>
-      </table>
-
-      <h3>Moat hierarchy for 2026</h3>
-      <ol>
-        <li>Distribution + workflow control</li>
-        <li>Serving-cost efficiency + reliability</li>
-        <li>Governance/compliance credibility</li>
-        <li>Model benchmark leadership (still important, but less monetizable by itself)</li>
-      </ol>
-
-      <h3>Name-level strategic notes</h3>
-      <ul>
-        <li><strong>MSFT:</strong> strongest if it keeps proving cross-layer capture (infrastructure, productivity, enterprise contracts) and protects margin via inference efficiency.</li>
-        <li><strong>AMZN:</strong> upside tied to AWS monetization depth + custom silicon economics (Trainium/Inferentia-like strategy) + capacity utilization.</li>
-        <li><strong>GOOG:</strong> unique advantage in model research + distribution surfaces; key question is revenue mix quality versus compute spend.</li>
-        <li><strong>META:</strong> powerful ad-distribution flywheel and open-model influence; key monitor is ROI transparency of very large capex plans.</li>
-        <li><strong>NVDA/TSM/AVGO complex:</strong> moat remains real but increasingly judged on demand breadth and sustainability, not just headline shortage.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>(7) Financial architecture: capex intensity, unit economics, margin durability, cash-flow quality</h2>
-      <h3>The capex regime has permanently shifted up</h3>
-      <p>The market has accepted higher capex for strategic AI positioning. What it has not accepted—and will punish—is capex with weak downstream monetization evidence. In other words: capex is fine, capex without quality conversion is not.</p>
-
-      <h3>Unit economics scorecard (practical analyst template)</h3>
-      <table>
-        <tr><th>Question</th><th>Why it matters</th><th>Green signal</th><th>Red signal</th></tr>
-        <tr><td>Revenue per active AI workflow</td><td>Measures monetization density</td><td>Rising with usage depth</td><td>Flat despite user growth</td></tr>
-        <tr><td>Variable serving cost per workflow</td><td>Direct gross-margin determinant</td><td>Declining via routing/optimization</td><td>Cost rises faster than usage value</td></tr>
-        <tr><td>Implementation payback period</td><td>Enterprise scaling viability</td><td>&lt; 12–18 months in key workflows</td><td>Open-ended payback assumptions</td></tr>
-        <tr><td>Renewal + expansion net of cost-to-serve</td><td>True quality of ARR-like claims</td><td>Healthy expansion after cost normalization</td><td>Expansion dependent on subsidy pricing</td></tr>
-        <tr><td>Cash conversion quality</td><td>Separates accounting growth vs real economics</td><td>OCF and FCF keep pace with AI revenue claims</td><td>Narrative growth + deteriorating cash quality</td></tr>
-      </table>
-
-      <h3>Margin durability in AI software</h3>
-      <p>Margin durability is less about list price and more about operating system design: model routing, cache-hit rates, retrieval quality, and escalation logic to humans. Teams can keep ASP stable and still lose margin if workload mix shifts to expensive inference without tight controls.</p>
-
-      <h3>Capex interpretation framework for hyperscalers</h3>
-      <ol>
-        <li><strong>Productive capex:</strong> linked to visible demand, signed backlog, and utilization pathways.</li>
-        <li><strong>Strategic option capex:</strong> rational but uncertain near-term returns.</li>
-        <li><strong>Defensive capex:</strong> spend driven by fear of missing out rather than unit economics.</li>
-      </ol>
-      <p><strong>Analyst bias:</strong> reward names that explicitly separate these categories in reporting language and guidance discipline.</p>
-    </div>
-
-    <div class="card">
-      <h2>(8) Geopolitics and export-control scenario analysis</h2>
-      <h3>Why geopolitics belongs inside valuation, not in footnotes</h3>
-      <p>Export controls now affect chips, toolchains, cloud-access pathways, and increasingly compliance burden. This directly changes TAM, pricing, and supply-chain geometry.</p>
-
-      <table>
-        <tr><th>Scenario</th><th>Description</th><th>Winners</th><th>Pressure points</th></tr>
-        <tr><td><strong>Managed tension (base)</strong></td><td>Rules tighten incrementally; licensing remains selective; adaptation possible with compliance investment</td><td>Diversified global operators with legal/compliance scale</td><td>Mid-tier vendors with limited compliance infrastructure</td></tr>
-        <tr><td><strong>Hard fragmentation</strong></td><td>Broader restrictions and reciprocal controls; duplicated stacks by geopolitical bloc</td><td>Domestic champions and sovereign-cloud providers</td><td>Global efficiency, cross-border model deployment, multinational supply chains</td></tr>
-        <tr><td><strong>Partial thaw</strong></td><td>Targeted easing in specific categories with strict guardrails</td><td>Large players able to execute complex licensing and monitoring</td><td>Narratives based on permanent scarcity premiums</td></tr>
-      </table>
-
-      <h3>Current signal set</h3>
-      <p>BIS activity remains elevated, including periodic rule revisions and enforcement actions; directionally this indicates continuing export-control salience rather than policy normalization.</p>
-
-      <h3>Portfolio implication</h3>
-      <p>Treat concentration in single chokepoints (specific foundry lane, packaging dependency, jurisdiction-specific licensing) as an explicit risk-budget item, not a macro afterthought.</p>
-    </div>
-
-    <div class="card">
-      <h2>(9) Policy/regulatory landscape and likely pathways</h2>
-      <h3>Regulation is converging on accountability of deployment</h3>
-      <p>Across US/EU/Asia, direction of travel is practical accountability: risk classification, documentation, traceability, incident handling, and rights protections. The EU AI Act timeline and prohibited-practice guidance make this concrete for high-risk deployments and GPAI-adjacent obligations.</p>
-
-      <h3>Economic consequences</h3>
-      <ul>
-        <li><strong>Compliance cost is becoming a moat.</strong> Large incumbents can absorb it; undercapitalized fast-followers may struggle.</li>
-        <li><strong>Procurement standards are tightening.</strong> Buyers increasingly require indemnification, audit trails, and governance controls.</li>
-        <li><strong>Localization burden rises.</strong> Regulatory divergence forces product, legal, and data-architecture variation by jurisdiction.</li>
-      </ul>
-
-      <h3>Likely pathway (next 12 months)</h3>
-      <ol>
-        <li>More explicit implementation guidance and enforcement examples</li>
-        <li>Higher legal scrutiny on high-impact enterprise and public-sector use cases</li>
-        <li>Stronger role for third-party assurance and AI risk tooling</li>
-      </ol>
-
-      <p><strong>Analyst view:</strong> regulation is not purely a tax on growth. It can improve industry structure by filtering low-quality supply and rewarding operators with serious controls.</p>
-    </div>
-
-    <div class="card">
-      <h2>(10) Risk matrix (probability, impact, early warning, response)</h2>
-      <table>
-        <tr><th>Risk</th><th>Probability (12m)</th><th>Impact</th><th>Early warning indicators</th><th>Response</th></tr>
-        <tr><td>Capex overshoot vs monetization lag</td><td>Medium-High</td><td>High</td><td>Capex/leases rising faster than attributable AI revenue; weak incremental GM</td><td>Favor names with hard conversion metrics + cash quality transparency</td></tr>
-        <tr><td>Inference price war / API commoditization</td><td>High</td><td>Medium-High</td><td>Aggressive price cuts without mix shift to high-value workflows</td><td>Overweight integrated distribution platforms and cost-efficient operators</td></tr>
-        <tr><td>Export-control tightening shock</td><td>Medium</td><td>High</td><td>Draft-rule broadening, rising denial rates, tighter due-diligence obligations</td><td>Control chokepoint concentration; scenario-test earnings sensitivity</td></tr>
-        <tr><td>Power / grid / permitting delays</td><td>Medium</td><td>Medium-High</td><td>Interconnect queues, project slippage, regional curtailment constraints</td><td>Track MW pipeline + commissioning timelines, not just chip supply</td></tr>
-        <tr><td>Enterprise quality incidents (safety/legal/reliability)</td><td>Medium</td><td>Medium</td><td>Public failures, litigation, stricter enterprise procurement standards</td><td>Prioritize governance-first vendors with observability tooling</td></tr>
-        <tr><td>Faster-than-expected model convergence</td><td>High</td><td>Medium</td><td>Benchmark gap narrows while switching costs stay low</td><td>Bias toward workflow/data moat over model-brand moat</td></tr>
-      </table>
-    </div>
-
-    <div class="card">
-      <h2>(11) Scenario tree (3 / 6 / 12 months) with signposts</h2>
-      <h3>3 months (tactical tape)</h3>
-      <ul>
-        <li><strong>Base (55%)</strong>: AI demand remains solid; markets reward names with monetization clarity and punish vague capex narratives.</li>
-        <li><strong>Bull (25%)</strong>: Several hyperscalers show accelerating AI revenue attribution and stable margins; enterprise conversion commentary strengthens.</li>
-        <li><strong>Bear (20%)</strong>: Demand quality commentary weakens while spend remains high; valuation compresses broadly.</li>
-      </ul>
-
-      <h3>6 months (structure test)</h3>
-      <ul>
-        <li><strong>Base (50%)</strong>: Two-speed market forms—high-quality monetizers outperform, narrative-heavy names lag.</li>
-        <li><strong>Bull (30%)</strong>: Inference efficiency + workflow embedding drive visible margin resilience across software and cloud.</li>
-        <li><strong>Bear (20%)</strong>: policy shock or capacity-utilization wobble triggers risk-off across AI chain.</li>
-      </ul>
-
-      <h3>12 months (regime verdict)</h3>
-      <ul>
-        <li><strong>Base (45%)</strong>: AI spend is validated as durable, but leadership rotates to cash-generative workflow owners.</li>
-        <li><strong>Bull (35%)</strong>: Broad earnings upgrades as AI moves into operating budgets with improving unit economics.</li>
-        <li><strong>Bear (20%)</strong>: prolonged de-rating if economics fail to match infrastructure scale and policy friction rises.</li>
-      </ul>
-
-      <h3>Signposts that matter most</h3>
-      <ol>
-        <li>Explicit AI revenue attribution in hyperscaler disclosures</li>
-        <li>Incremental gross margin trend net of AI serving costs</li>
-        <li>Pilot-to-production conversion metrics from enterprise vendors</li>
-        <li>HBM + advanced packaging lead-time trends</li>
-        <li>Grid-connection and data-center commissioning progress by region</li>
-        <li>New BIS/EU implementation actions affecting deployment economics</li>
-      </ol>
-    </div>
-
-    <div class="card">
-      <h2>(12) Actionable monitoring dashboard + what would change my mind</h2>
-      <h3>Weekly monitoring dashboard (for discipline, not noise)</h3>
-      <table>
-        <tr><th>Block</th><th>Track</th><th>Bull read</th><th>Bear read</th></tr>
-        <tr><td>Demand quality</td><td>Conversion, expansion, active usage depth</td><td>Conversions rise and broaden by function</td><td>Adoption broad but shallow; weak expansion quality</td></tr>
-        <tr><td>Serving economics</td><td>Cost per useful output, routing efficiency, rework rates</td><td>Costs decline while quality stable/improving</td><td>Usage up, but cost and rework up faster</td></tr>
-        <tr><td>Supply health</td><td>Packaging/HBM, capacity fill, deployment lead times</td><td>Constraints ease with strong utilization</td><td>Capacity ramps into soft pockets</td></tr>
-        <tr><td>Financial quality</td><td>Incremental GM, OCF/FCF conversion, disclosure quality</td><td>AI growth converts to durable cash</td><td>Narrative growth, weak cash conversion</td></tr>
-        <tr><td>Policy/geopolitics</td><td>Export controls, AI Act enforcement, sovereignty moves</td><td>Predictable adaptation path</td><td>Abrupt rules materially alter sell-through</td></tr>
-      </table>
-
-      <h3>What would make me more bullish</h3>
-      <ul>
-        <li>Clear migration of AI spend from pilot budgets into recurring operating budgets across multiple sectors.</li>
-        <li>Evidence that inference-cost declines are being retained as margin, not entirely competed away.</li>
-        <li>Demand broadening beyond top concentration points in the compute supply chain.</li>
-      </ul>
-
-      <h3>What would force a bearish reset</h3>
-      <ul>
-        <li>2–3 consecutive reporting cycles where capex growth materially outpaces monetization quality.</li>
-        <li>Policy fragmentation that significantly reduces cross-border deployment economics.</li>
-        <li>Rapid commoditization of model layer without offsetting moat from distribution/workflow/data.</li>
-      </ul>
-
-      <h3>Bottom line</h3>
-      <p>Stay structurally constructive on AI, but avoid treating the ecosystem as one trade. Overweight names where AI economics are becoming <strong>visible, repeatable, and cash-generative</strong>. Underweight stories that require perfect policy, perfect utilization, and permanent pricing power to work.</p>
-    </div>
-
-    <div class="card">
-      <h2>Selected reference signals (public)</h2>
-      <ul class="small">
-        <li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report" target="_blank" rel="noopener">Stanford HAI — AI Index 2025</a> (capability and cost trend context).</li>
-        <li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value" target="_blank" rel="noopener">McKinsey — State of AI 2025</a> (enterprise adoption and scaling maturity patterns).</li>
-        <li><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noopener">IEA — Energy demand from AI</a> (data-center electricity demand trajectory and scenario ranges).</li>
-        <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">European Commission — AI Act framework</a> (risk tiers, obligations, enforcement path).</li>
-        <li><a href="https://www.bis.gov/news-updates" target="_blank" rel="noopener">U.S. BIS — News & updates</a> (export-control and enforcement direction).</li>
-        <li><a href="https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2" target="_blank" rel="noopener">Microsoft FY2026 earnings materials</a>, and selected hyperscaler/company IR disclosures for capex/utilization commentary.</li>
-      </ul>
-      <p class="small muted">Research notebook only. Not investment advice. Purpose: scenario planning, risk discipline, and thesis falsification.</p>
-    </div>
-
-    <p class="muted small">Last updated: 2026-02-25 09:30 HKT • Path: <code>publish-finance-report/ai-research/latest.html</code></p>
+  <div class="card">
+    <h2>(1) Executive thesis and key calls</h2>
+    <span class="tag fact">Fact</span> <span class="tag view">Interpretation</span> <span class="tag scn">Scenario assumption</span>
+    <p><strong>Base thesis:</strong> AI demand is still accelerating, but equity leadership is rotating from “capacity owners” to “capacity + monetization discipline owners.”</p>
+    <ul>
+      <li><span class="tag fact">Fact</span> NVIDIA reported FY2026 Q4 revenue of <strong>$68.1B (+73% y/y)</strong>; FY2026 revenue <strong>$215.9B (+65% y/y)</strong> (<a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026" target="_blank" rel="noopener">NVIDIA, 2026-02-25</a>).</li>
+      <li><span class="tag fact">Fact</span> Microsoft FY26 Q2 revenue was <strong>$81.3B (+17%)</strong>, with explicit AI-stack emphasis in management commentary (<a href="https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast" target="_blank" rel="noopener">Microsoft, 2026-01-28</a>).</li>
+      <li><span class="tag view">Interpretation</span> The market is no longer paying a premium for AI spend alone; investors now demand proof of margin retention and cash conversion.</li>
+      <li><span class="tag scn">Scenario</span> If capex growth stays extreme while enterprise conversion slows, multiple compression can hit both infra and software simultaneously.</li>
+    </ul>
   </div>
 
-  <script>
-    (function(){
-      const key='atlas-theme'; const btn=document.getElementById('themeToggle');
-      const apply=(m)=>{document.body.classList.toggle('light',m==='light');btn.textContent='Theme: '+(m||'auto').toUpperCase();};
-      const saved=localStorage.getItem(key); const auto=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';
-      apply(saved||auto);
-      btn.addEventListener('click',()=>{const cur=localStorage.getItem(key)||'auto';const next=cur==='auto'?'light':cur==='light'?'dark':'auto';if(next==='auto')localStorage.removeItem(key);else localStorage.setItem(key,next);apply(next==='auto'?((window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark'):next);});
-    })();
-  </script>
+  <div class="card">
+    <h2>(2) Value-chain map: compute → cloud/platform → model → application/workflow → services</h2>
+    <table>
+      <tr><th>Layer</th><th>Who matters</th><th>What is proven</th><th>What is fragile</th></tr>
+      <tr><td>Compute</td><td>NVDA, TSM, AVGO</td><td>Revenue momentum still strong</td><td>Concentration + policy + power constraints</td></tr>
+      <tr><td>Cloud/platform</td><td>MSFT, AMZN, GOOG, META, ORCL</td><td>Demand visibility improving</td><td>Utilization and return-on-capex debate</td></tr>
+      <tr><td>Enterprise apps</td><td>MSFT, GOOG, META ecosystem, AAPL edge</td><td>Workflow embed improving stickiness</td><td>Feature commoditization</td></tr>
+      <tr><td>Services / deployment</td><td>IBM, Accenture, PLTR</td><td>Strong enterprise demand</td><td>Labor-heavy delivery can cap margins</td></tr>
+    </table>
+    <p><span class="tag view">Interpretation</span> Durable alpha is likely in cross-layer operators (distribution + data control + cost control), not in single-point model feature winners.</p>
+  </div>
+
+  <div class="card">
+    <h2>(3) Demand quality: pilots vs production</h2>
+    <ul>
+      <li><span class="tag fact">Fact</span> IBM disclosed generative AI book of business <strong>&gt;$12.5B</strong> in its 2025 results commentary (<a href="https://newsroom.ibm.com/2026-01-28-IBM-RELEASES-FOURTH-QUARTER-RESULTS" target="_blank" rel="noopener">IBM, 2026-01-28</a>).</li>
+      <li><span class="tag fact">Fact</span> Oracle FY26 Q2 release highlights very large RPO growth and cloud demand signaling (<a href="https://investor.oracle.com/investor-news/news-details/2025/Oracle-Announces-Fiscal-Year-2026-Second-Quarter-Financial-Results/default.aspx" target="_blank" rel="noopener">Oracle, 2025-12-10</a>).</li>
+      <li><span class="tag view">Interpretation</span> The KPI that matters now is pilot-to-production conversion in &lt;2 quarters, not “number of pilots signed.”</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>(4) Supply-side reality: chips, networking, packaging, and power</h2>
+    <ul>
+      <li><span class="tag fact">Fact</span> Broadcom FY2025 Q4: revenue <strong>$18.0B (+28%)</strong>; guidance also remained strong (<a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-fourth-quarter-and-fiscal-year-2025" target="_blank" rel="noopener">Broadcom, 2025-12-11</a>).</li>
+      <li><span class="tag fact">Fact</span> IEA projects data-center electricity demand rising materially toward 2030, with AI as a key contributor (<a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noopener">IEA, 2025</a>).</li>
+      <li><span class="tag view">Interpretation</span> The bottleneck stack is now system-level (power, cooling, commissioning), not just GPU die supply.</li>
+      <li><span class="tag scn">Scenario</span> If utilities/interconnect timelines slip, hyperscaler monetization timing may lag despite healthy demand.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>(5) Technology frontier: what is monetizing vs what is still demo theater</h2>
+    <p><span class="tag fact">Fact</span> Stanford AI Index 2025 documents rapid model-cost declines and broad capability progress (<a href="https://hai.stanford.edu/ai-index/2025-ai-index-report" target="_blank" rel="noopener">Stanford HAI, 2025</a>).</p>
+    <p><span class="tag view">Interpretation</span> Falling model costs are bullish for adoption but bearish for unmoated API-only business models.</p>
+    <p><strong>Monetizing:</strong> embedded copilots, enterprise search with permissions, inference optimization tooling.<br/><strong>Still fragile:</strong> broad autonomous agents in messy real-world enterprise workflows.</p>
+  </div>
+
+  <div class="card">
+    <h2>(6) Competitive moats by listed ecosystem names</h2>
+    <table>
+      <tr><th>Name group</th><th>Moat today</th><th>What can break it</th></tr>
+      <tr><td>NVDA / TSM / AVGO</td><td>Scale, ecosystem, integration depth</td><td>Policy shocks, buyer concentration, architecture shifts</td></tr>
+      <tr><td>MSFT / AMZN / GOOG / META / ORCL</td><td>Distribution + cloud control + enterprise channels</td><td>Capex returns below cost of capital</td></tr>
+      <tr><td>AAPL</td><td>Device distribution + on-device privacy narrative</td><td>Weak AI feature differentiation</td></tr>
+      <tr><td>IBM / Accenture / PLTR</td><td>Enterprise integration, governance, mission-critical deployments</td><td>Delivery margin pressure and insourcing</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>(7) Financial architecture: capex intensity vs cash-flow evidence</h2>
+    <ul>
+      <li><span class="tag fact">Fact</span> Microsoft and Meta/Alphabet/Amazon releases continue to stress AI infrastructure investment pacing (<a href="https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2" target="_blank" rel="noopener">Microsoft call</a>, <a href="https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Fourth-Quarter-2025-and-Fiscal-Year-Results-2026-KEvZIMKBLS/default.aspx" target="_blank" rel="noopener">Alphabet Q4 2025 release</a>, <a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx" target="_blank" rel="noopener">Meta Q4 2025 release</a>).</li>
+      <li><span class="tag view">Interpretation</span> 2026 likely becomes a “show me AI gross-margin durability” year, not a “who spent most” year.</li>
+      <li><span class="tag scn">Low-confidence scenario</span> If demand stays robust and serving-cost per task falls faster than price, current high capex can still clear acceptable returns.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>(8) Geopolitics and export-control pathways</h2>
+    <ul>
+      <li><span class="tag fact">Fact</span> BIS continues iterative updates/enforcement on export controls (<a href="https://www.bis.gov/news-updates" target="_blank" rel="noopener">BIS updates</a>).</li>
+      <li><span class="tag view">Interpretation</span> Geopolitical friction should be treated as a valuation input (TAM and sell-through) rather than a tail footnote risk.</li>
+      <li><span class="tag scn">Scenario</span> Managed-fragmentation is still the base case; hard decoupling remains lower probability but high-impact.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>(9) Regulation and procurement: where economics are changing</h2>
+    <ul>
+      <li><span class="tag fact">Fact</span> EU AI Act framework continues formalization of obligations by risk category (<a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">European Commission</a>).</li>
+      <li><span class="tag view">Interpretation</span> Compliance cost is becoming a moat for large incumbents and high-trust enterprise vendors.</li>
+      <li><span class="tag scn">Scenario</span> Procurement checklists (auditability, traceability, indemnification) increasingly gate vendor wins.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>(10) Risk matrix (12-month horizon)</h2>
+    <table>
+      <tr><th>Risk</th><th>Probability</th><th>Impact</th><th>Early warning</th></tr>
+      <tr><td>Capex outruns monetization</td><td>Medium-high</td><td>High</td><td>AI revenue attribution weak vs spend</td></tr>
+      <tr><td>Model commoditization</td><td>High</td><td>Medium-high</td><td>Price cuts without workflow lock-in</td></tr>
+      <tr><td>Power/interconnect delays</td><td>Medium</td><td>Medium-high</td><td>Data-center commissioning slippage</td></tr>
+      <tr><td>Policy tightening shock</td><td>Medium</td><td>High</td><td>Broader control scope or stricter enforcement</td></tr>
+      <tr><td>Enterprise quality incidents</td><td>Medium</td><td>Medium</td><td>Legal disputes and rollback of deployments</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>(11) Scenario tree (3 / 6 / 12 months)</h2>
+    <p><strong>3M:</strong> dispersion by disclosure quality (who proves conversion economics).<br/>
+    <strong>6M:</strong> major split between workflow owners and model-wrapper vendors.<br/>
+    <strong>12M:</strong> leadership likely concentrated in firms proving repeatable AI cash generation under policy constraints.</p>
+    <p><span class="tag scn">Assumptions</span> no severe macro recession shock; no abrupt cross-border AI trade freeze.</p>
+  </div>
+
+  <div class="card">
+    <h2>(12) Action plan and “what changes my mind” checklist</h2>
+    <h3>Weekly dashboard</h3>
+    <ol>
+      <li>AI revenue attribution quality (management specificity)</li>
+      <li>Incremental margins net of AI serving costs</li>
+      <li>Pilot-to-production conversion in enterprise deployments</li>
+      <li>Capacity commissioning vs demand ramp</li>
+      <li>Regulatory or export-control rule changes</li>
+    </ol>
+    <h3>Would turn more bullish if</h3>
+    <ul><li>More companies show AI growth with stable/improving FCF conversion.</li><li>Demand broadens beyond top concentration points in compute supply.</li></ul>
+    <h3>Would turn more defensive if</h3>
+    <ul><li>Two consecutive quarters of spend acceleration without economics proof.</li><li>Significant policy fragmentation impairs deployment velocity.</li></ul>
+  </div>
+
+  <div class="card small">
+    <h2>Reference set used in this run (dated, credible)</h2>
+    <ul>
+      <li>NVIDIA FY2026 Q4/FY2026 results (2026-02-25): <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026" target="_blank" rel="noopener">link</a></li>
+      <li>Microsoft FY26 Q2 press release (2026-01-28): <a href="https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast" target="_blank" rel="noopener">link</a></li>
+      <li>Broadcom FY2025 Q4 results (2025-12-11): <a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-fourth-quarter-and-fiscal-year-2025" target="_blank" rel="noopener">link</a></li>
+      <li>Apple FY2026 Q1 results (2026-01-29): <a href="https://www.apple.com/newsroom/2026/01/apple-reports-first-quarter-results/" target="_blank" rel="noopener">link</a></li>
+      <li>IBM Q4 2025 results (2026-01-28): <a href="https://newsroom.ibm.com/2026-01-28-IBM-RELEASES-FOURTH-QUARTER-RESULTS" target="_blank" rel="noopener">link</a></li>
+      <li>Oracle FY2026 Q2 release (2025-12-10): <a href="https://investor.oracle.com/investor-news/news-details/2025/Oracle-Announces-Fiscal-Year-2026-Second-Quarter-Financial-Results/default.aspx" target="_blank" rel="noopener">link</a></li>
+      <li>Alphabet Q4 2025 results page (2026-02-04): <a href="https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Fourth-Quarter-2025-and-Fiscal-Year-Results-2026-KEvZIMKBLS/default.aspx" target="_blank" rel="noopener">link</a></li>
+      <li>Meta Q4 2025 results page (2026-01-28): <a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx" target="_blank" rel="noopener">link</a></li>
+      <li>Palantir investor news portal / Q4 release path (2026): <a href="https://investors.palantir.com/news-details/2026/Palantir-Reports-Fourth-Quarter-and-Fiscal-Year-2025-Results/default.aspx" target="_blank" rel="noopener">link</a></li>
+      <li>Accenture FY26 Q1 earnings package (2025-12-18): <a href="https://newsroom.accenture.com/content/1qfy26-earnings/accenture-reports-first-quarter-fiscal-2026-results.pdf" target="_blank" rel="noopener">link</a></li>
+      <li>Stanford HAI AI Index 2025: <a href="https://hai.stanford.edu/ai-index/2025-ai-index-report" target="_blank" rel="noopener">link</a></li>
+      <li>IEA Energy and AI (2025): <a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noopener">link</a></li>
+      <li>EU AI Act framework: <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">link</a></li>
+      <li>U.S. BIS updates: <a href="https://www.bis.gov/news-updates" target="_blank" rel="noopener">link</a></li>
+    </ul>
+    <p class="muted">Low-confidence note: a subset of IR pages is intermittently behind anti-bot protection; where direct numeric extraction was blocked, analysis uses only high-level statements and marks assumptions accordingly.</p>
+  </div>
+
+  <p class="muted small">Last updated: 2026-03-03 09:30 HKT • Path: <code>publish-finance-report/ai-research/latest.html</code></p>
+</div>
 </body>
 </html>
