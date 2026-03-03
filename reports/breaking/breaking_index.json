@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "id": "2026-03-03-0940-hormuz-closure-confirmed-reuters-live",
+      "time": "2026-03-03 09:40 HKT",
+      "createdAt": "2026-03-03T09:40:00+08:00",
+      "title": "Macro escalation confirmed: Reuters live reports Hormuz closure threat to shipping",
+      "summary": "Fresh Reuters live-wire escalation (closure + threat-to-shipping) reinforces thesis-changing macro risk; no new idiosyncratic single-name break this hour.",
+      "path": "./items/2026-03-03-0940-hormuz-closure-confirmed-reuters-live.md"
+    },
+    {
       "id": "2026-03-03-0840-hormuz-closure-provisional",
       "time": "2026-03-03 08:40 HKT",
       "createdAt": "2026-03-03T08:40:00+08:00",
@@ -21,7 +29,7 @@
       "time": "2026-02-26 05:57 HKT",
       "createdAt": "2026-02-26T05:57:00+08:00",
       "title": "NVIDIA posts strong Q4 results; Q1 revenue guide above consensus",
-      "summary": "Material watchlist catalyst: NVIDIA reported Q4 FY2026 revenue of $68.1B and guided Q1 to $78B ±2%, above pre-print consensus and likely supportive for AI-capex complex (NVDA/AVGO/TSM/MSFT/GOOG).",
+      "summary": "Material watchlist catalyst: NVIDIA reported Q4 FY2026 revenue of $68.1B and guided Q1 to $78B \u00b12%, above pre-print consensus and likely supportive for AI-capex complex (NVDA/AVGO/TSM/MSFT/GOOG).",
       "path": "./items/2026-02-26-0557-nvda-q4-results-beat-q1-guide-above.md"
     },
     {
@@ -105,6 +113,6 @@
       "path": "./items/2026-02-24-0028-tariff-shock.md"
     }
   ],
-  "lastCheckedAt": "2026-03-03T08:40:00+08:00",
-  "lastCheckStatus": "material_provisional"
+  "lastCheckedAt": "2026-03-03T09:40:00+08:00",
+  "lastCheckStatus": "material"
 }

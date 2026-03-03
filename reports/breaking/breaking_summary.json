@@ -1,11 +1,11 @@
 {
-  "time": "2026-03-03 08:40 HKT",
-  "title": "Provisional macro escalation: Hormuz-closure headline (awaiting multi-source confirmation)",
-  "summary": "Single-source/indirect closure headline is potentially thesis-changing; treat as provisional while broader conflict-led oil/risk-premium stress remains confirmed.",
+  "time": "2026-03-03 09:40 HKT",
+  "title": "Macro escalation confirmed: Reuters live reports Hormuz closure threat to shipping",
+  "summary": "Provisional Hormuz-closure signal is upgraded: Reuters live update now reports explicit closure-enforcement threat; macro risk regime remains dominant.",
   "path": "./2026-03-03.md",
-  "confidence": "medium-provisional",
-  "lastCheckedAt": "2026-03-03T08:40:00+08:00",
-  "lastCheckStatus": "material_provisional",
-  "lastCheckConfidence": "medium",
-  "lastCheckSourceQuality": "mixed-high"
+  "confidence": "high",
+  "lastCheckedAt": "2026-03-03T09:40:00+08:00",
+  "lastCheckStatus": "material",
+  "lastCheckConfidence": "high",
+  "lastCheckSourceQuality": "high"
 }
