@@ -1,11 +1,11 @@
 {
-  "time": "2026-03-03 07:40 HKT",
-  "title": "No new material event (monitor pass)",
-  "summary": "No fresh multi-source thesis-changing watchlist catalyst; macro geopolitical/oil risk premium remains elevated in continuation mode.",
+  "time": "2026-03-03 08:40 HKT",
+  "title": "Provisional macro escalation: Hormuz-closure headline (awaiting multi-source confirmation)",
+  "summary": "Single-source/indirect closure headline is potentially thesis-changing; treat as provisional while broader conflict-led oil/risk-premium stress remains confirmed.",
   "path": "./2026-03-03.md",
-  "confidence": "moderate-high",
-  "lastCheckedAt": "2026-03-03T07:40:00+08:00",
-  "lastCheckStatus": "no_material",
-  "lastCheckConfidence": "moderate-high",
-  "lastCheckSourceQuality": "high-mixed"
+  "confidence": "medium-provisional",
+  "lastCheckedAt": "2026-03-03T08:40:00+08:00",
+  "lastCheckStatus": "material_provisional",
+  "lastCheckConfidence": "medium",
+  "lastCheckSourceQuality": "mixed-high"
 }

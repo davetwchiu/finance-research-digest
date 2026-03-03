@@ -1,5 +1,5 @@
 {
-  "run": 18,
+  "run": 19,
   "boost": {
     "TSLA": 2,
     "IBM": 2,
@@ -10,9 +10,11 @@
     "AAPL": 2,
     "TSM": 2
   },
-  "lastRunAt": "2026-03-03T07:40:00+08:00",
-  "lastUnusual": [],
-  "lastStatus": "no_material",
-  "lastConfidence": "moderate-high",
-  "lastSourceQuality": "high-mixed"
+  "lastRunAt": "2026-03-03T08:40:00+08:00",
+  "lastUnusual": [
+    "macro_hormuz_closure_claim_provisional"
+  ],
+  "lastStatus": "material_provisional",
+  "lastConfidence": "medium",
+  "lastSourceQuality": "mixed-high"
 }
