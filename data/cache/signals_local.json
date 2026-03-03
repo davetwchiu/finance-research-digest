@@ -1,0 +1,398 @@
+{
+  "generated_at": "2026-03-03T03:56:34.469444+00:00",
+  "source": "yahoo_chart_v8",
+  "count": 17,
+  "signals": {
+    "AAPL": {
+      "ok": true,
+      "source_ticker": "AAPL",
+      "latest": {
+        "open": 262.410004,
+        "high": 266.529999,
+        "low": 260.200012,
+        "close": 264.720001,
+        "volume": 41780100.0
+      },
+      "indicators": {
+        "sma20": 268.955501,
+        "sma50": 265.180799,
+        "rsi14": 48.217791,
+        "macd": {
+          "macd": 0.840808,
+          "signal": 0.936171,
+          "hist": -0.095363
+        },
+        "atr14": 6.60296
+      },
+      "samples": 251
+    },
+    "AVGO": {
+      "ok": true,
+      "source_ticker": "AVGO",
+      "latest": {
+        "open": 309.359985,
+        "high": 320.040009,
+        "low": 307.200012,
+        "close": 318.820007,
+        "volume": 20531400.0
+      },
+      "indicators": {
+        "sma20": 328.365001,
+        "sma50": 335.1814,
+        "rsi14": 41.48877,
+        "macd": {
+          "macd": -3.73356,
+          "signal": -2.983107,
+          "hist": -0.750452
+        },
+        "atr14": 14.494902
+      },
+      "samples": 251
+    },
+    "BBAI": {
+      "ok": true,
+      "source_ticker": "BBAI",
+      "latest": {
+        "open": 3.8,
+        "high": 4.185,
+        "low": 3.78,
+        "close": 4.1,
+        "volume": 52485300.0
+      },
+      "indicators": {
+        "sma20": 4.245,
+        "sma50": 5.2472,
+        "rsi14": 41.885507,
+        "macd": {
+          "macd": -0.397173,
+          "signal": -0.441859,
+          "hist": 0.044686
+        },
+        "atr14": 0.364776
+      },
+      "samples": 251
+    },
+    "KTOS": {
+      "ok": true,
+      "source_ticker": "KTOS",
+      "latest": {
+        "open": 92.419998,
+        "high": 97.099998,
+        "low": 85.330002,
+        "close": 90.720001,
+        "volume": 18896800.0
+      },
+      "indicators": {
+        "sma20": 92.994501,
+        "sma50": 96.7746,
+        "rsi14": 46.466406,
+        "macd": {
+          "macd": -2.640746,
+          "signal": -1.997806,
+          "hist": -0.64294
+        },
+        "atr14": 7.99789
+      },
+      "samples": 251
+    },
+    "MSFT": {
+      "ok": true,
+      "source_ticker": "MSFT",
+      "latest": {
+        "open": 392.859985,
+        "high": 401.190002,
+        "low": 390.630005,
+        "close": 398.549988,
+        "volume": 35405100.0
+      },
+      "indicators": {
+        "sma20": 401.8605,
+        "sma50": 443.796801,
+        "rsi14": 40.425627,
+        "macd": {
+          "macd": -14.071702,
+          "signal": -16.235174,
+          "hist": 2.163472
+        },
+        "atr14": 10.945331
+      },
+      "samples": 251
+    },
+    "NVDA": {
+      "ok": true,
+      "source_ticker": "NVDA",
+      "latest": {
+        "open": 175.009995,
+        "high": 183.460007,
+        "low": 174.639999,
+        "close": 182.479996,
+        "volume": 208609300.0
+      },
+      "indicators": {
+        "sma20": 185.55,
+        "sma50": 185.716201,
+        "rsi14": 46.236224,
+        "macd": {
+          "macd": -0.01787,
+          "signal": 0.673817,
+          "hist": -0.691687
+        },
+        "atr14": 6.593961
+      },
+      "samples": 251
+    },
+    "ONDS": {
+      "ok": true,
+      "source_ticker": "ONDS",
+      "latest": {
+        "open": 10.5,
+        "high": 12.42,
+        "low": 10.3,
+        "close": 10.67,
+        "volume": 179653400.0
+      },
+      "indicators": {
+        "sma20": 10.1015,
+        "sma50": 10.783,
+        "rsi14": 51.408845,
+        "macd": {
+          "macd": -0.114803,
+          "signal": -0.18067,
+          "hist": 0.065867
+        },
+        "atr14": 1.18633
+      },
+      "samples": 251
+    },
+    "PLTR": {
+      "ok": true,
+      "source_ticker": "PLTR",
+      "latest": {
+        "open": 140.774994,
+        "high": 147.139999,
+        "low": 140.520004,
+        "close": 145.169998,
+        "volume": 72418500.0
+      },
+      "indicators": {
+        "sma20": 137.0095,
+        "sma50": 160.2216,
+        "rsi14": 51.119863,
+        "macd": {
+          "macd": -6.228882,
+          "signal": -8.474475,
+          "hist": 2.245593
+        },
+        "atr14": 7.445039
+      },
+      "samples": 251
+    },
+    "RDW": {
+      "ok": true,
+      "source_ticker": "RDW",
+      "latest": {
+        "open": 9.04,
+        "high": 10.4,
+        "low": 9.04,
+        "close": 9.52,
+        "volume": 24193800.0
+      },
+      "indicators": {
+        "sma20": 9.0845,
+        "sma50": 9.6194,
+        "rsi14": 51.459735,
+        "macd": {
+          "macd": -0.297731,
+          "signal": -0.364027,
+          "hist": 0.066296
+        },
+        "atr14": 1.052367
+      },
+      "samples": 251
+    },
+    "RKLB": {
+      "ok": true,
+      "source_ticker": "RKLB",
+      "latest": {
+        "open": 66.68,
+        "high": 72.099998,
+        "low": 66.449997,
+        "close": 70.970001,
+        "volume": 18772500.0
+      },
+      "indicators": {
+        "sma20": 71.648,
+        "sma50": 77.0284,
+        "rsi14": 46.984126,
+        "macd": {
+          "macd": -1.849135,
+          "signal": -1.763162,
+          "hist": -0.085972
+        },
+        "atr14": 5.963208
+      },
+      "samples": 251
+    },
+    "TSLA": {
+      "ok": true,
+      "source_ticker": "TSLA",
+      "latest": {
+        "open": 390.600006,
+        "high": 404.540009,
+        "low": 388.25,
+        "close": 403.320007,
+        "volume": 54963900.0
+      },
+      "indicators": {
+        "sma20": 412.495499,
+        "sma50": 434.408,
+        "rsi14": 41.74678,
+        "macd": {
+          "macd": -7.111835,
+          "signal": -7.160029,
+          "hist": 0.048194
+        },
+        "atr14": 14.369321
+      },
+      "samples": 251
+    },
+    "TSM": {
+      "ok": true,
+      "source_ticker": "TSM",
+      "latest": {
+        "open": 365.359985,
+        "high": 373.100006,
+        "low": 364.649994,
+        "close": 369.109985,
+        "volume": 12546200.0
+      },
+      "indicators": {
+        "sma20": 361.485501,
+        "sma50": 335.585599,
+        "rsi14": 57.693066,
+        "macd": {
+          "macd": 12.075683,
+          "signal": 12.506167,
+          "hist": -0.430484
+        },
+        "atr14": 12.795699
+      },
+      "samples": 251
+    },
+    "UUUU": {
+      "ok": true,
+      "source_ticker": "UUUU",
+      "latest": {
+        "open": 20.9,
+        "high": 23.549999,
+        "low": 20.700001,
+        "close": 23.370001,
+        "volume": 15115500.0
+      },
+      "indicators": {
+        "sma20": 21.813,
+        "sma50": 20.2548,
+        "rsi14": 55.568251,
+        "macd": {
+          "macd": 0.414874,
+          "signal": 0.431375,
+          "hist": -0.016501
+        },
+        "atr14": 2.097344
+      },
+      "samples": 251
+    },
+    "GOOG": {
+      "ok": true,
+      "source_ticker": "GOOG",
+      "latest": {
+        "open": 302.964996,
+        "high": 308.140015,
+        "low": 301.059998,
+        "close": 306.359985,
+        "volume": 21824400.0
+      },
+      "indicators": {
+        "sma20": 316.445998,
+        "sma50": 320.506599,
+        "rsi14": 40.430186,
+        "macd": {
+          "macd": -4.459548,
+          "signal": -3.897105,
+          "hist": -0.562444
+        },
+        "atr14": 8.948185
+      },
+      "samples": 251
+    },
+    "IBM": {
+      "ok": true,
+      "source_ticker": "IBM",
+      "latest": {
+        "open": 235.699997,
+        "high": 240.779999,
+        "low": 233.779999,
+        "close": 239.369995,
+        "volume": 6218200.0
+      },
+      "indicators": {
+        "sma20": 265.703001,
+        "sma50": 286.718401,
+        "rsi14": 34.500883,
+        "macd": {
+          "macd": -15.988423,
+          "signal": -13.864284,
+          "hist": -2.124138
+        },
+        "atr14": 10.92597
+      },
+      "samples": 251
+    },
+    "BRK.B": {
+      "ok": true,
+      "source_ticker": "BRK-B",
+      "latest": {
+        "open": 495.230011,
+        "high": 495.75,
+        "low": 477.910004,
+        "close": 480.170013,
+        "volume": 11710600.0
+      },
+      "indicators": {
+        "sma20": 498.040001,
+        "sma50": 495.0902,
+        "rsi14": 38.099939,
+        "macd": {
+          "macd": 0.21745,
+          "signal": 1.146533,
+          "hist": -0.929083
+        },
+        "atr14": 8.801848
+      },
+      "samples": 251
+    },
+    "LITE": {
+      "ok": true,
+      "source_ticker": "LITE",
+      "latest": {
+        "open": 742.89502,
+        "high": 783.799988,
+        "low": 714.0,
+        "close": 783.25,
+        "volume": 6873400.0
+      },
+      "indicators": {
+        "sma20": 599.235004,
+        "sma50": 457.953801,
+        "rsi14": 79.311973,
+        "macd": {
+          "macd": 84.688087,
+          "signal": 74.148994,
+          "hist": 10.539093
+        },
+        "atr14": 50.656868
+      },
+      "samples": 251
+    }
+  }
+}
