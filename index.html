@@ -153,7 +153,7 @@
       </div>
     </div>
 
-    <div class="footer">v2.5 local-first stack: snapshot + deep analysis refresh each cycle; precheck gates LLM only when required · <a href="./model/notes.html">Model notes</a></div>
+    <div class="footer"><span id="websiteVersion">v2.5</span> local-first stack: snapshot + deep analysis refresh each cycle; precheck gates LLM only when required · <a href="./model/notes.html">Model notes</a></div>
   </div>
 
 <script>
@@ -470,6 +470,18 @@ async function loadDefenceSummary(){
   }
 }
 
+async function loadWebsiteVersion(){
+  const v=document.getElementById('websiteVersion');
+  if(!v) return;
+  try{
+    const res = await fetch('./data/cache/site_version.json?ts='+Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('no version');
+    const j = await res.json();
+    if(j.version) v.textContent = j.version;
+  }catch{
+    // keep fallback version text
+  }
+}
 
 (async ()=>{
   await syncWatchlistFromRepo();
@@ -480,6 +492,7 @@ async function loadDefenceSummary(){
   loadFrontBreaking();
   loadAISummary();
   loadDefenceSummary();
+  loadWebsiteVersion();
 })();
 </script>
 
