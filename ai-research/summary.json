@@ -1,7 +1,7 @@
 {
   "updatedAt": "2026-03-03T09:30:00+08:00",
-  "market": "AI demand remains strong, but 2026 leadership is shifting toward companies that prove capex-to-cash conversion and disclose monetization quality, not just growth in infrastructure spend.",
-  "tech": "Real value is concentrating in workflow-embedded AI, inference efficiency, and governance-ready deployments; model capability gains alone are increasingly commoditized without distribution and data moats.",
-  "risk": "Main downside is capex outrunning monetization, compounded by export-control shifts, power/interconnect bottlenecks, and model-layer price compression; confidence is lower where source access was anti-bot restricted.",
+  "market": "Near-term AI leadership should favor issuers converting demand into durable free cash flow, not just expanding capex.",
+  "tech": "Monetization appears strongest in workflow-embedded AI, inference-efficiency engineering, and governance tooling; standalone model differentiation is narrowing.",
+  "risk": "Top downside is capex outrunning monetization, with added volatility from export-control shifts and power/interconnection bottlenecks.",
   "latestPath": "./ai-research/latest.html"
 }
