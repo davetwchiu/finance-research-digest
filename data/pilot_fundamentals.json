@@ -1,0 +1,51 @@
+{
+  "as_of": "2026-03-03",
+  "source_note": "Pilot fundamentals are curated from latest company 10-Q/10-K and consensus snapshot references; values are explicit inputs for deterministic scoring.",
+  "tickers": {
+    "NVDA": {
+      "company": "NVIDIA",
+      "market_cap_b": 4480.0,
+      "revenue_growth_yoy_pct": 80.0,
+      "fcf_margin_pct": 46.0,
+      "gross_margin_pct": 75.0,
+      "forward_pe": 38.0,
+      "peg": 1.2,
+      "net_cash_b": 27.0,
+      "source_links": [
+        "https://www.sec.gov/edgar/search/#/q=NVIDIA%2520CORP",
+        "https://investor.nvidia.com/",
+        "https://finance.yahoo.com/quote/NVDA/financials"
+      ]
+    },
+    "PLTR": {
+      "company": "Palantir",
+      "market_cap_b": 320.0,
+      "revenue_growth_yoy_pct": 33.0,
+      "fcf_margin_pct": 27.0,
+      "gross_margin_pct": 81.0,
+      "forward_pe": 95.0,
+      "peg": 2.8,
+      "net_cash_b": 3.6,
+      "source_links": [
+        "https://www.sec.gov/edgar/search/#/q=Palantir%2520Technologies%2520Inc",
+        "https://investors.palantir.com/",
+        "https://finance.yahoo.com/quote/PLTR/financials"
+      ]
+    },
+    "TSLA": {
+      "company": "Tesla",
+      "market_cap_b": 1300.0,
+      "revenue_growth_yoy_pct": 12.0,
+      "fcf_margin_pct": 7.0,
+      "gross_margin_pct": 18.0,
+      "forward_pe": 66.0,
+      "peg": 2.5,
+      "net_cash_b": 21.0,
+      "source_links": [
+        "https://www.sec.gov/edgar/search/#/q=Tesla%252C%2520Inc",
+        "https://ir.tesla.com/",
+        "https://finance.yahoo.com/quote/TSLA/financials"
+      ]
+    }
+  }
+}
