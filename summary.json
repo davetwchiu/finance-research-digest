@@ -1,7 +1,7 @@
 {
-  "macro": "Regime remains conditional risk-on: opportunities persist, but policy and real-yield shocks require evidence-weighted sizing and strict invalidation discipline.",
-  "policy": "Trade/industrial policy uncertainty is still the fastest path into valuation and guidance risk; treat medium-sized policy frictions as cumulative macro pressure.",
-  "delta": "Alpha layers refreshed (market data/catalysts/evidence/signal v0.2), deep-dive routing uses HIGH + unusual-move + near-catalyst logic with breaking-news persistence tracking in state.",
-  "latestReportPath": "./reports/2026-03-02.html",
-  "updatedAt": "2026-03-02T14:49:54+08:00"
+  "macro": "Regime still conditional risk-on but with high policy-rate sensitivity; evidence quality improved via deterministic A/B gating and stale controls.",
+  "policy": "Primary risk remains policy-rate and trade/export surprise path into valuation and guidance.",
+  "delta": "Daily macro report and 17 ticker pages regenerated with strict section contract; provisional flags: 1.",
+  "latestReportPath": "./reports/2026-03-03.html",
+  "updatedAt": "2026-03-03T08:32:14+08:00"
 }
