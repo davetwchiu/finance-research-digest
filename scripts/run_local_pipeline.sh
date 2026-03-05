@@ -53,16 +53,22 @@ python3 scripts/build_atlas_deep_analysis.py \
   --input data/cache/signals_local.json \
   --output data/cache/atlas_deep_analysis.json
 
-# Build watchlist fundamentals from Yahoo (no API key), then regenerate deep ticker pages.
+# Build watchlist fundamentals from Yahoo (no API key), then enrich ticker news digest.
 python3 scripts/build_watchlist_fundamentals.py \
   --watchlist watchlist.json \
   --output data/pilot_fundamentals.json
 
-# Regenerate deep ticker pages (full watchlist) with deterministic TA+fundamental verdicts.
+python3 scripts/build_ticker_news_digest.py \
+  --watchlist watchlist.json \
+  --fundamentals data/pilot_fundamentals.json \
+  --output data/cache/ticker_news_digest.json
+
+# Regenerate deep ticker pages (full watchlist) with deterministic TA+fundamental verdicts + news impact section.
 python3 scripts/generate_pilot_ticker_pages.py \
   --signals data/cache/signals_local.json \
   --fundamentals data/pilot_fundamentals.json \
   --watchlist watchlist.json \
+  --news data/cache/ticker_news_digest.json \
   --tickers-dir tickers \
   --meta data/cache/ticker_generation_meta.json
 

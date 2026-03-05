@@ -175,6 +175,7 @@ def build_page(
     ticker: str,
     sig: Dict[str, Any],
     f: Dict[str, Any],
+    news: Dict[str, Any],
     report_path: str,
     generated_at_utc: str,
     generated_at_hkt: str,
@@ -213,6 +214,19 @@ def build_page(
     else:
         layman_action = "Risk-first mode. Avoid fresh long exposure until structure improves."
 
+    nsum = (news or {}).get("summary") or {}
+    nitems = (news or {}).get("items") or []
+    news_label = nsum.get("label") or "No clear catalyst signal"
+    news_counts = f"+{nsum.get('positive_count',0)} / -{nsum.get('negative_count',0)} / high-impact {nsum.get('high_impact_count',0)}"
+    if nitems:
+        news_list_html = ''.join([
+            f"<li><a href='{x.get('url','')}'>{x.get('title','')}</a>"
+            f" <span class='muted'>[{(x.get('impact') or {}).get('sentiment','neutral')}, {(x.get('impact') or {}).get('severity','low')}]"
+            f" {(x.get('published_hkt') or '')}</span></li>" for x in nitems[:5]
+        ])
+    else:
+        news_list_html = "<li>No recent headline feed available for this ticker in this run.</li>"
+
     return f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.58}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}}.muted{{color:#a7b0d6}}table{{width:100%;border-collapse:collapse}}th,td{{border-bottom:1px solid #2a3768;padding:8px;text-align:left}}.pill{{display:inline-block;border:1px solid #3a4c88;border-radius:999px;padding:3px 10px;font-size:12px;color:#dfe7ff}}</style></head><body>
 <p><a href='../index.html'>← Back</a> · <a href='../{report_path}'>Daily report</a></p>
 <h1>{ticker} — Deep Analysis v4</h1>
@@ -220,6 +234,7 @@ def build_page(
 <div class='card'><h2>Layman summary (read this first)</h2><p><strong>{verdict}</strong></p><p>Simple read: score is <strong>{score.total}/100</strong>. This setup is rule-based, so the same inputs produce the same verdict every time.</p><ul><li><strong>If bullish continuation appears:</strong> {trigger}</li><li><strong>If setup fails:</strong> {invalidation}</li><li><strong>Upside roadmap:</strong> {targets}</li></ul></div>
 <div class='card'><h2>If you are not an active trader</h2><p><span class='pill'>Risk meter: {risk_meter}</span> <span class='pill'>Score: {score.total}/100</span></p><p><strong>What this means in plain English:</strong> {layman_action}</p><ul><li>Do not react to one headline alone; wait for price confirmation.</li><li>Keep position size smaller when risk meter is Medium/High.</li><li>If invalidation triggers, reduce risk quickly instead of averaging down.</li></ul></div>
 <div class='card'><h2>Price chart (visual context)</h2><p class='muted'>For quick orientation only — do not use chart alone without the trigger/invalidation rules above.</p><iframe title='TradingView chart for {ticker}' src='https://s.tradingview.com/widgetembed/?symbol={tv_symbol}&interval=D&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&theme=dark&style=1&timezone=Asia%2FHong_Kong' width='100%' height='420' frameborder='0' allowtransparency='true' scrolling='no'></iframe></div>
+<div class='card'><h2>News pulse (price-impact view)</h2><p><span class='pill'>{news_label}</span> <span class='pill'>{news_counts}</span></p><p class='muted'>Heuristic headline impact read: positive/negative skew + high-impact keyword detection (earnings, guidance, contract, lawsuit, policy).</p><ul>{news_list_html}</ul></div>
 <div class='card'><h2>Deterministic verdict</h2><p><strong>{verdict}</strong></p><p>Total score: <strong>{score.total}/100</strong> (TA {score.ta}/50 + Fundamentals {score.fundamentals}/50).</p><ul>{''.join([f'<li>{e}</li>' for e in evidence])}</ul></div>
 <details class='card'><summary><strong>Technical evidence (expand)</strong></summary>
 <div><h2>Technical block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
@@ -277,6 +292,7 @@ def main() -> int:
     ap.add_argument("--signals", default="data/cache/signals_local.json")
     ap.add_argument("--fundamentals", default="data/pilot_fundamentals.json")
     ap.add_argument("--watchlist", default="watchlist.json")
+    ap.add_argument("--news", default="data/cache/ticker_news_digest.json")
     ap.add_argument("--report", default="")
     ap.add_argument("--reports-dir", default="reports")
     ap.add_argument("--tickers-dir", default="tickers")
@@ -285,6 +301,10 @@ def main() -> int:
 
     signals_doc = json.loads(Path(args.signals).read_text(encoding="utf-8"))
     fdoc = json.loads(Path(args.fundamentals).read_text(encoding="utf-8"))
+    try:
+        news_doc = json.loads(Path(args.news).read_text(encoding="utf-8"))
+    except Exception:
+        news_doc = {"tickers": {}}
     watchlist = list(_iter_tickers(_load_watchlist(args.watchlist)))
 
     now_utc = datetime.now(timezone.utc)
@@ -317,7 +337,8 @@ def main() -> int:
             f["as_of"] = as_of
             f["fallback_used"] = False
 
-        html = build_page(t, sig, f, report_path, generated_at_utc, generated_at_hkt)
+        n = ((news_doc.get("tickers") or {}).get(t) or {}) if isinstance(news_doc, dict) else {}
+        html = build_page(t, sig, f, n, report_path, generated_at_utc, generated_at_hkt)
         path = out_dir / f"{t}.html"
         path.write_text(html, encoding="utf-8")
         written.append(str(path))
