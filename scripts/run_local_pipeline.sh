@@ -80,6 +80,9 @@ python3 scripts/rebuild_reports_index.py
 # Fail fast if latest report contains repeated long paragraphs.
 python3 scripts/report_dup_guard.py --reports-dir reports --min-len 120 --max-duplicates 0
 
+# Site-level intelligence quality guardrails.
+python3 scripts/qc_site_quality.py --root . --max-fallback-ratio 0.90
+
 # Bump visible website version every update cycle.
 python3 scripts/site_version.py \
   --file data/cache/site_version.json \

@@ -13,11 +13,16 @@ P_RE = re.compile(r"<p[^>]*>(.*?)</p>", re.IGNORECASE | re.DOTALL)
 TAG_RE = re.compile(r"<[^>]+>")
 SPACE_RE = re.compile(r"\s+")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}\.html$")
+NODE_PREFIX_RE = re.compile(r"\b[a-z]+\s+node\s+\d+\s*:\s*", re.IGNORECASE)
+ENUM_PREFIX_RE = re.compile(r"^\s*(\d+|[ivxlcdm]+)[\.)]\s*", re.IGNORECASE)
 
 
 def norm(text: str) -> str:
     s = TAG_RE.sub(" ", text)
     s = SPACE_RE.sub(" ", s).strip().lower()
+    # Normalize templated prefixes so repeated boilerplate with changing numbering is still caught.
+    s = NODE_PREFIX_RE.sub("", s)
+    s = ENUM_PREFIX_RE.sub("", s)
     return s
 
 
