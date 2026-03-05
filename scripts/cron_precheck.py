@@ -51,7 +51,15 @@ def main() -> int:
 
     regime = (((cur.get("market_regime") or {}).get("label")) or "unknown")
     prev_regime = (((prev.get("market_regime") or {}).get("label")) or "unknown")
-    high_attention = len((((cur.get("triage") or {}).get("high_attention")) or []))
+
+    schema_issues: list[str] = []
+    if cur and regime == "unknown":
+        schema_issues.append("market_regime.label_missing")
+
+    high_attention_raw = ((cur.get("triage") or {}).get("high_attention")) if isinstance(cur, dict) else None
+    if cur and not isinstance(high_attention_raw, list):
+        schema_issues.append("triage.high_attention_not_list")
+    high_attention = len(high_attention_raw) if isinstance(high_attention_raw, list) else 0
 
     now_utc = datetime.now(timezone.utc)
     generated_at_raw = cur.get("generated_at")
@@ -71,6 +79,8 @@ def main() -> int:
         reasons.append("generated_at_missing_or_invalid")
     elif generated_age_hours is not None and generated_age_hours > args.max_age_hours:
         reasons.append(f"deep_analysis_stale_hours:{generated_age_hours:.2f}>{args.max_age_hours}")
+    if schema_issues:
+        reasons.append("deep_analysis_schema_incomplete:" + ",".join(schema_issues))
 
     llm_needed = len(reasons) > 0
     out = {
@@ -79,6 +89,7 @@ def main() -> int:
         "regime": regime,
         "previous_regime": prev_regime,
         "high_attention_count": high_attention,
+        "schema_issues": schema_issues,
         "threshold": args.high_threshold,
         "max_age_hours": args.max_age_hours,
         "generated_at": generated_at_raw,
