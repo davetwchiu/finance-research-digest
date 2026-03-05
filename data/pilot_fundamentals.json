@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-03-03",
-  "source_note": "Pilot fundamentals are curated from latest company 10-Q/10-K and consensus snapshot references; values are explicit inputs for deterministic scoring.",
+  "as_of": "2026-03-05",
+  "source_note": "Auto-refresh from Yahoo when available; preserves existing curated entries on fetch failures.",
   "tickers": {
     "NVDA": {
       "company": "NVIDIA",
@@ -15,7 +15,8 @@
         "https://www.sec.gov/edgar/search/#/q=NVIDIA%2520CORP",
         "https://investor.nvidia.com/",
         "https://finance.yahoo.com/quote/NVDA/financials"
-      ]
+      ],
+      "source_status": "curated-preserved"
     },
     "PLTR": {
       "company": "Palantir",
@@ -30,7 +31,8 @@
         "https://www.sec.gov/edgar/search/#/q=Palantir%2520Technologies%2520Inc",
         "https://investors.palantir.com/",
         "https://finance.yahoo.com/quote/PLTR/financials"
-      ]
+      ],
+      "source_status": "curated-preserved"
     },
     "TSLA": {
       "company": "Tesla",
@@ -45,7 +47,8 @@
         "https://www.sec.gov/edgar/search/#/q=Tesla%252C%2520Inc",
         "https://ir.tesla.com/",
         "https://finance.yahoo.com/quote/TSLA/financials"
-      ]
+      ],
+      "source_status": "curated-preserved"
     }
   }
 }
