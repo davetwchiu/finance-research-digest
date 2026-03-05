@@ -10,6 +10,7 @@ from pathlib import Path
 
 REQUIRED_MARKERS = [
     "Deterministic verdict",
+    "News pulse (price-impact view)",
     "Technical block (real inputs)",
     "Fundamentals block (real inputs)",
     "Risk map",
