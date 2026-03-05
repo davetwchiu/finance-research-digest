@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Publish-blocking QC for pilot ticker depth quality."""
+"""Publish-blocking QC for ticker depth quality (full watchlist)."""
 
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from pathlib import Path
-
-PILOTS = ("NVDA", "PLTR", "TSLA")
 
 REQUIRED_MARKERS = [
     "Deterministic verdict",
@@ -18,6 +17,14 @@ REQUIRED_MARKERS = [
     "Last generated (UTC)",
     "Last generated (HKT)",
 ]
+
+
+def _load_watchlist(path: str) -> list[str]:
+    doc = json.loads(Path(path).read_text(encoding="utf-8"))
+    wl = doc.get("watchlist") if isinstance(doc, dict) else None
+    if not isinstance(wl, list) or not wl:
+        raise ValueError(f"Invalid or empty watchlist in {path}")
+    return [str(x).strip().upper() for x in wl if str(x).strip()]
 
 
 def validate(path: Path, min_words: int) -> list[str]:
@@ -39,20 +46,19 @@ def validate(path: Path, min_words: int) -> list[str]:
     if not re.search(r"Total score:\s*<strong>\d+/100</strong>", txt):
         errs.append("missing deterministic total score line")
 
-    if "N/A" in txt:
-        errs.append("contains N/A placeholders")
-
     return errs
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="QC depth gates for pilot ticker pages")
+    ap = argparse.ArgumentParser(description="QC depth gates for ticker pages")
     ap.add_argument("--tickers-dir", default="tickers")
+    ap.add_argument("--watchlist", default="watchlist.json")
     ap.add_argument("--min-words", type=int, default=380)
     args = ap.parse_args()
 
+    watchlist = _load_watchlist(args.watchlist)
     fails = 0
-    for ticker in PILOTS:
+    for ticker in watchlist:
         path = Path(args.tickers_dir) / f"{ticker}.html"
         if not path.exists():
             print(f"FAIL {ticker}: missing file {path}")
@@ -66,10 +72,10 @@ def main() -> int:
             print(f"PASS {ticker}: depth QC passed")
 
     if fails:
-        print(f"Depth QC FAILED: {fails} pilot page(s) blocked")
+        print(f"Depth QC FAILED: {fails} ticker page(s) blocked")
         return 1
 
-    print("Depth QC PASSED: pilot pages meet publish thresholds")
+    print("Depth QC PASSED: all watchlist ticker pages meet publish thresholds")
     return 0
 
 

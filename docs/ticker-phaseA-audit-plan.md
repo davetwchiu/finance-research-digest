@@ -62,3 +62,13 @@
 - [x] Daily archive step includes pilot pages + pilot generation meta
 - [x] Website version metadata continues to increment each cycle
 - [x] Publish-blocking QC gate active for NVDA/PLTR/TSLA
+
+## Phase B implementation (2026-03-05)
+- [x] Expand deep ticker generation from 3 pilots to full watchlist (`watchlist.json`)
+- [x] Keep deterministic scoring model; add explicit neutral fundamentals fallback when curated fundamentals are missing
+- [x] Expand publish-blocking depth QC from 3 pilots to full watchlist
+- [x] Archive all watchlist ticker pages before overwrite (not only pilot pages)
+- [x] Remove stale hardcoded latest report fallback in homepage button
+
+### Phase B residual gap
+- [ ] Replace fallback fundamentals with curated real fundamentals for all watchlist names (to improve score fidelity)

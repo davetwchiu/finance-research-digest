@@ -25,10 +25,21 @@ archive_if_exists "data/cache/atlas_deep_analysis.json"
 archive_if_exists "data/cache/site_version.json"
 archive_if_exists "data/cache/ticker_generation_meta.json"
 
-# Archive pilot ticker pages before rewrite.
-archive_if_exists "tickers/NVDA.html"
-archive_if_exists "tickers/PLTR.html"
-archive_if_exists "tickers/TSLA.html"
+# Archive all watchlist ticker pages before rewrite.
+if [[ -f "watchlist.json" ]]; then
+  while IFS= read -r t; do
+    [[ -n "$t" ]] && archive_if_exists "tickers/${t}.html"
+  done < <(python3 - <<'PY'
+import json
+from pathlib import Path
+wl = json.loads(Path('watchlist.json').read_text()).get('watchlist', [])
+for t in wl:
+    t = str(t).strip().upper()
+    if t:
+        print(t)
+PY
+)
+fi
 
 python3 scripts/local_signal_pipeline.py \
   --watchlist watchlist.json \
@@ -42,15 +53,16 @@ python3 scripts/build_atlas_deep_analysis.py \
   --input data/cache/signals_local.json \
   --output data/cache/atlas_deep_analysis.json
 
-# Regenerate deep pilot ticker pages with deterministic TA+fundamental verdicts.
+# Regenerate deep ticker pages (full watchlist) with deterministic TA+fundamental verdicts.
 python3 scripts/generate_pilot_ticker_pages.py \
   --signals data/cache/signals_local.json \
   --fundamentals data/pilot_fundamentals.json \
+  --watchlist watchlist.json \
   --tickers-dir tickers \
   --meta data/cache/ticker_generation_meta.json
 
-# Publish-blocking depth QC for pilots.
-python3 scripts/qc_ticker_depth.py --tickers-dir tickers --min-words 380
+# Publish-blocking depth QC for full watchlist.
+python3 scripts/qc_ticker_depth.py --tickers-dir tickers --watchlist watchlist.json --min-words 380
 
 # Rebuild archive index each cycle so newest report appears automatically.
 python3 scripts/rebuild_reports_index.py
@@ -63,4 +75,4 @@ python3 scripts/site_version.py \
   --file data/cache/site_version.json \
   --base 2.5.0
 
-echo "Local pipeline complete: archived previous snapshots in $ARCHIVE_DIR; refreshed signals/snapshot/deep-analysis; regenerated deep pilot ticker pages; passed pilot depth QC + duplicate guard; bumped site version metadata."
+echo "Local pipeline complete: archived previous snapshots in $ARCHIVE_DIR; refreshed signals/snapshot/deep-analysis; regenerated deep watchlist ticker pages; passed full-watchlist depth QC + duplicate guard; bumped site version metadata."

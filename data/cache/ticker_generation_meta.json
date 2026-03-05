@@ -1,11 +1,41 @@
 {
-  "generated_at_utc": "2026-03-03T03:56:34.648433+00:00",
-  "generated_at_hkt": "2026-03-03T11:56:34.648433+08:00",
+  "generated_at_utc": "2026-03-05T03:13:28.275463+00:00",
+  "generated_at_hkt": "2026-03-05T11:13:28.275463+08:00",
   "tickers": [
+    "AAPL",
+    "AVGO",
+    "BBAI",
+    "KTOS",
+    "MSFT",
     "NVDA",
+    "ONDS",
     "PLTR",
-    "TSLA"
+    "RDW",
+    "RKLB",
+    "TSLA",
+    "TSM",
+    "UUUU",
+    "GOOG",
+    "IBM",
+    "BRK.B",
+    "LITE"
   ],
   "report": "reports/2026-03-03.html",
-  "generator": "scripts/generate_pilot_ticker_pages.py"
+  "generator": "scripts/generate_pilot_ticker_pages.py",
+  "fallback_fundamentals_tickers": [
+    "AAPL",
+    "AVGO",
+    "BBAI",
+    "KTOS",
+    "MSFT",
+    "ONDS",
+    "RDW",
+    "RKLB",
+    "TSM",
+    "UUUU",
+    "GOOG",
+    "IBM",
+    "BRK.B",
+    "LITE"
+  ]
 }

@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-"""Generate deep pilot ticker pages (NVDA/PLTR/TSLA) with deterministic TA+fundamental verdicts."""
+"""Generate deep ticker pages for full watchlist with deterministic TA + optional fundamentals."""
 
 from __future__ import annotations
 
 import argparse
 import json
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Dict, Tuple
-
-PILOTS = ("NVDA", "PLTR", "TSLA")
+from typing import Any, Dict, Iterable, Tuple
 
 
 @dataclass
@@ -36,6 +34,31 @@ def _fmt(v: float | None, digits: int = 2) -> str:
     if v is None:
         return "N/A"
     return f"{v:.{digits}f}"
+
+
+def _load_watchlist(path: str) -> list[str]:
+    doc = json.loads(Path(path).read_text(encoding="utf-8"))
+    wl = doc.get("watchlist") if isinstance(doc, dict) else None
+    if not isinstance(wl, list) or not wl:
+        raise ValueError(f"Invalid or empty watchlist in {path}")
+    return [str(x).strip().upper() for x in wl if str(x).strip()]
+
+
+def _default_fundamentals(ticker: str, as_of: str) -> Dict[str, Any]:
+    # Deterministic neutral fallback (no N/A placeholders).
+    return {
+        "company": ticker,
+        "market_cap_b": 0.0,
+        "revenue_growth_yoy_pct": 10.0,
+        "fcf_margin_pct": 8.0,
+        "gross_margin_pct": 30.0,
+        "forward_pe": 35.0,
+        "peg": 2.0,
+        "net_cash_b": 0.5,
+        "as_of": as_of,
+        "source_links": [f"https://finance.yahoo.com/quote/{ticker}/financials"],
+        "fallback_used": True,
+    }
 
 
 def _compute_scores(sig: Dict[str, Any], f: Dict[str, Any]) -> Tuple[Score, Dict[str, Any]]:
@@ -117,12 +140,21 @@ def _trigger_block(m: Dict[str, Any]) -> Tuple[str, str, str]:
     trigger = max(sma20, sma50)
     invalidation = min(sma20, sma50) * 0.985
     t1 = close * 1.08
-    return (f"Daily close > {_fmt(trigger)} with volume expansion vs 20D average.",
-            f"Two consecutive closes < {_fmt(invalidation)}.",
-            f"Target ladder: {_fmt(t1)} (+8%) then trail toward +15% if breadth stays risk-on.")
+    return (
+        f"Daily close > {_fmt(trigger)} with volume expansion vs 20D average.",
+        f"Two consecutive closes < {_fmt(invalidation)}.",
+        f"Target ladder: {_fmt(t1)} (+8%) then trail toward +15% if breadth stays risk-on.",
+    )
 
 
-def build_page(ticker: str, sig: Dict[str, Any], f: Dict[str, Any], report_path: str, generated_at_utc: str, generated_at_hkt: str) -> str:
+def build_page(
+    ticker: str,
+    sig: Dict[str, Any],
+    f: Dict[str, Any],
+    report_path: str,
+    generated_at_utc: str,
+    generated_at_hkt: str,
+) -> str:
     score, m = _compute_scores(sig, f)
     verdict = _verdict(score.total)
     trigger, invalidation, targets = _trigger_block(m)
@@ -134,12 +166,13 @@ def build_page(ticker: str, sig: Dict[str, Any], f: Dict[str, Any], report_path:
         "All thresholds are static and reproducible; no LLM-based scoring is used.",
     ]
 
-    links = " · ".join([f"<a href='{u}'>{u}</a>" for u in f.get("source_links", [])])
+    links = " · ".join([f"<a href='{u}'>{u}</a>" for u in (f.get("source_links") or [])])
+    fallback_note = "Yes (deterministic neutral defaults)" if f.get("fallback_used") else "No"
 
     return f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.58}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}}.muted{{color:#a7b0d6}}table{{width:100%;border-collapse:collapse}}th,td{{border-bottom:1px solid #2a3768;padding:8px;text-align:left}}</style></head><body>
 <p><a href='../index.html'>← Back</a> · <a href='../{report_path}'>Daily report</a></p>
-<h1>{ticker} — Deep Pilot v3</h1>
-<p class='muted'>Last generated (UTC): {generated_at_utc} · Last generated (HKT): {generated_at_hkt} · Fundamentals as-of: {f.get('as_of','N/A')}</p>
+<h1>{ticker} — Deep Analysis v4</h1>
+<p class='muted'>Last generated (UTC): {generated_at_utc} · Last generated (HKT): {generated_at_hkt} · Fundamentals as-of: {f.get('as_of','N/A')} · Fallback fundamentals used: {fallback_note}</p>
 <div class='card'><h2>Layman summary (read this first)</h2><p><strong>{verdict}</strong></p><p>Simple read: score is <strong>{score.total}/100</strong>. This setup is rule-based, so the same inputs produce the same verdict every time.</p><ul><li><strong>If bullish continuation appears:</strong> {trigger}</li><li><strong>If setup fails:</strong> {invalidation}</li><li><strong>Upside roadmap:</strong> {targets}</li></ul></div>
 <div class='card'><h2>Deterministic verdict</h2><p><strong>{verdict}</strong></p><p>Total score: <strong>{score.total}/100</strong> (TA {score.ta}/50 + Fundamentals {score.fundamentals}/50).</p><ul>{''.join([f'<li>{e}</li>' for e in evidence])}</ul></div>
 <details class='card'><summary><strong>Technical evidence (expand)</strong></summary>
@@ -172,42 +205,67 @@ def build_page(ticker: str, sig: Dict[str, Any], f: Dict[str, Any], report_path:
 """
 
 
+def _latest_report_path(reports_dir: str) -> str:
+    p = Path(reports_dir)
+    candidates = sorted([x.name for x in p.glob("20*.html")])
+    if not candidates:
+        return "reports/"
+    return f"reports/{candidates[-1]}"
+
+
+def _iter_tickers(watchlist: Iterable[str]) -> Iterable[str]:
+    for t in watchlist:
+        t = str(t).strip().upper()
+        if t:
+            yield t
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Generate deep pilot ticker pages")
+    ap = argparse.ArgumentParser(description="Generate deep ticker pages for full watchlist")
     ap.add_argument("--signals", default="data/cache/signals_local.json")
     ap.add_argument("--fundamentals", default="data/pilot_fundamentals.json")
-    ap.add_argument("--report", default="reports/2026-03-03.html")
+    ap.add_argument("--watchlist", default="watchlist.json")
+    ap.add_argument("--report", default="")
+    ap.add_argument("--reports-dir", default="reports")
     ap.add_argument("--tickers-dir", default="tickers")
     ap.add_argument("--meta", default="data/cache/ticker_generation_meta.json")
     args = ap.parse_args()
 
     signals_doc = json.loads(Path(args.signals).read_text(encoding="utf-8"))
     fdoc = json.loads(Path(args.fundamentals).read_text(encoding="utf-8"))
+    watchlist = list(_iter_tickers(_load_watchlist(args.watchlist)))
 
     now_utc = datetime.now(timezone.utc)
-    now_hkt = now_utc.astimezone(timezone.utc).astimezone()
-    # deterministic explicit HKT conversion without external deps
-    from datetime import timedelta
     hkt = timezone(timedelta(hours=8))
     now_hkt = now_utc.astimezone(hkt)
 
     generated_at_utc = now_utc.isoformat()
     generated_at_hkt = now_hkt.isoformat()
+    report_path = args.report.strip() or _latest_report_path(args.reports_dir)
 
     out_dir = Path(args.tickers_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    f_by_ticker = (fdoc.get("tickers") or {}) if isinstance(fdoc, dict) else {}
+    as_of = (fdoc.get("as_of") if isinstance(fdoc, dict) else None) or generated_at_hkt[:10]
+
     written = []
-    for t in PILOTS:
+    fallback_tickers: list[str] = []
+    for t in watchlist:
         sig = (signals_doc.get("signals") or {}).get(t)
-        f = (fdoc.get("tickers") or {}).get(t)
         if not sig or not isinstance(sig, dict) or not sig.get("ok"):
-            raise ValueError(f"Missing valid TA signal for pilot {t}")
+            raise ValueError(f"Missing valid TA signal for ticker {t}")
+
+        f = f_by_ticker.get(t)
         if not f or not isinstance(f, dict):
-            raise ValueError(f"Missing fundamentals for pilot {t}")
-        f = dict(f)
-        f["as_of"] = fdoc.get("as_of")
-        html = build_page(t, sig, f, args.report, generated_at_utc, generated_at_hkt)
+            f = _default_fundamentals(t, as_of)
+            fallback_tickers.append(t)
+        else:
+            f = dict(f)
+            f["as_of"] = as_of
+            f["fallback_used"] = False
+
+        html = build_page(t, sig, f, report_path, generated_at_utc, generated_at_hkt)
         path = out_dir / f"{t}.html"
         path.write_text(html, encoding="utf-8")
         written.append(str(path))
@@ -215,13 +273,15 @@ def main() -> int:
     meta = {
         "generated_at_utc": generated_at_utc,
         "generated_at_hkt": generated_at_hkt,
-        "tickers": list(PILOTS),
-        "report": args.report,
+        "tickers": watchlist,
+        "report": report_path,
         "generator": "scripts/generate_pilot_ticker_pages.py",
+        "fallback_fundamentals_tickers": fallback_tickers,
     }
     Path(args.meta).parent.mkdir(parents=True, exist_ok=True)
     Path(args.meta).write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
-    print("Wrote pilots:", ", ".join(written))
+    print(f"Wrote {len(written)} ticker pages")
+    print(f"Fallback fundamentals used for {len(fallback_tickers)} tickers: {', '.join(fallback_tickers) if fallback_tickers else 'none'}")
     print(f"Wrote {args.meta}")
     return 0
 
