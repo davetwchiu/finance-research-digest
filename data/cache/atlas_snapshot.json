@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-05T03:54:40.588456+00:00",
-  "source_generated_at": "2026-03-05T03:54:40.486677+00:00",
+  "generated_at": "2026-03-05T06:56:06.360998+00:00",
+  "source_generated_at": "2026-03-05T06:56:06.268592+00:00",
   "count": {
     "total": 17,
     "valid": 17,
@@ -16,6 +16,57 @@
     "overbought_rsi70": 0,
     "oversold_rsi30": 0,
     "rsi_universe": 17
+  },
+  "local_intelligence": {
+    "breadth_pct_above_sma20": 41.2,
+    "breadth_pct_above_sma50": 17.6,
+    "avg_rsi14": 47.25,
+    "overbought_count": 0,
+    "oversold_count": 0,
+    "top_movers": [
+      {
+        "ticker": "PLTR",
+        "close_vs_sma20_pct": 12.02
+      },
+      {
+        "ticker": "LITE",
+        "close_vs_sma20_pct": 8.92
+      },
+      {
+        "ticker": "BBAI",
+        "close_vs_sma20_pct": -7.49
+      },
+      {
+        "ticker": "ONDS",
+        "close_vs_sma20_pct": 4.82
+      },
+      {
+        "ticker": "RDW",
+        "close_vs_sma20_pct": 4.4
+      }
+    ],
+    "top_volatility": [
+      {
+        "ticker": "ONDS",
+        "atr14_pct_of_close": 11.12
+      },
+      {
+        "ticker": "RDW",
+        "atr14_pct_of_close": 10.88
+      },
+      {
+        "ticker": "UUUU",
+        "atr14_pct_of_close": 9.99
+      },
+      {
+        "ticker": "BBAI",
+        "atr14_pct_of_close": 9.27
+      },
+      {
+        "ticker": "KTOS",
+        "atr14_pct_of_close": 8.58
+      }
+    ]
   },
   "top_movers_proxy": [
     {

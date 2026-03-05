@@ -109,6 +109,8 @@ def build_snapshot(signals_doc: Dict[str, Any], top_n: int = 5) -> Dict[str, Any
     vol_sorted = sorted(volatility, key=lambda x: x["atr14_pct_of_close"], reverse=True)[:top_n]
 
     valid_count = len(valid_rows)
+    avg_rsi14 = _round(sum(rsi_values) / len(rsi_values), 2) if rsi_values else None
+
     snapshot = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source_generated_at": signals_doc.get("generated_at") if isinstance(signals_doc, dict) else None,
@@ -123,10 +125,19 @@ def build_snapshot(signals_doc: Dict[str, Any], top_n: int = 5) -> Dict[str, Any
             "universe": valid_count,
         },
         "risk": {
-            "avg_rsi14": _round(sum(rsi_values) / len(rsi_values), 2) if rsi_values else None,
+            "avg_rsi14": avg_rsi14,
             "overbought_rsi70": overbought,
             "oversold_rsi30": oversold,
             "rsi_universe": len(rsi_values),
+        },
+        "local_intelligence": {
+            "breadth_pct_above_sma20": _round((above_sma20 / valid_count * 100.0), 1) if valid_count else None,
+            "breadth_pct_above_sma50": _round((above_sma50 / valid_count * 100.0), 1) if valid_count else None,
+            "avg_rsi14": avg_rsi14,
+            "overbought_count": overbought,
+            "oversold_count": oversold,
+            "top_movers": movers_sorted,
+            "top_volatility": vol_sorted,
         },
         "top_movers_proxy": movers_sorted,
         "top_volatility": vol_sorted,
