@@ -52,6 +52,12 @@ def _index_has_deep_stale_signal(index_html: Path) -> bool:
     return "atlasDeepHeadline" in s and "stale >24h" in s
 
 
+def _index_uses_summary_updatedat(index_html: Path) -> bool:
+    s = index_html.read_text(encoding="utf-8", errors="ignore")
+    # Guard against regressing to brittle/incorrect summary timestamp fields.
+    return "summaryHours = _hoursOld(j.updatedAt);" in s
+
+
 def _report_has_repeated_regime(report_html: Path) -> bool:
     s = report_html.read_text(encoding="utf-8", errors="ignore")
     # Catch repeated templated nodes like "Regime node X" blocks.
@@ -123,6 +129,8 @@ def main() -> int:
         fails.append("index missing robust 'Last updated' freshness signal")
     if not _index_has_deep_stale_signal(index_html):
         fails.append("index missing deep-analysis stale indicator wiring")
+    if not _index_uses_summary_updatedat(index_html):
+        fails.append("index freshness uses wrong summary timestamp field (expect updatedAt)")
 
     latest = _latest_daily_report(reports_dir)
     if latest is None:
