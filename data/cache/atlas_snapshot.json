@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-05T12:54:44.128448+00:00",
-  "source_generated_at": "2026-03-05T12:54:44.013801+00:00",
+  "generated_at": "2026-03-05T15:54:36.320222+00:00",
+  "source_generated_at": "2026-03-05T15:54:36.227220+00:00",
   "count": {
     "total": 17,
     "valid": 17,
@@ -12,7 +12,7 @@
     "universe": 17
   },
   "risk": {
-    "avg_rsi14": 47.25,
+    "avg_rsi14": 47.99,
     "overbought_rsi70": 0,
     "oversold_rsi30": 0,
     "rsi_universe": 17
@@ -20,222 +20,221 @@
   "local_intelligence": {
     "breadth_pct_above_sma20": 41.2,
     "breadth_pct_above_sma50": 17.6,
-    "avg_rsi14": 47.25,
+    "avg_rsi14": 47.99,
     "overbought_count": 0,
     "oversold_count": 0,
     "top_movers": [
       {
         "ticker": "PLTR",
-        "close_vs_sma20_pct": 12.02
+        "close_vs_sma20_pct": 11.78
       },
       {
         "ticker": "LITE",
-        "close_vs_sma20_pct": 8.92
+        "close_vs_sma20_pct": 6.08
       },
       {
-        "ticker": "BBAI",
-        "close_vs_sma20_pct": -7.49
+        "ticker": "KTOS",
+        "close_vs_sma20_pct": -5.66
+      },
+      {
+        "ticker": "UUUU",
+        "close_vs_sma20_pct": -5.42
       },
       {
         "ticker": "ONDS",
-        "close_vs_sma20_pct": 4.82
-      },
-      {
-        "ticker": "RDW",
-        "close_vs_sma20_pct": 4.4
+        "close_vs_sma20_pct": 5.18
       }
     ],
     "top_volatility": [
       {
         "ticker": "ONDS",
-        "atr14_pct_of_close": 11.12
+        "atr14_pct_of_close": 10.71
       },
       {
         "ticker": "RDW",
-        "atr14_pct_of_close": 10.88
+        "atr14_pct_of_close": 10.68
       },
       {
         "ticker": "UUUU",
-        "atr14_pct_of_close": 9.99
+        "atr14_pct_of_close": 10.43
       },
       {
         "ticker": "BBAI",
-        "atr14_pct_of_close": 9.27
+        "atr14_pct_of_close": 8.89
       },
       {
         "ticker": "KTOS",
-        "atr14_pct_of_close": 8.58
+        "atr14_pct_of_close": 8.57
       }
     ]
   },
   "top_movers_proxy": [
     {
       "ticker": "PLTR",
-      "close_vs_sma20_pct": 12.02
+      "close_vs_sma20_pct": 11.78
     },
     {
       "ticker": "LITE",
-      "close_vs_sma20_pct": 8.92
+      "close_vs_sma20_pct": 6.08
     },
     {
-      "ticker": "BBAI",
-      "close_vs_sma20_pct": -7.49
+      "ticker": "KTOS",
+      "close_vs_sma20_pct": -5.66
+    },
+    {
+      "ticker": "UUUU",
+      "close_vs_sma20_pct": -5.42
     },
     {
       "ticker": "ONDS",
-      "close_vs_sma20_pct": 4.82
-    },
-    {
-      "ticker": "RDW",
-      "close_vs_sma20_pct": 4.4
+      "close_vs_sma20_pct": 5.18
     }
   ],
   "top_volatility": [
     {
       "ticker": "ONDS",
-      "atr14_pct_of_close": 11.12
+      "atr14_pct_of_close": 10.71
     },
     {
       "ticker": "RDW",
-      "atr14_pct_of_close": 10.88
+      "atr14_pct_of_close": 10.68
     },
     {
       "ticker": "UUUU",
-      "atr14_pct_of_close": 9.99
+      "atr14_pct_of_close": 10.43
     },
     {
       "ticker": "BBAI",
-      "atr14_pct_of_close": 9.27
+      "atr14_pct_of_close": 8.89
     },
     {
       "ticker": "KTOS",
-      "atr14_pct_of_close": 8.58
+      "atr14_pct_of_close": 8.57
     }
   ],
   "signals": {
     "AAPL": {
       "ok": true,
-      "close": 262.52,
-      "sma20": 268.2945,
-      "rsi14": 45.95,
+      "close": 260.77,
+      "sma20": 267.5085,
+      "rsi14": 44.11,
       "tags": [
         "trend_down"
       ]
     },
     "AVGO": {
       "ok": true,
-      "close": 317.53,
-      "sma20": 327.3615,
-      "rsi14": 41.82,
+      "close": 332.94,
+      "sma20": 328.606,
+      "rsi14": 52.59,
       "tags": [
-        "trend_down"
+        "trend_up"
       ]
     },
     "BBAI": {
       "ok": true,
-      "close": 3.83,
-      "sma20": 4.14,
-      "rsi14": 38.41,
+      "close": 3.955,
+      "sma20": 4.1128,
+      "rsi14": 41.18,
       "tags": [
-        "trend_down",
-        "momentum_cold"
+        "trend_down"
       ]
     },
     "KTOS": {
       "ok": true,
-      "close": 89.13,
-      "sma20": 91.922,
-      "rsi14": 45.35,
+      "close": 86.49,
+      "sma20": 91.68,
+      "rsi14": 43.3,
       "tags": [
         "trend_down"
       ]
     },
     "MSFT": {
       "ok": true,
-      "close": 405.2,
-      "sma20": 400.588,
-      "rsi14": 44.79,
+      "close": 408.4146,
+      "sma20": 400.2992,
+      "rsi14": 46.94,
       "tags": [
         "trend_up"
       ]
     },
     "NVDA": {
       "ok": true,
-      "close": 183.04,
-      "sma20": 185.407,
-      "rsi14": 47.33,
+      "close": 183.6921,
+      "sma20": 185.8821,
+      "rsi14": 48.04,
       "tags": [
         "trend_down"
       ]
     },
     "ONDS": {
       "ok": true,
-      "close": 10.51,
-      "sma20": 10.027,
-      "rsi14": 50.51,
+      "close": 10.595,
+      "sma20": 10.0727,
+      "rsi14": 51.07,
       "tags": [
         "trend_up"
       ]
     },
     "PLTR": {
       "ok": true,
-      "close": 153.19,
-      "sma20": 136.748,
-      "rsi14": 57.95,
+      "close": 153.65,
+      "sma20": 137.4535,
+      "rsi14": 58.32,
       "tags": [
         "trend_up"
       ]
     },
     "RDW": {
       "ok": true,
-      "close": 9.28,
-      "sma20": 8.889,
-      "rsi14": 50.04,
+      "close": 9.175,
+      "sma20": 8.8462,
+      "rsi14": 49.33,
       "tags": [
         "trend_up"
       ]
     },
     "RKLB": {
       "ok": true,
-      "close": 71.91,
-      "sma20": 70.979,
-      "rsi14": 48.43,
+      "close": 70.91,
+      "sma20": 70.869,
+      "rsi14": 47.16,
       "tags": [
         "trend_up"
       ]
     },
     "TSLA": {
       "ok": true,
-      "close": 405.94,
-      "sma20": 410.2255,
-      "rsi14": 45.25,
+      "close": 406.58,
+      "sma20": 410.254,
+      "rsi14": 45.61,
       "tags": [
         "trend_down"
       ]
     },
     "TSM": {
       "ok": true,
-      "close": 357.44,
-      "sma20": 363.1585,
-      "rsi14": 50.38,
+      "close": 355.8301,
+      "sma20": 364.663,
+      "rsi14": 49.45,
       "tags": [
         "trend_down"
       ]
     },
     "UUUU": {
       "ok": true,
-      "close": 21.81,
-      "sma20": 21.671,
-      "rsi14": 50.55,
+      "close": 20.45,
+      "sma20": 21.6225,
+      "rsi14": 46.61,
       "tags": [
-        "trend_up"
+        "trend_down"
       ]
     },
     "GOOG": {
       "ok": true,
-      "close": 303.45,
-      "sma20": 312.5165,
-      "rsi14": 38.22,
+      "close": 300.445,
+      "sma20": 310.8717,
+      "rsi14": 35.87,
       "tags": [
         "trend_down",
         "momentum_cold"
@@ -243,27 +242,27 @@
     },
     "IBM": {
       "ok": true,
-      "close": 250.06,
-      "sma20": 260.018,
-      "rsi14": 41.9,
+      "close": 254.8099,
+      "sma20": 258.306,
+      "rsi14": 45.0,
       "tags": [
         "trend_down"
       ]
     },
     "BRK.B": {
       "ok": true,
-      "close": 487.48,
-      "sma20": 497.4305,
-      "rsi14": 44.79,
+      "close": 495.01,
+      "sma20": 496.9895,
+      "rsi14": 50.77,
       "tags": [
         "trend_down"
       ]
     },
     "LITE": {
       "ok": true,
-      "close": 680.8,
-      "sma20": 625.0705,
-      "rsi14": 61.58,
+      "close": 674.1211,
+      "sma20": 635.4996,
+      "rsi14": 60.56,
       "tags": [
         "trend_up",
         "momentum_hot"
