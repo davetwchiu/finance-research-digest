@@ -169,11 +169,31 @@ def build_page(
     links = " · ".join([f"<a href='{u}'>{u}</a>" for u in (f.get("source_links") or [])])
     fallback_note = "Yes (deterministic neutral defaults)" if f.get("fallback_used") else "No"
 
-    return f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.58}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}}.muted{{color:#a7b0d6}}table{{width:100%;border-collapse:collapse}}th,td{{border-bottom:1px solid #2a3768;padding:8px;text-align:left}}</style></head><body>
+    atr_pct = m.get("atr_pct")
+    if atr_pct is None:
+        risk_meter = "Unknown"
+    elif atr_pct >= 6:
+        risk_meter = "High"
+    elif atr_pct >= 3:
+        risk_meter = "Medium"
+    else:
+        risk_meter = "Low"
+
+    if score.total >= 80:
+        layman_action = "Stronger setup, but still use staged entries and a hard invalidation."
+    elif score.total >= 65:
+        layman_action = "Constructive but not chase-worthy. Wait for confirmation before adding risk."
+    elif score.total >= 50:
+        layman_action = "Mixed setup. Treat as watchlist candidate unless trigger confirms."
+    else:
+        layman_action = "Risk-first mode. Avoid fresh long exposure until structure improves."
+
+    return f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.58}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}}.muted{{color:#a7b0d6}}table{{width:100%;border-collapse:collapse}}th,td{{border-bottom:1px solid #2a3768;padding:8px;text-align:left}}.pill{{display:inline-block;border:1px solid #3a4c88;border-radius:999px;padding:3px 10px;font-size:12px;color:#dfe7ff}}</style></head><body>
 <p><a href='../index.html'>← Back</a> · <a href='../{report_path}'>Daily report</a></p>
 <h1>{ticker} — Deep Analysis v4</h1>
 <p class='muted'>Last generated (UTC): {generated_at_utc} · Last generated (HKT): {generated_at_hkt} · Fundamentals as-of: {f.get('as_of','N/A')} · Fallback fundamentals used: {fallback_note}</p>
 <div class='card'><h2>Layman summary (read this first)</h2><p><strong>{verdict}</strong></p><p>Simple read: score is <strong>{score.total}/100</strong>. This setup is rule-based, so the same inputs produce the same verdict every time.</p><ul><li><strong>If bullish continuation appears:</strong> {trigger}</li><li><strong>If setup fails:</strong> {invalidation}</li><li><strong>Upside roadmap:</strong> {targets}</li></ul></div>
+<div class='card'><h2>If you are not an active trader</h2><p><span class='pill'>Risk meter: {risk_meter}</span> <span class='pill'>Score: {score.total}/100</span></p><p><strong>What this means in plain English:</strong> {layman_action}</p><ul><li>Do not react to one headline alone; wait for price confirmation.</li><li>Keep position size smaller when risk meter is Medium/High.</li><li>If invalidation triggers, reduce risk quickly instead of averaging down.</li></ul></div>
 <div class='card'><h2>Deterministic verdict</h2><p><strong>{verdict}</strong></p><p>Total score: <strong>{score.total}/100</strong> (TA {score.ta}/50 + Fundamentals {score.fundamentals}/50).</p><ul>{''.join([f'<li>{e}</li>' for e in evidence])}</ul></div>
 <details class='card'><summary><strong>Technical evidence (expand)</strong></summary>
 <div><h2>Technical block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
@@ -196,6 +216,12 @@ def build_page(
 <li>Earnings guide miss: score must be recomputed immediately if forward growth assumptions break.</li>
 <li>Policy/geopolitical headline: semis and defence-adjacent names can gap outside ATR assumptions.</li>
 </ol></div>
+<details class='card'><summary><strong>Quick glossary (for layman readers)</strong></summary><ul>
+<li><strong>SMA20/SMA50:</strong> average prices over 20/50 days; helps judge trend direction.</li>
+<li><strong>RSI14:</strong> momentum indicator; very high can mean overheated, very low can mean weak.</li>
+<li><strong>ATR:</strong> typical daily movement size; higher ATR means higher volatility/risk.</li>
+<li><strong>Forward P/E and PEG:</strong> valuation shortcuts; higher values mean market expects stronger future growth.</li>
+</ul></details>
 <div class='card'><h2>Quality gate evidence</h2><ul>
 <li>Depth checklist: TA table + Fundamentals table + deterministic thresholds + risk map = COMPLETE.</li>
 <li>Timestamped artifact: this page records UTC/HKT generation timestamps.</li>
