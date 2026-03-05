@@ -45,6 +45,24 @@ def _report_has_repeated_regime(report_html: Path) -> bool:
     return len(re.findall(r"Regime node\s+\d+", s, flags=re.IGNORECASE)) >= 5
 
 
+def _report_words(report_html: Path) -> int:
+    s = report_html.read_text(encoding="utf-8", errors="ignore")
+    txt = re.sub(r"<[^>]+>", " ", s)
+    return len(re.findall(r"\b\w+\b", txt))
+
+
+def _report_has_layman_section(report_html: Path) -> bool:
+    s = report_html.read_text(encoding="utf-8", errors="ignore").lower()
+    keys = [
+        "if you are not a trader",
+        "plain-language",
+        "plain language",
+        "simple takeaway",
+        "if you do not trade",
+    ]
+    return any(k in s for k in keys)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Quality guard for site pages")
     ap.add_argument("--root", default=".")
@@ -82,6 +100,12 @@ def main() -> int:
         fails.append("missing daily report html")
     else:
         print(f"latest report: {latest.name}")
+        w = _report_words(latest)
+        print(f"latest report words: {w}")
+        if w < 700:
+            fails.append(f"{latest.name} is too thin ({w} words < 700)")
+        if not _report_has_layman_section(latest):
+            fails.append(f"{latest.name} missing layman/plain-language section")
         if _report_has_repeated_regime(latest):
             fails.append(f"{latest.name} contains repeated 'Regime node' boilerplate")
 
