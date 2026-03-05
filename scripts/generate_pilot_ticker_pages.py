@@ -147,6 +147,30 @@ def _trigger_block(m: Dict[str, Any]) -> Tuple[str, str, str]:
     )
 
 
+def _tv_symbol(ticker: str) -> str:
+    # Explicit exchange mapping for watchlist names (improves TradingView resolve reliability).
+    exchange_map = {
+        "AAPL": "NASDAQ:AAPL",
+        "AVGO": "NASDAQ:AVGO",
+        "BBAI": "NYSE:BBAI",
+        "BRK.B": "NYSE:BRK.B",
+        "GOOG": "NASDAQ:GOOG",
+        "IBM": "NYSE:IBM",
+        "KTOS": "NASDAQ:KTOS",
+        "LITE": "NASDAQ:LITE",
+        "MSFT": "NASDAQ:MSFT",
+        "NVDA": "NASDAQ:NVDA",
+        "ONDS": "NASDAQ:ONDS",
+        "PLTR": "NASDAQ:PLTR",
+        "RDW": "NYSE:RDW",
+        "RKLB": "NASDAQ:RKLB",
+        "TSLA": "NASDAQ:TSLA",
+        "TSM": "NYSE:TSM",
+        "UUUU": "NYSEAMERICAN:UUUU",
+    }
+    return exchange_map.get(ticker, ticker)
+
+
 def build_page(
     ticker: str,
     sig: Dict[str, Any],
@@ -170,6 +194,7 @@ def build_page(
     fallback_note = "Yes (deterministic neutral defaults)" if f.get("fallback_used") else "No"
 
     atr_pct = m.get("atr_pct")
+    tv_symbol = _tv_symbol(ticker)
     if atr_pct is None:
         risk_meter = "Unknown"
     elif atr_pct >= 6:
@@ -194,6 +219,7 @@ def build_page(
 <p class='muted'>Last generated (UTC): {generated_at_utc} · Last generated (HKT): {generated_at_hkt} · Fundamentals as-of: {f.get('as_of','N/A')} · Fallback fundamentals used: {fallback_note}</p>
 <div class='card'><h2>Layman summary (read this first)</h2><p><strong>{verdict}</strong></p><p>Simple read: score is <strong>{score.total}/100</strong>. This setup is rule-based, so the same inputs produce the same verdict every time.</p><ul><li><strong>If bullish continuation appears:</strong> {trigger}</li><li><strong>If setup fails:</strong> {invalidation}</li><li><strong>Upside roadmap:</strong> {targets}</li></ul></div>
 <div class='card'><h2>If you are not an active trader</h2><p><span class='pill'>Risk meter: {risk_meter}</span> <span class='pill'>Score: {score.total}/100</span></p><p><strong>What this means in plain English:</strong> {layman_action}</p><ul><li>Do not react to one headline alone; wait for price confirmation.</li><li>Keep position size smaller when risk meter is Medium/High.</li><li>If invalidation triggers, reduce risk quickly instead of averaging down.</li></ul></div>
+<div class='card'><h2>Price chart (visual context)</h2><p class='muted'>For quick orientation only — do not use chart alone without the trigger/invalidation rules above.</p><iframe title='TradingView chart for {ticker}' src='https://s.tradingview.com/widgetembed/?symbol={tv_symbol}&interval=D&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&theme=dark&style=1&timezone=Asia%2FHong_Kong' width='100%' height='420' frameborder='0' allowtransparency='true' scrolling='no'></iframe></div>
 <div class='card'><h2>Deterministic verdict</h2><p><strong>{verdict}</strong></p><p>Total score: <strong>{score.total}/100</strong> (TA {score.ta}/50 + Fundamentals {score.fundamentals}/50).</p><ul>{''.join([f'<li>{e}</li>' for e in evidence])}</ul></div>
 <details class='card'><summary><strong>Technical evidence (expand)</strong></summary>
 <div><h2>Technical block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
