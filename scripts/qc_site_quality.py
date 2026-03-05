@@ -76,6 +76,16 @@ def _report_has_layman_section(report_html: Path) -> bool:
     return any(k in s for k in keys)
 
 
+def _report_has_required_ops_sections(report_html: Path) -> list[str]:
+    s = report_html.read_text(encoding="utf-8", errors="ignore").lower()
+    missing = []
+    if "what changed" not in s:
+        missing.append("missing 'what changed' section")
+    if "risk checklist" not in s:
+        missing.append("missing 'risk checklist' section")
+    return missing
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Quality guard for site pages")
     ap.add_argument("--root", default=".")
@@ -125,6 +135,8 @@ def main() -> int:
             fails.append(f"{latest.name} is too thin ({w} words < 700)")
         if not _report_has_layman_section(latest):
             fails.append(f"{latest.name} missing layman/plain-language section")
+        for miss in _report_has_required_ops_sections(latest):
+            fails.append(f"{latest.name} {miss}")
         if _report_has_repeated_regime(latest):
             fails.append(f"{latest.name} contains repeated 'Regime node' boilerplate")
 
