@@ -207,12 +207,18 @@ def build_page(
 
     if score.total >= 80:
         layman_action = "Stronger setup, but still use staged entries and a hard invalidation."
+        regime_label = "Risk-on continuation"
     elif score.total >= 65:
         layman_action = "Constructive but not chase-worthy. Wait for confirmation before adding risk."
+        regime_label = "Selective risk-on"
     elif score.total >= 50:
         layman_action = "Mixed setup. Treat as watchlist candidate unless trigger confirms."
+        regime_label = "Neutral / mixed"
     else:
         layman_action = "Risk-first mode. Avoid fresh long exposure until structure improves."
+        regime_label = "Risk-off / fragile"
+
+    confidence = "High" if (score.total >= 70 and m.get("atr_pct") is not None and m["atr_pct"] < 4.5) else ("Medium" if score.total >= 55 else "Low")
 
     nsum = (news or {}).get("summary") or {}
     nitems = (news or {}).get("items") or []
@@ -232,9 +238,10 @@ def build_page(
 <h1>{ticker} — Deep Analysis v4</h1>
 <p class='muted'>Last generated (UTC): {generated_at_utc} · Last generated (HKT): {generated_at_hkt} · Fundamentals as-of: {f.get('as_of','N/A')} · Fallback fundamentals used: {fallback_note}</p>
 <div class='card'><h2>Layman summary (read this first)</h2><p><strong>{verdict}</strong></p><p>Simple read: score is <strong>{score.total}/100</strong>. This setup is rule-based, so the same inputs produce the same verdict every time.</p><ul><li><strong>If bullish continuation appears:</strong> {trigger}</li><li><strong>If setup fails:</strong> {invalidation}</li><li><strong>Upside roadmap:</strong> {targets}</li></ul></div>
-<div class='card'><h2>If you are not an active trader</h2><p><span class='pill'>Risk meter: {risk_meter}</span> <span class='pill'>Score: {score.total}/100</span></p><p><strong>What this means in plain English:</strong> {layman_action}</p><ul><li>Do not react to one headline alone; wait for price confirmation.</li><li>Keep position size smaller when risk meter is Medium/High.</li><li>If invalidation triggers, reduce risk quickly instead of averaging down.</li></ul></div>
+<div class='card'><h2>If you are not an active trader</h2><p><span class='pill'>Risk meter: {risk_meter}</span> <span class='pill'>Score: {score.total}/100</span> <span class='pill'>Regime: {regime_label}</span> <span class='pill'>Confidence: {confidence}</span></p><p><strong>What this means in plain English:</strong> {layman_action}</p><ul><li>Do not react to one headline alone; wait for price confirmation.</li><li>Keep position size smaller when risk meter is Medium/High.</li><li><strong>Invalidation rule:</strong> {invalidation}</li></ul></div>
 <div class='card'><h2>Price chart (visual context)</h2><p class='muted'>For quick orientation only — do not use chart alone without the trigger/invalidation rules above.</p><iframe title='TradingView chart for {ticker}' src='https://s.tradingview.com/widgetembed/?symbol={tv_symbol}&interval=D&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&theme=dark&style=1&timezone=Asia%2FHong_Kong' width='100%' height='420' frameborder='0' allowtransparency='true' scrolling='no'></iframe></div>
 <div class='card'><h2>News pulse (price-impact view)</h2><p><span class='pill'>{news_label}</span> <span class='pill'>{news_counts}</span></p><p class='muted'>Heuristic headline impact read: positive/negative skew + high-impact keyword detection (earnings, guidance, contract, lawsuit, policy).</p><ul>{news_list_html}</ul></div>
+<div class='card'><h2>Decision gate (before adding risk)</h2><ul><li><strong>Step 1:</strong> Trigger confirmed? ({trigger})</li><li><strong>Step 2:</strong> News not materially worsening? (negative/high-impact headlines should pause adds)</li><li><strong>Step 3:</strong> Invalidation accepted upfront? ({invalidation})</li></ul><p class='muted'>If any step fails, treat this as watch-only or paper-trade setup.</p></div>
 <div class='card'><h2>Deterministic verdict</h2><p><strong>{verdict}</strong></p><p>Total score: <strong>{score.total}/100</strong> (TA {score.ta}/50 + Fundamentals {score.fundamentals}/50).</p><ul>{''.join([f'<li>{e}</li>' for e in evidence])}</ul></div>
 <details class='card'><summary><strong>Technical evidence (expand)</strong></summary>
 <div><h2>Technical block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
