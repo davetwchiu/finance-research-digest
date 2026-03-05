@@ -404,11 +404,12 @@ async function loadExecSummary(){
     const j = await r.json();
     const macro = j.macro || (Array.isArray(j.watchlist) ? `Market snapshot across ${j.watchlist.length} tracked names updated.` : 'No macro summary yet.');
     const policy = j.policy || 'Policy summary pending next macro-format run.';
-    const delta = j.delta || (j.updated_at ? `Data refresh timestamp: ${j.updated_at}` : 'No delta summary yet.');
+    const updatedTs = j.updatedAt || j.updated_at || null;
+    const delta = j.delta || (updatedTs ? `Data refresh timestamp: ${updatedTs}` : 'No delta summary yet.');
     m.textContent = `Macro: ${macro}`;
     p.textContent = `Policy: ${policy}`;
     d.textContent = `Change vs yesterday: ${delta}`;
-    setLastUpdated(j.updated_at || null);
+    setLastUpdated(updatedTs);
     if(j.latestReportPath){ b.href = j.latestReportPath; }
   }catch{
     m.textContent = 'Macro: Summary will appear after next report run.';
