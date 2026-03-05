@@ -39,6 +39,19 @@ def _has_stale_phrase(index_html: Path) -> bool:
     return "Daily Finance Research Digest" in s
 
 
+def _index_has_last_updated_signal(index_html: Path) -> bool:
+    s = index_html.read_text(encoding="utf-8", errors="ignore")
+    # Require both the DOM anchor and JS updater to avoid silent regressions.
+    return ("id='siteLastUpdated'" in s or 'id="siteLastUpdated"' in s) and (
+        "function setLastUpdated(" in s and "stale >24h" in s
+    )
+
+
+def _index_has_deep_stale_signal(index_html: Path) -> bool:
+    s = index_html.read_text(encoding="utf-8", errors="ignore")
+    return "atlasDeepHeadline" in s and "stale >24h" in s
+
+
 def _report_has_repeated_regime(report_html: Path) -> bool:
     s = report_html.read_text(encoding="utf-8", errors="ignore")
     # Catch repeated templated nodes like "Regime node X" blocks.
@@ -94,6 +107,12 @@ def main() -> int:
     # Brand phrase hygiene
     if _has_stale_phrase(index_html):
         fails.append("index contains deprecated phrase 'Daily Finance Research Digest'")
+
+    # Freshness/staleness visibility (publish reliability)
+    if not _index_has_last_updated_signal(index_html):
+        fails.append("index missing robust 'Last updated' freshness signal")
+    if not _index_has_deep_stale_signal(index_html):
+        fails.append("index missing deep-analysis stale indicator wiring")
 
     latest = _latest_daily_report(reports_dir)
     if latest is None:
