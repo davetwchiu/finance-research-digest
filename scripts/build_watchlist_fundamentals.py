@@ -40,12 +40,31 @@ def _to_yahoo_symbol(ticker: str) -> str:
 
 def fetch_quote_summary(ticker: str) -> dict[str, Any]:
     symbol = _to_yahoo_symbol(ticker)
-    url = f"https://query1.finance.yahoo.com/v10/finance/quoteSummary/{quote(symbol)}?modules={MODULES}"
-    req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urlopen(req, timeout=20) as r:
-        payload = json.loads(r.read().decode("utf-8"))
-    result = (((payload.get("quoteSummary") or {}).get("result") or [None])[0]) or {}
-    return result
+    hosts = ["query2.finance.yahoo.com", "query1.finance.yahoo.com"]
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        "Accept": "application/json,text/plain,*/*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": "https://finance.yahoo.com/",
+        "Origin": "https://finance.yahoo.com",
+    }
+
+    last_error: Exception | None = None
+    for host in hosts:
+        url = f"https://{host}/v10/finance/quoteSummary/{quote(symbol)}?modules={MODULES}"
+        try:
+            req = Request(url, headers=headers)
+            with urlopen(req, timeout=20) as r:
+                payload = json.loads(r.read().decode("utf-8"))
+            result = (((payload.get("quoteSummary") or {}).get("result") or [None])[0]) or {}
+            if result:
+                return result
+        except Exception as e:
+            last_error = e
+
+    if last_error:
+        raise last_error
+    return {}
 
 
 def build_one(ticker: str, result: dict[str, Any]) -> dict[str, Any]:
