@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-06T08:33:20+08:00",
+  "generated_at": "2026-03-06T08:54:42+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -67,7 +67,7 @@
       "query": "AVGO OR AVGO stock",
       "summary": {
         "label": "Constructive \u2014 positive-news skew",
-        "positive_count": 1,
+        "positive_count": 2,
         "negative_count": 0,
         "high_impact_count": 4
       },
@@ -83,40 +83,40 @@
           }
         },
         {
-          "title": "Is Broadcom Stock (AVGO) a Buy Ahead of Earnings? - TipRanks",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxORHZzeVg3cGdxMjhSa1lLUnRfTHdzcmJZVDcyWHN6OWxncjRGd2dSX3g2TDJaN3M4OUNqNEhManZIZGw0VHh1b01UdVEyMC1OVFVVdVZyTkdQQVNUN21abnFwbnZkbXdlNFlsM2NkX0pOencxaENuSEhySGNIX05uX1R3?oc=5",
-          "published_hkt": "2026-03-02T20:10:57+08:00",
-          "source": "TipRanks",
+          "title": "Here's How Much Traders Expect Broadcom Stock To Move After Earnings - Investopedia",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPQ0gybktGZzdKaTlVQW1sVWwzZFk4T2FfYy11N2FfUnNmMTZ5QzRMNkR2RGotMFQ2RlkwZkY2QUNsOXc2NUF4dXVDQWJSaXpKXzlqMEJCeHFEX2xZNkJROW9aZlRPeWtxN2NxbWpGUGs5bnpPOGM3MDlQbDNLR2tnaFdVTGxzLVpOcmdtTHJwZUw5VkJZQ2NWNGhUUXFvMW16bFMyS1BFMGFRbnhvYlZIV08wQU1EdXh3RkxqZlZxMA?oc=5",
+          "published_hkt": "2026-03-04T19:11:23+08:00",
+          "source": "Investopedia",
           "impact": {
             "sentiment": "neutral",
             "severity": "high"
           }
         },
         {
-          "title": "5-star analyst resets Broadcom price target before earnings - thestreet.com",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNmMxRklGbmw1MFhBNVljU09SYlk1OV84Y21OT2NoTGtVNkNpTWZTdXU0aDlMNUlLbkE4eUFMOGQ4SG1RQjN0U09adFc0d1V3aENXWDhTTG5kZFdjbzNQLVFJSG5jZEQ0RFo1MkEyeW1QS0hIRjczLWtPaFIxXzZTOHhrMEpCcnZDSTFCSmNhbGxCX2tVZDlCWE50S3hKUnI0UXBuMg?oc=5",
-          "published_hkt": "2026-03-03T23:47:00+08:00",
-          "source": "thestreet.com",
+          "title": "Will Higher Semiconductor Revenues Help AVGO Stock Beat Q1 Earnings? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRkYwTDhnZmFfemZvMmllUkdDQzZ1SHBDTkRhWnJWSmlrdVF5bHhnRVFqbVUwMExKUWJUekxkWVV3aFV3X2RXT3lYdEZuUk1qRWRqR2VLNkFoNThLM2ZQZE5DdHQxd0hfTXBsdnNpM1V3OTFEQXJDNjMxU1gzUHJqeDZhdEZmX0FkVHY5c1Jn?oc=5",
+          "published_hkt": "2026-03-03T20:55:00+08:00",
+          "source": "Yahoo Finance",
           "impact": {
-            "sentiment": "neutral",
+            "sentiment": "positive",
             "severity": "high"
           }
         },
         {
-          "title": "Stocks making the biggest moves after hours: Broadcom, Okta, StubHub & more - CNBC",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZDBtR0xSOUZ0bmg5OURleXhUZzQ3cHcxSkFGWkx4Rk5CT2dJYTBKRFlpOUVlMFpRM3FBd21tRE8wdm1YU0hUZTJnbjJZNjgzUWRwem1FWmxqbDVTYlBYVlJRY1lGa1VuZnpDR2JfN2RickxyOE51ejVNSE9UbEdXZE5Nb05JSVE5MVhmNGZGWWpRUVk2aXhJOE9Xbw?oc=5",
-          "published_hkt": "2026-03-05T05:58:21+08:00",
-          "source": "CNBC",
+          "title": "Prediction: This Glorious Growth Stock Will Soar After March 4 - The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPLWpCNkhyRjlYTV9ybXl1SzlNaTdqbUU4eFlHcEh4N0hHOWpyLVlZSVJZbW1XeDk5VlRDSzE2V20xZE5XejhTWmd5S3dSNDJRSlJqTWJ4OTE1em5sSkNLeHA5QUM2c25ycUlBZzhIWXZRS2dIUVVBZjdQVmJKZmljN0FDQkdmNFd5Sy1FMWxuaWY3bncw?oc=5",
+          "published_hkt": "2026-03-04T01:10:00+08:00",
+          "source": "The Motley Fool",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
           }
         },
         {
-          "title": "Why Broadcom Stock Has Done What Nvidia Couldn\u2019t After Earnings - Barron's",
-          "url": "https://news.google.com/rss/articles/CBMihwNBVV95cUxPcmRiYUxodE5iWUp2MWZYYV82S3VqbjV4Wkk3RmhWMjBfek9mMzh2X2xmd1BleVMyQlRNVzBobTNYT1FjSDMzWEliSmwzMWJDRTBDLWZFdEFRcXJra1FYRk9uZ3EzSUZ1N3prZVVRaHluUDd1NnduTDRiZi1NWnMzRWZnbmwtNVBISUlXR202RF9iRG1LWWlaNGNSazRCYnhTWTdELXExUzlVT2ZNdHRBTEt1NFhtZ0pJTzNyWHMtWHBON0w0WXR5cEtfalRwUllzVVJid2prbFQ0N1N2NlpUb29qUTAtZDFwZDVXSmVQX0JOWlpUVjJpTW54WGExWC1xM0NJNC1RQ1FNakpoMWh5eXBaZlh1Y2htaXZjTVgxTzRnc2M4N2VlaUhUUlBJV24yRy15aUlRaDYyVElyWFJiOVE0Q3ZjM1BOT004Ry1GOUE4bnAtRlFiQmtXY3AydlBoWGhwaGtaTXVuMlhaNDdOWEUyXzVJcTg1WDhZM1RCSjU1ek5hV3M0?oc=5",
-          "published_hkt": "2026-03-05T23:00:00+08:00",
-          "source": "Barron's",
+          "title": "Live Earnings Analysis: Broadcom (AVGO) Wows Wall Street With $100 Billion AI Forecast - 24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxORmdXSFdSQ2l4Z3JKUEN6cWF0QjdJamJHT2tFNElwMUFyX0dSTnRlcGtoQ0RXZ3Q3eW00cXdyVk52UHlFZVJsajV4THV4YUpCc201aThuS3RqUnVrVmZIalVIQkxXaGtOSUZJbWNhTDFDYVlfNlRUWlVZOU51eG1lVEJlQ1J1MkpmbUpIUGJTNTRyajl1OG13dzQ0OW12VDFoTk0zRUVtYjJ1QUZacnlWQXVhVGZoeU0?oc=5",
+          "published_hkt": "2026-03-05T04:00:50+08:00",
+          "source": "24/7 Wall St.",
           "impact": {
             "sentiment": "neutral",
             "severity": "high"
@@ -164,16 +164,6 @@
           }
         },
         {
-          "title": "BIGBEAR.AI ($BBAI) Releases Q4 2025 Earnings - Quiver Quantitative",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNblpvcHp4UlVUS28wTVFvbDdnZ2xfclNRNUxBREZVcXZFWUs1WDBQY041aE1ZSjhDcEVRamltM25IWWJvenhEaEJuZ1V4WnFyYjFmT00xTThrYW5UQVFDeC1nMEc4N29BOHJ0N05YeUh4eWoxSTN0R2F4TXo1ZlF2TjJXdm1kd1FtQXlv?oc=5",
-          "published_hkt": "2026-03-03T06:50:00+08:00",
-          "source": "Quiver Quantitative",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "high"
-          }
-        },
-        {
           "title": "BigBear.ai Stock Is Down Big, But Smart Money Is Quietly Buying - MarketBeat",
           "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMjlYU1MyWElqb1lwd1ZST21vWWJCaEtvZVV4N2xkTWhseHBqX3pjazc3czRSbE5qM1lYTGNhbHNoYTBzbFhrTUNabmNhbzdLd2t4V3VUaGJwbGVwMEVFSW1HR2xmY1gxYVF2ZUdWVzNUUnVVN1czMk5ZVll4cTB4alVyR3VqR0xfYTBhUGFNR3c4N1JnREI4bklTLVdoWFUw?oc=5",
           "published_hkt": "2026-03-04T21:20:13+08:00",
@@ -181,6 +171,16 @@
           "impact": {
             "sentiment": "positive",
             "severity": "medium"
+          }
+        },
+        {
+          "title": "BIGBEAR.AI ($BBAI) Releases Q4 2025 Earnings - Quiver Quantitative",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNblpvcHp4UlVUS28wTVFvbDdnZ2xfclNRNUxBREZVcXZFWUs1WDBQY041aE1ZSjhDcEVRamltM25IWWJvenhEaEJuZ1V4WnFyYjFmT00xTThrYW5UQVFDeC1nMEc4N29BOHJ0N05YeUh4eWoxSTN0R2F4TXo1ZlF2TjJXdm1kd1FtQXlv?oc=5",
+          "published_hkt": "2026-03-03T06:50:00+08:00",
+          "source": "Quiver Quantitative",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "high"
           }
         }
       ]
@@ -337,30 +337,30 @@
           }
         },
         {
-          "title": "UBS makes bold new call on Nvidia stock - thestreet.com",
-          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPNEoycGwzUmlkaWFhREtoMDBxNFN2MlZkSmNRNm5kd3N1VFVoci1fZ2I2MnBmMkdDOTAtTTlmLVRmbnNValVCcXVoTlloYkpKQzhYTUJTdHBKRVJVdko1M3BJVnZKbXJrLWVZMVlJX0xpeGR4Z1AzU2lwSmNUMU5nTmR4OXBkWWhCWEE?oc=5",
-          "published_hkt": "2026-03-06T03:33:00+08:00",
-          "source": "thestreet.com",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "Nvidia Is Morgan Stanley's Favorite Chip Stock Again. Here's Why - Investopedia",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUTVpSmF3d29Gbmdta2tuVVVFLU1TOHRUSTRIMGVDU19UVTNvVUY5YWRBMjE0MzQzcVNKMUlLWmtzc0JRWHQwTWViSEZuSzdtZExwb0tyVG5iYjBmQVNsMFp5WHVmdzZWRml1WDFjX2FXZHFPdkVaa01IUnBzeDNPanJRUjBCdXQxT2xKN0JPSEpad1ZUelA3ag?oc=5",
-          "published_hkt": "2026-03-04T01:38:04+08:00",
-          "source": "Investopedia",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
           "title": "Prediction: Nvidia (NVDA) Will Be Worth More Than Alphabet, Apple, Amazon, Tesla, Meta, and Microsoft Combined by 2030 - Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNLTEyQnZENm52dlhkVW1nRmtqWTN3X2taVG5nYTZXd1FiZkx1REZUZzltV3NWRGVPVC1SSFBvMUdCcmNvdTdWVVlReUlDVnlMN3VaVWhJbEdIejNHUGxTTVgyRXBGYkJDSlIxbmg0bXhFb1pPNFN5ek5Sa0Z3em9xSmpzNHBrQQ?oc=5",
           "published_hkt": "2026-03-04T10:05:00+08:00",
           "source": "Yahoo Finance",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "We're upgrading our rating on Nvidia shares. Here's why - CNBC",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWWNGNjJGOXhkZlQ4VEhlOV9uWTV4WDJGSDI4UmsyWTFFSGwyVjExdERfXzNKbVlUaEpXTTlUZ0p4NU5EdXFsTTBzYzkxZFFUMkZHTHE3Qm8tWTlKS2tCYmVtTnlpYkpiNXlqWGpCcFdpS2EwQnNkS2ZJTFZtelZqS25xVktZOTd2V3lJbDNLTXFYWThIQXB3SllGMkU?oc=5",
+          "published_hkt": "2026-03-03T03:36:24+08:00",
+          "source": "CNBC",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "Did NVIDIA Crash Memory Stocks Like Micron and SanDisk Yesterday? - 24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPREdDc0kxWVo0aDd2aFNsLUlZd0thMmhvUDhqMXF2aWYtckNHMkh6MVJuNDI0ZEpaQUljUll6Zm50ZE9tbkh6RWVSa2N4SnpONVdBMkxCS0lXZXQ0MHlxS1pjRVgwZGRMNlZlRHlPdFI5bGFyRTBPQVlic1B6UC1obDFCZ0g2RHFQZkRlRlpvREhEZWxnaUpEMEtMQnJaT0tsVVp3MjZVaklBbUNY?oc=5",
+          "published_hkt": "2026-03-04T22:32:00+08:00",
+          "source": "24/7 Wall St.",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -764,16 +764,6 @@
           }
         },
         {
-          "title": "$UUUU stock is down 9% today. Here's what we see in our data. - Quiver Quantitative",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWHFXODRfOEJrQ1NzU25KejJYZDVnUk9ESTFxNUZMbTFJN3BhM1p0UWN3d1A0bWJWNHRTWE9sWS10NkZmZGxaOUY3R0twd2FTbmd2aUsyNXc0MWZkT1pxV2YyUkVGdzJ1c0M2TlJnbm1pR05HNXBGNENoVXk5cm81ZGtNdEJTODRhQ0pkb3FQYmdSaW1rc2V6WVUtV1JZU0dHX2c?oc=5",
-          "published_hkt": "2026-03-03T22:57:00+08:00",
-          "source": "Quiver Quantitative",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
           "title": "Energy Fuels (UUUU +9.6%): 2026 Production Guidance Doubles \u2014 Market Reacts - Trefis",
           "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPLS1iZ2xWdVhUX25hTnhTbTFfYjVrdmhicHJ3c1k5cjZ1aXZLTzFPdjE3OS12bnZvWWluc3RhWkctQUZVV013dzZ1a1FxMHV1cWpuZ0NGbmVVOTIyMDJjaHNTbkp1RElWdVpybzJEV1ZZVkNjRnZnWEllT0NNSjE0bHJvNDBrWmZXYkhiVkRJT2xqSVBYX3lOY3h3cThKVkpzeWx2ZjhueHRxMS03UHI1c0NKSTZualFka0FVVGFsR1Nqd2dYWGg5cQ?oc=5",
           "published_hkt": "2026-03-04T09:43:26+08:00",
@@ -788,6 +778,16 @@
           "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBrMk0xZ21SNGxrbWFQb3pGa3RGaERIRHVGY0VSSlE0OVRnQ2NGQXY5SkM0NUoyS05QcUxVNEJFLXVjQlRqQzQxTGVXWWlUNTAwcUJBa0pzMWxNdlZfZ3dwYkJzVEFTSkNFaFpsWmEtVnN2dGZReG5NZEgydHVYQjg?oc=5",
           "published_hkt": "2026-02-27T08:40:00+08:00",
           "source": "Yahoo Finance",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "$UUUU stock is down 9% today. Here's what we see in our data. - Quiver Quantitative",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWHFXODRfOEJrQ1NzU25KejJYZDVnUk9ESTFxNUZMbTFJN3BhM1p0UWN3d1A0bWJWNHRTWE9sWS10NkZmZGxaOUY3R0twd2FTbmd2aUsyNXc0MWZkT1pxV2YyUkVGdzJ1c0M2TlJnbm1pR05HNXBGNENoVXk5cm81ZGtNdEJTODRhQ0pkb3FQYmdSaW1rc2V6WVUtV1JZU0dHX2c?oc=5",
+          "published_hkt": "2026-03-03T22:57:00+08:00",
+          "source": "Quiver Quantitative",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -938,7 +938,7 @@
         },
         {
           "title": "Berkshire Stock Jumps. Why the New CEO Is Restarting Buybacks and Buying Shares. - Barron's",
-          "url": "https://news.google.com/rss/articles/CBMikwNBVV95cUxPeEhpYjNKeGhuZENrczZMajdRa0pCRWtudlBpTUFwdGlnM1AwZ1ljaXhXNWJzbi1wMVdraUdoTkoyS0JrY2l6V3ZmRVoxMHo0MkdfUFMyXzhYR2VBS3dMaW9zOFk5c3VVZW9NbEhUbEVzRXFXS0lsdXE1QmxaNmN3NDZyNkxsSXRSZXVDYkpYckRhdE84TURZVE5FQXpOLVgxbXNzeEJXeWFnMFVkdzRhVWhHQTc5N1I1Q1pqLTdhREd4TWg4b2FDNEx6Q0pPNG8yeWx6Z0F5SVpRUWZHMzNOQ1J3ZVlvVG44dE1hengxYzFKZmd6MWtCaV8teEpjV0xLYnJJTldZbkFONWMtSlJkOU5fS0tPU1FneHVrcmJDalp6V1pMY0FmWFlHclAtSHRCTGdzTE16dGVxR3kwZ2YtSlVzX25WLTltZ2lTMVVlRmJqcWRWN0V3UXNoVkFZdHJjUFhWd3VDVW5INWp5QmNKV3Z5aVZxN0VSTERCcWROMFMtRVczN2UtdlF6cDBDeDA4X0FJ?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMikwNBVV95cUxPSFh1MzhXSW5OZmhXaFotdklDWEV6SDdtdGxqRVN2TnRWN1lOeHJzR2hiNzlaS2N5QV8tRk1qMzg1eE5GMThSYmNLbEFTNUxMYkVzbENkUWtjcEVKcGxqWnlQT2VrZTU2eGlWaTBaUjJNYndESnpqYkxtTzJmS0hGbWctaERhSkM2dkNOWWQ5eTZIcWxfMW50R0lWYU9LcEZtUW1KQVViaGQ1SXdnTmZLcW5LV1VJUVJYTjYzS2lUMEVhMWhSR1lLMGpnZHdRa1gzSGIxNl9LNjBXOFBwcFJVeTdGcFVLMTRoWGEzYUZNSzBCVmlYWGFURDJMT0hsMlNxNjFFbExDa0pFUTZFS2RsLXFaU1dFamVOcjZPTUI2VkM4UjktemVLVHhwUV9fc2lXQnh6UVlBb1lIUUwwZUw4b1VaUDJqYVNLbVd3RkVCczcxNGd3aHBuTldHZ0ZMNDZtZV9HRGRoa09kQ2VWdWpWUk80cXA4bXpFYmhsUDlyX05QZ1ZiV3NsODhHN25TclRxUGw0?oc=5",
           "published_hkt": "2026-03-06T05:27:00+08:00",
           "source": "Barron's",
           "impact": {

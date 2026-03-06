@@ -11,6 +11,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Optional
+import os
 
 
 def _load(path: Path) -> Dict[str, Any]:
@@ -35,12 +36,48 @@ def _parse_iso_utc(value: Any) -> Optional[datetime]:
     return dt.astimezone(timezone.utc)
 
 
+def _scan_delivery_health(failed_dir: Path, telegram_target: str, max_files: int = 300) -> Dict[str, Any]:
+    if not failed_dir.exists() or not failed_dir.is_dir():
+        return {"target": telegram_target, "recent_fail_count": 0, "chat_not_found_count": 0, "latest_error": None}
+
+    files = sorted(failed_dir.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)[:max_files]
+    fail_count = 0
+    chat_not_found = 0
+    latest_error = None
+    for fp in files:
+        try:
+            payload = json.loads(fp.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if str(payload.get("to")) != telegram_target:
+            continue
+        fail_count += 1
+        err = str(payload.get("lastError") or "")
+        if latest_error is None and err:
+            latest_error = err
+        if "chat not found" in err.lower():
+            chat_not_found += 1
+
+    return {
+        "target": telegram_target,
+        "recent_fail_count": fail_count,
+        "chat_not_found_count": chat_not_found,
+        "latest_error": latest_error,
+    }
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--deep", default="data/cache/atlas_deep_analysis.json")
     ap.add_argument("--prev", default="data/cache/atlas_deep_analysis.prev.json")
     ap.add_argument("--high-threshold", type=int, default=4)
     ap.add_argument("--max-age-hours", type=float, default=24.0)
+    ap.add_argument("--telegram-target", default="telegram:-3851523537")
+    ap.add_argument(
+        "--failed-queue-dir",
+        default=os.path.expanduser("~/.openclaw/delivery-queue/failed"),
+        help="Path to OpenClaw failed delivery queue for health checks.",
+    )
     args = ap.parse_args()
 
     deep_path = Path(args.deep)
@@ -68,6 +105,8 @@ def main() -> int:
     if generated_at_dt is not None:
         generated_age_hours = (now_utc - generated_at_dt).total_seconds() / 3600.0
 
+    delivery_health = _scan_delivery_health(Path(args.failed_queue_dir), args.telegram_target)
+
     reasons = []
     if not cur:
         reasons.append("deep_analysis_missing_or_unreadable")
@@ -81,6 +120,8 @@ def main() -> int:
         reasons.append(f"deep_analysis_stale_hours:{generated_age_hours:.2f}>{args.max_age_hours}")
     if schema_issues:
         reasons.append("deep_analysis_schema_incomplete:" + ",".join(schema_issues))
+    if delivery_health.get("chat_not_found_count", 0) >= 3:
+        reasons.append("telegram_delivery_chat_not_found_repeated")
 
     llm_needed = len(reasons) > 0
     out = {
@@ -96,6 +137,7 @@ def main() -> int:
         "generated_age_hours": (round(generated_age_hours, 2) if generated_age_hours is not None else None),
         "checked_at_utc": now_utc.isoformat(),
         "deep_file": str(deep_path),
+        "telegram_delivery_health": delivery_health,
     }
 
     print(json.dumps(out, indent=2))

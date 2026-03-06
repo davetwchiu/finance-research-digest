@@ -361,7 +361,11 @@ async function loadAtlasDeepLocalAnalysis(){
     headline.textContent = `(${fmtHKT(j.generated_at)}${stale ? ' · stale >24h' : ''})`;
     headline.className = generatedValid ? (stale ? 'err' : 'ok') : 'muted';
     regime.textContent = `Regime: ${(mr.label||'n/a').toUpperCase()} | score ${mr.composite_score ?? 'n/a'} (breadth ${comp.breadth ?? 'n/a'}, momentum ${comp.momentum ?? 'n/a'}, volatility ${comp.volatility ?? 'n/a'}).`;
-    triage.textContent = `Triage: ${(tq.high_attention||[]).length} high_attention · ${(tq.watch||[]).length} watch · ${(tq.low_priority||[]).length} low_priority.`;
+    const hi = Array.isArray(tq.high_attention) ? tq.high_attention : [];
+    const watch = Array.isArray(tq.watch) ? tq.watch : [];
+    const low = Array.isArray(tq.low_priority) ? tq.low_priority : [];
+    const hiTickers = hi.slice(0,3).map(x=>`${x.ticker}${(x.score ?? null)===null?'':`(${x.score})`}`).join(', ');
+    triage.textContent = `Triage: ${hi.length} high_attention${hiTickers ? ` [${hiTickers}]` : ''} · ${watch.length} watch · ${low.length} low_priority.`;
     quality.textContent = `Quality: missing ${sq.missing_data_pct ?? 'n/a'}% · stale ${sq.stale_indicator_pct ?? 'n/a'}%.`;
 
     const themeLines = Object.entries(themeObj).map(([k,v])=>`${k}: ${v?.avg_sma20_gap_pct ?? 'n/a'}%`).join(' · ');
