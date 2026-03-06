@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-03-03T09:30:00+08:00",
-  "market": "Near-term AI leadership should favor issuers converting demand into durable free cash flow, not just expanding capex.",
-  "tech": "Monetization appears strongest in workflow-embedded AI, inference-efficiency engineering, and governance tooling; standalone model differentiation is narrowing.",
-  "risk": "Top downside is capex outrunning monetization, with added volatility from export-control shifts and power/interconnection bottlenecks.",
+  "updatedAt": "2026-03-06T09:30:00+08:00",
+  "market": "AI remains a real multi-year buildout, but market leadership is rotating from capex scale to cash-flow-quality execution.",
+  "tech": "Most monetizable today: inference-efficiency, workflow-embedded copilots, and compliance-ready enterprise deployment; least proven: broad autonomous agent replacement in regulated workflows.",
+  "risk": "Top risks are capex outrunning monetization, export-control regime shifts, and power/interconnection bottlenecks delaying usable capacity.",
   "latestPath": "./ai-research/latest.html"
 }
