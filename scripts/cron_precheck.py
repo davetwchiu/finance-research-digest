@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Optional
@@ -36,16 +37,47 @@ def _parse_iso_utc(value: Any) -> Optional[datetime]:
     return dt.astimezone(timezone.utc)
 
 
-def _scan_delivery_health(failed_dir: Path, telegram_target: str, max_files: int = 300) -> Dict[str, Any]:
-    if not failed_dir.exists() or not failed_dir.is_dir():
-        return {"target": telegram_target, "recent_fail_count": 0, "chat_not_found_count": 0, "latest_error": None}
+def _extract_migrated_chat_candidates(error_text: str) -> list[str]:
+    if not error_text:
+        return []
+    ids = re.findall(r"-100\d{8,}", error_text)
+    # preserve order, dedupe
+    seen: set[str] = set()
+    out: list[str] = []
+    for cid in ids:
+        if cid in seen:
+            continue
+        seen.add(cid)
+        out.append(cid)
+    return out
 
+
+def _scan_delivery_health(
+    failed_dir: Path,
+    telegram_target: str,
+    lookback_hours: float,
+    max_files: int = 300,
+) -> Dict[str, Any]:
+    if not failed_dir.exists() or not failed_dir.is_dir():
+        return {
+            "target": telegram_target,
+            "lookback_hours": lookback_hours,
+            "recent_fail_count": 0,
+            "chat_not_found_count": 0,
+            "latest_error": None,
+        }
+
+    now_utc = datetime.now(timezone.utc)
+    earliest_ts = now_utc.timestamp() - max(0.0, lookback_hours) * 3600.0
     files = sorted(failed_dir.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)[:max_files]
     fail_count = 0
     chat_not_found = 0
     latest_error = None
+    latest_failed_at = None
     for fp in files:
         try:
+            if fp.stat().st_mtime < earliest_ts:
+                continue
             payload = json.loads(fp.read_text(encoding="utf-8"))
         except Exception:
             continue
@@ -55,14 +87,21 @@ def _scan_delivery_health(failed_dir: Path, telegram_target: str, max_files: int
         err = str(payload.get("lastError") or "")
         if latest_error is None and err:
             latest_error = err
+        if latest_failed_at is None:
+            latest_failed_at = datetime.fromtimestamp(fp.stat().st_mtime, tz=timezone.utc).isoformat()
         if "chat not found" in err.lower():
             chat_not_found += 1
 
+    migrated_candidates = _extract_migrated_chat_candidates(latest_error or "")
+
     return {
         "target": telegram_target,
+        "lookback_hours": lookback_hours,
         "recent_fail_count": fail_count,
         "chat_not_found_count": chat_not_found,
         "latest_error": latest_error,
+        "latest_failed_at_utc": latest_failed_at,
+        "migrated_chat_id_candidates": migrated_candidates,
     }
 
 
@@ -73,6 +112,12 @@ def main() -> int:
     ap.add_argument("--high-threshold", type=int, default=4)
     ap.add_argument("--max-age-hours", type=float, default=24.0)
     ap.add_argument("--telegram-target", default="telegram:-3851523537")
+    ap.add_argument(
+        "--delivery-lookback-hours",
+        type=float,
+        default=48.0,
+        help="Only count failed queue records newer than this window.",
+    )
     ap.add_argument(
         "--failed-queue-dir",
         default=os.path.expanduser("~/.openclaw/delivery-queue/failed"),
@@ -105,7 +150,11 @@ def main() -> int:
     if generated_at_dt is not None:
         generated_age_hours = (now_utc - generated_at_dt).total_seconds() / 3600.0
 
-    delivery_health = _scan_delivery_health(Path(args.failed_queue_dir), args.telegram_target)
+    delivery_health = _scan_delivery_health(
+        Path(args.failed_queue_dir),
+        args.telegram_target,
+        args.delivery_lookback_hours,
+    )
 
     reasons = []
     if not cur:
@@ -121,7 +170,11 @@ def main() -> int:
     if schema_issues:
         reasons.append("deep_analysis_schema_incomplete:" + ",".join(schema_issues))
     if delivery_health.get("chat_not_found_count", 0) >= 3:
-        reasons.append("telegram_delivery_chat_not_found_repeated")
+        cands = delivery_health.get("migrated_chat_id_candidates") or []
+        if cands:
+            reasons.append("telegram_delivery_chat_not_found_repeated:migration_candidates=" + ",".join(cands))
+        else:
+            reasons.append("telegram_delivery_chat_not_found_repeated")
 
     llm_needed = len(reasons) > 0
     out = {
