@@ -1,5 +1,123 @@
 {
   "date": "2026-03-06",
-  "failed": [],
-  "count": 0
+  "failed": [
+    {
+      "ticker": "AAPL",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "AVGO",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "BBAI",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "KTOS",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "MSFT",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "reasons": [
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "ONDS",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "reasons": [
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "RDW",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "RKLB",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "reasons": [
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "TSM",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "UUUU",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "GOOG",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "IBM",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "BRK.B",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    },
+    {
+      "ticker": "LITE",
+      "reasons": [
+        "business_reality_insufficient_verified_data",
+        "catalyst_calendar_insufficient_verified_data"
+      ]
+    }
+  ],
+  "pass_count": 0,
+  "total": 17
 }
