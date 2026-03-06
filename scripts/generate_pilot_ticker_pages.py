@@ -166,7 +166,7 @@ def _tv_symbol(ticker: str) -> str:
         "RKLB": "NASDAQ:RKLB",
         "TSLA": "NASDAQ:TSLA",
         "TSM": "NYSE:TSM",
-        "UUUU": "NYSEAMERICAN:UUUU",
+        "UUUU": "AMEX:UUUU",
     }
     return exchange_map.get(ticker, ticker)
 
