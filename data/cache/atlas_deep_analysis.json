@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-03-07T00:31:21.346364+00:00",
-  "source_generated_at": "2026-03-07T00:31:21.100007+00:00",
+  "generated_at": "2026-03-08T00:31:16.969952+00:00",
+  "source_generated_at": "2026-03-08T00:31:16.808169+00:00",
   "inputs": {
     "signals_total": 17,
     "signals_valid": 17
   },
   "market_regime": {
     "label": "risk_off",
-    "composite_score": -60.31,
+    "composite_score": -60.32,
     "components": {
       "breadth": -23.53,
       "momentum": -6.4,
-      "volatility": -30.38
+      "volatility": -30.39
     },
     "metrics": {
       "above_sma20": 6,
       "above_sma50": 2,
       "avg_rsi14": 45.73,
-      "avg_atr_pct_of_price": 6.238
+      "avg_atr_pct_of_price": 6.239
     }
   },
   "themes": {

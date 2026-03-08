@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-03-07T00:31:47.878620+00:00",
-  "generated_at_hkt": "2026-03-07T08:31:47.878620+08:00",
+  "generated_at_utc": "2026-03-08T00:31:44.514614+00:00",
+  "generated_at_hkt": "2026-03-08T08:31:44.514614+08:00",
   "tickers": [
     "AAPL",
     "AVGO",
@@ -20,7 +20,7 @@
     "BRK.B",
     "LITE"
   ],
-  "report": "reports/2026-03-06.html",
+  "report": "reports/2026-03-07.html",
   "generator": "scripts/generate_pilot_ticker_pages.py",
   "fallback_fundamentals_tickers": [
     "AAPL",

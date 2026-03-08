@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-08",
+  "failed_count": 17,
+  "failed": [
+    {
+      "ticker": "AAPL",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "AVGO",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "BBAI",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "KTOS",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "MSFT",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "ONDS",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "RDW",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "RKLB",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "TSM",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "UUUU",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "GOOG",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "IBM",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "BRK.B",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    },
+    {
+      "ticker": "LITE",
+      "reasons": [
+        "generic_template_language_detected",
+        "ta_block_incomplete"
+      ]
+    }
+  ]
+}
