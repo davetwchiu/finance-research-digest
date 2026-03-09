@@ -1,121 +1,223 @@
 {
   "AAPL": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -1.3,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 77,
+    "fragility": 52,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "AVGO": {
-    "state": "Caution",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": 0.5,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 89,
+    "fragility": 44,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "BBAI": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -0.4,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 84,
+    "fragility": 53,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "KTOS": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -2.6,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 81,
+    "fragility": 59,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "MSFT": {
-    "state": "Caution",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": 0.5,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 80,
+    "fragility": 46,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "NVDA": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -1.7,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 100,
+    "fragility": 18,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "ONDS": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -2.6,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 81,
+    "fragility": 59,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "PLTR": {
-    "state": "Caution",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": 1.3,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 100,
+    "fragility": 10,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "RDW": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -2.6,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 81,
+    "fragility": 59,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "RKLB": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -2.6,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 81,
+    "fragility": 59,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "TSLA": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -1.7,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 100,
+    "fragility": 37,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "TSM": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -1.7,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 83,
+    "fragility": 55,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "UUUU": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -2.6,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 73,
+    "fragility": 59,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "GOOG": {
-    "state": "Defensive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": -2.9,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 75,
+    "fragility": 56,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "IBM": {
-    "state": "Caution",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": 0.5,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 86,
+    "fragility": 49,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "BRK.B": {
-    "state": "Constructive",
-    "conviction": 50,
-    "fragility": 50,
-    "delta": 3.4,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "state": "Provisional",
+    "conviction": 87,
+    "fragility": 32,
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   },
   "LITE": {
-    "state": "Defensive",
-    "conviction": 50,
+    "state": "Provisional",
+    "conviction": 86,
     "fragility": 50,
-    "delta": -0.1,
-    "updatedAt": "2026-03-08T08:33:00+08:00"
+    "delta": 0,
+    "updatedAt": "2026-03-09T15:26:20+08:00",
+    "freshnessState": "fresh",
+    "reasons": [
+      "business reality missing segment/customer proof",
+      "competitor compare too thin",
+      "catalyst calendar unverified"
+    ]
   }
 }

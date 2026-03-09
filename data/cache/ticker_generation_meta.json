@@ -1,41 +1,296 @@
 {
-  "generated_at_utc": "2026-03-08T00:31:44.514614+00:00",
-  "generated_at_hkt": "2026-03-08T08:31:44.514614+08:00",
-  "tickers": [
-    "AAPL",
-    "AVGO",
-    "BBAI",
-    "KTOS",
-    "MSFT",
-    "NVDA",
-    "ONDS",
-    "PLTR",
-    "RDW",
-    "RKLB",
-    "TSLA",
-    "TSM",
-    "UUUU",
-    "GOOG",
-    "IBM",
-    "BRK.B",
-    "LITE"
-  ],
-  "report": "reports/2026-03-07.html",
-  "generator": "scripts/generate_pilot_ticker_pages.py",
-  "fallback_fundamentals_tickers": [
-    "AAPL",
-    "AVGO",
-    "BBAI",
-    "KTOS",
-    "MSFT",
-    "ONDS",
-    "RDW",
-    "RKLB",
-    "TSM",
-    "UUUU",
-    "GOOG",
-    "IBM",
-    "BRK.B",
-    "LITE"
-  ]
+  "generated_at_utc": "2026-03-09T07:26:36+00:00",
+  "generated_at_hkt": "2026-03-09T15:26:36+08:00",
+  "report": "reports/2026-03-09.html",
+  "pages": {
+    "AAPL": {
+      "ticker": "AAPL",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 77,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 48
+    },
+    "AVGO": {
+      "ticker": "AVGO",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 89,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 56
+    },
+    "BBAI": {
+      "ticker": "BBAI",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 84,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 47
+    },
+    "KTOS": {
+      "ticker": "KTOS",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 81,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 41
+    },
+    "MSFT": {
+      "ticker": "MSFT",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 80,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 54
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 82
+    },
+    "ONDS": {
+      "ticker": "ONDS",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 81,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 41
+    },
+    "PLTR": {
+      "ticker": "PLTR",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 90
+    },
+    "RDW": {
+      "ticker": "RDW",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 81,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 41
+    },
+    "RKLB": {
+      "ticker": "RKLB",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 81,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 41
+    },
+    "TSLA": {
+      "ticker": "TSLA",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 63
+    },
+    "TSM": {
+      "ticker": "TSM",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 83,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 45
+    },
+    "UUUU": {
+      "ticker": "UUUU",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 73,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 41
+    },
+    "GOOG": {
+      "ticker": "GOOG",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 75,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 44
+    },
+    "IBM": {
+      "ticker": "IBM",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 86,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 51
+    },
+    "BRK.B": {
+      "ticker": "BRK.B",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 87,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 68
+    },
+    "LITE": {
+      "ticker": "LITE",
+      "lastVerifiedHKT": "2026-03-09T15:26:20+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 86,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "competitor compare too thin",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 50
+    }
+  }
 }

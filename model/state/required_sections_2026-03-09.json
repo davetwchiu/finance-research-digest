@@ -3,103 +3,120 @@
   "items": [
     {
       "ticker": "AAPL",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "AVGO",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "BBAI",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "KTOS",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "MSFT",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "NVDA",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "ONDS",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "PLTR",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "RDW",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "RKLB",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "TSLA",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "TSM",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "UUUU",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "GOOG",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "IBM",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "BRK.B",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     },
     {
       "ticker": "LITE",
-      "reasons": [
+      "ok": false,
+      "errors": [
         "page marked provisional"
       ]
     }

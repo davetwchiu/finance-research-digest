@@ -1,24 +1,79 @@
 #!/usr/bin/env python3
-"""Generate deep ticker pages for full watchlist with deterministic TA + optional fundamentals."""
+"""Generate ticker pages with strict contract sections and explicit provisional labeling."""
 
 from __future__ import annotations
 
 import argparse
 import json
+import math
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable, Tuple
+from typing import Any, Dict, Iterable
+
+HKT = timezone(timedelta(hours=8))
+UTC = timezone.utc
+
+EXCHANGE_MAP = {
+    "AAPL": "NASDAQ:AAPL",
+    "AVGO": "NASDAQ:AVGO",
+    "BBAI": "NYSE:BBAI",
+    "BRK.B": "NYSE:BRK.B",
+    "GOOG": "NASDAQ:GOOG",
+    "IBM": "NYSE:IBM",
+    "KTOS": "NASDAQ:KTOS",
+    "LITE": "NASDAQ:LITE",
+    "MSFT": "NASDAQ:MSFT",
+    "NVDA": "NASDAQ:NVDA",
+    "ONDS": "NASDAQ:ONDS",
+    "PLTR": "NASDAQ:PLTR",
+    "RDW": "NYSE:RDW",
+    "RKLB": "NASDAQ:RKLB",
+    "TSLA": "NASDAQ:TSLA",
+    "TSM": "NYSE:TSM",
+    "UUUU": "AMEX:UUUU",
+}
+
+PEERS = {
+    "AAPL": ["MSFT", "GOOG", "IBM"],
+    "AVGO": ["NVDA", "TSM", "LITE"],
+    "BBAI": ["PLTR", "IBM", "MSFT"],
+    "KTOS": ["PLTR", "RDW", "RKLB"],
+    "MSFT": ["GOOG", "IBM", "AAPL"],
+    "NVDA": ["AVGO", "TSM", "MSFT"],
+    "ONDS": ["KTOS", "PLTR", "IBM"],
+    "PLTR": ["BBAI", "IBM", "MSFT"],
+    "RDW": ["RKLB", "KTOS", "PLTR"],
+    "RKLB": ["RDW", "KTOS", "TSLA"],
+    "TSLA": ["AAPL", "NVDA", "RKLB"],
+    "TSM": ["NVDA", "AVGO", "LITE"],
+    "UUUU": ["TSM", "AVGO", "IBM"],
+    "GOOG": ["MSFT", "AAPL", "IBM"],
+    "IBM": ["MSFT", "GOOG", "PLTR"],
+    "BRK.B": ["AAPL", "MSFT", "GOOG"],
+    "LITE": ["AVGO", "TSM", "NVDA"],
+}
+
+CATALYSTS = {
+    "default": [
+        {"name": "Mid-month US CPI / rates repricing window", "date": "2026-03-12", "impact": "Rates-sensitive multiple reset across long-duration growth."},
+        {"name": "March FOMC setup window", "date": "2026-03-18", "impact": "Could alter discount-rate path, USD tone, and risk appetite."},
+    ],
+    "TSM": [{"name": "Mid-month semiconductor policy / tariff monitoring window", "date": "2026-03-18", "impact": "Supply-chain and capex expectations can move quickly on policy language."}],
+    "NVDA": [{"name": "Mid-month semiconductor policy / tariff monitoring window", "date": "2026-03-18", "impact": "Export-control or tariff language can re-rate AI/silicon multiples fast."}],
+    "AVGO": [{"name": "Mid-month semiconductor policy / tariff monitoring window", "date": "2026-03-18", "impact": "AI infra and networking multiples remain sensitive to policy and rates."}],
+    "PLTR": [{"name": "US federal budget / defense contract headlines", "date": "2026-03-20", "impact": "Government-award timing can change near-term narrative and momentum."}],
+    "KTOS": [{"name": "US federal budget / defense contract headlines", "date": "2026-03-20", "impact": "Defense names often move on program-funding visibility and award flow."}],
+    "RDW": [{"name": "US federal budget / defense-space contract headlines", "date": "2026-03-20", "impact": "Space infrastructure names are sensitive to award cadence and sentiment."}],
+    "RKLB": [{"name": "US federal budget / defense-space contract headlines", "date": "2026-03-20", "impact": "Launch cadence and government-adjacent funding headlines can move the setup."}],
+}
 
 
 @dataclass
 class Score:
+    total: int
     ta: int
     fundamentals: int
-
-    @property
-    def total(self) -> int:
-        return max(0, min(100, self.ta + self.fundamentals))
 
 
 def _num(v: Any) -> float | None:
@@ -30,341 +85,250 @@ def _num(v: Any) -> float | None:
         return None
 
 
-def _fmt(v: float | None, digits: int = 2) -> str:
-    if v is None:
+def _fmt(v: float | None, digits: int = 2, suffix: str = "") -> str:
+    if v is None or (isinstance(v, float) and (math.isnan(v) or math.isinf(v))):
         return "N/A"
-    return f"{v:.{digits}f}"
+    return f"{v:.{digits}f}{suffix}"
+
+
+def _load_json(path: str) -> dict:
+    return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
 def _load_watchlist(path: str) -> list[str]:
-    doc = json.loads(Path(path).read_text(encoding="utf-8"))
-    wl = doc.get("watchlist") if isinstance(doc, dict) else None
-    if not isinstance(wl, list) or not wl:
-        raise ValueError(f"Invalid or empty watchlist in {path}")
+    wl = (_load_json(path).get("watchlist") or [])
     return [str(x).strip().upper() for x in wl if str(x).strip()]
 
 
-def _default_fundamentals(ticker: str, as_of: str) -> Dict[str, Any]:
-    # Deterministic neutral fallback (no N/A placeholders).
-    return {
-        "company": ticker,
-        "market_cap_b": 0.0,
-        "revenue_growth_yoy_pct": 10.0,
-        "fcf_margin_pct": 8.0,
-        "gross_margin_pct": 30.0,
-        "forward_pe": 35.0,
-        "peg": 2.0,
-        "net_cash_b": 0.5,
-        "as_of": as_of,
-        "source_links": [f"https://finance.yahoo.com/quote/{ticker}/financials"],
-        "fallback_used": True,
-    }
+def _tv_symbol(ticker: str) -> str:
+    return EXCHANGE_MAP.get(ticker, ticker)
 
 
-def _compute_scores(sig: Dict[str, Any], f: Dict[str, Any]) -> Tuple[Score, Dict[str, Any]]:
-    close = _num((sig.get("latest") or {}).get("close"))
+def _compute_score(sig: dict, f: dict) -> Score:
+    latest = sig.get("latest") or {}
     ind = sig.get("indicators") or {}
+    close = _num(latest.get("close"))
     sma20 = _num(ind.get("sma20"))
     sma50 = _num(ind.get("sma50"))
     rsi = _num(ind.get("rsi14"))
     atr = _num(ind.get("atr14"))
-
     ta = 0
     if close and sma20:
-        ta += 12 if close >= sma20 else 4
+        ta += 10 if close >= sma20 else 4
     if close and sma50:
-        ta += 14 if close >= sma50 else 3
+        ta += 12 if close >= sma50 else 3
     if rsi is not None:
-        if 50 <= rsi <= 68:
-            ta += 14
-        elif 40 <= rsi < 50 or 68 < rsi <= 75:
-            ta += 8
-        else:
-            ta += 3
+        ta += 12 if 48 <= rsi <= 68 else (7 if 40 <= rsi <= 75 else 3)
     if close and atr:
         atr_pct = atr / close * 100.0
-        if atr_pct <= 3.0:
-            ta += 10
-        elif atr_pct <= 5.0:
-            ta += 7
-        else:
-            ta += 3
-    else:
-        atr_pct = None
-
-    rev = _num(f.get("revenue_growth_yoy_pct")) or 0.0
-    fcf = _num(f.get("fcf_margin_pct")) or 0.0
-    gross = _num(f.get("gross_margin_pct")) or 0.0
-    pe = _num(f.get("forward_pe")) or 0.0
-    peg = _num(f.get("peg")) or 99.0
-    net_cash = _num(f.get("net_cash_b")) or 0.0
-
+        ta += 10 if atr_pct <= 3 else (7 if atr_pct <= 5 else 3)
+    rev = _num(f.get("revenue_growth_yoy_pct"))
+    gm = _num(f.get("gross_margin_pct"))
+    pe = _num(f.get("forward_pe"))
+    fcf = _num(f.get("fcf_margin_pct"))
     fundamentals = 0
-    fundamentals += 18 if rev >= 30 else (12 if rev >= 15 else 6)
-    fundamentals += 12 if fcf >= 20 else (8 if fcf >= 10 else 4)
-    fundamentals += 10 if gross >= 45 else (6 if gross >= 25 else 2)
-    fundamentals += 10 if pe <= 45 else (6 if pe <= 70 else 2)
-    fundamentals += 8 if peg <= 1.5 else (5 if peg <= 2.5 else 2)
-    fundamentals += 6 if net_cash >= 5 else (4 if net_cash >= 1 else 1)
-
-    return Score(ta=ta, fundamentals=fundamentals), {
-        "close": close,
-        "sma20": sma20,
-        "sma50": sma50,
-        "rsi14": rsi,
-        "atr14": atr,
-        "atr_pct": atr_pct,
-        "rev_growth": rev,
-        "fcf_margin": fcf,
-        "gross_margin": gross,
-        "forward_pe": pe,
-        "peg": peg,
-        "net_cash_b": net_cash,
-    }
+    if rev is not None:
+        fundamentals += 14 if rev >= 20 else (9 if rev >= 8 else 4)
+    if gm is not None:
+        fundamentals += 10 if gm >= 45 else (6 if gm >= 25 else 2)
+    if pe is not None and pe > 0:
+        fundamentals += 8 if pe <= 35 else (5 if pe <= 60 else 2)
+    if fcf is not None:
+        fundamentals += 8 if fcf >= 15 else (5 if fcf >= 5 else 2)
+    total = max(0, min(100, ta + fundamentals + 24))
+    return Score(total=total, ta=ta, fundamentals=fundamentals)
 
 
-def _verdict(total: int) -> str:
-    if total >= 80:
-        return "GREEN — High-conviction long bias"
-    if total >= 65:
-        return "YELLOW+ — Constructive but needs trigger discipline"
-    if total >= 50:
-        return "YELLOW — Mixed setup, tactical only"
-    return "RED — Avoid fresh long risk"
+def _freshness(last_verified_hkt: str) -> tuple[str, float]:
+    try:
+        dt = datetime.fromisoformat(last_verified_hkt)
+        age_h = (datetime.now(HKT) - dt.astimezone(HKT)).total_seconds() / 3600.0
+    except Exception:
+        return "unknown", 999.0
+    if age_h > 24:
+        return "stale", age_h
+    if age_h > 12:
+        return "aging", age_h
+    return "fresh", age_h
 
 
-def _trigger_block(m: Dict[str, Any]) -> Tuple[str, str, str]:
-    close = m["close"] or 0.0
-    sma20 = m["sma20"] or close
-    sma50 = m["sma50"] or close
+def _countdown(date_str: str) -> str:
+    dt = datetime.fromisoformat(date_str).replace(tzinfo=HKT)
+    delta = dt.date() - datetime.now(HKT).date()
+    return f"D{delta.days:+d}"
+
+
+def _peer_row(ticker: str, peer: str, funds: dict[str, dict]) -> str:
+    p = funds.get(peer) or {}
+    return f"<li><strong>{peer}</strong>: rev growth {_fmt(_num(p.get('revenue_growth_yoy_pct')),1,'%')} · gross margin {_fmt(_num(p.get('gross_margin_pct')),1,'%')} · fwd P/E {_fmt(_num(p.get('forward_pe')),1,'x')} · market cap {_fmt(_num(p.get('market_cap_b')),1,'B')}.</li>"
+
+
+def _what_changed(news_items: list[dict]) -> tuple[str, int]:
+    verified = [x for x in news_items if x.get("published_hkt") and x.get("url")]
+    if len(verified) < 2:
+        return "<p><strong>insufficient verified data</strong> — fewer than two dated headline facts with links were available in the last 72h from the current run.</p>", len(verified)
+    lis = []
+    for x in verified[:4]:
+        lis.append(f"<li><strong>{x.get('published_hkt','')[:10]}</strong> — <a href='{x.get('url','')}'>{x.get('title','')}</a> <span class='muted'>[{(x.get('impact') or {}).get('sentiment','neutral')}, {(x.get('source') or 'source n/a')}]</span></li>")
+    return "<ul>" + "".join(lis) + "</ul>", len(verified[:4])
+
+
+def _business_reality(ticker: str, f: dict) -> tuple[str, int, bool]:
+    links = f.get("source_links") or []
+    as_of = f.get("as_of") or datetime.now(HKT).date().isoformat()
+    facts = []
+    if _num(f.get("market_cap_b")) is not None:
+        facts.append(f"<li><strong>{as_of}</strong> — market cap approx {_fmt(_num(f.get('market_cap_b')),2,'B')} based on Yahoo quote data. <a href='{links[0] if links else '#'}'>source</a></li>")
+    if _num(f.get("revenue_growth_yoy_pct")) is not None:
+        facts.append(f"<li><strong>{as_of}</strong> — revenue growth approx {_fmt(_num(f.get('revenue_growth_yoy_pct')),2,'%')} and FCF margin {_fmt(_num(f.get('fcf_margin_pct')),2,'%')}. <a href='{links[0] if links else '#'}'>source</a></li>")
+    if _num(f.get("gross_margin_pct")) is not None:
+        facts.append(f"<li><strong>{as_of}</strong> — gross margin approx {_fmt(_num(f.get('gross_margin_pct')),2,'%')} and forward P/E {_fmt(_num(f.get('forward_pe')),2,'x')}. <a href='{links[1] if len(links) > 1 else (links[0] if links else '#') }'>source</a></li>")
+    missing_segment_customer = True
+    extra = "<p class='warn'>Segment/customer evidence is insufficiently verified in the current automated run; treat business-quality conclusions as provisional until primary IR/10-Q detail is attached.</p>"
+    return ("<ul>" + "".join(facts[:3]) + "</ul>" + extra) if facts else ("<p><strong>insufficient verified data</strong> — no dated revenue/segment/customer evidence was available in the current run.</p>"), len(facts[:3]), missing_segment_customer
+
+
+def _moat_compare(ticker: str, f: dict, funds: dict[str, dict]) -> tuple[str, int]:
+    peers = PEERS.get(ticker, [])[:3]
+    if len(peers) < 2:
+        return "<p><strong>insufficient verified data</strong> — peer set unavailable.</p>", 0
+    own = f"<p><strong>{ticker}</strong>: rev growth {_fmt(_num(f.get('revenue_growth_yoy_pct')),1,'%')} · gross margin {_fmt(_num(f.get('gross_margin_pct')),1,'%')} · fwd P/E {_fmt(_num(f.get('forward_pe')),1,'x')} · market cap {_fmt(_num(f.get('market_cap_b')),1,'B')}.</p>"
+    lis = [_peer_row(ticker, p, funds) for p in peers if funds.get(p)]
+    compare_points = 1 + len(lis)
+    return own + "<ul>" + "".join(lis[:3]) + "</ul><p class='muted'>Concrete compare points used: revenue growth, gross margin, forward P/E, market cap.</p>", compare_points
+
+
+def _catalyst_block(ticker: str) -> tuple[str, int, bool]:
+    cats = CATALYSTS.get(ticker) or CATALYSTS["default"]
+    lis = []
+    verified = 0
+    for c in cats[:2]:
+        lis.append(f"<li><strong>{c['date']}</strong> ({_countdown(c['date'])}) — {c['name']}. Expected impact path: {c['impact']}</li>")
+    note = "<p class='warn'>These are macro/policy calendar anchors, not issuer-confirmed event dates. Earnings or company-specific event timing remains unverified in this run.</p>"
+    return "<ul>" + "".join(lis) + "</ul>" + note, verified, True
+
+
+def _setup_block(ticker: str, sig: dict, score: Score) -> str:
+    latest = sig.get("latest") or {}
+    ind = sig.get("indicators") or {}
+    close = _num(latest.get("close")) or 0.0
+    sma20 = _num(ind.get("sma20")) or close
+    sma50 = _num(ind.get("sma50")) or close
+    atr = _num(ind.get("atr14")) or max(close * 0.03, 0.01)
     trigger = max(sma20, sma50)
-    invalidation = min(sma20, sma50) * 0.985
-    t1 = close * 1.08
-    return (
-        f"Daily close > {_fmt(trigger)} with volume expansion vs 20D average.",
-        f"Two consecutive closes < {_fmt(invalidation)}.",
-        f"Target ladder: {_fmt(t1)} (+8%) then trail toward +15% if breadth stays risk-on.",
-    )
+    invalid = min(sma20, sma50) - 0.5 * atr
+    t1 = close + 1.0 * atr
+    t2 = close + 2.0 * atr
+    conf = "high" if score.total >= 75 else ("medium" if score.total >= 60 else "low")
+    return f"<ul><li><strong>Trigger:</strong> daily close above {_fmt(trigger,2)} with confirmation from volume / follow-through.</li><li><strong>Invalidation:</strong> two closes below {_fmt(invalid,2)} or adverse catalyst that breaks the thesis.</li><li><strong>Target 1:</strong> {_fmt(t1,2)}</li><li><strong>Target 2:</strong> {_fmt(t2,2)}</li><li><strong>Confidence:</strong> {conf}</li><li><strong>What changes my mind:</strong> weakening breadth, rising ATR without price progress, negative high-severity headlines, or deterioration in peer-relative metrics.</li></ul>"
 
 
-def _tv_symbol(ticker: str) -> str:
-    # Explicit exchange mapping for watchlist names (improves TradingView resolve reliability).
-    exchange_map = {
-        "AAPL": "NASDAQ:AAPL",
-        "AVGO": "NASDAQ:AVGO",
-        "BBAI": "NYSE:BBAI",
-        "BRK.B": "NYSE:BRK.B",
-        "GOOG": "NASDAQ:GOOG",
-        "IBM": "NYSE:IBM",
-        "KTOS": "NASDAQ:KTOS",
-        "LITE": "NASDAQ:LITE",
-        "MSFT": "NASDAQ:MSFT",
-        "NVDA": "NASDAQ:NVDA",
-        "ONDS": "NASDAQ:ONDS",
-        "PLTR": "NASDAQ:PLTR",
-        "RDW": "NYSE:RDW",
-        "RKLB": "NASDAQ:RKLB",
-        "TSLA": "NASDAQ:TSLA",
-        "TSM": "NYSE:TSM",
-        "UUUU": "AMEX:UUUU",
-    }
-    return exchange_map.get(ticker, ticker)
-
-
-def build_page(
-    ticker: str,
-    sig: Dict[str, Any],
-    f: Dict[str, Any],
-    news: Dict[str, Any],
-    report_path: str,
-    generated_at_utc: str,
-    generated_at_hkt: str,
-) -> str:
-    score, m = _compute_scores(sig, f)
-    verdict = _verdict(score.total)
-    trigger, invalidation, targets = _trigger_block(m)
-
-    evidence = [
-        f"TA score {score.ta}/50 from trend (close vs SMA20/SMA50), momentum (RSI14), and realized volatility (ATR%).",
-        f"Fundamentals score {score.fundamentals}/50 from growth, cash generation, margins, valuation, and balance-sheet buffer.",
-        f"Deterministic total score {score.total}/100 → verdict bucket: {verdict}.",
-        "All thresholds are static and reproducible; no LLM-based scoring is used.",
-    ]
-
-    links = " · ".join([f"<a href='{u}'>{u}</a>" for u in (f.get("source_links") or [])])
-    fallback_note = "Yes (deterministic neutral defaults)" if f.get("fallback_used") else "No"
-
-    atr_pct = m.get("atr_pct")
-    tv_symbol = _tv_symbol(ticker)
-    if atr_pct is None:
-        risk_meter = "Unknown"
-    elif atr_pct >= 6:
-        risk_meter = "High"
-    elif atr_pct >= 3:
-        risk_meter = "Medium"
-    else:
-        risk_meter = "Low"
-
-    if score.total >= 80:
-        layman_action = "Stronger setup, but still use staged entries and a hard invalidation."
-        regime_label = "Risk-on continuation"
-    elif score.total >= 65:
-        layman_action = "Constructive but not chase-worthy. Wait for confirmation before adding risk."
-        regime_label = "Selective risk-on"
-    elif score.total >= 50:
-        layman_action = "Mixed setup. Treat as watchlist candidate unless trigger confirms."
-        regime_label = "Neutral / mixed"
-    else:
-        layman_action = "Risk-first mode. Avoid fresh long exposure until structure improves."
-        regime_label = "Risk-off / fragile"
-
-    confidence = "High" if (score.total >= 70 and m.get("atr_pct") is not None and m["atr_pct"] < 4.5) else ("Medium" if score.total >= 55 else "Low")
-
-    nsum = (news or {}).get("summary") or {}
-    nitems = (news or {}).get("items") or []
-    news_label = nsum.get("label") or "No clear catalyst signal"
-    news_counts = f"+{nsum.get('positive_count',0)} / -{nsum.get('negative_count',0)} / high-impact {nsum.get('high_impact_count',0)}"
-    if nitems:
-        news_list_html = ''.join([
-            f"<li><a href='{x.get('url','')}'>{x.get('title','')}</a>"
-            f" <span class='muted'>[{(x.get('impact') or {}).get('sentiment','neutral')}, {(x.get('impact') or {}).get('severity','low')}]"
-            f" {(x.get('published_hkt') or '')}</span></li>" for x in nitems[:5]
-        ])
-    else:
-        news_list_html = "<li>No recent headline feed available for this ticker in this run.</li>"
-
-    return f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.58}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}}.muted{{color:#a7b0d6}}table{{width:100%;border-collapse:collapse}}th,td{{border-bottom:1px solid #2a3768;padding:8px;text-align:left}}.pill{{display:inline-block;border:1px solid #3a4c88;border-radius:999px;padding:3px 10px;font-size:12px;color:#dfe7ff}}</style></head><body>
+def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], news: dict, report_path: str, last_verified_hkt: str) -> tuple[str, dict]:
+    score = _compute_score(sig, f)
+    freshness_state, age_h = _freshness(last_verified_hkt)
+    items = news.get("items") or []
+    changed_html, changed_evidence = _what_changed(items)
+    biz_html, biz_evidence, biz_missing = _business_reality(ticker, f)
+    moat_html, moat_points = _moat_compare(ticker, f, funds)
+    catalyst_html, catalyst_verified, catalyst_unverified = _catalyst_block(ticker)
+    setup_html = _setup_block(ticker, sig, score)
+    reasons = []
+    if changed_evidence < 2:
+        reasons.append("evidence below threshold: last 72h changes")
+    if biz_missing:
+        reasons.append("business reality missing segment/customer proof")
+    if moat_points < 3:
+        reasons.append("competitor compare too thin")
+    if catalyst_unverified:
+        reasons.append("catalyst calendar unverified")
+    if freshness_state == "stale":
+        reasons.append("stale data not suitable for confident publish")
+    evidence_quality = max(5, min(100, changed_evidence * 15 + biz_evidence * 12 + moat_points * 8 + score.total // 2 - (15 if catalyst_unverified else 0) - (20 if freshness_state == 'stale' else 0)))
+    provisional = len(reasons) > 0
+    status = "PROVISIONAL" if provisional else "VERIFIED"
+    stale_banner = "<div class='banner stale'>Stale warning: last verified evidence is older than 24h. Treat this page as stale until refreshed.</div>" if freshness_state == "stale" else ""
+    prov_banner = f"<div class='banner provisional'>Quality gate state: {status}. Reasons: {'; '.join(reasons) if reasons else 'none'}.</div>" if provisional else "<div class='banner ok'>Quality gate state: VERIFIED.</div>"
+    html = f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.6}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}}.muted{{color:#a7b0d6}}.banner{{padding:10px 12px;border-radius:10px;margin:12px 0;font-weight:600}}.provisional{{background:#4b1f27;border:1px solid #a65264}}.stale{{background:#4a3a14;border:1px solid #af8a2a}}.ok{{background:#153c28;border:1px solid #2f8f5a}}.pill{{display:inline-block;border:1px solid #3a4c88;border-radius:999px;padding:3px 10px;font-size:12px;color:#dfe7ff;margin-right:6px;margin-bottom:6px}}</style></head><body>
 <p><a href='../index.html'>← Back</a> · <a href='../{report_path}'>Daily report</a></p>
-<h1>{ticker} — Deep Analysis v4</h1>
-<p class='muted'>Last generated (UTC): {generated_at_utc} · Last generated (HKT): {generated_at_hkt} · Fundamentals as-of: {f.get('as_of','N/A')} · Fallback fundamentals used: {fallback_note}</p>
-<div class='card'><h2>Layman summary (read this first)</h2><p><strong>{verdict}</strong></p><p>Simple read: score is <strong>{score.total}/100</strong>. This setup is rule-based, so the same inputs produce the same verdict every time.</p><ul><li><strong>If bullish continuation appears:</strong> {trigger}</li><li><strong>If setup fails:</strong> {invalidation}</li><li><strong>Upside roadmap:</strong> {targets}</li></ul></div>
-<div class='card'><h2>If you are not an active trader</h2><p><span class='pill'>Risk meter: {risk_meter}</span> <span class='pill'>Score: {score.total}/100</span> <span class='pill'>Regime: {regime_label}</span> <span class='pill'>Confidence: {confidence}</span></p><p><strong>What this means in plain English:</strong> {layman_action}</p><ul><li>Do not react to one headline alone; wait for price confirmation.</li><li>Keep position size smaller when risk meter is Medium/High.</li><li><strong>Invalidation rule:</strong> {invalidation}</li></ul></div>
-<div class='card'><h2>Price chart (visual context)</h2><p class='muted'>For quick orientation only — do not use chart alone without the trigger/invalidation rules above.</p><iframe title='TradingView chart for {ticker}' src='https://s.tradingview.com/widgetembed/?symbol={tv_symbol}&interval=D&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&theme=dark&style=1&timezone=Asia%2FHong_Kong' width='100%' height='420' frameborder='0' allowtransparency='true' scrolling='no'></iframe></div>
-<div class='card'><h2>News pulse (price-impact view)</h2><p><span class='pill'>{news_label}</span> <span class='pill'>{news_counts}</span></p><p class='muted'>Heuristic headline impact read: positive/negative skew + high-impact keyword detection (earnings, guidance, contract, lawsuit, policy).</p><ul>{news_list_html}</ul></div>
-<div class='card'><h2>Decision gate (before adding risk)</h2><ul><li><strong>Step 1:</strong> Trigger confirmed? ({trigger})</li><li><strong>Step 2:</strong> News not materially worsening? (negative/high-impact headlines should pause adds)</li><li><strong>Step 3:</strong> Invalidation accepted upfront? ({invalidation})</li></ul><p class='muted'>If any step fails, treat this as watch-only or paper-trade setup.</p></div>
-<div class='card'><h2>Deterministic verdict</h2><p><strong>{verdict}</strong></p><p>Total score: <strong>{score.total}/100</strong> (TA {score.ta}/50 + Fundamentals {score.fundamentals}/50).</p><ul>{''.join([f'<li>{e}</li>' for e in evidence])}</ul></div>
-<details class='card'><summary><strong>Technical evidence (expand)</strong></summary>
-<div><h2>Technical block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr>
-<tr><td>Close</td><td>{_fmt(m['close'],4)}</td><td>Reference close used in all trigger math.</td></tr>
-<tr><td>SMA20</td><td>{_fmt(m['sma20'],4)}</td><td>Short trend control line.</td></tr>
-<tr><td>SMA50</td><td>{_fmt(m['sma50'],4)}</td><td>Intermediate trend control line.</td></tr>
-<tr><td>RSI14</td><td>{_fmt(m['rsi14'],2)}</td><td>Momentum state; 50-68 preferred for continuation quality.</td></tr>
-<tr><td>ATR14</td><td>{_fmt(m['atr14'],4)}</td><td>Absolute volatility estimate.</td></tr>
-<tr><td>ATR % of close</td><td>{_fmt(m['atr_pct'],2)}%</td><td>Risk normalization for position sizing.</td></tr></table></div>
-<div><h2>Fundamentals block (real inputs)</h2><table><tr><th>Metric</th><th>Value</th><th>Role in score</th></tr>
-<tr><td>Revenue growth YoY</td><td>{_fmt(m['rev_growth'],1)}%</td><td>Growth durability bucket.</td></tr>
-<tr><td>FCF margin</td><td>{_fmt(m['fcf_margin'],1)}%</td><td>Cash conversion quality.</td></tr>
-<tr><td>Gross margin</td><td>{_fmt(m['gross_margin'],1)}%</td><td>Pricing power/moat proxy.</td></tr>
-<tr><td>Forward P/E</td><td>{_fmt(m['forward_pe'],1)}x</td><td>Valuation pressure indicator.</td></tr>
-<tr><td>PEG</td><td>{_fmt(m['peg'],2)}x</td><td>Growth-adjusted valuation guardrail.</td></tr>
-<tr><td>Net cash</td><td>{_fmt(m['net_cash_b'],1)}B</td><td>Balance-sheet shock absorber.</td></tr></table>
-<p class='muted'>Primary references: {links}</p></div></details>
-<div class='card'><h2>Risk map</h2><ol>
-<li>Macro rate shock: if 10Y yields reprice +25bp quickly, high-duration multiple names compress first.</li>
-<li>Earnings guide miss: score must be recomputed immediately if forward growth assumptions break.</li>
-<li>Policy/geopolitical headline: semis and defence-adjacent names can gap outside ATR assumptions.</li>
-</ol></div>
-<details class='card'><summary><strong>Quick glossary (for layman readers)</strong></summary><ul>
-<li><strong>SMA20/SMA50:</strong> average prices over 20/50 days; helps judge trend direction.</li>
-<li><strong>RSI14:</strong> momentum indicator; very high can mean overheated, very low can mean weak.</li>
-<li><strong>ATR:</strong> typical daily movement size; higher ATR means higher volatility/risk.</li>
-<li><strong>Forward P/E and PEG:</strong> valuation shortcuts; higher values mean market expects stronger future growth.</li>
-</ul></details>
-<div class='card'><h2>Quality gate evidence</h2><ul>
-<li>Depth checklist: TA table + Fundamentals table + deterministic thresholds + risk map = COMPLETE.</li>
-<li>Timestamped artifact: this page records UTC/HKT generation timestamps.</li>
-<li>Publish policy: this page must pass scripts/qc_ticker_depth.py before deploy.</li>
-</ul></div>
-</body></html>
-"""
+<h1>{ticker} — Research page</h1>
+<p class='muted'>Last verified time (HKT): {last_verified_hkt} · Freshness state: {freshness_state} · Evidence quality score: {evidence_quality}/100 · TradingView mapping: {_tv_symbol(ticker)}</p>
+{stale_banner}{prov_banner}
+<div class='card'><h2>At a glance</h2><p><span class='pill'>Status: {status}</span><span class='pill'>Score: {score.total}/100</span><span class='pill'>TA: {score.ta}</span><span class='pill'>Fundamentals: {score.fundamentals}</span><span class='pill'>Freshness age: {_fmt(age_h,1,'h')}</span></p><p class='muted'>Hard rule: no evidence, no claim. Where evidence is thin, the page explicitly says so instead of pretending certainty.</p></div>
+<div class='card'><h2>1. What changed in last 72h</h2>{changed_html}</div>
+<div class='card'><h2>2. Business reality</h2>{biz_html}</div>
+<div class='card'><h2>3. Moat + competitor check</h2>{moat_html}</div>
+<div class='card'><h2>4. Catalyst calendar next 30d</h2>{catalyst_html}</div>
+<div class='card'><h2>5. Risk map</h2><ol><li><strong>Rates / valuation compression:</strong> long-duration equities re-rate lower if yields back up again. <em>Invalidation signal:</em> rates cool while price holds above trend.</li><li><strong>Company-specific execution miss:</strong> contract, delivery, demand, or guide slippage can break the setup. <em>Invalidation signal:</em> management or order-flow evidence stabilizes instead of worsening.</li><li><strong>Negative high-severity headline cluster:</strong> lawsuit, downgrade, export-control, tariff, or funding shock. <em>Invalidation signal:</em> market absorbs the headline and price/volume remain constructive.</li></ol></div>
+<div class='card'><h2>6. Actionable setup</h2>{setup_html}</div>
+<div class='card'><h2>Visual context</h2><iframe title='TradingView chart for {ticker}' src='https://s.tradingview.com/widgetembed/?symbol={_tv_symbol(ticker)}&interval=D&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&theme=dark&style=1&timezone=Asia%2FHong_Kong' width='100%' height='420' frameborder='0' allowtransparency='true' scrolling='no'></iframe></div>
+</body></html>"""
+    meta = {
+        "ticker": ticker,
+        "lastVerifiedHKT": last_verified_hkt,
+        "freshnessState": freshness_state,
+        "evidenceQualityScore": evidence_quality,
+        "provisional": provisional,
+        "reasons": reasons,
+        "whatChangedEvidenceCount": changed_evidence,
+        "businessEvidenceCount": biz_evidence,
+        "moatComparePoints": moat_points,
+        "catalystVerifiedCount": catalyst_verified,
+        "score": score.total,
+    }
+    return html, meta
 
 
 def _latest_report_path(reports_dir: str) -> str:
-    p = Path(reports_dir)
-    candidates = sorted([x.name for x in p.glob("20*.html")])
-    if not candidates:
-        return "reports/"
-    return f"reports/{candidates[-1]}"
-
-
-def _iter_tickers(watchlist: Iterable[str]) -> Iterable[str]:
-    for t in watchlist:
-        t = str(t).strip().upper()
-        if t:
-            yield t
+    cands = sorted([p.name for p in Path(reports_dir).glob('20*.html')])
+    return f"reports/{cands[-1]}" if cands else "reports/index.html"
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Generate deep ticker pages for full watchlist")
-    ap.add_argument("--signals", default="data/cache/signals_local.json")
-    ap.add_argument("--fundamentals", default="data/pilot_fundamentals.json")
-    ap.add_argument("--watchlist", default="watchlist.json")
-    ap.add_argument("--news", default="data/cache/ticker_news_digest.json")
-    ap.add_argument("--report", default="")
-    ap.add_argument("--reports-dir", default="reports")
-    ap.add_argument("--tickers-dir", default="tickers")
-    ap.add_argument("--meta", default="data/cache/ticker_generation_meta.json")
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--signals', default='data/cache/signals_local.json')
+    ap.add_argument('--fundamentals', default='data/pilot_fundamentals.json')
+    ap.add_argument('--watchlist', default='watchlist.json')
+    ap.add_argument('--news', default='data/cache/ticker_news_digest.json')
+    ap.add_argument('--report', default='')
+    ap.add_argument('--reports-dir', default='reports')
+    ap.add_argument('--tickers-dir', default='tickers')
+    ap.add_argument('--meta', default='data/cache/ticker_generation_meta.json')
     args = ap.parse_args()
 
-    signals_doc = json.loads(Path(args.signals).read_text(encoding="utf-8"))
-    fdoc = json.loads(Path(args.fundamentals).read_text(encoding="utf-8"))
-    try:
-        news_doc = json.loads(Path(args.news).read_text(encoding="utf-8"))
-    except Exception:
-        news_doc = {"tickers": {}}
-    watchlist = list(_iter_tickers(_load_watchlist(args.watchlist)))
-
-    now_utc = datetime.now(timezone.utc)
-    hkt = timezone(timedelta(hours=8))
-    now_hkt = now_utc.astimezone(hkt)
-
-    generated_at_utc = now_utc.isoformat()
-    generated_at_hkt = now_hkt.isoformat()
+    signals_doc = _load_json(args.signals)
+    fdoc = _load_json(args.fundamentals)
+    news_doc = _load_json(args.news) if Path(args.news).exists() else {"tickers": {}}
+    watchlist = _load_watchlist(args.watchlist)
+    funds = (fdoc.get('tickers') or {}) if isinstance(fdoc, dict) else {}
+    news_map = (news_doc.get('tickers') or {}) if isinstance(news_doc, dict) else {}
     report_path = args.report.strip() or _latest_report_path(args.reports_dir)
+    last_verified_hkt = (news_doc.get('generated_at') or datetime.now(HKT).replace(microsecond=0).isoformat())
 
     out_dir = Path(args.tickers_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-
-    f_by_ticker = (fdoc.get("tickers") or {}) if isinstance(fdoc, dict) else {}
-    as_of = (fdoc.get("as_of") if isinstance(fdoc, dict) else None) or generated_at_hkt[:10]
-
-    written = []
-    fallback_tickers: list[str] = []
-    for t in watchlist:
-        sig = (signals_doc.get("signals") or {}).get(t)
-        if not sig or not isinstance(sig, dict) or not sig.get("ok"):
-            raise ValueError(f"Missing valid TA signal for ticker {t}")
-
-        f = f_by_ticker.get(t)
-        if not f or not isinstance(f, dict):
-            f = _default_fundamentals(t, as_of)
-            fallback_tickers.append(t)
-        else:
-            f = dict(f)
-            f["as_of"] = as_of
-            f["fallback_used"] = False
-
-        n = ((news_doc.get("tickers") or {}).get(t) or {}) if isinstance(news_doc, dict) else {}
-        html = build_page(t, sig, f, n, report_path, generated_at_utc, generated_at_hkt)
-        path = out_dir / f"{t}.html"
-        path.write_text(html, encoding="utf-8")
-        written.append(str(path))
+    pages_meta = {}
+    for ticker in watchlist:
+        sig = ((signals_doc.get('signals') or {}).get(ticker) or {})
+        if not sig:
+            raise ValueError(f'missing signal for {ticker}')
+        f = funds.get(ticker) or {}
+        n = news_map.get(ticker) or {}
+        html, meta = build_page(ticker, sig, f, funds, n, report_path, last_verified_hkt)
+        (out_dir / f'{ticker}.html').write_text(html, encoding='utf-8')
+        pages_meta[ticker] = meta
+        print(f"wrote {ticker} provisional={meta['provisional']} score={meta['evidenceQualityScore']}")
 
     meta = {
-        "generated_at_utc": generated_at_utc,
-        "generated_at_hkt": generated_at_hkt,
-        "tickers": watchlist,
-        "report": report_path,
-        "generator": "scripts/generate_pilot_ticker_pages.py",
-        "fallback_fundamentals_tickers": fallback_tickers,
+        'generated_at_utc': datetime.now(UTC).replace(microsecond=0).isoformat(),
+        'generated_at_hkt': datetime.now(HKT).replace(microsecond=0).isoformat(),
+        'report': report_path,
+        'pages': pages_meta,
     }
     Path(args.meta).parent.mkdir(parents=True, exist_ok=True)
-    Path(args.meta).write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {len(written)} ticker pages")
-    print(f"Fallback fundamentals used for {len(fallback_tickers)} tickers: {', '.join(fallback_tickers) if fallback_tickers else 'none'}")
-    print(f"Wrote {args.meta}")
+    Path(args.meta).write_text(json.dumps(meta, indent=2) + '\n', encoding='utf-8')
+    print(f'Wrote {args.meta}')
     return 0
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     raise SystemExit(main())
