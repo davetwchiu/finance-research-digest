@@ -109,6 +109,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--deep", default="data/cache/atlas_deep_analysis.json")
     ap.add_argument("--prev", default="data/cache/atlas_deep_analysis.prev.json")
+    ap.add_argument("--snapshot", default="data/cache/atlas_snapshot.json")
     ap.add_argument("--high-threshold", type=int, default=4)
     ap.add_argument("--max-age-hours", type=float, default=24.0)
     ap.add_argument("--telegram-target", default="telegram:-3851523537")
@@ -127,9 +128,11 @@ def main() -> int:
 
     deep_path = Path(args.deep)
     prev_path = Path(args.prev)
+    snapshot_path = Path(args.snapshot)
 
     cur = _load(deep_path)
     prev = _load(prev_path)
+    snapshot = _load(snapshot_path)
 
     regime = (((cur.get("market_regime") or {}).get("label")) or "unknown")
     prev_regime = (((prev.get("market_regime") or {}).get("label")) or "unknown")
@@ -150,6 +153,12 @@ def main() -> int:
     if generated_at_dt is not None:
         generated_age_hours = (now_utc - generated_at_dt).total_seconds() / 3600.0
 
+    snapshot_generated_at_raw = snapshot.get("generated_at") if isinstance(snapshot, dict) else None
+    snapshot_generated_at_dt = _parse_iso_utc(snapshot_generated_at_raw)
+    snapshot_generated_age_hours = None
+    if snapshot_generated_at_dt is not None:
+        snapshot_generated_age_hours = (now_utc - snapshot_generated_at_dt).total_seconds() / 3600.0
+
     delivery_health = _scan_delivery_health(
         Path(args.failed_queue_dir),
         args.telegram_target,
@@ -159,6 +168,8 @@ def main() -> int:
     reasons = []
     if not cur:
         reasons.append("deep_analysis_missing_or_unreadable")
+    if not snapshot:
+        reasons.append("snapshot_missing_or_unreadable")
     if regime != "unknown" and prev_regime != "unknown" and regime != prev_regime:
         reasons.append(f"regime_changed:{prev_regime}->{regime}")
     if high_attention >= args.high_threshold:
@@ -167,6 +178,10 @@ def main() -> int:
         reasons.append("generated_at_missing_or_invalid")
     elif generated_age_hours is not None and generated_age_hours > args.max_age_hours:
         reasons.append(f"deep_analysis_stale_hours:{generated_age_hours:.2f}>{args.max_age_hours}")
+    if snapshot_generated_at_dt is None:
+        reasons.append("snapshot_generated_at_missing_or_invalid")
+    elif snapshot_generated_age_hours is not None and snapshot_generated_age_hours > args.max_age_hours:
+        reasons.append(f"snapshot_stale_hours:{snapshot_generated_age_hours:.2f}>{args.max_age_hours}")
     if schema_issues:
         reasons.append("deep_analysis_schema_incomplete:" + ",".join(schema_issues))
     if delivery_health.get("chat_not_found_count", 0) >= 3:
@@ -188,8 +203,11 @@ def main() -> int:
         "max_age_hours": args.max_age_hours,
         "generated_at": generated_at_raw,
         "generated_age_hours": (round(generated_age_hours, 2) if generated_age_hours is not None else None),
+        "snapshot_generated_at": snapshot_generated_at_raw,
+        "snapshot_generated_age_hours": (round(snapshot_generated_age_hours, 2) if snapshot_generated_age_hours is not None else None),
         "checked_at_utc": now_utc.isoformat(),
         "deep_file": str(deep_path),
+        "snapshot_file": str(snapshot_path),
         "telegram_delivery_health": delivery_health,
     }
 
