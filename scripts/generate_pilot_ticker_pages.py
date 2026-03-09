@@ -188,14 +188,34 @@ def _business_reality(ticker: str, f: dict) -> tuple[str, int, bool]:
     return ("<ul>" + "".join(facts[:3]) + "</ul>" + extra) if facts else ("<p><strong>insufficient verified data</strong> — no dated revenue/segment/customer evidence was available in the current run.</p>"), len(facts[:3]), missing_segment_customer
 
 
-def _moat_compare(ticker: str, f: dict, funds: dict[str, dict]) -> tuple[str, int]:
+def _moat_compare(ticker: str, f: dict, funds: dict[str, dict]) -> tuple[str, int, str]:
     peers = PEERS.get(ticker, [])[:3]
     if len(peers) < 2:
-        return "<p><strong>insufficient verified data</strong> — peer set unavailable.</p>", 0
-    own = f"<p><strong>{ticker}</strong>: rev growth {_fmt(_num(f.get('revenue_growth_yoy_pct')),1,'%')} · gross margin {_fmt(_num(f.get('gross_margin_pct')),1,'%')} · fwd P/E {_fmt(_num(f.get('forward_pe')),1,'x')} · market cap {_fmt(_num(f.get('market_cap_b')),1,'B')}.</p>"
+        return "<p><strong>insufficient verified data</strong> — peer set unavailable.</p>", 0, "peer set unavailable"
+
+    own_metrics = [
+        _num(f.get("revenue_growth_yoy_pct")),
+        _num(f.get("gross_margin_pct")),
+        _num(f.get("forward_pe")),
+        _num(f.get("market_cap_b")),
+    ]
+    own_has_data = any(v is not None for v in own_metrics)
+    own = (
+        f"<p><strong>{ticker}</strong>: rev growth {_fmt(_num(f.get('revenue_growth_yoy_pct')),1,'%')} · gross margin {_fmt(_num(f.get('gross_margin_pct')),1,'%')} · fwd P/E {_fmt(_num(f.get('forward_pe')),1,'x')} · market cap {_fmt(_num(f.get('market_cap_b')),1,'B')}.</p>"
+        if own_has_data
+        else f"<p><strong>{ticker}</strong>: current run has no verified fundamentals feed for peer comparison, so this section stays technical-first until the feed recovers.</p>"
+    )
+
     lis = [_peer_row(ticker, p, funds) for p in peers if funds.get(p)]
-    compare_points = 1 + len(lis)
-    return own + "<ul>" + "".join(lis[:3]) + "</ul><p class='muted'>Concrete compare points used: revenue growth, gross margin, forward P/E, market cap.</p>", compare_points
+    compare_points = (1 if own_has_data else 0) + len(lis)
+
+    if not own_has_data and not lis:
+        return own + "<p class='warn'>Peer comparison deferred: the fundamentals feed did not return usable data for this ticker or its mapped peers in this run.</p>", compare_points, "fundamentals feed unavailable for peer comparison"
+
+    if not lis:
+        return own + "<p class='warn'>Peer comparison is limited: ticker-level fundamentals exist, but peer fundamentals were unavailable in this run.</p>", compare_points, "peer fundamentals unavailable"
+
+    return own + "<ul>" + "".join(lis[:3]) + "</ul><p class='muted'>Concrete compare points used: revenue growth, gross margin, forward P/E, market cap.</p>", compare_points, ""
 
 
 def _catalyst_block(ticker: str) -> tuple[str, int, bool]:
@@ -287,7 +307,7 @@ def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], news: di
     items = news.get("items") or []
     changed_html, changed_evidence = _what_changed(items)
     biz_html, biz_evidence, biz_missing = _business_reality(ticker, f)
-    moat_html, moat_points = _moat_compare(ticker, f, funds)
+    moat_html, moat_points, moat_reason = _moat_compare(ticker, f, funds)
     catalyst_html, catalyst_verified, catalyst_unverified = _catalyst_block(ticker)
     setup_html = _setup_block(ticker, sig, score)
     plain_language_html = _plain_language_summary(ticker, sig, score)
@@ -297,7 +317,7 @@ def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], news: di
     if biz_missing:
         reasons.append("business reality missing segment/customer proof")
     if moat_points < 3:
-        reasons.append("competitor compare too thin")
+        reasons.append(moat_reason or "peer comparison limited")
     if catalyst_unverified:
         reasons.append("catalyst calendar unverified")
     if freshness_state == "stale":
