@@ -105,6 +105,62 @@ def _scan_delivery_health(
     }
 
 
+def _load_job_state(jobs_path: Path, job_id: str) -> Dict[str, Any]:
+    jobs = _load(jobs_path)
+    for job in jobs.get("jobs") or []:
+        if str(job.get("id")) != job_id:
+            continue
+        state = job.get("state") or {}
+        delivery = job.get("delivery") or {}
+        return {
+            "job_id": job_id,
+            "name": job.get("name"),
+            "enabled": job.get("enabled"),
+            "delivery_to": delivery.get("to"),
+            "last_run_at_ms": state.get("lastRunAtMs"),
+            "last_status": state.get("lastStatus"),
+            "last_delivery_status": state.get("lastDeliveryStatus"),
+            "last_delivered": state.get("lastDelivered"),
+            "consecutive_errors": state.get("consecutiveErrors"),
+        }
+    return {"job_id": job_id, "missing": True}
+
+
+def _load_latest_run(run_log_path: Path) -> Dict[str, Any]:
+    if not run_log_path.exists():
+        return {"missing": True}
+    try:
+        lines = [line for line in run_log_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+        if not lines:
+            return {"missing": True}
+        last = json.loads(lines[-1])
+    except Exception:
+        return {"missing": True}
+    return {
+        "ts": last.get("ts"),
+        "status": last.get("status"),
+        "deliveryStatus": last.get("deliveryStatus"),
+        "delivered": last.get("delivered"),
+        "summary": last.get("summary"),
+        "error": last.get("error"),
+    }
+
+
+def _summary_is_meaningful(summary: Any) -> bool:
+    if not isinstance(summary, str):
+        return False
+    s = summary.strip().lower()
+    if not s:
+        return False
+    boring_prefixes = (
+        "no new ",
+        "no fresh ",
+        "no material ",
+        "breaking monitor checkpoint",
+    )
+    return not s.startswith(boring_prefixes)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--deep", default="data/cache/atlas_deep_analysis.json")
@@ -123,6 +179,17 @@ def main() -> int:
         "--failed-queue-dir",
         default=os.path.expanduser("~/.openclaw/delivery-queue/failed"),
         help="Path to OpenClaw failed delivery queue for health checks.",
+    )
+    ap.add_argument("--jobs-path", default=os.path.expanduser("~/.openclaw/cron/jobs.json"))
+    ap.add_argument(
+        "--breaking-job-id",
+        default="a33f17c0-a671-4387-80ed-137144f38f3d",
+        help="Cron job id for watchlist-breaking-news.",
+    )
+    ap.add_argument(
+        "--breaking-run-log",
+        default=os.path.expanduser("~/.openclaw/cron/runs/a33f17c0-a671-4387-80ed-137144f38f3d.jsonl"),
+        help="Run log path for watchlist-breaking-news.",
     )
     args = ap.parse_args()
 
@@ -164,6 +231,8 @@ def main() -> int:
         args.telegram_target,
         args.delivery_lookback_hours,
     )
+    latest_job_state = _load_job_state(Path(args.jobs_path), args.breaking_job_id)
+    latest_run = _load_latest_run(Path(args.breaking_run_log))
 
     reasons = []
     if not cur:
@@ -190,6 +259,10 @@ def main() -> int:
             reasons.append("telegram_delivery_chat_not_found_repeated:migration_candidates=" + ",".join(cands))
         else:
             reasons.append("telegram_delivery_chat_not_found_repeated")
+    if latest_run.get("deliveryStatus") != "delivered" and _summary_is_meaningful(latest_run.get("summary")):
+        reasons.append("breaking_latest_meaningful_run_not_delivered")
+    elif latest_job_state.get("last_delivery_status") not in (None, "delivered") and latest_job_state.get("last_delivered") is False:
+        reasons.append(f"breaking_job_state_delivery:{latest_job_state.get('last_delivery_status')}")
 
     llm_needed = len(reasons) > 0
     out = {
@@ -209,6 +282,8 @@ def main() -> int:
         "deep_file": str(deep_path),
         "snapshot_file": str(snapshot_path),
         "telegram_delivery_health": delivery_health,
+        "watchlist_breaking_job_state": latest_job_state,
+        "watchlist_breaking_latest_run": latest_run,
     }
 
     print(json.dumps(out, indent=2))
