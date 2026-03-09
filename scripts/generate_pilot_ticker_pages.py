@@ -208,6 +208,64 @@ def _catalyst_block(ticker: str) -> tuple[str, int, bool]:
     return "<ul>" + "".join(lis) + "</ul>" + note, verified, True
 
 
+def _plain_language_summary(ticker: str, sig: dict, score: Score) -> str:
+    latest = sig.get("latest") or {}
+    ind = sig.get("indicators") or {}
+    close = _num(latest.get("close"))
+    sma20 = _num(ind.get("sma20"))
+    sma50 = _num(ind.get("sma50"))
+    rsi = _num(ind.get("rsi14"))
+    atr = _num(ind.get("atr14"))
+
+    trend_bits = []
+    if close is not None and sma20 is not None:
+        trend_bits.append("holding above the 20-day trend" if close >= sma20 else "still below the 20-day trend")
+    if close is not None and sma50 is not None:
+        trend_bits.append("still above the 50-day base" if close >= sma50 else "not back above the 50-day base yet")
+
+    momentum = "momentum is balanced"
+    if rsi is not None:
+        if rsi >= 60:
+            momentum = "momentum is warm rather than stretched"
+        elif rsi <= 40:
+            momentum = "momentum is weak and needs proof of stabilization"
+
+    risk = "volatility is manageable"
+    if close and atr:
+        atr_pct = atr / close * 100.0
+        if atr_pct >= 8:
+            risk = "volatility is high, so position sizing matters more than the headline"
+        elif atr_pct >= 5:
+            risk = "volatility is elevated, so expect wider swings than the benchmark"
+
+    stance = "watchlist name, not an aggressive chase"
+    if score.total >= 75:
+        stance = "actionable only if price confirms the move"
+    elif score.total <= 50:
+        stance = "mostly a monitoring name until price and evidence improve"
+
+    lead = trend_bits[0] if trend_bits else "setup is mixed"
+    second = trend_bits[1] if len(trend_bits) > 1 else momentum
+    return (
+        f"<p><strong>Plain-language summary:</strong> {ticker} is {lead}; {second}. "
+        f"Right now, {momentum}, {risk}, and this reads as a <strong>{stance}</strong>.</p>"
+    )
+
+
+    latest = sig.get("latest") or {}
+    ind = sig.get("indicators") or {}
+    close = _num(latest.get("close")) or 0.0
+    sma20 = _num(ind.get("sma20")) or close
+    sma50 = _num(ind.get("sma50")) or close
+    atr = _num(ind.get("atr14")) or max(close * 0.03, 0.01)
+    trigger = max(sma20, sma50)
+    invalid = min(sma20, sma50) - 0.5 * atr
+    t1 = close + 1.0 * atr
+    t2 = close + 2.0 * atr
+    conf = "high" if score.total >= 75 else ("medium" if score.total >= 60 else "low")
+    return f"<ul><li><strong>Trigger:</strong> daily close above {_fmt(trigger,2)} with confirmation from volume / follow-through.</li><li><strong>Invalidation:</strong> two closes below {_fmt(invalid,2)} or adverse catalyst that breaks the thesis.</li><li><strong>Target 1:</strong> {_fmt(t1,2)}</li><li><strong>Target 2:</strong> {_fmt(t2,2)}</li><li><strong>Confidence:</strong> {conf}</li><li><strong>What changes my mind:</strong> weakening breadth, rising ATR without price progress, negative high-severity headlines, or deterioration in peer-relative metrics.</li></ul>"
+
+
 def _setup_block(ticker: str, sig: dict, score: Score) -> str:
     latest = sig.get("latest") or {}
     ind = sig.get("indicators") or {}
@@ -232,6 +290,7 @@ def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], news: di
     moat_html, moat_points = _moat_compare(ticker, f, funds)
     catalyst_html, catalyst_verified, catalyst_unverified = _catalyst_block(ticker)
     setup_html = _setup_block(ticker, sig, score)
+    plain_language_html = _plain_language_summary(ticker, sig, score)
     reasons = []
     if changed_evidence < 2:
         reasons.append("evidence below threshold: last 72h changes")
@@ -248,18 +307,20 @@ def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], news: di
     status = "PROVISIONAL" if provisional else "VERIFIED"
     stale_banner = "<div class='banner stale'>Stale warning: last verified evidence is older than 24h. Treat this page as stale until refreshed.</div>" if freshness_state == "stale" else ""
     prov_banner = f"<div class='banner provisional'>Quality gate state: {status}. Reasons: {'; '.join(reasons) if reasons else 'none'}.</div>" if provisional else "<div class='banner ok'>Quality gate state: VERIFIED.</div>"
-    html = f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.6}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}}.muted{{color:#a7b0d6}}.banner{{padding:10px 12px;border-radius:10px;margin:12px 0;font-weight:600}}.provisional{{background:#4b1f27;border:1px solid #a65264}}.stale{{background:#4a3a14;border:1px solid #af8a2a}}.ok{{background:#153c28;border:1px solid #2f8f5a}}.pill{{display:inline-block;border:1px solid #3a4c88;border-radius:999px;padding:3px 10px;font-size:12px;color:#dfe7ff;margin-right:6px;margin-bottom:6px}}</style></head><body>
+    html = f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.6}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}}.muted{{color:#a7b0d6}}.banner{{padding:10px 12px;border-radius:10px;margin:12px 0;font-weight:600}}.provisional{{background:#4b1f27;border:1px solid #a65264}}.stale{{background:#4a3a14;border:1px solid #af8a2a}}.ok{{background:#153c28;border:1px solid #2f8f5a}}.pill{{display:inline-block;border:1px solid #3a4c88;border-radius:999px;padding:3px 10px;font-size:12px;color:#dfe7ff;margin-right:6px;margin-bottom:6px}}details.card summary{{cursor:pointer;font-weight:600}}.warn{{color:#ffd27d}}</style></head><body>
 <p><a href='../index.html'>← Back</a> · <a href='../{report_path}'>Daily report</a></p>
 <h1>{ticker} — Research page</h1>
 <p class='muted'>Last verified time (HKT): {last_verified_hkt} · Freshness state: {freshness_state} · Evidence quality score: {evidence_quality}/100 · TradingView mapping: {_tv_symbol(ticker)}</p>
 {stale_banner}{prov_banner}
-<div class='card'><h2>At a glance</h2><p><span class='pill'>Status: {status}</span><span class='pill'>Score: {score.total}/100</span><span class='pill'>TA: {score.ta}</span><span class='pill'>Fundamentals: {score.fundamentals}</span><span class='pill'>Freshness age: {_fmt(age_h,1,'h')}</span></p><p class='muted'>Hard rule: no evidence, no claim. Where evidence is thin, the page explicitly says so instead of pretending certainty.</p></div>
+<div class='card'><h2>At a glance</h2><p><span class='pill'>Status: {status}</span><span class='pill'>Score: {score.total}/100</span><span class='pill'>TA: {score.ta}</span><span class='pill'>Fundamentals: {score.fundamentals}</span><span class='pill'>Freshness age: {_fmt(age_h,1,'h')}</span></p>{plain_language_html}<p class='muted'>Hard rule: no evidence, no claim. Thin evidence stays clearly labeled instead of being dressed up as conviction.</p></div>
+<details class='card' open><summary>Technical evidence and catalysts</summary>
 <div class='card'><h2>1. What changed in last 72h</h2>{changed_html}</div>
 <div class='card'><h2>2. Business reality</h2>{biz_html}</div>
 <div class='card'><h2>3. Moat + competitor check</h2>{moat_html}</div>
 <div class='card'><h2>4. Catalyst calendar next 30d</h2>{catalyst_html}</div>
 <div class='card'><h2>5. Risk map</h2><ol><li><strong>Rates / valuation compression:</strong> long-duration equities re-rate lower if yields back up again. <em>Invalidation signal:</em> rates cool while price holds above trend.</li><li><strong>Company-specific execution miss:</strong> contract, delivery, demand, or guide slippage can break the setup. <em>Invalidation signal:</em> management or order-flow evidence stabilizes instead of worsening.</li><li><strong>Negative high-severity headline cluster:</strong> lawsuit, downgrade, export-control, tariff, or funding shock. <em>Invalidation signal:</em> market absorbs the headline and price/volume remain constructive.</li></ol></div>
 <div class='card'><h2>6. Actionable setup</h2>{setup_html}</div>
+</details>
 <div class='card'><h2>Visual context</h2><iframe title='TradingView chart for {ticker}' src='https://s.tradingview.com/widgetembed/?symbol={_tv_symbol(ticker)}&interval=D&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&theme=dark&style=1&timezone=Asia%2FHong_Kong' width='100%' height='420' frameborder='0' allowtransparency='true' scrolling='no'></iframe></div>
 </body></html>"""
     meta = {

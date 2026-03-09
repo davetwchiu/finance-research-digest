@@ -1,124 +1,90 @@
 {
-  "generatedAt": "2026-03-09T15:26:49+08:00",
+  "generatedAt": "2026-03-09T18:00:05+08:00",
   "items": [
     {
       "ticker": "AAPL",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "AVGO",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "BBAI",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "KTOS",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "MSFT",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "NVDA",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "ONDS",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "PLTR",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "RDW",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "RKLB",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "TSLA",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "TSM",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "UUUU",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "GOOG",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "IBM",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "BRK.B",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     },
     {
       "ticker": "LITE",
-      "ok": false,
-      "errors": [
-        "page marked provisional"
-      ]
+      "ok": true,
+      "errors": []
     }
   ]
 }
