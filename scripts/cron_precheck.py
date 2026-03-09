@@ -161,6 +161,23 @@ def _summary_is_meaningful(summary: Any) -> bool:
     return not s.startswith(boring_prefixes)
 
 
+def _has_recent_delivery_failure_evidence(delivery_health: Dict[str, Any], latest_run: Dict[str, Any]) -> bool:
+    if int(delivery_health.get("recent_fail_count") or 0) > 0:
+        return True
+    err = str(latest_run.get("error") or "").strip().lower()
+    if not err:
+        return False
+    delivery_error_markers = (
+        "deliver",
+        "telegram",
+        "chat not found",
+        "forbidden",
+        "bot was blocked",
+        "message thread not found",
+    )
+    return any(marker in err for marker in delivery_error_markers)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--deep", default="data/cache/atlas_deep_analysis.json")
@@ -259,9 +276,19 @@ def main() -> int:
             reasons.append("telegram_delivery_chat_not_found_repeated:migration_candidates=" + ",".join(cands))
         else:
             reasons.append("telegram_delivery_chat_not_found_repeated")
-    if latest_run.get("deliveryStatus") != "delivered" and _summary_is_meaningful(latest_run.get("summary")):
+
+    has_delivery_failure_evidence = _has_recent_delivery_failure_evidence(delivery_health, latest_run)
+    if (
+        latest_run.get("deliveryStatus") != "delivered"
+        and _summary_is_meaningful(latest_run.get("summary"))
+        and has_delivery_failure_evidence
+    ):
         reasons.append("breaking_latest_meaningful_run_not_delivered")
-    elif latest_job_state.get("last_delivery_status") not in (None, "delivered") and latest_job_state.get("last_delivered") is False:
+    elif (
+        latest_job_state.get("last_delivery_status") not in (None, "delivered")
+        and latest_job_state.get("last_delivered") is False
+        and has_delivery_failure_evidence
+    ):
         reasons.append(f"breaking_job_state_delivery:{latest_job_state.get('last_delivery_status')}")
 
     llm_needed = len(reasons) > 0
