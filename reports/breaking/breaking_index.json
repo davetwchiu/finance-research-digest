@@ -1,44 +1,28 @@
 {
   "items": [
     {
-      "id": "2026-03-11-2026-03-11-06:36-hkt-—-watchlist",
-      "time": "2026-03-11 06:36 HKT — Watchlist breaking-news check",
-      "createdAt": "2026-03-11T06:36:00+08:00",
-      "title": "Breaking monitor update",
-      "summary": "Latest breaking monitor entry logged.",
+      "id": "2026-03-11-2026-03-11-05:36-hkt-—-watchlist",
+      "time": "2026-03-11 05:36 HKT — Watchlist breaking-news check",
+      "createdAt": "2026-03-11T05:36:00+08:00",
+      "title": "TSLA — Reuters snippet indicates a U.S. Autopilot probe has turned more serious, with prosecutors reportedly focusing on securities and wire-fraud angles. This would raise legal/regulatory risk around Tesla's autonomy narrative if confirmed in full",
+      "summary": "TSLA faces a potentially more severe prosecutorial angle if the Reuters headline is accurate",
       "path": "./2026-03-11.md"
     },
     {
-      "id": "2026-03-10-2026-03-10-23:36-hkt-—-hourly-wa",
-      "time": "2026-03-10 23:36 HKT — Hourly watchlist breaking-news scan",
-      "createdAt": "2026-03-10T23:36:00+08:00",
-      "title": "Breaking monitor update",
-      "summary": "Latest breaking monitor entry logged.",
+      "id": "2026-03-10-2026-03-10-20:36-hkt",
+      "time": "2026-03-10 20:36 HKT",
+      "createdAt": "2026-03-10T20:36:00+08:00",
+      "title": "Middle East war de-escalation rhetoric drove a sharp reversal in crude and a risk-on bounce",
+      "summary": "Reuters reported oil sank 7% after Trump said the war could be over soon; Reuters also reported Asian stocks rebounded as oil fell, while Iran still said it would decide when the war ends and would keep blocking the Strait of Hormuz",
       "path": "./2026-03-10.md"
     },
     {
-      "id": "2026-03-09-2026-03-09-23:31-hkt",
-      "time": "2026-03-09 23:31 HKT",
-      "createdAt": "2026-03-09T23:31:00+08:00",
-      "title": "The same active macro driver remains in force — Middle East conflict / oil-shock / inflation-risk regime — but the latest scan did not show a fresh escalation or confirmed company-specific development that materially changes positioning versus prior alerts",
-      "summary": "The same active macro driver remains in force — Middle East conflict / oil-shock / inflation-risk regime — but the latest scan did not show a fresh escalation or confirmed company-specific development that materially changes positioning versus prior alerts",
-      "path": "./2026-03-09.md"
-    },
-    {
-      "id": "2026-03-06-10:38-hkt-|-watchlist-breaking-m",
-      "time": "10:38 HKT | Watchlist Breaking Monitor",
-      "createdAt": "2026-03-06T10:38:00+08:00",
-      "title": "Breaking monitor update",
-      "summary": "Latest breaking monitor entry logged.",
-      "path": "./2026-03-06.md"
-    },
-    {
-      "id": "2026-03-05-2026-03-06-00:31-hkt-—-hourly-wa",
-      "time": "2026-03-06 00:31 HKT — Hourly watchlist breaking-news scan (A/B gated)",
-      "createdAt": "2026-03-06T00:31:00+08:00",
-      "title": "Breaking monitor update",
-      "summary": "Latest breaking monitor entry logged.",
-      "path": "./2026-03-05.md"
+      "id": "2026-03-10-2026-03-10-15:36-hkt",
+      "time": "2026-03-10 15:36 HKT",
+      "createdAt": "2026-03-10T15:36:00+08:00",
+      "title": "Macro de-escalation signal around the Iran war is easing immediate oil/inflation stress; broad risk sentiment improved. No validated single-name thesis changer found across David's watchlist in this scan",
+      "summary": "Macro de-escalation signal around the Iran war is easing immediate oil/inflation stress; broad risk sentiment improved. No validated single-name thesis changer found across David's watchlist in this scan",
+      "path": "./2026-03-10.md"
     }
   ],
   "lastCheckedAt": "2026-03-11T06:36:00+08:00",

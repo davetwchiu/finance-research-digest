@@ -1,10 +1,10 @@
 {
-  "time": "2026-03-11 06:36 HKT — Watchlist breaking-news check",
-  "title": "Breaking monitor update",
-  "summary": "Latest breaking monitor entry logged.",
-  "confidence": "unknown",
+  "time": "2026-03-11 05:36 HKT — Watchlist breaking-news check",
+  "title": "TSLA — Reuters snippet indicates a U.S. Autopilot probe has turned more serious, with prosecutors reportedly focusing on securities and wire-fraud angles. This would raise legal/regulatory risk around Tesla's autonomy narrative if confirmed in full",
+  "summary": "TSLA faces a potentially more severe prosecutorial angle if the Reuters headline is accurate",
+  "confidence": "medium on the tsla item (high-quality source, but article body not directly fetched due reuters anti-bot gating). low-to-medium on the macro relief item as a sustained thesis change",
   "lastCheckStatus": "ok",
-  "lastCheckConfidence": "unknown",
+  "lastCheckConfidence": "medium on the tsla item (high-quality source, but article body not directly fetched due reuters anti-bot gating). low-to-medium on the macro relief item as a sustained thesis change",
   "lastCheckSourceQuality": "unknown",
   "path": "./2026-03-11.md",
   "lastCheckedAt": "2026-03-11T06:36:00+08:00"

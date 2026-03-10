@@ -40,16 +40,45 @@ def extract_title_summary(body: list[str]) -> tuple[str, str]:
     summary = ''
     for ln in body:
         s = ln.strip()
-        low = s.lower()
+        plain = re.sub(r'\*\*([^*]+)\*\*', r'\1', s)
+        low = plain.lower()
         if low.startswith(('- event:', '- material alert candidate:', '- summary:')) and not title:
-            title = clean_value(s.split(':', 1)[1])
+            title = clean_value(plain.split(':', 1)[1])
         if low.startswith(('- summary:', '- interpretation:', '- fact:', '- facts:')) and not summary:
-            summary = clean_value(s.split(':', 1)[1])
+            summary = clean_value(plain.split(':', 1)[1])
     if not title:
-        title = summary or 'Breaking monitor update'
+        title = summary or 'Breaking alert'
     if not summary:
-        summary = 'Latest breaking monitor entry logged.'
+        summary = title
     return title, summary
+
+
+def is_public_alert(section_title: str, body: list[str]) -> bool:
+    text = "\n".join(body).lower()
+    title = section_title.lower()
+    negative_markers = [
+        'no material thesis-changing',
+        'no new thesis-changing',
+        'no new material',
+        'no alert',
+        'scan result: no',
+        'status: no material',
+        'continuation, not a fresh break',
+        'no fresh single-name',
+    ]
+    if any(m in text or m in title for m in negative_markers):
+        return False
+    positive_markers = [
+        'material alert candidate',
+        '- event:',
+        '## 00:36 hkt',
+        '## 2026-',
+        'what happened',
+    ]
+    if any(m in text or m in title for m in positive_markers):
+        return True
+    # Fallback: keep sections that have a substantive summary and do not explicitly say no change.
+    return 'summary:' in text and len(text) > 180
 
 
 def parse_created_at(file_date: str, section_title: str) -> str:
@@ -85,18 +114,21 @@ def main() -> int:
         sections = parse_sections(path.read_text(encoding='utf-8'))
         if not sections:
             continue
-        sec_title, sec_body = sections[-1]
-        title, summary = extract_title_summary(sec_body)
-        created_at = parse_created_at(file_date, sec_title)
-        latest_checked = created_at
-        items.append({
-            'id': f"{file_date}-{sec_title[:32].lower().replace(' ','-').replace('/','-')}",
-            'time': sec_title,
-            'createdAt': created_at,
-            'title': title,
-            'summary': summary,
-            'path': f"./{path.name}",
-        })
+        last_title, _ = sections[-1]
+        latest_checked = parse_created_at(file_date, last_title)
+        for sec_title, sec_body in sections:
+            if not is_public_alert(sec_title, sec_body):
+                continue
+            title, summary = extract_title_summary(sec_body)
+            created_at = parse_created_at(file_date, sec_title)
+            items.append({
+                'id': f"{file_date}-{sec_title[:32].lower().replace(' ','-').replace('/','-')}",
+                'time': sec_title,
+                'createdAt': created_at,
+                'title': title,
+                'summary': summary,
+                'path': f"./{path.name}",
+            })
 
     items.sort(key=lambda x: x.get('createdAt', ''), reverse=True)
     payload = {
