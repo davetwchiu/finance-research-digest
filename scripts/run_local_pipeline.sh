@@ -87,14 +87,14 @@ python3 scripts/report_dup_guard.py --reports-dir reports --min-len 120 --max-du
 # Site-level intelligence quality guardrails.
 python3 scripts/qc_site_quality.py --root . --max-fallback-ratio 0.90
 
-# Only mark the site as freshly updated after all publish-blocking checks pass.
-python3 scripts/update_summary_freshness.py \
-  --summary summary.json \
-  --reports-dir reports
-
 # Bump visible website version every update cycle.
 python3 scripts/site_version.py \
   --file data/cache/site_version.json \
   --base 2.5.0
+
+# Only mark the site as freshly updated after the full pipeline succeeds.
+python3 scripts/update_summary_freshness.py \
+  --summary summary.json \
+  --reports-dir reports
 
 echo "Local pipeline complete: archived previous snapshots in $ARCHIVE_DIR; refreshed signals/snapshot/deep-analysis; regenerated deep watchlist ticker pages; passed full-watchlist depth QC + duplicate guard; bumped site version metadata."
