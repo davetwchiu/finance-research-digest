@@ -74,6 +74,7 @@ def _scan_delivery_health(
     chat_not_found = 0
     latest_error = None
     latest_failed_at = None
+    first_failed_at = None
     for fp in files:
         try:
             if fp.stat().st_mtime < earliest_ts:
@@ -87,20 +88,26 @@ def _scan_delivery_health(
         err = str(payload.get("lastError") or "")
         if latest_error is None and err:
             latest_error = err
+        failed_at_iso = datetime.fromtimestamp(fp.stat().st_mtime, tz=timezone.utc).isoformat()
         if latest_failed_at is None:
-            latest_failed_at = datetime.fromtimestamp(fp.stat().st_mtime, tz=timezone.utc).isoformat()
+            latest_failed_at = failed_at_iso
+        first_failed_at = failed_at_iso
         if "chat not found" in err.lower():
             chat_not_found += 1
 
     migrated_candidates = _extract_migrated_chat_candidates(latest_error or "")
+
+    persistent_chat_not_found = fail_count > 0 and chat_not_found == fail_count
 
     return {
         "target": telegram_target,
         "lookback_hours": lookback_hours,
         "recent_fail_count": fail_count,
         "chat_not_found_count": chat_not_found,
+        "persistent_chat_not_found": persistent_chat_not_found,
         "latest_error": latest_error,
         "latest_failed_at_utc": latest_failed_at,
+        "first_failed_at_utc": first_failed_at,
         "migrated_chat_id_candidates": migrated_candidates,
     }
 
@@ -307,10 +314,14 @@ def main() -> int:
         reasons.append("deep_analysis_schema_incomplete:" + ",".join(schema_issues))
     if delivery_health.get("chat_not_found_count", 0) >= 3 and not delivery_recovered_after_failure:
         cands = delivery_health.get("migrated_chat_id_candidates") or []
-        if cands:
-            reasons.append("telegram_delivery_chat_not_found_repeated:migration_candidates=" + ",".join(cands))
+        if delivery_health.get("persistent_chat_not_found"):
+            base_reason = "telegram_delivery_target_broken_persistent"
         else:
-            reasons.append("telegram_delivery_chat_not_found_repeated")
+            base_reason = "telegram_delivery_chat_not_found_repeated"
+        if cands:
+            reasons.append(base_reason + ":migration_candidates=" + ",".join(cands))
+        else:
+            reasons.append(base_reason)
 
     has_delivery_failure_evidence = _has_recent_delivery_failure_evidence(delivery_health, latest_run)
     if (
