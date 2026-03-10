@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-03-10T06:58:02.983586+00:00",
-  "source_generated_at": "2026-03-10T06:58:02.874454+00:00",
+  "generated_at": "2026-03-10T07:14:45.866385+00:00",
+  "source_generated_at": "2026-03-10T07:14:45.767693+00:00",
   "count": {
-    "total": 17,
-    "valid": 17,
+    "total": 15,
+    "valid": 15,
     "invalid": 0
   },
   "breadth": {
-    "above_sma20": 8,
+    "above_sma20": 7,
     "above_sma50": 4,
-    "universe": 17
+    "universe": 15
   },
   "risk": {
-    "avg_rsi14": 48.86,
+    "avg_rsi14": 49.35,
     "overbought_rsi70": 0,
     "oversold_rsi30": 0,
-    "rsi_universe": 17
+    "rsi_universe": 15
   },
   "local_intelligence": {
-    "breadth_pct_above_sma20": 47.1,
-    "breadth_pct_above_sma50": 23.5,
-    "avg_rsi14": 48.86,
+    "breadth_pct_above_sma20": 46.7,
+    "breadth_pct_above_sma50": 26.7,
+    "avg_rsi14": 49.35,
     "overbought_count": 0,
     "oversold_count": 0,
     "top_movers": [
@@ -63,8 +63,8 @@
         "atr14_pct_of_close": 9.77
       },
       {
-        "ticker": "BBAI",
-        "atr14_pct_of_close": 8.45
+        "ticker": "COHR",
+        "atr14_pct_of_close": 8.82
       }
     ]
   },
@@ -108,8 +108,8 @@
       "atr14_pct_of_close": 9.77
     },
     {
-      "ticker": "BBAI",
-      "atr14_pct_of_close": 8.45
+      "ticker": "COHR",
+      "atr14_pct_of_close": 8.82
     }
   ],
   "signals": {
@@ -145,15 +145,6 @@
       "close": 92.47,
       "sma20": 91.623,
       "rsi14": 49.37,
-      "tags": [
-        "trend_up"
-      ]
-    },
-    "MSFT": {
-      "ok": true,
-      "close": 409.41,
-      "sma20": 401.5905,
-      "rsi14": 47.64,
       "tags": [
         "trend_up"
       ]
@@ -240,24 +231,6 @@
         "trend_down"
       ]
     },
-    "IBM": {
-      "ok": true,
-      "close": 253.33,
-      "sma20": 254.561,
-      "rsi14": 44.44,
-      "tags": [
-        "trend_down"
-      ]
-    },
-    "BRK.B": {
-      "ok": true,
-      "close": 497.2,
-      "sma20": 496.469,
-      "rsi14": 51.82,
-      "tags": [
-        "trend_up"
-      ]
-    },
     "LITE": {
       "ok": true,
       "close": 640.69,
@@ -265,6 +238,15 @@
       "rsi14": 54.67,
       "tags": [
         "trend_down"
+      ]
+    },
+    "COHR": {
+      "ok": true,
+      "close": 252.32,
+      "sma20": 246.4785,
+      "rsi14": 53.6,
+      "tags": [
+        "trend_up"
       ]
     }
   }

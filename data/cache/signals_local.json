@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-10T06:58:02.874454+00:00",
+  "generated_at": "2026-03-10T07:14:45.767693+00:00",
   "source": "yahoo_chart_v8",
-  "count": 17,
+  "count": 15,
   "signals": {
     "AAPL": {
       "ok": true,
@@ -92,29 +92,6 @@
           "hist": -0.083333
         },
         "atr14": 7.657001
-      },
-      "samples": 251
-    },
-    "MSFT": {
-      "ok": true,
-      "source_ticker": "MSFT",
-      "latest": {
-        "open": 404.920013,
-        "high": 410.209991,
-        "low": 403.5,
-        "close": 409.410004,
-        "volume": 30073800.0
-      },
-      "indicators": {
-        "sma20": 401.590498,
-        "sma50": 436.2046,
-        "rsi14": 47.636325,
-        "macd": {
-          "macd": -7.453598,
-          "signal": -11.635995,
-          "hist": 4.182397
-        },
-        "atr14": 10.13883
       },
       "samples": 251
     },
@@ -325,52 +302,6 @@
       },
       "samples": 251
     },
-    "IBM": {
-      "ok": true,
-      "source_ticker": "IBM",
-      "latest": {
-        "open": 255.380005,
-        "high": 258.079987,
-        "low": 251.570007,
-        "close": 253.330002,
-        "volume": 6123400.0
-      },
-      "indicators": {
-        "sma20": 254.561,
-        "sma50": 281.7734,
-        "rsi14": 44.435091,
-        "macd": {
-          "macd": -9.747064,
-          "signal": -12.439823,
-          "hist": 2.692759
-        },
-        "atr14": 10.204122
-      },
-      "samples": 251
-    },
-    "BRK.B": {
-      "ok": true,
-      "source_ticker": "BRK-B",
-      "latest": {
-        "open": 494.899994,
-        "high": 498.820007,
-        "low": 490.209991,
-        "close": 497.200012,
-        "volume": 5830700.0
-      },
-      "indicators": {
-        "sma20": 496.469002,
-        "sma50": 494.345599,
-        "rsi14": 51.821365,
-        "macd": {
-          "macd": 0.060196,
-          "signal": 0.066552,
-          "hist": -0.006357
-        },
-        "atr14": 9.225839
-      },
-      "samples": 251
-    },
     "LITE": {
       "ok": true,
       "source_ticker": "LITE",
@@ -391,6 +322,29 @@
           "hist": -16.025917
         },
         "atr14": 62.571544
+      },
+      "samples": 251
+    },
+    "COHR": {
+      "ok": true,
+      "source_ticker": "COHR",
+      "latest": {
+        "open": 236.389999,
+        "high": 254.360001,
+        "low": 236.0,
+        "close": 252.320007,
+        "volume": 10570800.0
+      },
+      "indicators": {
+        "sma20": 246.478499,
+        "sma50": 217.841399,
+        "rsi14": 53.60026,
+        "macd": {
+          "macd": 12.788276,
+          "signal": 14.838065,
+          "hist": -2.049789
+        },
+        "atr14": 22.256792
       },
       "samples": 251
     }
