@@ -1,0 +1,108 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import json
+import re
+from pathlib import Path
+
+
+def latest_breaking_file(breaking_dir: Path) -> Path | None:
+    files = sorted([p for p in breaking_dir.glob('20*.md') if p.is_file()])
+    return files[-1] if files else None
+
+
+def parse_latest_section(md: str) -> tuple[str | None, list[str]]:
+    lines = md.splitlines()
+    current = None
+    sections: list[tuple[str, list[str]]] = []
+    buf: list[str] = []
+    for line in lines:
+        if line.startswith('## '):
+            if current is not None:
+                sections.append((current, buf))
+            current = line[3:].strip()
+            buf = []
+        elif current is not None:
+            buf.append(line)
+    if current is not None:
+        sections.append((current, buf))
+    if not sections:
+        return None, []
+    return sections[-1]
+
+
+def clean_value(line: str) -> str:
+    line = re.sub(r'^[-*]\s*', '', line).strip()
+    line = re.sub(r'^\*\*[^:]{1,40}:\*\*\s*', '', line).strip()
+    return line.strip().rstrip('.')
+
+
+def summarize(section_title: str, body: list[str]) -> dict:
+    event = ''
+    summary = ''
+    confidence = ''
+    source_quality = ''
+    status = 'ok'
+
+    bullets = [ln.strip() for ln in body if ln.strip()]
+    for ln in bullets:
+        low = ln.lower()
+        if low.startswith('- event:'):
+            event = clean_value(ln.split(':', 1)[1])
+        elif low.startswith('- summary:'):
+            summary = clean_value(ln.split(':', 1)[1])
+        elif low.startswith('- confidence:'):
+            confidence = clean_value(ln.split(':', 1)[1])
+        elif low.startswith('- source quality:'):
+            source_quality = clean_value(ln.split(':', 1)[1])
+        elif low.startswith('- decision:') and 'no alert' in low:
+            status = 'no_material_change'
+            event = clean_value(ln.split(':', 1)[1])
+
+    if not summary:
+        for ln in bullets:
+            low = ln.lower()
+            if low.startswith(('- interpretation:', '- fact:', '- facts:')):
+                summary = clean_value(ln.split(':', 1)[1])
+                break
+    title = event or summary or 'Breaking monitor update'
+    return {
+        'time': section_title,
+        'title': title,
+        'summary': summary or 'Latest breaking monitor entry logged.',
+        'confidence': confidence.lower() if confidence else 'unknown',
+        'lastCheckStatus': status,
+        'lastCheckConfidence': confidence.lower() if confidence else 'unknown',
+        'lastCheckSourceQuality': source_quality.lower() if source_quality else 'unknown',
+    }
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--breaking-dir', default='reports/breaking')
+    ap.add_argument('--output', default='reports/breaking/breaking_summary.json')
+    args = ap.parse_args()
+
+    breaking_dir = Path(args.breaking_dir)
+    output = Path(args.output)
+    latest = latest_breaking_file(breaking_dir)
+    if latest is None:
+        raise SystemExit('No breaking markdown files found')
+
+    title, body = parse_latest_section(latest.read_text(encoding='utf-8'))
+    if title is None:
+        raise SystemExit(f'No ## sections found in {latest}')
+
+    payload = summarize(title, body)
+    payload['path'] = f'./{latest.name}'
+    payload['lastCheckedAt'] = title
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(f'Wrote {output}')
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

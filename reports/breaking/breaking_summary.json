@@ -1,11 +1,11 @@
 {
-  "time": "2026-03-10 16:36 HKT",
-  "title": "No new thesis-changing event",
-  "summary": "Fresh builder/gate sweep found macro continuation only: oil/de-escalation headlines remain the dominant regime driver, but there was no incremental watchlist-specific catalyst strong enough to change positioning.",
+  "time": "2026-03-10 20:36 HKT",
+  "title": "Middle East war de-escalation rhetoric drove a sharp reversal in crude and a risk-on bounce",
+  "summary": "Reuters reported oil sank 7% after Trump said the war could be over soon; Reuters also reported Asian stocks rebounded as oil fell, while Iran still said it would decide when the war ends and would keep blocking the Strait of Hormuz",
+  "confidence": "medium",
+  "lastCheckStatus": "ok",
+  "lastCheckConfidence": "medium",
+  "lastCheckSourceQuality": "high for the price/action headline and policy comments (reuters, multi-article corroboration); lower on durability because the geopolitical end-state remains unresolved",
   "path": "./2026-03-10.md",
-  "confidence": "high",
-  "lastCheckedAt": "2026-03-10T16:36:00+08:00",
-  "lastCheckStatus": "no_material_change",
-  "lastCheckConfidence": "high",
-  "lastCheckSourceQuality": "high"
+  "lastCheckedAt": "2026-03-10 20:36 HKT"
 }

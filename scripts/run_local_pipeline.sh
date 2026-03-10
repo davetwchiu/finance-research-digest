@@ -81,6 +81,11 @@ python3 scripts/qc_ticker_depth.py --tickers-dir tickers --watchlist watchlist.j
 # Rebuild archive index each cycle so newest report appears automatically.
 python3 scripts/rebuild_reports_index.py
 
+# Refresh homepage breaking summary from the latest breaking markdown entry.
+python3 scripts/build_breaking_summary.py \
+  --breaking-dir reports/breaking \
+  --output reports/breaking/breaking_summary.json
+
 # Fail fast if latest report contains repeated long paragraphs.
 python3 scripts/report_dup_guard.py --reports-dir reports --min-len 120 --max-duplicates 0
 
