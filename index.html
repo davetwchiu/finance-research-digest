@@ -131,6 +131,14 @@
         <div id="defSummaryRisk" class="muted" style="margin-top:6px">Risk focus: loading...</div>
         <div class="row" style="margin-top:10px"><a class="btn ghost" id="defResearchBtn" href="./defence-research/latest.html">Open full research notebook</a></div>
       </div>
+      <div class="card">
+        <h2>SEC Filings Watch — Executive Summary</h2>
+        <div id="filingsSummaryTime" class="muted">Last updated: loading...</div>
+        <div id="filingsSummaryMarket" class="muted" style="margin-top:6px">Coverage: loading...</div>
+        <div id="filingsSummaryTech" class="muted" style="margin-top:6px">What it is: loading...</div>
+        <div id="filingsSummaryRisk" class="muted" style="margin-top:6px">Caveat: loading...</div>
+        <div class="row" style="margin-top:10px"><a class="btn ghost" id="filingsResearchBtn" href="./filings-research/latest.html">Open latest filings report</a><a class="btn ghost" href="./reports/filings/">Open archive</a></div>
+      </div>
     </div>
 
     <div class="grid grid-2">
@@ -539,6 +547,29 @@ async function loadDefenceSummary(){
   }
 }
 
+async function loadFilingsSummary(){
+  const ts=document.getElementById('filingsSummaryTime');
+  const m=document.getElementById('filingsSummaryMarket');
+  const t=document.getElementById('filingsSummaryTech');
+  const r=document.getElementById('filingsSummaryRisk');
+  const b=document.getElementById('filingsResearchBtn');
+  try{
+    const res = await fetch('./filings-research/summary.json?ts='+Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('no filings summary');
+    const j = await res.json();
+    ts.textContent = `Last updated: ${fmtHKT(j.updatedAt)}`;
+    m.textContent = `Coverage: ${j.market || 'No filings summary yet.'}`;
+    t.textContent = `What it is: ${j.tech || 'No filings summary yet.'}`;
+    r.textContent = `Caveat: ${j.risk || 'No filings summary yet.'}`;
+    if(j.latestPath){ b.href = j.latestPath; }
+  }catch{
+    ts.textContent = 'Last updated: unavailable';
+    m.textContent = 'Coverage: filings summary will appear after the filings monitor runs.';
+    t.textContent = 'What it is: this panel tracks 10-Q, 10-K, and 8-K filings for the current watchlist.';
+    r.textContent = 'Caveat: no filings summary has been generated yet.';
+  }
+}
+
 function _hoursOld(iso){
   const dt = new Date(iso || '');
   if(isNaN(dt.getTime())) return null;
@@ -614,6 +645,7 @@ async function loadWebsiteVersion(){
   loadFrontBreaking();
   loadAISummary();
   loadDefenceSummary();
+  loadFilingsSummary();
   loadGlobalFreshness();
   loadWebsiteVersion();
 })();
