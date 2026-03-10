@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-03-10T18:56:20+00:00",
-  "generated_at_hkt": "2026-03-11T02:56:20+08:00",
+  "generated_at_utc": "2026-03-10T21:56:18+00:00",
+  "generated_at_hkt": "2026-03-11T05:56:18+08:00",
   "report": "reports/2026-03-10.html",
   "pages": {
     "AAPL": {
       "ticker": "AAPL",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 69,
       "provisional": true,
@@ -27,7 +27,7 @@
     },
     "AVGO": {
       "ticker": "AVGO",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 85,
       "provisional": true,
@@ -49,9 +49,9 @@
     },
     "BBAI": {
       "ticker": "BBAI",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 73,
+      "evidenceQualityScore": 76,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
@@ -62,16 +62,16 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 41,
+      "score": 47,
       "decision": {
-        "stance": "wait",
+        "stance": "watch",
         "macroSensitivity": "high",
-        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
       }
     },
     "KTOS": {
       "ticker": "KTOS",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 73,
       "provisional": true,
@@ -93,7 +93,7 @@
     },
     "NVDA": {
       "ticker": "NVDA",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -115,9 +115,9 @@
     },
     "ONDS": {
       "ticker": "ONDS",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 79,
+      "evidenceQualityScore": 73,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
@@ -128,16 +128,16 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 52,
+      "score": 41,
       "decision": {
-        "stance": "watch",
+        "stance": "wait",
         "macroSensitivity": "high",
-        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
       }
     },
     "PLTR": {
       "ticker": "PLTR",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -159,7 +159,7 @@
     },
     "RDW": {
       "ticker": "RDW",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 79,
       "provisional": true,
@@ -181,7 +181,7 @@
     },
     "RKLB": {
       "ticker": "RKLB",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 73,
       "provisional": true,
@@ -203,7 +203,7 @@
     },
     "TSLA": {
       "ticker": "TSLA",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -225,7 +225,7 @@
     },
     "TSM": {
       "ticker": "TSM",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 80,
       "provisional": true,
@@ -247,9 +247,9 @@
     },
     "UUUU": {
       "ticker": "UUUU",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 68,
+      "evidenceQualityScore": 65,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
@@ -260,7 +260,7 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 0,
       "catalystVerifiedCount": 0,
-      "score": 46,
+      "score": 41,
       "decision": {
         "stance": "wait",
         "macroSensitivity": "high",
@@ -269,9 +269,9 @@
     },
     "GOOG": {
       "ticker": "GOOG",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 72,
+      "evidenceQualityScore": 69,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
@@ -282,16 +282,16 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 0,
       "catalystVerifiedCount": 0,
-      "score": 54,
+      "score": 48,
       "decision": {
-        "stance": "watch",
+        "stance": "wait",
         "macroSensitivity": "lower",
-        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
       }
     },
     "LITE": {
       "ticker": "LITE",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 83,
       "provisional": true,
@@ -313,7 +313,7 @@
     },
     "COHR": {
       "ticker": "COHR",
-      "lastVerifiedHKT": "2026-03-11T02:56:07+08:00",
+      "lastVerifiedHKT": "2026-03-11T05:56:07+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 75,
       "provisional": true,
