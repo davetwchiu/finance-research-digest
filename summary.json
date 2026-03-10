@@ -1,7 +1,7 @@
 {
-  "macro": "Risk-off regime persists with weak breadth and elevated realized volatility; prioritize downside control over gross exposure.",
-  "policy": "Rates/policy repricing remains primary transmission channel; require confirmation from official policy communications before re-risking.",
-  "delta": "Published 2026-03-09 macro/policy regime digest; strict ticker quality gate flagged all ticker pages provisional pending stronger business/catalyst verification.",
-  "latestReportPath": "./reports/2026-03-09.html",
-  "updatedAt": "2026-03-10T08:56:22+08:00"
+  "macro": "Oil-shock risk-off regime is now the dominant macro driver; prioritize downside control and proof-heavy entries over broad beta exposure.",
+  "policy": "Fed easing hopes are now constrained by energy-driven inflation risk, so rates relief is less clean than a simple growth slowdown would imply.",
+  "delta": "Published 2026-03-10 macro/policy regime digest after manual recovery from a stuck 08:30 cron run; local Atlas pipeline refreshed and ticker pages remain honestly provisional where issuer proof is still thin.",
+  "latestReportPath": "./reports/2026-03-10.html",
+  "updatedAt": "2026-03-10T09:05:00+08:00"
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-10T08:56:08+08:00",
+  "generated_at": "2026-03-10T09:01:16+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -459,9 +459,9 @@
           }
         },
         {
-          "title": "Palantir Stock Rallies 12% in a Month: Buy, Hold, or Sell? - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZDVCMWhnSmFwYm1rb1k3R21qS3JKOGEyTHZqUm5XcHVEVVlOdDJfUTN5SXVzeTFkd3p4ODNIbE1JUXZFVFF1SUpRdnlHYVV0QVc1bzlfaUw1MTJOYVZ1M0dGTjlRV1FzdnAwanNITnRNNjBVb08wSWZyRHZXZDQ5ZWpQWQ?oc=5",
-          "published_hkt": "2026-03-07T01:03:00+08:00",
+          "title": "Is Palantir Stock Going to $200? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBaRjRhYTF0ckRjRnFGLXhrZnBtN1BUamZTQTluMkNKRk91cFJLZFlLZlhVN1A0MHNrZWQ5T3AxblpKUEdhcHVLUWl5aFB4bVVOZVpieVEzTDNKUXY2dkQ4aVJzTGtQTG9Wa3cwaVlybkhuTlhOdDFmQjZB?oc=5",
+          "published_hkt": "2026-03-09T08:25:00+08:00",
           "source": "Yahoo Finance",
           "impact": {
             "sentiment": "neutral",
@@ -723,10 +723,10 @@
           }
         },
         {
-          "title": "Taiwan Semiconductor Manufacturing Co Ltd (TSM) Stock Price, Trades & News - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1MdjNFN09HVG01Z2RBNjRTNjFBVnRiekEwbi15SDUtaFlWTnlqZi1hYzlMZC1NdG1FTVlnMHVjSG1CbzdNM3JrcGtSMGZ6NktZWmRjSmhB?oc=5",
-          "published_hkt": "2026-03-07T07:27:56+08:00",
-          "source": "GuruFocus",
+          "title": "Taiwan Semiconductor Manufacturing Co Ltd Stock (TSM) Opened Down by 3.10% on Mar 6: A Full Analysis - TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOEhLSzRWRWg4QmRud0lMLVRkam45bno1Uk9zUFdaWXpsWDluWG9Kc3Q3TTdGWXJmS2c2NEFPbzBFNG9JTm1jdEJmaVJ2MUx2eFZlOWZKZzFmV3QzQjdMekhKeDU4OXUxLWdHVU5LRUFJS1c2UXB0MDdFRXBBaWs5Wg?oc=5",
+          "published_hkt": "2026-03-06T22:47:46+08:00",
+          "source": "TradingKey",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -958,7 +958,7 @@
         },
         {
           "title": "Berkshire Hathaway\u2019s new CEO makes a one-time-only announcement: We\u2019re buying back stock - MarketWatch",
-          "url": "https://news.google.com/rss/articles/CBMizANBVV95cUxPb1o1NkRzNHN2NU5wd3JPVm94cHpHVENoenl5ZkRhT0NNMnR2aXlFbE5zVmFuX1Q0amlTbUQ2QTdwa1I3cER6TS1jMGVTOGlfa1pmNldiSGprN2NQUlFLS0JKbWpUZ3hCSGZKRkNBdmc2bk9WdXZvN0lkUGZ1clU1eGRRSER5RGRWcVh2a2xfQl9CQ2toQmFuOE9GbE5rX0kwLUN2TVFTREVHT3hxQlVxcTBnbVFuQ19kUGJRNWZUclp5MXFvenlST3d2ZzNfby1tR3hwSjU5Yi1ieUlqZ1RyQ2lwczAycWF2VnY1U0FNMktjUHlvY21ZRm5LNDZTT0E5cHc0ZlRJdllGRDJ6MFNKN3R3WWhZa0hZQVJ6VlJFMFFRa2N3UEd3akE2bk9ObEFmclFnR3Z5by1IN1Z5dThNU3pjV2R0ZE5BVUNidXRQNkh4WV9OLUpHaXV3djRZbVg2XzFJOHN6aE1wdVNZWUoxaDBUaFBPZmZwdGd1cTRNVDUzTEdPeGxRTXJQMC1CaTF5cWs3ZmZkZ1lhZUxvTktKTTBlZV8xRW50OVNvYzBBdUFkNGZkMm1BenBiSW13TEU5S3EzYmlOVEVkS1Yx?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMizANBVV95cUxQVWo4RGtXRmZIck1KeUgxTFgtVkZKS3Y5X1RnUVVxOUF0NVEtMWZHRjVZWG05MUFIaTAweHZvN1VXZktXUDVFRVhmbHNDNWU4ZFA0UF9OSDNpUF9DRDRoSG9mcUpQazIxeE5fbTV0d1JEREwtZWFuYTMzYnQ0RER3UEFabXpBMGZCZnM0VDNXWF9Zbnd0SElTZVUxQXNJMEQ4eWkwTkswV2c4UmEtSzItSjBVcVNBcXl1RERVS0FUQnlhSXViSXZsSzVzOV9JU1ZiRHVDWU5Cem1MendjWURHbHF1SmE0bkY1MmhLZ3o3YnBVZmtQT3lmcDdWajVnUDNSbVl3UmhTTHB4WkI0dmU1ajVVeE83OUxMel9KMThtb3lUUFh6aFBHcl9PQjZJMzQ0VERnckhLSVlmdXFyUFJzWWNuUTRyWEljSTNfZWFRTm1GZHZ6N1cySkplM21sQXdNLTczSE9NTlZoYlNQeTNESEZGTUx4LW82TnZyYkFCVVltUWlvcTBKYXN0VUlNaDNZNFBCYkdsWjdncGx4ZmE4QlNPaTlQa1d5YUhPejRCWUhjVVpxUkZsaExjUm9hUHJSblEtd1lpdWVKWEFN?oc=5",
           "published_hkt": "2026-03-05T21:57:00+08:00",
           "source": "MarketWatch",
           "impact": {
