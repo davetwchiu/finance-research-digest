@@ -1,5 +1,5 @@
 {
-  "time": "2026-03-11 05:36 HKT — Watchlist breaking-news check",
+  "time": "2026-03-11 06:36 HKT — Watchlist breaking-news check",
   "title": "Breaking monitor update",
   "summary": "Latest breaking monitor entry logged.",
   "confidence": "unknown",
@@ -7,5 +7,5 @@
   "lastCheckConfidence": "unknown",
   "lastCheckSourceQuality": "unknown",
   "path": "./2026-03-11.md",
-  "lastCheckedAt": "2026-03-11 05:36 HKT — Watchlist breaking-news check"
+  "lastCheckedAt": "2026-03-11T06:36:00+08:00"
 }

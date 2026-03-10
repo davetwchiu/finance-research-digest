@@ -5,6 +5,9 @@ import argparse
 import json
 import re
 from pathlib import Path
+from datetime import datetime, timedelta, timezone
+
+HKT = timezone(timedelta(hours=8))
 
 
 def latest_breaking_file(breaking_dir: Path) -> Path | None:
@@ -36,6 +39,18 @@ def clean_value(line: str) -> str:
     line = re.sub(r'^[-*]\s*', '', line).strip()
     line = re.sub(r'^\*\*[^:]{1,40}:\*\*\s*', '', line).strip()
     return line.strip().rstrip('.')
+
+
+def parse_checked_at(section_title: str, latest_name: str) -> str:
+    section_title = section_title.strip()
+    m = re.search(r'(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2})', section_title)
+    if m:
+        return datetime.fromisoformat(f"{m.group(1)}T{m.group(2)}:00+08:00").isoformat()
+    date_m = re.match(r'^(\d{4}-\d{2}-\d{2})\.md$', latest_name)
+    time_m = re.search(r'(\d{2}:\d{2})\s*HKT', section_title)
+    if date_m and time_m:
+        return datetime.fromisoformat(f"{date_m.group(1)}T{time_m.group(1)}:00+08:00").isoformat()
+    return datetime.now(HKT).replace(microsecond=0).isoformat()
 
 
 def summarize(section_title: str, body: list[str]) -> dict:
@@ -96,7 +111,8 @@ def main() -> int:
 
     payload = summarize(title, body)
     payload['path'] = f'./{latest.name}'
-    payload['lastCheckedAt'] = title
+    payload['lastCheckedAt'] = parse_checked_at(title, latest.name)
+    payload['time'] = title
 
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

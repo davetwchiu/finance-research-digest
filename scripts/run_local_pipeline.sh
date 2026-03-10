@@ -81,10 +81,13 @@ python3 scripts/qc_ticker_depth.py --tickers-dir tickers --watchlist watchlist.j
 # Rebuild archive index each cycle so newest report appears automatically.
 python3 scripts/rebuild_reports_index.py
 
-# Refresh homepage breaking summary from the latest breaking markdown entry.
+# Refresh homepage breaking summary and timeline manifest from the latest breaking markdown entry.
 python3 scripts/build_breaking_summary.py \
   --breaking-dir reports/breaking \
   --output reports/breaking/breaking_summary.json
+python3 scripts/build_breaking_index.py \
+  --breaking-dir reports/breaking \
+  --output reports/breaking/breaking_index.json
 
 # Fail fast if latest report contains repeated long paragraphs.
 python3 scripts/report_dup_guard.py --reports-dir reports --min-len 120 --max-duplicates 0
@@ -97,9 +100,6 @@ python3 scripts/site_version.py \
   --file data/cache/site_version.json \
   --base 2.5.0
 
-# Only mark the site as freshly updated after the full pipeline succeeds.
-python3 scripts/update_summary_freshness.py \
-  --summary summary.json \
-  --reports-dir reports
+# Do NOT bump summary.json freshness here. Daily digest freshness must be tied to an actual published full report.
 
 echo "Local pipeline complete: archived previous snapshots in $ARCHIVE_DIR; refreshed signals/snapshot/deep-analysis; regenerated deep watchlist ticker pages; passed full-watchlist depth QC + duplicate guard; bumped site version metadata."

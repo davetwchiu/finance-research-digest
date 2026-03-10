@@ -1,7 +1,7 @@
 {
   "macro": "Oil-shock risk-off regime is now the dominant macro driver; prioritize downside control and proof-heavy entries over broad beta exposure.",
   "policy": "Fed easing hopes are now constrained by energy-driven inflation risk, so rates relief is less clean than a simple growth slowdown would imply.",
-  "delta": "Published 2026-03-10 macro/policy regime digest after manual recovery from a stuck 08:30 cron run; local Atlas pipeline refreshed and ticker pages remain honestly provisional where issuer proof is still thin.",
-  "latestReportPath": "./reports/2026-03-10.html",
-  "updatedAt": "2026-03-11T05:56:18+08:00"
+  "delta": "Published 2026-03-11 overnight regime digest to repair panel/full-report drift; daily report now reflects the latest macro relief-rally vs unresolved-geopolitical-risk setup.",
+  "latestReportPath": "./reports/2026-03-11.html",
+  "updatedAt": "2026-03-11T07:06:55+08:00"
 }

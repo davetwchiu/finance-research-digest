@@ -1,118 +1,46 @@
 {
   "items": [
     {
-      "id": "2026-03-03-0940-hormuz-closure-confirmed-reuters-live",
-      "time": "2026-03-03 09:40 HKT",
-      "createdAt": "2026-03-03T09:40:00+08:00",
-      "title": "Macro escalation confirmed: Reuters live reports Hormuz closure threat to shipping",
-      "summary": "Fresh Reuters live-wire escalation (closure + threat-to-shipping) reinforces thesis-changing macro risk; no new idiosyncratic single-name break this hour.",
-      "path": "./items/2026-03-03-0940-hormuz-closure-confirmed-reuters-live.md"
+      "id": "2026-03-11-2026-03-11-06:36-hkt-—-watchlist",
+      "time": "2026-03-11 06:36 HKT — Watchlist breaking-news check",
+      "createdAt": "2026-03-11T06:36:00+08:00",
+      "title": "Breaking monitor update",
+      "summary": "Latest breaking monitor entry logged.",
+      "path": "./2026-03-11.md"
     },
     {
-      "id": "2026-03-03-0840-hormuz-closure-provisional",
-      "time": "2026-03-03 08:40 HKT",
-      "createdAt": "2026-03-03T08:40:00+08:00",
-      "title": "Provisional escalation: Iran-reported Strait of Hormuz closure headline",
-      "summary": "Potentially thesis-changing macro shock via oil/shipping channel; pending broader top-tier confirmation in this run window.",
-      "path": "./items/2026-03-03-0840-hormuz-closure-provisional.md"
+      "id": "2026-03-10-2026-03-10-23:36-hkt-—-hourly-wa",
+      "time": "2026-03-10 23:36 HKT — Hourly watchlist breaking-news scan",
+      "createdAt": "2026-03-10T23:36:00+08:00",
+      "title": "Breaking monitor update",
+      "summary": "Latest breaking monitor entry logged.",
+      "path": "./2026-03-10.md"
     },
     {
-      "id": "2026-03-02-2140-macro-riskoff-refresh-ktos-bid",
-      "time": "2026-03-02 21:40 HKT",
-      "createdAt": "2026-03-02T21:40:00+08:00",
-      "title": "Material macro risk-off refresh; KTOS relative beneficiary",
-      "summary": "Reuters reports U.S. futures down >1% amid prolonged Middle East conflict risk; defense beta outperformed with KTOS up premarket, reinforcing macro-led positioning regime.",
-      "path": "./items/2026-03-02-2140-macro-riskoff-refresh-ktos-bid.md"
+      "id": "2026-03-09-2026-03-09-23:31-hkt",
+      "time": "2026-03-09 23:31 HKT",
+      "createdAt": "2026-03-09T23:31:00+08:00",
+      "title": "The same active macro driver remains in force — Middle East conflict / oil-shock / inflation-risk regime — but the latest scan did not show a fresh escalation or confirmed company-specific development that materially changes positioning versus prior alerts",
+      "summary": "The same active macro driver remains in force — Middle East conflict / oil-shock / inflation-risk regime — but the latest scan did not show a fresh escalation or confirmed company-specific development that materially changes positioning versus prior alerts",
+      "path": "./2026-03-09.md"
     },
     {
-      "id": "2026-02-26-0557-nvda-q4-results-beat-q1-guide-above",
-      "time": "2026-02-26 05:57 HKT",
-      "createdAt": "2026-02-26T05:57:00+08:00",
-      "title": "NVIDIA posts strong Q4 results; Q1 revenue guide above consensus",
-      "summary": "Material watchlist catalyst: NVIDIA reported Q4 FY2026 revenue of $68.1B and guided Q1 to $78B ±2%, above pre-print consensus and likely supportive for AI-capex complex (NVDA/AVGO/TSM/MSFT/GOOG).",
-      "path": "./items/2026-02-26-0557-nvda-q4-results-beat-q1-guide-above.md"
+      "id": "2026-03-06-10:38-hkt-|-watchlist-breaking-m",
+      "time": "10:38 HKT | Watchlist Breaking Monitor",
+      "createdAt": "2026-03-06T10:38:00+08:00",
+      "title": "Breaking monitor update",
+      "summary": "Latest breaking monitor entry logged.",
+      "path": "./2026-03-06.md"
     },
     {
-      "id": "2026-02-25-2157-ustr-15plus",
-      "time": "2026-02-25 21:57 HKT",
-      "createdAt": "2026-02-25T21:57:00+08:00",
-      "title": "USTR says U.S. tariff rate will rise to 15% or higher for some countries",
-      "summary": "Material macro escalation: Reuters reports USTR signaled some country rates move from 10% to 15%+, increasing policy-risk premium across globally exposed watchlist names.",
-      "path": "./items/2026-02-25-2157-ustr-15plus.md"
-    },
-    {
-      "id": "2026-02-25-1257-nvda-h200-china-provisional",
-      "time": "2026-02-25 12:57 HKT",
-      "createdAt": "2026-02-25T12:57:00+08:00",
-      "title": "Provisional: U.S. official says no Nvidia H200 chips sold to Chinese customers yet",
-      "summary": "Single-source Reuters official comment suggests continued U.S.-China AI-chip export friction, keeping NVDA/TSM ecosystem policy risk premium active.",
-      "path": "./items/2026-02-25-1257-nvda-h200-china-provisional.md"
-    },
-    {
-      "id": "2026-02-25-1127-tsla-hiring-bias-lawsuit",
-      "time": "2026-02-25 11:27 HKT",
-      "createdAt": "2026-02-25T11:27:00+08:00",
-      "title": "U.S. judge lets anti-American hiring-bias lawsuit against Tesla proceed",
-      "summary": "Material TSLA legal development: Reuters reports a U.S. judge declined to dismiss a hiring-discrimination suit, extending litigation/regulatory overhang.",
-      "path": "./items/2026-02-25-1127-tsla-hiring-bias-lawsuit.md"
-    },
-    {
-      "id": "2026-02-25-1128-us-tariff-15pct-plan",
-      "time": "2026-02-25 11:28 HKT",
-      "createdAt": "2026-02-25T11:28:00+08:00",
-      "title": "White House says U.S. is working to raise temporary global tariff from 10% to 15%",
-      "summary": "Material macro policy escalation: Reuters says the administration is working to lift the temporary tariff rate to 15%, raising cross-asset risk premium.",
-      "path": "./items/2026-02-25-1128-us-tariff-15pct-plan.md"
-    },
-    {
-      "id": "2026-02-24-1858-us-tariff-10pct-effective",
-      "time": "2026-02-24 18:58 HKT",
-      "createdAt": "2026-02-24T18:58:00+08:00",
-      "title": "U.S. implements additional 10% tariff on non-exempt goods",
-      "summary": "Material macro update: Reuters reported an additional 10% U.S. tariff on non-exempt imports, sustaining tariff-driven risk-off and watchlist supply-chain sensitivity.",
-      "path": "./items/2026-02-24-1858-us-tariff-10pct-effective.md"
-    },
-    {
-      "id": "2026-02-24-1529-tesla-autopilot-verdict-upheld",
-      "time": "2026-02-24 15:29 HKT",
-      "createdAt": "2026-02-24T15:29:00+08:00",
-      "title": "Tesla $243M Autopilot crash verdict upheld by U.S. judge",
-      "summary": "Material TSLA legal development: federal judge upheld a $243M Autopilot-related jury verdict, extending litigation overhang for autonomy strategy.",
-      "path": "./items/2026-02-24-1529-tesla-autopilot-verdict-upheld.md"
-    },
-    {
-      "id": "2026-02-24-0629-tesla-dmv-lawsuit",
-      "time": "2026-02-24 06:29 HKT",
-      "createdAt": "2026-02-24T06:29:00+08:00",
-      "title": "Tesla sues California DMV over false-advertising ruling",
-      "summary": "Material regulatory/legal development for TSLA as it challenges California DMV's ruling related to Autopilot/FSD marketing claims.",
-      "path": "./items/2026-02-24-0629-tesla-dmv-lawsuit.md"
-    },
-    {
-      "id": "2026-02-24-0628-ibm-anthropic-selloff",
-      "time": "2026-02-24 06:28 HKT",
-      "createdAt": "2026-02-24T06:28:00+08:00",
-      "title": "IBM drops ~13% on Anthropic COBOL-tooling disruption narrative",
-      "summary": "IBM suffered an unusually large single-session decline as investors repriced legacy modernization exposure after Anthropic's COBOL automation update.",
-      "path": "./items/2026-02-24-0628-ibm-anthropic-selloff.md"
-    },
-    {
-      "id": "2026-02-24-0128-tariff-riskoff",
-      "time": "2026-02-24 01:28 HKT",
-      "createdAt": "2026-02-24T01:28:00+08:00",
-      "title": "Update: tariff shock broadens into deeper risk-off move",
-      "summary": "Follow-through selling indicates tariff-policy shock is now an active de-risking event. Most exposed watchlist names: NVDA, AVGO, TSLA, AAPL, MSFT, GOOG, TSM.",
-      "path": "./items/2026-02-24-0128-tariff-riskoff.md"
-    },
-    {
-      "id": "2026-02-24-0028-tariff-shock",
-      "time": "2026-02-24 00:28 HKT",
-      "createdAt": "2026-02-24T00:28:00+08:00",
-      "title": "Macro trade-policy shock (U.S. tariffs legal whipsaw)",
-      "summary": "Policy whipsaw around U.S. tariffs increased uncertainty and triggered a risk-off tone.",
-      "path": "./items/2026-02-24-0028-tariff-shock.md"
+      "id": "2026-03-05-2026-03-06-00:31-hkt-—-hourly-wa",
+      "time": "2026-03-06 00:31 HKT — Hourly watchlist breaking-news scan (A/B gated)",
+      "createdAt": "2026-03-06T00:31:00+08:00",
+      "title": "Breaking monitor update",
+      "summary": "Latest breaking monitor entry logged.",
+      "path": "./2026-03-05.md"
     }
   ],
-  "lastCheckedAt": "2026-03-10T15:16:53+08:00",
-  "lastCheckStatus": "no_material_change"
+  "lastCheckedAt": "2026-03-11T06:36:00+08:00",
+  "lastCheckStatus": "ok"
 }
