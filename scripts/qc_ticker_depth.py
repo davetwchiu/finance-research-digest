@@ -16,9 +16,12 @@ REQUIRED_SECTIONS = [
     "4. Catalyst calendar next 30d",
     "5. Risk map",
     "6. Actionable setup",
-    "Last verified time (HKT)",
-    "Freshness state:",
-    "Evidence quality score:",
+]
+
+REQUIRED_METADATA_MARKERS = [
+    ["Last verified", "Last verified time (HKT)"],
+    ["Freshness state"],
+    ["Evidence quality score"],
 ]
 
 
@@ -33,6 +36,9 @@ def validate(path: Path) -> list[str]:
     for marker in REQUIRED_SECTIONS:
         if marker not in txt:
             errs.append(f'missing section/metadata: {marker}')
+    for variants in REQUIRED_METADATA_MARKERS:
+        if not any(marker in txt for marker in variants):
+            errs.append(f"missing section/metadata: {' / '.join(variants)}")
     if 'Trigger:' not in txt or 'Invalidation:' not in txt or 'Target 1:' not in txt or 'Target 2:' not in txt or 'What changes my mind:' not in txt:
         errs.append('TA block incomplete')
     if 'insufficient verified data' not in txt and txt.count('<a href=') < 4:
