@@ -1,45 +1,71 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grand Model v0.1</title>
-  <link rel="icon" type="image/png" href="../assets/favicon.png" /><style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.6}a{color:#9bb8ff}.card{border:1px solid #2a3768;background:#121936;border-radius:12px;padding:14px;margin:12px 0}.muted{color:#a7b0d6}
-    .site-brand{display:flex;align-items:center;margin:0 0 14px 0;padding:8px 10px;border:1px solid #2a3768;border-radius:10px;background:#101a3f}
-    .site-brand img{height:30px;width:auto;object-fit:contain;border-radius:6px;background:transparent;padding:0}
-    .site-brand a{color:#9bb8ff;text-decoration:none;font-size:13px;display:inline-flex;align-items:center}
-  
-    #themeToggle{position:fixed;right:14px;bottom:14px;z-index:9999;padding:8px 10px;border-radius:10px;border:1px solid #2a3768;background:#101a3f;color:#e8ecff;font-size:12px;cursor:pointer}
-    body.light{background:#f5f7ff !important;color:#0f1b33 !important}
-    body.light .card, body.light .topbar, body.light .site-brand, body.light details{background:#ffffff !important;border-color:#d6deef !important;color:#0f1b33 !important}
-    body.light .muted, body.light .site-brand a{color:#4b5d85 !important}
-    body.light a{color:#2f5bd3 !important}
-    body.light #themeToggle{background:#ffffff;color:#0f1b33;border-color:#d6deef}
-  </style></head><body>
-  <button id="themeToggle" aria-label="Toggle theme">Theme: AUTO</button>
-  <div class="site-brand"><a href="../index.html" aria-label="Atlas Market Intelligence home"><img src="../assets/brand/logo-horizontal.png" alt="Atlas Market Intelligence"/></a></div>
-<p><a href="../index.html">← Back to toolbox</a></p><h1>Grand Model v0.1</h1><p class="muted">Structured decision model for watchlist state tracking.</p><div class="card"><h2>Model Components</h2><ul><li>Macro Regime Layer</li><li>Ticker Fundamentals Layer</li><li>Technical Structure Layer</li><li>Event Risk Layer</li><li>State Machine + Scorecard</li></ul></div><div class="card"><h2>Current State Data</h2><p>Schema: <a href="./schema.v1.json">schema.v1.json</a></p><p>Latest snapshot: <a href="./state/latest.json">state/latest.json</a></p></div><div class="card"><h2>V0.1 Rule</h2><p>Use score deltas and state transitions to drive research priority; avoid one-off narrative overreaction.</p></div>
-<script>
-(function(){
-  const KEY='ami_theme_mode';
-  function saved(){ return localStorage.getItem(KEY)||'auto'; }
-  function effective(mode){ if(mode==='auto'){ return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'; } return mode; }
-  function apply(){
-    const mode=saved();
-    const eff=effective(mode);
-    document.body.classList.toggle('light', eff==='light');
-    const btn=document.getElementById('themeToggle');
-    if(btn) btn.textContent='Theme: '+mode.toUpperCase();
-    // Use full logo lockup variants by theme: dark banner on dark mode, transparent lockup on light mode.
-    document.querySelectorAll('.site-brand img').forEach(img=>{
-      const base = img.getAttribute('src') || '';
-      const light = img.getAttribute('data-light') || base.replace('logo-banner-dark.png','logo-horizontal.png');
-      const dark = img.getAttribute('data-dark') || base.replace('logo-horizontal.png','logo-banner-dark.png');
-      img.setAttribute('data-light', light);
-      img.setAttribute('data-dark', dark);
-      img.src = (eff==='light') ? light : dark;
-    });
-  }
-  function cycle(){ const cur=saved(); const next=cur==='auto'?'dark':cur==='dark'?'light':'auto'; localStorage.setItem(KEY,next); apply(); }
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{ if(saved()==='auto') apply(); });
-  const btn=document.getElementById('themeToggle'); if(btn) btn.addEventListener('click',cycle);
-  apply();
-})();
-</script>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Atlas Model Notes</title>
+<link rel="icon" type="image/png" href="../assets/favicon.png" />
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.62;max-width:980px}
+a{color:#9bb8ff}.card{border:1px solid #2a3768;background:#121936;border-radius:12px;padding:14px;margin:12px 0}.muted{color:#a7b0d6}.pill{display:inline-block;border:1px solid #3a4c88;border-radius:999px;padding:3px 10px;font-size:12px;color:#dfe7ff;margin-right:6px;margin-bottom:6px}
+.site-brand{display:flex;align-items:center;margin:0 0 14px 0;padding:8px 10px;border:1px solid #2a3768;border-radius:10px;background:#101a3f}
+.site-brand img{height:30px;width:auto;object-fit:contain;border-radius:6px;background:transparent;padding:0}
+.site-brand a{color:#9bb8ff;text-decoration:none;font-size:13px;display:inline-flex;align-items:center}
+</style></head><body>
+<div class="site-brand"><a href="../index.html" aria-label="Atlas Market Intelligence home"><img src="../assets/brand/logo-horizontal.png" alt="Atlas Market Intelligence"/></a></div>
+<p><a href="../index.html">← Back to Atlas</a></p>
+<h1>Atlas model notes</h1>
+<p class="muted">What this site is actually doing, what to trust most, and where the weak spots still are.</p>
 
+<div class="card">
+<h2>What Atlas is for</h2>
+<p>Atlas is not trying to be a full trading terminal. Its job is narrower and more useful: turn a defined watchlist plus macro/policy context into a decision-ready daily briefing with explicit freshness signals, plain-language interpretation, and clear uncertainty labels.</p>
+<p><span class="pill">Best use</span><span class="pill">Macro framing</span><span class="pill">Watchlist triage</span><span class="pill">Proof-first research</span></p>
+</div>
+
+<div class="card">
+<h2>Model stack</h2>
+<ol>
+<li><strong>Local signal pipeline</strong> — deterministic signal generation from the watchlist into <a href="../data/cache/signals_local.json">signals_local.json</a>.</li>
+<li><strong>Atlas snapshot</strong> — condensed local-intelligence layer for homepage breadth, risk, and movers.</li>
+<li><strong>Deep analysis</strong> — regime and triage summary that explains what the local signal layer is implying.</li>
+<li><strong>Ticker page generator</strong> — per-name pages combining technical setup, business proof, catalyst calendar, and risk map.</li>
+<li><strong>Daily macro digest</strong> — long-form regime note with scenario tree, action matrix, and risk checklist.</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>What to trust most</h2>
+<ul>
+<li><strong>Highest confidence:</strong> freshness markers, local signal state, required-section checks, and whether a page is explicitly flagged provisional.</li>
+<li><strong>Medium confidence:</strong> macro/policy framing when linked to primary or top-tier sources.</li>
+<li><strong>Lower confidence:</strong> issuer-specific conclusions when fundamentals refresh or catalyst verification is degraded.</li>
+</ul>
+<p class="muted">Rule of thumb: if Atlas marks a page PROVISIONAL, take that literally. It means the structure may be complete while the proof density is still not good enough for full conviction.</p>
+</div>
+
+<div class="card">
+<h2>Current limitations</h2>
+<ul>
+<li>Yahoo-based fundamentals refresh can fail with 401 errors, which weakens some company-level business evidence.</li>
+<li>Some investor-relations pages and transcripts block automated fetches, so certain claims must stay conservative unless directly verified.</li>
+<li>Breaking-news coverage is optimized for materiality, not completeness. It is meant to filter noise, not archive every mention.</li>
+<li>The site is strongest when used as a research triage layer, not as a standalone execution engine.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>How to read the watchlist pages</h2>
+<ol>
+<li>Start with the <strong>Layman summary</strong>.</li>
+<li>Check the <strong>quality gate state</strong> and reasons.</li>
+<li>Use <strong>last verified time</strong>, <strong>freshness state</strong>, and <strong>evidence quality score</strong> before trusting the conclusion.</li>
+<li>Treat the <strong>actionable setup</strong> as a scenario map, not an instruction to trade.</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>Useful links</h2>
+<ul>
+<li><a href="./schema.v1.json">Model schema</a></li>
+<li><a href="./state/latest.json">Latest state snapshot</a></li>
+<li><a href="../reports/">Daily digest archive</a></li>
+<li><a href="../reports/breaking/">Breaking alerts timeline</a></li>
+</ul>
+</div>
 </body></html>

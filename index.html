@@ -234,7 +234,10 @@ async function syncToGitHub(){
 
 async function loadSignals(){
   try{
-    const r = await fetch('./signals.json?ts='+Date.now(), {cache:'no-store'});
+    let r = await fetch('./data/cache/signals_local.json?ts='+Date.now(), {cache:'no-store'});
+    if(!r.ok){
+      r = await fetch('./signals.json?ts='+Date.now(), {cache:'no-store'});
+    }
     if(!r.ok) throw new Error('no signals');
     const j = await r.json();
     if (j.signals && typeof j.signals === 'object') {

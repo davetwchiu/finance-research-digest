@@ -1,179 +1,398 @@
 {
-  "updatedAt": "2026-02-24T10:31:00+08:00",
+  "generated_at": "2026-03-10T03:55:54.829012+00:00",
+  "source": "yahoo_chart_v8",
+  "count": 17,
   "signals": {
     "AAPL": {
-      "last_close": 266.18,
-      "trigger": 280.9,
-      "invalidation": 252.86,
-      "target1": 294.92,
-      "target2": 308.94,
-      "regime": "uptrend",
-      "signal": "WATCH",
-      "change_pct": 0.6
+      "ok": true,
+      "source_ticker": "AAPL",
+      "latest": {
+        "open": 255.690002,
+        "high": 261.149994,
+        "low": 253.680496,
+        "close": 259.880005,
+        "volume": 38153594.0
+      },
+      "indicators": {
+        "sma20": 265.65,
+        "sma50": 264.038199,
+        "rsi14": 44.135185,
+        "macd": {
+          "macd": -1.190973,
+          "signal": -0.0703,
+          "hist": -1.120673
+        },
+        "atr14": 6.368056
+      },
+      "samples": 251
     },
     "AVGO": {
-      "last_close": 330.34,
-      "trigger": 347.38,
-      "invalidation": 304.97,
-      "target1": 368.58,
-      "target2": 389.79,
-      "regime": "range (mixed)",
-      "signal": "WATCH",
-      "change_pct": -0.69
+      "ok": true,
+      "source_ticker": "AVGO",
+      "latest": {
+        "open": 327.25,
+        "high": 348.48999,
+        "low": 323.610107,
+        "close": 345.75,
+        "volume": 40516706.0
+      },
+      "indicators": {
+        "sma20": 330.237502,
+        "sma50": 334.2482,
+        "rsi14": 59.387713,
+        "macd": {
+          "macd": -1.131396,
+          "signal": -2.990372,
+          "hist": 1.858975
+        },
+        "atr14": 15.227143
+      },
+      "samples": 251
     },
     "BBAI": {
-      "last_close": 3.71,
-      "trigger": 6.22,
-      "invalidation": 3.67,
-      "target1": 7.49,
-      "target2": 8.77,
-      "regime": "downtrend",
-      "signal": "RISK-OFF",
-      "change_pct": -3.89
+      "ok": true,
+      "source_ticker": "BBAI",
+      "latest": {
+        "open": 4.16,
+        "high": 4.265,
+        "low": 3.97,
+        "close": 4.2,
+        "volume": 36975568.0
+      },
+      "indicators": {
+        "sma20": 4.0995,
+        "sma50": 5.0528,
+        "rsi14": 46.240695,
+        "macd": {
+          "macd": -0.277834,
+          "signal": -0.367091,
+          "hist": 0.089257
+        },
+        "atr14": 0.354848
+      },
+      "samples": 251
     },
     "KTOS": {
-      "last_close": 94.31,
-      "trigger": 119.24,
-      "invalidation": 84.4,
-      "target1": 136.66,
-      "target2": 154.08,
-      "regime": "range (mixed)",
-      "signal": "WATCH",
-      "change_pct": -1.84
+      "ok": true,
+      "source_ticker": "KTOS",
+      "latest": {
+        "open": 88.18,
+        "high": 93.669998,
+        "low": 87.200104,
+        "close": 92.470001,
+        "volume": 5248323.0
+      },
+      "indicators": {
+        "sma20": 91.623,
+        "sma50": 98.0286,
+        "rsi14": 49.373017,
+        "macd": {
+          "macd": -2.648557,
+          "signal": -2.565224,
+          "hist": -0.083333
+        },
+        "atr14": 7.657001
+      },
+      "samples": 251
     },
     "MSFT": {
-      "last_close": 384.47,
-      "trigger": 486.45,
-      "invalidation": 380.63,
-      "target1": 539.36,
-      "target2": 592.27,
-      "regime": "downtrend",
-      "signal": "RISK-OFF",
-      "change_pct": -3.21
+      "ok": true,
+      "source_ticker": "MSFT",
+      "latest": {
+        "open": 404.915009,
+        "high": 410.209991,
+        "low": 403.5,
+        "close": 409.410004,
+        "volume": 30073894.0
+      },
+      "indicators": {
+        "sma20": 401.590498,
+        "sma50": 436.2046,
+        "rsi14": 47.636325,
+        "macd": {
+          "macd": -7.453598,
+          "signal": -11.635995,
+          "hist": 4.182397
+        },
+        "atr14": 10.13883
+      },
+      "samples": 251
     },
     "NVDA": {
-      "last_close": 191.55,
-      "trigger": 194.44,
-      "invalidation": 170.16,
-      "target1": 206.58,
-      "target2": 218.72,
-      "regime": "uptrend",
-      "signal": "BUY",
-      "change_pct": 0.91
+      "ok": true,
+      "source_ticker": "NVDA",
+      "latest": {
+        "open": 176.830002,
+        "high": 182.910004,
+        "low": 175.559998,
+        "close": 182.649994,
+        "volume": 176552775.0
+      },
+      "indicators": {
+        "sma20": 186.023499,
+        "sma50": 185.8748,
+        "rsi14": 47.827008,
+        "macd": {
+          "macd": -1.210067,
+          "signal": -0.418318,
+          "hist": -0.791749
+        },
+        "atr14": 6.451479
+      },
+      "samples": 251
     },
     "ONDS": {
-      "last_close": 10.19,
-      "trigger": 12.39,
-      "invalidation": 8.4,
-      "target1": 14.39,
-      "target2": 16.38,
-      "regime": "downtrend",
-      "signal": "RISK-OFF",
-      "change_pct": 1.6
+      "ok": true,
+      "source_ticker": "ONDS",
+      "latest": {
+        "open": 9.99,
+        "high": 10.005,
+        "low": 9.2,
+        "close": 9.72,
+        "volume": 90794343.0
+      },
+      "indicators": {
+        "sma20": 10.1365,
+        "sma50": 10.942,
+        "rsi14": 45.270053,
+        "macd": {
+          "macd": -0.154739,
+          "signal": -0.141637,
+          "hist": -0.013102
+        },
+        "atr14": 1.168916
+      },
+      "samples": 251
     },
     "PLTR": {
-      "last_close": 130.6,
-      "trigger": 169.14,
-      "invalidation": 127.84,
-      "target1": 189.79,
-      "target2": 210.44,
-      "regime": "downtrend",
-      "signal": "RISK-OFF",
-      "change_pct": -3.43
+      "ok": true,
+      "source_ticker": "PLTR",
+      "latest": {
+        "open": 155.690002,
+        "high": 158.440002,
+        "low": 152.970001,
+        "close": 156.429993,
+        "volume": 47436735.0
+      },
+      "indicators": {
+        "sma20": 139.788501,
+        "sma50": 156.6656,
+        "rsi14": 60.074302,
+        "macd": {
+          "macd": 0.022558,
+          "signal": -3.978194,
+          "hist": 4.000751
+        },
+        "atr14": 7.599004
+      },
+      "samples": 251
     },
     "RDW": {
-      "last_close": 8.12,
-      "trigger": 14.34,
-      "invalidation": 7.81,
-      "target1": 17.61,
-      "target2": 20.87,
-      "regime": "range (mixed)",
-      "signal": "WATCH",
-      "change_pct": 1.63
+      "ok": true,
+      "source_ticker": "RDW",
+      "latest": {
+        "open": 8.71,
+        "high": 9.68,
+        "low": 8.64,
+        "close": 9.65,
+        "volume": 20755303.0
+      },
+      "indicators": {
+        "sma20": 8.809,
+        "sma50": 9.7696,
+        "rsi14": 52.726516,
+        "macd": {
+          "macd": -0.16493,
+          "signal": -0.264613,
+          "hist": 0.099683
+        },
+        "atr14": 1.005716
+      },
+      "samples": 251
     },
     "RKLB": {
-      "last_close": 70.21,
-      "trigger": 89.46,
-      "invalidation": 65.35,
-      "target1": 101.51,
-      "target2": 113.57,
-      "regime": "downtrend",
-      "signal": "RISK-OFF",
-      "change_pct": -0.92
+      "ok": true,
+      "source_ticker": "RKLB",
+      "latest": {
+        "open": 69.18,
+        "high": 72.125,
+        "low": 67.82,
+        "close": 71.480003,
+        "volume": 18394680.0
+      },
+      "indicators": {
+        "sma20": 70.971,
+        "sma50": 77.318401,
+        "rsi14": 48.316805,
+        "macd": {
+          "macd": -1.43695,
+          "signal": -1.645246,
+          "hist": 0.208296
+        },
+        "atr14": 5.832701
+      },
+      "samples": 251
     },
     "TSLA": {
-      "last_close": 399.83,
-      "trigger": 439.55,
-      "invalidation": 393.24,
-      "target1": 462.71,
-      "target2": 485.86,
-      "regime": "downtrend",
-      "signal": "RISK-OFF",
-      "change_pct": -2.91
+      "ok": true,
+      "source_ticker": "TSLA",
+      "latest": {
+        "open": 390.049988,
+        "high": 401.578003,
+        "low": 381.399994,
+        "close": 398.679993,
+        "volume": 66822812.0
+      },
+      "indicators": {
+        "sma20": 409.556999,
+        "sma50": 426.2722,
+        "rsi14": 42.276789,
+        "macd": {
+          "macd": -7.354222,
+          "signal": -7.326943,
+          "hist": -0.027279
+        },
+        "atr14": 14.541556
+      },
+      "samples": 251
     },
     "TSM": {
-      "last_close": 370.04,
-      "trigger": 377.83,
-      "invalidation": 322.48,
-      "target1": 405.5,
-      "target2": 433.18,
-      "regime": "uptrend",
-      "signal": "WATCH",
-      "change_pct": -0.13
+      "ok": true,
+      "source_ticker": "TSM",
+      "latest": {
+        "open": 335.600006,
+        "high": 349.399994,
+        "low": 331.920013,
+        "close": 348.700012,
+        "volume": 19101718.0
+      },
+      "indicators": {
+        "sma20": 364.965002,
+        "sma50": 341.809599,
+        "rsi14": 46.712534,
+        "macd": {
+          "macd": 3.032935,
+          "signal": 7.910051,
+          "hist": -4.877116
+        },
+        "atr14": 13.967407
+      },
+      "samples": 251
     },
     "UUUU": {
-      "last_close": 21.02,
-      "trigger": 28.0,
-      "invalidation": 19.39,
-      "target1": 32.3,
-      "target2": 36.61,
-      "regime": "range (mixed)",
-      "signal": "WATCH",
-      "change_pct": -1.55
+      "ok": true,
+      "source_ticker": "UUUU",
+      "latest": {
+        "open": 18.639999,
+        "high": 20.09,
+        "low": 18.3603,
+        "close": 19.870001,
+        "volume": 9332022.0
+      },
+      "indicators": {
+        "sma20": 21.5205,
+        "sma50": 20.8374,
+        "rsi14": 45.668904,
+        "macd": {
+          "macd": -0.215585,
+          "signal": 0.14318,
+          "hist": -0.358765
+        },
+        "atr14": 2.125227
+      },
+      "samples": 251
     },
     "GOOG": {
-      "last_close": 311.69,
-      "trigger": 348.35,
-      "invalidation": 299.79,
-      "target1": 372.63,
-      "target2": 396.91,
-      "regime": "range (mixed)",
-      "signal": "WATCH",
-      "change_pct": -1.02
+      "ok": true,
+      "source_ticker": "GOOG",
+      "latest": {
+        "open": 294.140015,
+        "high": 306.5,
+        "low": 293.98999,
+        "close": 306.01001,
+        "volume": 19587398.0
+      },
+      "indicators": {
+        "sma20": 308.388998,
+        "sma50": 320.002599,
+        "rsi14": 43.993487,
+        "macd": {
+          "macd": -5.222614,
+          "signal": -4.78303,
+          "hist": -0.439584
+        },
+        "atr14": 8.55736
+      },
+      "samples": 251
     },
     "IBM": {
-      "last_close": 223.35,
-      "trigger": 317.88,
-      "invalidation": 221.12,
-      "target1": 366.26,
-      "target2": 414.64,
-      "regime": "downtrend",
-      "signal": "RISK-OFF",
-      "change_pct": -13.15
+      "ok": true,
+      "source_ticker": "IBM",
+      "latest": {
+        "open": 255.380005,
+        "high": 258.079987,
+        "low": 251.570999,
+        "close": 253.330002,
+        "volume": 6123370.0
+      },
+      "indicators": {
+        "sma20": 254.561,
+        "sma50": 281.7734,
+        "rsi14": 44.435091,
+        "macd": {
+          "macd": -9.747064,
+          "signal": -12.439823,
+          "hist": 2.692759
+        },
+        "atr14": 10.204051
+      },
+      "samples": 251
     },
     "BRK.B": {
-      "last_close": 494.09,
-      "trigger": 513.17,
-      "invalidation": 468.76,
-      "target1": 535.38,
-      "target2": 557.58,
-      "regime": "range (mixed)",
-      "signal": "WATCH",
-      "change_pct": -0.82
+      "ok": true,
+      "source_ticker": "BRK-B",
+      "latest": {
+        "open": 494.899994,
+        "high": 498.820007,
+        "low": 490.209991,
+        "close": 497.200012,
+        "volume": 5830567.0
+      },
+      "indicators": {
+        "sma20": 496.469002,
+        "sma50": 494.345599,
+        "rsi14": 51.821365,
+        "macd": {
+          "macd": 0.060196,
+          "signal": 0.066552,
+          "hist": -0.006357
+        },
+        "atr14": 9.225839
+      },
+      "samples": 251
     },
     "LITE": {
-      "last_close": 674.73,
-      "trigger": 681.48,
-      "invalidation": 329.13,
-      "target1": 857.65,
-      "target2": 1033.83,
-      "regime": "uptrend",
-      "signal": "BUY",
-      "change_pct": 1.04
+      "ok": true,
+      "source_ticker": "LITE",
+      "latest": {
+        "open": 578.0,
+        "high": 641.02002,
+        "low": 573.6604,
+        "close": 640.690002,
+        "volume": 7797957.0
+      },
+      "indicators": {
+        "sma20": 641.470502,
+        "sma50": 486.3354,
+        "rsi14": 54.674169,
+        "macd": {
+          "macd": 50.47277,
+          "signal": 66.498687,
+          "hist": -16.025917
+        },
+        "atr14": 62.571544
+      },
+      "samples": 251
     }
-  },
-  "symbolMappings": {
-    "PLTR": "NASDAQ:PLTR",
-    "UUUU": "AMEX:UUUU"
   }
 }

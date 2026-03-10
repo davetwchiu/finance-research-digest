@@ -58,6 +58,11 @@ def _index_uses_summary_updatedat(index_html: Path) -> bool:
     return "summaryHours = _hoursOld(j.updatedAt);" in s
 
 
+def _index_uses_fresh_signals_source(index_html: Path) -> bool:
+    s = index_html.read_text(encoding="utf-8", errors="ignore")
+    return "./data/cache/signals_local.json" in s or "signals_local.json" in s
+
+
 def _report_has_repeated_regime(report_html: Path) -> bool:
     s = report_html.read_text(encoding="utf-8", errors="ignore")
     # Catch repeated templated nodes like "Regime node X" blocks.
@@ -131,6 +136,8 @@ def main() -> int:
         fails.append("index missing deep-analysis stale indicator wiring")
     if not _index_uses_summary_updatedat(index_html):
         fails.append("index freshness uses wrong summary timestamp field (expect updatedAt)")
+    if not _index_uses_fresh_signals_source(index_html):
+        fails.append("index is not wired to the fresh local signals source")
 
     latest = _latest_daily_report(reports_dir)
     if latest is None:

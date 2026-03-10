@@ -45,6 +45,9 @@ python3 scripts/local_signal_pipeline.py \
   --watchlist watchlist.json \
   --output data/cache/signals_local.json
 
+# Keep legacy homepage consumers in sync until all readers use cache path directly.
+cp data/cache/signals_local.json signals.json
+
 python3 scripts/build_atlas_snapshot.py \
   --input data/cache/signals_local.json \
   --output data/cache/atlas_snapshot.json
