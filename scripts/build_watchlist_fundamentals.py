@@ -156,6 +156,13 @@ def main() -> int:
     out: dict[str, Any] = {
         "as_of": as_of,
         "source_note": "Auto-refresh from Yahoo when available; preserves existing curated entries on fetch failures.",
+        "refresh_status": {
+            "attempted": len(watchlist),
+            "refreshed": success,
+            "failed": len(failures),
+            "coverage_pct": round((success / len(watchlist)) * 100.0, 1) if watchlist else 0.0,
+            "failed_tickers": failures,
+        },
         "tickers": refreshed,
     }
 

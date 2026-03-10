@@ -1,6 +1,31 @@
 {
   "as_of": "2026-03-10",
   "source_note": "Auto-refresh from Yahoo when available; preserves existing curated entries on fetch failures.",
+  "refresh_status": {
+    "attempted": 17,
+    "refreshed": 0,
+    "failed": 17,
+    "coverage_pct": 0.0,
+    "failed_tickers": [
+      "AAPL",
+      "AVGO",
+      "BBAI",
+      "KTOS",
+      "MSFT",
+      "NVDA",
+      "ONDS",
+      "PLTR",
+      "RDW",
+      "RKLB",
+      "TSLA",
+      "TSM",
+      "UUUU",
+      "GOOG",
+      "IBM",
+      "BRK.B",
+      "LITE"
+    ]
+  },
   "tickers": {
     "NVDA": {
       "company": "NVIDIA",

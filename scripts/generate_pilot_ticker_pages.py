@@ -163,6 +163,22 @@ def _peer_row(ticker: str, peer: str, funds: dict[str, dict]) -> str:
     return f"<li><strong>{peer}</strong>: rev growth {_fmt(_num(p.get('revenue_growth_yoy_pct')),1,'%')} · gross margin {_fmt(_num(p.get('gross_margin_pct')),1,'%')} · fwd P/E {_fmt(_num(p.get('forward_pe')),1,'x')} · market cap {_fmt(_num(p.get('market_cap_b')),1,'B')}.</li>"
 
 
+def _fundamentals_refresh_note(fdoc: dict, ticker: str) -> str:
+    status = (fdoc or {}).get('refresh_status') or {}
+    attempted = int(status.get('attempted') or 0)
+    failed = int(status.get('failed') or 0)
+    if attempted <= 0 or failed <= 0:
+        return ""
+    refreshed = int(status.get('refreshed') or 0)
+    coverage = status.get('coverage_pct')
+    tickers = status.get('failed_tickers') or []
+    own_failed = ticker in tickers
+    scope = f"{failed}/{attempted} tickers failed Yahoo refresh"
+    detail = f"refresh coverage was {coverage}%" if coverage is not None else f"only {refreshed}/{attempted} tickers refreshed"
+    prefix = f"<strong>{ticker}</strong> stayed on preserved fundamentals" if own_failed else "Ticker page is using mixed fresh/preserved fundamentals"
+    return f"<p class='warn'>{prefix} because {scope}; {detail}. Treat peer/fundamental comparisons as secondary until the feed recovers.</p>"
+
+
 def _what_changed(news_items: list[dict]) -> tuple[str, int]:
     verified = [x for x in news_items if x.get("published_hkt") and x.get("url")]
     if len(verified) < 2:
@@ -188,7 +204,7 @@ def _business_reality(ticker: str, f: dict) -> tuple[str, int, bool]:
     return ("<ul>" + "".join(facts[:3]) + "</ul>" + extra) if facts else ("<p><strong>insufficient verified data</strong> — no dated revenue/segment/customer evidence was available in the current run.</p>"), len(facts[:3]), missing_segment_customer
 
 
-def _moat_compare(ticker: str, f: dict, funds: dict[str, dict]) -> tuple[str, int, str]:
+def _moat_compare(ticker: str, f: dict, funds: dict[str, dict], fdoc: dict) -> tuple[str, int, str]:
     peers = PEERS.get(ticker, [])[:3]
     if len(peers) < 2:
         return "<p><strong>insufficient verified data</strong> — peer set unavailable.</p>", 0, "peer set unavailable"
@@ -209,13 +225,15 @@ def _moat_compare(ticker: str, f: dict, funds: dict[str, dict]) -> tuple[str, in
     lis = [_peer_row(ticker, p, funds) for p in peers if funds.get(p)]
     compare_points = (1 if own_has_data else 0) + len(lis)
 
+    refresh_note = _fundamentals_refresh_note(fdoc, ticker)
+
     if not own_has_data and not lis:
-        return own + "<p class='warn'>Peer comparison deferred: the fundamentals feed did not return usable data for this ticker or its mapped peers in this run.</p>", compare_points, "fundamentals feed unavailable for peer comparison"
+        return own + refresh_note + "<p class='warn'>Peer comparison deferred: the fundamentals feed did not return usable data for this ticker or its mapped peers in this run.</p>", compare_points, "fundamentals feed unavailable for peer comparison"
 
     if not lis:
-        return own + "<p class='warn'>Peer comparison is limited: ticker-level fundamentals exist, but peer fundamentals were unavailable in this run.</p>", compare_points, "peer fundamentals unavailable"
+        return own + refresh_note + "<p class='warn'>Peer comparison is limited: ticker-level fundamentals exist, but peer fundamentals were unavailable in this run.</p>", compare_points, "peer fundamentals unavailable"
 
-    return own + "<ul>" + "".join(lis[:3]) + "</ul><p class='muted'>Concrete compare points used: revenue growth, gross margin, forward P/E, market cap.</p>", compare_points, ""
+    return own + refresh_note + "<ul>" + "".join(lis[:3]) + "</ul><p class='muted'>Concrete compare points used: revenue growth, gross margin, forward P/E, market cap.</p>", compare_points, ""
 
 
 def _catalyst_block(ticker: str) -> tuple[str, int, bool]:
@@ -301,13 +319,13 @@ def _setup_block(ticker: str, sig: dict, score: Score) -> str:
     return f"<ul><li><strong>Trigger:</strong> daily close above {_fmt(trigger,2)} with confirmation from volume / follow-through.</li><li><strong>Invalidation:</strong> two closes below {_fmt(invalid,2)} or adverse catalyst that breaks the thesis.</li><li><strong>Target 1:</strong> {_fmt(t1,2)}</li><li><strong>Target 2:</strong> {_fmt(t2,2)}</li><li><strong>Confidence:</strong> {conf}</li><li><strong>What changes my mind:</strong> weakening breadth, rising ATR without price progress, negative high-severity headlines, or deterioration in peer-relative metrics.</li></ul>"
 
 
-def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], news: dict, report_path: str, last_verified_hkt: str) -> tuple[str, dict]:
+def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], fdoc: dict, news: dict, report_path: str, last_verified_hkt: str) -> tuple[str, dict]:
     score = _compute_score(sig, f)
     freshness_state, age_h = _freshness(last_verified_hkt)
     items = news.get("items") or []
     changed_html, changed_evidence = _what_changed(items)
     biz_html, biz_evidence, biz_missing = _business_reality(ticker, f)
-    moat_html, moat_points, moat_reason = _moat_compare(ticker, f, funds)
+    moat_html, moat_points, moat_reason = _moat_compare(ticker, f, funds, fdoc)
     catalyst_html, catalyst_verified, catalyst_unverified = _catalyst_block(ticker)
     setup_html = _setup_block(ticker, sig, score)
     plain_language_html = _plain_language_summary(ticker, sig, score)
@@ -394,7 +412,7 @@ def main() -> int:
             raise ValueError(f'missing signal for {ticker}')
         f = funds.get(ticker) or {}
         n = news_map.get(ticker) or {}
-        html, meta = build_page(ticker, sig, f, funds, n, report_path, last_verified_hkt)
+        html, meta = build_page(ticker, sig, f, funds, fdoc, n, report_path, last_verified_hkt)
         (out_dir / f'{ticker}.html').write_text(html, encoding='utf-8')
         pages_meta[ticker] = meta
         print(f"wrote {ticker} provisional={meta['provisional']} score={meta['evidenceQualityScore']}")

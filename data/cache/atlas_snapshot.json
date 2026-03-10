@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-10T03:55:54.892290+00:00",
-  "source_generated_at": "2026-03-10T03:55:54.829012+00:00",
+  "generated_at": "2026-03-10T06:58:02.983586+00:00",
+  "source_generated_at": "2026-03-10T06:58:02.874454+00:00",
   "count": {
     "total": 17,
     "valid": 17,
@@ -48,7 +48,7 @@
     "top_volatility": [
       {
         "ticker": "ONDS",
-        "atr14_pct_of_close": 12.03
+        "atr14_pct_of_close": 12.04
       },
       {
         "ticker": "UUUU",
@@ -93,7 +93,7 @@
   "top_volatility": [
     {
       "ticker": "ONDS",
-      "atr14_pct_of_close": 12.03
+      "atr14_pct_of_close": 12.04
     },
     {
       "ticker": "UUUU",
