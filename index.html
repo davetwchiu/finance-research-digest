@@ -77,7 +77,8 @@
 
     <div class="card" id="atlasLocalIntel" style="margin-top:14px">
       <h2>Atlas Local Intelligence</h2>
-      <div id="atlasIntelFreshness" class="muted">Snapshot: loading...</div>
+      <div id="atlasIntelPanelTime" class="muted">Timestamp: loading...</div>
+      <div id="atlasIntelFreshness" class="muted" style="margin-top:6px">Snapshot: loading...</div>
       <div id="atlasIntelBreadth" class="muted" style="margin-top:6px">Breadth: loading...</div>
       <div id="atlasIntelRisk" class="muted" style="margin-top:6px">Risk: loading...</div>
       <div id="atlasIntelMovers" class="muted" style="margin-top:6px">Top movers: loading...</div>
@@ -86,7 +87,8 @@
 
     <details class="card" id="atlasDeepLocalCard" style="margin-top:12px">
       <summary><strong>Atlas Deep Local Analysis</strong> <span class="muted" id="atlasDeepHeadline">loading...</span></summary>
-      <div id="atlasDeepRegime" class="muted" style="margin-top:8px">Regime: loading...</div>
+      <div id="atlasDeepPanelTime" class="muted" style="margin-top:8px">Timestamp: loading...</div>
+      <div id="atlasDeepRegime" class="muted" style="margin-top:6px">Regime: loading...</div>
       <div id="atlasDeepTriage" class="muted" style="margin-top:6px">Triage: loading...</div>
       <div id="atlasDeepQuality" class="muted" style="margin-top:6px">Quality: loading...</div>
       <div id="atlasDeepThemes" class="muted" style="margin-top:6px">Themes: loading...</div>
@@ -96,7 +98,8 @@
     <div class="grid grid-3">
       <div class="card">
         <h2>Latest Report — Executive Summary</h2>
-        <div id="execSummaryMacro" class="muted">Macro: loading...</div>
+        <div id="execSummaryTime" class="muted">Timestamp: loading...</div>
+        <div id="execSummaryMacro" class="muted" style="margin-top:6px">Macro: loading...</div>
         <div id="execSummaryPolicy" class="muted" style="margin-top:6px">Policy: loading...</div>
         <div id="execSummaryDelta" class="muted" style="margin-top:6px">Change vs yesterday: loading...</div>
         <div class="row" style="margin-top:10px">
@@ -105,7 +108,8 @@
       </div>
       <div class="card">
         <h2>Breaking Alerts — Executive Summary</h2>
-        <div id="frontBreakingTime" class="muted">Time: loading...</div>
+        <div id="frontBreakingPanelTime" class="muted">Timestamp: loading...</div>
+        <div id="frontBreakingTime" class="muted" style="margin-top:6px">Time: loading...</div>
         <div id="frontBreakingTitle" class="muted" style="margin-top:6px">Title: loading...</div>
         <div id="frontBreakingSummary" class="muted" style="margin-top:6px">Summary: loading...</div>
         <div class="row" style="margin-top:10px"><a class="btn ghost" href="./reports/breaking/">Open timeline</a></div>
@@ -113,14 +117,16 @@
       <div class="card"><h2>Archive</h2><p class="muted">Daily snapshots.</p><a class="btn ghost" href="./reports/">Open archive</a></div>
       <div class="card">
         <h2>AI Industry Research — Executive Summary</h2>
-        <div id="aiSummaryMarket" class="muted">Market trend: loading...</div>
+        <div id="aiSummaryTime" class="muted">Timestamp: loading...</div>
+        <div id="aiSummaryMarket" class="muted" style="margin-top:6px">Market trend: loading...</div>
         <div id="aiSummaryTech" class="muted" style="margin-top:6px">Tech/breakthrough: loading...</div>
         <div id="aiSummaryRisk" class="muted" style="margin-top:6px">Risk focus: loading...</div>
         <div class="row" style="margin-top:10px"><a class="btn ghost" id="aiResearchBtn" href="./ai-research/latest.html">Open full research notebook</a></div>
       </div>
       <div class="card">
         <h2>Defence Industry Research — Executive Summary</h2>
-        <div id="defSummaryMarket" class="muted">Market trend: loading...</div>
+        <div id="defSummaryTime" class="muted">Timestamp: loading...</div>
+        <div id="defSummaryMarket" class="muted" style="margin-top:6px">Market trend: loading...</div>
         <div id="defSummaryTech" class="muted" style="margin-top:6px">Tech/program shift: loading...</div>
         <div id="defSummaryRisk" class="muted" style="margin-top:6px">Risk focus: loading...</div>
         <div class="row" style="margin-top:10px"><a class="btn ghost" id="defResearchBtn" href="./defence-research/latest.html">Open full research notebook</a></div>
@@ -304,6 +310,7 @@ function fmtHKT(ts){
 }
 
 async function loadAtlasLocalIntelligence(){
+  const panelTime=document.getElementById('atlasIntelPanelTime');
   const freshness=document.getElementById('atlasIntelFreshness');
   const breadth=document.getElementById('atlasIntelBreadth');
   const risk=document.getElementById('atlasIntelRisk');
@@ -319,6 +326,7 @@ async function loadAtlasLocalIntelligence(){
     const rk = j.risk || {};
     const universe = b.universe ?? j?.count?.valid ?? 0;
 
+    panelTime.textContent = `Timestamp: ${fmtHKT(j.generated_at)}`;
     freshness.textContent = `Snapshot: ${fmtHKT(j.generated_at)}${j.source_generated_at ? ` (signals source ${fmtHKT(j.source_generated_at)})` : ''}`;
     breadth.textContent = `Breadth: ${b.above_sma20 ?? 0}/${universe} above SMA20, ${b.above_sma50 ?? 0}/${universe} above SMA50.`;
     risk.textContent = `Risk: avg RSI ${rk.avg_rsi14 ?? 'n/a'}; overbought ${rk.overbought_rsi70 ?? 0}, oversold ${rk.oversold_rsi30 ?? 0}.`;
@@ -329,6 +337,7 @@ async function loadAtlasLocalIntelligence(){
     const topVol = Array.isArray(j.top_volatility) ? j.top_volatility.slice(0,3).map(x=>`${x.ticker} ${x.atr14_pct_of_close}% ATR`) : [];
     vol.textContent = topVol.length ? `Top volatility: ${topVol.join(' · ')}` : 'Top volatility: n/a';
   }catch{
+    panelTime.textContent = 'Timestamp: unavailable';
     freshness.textContent = 'Snapshot: local snapshot not generated yet.';
     breadth.textContent = 'Breadth: run local pipeline to populate local breadth metrics.';
     risk.textContent = 'Risk: run local pipeline to populate local RSI risk view.';
@@ -339,6 +348,7 @@ async function loadAtlasLocalIntelligence(){
 
 async function loadAtlasDeepLocalAnalysis(){
   const headline=document.getElementById('atlasDeepHeadline');
+  const panelTime=document.getElementById('atlasDeepPanelTime');
   const regime=document.getElementById('atlasDeepRegime');
   const triage=document.getElementById('atlasDeepTriage');
   const quality=document.getElementById('atlasDeepQuality');
@@ -363,6 +373,7 @@ async function loadAtlasDeepLocalAnalysis(){
 
     headline.textContent = `(${fmtHKT(j.generated_at)}${stale ? ' · stale >24h' : ''})`;
     headline.className = generatedValid ? (stale ? 'err' : 'ok') : 'muted';
+    panelTime.textContent = `Timestamp: ${fmtHKT(j.generated_at)}`;
     regime.textContent = `Regime: ${(mr.label||'n/a').toUpperCase()} | score ${mr.composite_score ?? 'n/a'} (breadth ${comp.breadth ?? 'n/a'}, momentum ${comp.momentum ?? 'n/a'}, volatility ${comp.volatility ?? 'n/a'}).`;
     const hi = Array.isArray(tq.high_attention) ? tq.high_attention : [];
     const watch = Array.isArray(tq.watch) ? tq.watch : [];
@@ -389,6 +400,7 @@ async function loadAtlasDeepLocalAnalysis(){
     }
   }catch{
     headline.textContent='(not generated)';
+    panelTime.textContent='Timestamp: unavailable';
     regime.textContent='Regime: unavailable until deep local analysis is generated.';
     triage.textContent='Triage: unavailable.';
     quality.textContent='Quality: unavailable.';
@@ -401,6 +413,7 @@ async function loadAtlasDeepLocalAnalysis(){
 }
 
 async function loadExecSummary(){
+  const ts=document.getElementById('execSummaryTime');
   const m=document.getElementById('execSummaryMacro');
   const p=document.getElementById('execSummaryPolicy');
   const d=document.getElementById('execSummaryDelta');
@@ -413,12 +426,14 @@ async function loadExecSummary(){
     const policy = j.policy || 'Policy summary pending next macro-format run.';
     const updatedTs = j.updatedAt || j.updated_at || null;
     const delta = j.delta || (updatedTs ? `Data refresh timestamp: ${updatedTs}` : 'No delta summary yet.');
+    ts.textContent = `Timestamp: ${fmtHKT(updatedTs)}`;
     m.textContent = `Macro: ${macro}`;
     p.textContent = `Policy: ${policy}`;
     d.textContent = `Change vs yesterday: ${delta}`;
     setLastUpdated(updatedTs);
     if(j.latestReportPath){ b.href = j.latestReportPath; }
   }catch{
+    ts.textContent = 'Timestamp: unavailable';
     m.textContent = 'Macro: Summary will appear after next report run.';
     p.textContent = 'Policy: Summary will appear after next report run.';
     d.textContent = 'Change vs yesterday: Summary will appear after next report run.';
@@ -427,6 +442,7 @@ async function loadExecSummary(){
 }
 
 async function loadFrontBreaking(){
+  const panelTs=document.getElementById('frontBreakingPanelTime');
   const t=document.getElementById('frontBreakingTime');
   const h=document.getElementById('frontBreakingTitle');
   const s=document.getElementById('frontBreakingSummary');
@@ -434,10 +450,12 @@ async function loadFrontBreaking(){
     const r = await fetch('./reports/breaking/breaking_summary.json?ts='+Date.now(), {cache:'no-store'});
     if(!r.ok) throw new Error('no breaking summary');
     const j = await r.json();
+    panelTs.textContent = `Timestamp: ${fmtHKT(j.lastCheckedAt || j.time)}`;
     t.textContent = `Time: ${j.time || 'N/A'}`;
     h.textContent = `Title: ${j.title || 'No title'}`;
     s.textContent = `Summary: ${j.summary || 'No summary.'}`;
   }catch{
+    panelTs.textContent = 'Timestamp: unavailable';
     t.textContent = 'Time: no recent breaking alert';
     h.textContent = 'Title: no recent breaking alert';
     s.textContent = 'Summary: waiting for next material event.';
@@ -445,6 +463,7 @@ async function loadFrontBreaking(){
 }
 
 async function loadAISummary(){
+  const ts=document.getElementById('aiSummaryTime');
   const m=document.getElementById('aiSummaryMarket');
   const t=document.getElementById('aiSummaryTech');
   const r=document.getElementById('aiSummaryRisk');
@@ -453,11 +472,13 @@ async function loadAISummary(){
     const res = await fetch('./ai-research/summary.json?ts='+Date.now(), {cache:'no-store'});
     if(!res.ok) throw new Error('no ai summary');
     const j = await res.json();
+    ts.textContent = `Timestamp: ${fmtHKT(j.updatedAt)}`;
     m.textContent = `Market trend: ${j.market || 'No summary yet.'}`;
     t.textContent = `Tech/breakthrough: ${j.tech || 'No summary yet.'}`;
     r.textContent = `Risk focus: ${j.risk || 'No summary yet.'}`;
     if(j.latestPath){ b.href = j.latestPath; }
   }catch{
+    ts.textContent = 'Timestamp: unavailable';
     m.textContent = 'Market trend: summary will appear after first AI research run.';
     t.textContent = 'Tech/breakthrough: summary will appear after first AI research run.';
     r.textContent = 'Risk focus: summary will appear after first AI research run.';
@@ -465,6 +486,7 @@ async function loadAISummary(){
 }
 
 async function loadDefenceSummary(){
+  const ts=document.getElementById('defSummaryTime');
   const m=document.getElementById('defSummaryMarket');
   const t=document.getElementById('defSummaryTech');
   const r=document.getElementById('defSummaryRisk');
@@ -473,11 +495,13 @@ async function loadDefenceSummary(){
     const res = await fetch('./defence-research/summary.json?ts='+Date.now(), {cache:'no-store'});
     if(!res.ok) throw new Error('no defence summary');
     const j = await res.json();
+    ts.textContent = `Timestamp: ${fmtHKT(j.updatedAt)}`;
     m.textContent = `Market trend: ${j.market || 'No summary yet.'}`;
     t.textContent = `Tech/program shift: ${j.tech || 'No summary yet.'}`;
     r.textContent = `Risk focus: ${j.risk || 'No summary yet.'}`;
     if(j.latestPath){ b.href = j.latestPath; }
   }catch{
+    ts.textContent = 'Timestamp: unavailable';
     m.textContent = 'Market trend: summary will appear after first Defence research run.';
     t.textContent = 'Tech/program shift: summary will appear after first Defence research run.';
     r.textContent = 'Risk focus: summary will appear after first Defence research run.';
