@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-03-06T09:30:00+08:00",
-  "market": "AI remains a real multi-year buildout, but market leadership is rotating from capex scale to cash-flow-quality execution.",
-  "tech": "Most monetizable today: inference-efficiency, workflow-embedded copilots, and compliance-ready enterprise deployment; least proven: broad autonomous agent replacement in regulated workflows.",
-  "risk": "Top risks are capex outrunning monetization, export-control regime shifts, and power/interconnection bottlenecks delaying usable capacity.",
+  "updatedAt": "2026-03-10T09:30:00+08:00",
+  "market": "AI demand is still real and broadening, but leadership is rotating from simple capex scale stories toward names that can prove utilization, pricing discipline, and free-cash-flow durability.",
+  "tech": "What monetizes now: compute, packaging, networking, reasoning-heavy enterprise workflows, and constrained agents. What is still overstated: broad autonomous enterprise agents in regulated environments.",
+  "risk": "Top risks are capex outrunning monetization, power/interconnection delays turning demand into deferred deployment, and export-control/regulatory shifts reshaping where frontier AI can be built and sold.",
   "latestPath": "./ai-research/latest.html"
 }
