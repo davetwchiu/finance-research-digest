@@ -154,7 +154,7 @@
           <button class="btn ghost wl-btn" onclick="copyList()">Copy list</button>
           <button class="btn wl-btn" onclick="syncToGitHub()">Auto-sync now</button>
         </div>
-        <div id="syncStatus" class="status muted">Auto-sync writes to <code>watchlist.json</code> in your GitHub repo.</div>
+        <div id="syncStatus" class="status muted">Auto-sync writes to <code>watchlist.json</code> in your GitHub repo. If no browser GitHub token is configured, ask Hugo here and I’ll sync it for you.</div>
       </div>
 
       <div class="card" style="display:none" aria-hidden="true">
@@ -217,7 +217,9 @@ async function ghRequest(url, opts){const s=getSettings();if(!s.token) throw new
 }
 async function syncToGitHub(){
   try{
-    const s=getSettings(); if(!s.owner||!s.repo) throw new Error('Missing owner/repo settings');
+    const s=getSettings();
+    if(!s.owner||!s.repo) throw new Error('Missing owner/repo settings');
+    if(!s.token) throw new Error('No browser GitHub token configured. Ask Hugo in chat to add/remove the ticker and sync it for you, or configure a token in this browser.');
     setStatus('Syncing watchlist.json to GitHub...',true);
     const path='watchlist.json';
     let sha=null;
