@@ -15,6 +15,10 @@ from typing import Any, Dict, Optional
 import os
 
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent
+
+
 def _load(path: Path) -> Dict[str, Any]:
     if not path.exists():
         return {}
@@ -215,11 +219,18 @@ def _has_recent_delivery_failure_evidence(delivery_health: Dict[str, Any], lates
     return any(marker in err for marker in delivery_error_markers)
 
 
+def _repo_path(value: str) -> str:
+    p = Path(value)
+    if p.is_absolute():
+        return str(p)
+    return str(REPO_ROOT / p)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--deep", default="data/cache/atlas_deep_analysis.json")
-    ap.add_argument("--prev", default="data/cache/atlas_deep_analysis.prev.json")
-    ap.add_argument("--snapshot", default="data/cache/atlas_snapshot.json")
+    ap.add_argument("--deep", default=_repo_path("data/cache/atlas_deep_analysis.json"))
+    ap.add_argument("--prev", default=_repo_path("data/cache/atlas_deep_analysis.prev.json"))
+    ap.add_argument("--snapshot", default=_repo_path("data/cache/atlas_snapshot.json"))
     ap.add_argument("--high-threshold", type=int, default=4)
     ap.add_argument("--max-age-hours", type=float, default=24.0)
     ap.add_argument("--telegram-target", default="telegram:-3851523537")
