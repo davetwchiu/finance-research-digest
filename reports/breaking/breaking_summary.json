@@ -1,11 +1,11 @@
 {
-  "time": "2026-03-03 09:40 HKT",
-  "title": "Macro escalation confirmed: Reuters live reports Hormuz closure threat to shipping",
-  "summary": "Provisional Hormuz-closure signal is upgraded: Reuters live update now reports explicit closure-enforcement threat; macro risk regime remains dominant.",
-  "path": "./2026-03-03.md",
-  "confidence": "high",
-  "lastCheckedAt": "2026-03-03T10:40:00+08:00",
+  "time": "2026-03-10 09:36 HKT",
+  "title": "Macro reversal watch: oil drops on de-escalation talk, but no hard reset yet",
+  "summary": "Fresh Reuters-led sweep still finds the same core regime driver: Middle East / oil / inflation stress. The newest meaningful shift is a partial relief signal as oil fell on de-escalation talk, but without confirmed ceasefire, reserve release, or shipping normalization, this is not yet a clean macro reset.",
+  "path": "./2026-03-10.md",
+  "confidence": "medium-high",
+  "lastCheckedAt": "2026-03-10T15:16:53+08:00",
   "lastCheckStatus": "no_material_change",
-  "lastCheckConfidence": "moderate-high",
+  "lastCheckConfidence": "high",
   "lastCheckSourceQuality": "high"
 }
