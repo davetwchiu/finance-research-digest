@@ -78,11 +78,6 @@ python3 scripts/generate_pilot_ticker_pages.py \
 # Publish-blocking depth QC for full watchlist.
 python3 scripts/qc_ticker_depth.py --tickers-dir tickers --watchlist watchlist.json --min-words 380
 
-# Refresh summary freshness timestamp + latest report pointer.
-python3 scripts/update_summary_freshness.py \
-  --summary summary.json \
-  --reports-dir reports
-
 # Rebuild archive index each cycle so newest report appears automatically.
 python3 scripts/rebuild_reports_index.py
 
@@ -91,6 +86,11 @@ python3 scripts/report_dup_guard.py --reports-dir reports --min-len 120 --max-du
 
 # Site-level intelligence quality guardrails.
 python3 scripts/qc_site_quality.py --root . --max-fallback-ratio 0.90
+
+# Only mark the site as freshly updated after all publish-blocking checks pass.
+python3 scripts/update_summary_freshness.py \
+  --summary summary.json \
+  --reports-dir reports
 
 # Bump visible website version every update cycle.
 python3 scripts/site_version.py \
