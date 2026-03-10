@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-03-09T18:58:37.973145+00:00",
-  "source_generated_at": "2026-03-09T18:58:37.844732+00:00",
+  "generated_at": "2026-03-10T00:55:57.390709+00:00",
+  "source_generated_at": "2026-03-10T00:55:57.283384+00:00",
   "inputs": {
     "signals_total": 17,
     "signals_valid": 17
   },
   "market_regime": {
     "label": "risk_off",
-    "composite_score": -57.57,
+    "composite_score": -34.33,
     "components": {
-      "breadth": -23.53,
-      "momentum": -5.34,
-      "volatility": -28.69
+      "breadth": -4.71,
+      "momentum": -1.71,
+      "volatility": -27.91
     },
     "metrics": {
-      "above_sma20": 6,
-      "above_sma50": 3,
-      "avg_rsi14": 46.44,
-      "avg_atr_pct_of_price": 6.069
+      "above_sma20": 8,
+      "above_sma50": 4,
+      "avg_rsi14": 48.86,
+      "avg_atr_pct_of_price": 5.991
     }
   },
   "themes": {
@@ -26,113 +26,113 @@
       "members": [
         {
           "ticker": "AAPL",
-          "gap_sma20_pct": -3.01,
-          "gap_sma50_pct": -2.44
+          "gap_sma20_pct": -2.17,
+          "gap_sma50_pct": -1.57
         },
         {
           "ticker": "AVGO",
-          "gap_sma20_pct": 3.56,
-          "gap_sma50_pct": 2.28
+          "gap_sma20_pct": 4.7,
+          "gap_sma50_pct": 3.44
         },
         {
           "ticker": "MSFT",
-          "gap_sma20_pct": 0.9,
-          "gap_sma50_pct": -7.13
+          "gap_sma20_pct": 1.95,
+          "gap_sma50_pct": -6.14
         },
         {
           "ticker": "NVDA",
-          "gap_sma20_pct": -3.48,
-          "gap_sma50_pct": -3.46
+          "gap_sma20_pct": -1.81,
+          "gap_sma50_pct": -1.73
         },
         {
           "ticker": "TSLA",
-          "gap_sma20_pct": -4.12,
-          "gap_sma50_pct": -7.92
+          "gap_sma20_pct": -2.66,
+          "gap_sma50_pct": -6.47
         },
         {
           "ticker": "TSM",
-          "gap_sma20_pct": -6.19,
-          "gap_sma50_pct": 0.11
+          "gap_sma20_pct": -4.46,
+          "gap_sma50_pct": 2.02
         },
         {
           "ticker": "GOOG",
-          "gap_sma20_pct": -2.05,
-          "gap_sma50_pct": -5.65
+          "gap_sma20_pct": -0.77,
+          "gap_sma50_pct": -4.37
         }
       ],
-      "avg_sma20_gap_pct": -2.06,
-      "avg_sma50_gap_pct": -3.46
+      "avg_sma20_gap_pct": -0.75,
+      "avg_sma50_gap_pct": -2.12
     },
     "defence/space": {
       "count": 6,
       "members": [
         {
           "ticker": "KTOS",
-          "gap_sma20_pct": 0.17,
-          "gap_sma50_pct": -6.4
+          "gap_sma20_pct": 0.92,
+          "gap_sma50_pct": -5.67
         },
         {
           "ticker": "ONDS",
-          "gap_sma20_pct": -6.37,
-          "gap_sma50_pct": -13.32
+          "gap_sma20_pct": -4.11,
+          "gap_sma50_pct": -11.17
         },
         {
           "ticker": "PLTR",
-          "gap_sma20_pct": 10.69,
-          "gap_sma50_pct": -1.27
+          "gap_sma20_pct": 11.9,
+          "gap_sma50_pct": -0.15
         },
         {
           "ticker": "RDW",
-          "gap_sma20_pct": 4.44,
-          "gap_sma50_pct": -5.99
+          "gap_sma20_pct": 9.55,
+          "gap_sma50_pct": -1.22
         },
         {
           "ticker": "RKLB",
-          "gap_sma20_pct": -2.28,
-          "gap_sma50_pct": -10.4
+          "gap_sma20_pct": 0.72,
+          "gap_sma50_pct": -7.55
         },
         {
           "ticker": "LITE",
-          "gap_sma20_pct": -3.92,
-          "gap_sma50_pct": 26.61
+          "gap_sma20_pct": -0.12,
+          "gap_sma50_pct": 31.74
         }
       ],
-      "avg_sma20_gap_pct": 0.46,
-      "avg_sma50_gap_pct": -1.8
+      "avg_sma20_gap_pct": 3.14,
+      "avg_sma50_gap_pct": 1.0
     },
     "energy/materials": {
       "count": 1,
       "members": [
         {
           "ticker": "UUUU",
-          "gap_sma20_pct": -9.44,
-          "gap_sma50_pct": -6.52
+          "gap_sma20_pct": -7.67,
+          "gap_sma50_pct": -4.64
         }
       ],
-      "avg_sma20_gap_pct": -9.44,
-      "avg_sma50_gap_pct": -6.52
+      "avg_sma20_gap_pct": -7.67,
+      "avg_sma50_gap_pct": -4.64
     },
     "diversified": {
       "count": 3,
       "members": [
         {
           "ticker": "BBAI",
-          "gap_sma20_pct": 0.09,
-          "gap_sma50_pct": -18.86
+          "gap_sma20_pct": 2.45,
+          "gap_sma50_pct": -16.88
         },
         {
           "ticker": "IBM",
-          "gap_sma20_pct": -0.61,
-          "gap_sma50_pct": -10.21
+          "gap_sma20_pct": -0.48,
+          "gap_sma50_pct": -10.09
         },
         {
           "ticker": "BRK.B",
-          "gap_sma20_pct": -0.46,
-          "gap_sma50_pct": -0.05
+          "gap_sma20_pct": 0.15,
+          "gap_sma50_pct": 0.58
         }
       ],
-      "avg_sma20_gap_pct": -0.33,
-      "avg_sma50_gap_pct": -9.71
+      "avg_sma20_gap_pct": 0.71,
+      "avg_sma50_gap_pct": -8.8
     }
   },
   "signal_quality": {
@@ -152,6 +152,15 @@
           "above_sma20",
           "above_sma50",
           "healthy_momentum"
+        ]
+      },
+      {
+        "ticker": "BRK.B",
+        "priority": "high_attention",
+        "score": 3.4,
+        "reasons": [
+          "above_sma20",
+          "above_sma50"
         ]
       }
     ],
@@ -220,15 +229,24 @@
         ]
       },
       {
+        "ticker": "RKLB",
+        "priority": "low_priority",
+        "score": -0.4,
+        "reasons": [
+          "above_sma20",
+          "high_volatility"
+        ]
+      },
+      {
         "ticker": "AAPL",
         "priority": "low_priority",
         "score": -1.3,
         "reasons": []
       },
       {
-        "ticker": "BRK.B",
+        "ticker": "GOOG",
         "priority": "low_priority",
-        "score": -1.3,
+        "score": -1.7,
         "reasons": []
       },
       {
@@ -244,27 +262,13 @@
         "reasons": []
       },
       {
-        "ticker": "GOOG",
-        "priority": "low_priority",
-        "score": -2.1,
-        "reasons": []
-      },
-      {
         "ticker": "TSLA",
         "priority": "low_priority",
-        "score": -2.1,
+        "score": -1.7,
         "reasons": []
       },
       {
         "ticker": "ONDS",
-        "priority": "low_priority",
-        "score": -2.6,
-        "reasons": [
-          "high_volatility"
-        ]
-      },
-      {
-        "ticker": "RKLB",
         "priority": "low_priority",
         "score": -2.6,
         "reasons": [
@@ -289,6 +293,15 @@
           "above_sma20",
           "above_sma50",
           "healthy_momentum"
+        ]
+      },
+      {
+        "ticker": "BRK.B",
+        "priority": "high_attention",
+        "score": 3.4,
+        "reasons": [
+          "above_sma20",
+          "above_sma50"
         ]
       },
       {
@@ -353,15 +366,24 @@
         ]
       },
       {
+        "ticker": "RKLB",
+        "priority": "low_priority",
+        "score": -0.4,
+        "reasons": [
+          "above_sma20",
+          "high_volatility"
+        ]
+      },
+      {
         "ticker": "AAPL",
         "priority": "low_priority",
         "score": -1.3,
         "reasons": []
       },
       {
-        "ticker": "BRK.B",
+        "ticker": "GOOG",
         "priority": "low_priority",
-        "score": -1.3,
+        "score": -1.7,
         "reasons": []
       },
       {
@@ -377,27 +399,13 @@
         "reasons": []
       },
       {
-        "ticker": "GOOG",
-        "priority": "low_priority",
-        "score": -2.1,
-        "reasons": []
-      },
-      {
         "ticker": "TSLA",
         "priority": "low_priority",
-        "score": -2.1,
+        "score": -1.7,
         "reasons": []
       },
       {
         "ticker": "ONDS",
-        "priority": "low_priority",
-        "score": -2.6,
-        "reasons": [
-          "high_volatility"
-        ]
-      },
-      {
-        "ticker": "RKLB",
         "priority": "low_priority",
         "score": -2.6,
         "reasons": [
@@ -415,12 +423,12 @@
     ]
   },
   "conclusions": [
-    "Regime is risk off with composite score -57.6 (breadth -23.5, momentum -5.3, volatility -28.7).",
-    "Breadth shows 6/17 above SMA20 and 3/17 above SMA50.",
-    "Momentum is soft with average RSI 46.4.",
-    "Volatility proxy averages 6.07% ATR/price (elevated).",
+    "Regime is risk off with composite score -34.3 (breadth -4.7, momentum -1.7, volatility -27.9).",
+    "Breadth shows 8/17 above SMA20 and 4/17 above SMA50.",
+    "Momentum is soft with average RSI 48.9.",
+    "Volatility proxy averages 5.99% ATR/price (elevated).",
     "Strongest theme by SMA20 gap proxy: defence/space; weakest: energy/materials.",
-    "Triage distribution: 1 high_attention, 3 watch, 13 low_priority.",
+    "Triage distribution: 2 high_attention, 3 watch, 12 low_priority.",
     "Signal quality: missing field rate 0.0%, stale-indicator rate 0.0%."
   ]
 }

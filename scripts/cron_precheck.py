@@ -161,6 +161,36 @@ def _summary_is_meaningful(summary: Any) -> bool:
     return not s.startswith(boring_prefixes)
 
 
+def _run_ts_to_utc(ts_value: Any) -> Optional[datetime]:
+    if ts_value is None:
+        return None
+    try:
+        ts = float(ts_value)
+    except (TypeError, ValueError):
+        return None
+    if ts > 1e12:
+        ts /= 1000.0
+    return datetime.fromtimestamp(ts, tz=timezone.utc)
+
+
+def _delivery_failures_are_already_recovered(
+    delivery_health: Dict[str, Any],
+    latest_job_state: Dict[str, Any],
+    latest_run: Dict[str, Any],
+) -> bool:
+    latest_failed_at = _parse_iso_utc(delivery_health.get("latest_failed_at_utc"))
+    if latest_failed_at is None:
+        return False
+
+    recovered_at = None
+    if latest_run.get("deliveryStatus") == "delivered" or latest_run.get("delivered") is True:
+        recovered_at = _run_ts_to_utc(latest_run.get("ts"))
+    elif latest_job_state.get("last_delivery_status") == "delivered" or latest_job_state.get("last_delivered") is True:
+        recovered_at = _run_ts_to_utc(latest_job_state.get("last_run_at_ms"))
+
+    return recovered_at is not None and recovered_at >= latest_failed_at
+
+
 def _has_recent_delivery_failure_evidence(delivery_health: Dict[str, Any], latest_run: Dict[str, Any]) -> bool:
     if int(delivery_health.get("recent_fail_count") or 0) > 0:
         return True
@@ -250,6 +280,11 @@ def main() -> int:
     )
     latest_job_state = _load_job_state(Path(args.jobs_path), args.breaking_job_id)
     latest_run = _load_latest_run(Path(args.breaking_run_log))
+    delivery_recovered_after_failure = _delivery_failures_are_already_recovered(
+        delivery_health,
+        latest_job_state,
+        latest_run,
+    )
 
     reasons = []
     if not cur:
@@ -270,7 +305,7 @@ def main() -> int:
         reasons.append(f"snapshot_stale_hours:{snapshot_generated_age_hours:.2f}>{args.max_age_hours}")
     if schema_issues:
         reasons.append("deep_analysis_schema_incomplete:" + ",".join(schema_issues))
-    if delivery_health.get("chat_not_found_count", 0) >= 3:
+    if delivery_health.get("chat_not_found_count", 0) >= 3 and not delivery_recovered_after_failure:
         cands = delivery_health.get("migrated_chat_id_candidates") or []
         if cands:
             reasons.append("telegram_delivery_chat_not_found_repeated:migration_candidates=" + ",".join(cands))
@@ -311,6 +346,7 @@ def main() -> int:
         "telegram_delivery_health": delivery_health,
         "watchlist_breaking_job_state": latest_job_state,
         "watchlist_breaking_latest_run": latest_run,
+        "delivery_recovered_after_failure": delivery_recovered_after_failure,
     }
 
     print(json.dumps(out, indent=2))
