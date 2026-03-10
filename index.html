@@ -175,12 +175,39 @@ let SIGNALS={};
 function loadList(){try{return JSON.parse(localStorage.getItem(KEY_W))||DEFAULTS}catch{return DEFAULTS}}
 function saveList(list){localStorage.setItem(KEY_W,JSON.stringify(list));render()}
 function signalClass(s){
-  const raw = (s && typeof s === 'object') ? (s.signal || s.value || 'watch') : (s || 'watch');
-  const v=String(raw).toLowerCase();
+  if(s && typeof s === 'object'){
+    const raw = s.signal || s.value;
+    if(raw){
+      const v=String(raw).toLowerCase();
+      if(v==='routine' || v==='buy' || v==='positive') return 'routine';
+      if(v==='high' || v==='risk-off' || v==='sell' || v==='negative') return 'high';
+      return 'watch';
+    }
+    const latest = s.latest || {};
+    const ind = s.indicators || {};
+    const close = Number(latest.close);
+    const sma20 = Number(ind.sma20);
+    const sma50 = Number(ind.sma50);
+    const rsi14 = Number(ind.rsi14);
+    const valid = [close, sma20, sma50].every(Number.isFinite);
+    if(valid){
+      if(close > sma20 && close > sma50 && (!Number.isFinite(rsi14) || rsi14 >= 50)) return 'routine';
+      if(close < sma20 && close < sma50 && (!Number.isFinite(rsi14) || rsi14 < 45)) return 'high';
+      return 'watch';
+    }
+  }
+  const v=String(s || 'watch').toLowerCase();
   if(v==='routine' || v==='buy' || v==='positive') return 'routine';
   if(v==='high' || v==='risk-off' || v==='sell' || v==='negative') return 'high';
   return 'watch';
 }
+function signalLabel(s){
+  const cls = signalClass(s);
+  if(cls==='routine') return 'green';
+  if(cls==='high') return 'red';
+  return 'yellow';
+}
+
 function render(){
   const list=loadList();
   const box=document.getElementById('watchlistChips');
@@ -190,8 +217,10 @@ function render(){
     a.href = `./tickers/${encodeURIComponent(t)}.html`;
     a.style.textDecoration='none';
     const s=document.createElement('span');
-    s.className='chip '+signalClass(SIGNALS[t]);
-    s.title = `Open ${t} analysis • signal: ${SIGNALS[t]||'watch'}`;
+    const sig = SIGNALS[t];
+    const cls = signalClass(sig);
+    s.className='chip '+cls;
+    s.title = `Open ${t} analysis • signal: ${signalLabel(sig)}`;
     s.textContent=t;
     a.appendChild(s);
     box.appendChild(a);
