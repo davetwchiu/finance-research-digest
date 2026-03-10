@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-03-10T07:15:04+00:00",
-  "generated_at_hkt": "2026-03-10T15:15:04+08:00",
+  "generated_at_utc": "2026-03-10T07:43:58+00:00",
+  "generated_at_hkt": "2026-03-10T15:43:58+08:00",
   "report": "reports/2026-03-10.html",
   "pages": {
     "AAPL": {
@@ -18,7 +18,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 0,
       "catalystVerifiedCount": 0,
-      "score": 48
+      "score": 48,
+      "decision": {
+        "stance": "wait",
+        "macroSensitivity": "lower",
+        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
+      }
     },
     "AVGO": {
       "ticker": "AVGO",
@@ -35,7 +40,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 65
+      "score": 65,
+      "decision": {
+        "stance": "actionable",
+        "macroSensitivity": "medium",
+        "actionText": "Actionable on confirmation \u2014 good candidate if price proves itself."
+      }
     },
     "BBAI": {
       "ticker": "BBAI",
@@ -53,7 +63,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 47
+      "score": 47,
+      "decision": {
+        "stance": "monitor",
+        "macroSensitivity": "high",
+        "actionText": "Monitor only \u2014 evidence is too thin for conviction."
+      }
     },
     "KTOS": {
       "ticker": "KTOS",
@@ -70,7 +85,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 52
+      "score": 52,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "high",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
     },
     "NVDA": {
       "ticker": "NVDA",
@@ -87,7 +107,12 @@
       "businessEvidenceCount": 3,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 82
+      "score": 82,
+      "decision": {
+        "stance": "wait",
+        "macroSensitivity": "medium",
+        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
+      }
     },
     "ONDS": {
       "ticker": "ONDS",
@@ -104,7 +129,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 41
+      "score": 41,
+      "decision": {
+        "stance": "wait",
+        "macroSensitivity": "high",
+        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
+      }
     },
     "PLTR": {
       "ticker": "PLTR",
@@ -121,7 +151,12 @@
       "businessEvidenceCount": 3,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 90
+      "score": 90,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "medium",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
     },
     "RDW": {
       "ticker": "RDW",
@@ -138,7 +173,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 52
+      "score": 52,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "high",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
     },
     "RKLB": {
       "ticker": "RKLB",
@@ -155,7 +195,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 52
+      "score": 52,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "high",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
     },
     "TSLA": {
       "ticker": "TSLA",
@@ -172,7 +217,12 @@
       "businessEvidenceCount": 3,
       "moatComparePoints": 2,
       "catalystVerifiedCount": 0,
-      "score": 63
+      "score": 63,
+      "decision": {
+        "stance": "wait",
+        "macroSensitivity": "medium",
+        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
+      }
     },
     "TSM": {
       "ticker": "TSM",
@@ -189,7 +239,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 54
+      "score": 54,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "medium",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
     },
     "UUUU": {
       "ticker": "UUUU",
@@ -207,7 +262,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 0,
       "catalystVerifiedCount": 0,
-      "score": 41
+      "score": 41,
+      "decision": {
+        "stance": "monitor",
+        "macroSensitivity": "high",
+        "actionText": "Monitor only \u2014 evidence is too thin for conviction."
+      }
     },
     "GOOG": {
       "ticker": "GOOG",
@@ -225,7 +285,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 0,
       "catalystVerifiedCount": 0,
-      "score": 48
+      "score": 48,
+      "decision": {
+        "stance": "monitor",
+        "macroSensitivity": "lower",
+        "actionText": "Monitor only \u2014 evidence is too thin for conviction."
+      }
     },
     "LITE": {
       "ticker": "LITE",
@@ -242,7 +307,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 55
+      "score": 55,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "high",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
     },
     "COHR": {
       "ticker": "COHR",
@@ -259,7 +329,12 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 0,
       "catalystVerifiedCount": 0,
-      "score": 61
+      "score": 61,
+      "decision": {
+        "stance": "actionable",
+        "macroSensitivity": "high",
+        "actionText": "Actionable on confirmation \u2014 good candidate if price proves itself."
+      }
     }
   }
 }

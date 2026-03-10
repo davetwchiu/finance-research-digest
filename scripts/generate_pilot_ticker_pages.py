@@ -319,6 +319,83 @@ def _setup_block(ticker: str, sig: dict, score: Score) -> str:
     return f"<ul><li><strong>Trigger:</strong> daily close above {_fmt(trigger,2)} with confirmation from volume / follow-through.</li><li><strong>Invalidation:</strong> two closes below {_fmt(invalid,2)} or adverse catalyst that breaks the thesis.</li><li><strong>Target 1:</strong> {_fmt(t1,2)}</li><li><strong>Target 2:</strong> {_fmt(t2,2)}</li><li><strong>Confidence:</strong> {conf}</li><li><strong>What changes my mind:</strong> weakening breadth, rising ATR without price progress, negative high-severity headlines, or deterioration in peer-relative metrics.</li></ul>"
 
 
+def _decision_view(ticker: str, sig: dict, score: Score, evidence_quality: int, freshness_state: str, provisional: bool) -> tuple[str, dict]:
+    latest = sig.get("latest") or {}
+    ind = sig.get("indicators") or {}
+    close = _num(latest.get("close"))
+    sma20 = _num(ind.get("sma20"))
+    sma50 = _num(ind.get("sma50"))
+    rsi = _num(ind.get("rsi14"))
+    atr = _num(ind.get("atr14"))
+
+    trend_ok = close is not None and sma20 is not None and sma50 is not None and close >= sma20 and close >= sma50
+    weak_trend = close is not None and sma20 is not None and sma50 is not None and close < sma20 and close < sma50
+
+    if freshness_state == "stale":
+        action = "Do not trust the setup yet — refresh first."
+        stance = "stale"
+    elif provisional and evidence_quality < 55:
+        action = "Monitor only — evidence is too thin for conviction."
+        stance = "monitor"
+    elif trend_ok and evidence_quality >= 70 and (rsi is None or rsi >= 50):
+        action = "Actionable on confirmation — good candidate if price proves itself."
+        stance = "actionable"
+    elif weak_trend or evidence_quality < 65:
+        action = "Wait for proof — structure or evidence still needs work."
+        stance = "wait"
+    else:
+        action = "Watch closely — setup is improving but not clean enough for size."
+        stance = "watch"
+
+    if atr and close:
+        atr_pct = atr / close * 100.0
+    else:
+        atr_pct = None
+
+    if atr_pct is None:
+        macro_sensitivity = "medium"
+    elif atr_pct >= 6:
+        macro_sensitivity = "high"
+    elif atr_pct >= 3:
+        macro_sensitivity = "medium"
+    else:
+        macro_sensitivity = "lower"
+
+    why_now = []
+    if trend_ok:
+        why_now.append("price is above both the 20-day and 50-day trend lines")
+    elif weak_trend:
+        why_now.append("price is still below both the 20-day and 50-day trend lines")
+    else:
+        why_now.append("price is mixed across the key trend lines")
+
+    if rsi is not None:
+        if rsi >= 60:
+            why_now.append("momentum is constructive without yet looking fully blown out")
+        elif rsi <= 40:
+            why_now.append("momentum is still weak and needs stabilization")
+        else:
+            why_now.append("momentum is neutral, so the next move needs confirmation")
+
+    if provisional:
+        why_now.append("the page is still provisional, so business/catalyst proof is not strong enough for full conviction")
+    else:
+        why_now.append("the verification stack is strong enough to lean more on the setup")
+
+    html = (
+        "<div class='decision-shell'>"
+        f"<div class='decision-hero {stance}'><div class='decision-kicker'>Decision view</div><div class='decision-action'>{action}</div>"
+        f"<div class='decision-sub'>Why now: {'; '.join(why_now)}.</div></div>"
+        "<div class='decision-grid'>"
+        f"<div class='decision-metric'><span class='meta-label'>Action stance</span><span class='meta-value'>{stance.upper()}</span></div>"
+        f"<div class='decision-metric'><span class='meta-label'>Macro sensitivity</span><span class='meta-value'>{macro_sensitivity.upper()}</span></div>"
+        f"<div class='decision-metric'><span class='meta-label'>Technical score</span><span class='meta-value'>{score.ta}/44</span></div>"
+        f"<div class='decision-metric'><span class='meta-label'>Fundamental score</span><span class='meta-value'>{score.fundamentals}/40</span></div>"
+        "</div></div>"
+    )
+    return html, {"stance": stance, "macroSensitivity": macro_sensitivity, "actionText": action}
+
+
 def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], fdoc: dict, news: dict, report_path: str, last_verified_hkt: str) -> tuple[str, dict]:
     score = _compute_score(sig, f)
     freshness_state, age_h = _freshness(last_verified_hkt)
@@ -343,12 +420,14 @@ def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], fdoc: di
     evidence_quality = max(5, min(100, changed_evidence * 15 + biz_evidence * 12 + moat_points * 8 + score.total // 2 - (15 if catalyst_unverified else 0) - (20 if freshness_state == 'stale' else 0)))
     provisional = len(reasons) > 0
     status = "PROVISIONAL" if provisional else "VERIFIED"
+    decision_html, decision_meta = _decision_view(ticker, sig, score, evidence_quality, freshness_state, provisional)
     stale_banner = "<div class='banner stale'>Stale warning: last verified evidence is older than 24h. Treat this page as stale until refreshed.</div>" if freshness_state == "stale" else ""
     prov_banner = f"<div class='banner provisional'>Quality gate state: {status}. Reasons: {'; '.join(reasons) if reasons else 'none'}.</div>" if provisional else "<div class='banner ok'>Quality gate state: VERIFIED.</div>"
-    html = f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;background:#0c1330;color:#e8ecff;line-height:1.6}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:12px;padding:14px;margin:12px 0;background:#121936}}.muted{{color:#a7b0d6}}.banner{{padding:10px 12px;border-radius:10px;margin:12px 0;font-weight:600}}.provisional{{background:#4b1f27;border:1px solid #a65264}}.stale{{background:#4a3a14;border:1px solid #af8a2a}}.ok{{background:#153c28;border:1px solid #2f8f5a}}.pill{{display:inline-block;border:1px solid #3a4c88;border-radius:999px;padding:3px 10px;font-size:12px;color:#dfe7ff;margin-right:6px;margin-bottom:6px}}.meta-grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;margin-top:12px}}.meta-item{{border:1px solid #2a3768;border-radius:10px;padding:10px 12px;background:#0f1733}}.meta-label{{display:block;font-size:12px;color:#a7b0d6;margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em}}.meta-value{{font-weight:600;color:#eef3ff}}details.card summary{{cursor:pointer;font-weight:600}}.warn{{color:#ffd27d}}</style></head><body>
+    html = f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{ticker}</title><link rel='icon' type='image/png' href='../assets/favicon.png'><style>body{{font-family:Georgia,'Iowan Old Style','Palatino Linotype',serif;margin:24px;background:radial-gradient(1000px 480px at 18% -10%, #243a78 0%, #0c1330 46%);color:#edf2ff;line-height:1.68}}a{{color:#9bb8ff;word-break:break-all}}.card{{border:1px solid #2a3768;border-radius:14px;padding:16px;margin:12px 0;background:rgba(18,25,54,.92);box-shadow:0 12px 28px rgba(0,0,0,.16)}}.muted{{color:#a7b0d6}}.banner{{padding:10px 12px;border-radius:10px;margin:12px 0;font-weight:600}}.provisional{{background:#4b1f27;border:1px solid #a65264}}.stale{{background:#4a3a14;border:1px solid #af8a2a}}.ok{{background:#153c28;border:1px solid #2f8f5a}}.pill{{display:inline-block;border:1px solid #3a4c88;border-radius:999px;padding:3px 10px;font-size:12px;color:#dfe7ff;margin-right:6px;margin-bottom:6px}}.meta-grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;margin-top:12px}}.meta-item{{border:1px solid #2a3768;border-radius:10px;padding:10px 12px;background:#0f1733}}.meta-label{{display:block;font-size:12px;color:#a7b0d6;margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em;font-family:-apple-system,Segoe UI,Roboto,sans-serif}}.meta-value{{font-weight:600;color:#eef3ff;font-family:-apple-system,Segoe UI,Roboto,sans-serif}}.decision-shell{{display:grid;gap:12px}}.decision-hero{{border-radius:14px;padding:16px;border:1px solid #3b4d8f;background:linear-gradient(180deg,#16214b,#0f1733)}}.decision-hero.actionable{{border-color:#2f8f5a;background:linear-gradient(180deg,#173726,#10261a)}}.decision-hero.watch{{border-color:#7b6630;background:linear-gradient(180deg,#332814,#21190f)}}.decision-hero.wait,.decision-hero.monitor,.decision-hero.stale{{border-color:#8a4b4b;background:linear-gradient(180deg,#351a1f,#241116)}}.decision-kicker{{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a7b0d6;font-family:-apple-system,Segoe UI,Roboto,sans-serif}}.decision-action{{font-size:24px;font-weight:700;line-height:1.2;margin-top:6px}}.decision-sub{{margin-top:8px;color:#d6defe}}.decision-grid{{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}}.decision-metric{{border:1px solid #2a3768;border-radius:10px;padding:10px 12px;background:#0f1733}}details.card summary{{cursor:pointer;font-weight:700;font-family:-apple-system,Segoe UI,Roboto,sans-serif}}.warn{{color:#ffd27d}}h1{{font-size:34px;letter-spacing:.2px;margin-bottom:8px}}h2{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;letter-spacing:.2px}}@media (max-width:860px){{.meta-grid,.decision-grid{{grid-template-columns:1fr 1fr}}}}@media (max-width:560px){{.meta-grid,.decision-grid{{grid-template-columns:1fr}}body{{margin:16px}}}}</style></head><body>
 <p><a href='../index.html'>← Back</a> · <a href='../{report_path}'>Daily report</a></p>
 <h1>{ticker} — Atlas research brief</h1>
 <div class='card'><h2>Verification status</h2><div class='meta-grid'><div class='meta-item'><span class='meta-label'>Last verified</span><span class='meta-value'>{last_verified_hkt} HKT</span></div><div class='meta-item'><span class='meta-label'>Freshness state</span><span class='meta-value'>{freshness_state}</span></div><div class='meta-item'><span class='meta-label'>Evidence quality score</span><span class='meta-value'>{evidence_quality}/100</span></div><div class='meta-item'><span class='meta-label'>TradingView mapping</span><span class='meta-value'>{_tv_symbol(ticker)}</span></div></div></div>
+{decision_html}
 {stale_banner}{prov_banner}
 <div class='card'><h2>At a glance</h2><p><span class='pill'>Status: {status}</span><span class='pill'>Score: {score.total}/100</span><span class='pill'>TA: {score.ta}</span><span class='pill'>Fundamentals: {score.fundamentals}</span><span class='pill'>Freshness age: {_fmt(age_h,1,'h')}</span></p>{plain_language_html}<p class='muted'>Hard rule: no evidence, no claim. Thin evidence stays clearly labeled instead of being dressed up as conviction.</p></div>
 <details class='card'><summary>Technical evidence, catalysts, and verification notes</summary>
@@ -373,6 +452,7 @@ def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], fdoc: di
         "moatComparePoints": moat_points,
         "catalystVerifiedCount": catalyst_verified,
         "score": score.total,
+        "decision": decision_meta,
     }
     return html, meta
 
