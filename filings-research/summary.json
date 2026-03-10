@@ -1,8 +1,13 @@
 {
-  "updatedAt": "2026-03-10T16:39:01+08:00",
-  "count": 14,
-  "market": "14 recent SEC filing(s) matched the current watchlist in the last 45 days.",
-  "tech": "This panel tracks hard company disclosures, not headlines. Use it to verify whether the business story actually changed.",
-  "risk": "If a name has no recent filing here, that does not mean nothing happened \u2014 only that no target SEC form was found in the recent window.",
-  "latestPath": "./reports/filings/2026-03-10.html"
+  "updatedAt": "2026-03-10T17:21:00+08:00",
+  "count": 8,
+  "market": "8 priority filings from the watchlist were upgraded from inventory blurbs into plain-English filing-read notes.",
+  "tech": "Primary SEC filings were read where accessible; RDW was substantially read, while several others remain partial-read due to SEC exhibit extraction limits in this environment.",
+  "risk": "Use the report for investor context, but verify partially-read 8-K exhibit details before making a high-conviction trade decision.",
+  "latestPath": "./reports/filings/2026-03-10.html",
+  "date": "2026-03-10",
+  "title": "Atlas Filings Report — 2026-03-10",
+  "summary": "Layman filing-read upgrade focused on ONDS, NVDA, AVGO, BBAI, RDW, RKLB, PLTR, and COHR. RDW was the clearest fully readable filing: growth improved with Edge Autonomy but margin quality, impairments, and control weaknesses remain major concerns. Other names were upgraded into plain-English investor notes with explicit partial-read caveats where SEC exhibit extraction was incomplete.",
+  "path": "/reports/filings/2026-03-10.html",
+  "latest": "/filings-research/latest.html"
 }
