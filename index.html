@@ -357,16 +357,30 @@ async function loadAtlasLocalIntelligence(){
   const vol=document.getElementById('atlasIntelVol');
 
   try{
-    const r = await fetch('./data/cache/atlas_snapshot.json?ts='+Date.now(), {cache:'no-store'});
-    if(!r.ok) throw new Error('no snapshot');
-    const j = await r.json();
+    const [snapshotRes, fundamentalsRes] = await Promise.all([
+      fetch('./data/cache/atlas_snapshot.json?ts='+Date.now(), {cache:'no-store'}),
+      fetch('./data/pilot_fundamentals.json?ts='+Date.now(), {cache:'no-store'})
+    ]);
+    if(!snapshotRes.ok) throw new Error('no snapshot');
+    const j = await snapshotRes.json();
+    const fundamentals = fundamentalsRes.ok ? await fundamentalsRes.json() : null;
 
     const b = j.breadth || {};
     const rk = j.risk || {};
     const universe = b.universe ?? j?.count?.valid ?? 0;
+    const refresh = fundamentals?.refresh_status || {};
+    const coverage = Number.isFinite(Number(refresh.coverage_pct)) ? Number(refresh.coverage_pct) : null;
+    const refreshed = refresh.refreshed ?? null;
+    const attempted = refresh.attempted ?? null;
 
     panelTime.textContent = `Generated: ${fmtHKT(j.generated_at)}`;
     freshness.textContent = `Snapshot: ${fmtHKT(j.generated_at)}${j.source_generated_at ? ` (signals source ${fmtHKT(j.source_generated_at)})` : ''}`;
+    if(coverage !== null && coverage < 50){
+      freshness.textContent += ` · fundamentals feed degraded (${refreshed ?? 0}/${attempted ?? universe} refreshed, ${coverage.toFixed(0)}% coverage)`;
+      freshness.className = 'muted err';
+    }else{
+      freshness.className = 'muted';
+    }
     breadth.textContent = `Breadth: ${b.above_sma20 ?? 0}/${universe} above SMA20, ${b.above_sma50 ?? 0}/${universe} above SMA50.`;
     risk.textContent = `Risk: avg RSI ${rk.avg_rsi14 ?? 'n/a'}; overbought ${rk.overbought_rsi70 ?? 0}, oversold ${rk.oversold_rsi30 ?? 0}.`;
 
@@ -395,15 +409,21 @@ async function loadAtlasDeepLocalAnalysis(){
   const conclusions=document.getElementById('atlasDeepConclusions');
 
   try{
-    const r = await fetch('./data/cache/atlas_deep_analysis.json?ts='+Date.now(), {cache:'no-store'});
-    if(!r.ok) throw new Error('no deep analysis');
-    const j = await r.json();
+    const [deepRes, fundamentalsRes] = await Promise.all([
+      fetch('./data/cache/atlas_deep_analysis.json?ts='+Date.now(), {cache:'no-store'}),
+      fetch('./data/pilot_fundamentals.json?ts='+Date.now(), {cache:'no-store'})
+    ]);
+    if(!deepRes.ok) throw new Error('no deep analysis');
+    const j = await deepRes.json();
+    const fundamentals = fundamentalsRes.ok ? await fundamentalsRes.json() : null;
 
     const mr = j.market_regime || {};
     const comp = mr.components || {};
     const tq = j.triage || {};
     const sq = j.signal_quality || {};
     const themeObj = j.themes || {};
+    const refresh = fundamentals?.refresh_status || {};
+    const coverage = Number.isFinite(Number(refresh.coverage_pct)) ? Number(refresh.coverage_pct) : null;
 
     const generatedDt = new Date(j.generated_at || '');
     const generatedValid = !Number.isNaN(generatedDt.getTime());
@@ -419,7 +439,8 @@ async function loadAtlasDeepLocalAnalysis(){
     const low = Array.isArray(tq.low_priority) ? tq.low_priority : [];
     const hiTickers = hi.slice(0,3).map(x=>`${x.ticker}${(x.score ?? null)===null?'':`(${x.score})`}`).join(', ');
     triage.textContent = `Triage: ${hi.length} high_attention${hiTickers ? ` [${hiTickers}]` : ''} · ${watch.length} watch · ${low.length} low_priority.`;
-    quality.textContent = `Quality: missing ${sq.missing_data_pct ?? 'n/a'}% · stale ${sq.stale_indicator_pct ?? 'n/a'}%.`;
+    quality.textContent = `Quality: missing ${sq.missing_data_pct ?? 'n/a'}% · stale ${sq.stale_indicator_pct ?? 'n/a'}%${coverage !== null ? ` · fundamentals refresh ${coverage.toFixed(0)}%` : ''}.`;
+    if(coverage !== null && coverage < 50){ quality.className = 'muted err'; } else { quality.className = 'muted'; }
 
     const themeLines = Object.entries(themeObj).map(([k,v])=>`${k}: ${v?.avg_sma20_gap_pct ?? 'n/a'}%`).join(' · ');
     themes.textContent = themeLines ? `Themes (SMA20 gap proxy): ${themeLines}` : 'Themes: n/a';
@@ -435,6 +456,11 @@ async function loadAtlasDeepLocalAnalysis(){
     }else{
       const li=document.createElement('li');
       li.textContent='No conclusions yet.';
+      conclusions.appendChild(li);
+    }
+    if(coverage !== null && coverage < 50){
+      const li=document.createElement('li');
+      li.textContent=`Fundamentals refresh degraded (${refresh.refreshed ?? 0}/${refresh.attempted ?? 0} tickers refreshed); cross-ticker business comparisons are preserved-data only until the feed recovers.`;
       conclusions.appendChild(li);
     }
   }catch{

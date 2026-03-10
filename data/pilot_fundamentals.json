@@ -2,16 +2,15 @@
   "as_of": "2026-03-10",
   "source_note": "Auto-refresh from Yahoo when available; preserves existing curated entries on fetch failures.",
   "refresh_status": {
-    "attempted": 17,
+    "attempted": 15,
     "refreshed": 0,
-    "failed": 17,
+    "failed": 15,
     "coverage_pct": 0.0,
     "failed_tickers": [
       "AAPL",
       "AVGO",
       "BBAI",
       "KTOS",
-      "MSFT",
       "NVDA",
       "ONDS",
       "PLTR",
@@ -21,9 +20,8 @@
       "TSM",
       "UUUU",
       "GOOG",
-      "IBM",
-      "BRK.B",
-      "LITE"
+      "LITE",
+      "COHR"
     ]
   },
   "tickers": {

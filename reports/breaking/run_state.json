@@ -1,5 +1,5 @@
 {
-  "run": 21,
+  "run": 22,
   "boost": {
     "TSLA": 2,
     "IBM": 2,
@@ -10,11 +10,11 @@
     "AAPL": 2,
     "TSM": 2
   },
-  "lastRunAt": "2026-03-03T10:40:00+08:00",
+  "lastRunAt": "2026-03-10T16:36:00+08:00",
   "lastUnusual": [
     "macro_hormuz_closure_enforcement_reuters_live"
   ],
   "lastStatus": "no_material_change",
-  "lastConfidence": "moderate-high",
+  "lastConfidence": "high",
   "lastSourceQuality": "high"
 }

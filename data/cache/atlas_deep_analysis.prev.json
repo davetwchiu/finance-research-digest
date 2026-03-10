@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-03-10T06:55:55.410483+00:00",
-  "source_generated_at": "2026-03-10T06:55:55.272142+00:00",
+  "generated_at": "2026-03-10T07:14:45.911888+00:00",
+  "source_generated_at": "2026-03-10T07:14:45.767693+00:00",
   "inputs": {
-    "signals_total": 17,
-    "signals_valid": 17
+    "signals_total": 15,
+    "signals_valid": 15
   },
   "market_regime": {
     "label": "risk_off",
-    "composite_score": -34.35,
+    "composite_score": -42.53,
     "components": {
-      "breadth": -4.71,
-      "momentum": -1.71,
-      "volatility": -27.93
+      "breadth": -5.33,
+      "momentum": -0.97,
+      "volatility": -36.22
     },
     "metrics": {
-      "above_sma20": 8,
+      "above_sma20": 7,
       "above_sma50": 4,
-      "avg_rsi14": 48.86,
-      "avg_atr_pct_of_price": 5.993
+      "avg_rsi14": 49.35,
+      "avg_atr_pct_of_price": 6.822
     }
   },
   "themes": {
     "AI mega-cap": {
-      "count": 7,
+      "count": 6,
       "members": [
         {
           "ticker": "AAPL",
@@ -33,11 +33,6 @@
           "ticker": "AVGO",
           "gap_sma20_pct": 4.7,
           "gap_sma50_pct": 3.44
-        },
-        {
-          "ticker": "MSFT",
-          "gap_sma20_pct": 1.95,
-          "gap_sma50_pct": -6.14
         },
         {
           "ticker": "NVDA",
@@ -60,8 +55,8 @@
           "gap_sma50_pct": -4.37
         }
       ],
-      "avg_sma20_gap_pct": -0.75,
-      "avg_sma50_gap_pct": -2.12
+      "avg_sma20_gap_pct": -1.2,
+      "avg_sma50_gap_pct": -1.45
     },
     "defence/space": {
       "count": 6,
@@ -113,7 +108,7 @@
       "avg_sma50_gap_pct": -4.64
     },
     "diversified": {
-      "count": 3,
+      "count": 2,
       "members": [
         {
           "ticker": "BBAI",
@@ -121,23 +116,18 @@
           "gap_sma50_pct": -16.88
         },
         {
-          "ticker": "IBM",
-          "gap_sma20_pct": -0.48,
-          "gap_sma50_pct": -10.09
-        },
-        {
-          "ticker": "BRK.B",
-          "gap_sma20_pct": 0.15,
-          "gap_sma50_pct": 0.58
+          "ticker": "COHR",
+          "gap_sma20_pct": 2.37,
+          "gap_sma50_pct": 15.83
         }
       ],
-      "avg_sma20_gap_pct": 0.71,
-      "avg_sma50_gap_pct": -8.8
+      "avg_sma20_gap_pct": 2.41,
+      "avg_sma50_gap_pct": -0.52
     }
   },
   "signal_quality": {
     "missing_fields": 0,
-    "field_slots": 85,
+    "field_slots": 75,
     "missing_data_pct": 0.0,
     "stale_indicator_count": 0,
     "stale_indicator_pct": 0.0
@@ -155,12 +145,13 @@
         ]
       },
       {
-        "ticker": "BRK.B",
+        "ticker": "COHR",
         "priority": "high_attention",
-        "score": 3.4,
+        "score": 2.1,
         "reasons": [
           "above_sma20",
-          "above_sma50"
+          "above_sma50",
+          "high_volatility"
         ]
       }
     ],
@@ -172,14 +163,6 @@
         "reasons": [
           "above_sma20",
           "healthy_momentum"
-        ]
-      },
-      {
-        "ticker": "MSFT",
-        "priority": "watch",
-        "score": 0.9,
-        "reasons": [
-          "above_sma20"
         ]
       },
       {
@@ -250,12 +233,6 @@
         "reasons": []
       },
       {
-        "ticker": "IBM",
-        "priority": "low_priority",
-        "score": -1.7,
-        "reasons": []
-      },
-      {
         "ticker": "NVDA",
         "priority": "low_priority",
         "score": -1.7,
@@ -296,12 +273,13 @@
         ]
       },
       {
-        "ticker": "BRK.B",
+        "ticker": "COHR",
         "priority": "high_attention",
-        "score": 3.4,
+        "score": 2.1,
         "reasons": [
           "above_sma20",
-          "above_sma50"
+          "above_sma50",
+          "high_volatility"
         ]
       },
       {
@@ -311,14 +289,6 @@
         "reasons": [
           "above_sma20",
           "healthy_momentum"
-        ]
-      },
-      {
-        "ticker": "MSFT",
-        "priority": "watch",
-        "score": 0.9,
-        "reasons": [
-          "above_sma20"
         ]
       },
       {
@@ -387,12 +357,6 @@
         "reasons": []
       },
       {
-        "ticker": "IBM",
-        "priority": "low_priority",
-        "score": -1.7,
-        "reasons": []
-      },
-      {
         "ticker": "NVDA",
         "priority": "low_priority",
         "score": -1.7,
@@ -423,12 +387,12 @@
     ]
   },
   "conclusions": [
-    "Regime is risk off with composite score -34.3 (breadth -4.7, momentum -1.7, volatility -27.9).",
-    "Breadth shows 8/17 above SMA20 and 4/17 above SMA50.",
-    "Momentum is soft with average RSI 48.9.",
-    "Volatility proxy averages 5.99% ATR/price (elevated).",
+    "Regime is risk off with composite score -42.5 (breadth -5.3, momentum -1.0, volatility -36.2).",
+    "Breadth shows 7/15 above SMA20 and 4/15 above SMA50.",
+    "Momentum is soft with average RSI 49.4.",
+    "Volatility proxy averages 6.82% ATR/price (elevated).",
     "Strongest theme by SMA20 gap proxy: defence/space; weakest: energy/materials.",
-    "Triage distribution: 2 high_attention, 3 watch, 12 low_priority.",
+    "Triage distribution: 2 high_attention, 2 watch, 11 low_priority.",
     "Signal quality: missing field rate 0.0%, stale-indicator rate 0.0%."
   ]
 }
