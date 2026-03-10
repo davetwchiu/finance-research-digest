@@ -1,11 +1,11 @@
 {
-  "time": "2026-03-10 20:36 HKT",
-  "title": "Middle East war de-escalation rhetoric drove a sharp reversal in crude and a risk-on bounce",
-  "summary": "Reuters reported oil sank 7% after Trump said the war could be over soon; Reuters also reported Asian stocks rebounded as oil fell, while Iran still said it would decide when the war ends and would keep blocking the Strait of Hormuz",
-  "confidence": "medium",
+  "time": "2026-03-10 23:36 HKT — Hourly watchlist breaking-news scan",
+  "title": "Breaking monitor update",
+  "summary": "Latest breaking monitor entry logged.",
+  "confidence": "high",
   "lastCheckStatus": "ok",
-  "lastCheckConfidence": "medium",
-  "lastCheckSourceQuality": "high for the price/action headline and policy comments (reuters, multi-article corroboration); lower on durability because the geopolitical end-state remains unresolved",
+  "lastCheckConfidence": "high",
+  "lastCheckSourceQuality": "high for macro continuation (fresh reuters/cnbc-aligned search results); insufficient for any new single-name watchlist alert",
   "path": "./2026-03-10.md",
-  "lastCheckedAt": "2026-03-10 20:36 HKT"
+  "lastCheckedAt": "2026-03-10 23:36 HKT — Hourly watchlist breaking-news scan"
 }

@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-03-10T12:58:31+00:00",
-  "generated_at_hkt": "2026-03-10T20:58:31+08:00",
+  "generated_at_utc": "2026-03-10T15:56:15+00:00",
+  "generated_at_hkt": "2026-03-10T23:56:15+08:00",
   "report": "reports/2026-03-10.html",
   "pages": {
     "AAPL": {
       "ticker": "AAPL",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 69,
       "provisional": true,
@@ -27,7 +27,7 @@
     },
     "AVGO": {
       "ticker": "AVGO",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 25,
       "provisional": true,
@@ -50,7 +50,7 @@
     },
     "BBAI": {
       "ticker": "BBAI",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 76,
       "provisional": true,
@@ -72,7 +72,51 @@
     },
     "KTOS": {
       "ticker": "KTOS",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 76,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "peer comparison limited",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 46,
+      "decision": {
+        "stance": "wait",
+        "macroSensitivity": "high",
+        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
+      }
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "peer fundamentals unavailable",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 87,
+      "decision": {
+        "stance": "wait",
+        "macroSensitivity": "medium",
+        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
+      }
+    },
+    "ONDS": {
+      "ticker": "ONDS",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 79,
       "provisional": true,
@@ -92,53 +136,9 @@
         "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
       }
     },
-    "NVDA": {
-      "ticker": "NVDA",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 100,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer fundamentals unavailable",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 3,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 82,
-      "decision": {
-        "stance": "wait",
-        "macroSensitivity": "medium",
-        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
-      }
-    },
-    "ONDS": {
-      "ticker": "ONDS",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 73,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer comparison limited",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 41,
-      "decision": {
-        "stance": "wait",
-        "macroSensitivity": "high",
-        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
-      }
-    },
     "PLTR": {
       "ticker": "PLTR",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -160,30 +160,29 @@
     },
     "RDW": {
       "ticker": "RDW",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 19,
+      "evidenceQualityScore": 79,
       "provisional": true,
       "reasons": [
-        "evidence below threshold: last 72h changes",
         "business reality missing segment/customer proof",
         "peer comparison limited",
         "catalyst calendar unverified"
       ],
-      "whatChangedEvidenceCount": 0,
+      "whatChangedEvidenceCount": 4,
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
       "score": 52,
       "decision": {
-        "stance": "monitor",
+        "stance": "watch",
         "macroSensitivity": "high",
-        "actionText": "Monitor only \u2014 evidence is too thin for conviction."
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
       }
     },
     "RKLB": {
       "ticker": "RKLB",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 79,
       "provisional": true,
@@ -205,7 +204,7 @@
     },
     "TSLA": {
       "ticker": "TSLA",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -227,55 +226,31 @@
     },
     "TSM": {
       "ticker": "TSM",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 20,
+      "evidenceQualityScore": 82,
       "provisional": true,
       "reasons": [
-        "evidence below threshold: last 72h changes",
         "business reality missing segment/customer proof",
         "peer comparison limited",
         "catalyst calendar unverified"
       ],
-      "whatChangedEvidenceCount": 0,
+      "whatChangedEvidenceCount": 4,
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 54,
+      "score": 59,
       "decision": {
-        "stance": "monitor",
+        "stance": "watch",
         "macroSensitivity": "medium",
-        "actionText": "Monitor only \u2014 evidence is too thin for conviction."
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
       }
     },
     "UUUU": {
       "ticker": "UUUU",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 5,
-      "provisional": true,
-      "reasons": [
-        "evidence below threshold: last 72h changes",
-        "business reality missing segment/customer proof",
-        "fundamentals feed unavailable for peer comparison",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 0,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 0,
-      "catalystVerifiedCount": 0,
-      "score": 41,
-      "decision": {
-        "stance": "monitor",
-        "macroSensitivity": "high",
-        "actionText": "Monitor only \u2014 evidence is too thin for conviction."
-      }
-    },
-    "GOOG": {
-      "ticker": "GOOG",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 69,
+      "evidenceQualityScore": 72,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
@@ -285,28 +260,6 @@
       "whatChangedEvidenceCount": 4,
       "businessEvidenceCount": 0,
       "moatComparePoints": 0,
-      "catalystVerifiedCount": 0,
-      "score": 48,
-      "decision": {
-        "stance": "wait",
-        "macroSensitivity": "lower",
-        "actionText": "Wait for proof \u2014 structure or evidence still needs work."
-      }
-    },
-    "LITE": {
-      "ticker": "LITE",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 80,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer comparison limited",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
       "score": 55,
       "decision": {
@@ -315,27 +268,70 @@
         "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
       }
     },
-    "COHR": {
-      "ticker": "COHR",
-      "lastVerifiedHKT": "2026-03-10T20:58:17+08:00",
+    "GOOG": {
+      "ticker": "GOOG",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 15,
+      "evidenceQualityScore": 72,
       "provisional": true,
       "reasons": [
-        "evidence below threshold: last 72h changes",
+        "business reality missing segment/customer proof",
+        "fundamentals feed unavailable for peer comparison",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 0,
+      "catalystVerifiedCount": 0,
+      "score": 54,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "lower",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
+    },
+    "LITE": {
+      "ticker": "LITE",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 83,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "peer comparison limited",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 0,
+      "moatComparePoints": 1,
+      "catalystVerifiedCount": 0,
+      "score": 61,
+      "decision": {
+        "stance": "actionable",
+        "macroSensitivity": "high",
+        "actionText": "Actionable on confirmation \u2014 good candidate if price proves itself."
+      }
+    },
+    "COHR": {
+      "ticker": "COHR",
+      "lastVerifiedHKT": "2026-03-10T23:56:01+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 75,
+      "provisional": true,
+      "reasons": [
         "business reality missing segment/customer proof",
         "peer set unavailable",
         "catalyst calendar unverified"
       ],
-      "whatChangedEvidenceCount": 0,
+      "whatChangedEvidenceCount": 4,
       "businessEvidenceCount": 0,
       "moatComparePoints": 0,
       "catalystVerifiedCount": 0,
       "score": 61,
       "decision": {
-        "stance": "monitor",
+        "stance": "actionable",
         "macroSensitivity": "high",
-        "actionText": "Monitor only \u2014 evidence is too thin for conviction."
+        "actionText": "Actionable on confirmation \u2014 good candidate if price proves itself."
       }
     }
   }
