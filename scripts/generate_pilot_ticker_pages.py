@@ -267,7 +267,7 @@ def _plain_language_summary(ticker: str, sig: dict, score: Score) -> str:
     lead = trend_bits[0] if trend_bits else "setup is mixed"
     second = trend_bits[1] if len(trend_bits) > 1 else momentum
     return (
-        f"<p><strong>Plain-language summary:</strong> {ticker} is {lead}; {second}. "
+        f"<p><strong>Layman summary:</strong> {ticker} is {lead}; {second}. "
         f"Right now, {momentum}, {risk}, and this reads as a <strong>{stance}</strong>.</p>"
     )
 
@@ -333,7 +333,7 @@ def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], news: di
 <p class='muted'>Last verified time (HKT): {last_verified_hkt} · Freshness state: {freshness_state} · Evidence quality score: {evidence_quality}/100 · TradingView mapping: {_tv_symbol(ticker)}</p>
 {stale_banner}{prov_banner}
 <div class='card'><h2>At a glance</h2><p><span class='pill'>Status: {status}</span><span class='pill'>Score: {score.total}/100</span><span class='pill'>TA: {score.ta}</span><span class='pill'>Fundamentals: {score.fundamentals}</span><span class='pill'>Freshness age: {_fmt(age_h,1,'h')}</span></p>{plain_language_html}<p class='muted'>Hard rule: no evidence, no claim. Thin evidence stays clearly labeled instead of being dressed up as conviction.</p></div>
-<details class='card'><summary>Technical evidence and catalysts</summary>
+<details class='card'><summary>Technical evidence, catalysts, and verification notes</summary>
 <div class='card'><h2>1. What changed in last 72h</h2>{changed_html}</div>
 <div class='card'><h2>2. Business reality</h2>{biz_html}</div>
 <div class='card'><h2>3. Moat + competitor check</h2>{moat_html}</div>
