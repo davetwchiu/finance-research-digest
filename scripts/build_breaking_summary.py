@@ -21,10 +21,10 @@ def parse_latest_section(md: str) -> tuple[str | None, list[str]]:
     sections: list[tuple[str, list[str]]] = []
     buf: list[str] = []
     for line in lines:
-        if line.startswith('## '):
+        if line.startswith('## ') or line.startswith('### '):
             if current is not None:
                 sections.append((current, buf))
-            current = line[3:].strip()
+            current = line.split(' ', 1)[1].strip()
             buf = []
         elif current is not None:
             buf.append(line)

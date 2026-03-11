@@ -1,11 +1,11 @@
 {
   "items": [
     {
-      "id": "2026-03-11-2026-03-11-05:36-hkt-—-watchlist",
-      "time": "2026-03-11 05:36 HKT — Watchlist breaking-news check",
-      "createdAt": "2026-03-11T05:36:00+08:00",
+      "id": "2026-03-11-summary",
+      "time": "Summary",
+      "createdAt": "2026-03-11T00:00:00+08:00",
       "title": "TSLA — Reuters snippet indicates a U.S. Autopilot probe has turned more serious, with prosecutors reportedly focusing on securities and wire-fraud angles. This would raise legal/regulatory risk around Tesla's autonomy narrative if confirmed in full",
-      "summary": "TSLA faces a potentially more severe prosecutorial angle if the Reuters headline is accurate",
+      "summary": "TSLA — Reuters snippet indicates a U.S. Autopilot probe has turned more serious, with prosecutors reportedly focusing on securities and wire-fraud angles. This would raise legal/regulatory risk around Tesla's autonomy narrative if confirmed in full",
       "path": "./2026-03-11.md"
     },
     {
@@ -23,8 +23,104 @@
       "title": "Macro de-escalation signal around the Iran war is easing immediate oil/inflation stress; broad risk sentiment improved. No validated single-name thesis changer found across David's watchlist in this scan",
       "summary": "Macro de-escalation signal around the Iran war is easing immediate oil/inflation stress; broad risk sentiment improved. No validated single-name thesis changer found across David's watchlist in this scan",
       "path": "./2026-03-10.md"
+    },
+    {
+      "id": "2026-03-02-2026-03-02-10:38-hkt-—-material-",
+      "time": "2026-03-02 10:38 HKT — Material macro shock: Hormuz disruption after U.S.-Israel strikes on Iran",
+      "createdAt": "2026-03-02T10:38:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-03-02.md"
+    },
+    {
+      "id": "2026-03-02-2026-03-02-10:38-hkt-—-semicondu",
+      "time": "2026-03-02 10:38 HKT — Semiconductor demand datapoint (supportive, not a fresh shock)",
+      "createdAt": "2026-03-02T10:38:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-03-02.md"
+    },
+    {
+      "id": "2026-02-26-2026-02-26-05:57-hkt-—-material-",
+      "time": "2026-02-26 05:57 HKT — Material break: NVIDIA Q4 beat + above-consensus Q1 guide",
+      "createdAt": "2026-02-26T05:57:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-26.md"
+    },
+    {
+      "id": "2026-02-25-2026-02-25-21:57-hkt-—-ustr-says",
+      "time": "2026-02-25 21:57 HKT — USTR says U.S. tariff rate will rise to 15% or higher for some countries",
+      "createdAt": "2026-02-25T21:57:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-25.md"
+    },
+    {
+      "id": "2026-02-25-2026-02-25-12:57-hkt-—-provision",
+      "time": "2026-02-25 12:57 HKT — Provisional: U.S. official says no Nvidia H200 chips have been sold to Chinese customers yet",
+      "createdAt": "2026-02-25T12:57:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-25.md"
+    },
+    {
+      "id": "2026-02-25-2026-02-25-12:57-hkt-—-monitor-c",
+      "time": "2026-02-25 12:57 HKT — Monitor checkpoint (no second independent material catalyst)",
+      "createdAt": "2026-02-25T12:57:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-25.md"
+    },
+    {
+      "id": "2026-02-25-2026-02-25-11:28-hkt-—-white-hou",
+      "time": "2026-02-25 11:28 HKT — White House says U.S. working to raise temporary tariff rate from 10% to 15%",
+      "createdAt": "2026-02-25T11:28:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-25.md"
+    },
+    {
+      "id": "2026-02-25-2026-02-25-11:27-hkt-—-u.s.-judg",
+      "time": "2026-02-25 11:27 HKT — U.S. judge lets anti-American hiring-bias lawsuit against Tesla proceed",
+      "createdAt": "2026-02-25T11:27:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-25.md"
+    },
+    {
+      "id": "2026-02-24-2026-02-24-06:29-hkt-—-tesla-fil",
+      "time": "2026-02-24 06:29 HKT — Tesla files suit against California DMV over false-advertising ruling",
+      "createdAt": "2026-02-24T06:29:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-24.md"
+    },
+    {
+      "id": "2026-02-24-2026-02-24-06:28-hkt-—-ibm-plung",
+      "time": "2026-02-24 06:28 HKT — IBM plunges ~13% on AI-disruption narrative (Anthropic COBOL tooling)",
+      "createdAt": "2026-02-24T06:28:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-24.md"
+    },
+    {
+      "id": "2026-02-24-2026-02-24-01:28-hkt-—-update:-t",
+      "time": "2026-02-24 01:28 HKT — Update: tariff shock broadens into deeper risk-off move",
+      "createdAt": "2026-02-24T01:28:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-24.md"
+    },
+    {
+      "id": "2026-02-24-2026-02-24-00:28-hkt-—-macro-tra",
+      "time": "2026-02-24 00:28 HKT — Macro trade-policy shock (U.S. tariffs legal whipsaw)",
+      "createdAt": "2026-02-24T00:28:00+08:00",
+      "title": "Breaking alert",
+      "summary": "Breaking alert",
+      "path": "./2026-02-24.md"
     }
   ],
-  "lastCheckedAt": "2026-03-11T07:36:00+08:00",
+  "lastCheckedAt": "2026-03-11T08:36:00+08:00",
   "lastCheckStatus": "ok"
 }

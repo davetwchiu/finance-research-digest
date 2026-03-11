@@ -17,10 +17,10 @@ def parse_sections(md: str) -> list[tuple[str, list[str]]]:
     buf: list[str] = []
     out: list[tuple[str, list[str]]] = []
     for line in lines:
-        if line.startswith('## '):
+        if line.startswith('## ') or line.startswith('### '):
             if current is not None:
                 out.append((current, buf))
-            current = line[3:].strip()
+            current = line.split(' ', 1)[1].strip()
             buf = []
         elif current is not None:
             buf.append(line)
@@ -65,6 +65,7 @@ def is_public_alert(section_title: str, body: list[str]) -> bool:
         'status: no material',
         'continuation, not a fresh break',
         'no fresh single-name',
+        'monitor checkpoint',
     ]
     if any(m in text or m in title for m in negative_markers):
         return False
@@ -76,9 +77,11 @@ def is_public_alert(section_title: str, body: list[str]) -> bool:
         'what happened',
     ]
     if any(m in text or m in title for m in positive_markers):
+        if title.strip() == 'summary':
+            return False
         return True
     # Fallback: keep sections that have a substantive summary and do not explicitly say no change.
-    return 'summary:' in text and len(text) > 180
+    return title.strip() != 'summary' and 'summary:' in text and len(text) > 180
 
 
 def parse_created_at(file_date: str, section_title: str) -> str:
