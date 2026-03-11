@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 
@@ -18,7 +18,9 @@ def main() -> int:
     path = Path(args.file)
     path.parent.mkdir(parents=True, exist_ok=True)
 
-    now = datetime.now(timezone.utc).isoformat()
+    now_dt = datetime.now(timezone.utc)
+    now = now_dt.isoformat()
+    now_hkt = now_dt.astimezone(timezone(timedelta(hours=8))).isoformat()
 
     current = {}
     if path.exists():
@@ -33,6 +35,7 @@ def main() -> int:
         "build": build,
         "version": f"v{args.base}+b{build}",
         "updated_at": now,
+        "updated_at_hkt": now_hkt,
     }
 
     path.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")

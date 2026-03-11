@@ -651,12 +651,18 @@ async function loadGlobalFreshness(){
 
 async function loadWebsiteVersion(){
   const v=document.getElementById('websiteVersion');
+  const lastUpdated=document.getElementById('siteLastUpdated');
   if(!v) return;
   try{
     const res = await fetch('./data/cache/site_version.json?ts='+Date.now(), {cache:'no-store'});
     if(!res.ok) throw new Error('no version');
     const j = await res.json();
     if(j.version) v.textContent = j.version;
+    const siteRefreshTs = j.updated_at_hkt || j.updated_at || null;
+    if(lastUpdated && siteRefreshTs){
+      const base = lastUpdated.textContent || 'Last updated: unavailable';
+      lastUpdated.textContent = `${base} · site refresh ${fmtHKT(siteRefreshTs)}`;
+    }
   }catch{
     // keep fallback version text
   }
