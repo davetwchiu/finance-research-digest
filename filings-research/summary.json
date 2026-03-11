@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-03-10T22:00:17+08:00",
+  "updatedAt": "2026-03-11T10:00:18+08:00",
   "count": 14,
-  "market": "14 recent SEC filing(s) matched the current watchlist in the last 45 days.",
-  "tech": "This panel tracks hard company disclosures, not headlines. Use it to verify whether the business story actually changed.",
-  "risk": "If a name has no recent filing here, that does not mean nothing happened \u2014 only that no target SEC form was found in the recent window.",
-  "latestPath": "./reports/filings/2026-03-10.html"
+  "market": "14 recent SEC filing(s) matched the current watchlist in the last 45 days. No brand-new target filing arrived on this refresh, but the latest report was upgraded with primary-filing read-through on the newest/material disclosures.",
+  "tech": "This panel tracks hard company disclosures, not headlines. The latest refresh reads the primary SEC filing pages and, where needed, the attached exhibit carrying the real disclosure.",
+  "risk": "Not every 8-K is an operating update: some are compensation or deal-completion disclosures. If a filing could not be fully read, the report says so explicitly.",
+  "latestPath": "./reports/filings/2026-03-11.html"
 }
