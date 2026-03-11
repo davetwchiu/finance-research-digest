@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-03-11T12:59:27+00:00",
-  "generated_at_hkt": "2026-03-11T20:59:27+08:00",
+  "generated_at_utc": "2026-03-11T15:57:25+00:00",
+  "generated_at_hkt": "2026-03-11T23:57:25+08:00",
   "report": "reports/2026-03-11.html",
   "pages": {
     "AAPL": {
       "ticker": "AAPL",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 69,
       "provisional": true,
@@ -27,7 +27,7 @@
     },
     "AVGO": {
       "ticker": "AVGO",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 85,
       "provisional": true,
@@ -49,7 +49,7 @@
     },
     "BBAI": {
       "ticker": "BBAI",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 76,
       "provisional": true,
@@ -71,7 +71,7 @@
     },
     "KTOS": {
       "ticker": "KTOS",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 73,
       "provisional": true,
@@ -93,7 +93,7 @@
     },
     "NVDA": {
       "ticker": "NVDA",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -106,16 +106,16 @@
       "businessEvidenceCount": 3,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 87,
+      "score": 93,
       "decision": {
-        "stance": "wait",
+        "stance": "watch",
         "macroSensitivity": "medium",
-        "actionText": "Wait for proof \u2014 price is still below trend support."
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
       }
     },
     "ONDS": {
       "ticker": "ONDS",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 73,
       "provisional": true,
@@ -137,7 +137,7 @@
     },
     "PLTR": {
       "ticker": "PLTR",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -159,7 +159,7 @@
     },
     "RDW": {
       "ticker": "RDW",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 79,
       "provisional": true,
@@ -181,9 +181,9 @@
     },
     "RKLB": {
       "ticker": "RKLB",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 73,
+      "evidenceQualityScore": 79,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
@@ -194,16 +194,16 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 41,
+      "score": 52,
       "decision": {
-        "stance": "wait",
+        "stance": "watch",
         "macroSensitivity": "high",
-        "actionText": "Wait for proof \u2014 price is still below trend support."
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
       }
     },
     "TSLA": {
       "ticker": "TSLA",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -216,18 +216,18 @@
       "businessEvidenceCount": 3,
       "moatComparePoints": 2,
       "catalystVerifiedCount": 0,
-      "score": 63,
+      "score": 74,
       "decision": {
-        "stance": "wait",
+        "stance": "watch",
         "macroSensitivity": "medium",
-        "actionText": "Wait for proof \u2014 price is still below trend support."
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
       }
     },
     "TSM": {
       "ticker": "TSM",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 80,
+      "evidenceQualityScore": 82,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
@@ -238,7 +238,7 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 1,
       "catalystVerifiedCount": 0,
-      "score": 54,
+      "score": 59,
       "decision": {
         "stance": "watch",
         "macroSensitivity": "medium",
@@ -247,7 +247,7 @@
     },
     "UUUU": {
       "ticker": "UUUU",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 65,
       "provisional": true,
@@ -269,9 +269,9 @@
     },
     "GOOG": {
       "ticker": "GOOG",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 69,
+      "evidenceQualityScore": 72,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
@@ -282,16 +282,16 @@
       "businessEvidenceCount": 0,
       "moatComparePoints": 0,
       "catalystVerifiedCount": 0,
-      "score": 48,
+      "score": 54,
       "decision": {
-        "stance": "wait",
+        "stance": "watch",
         "macroSensitivity": "lower",
-        "actionText": "Wait for proof \u2014 price is still below trend support."
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
       }
     },
     "LITE": {
       "ticker": "LITE",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 83,
       "provisional": true,
@@ -313,7 +313,7 @@
     },
     "COHR": {
       "ticker": "COHR",
-      "lastVerifiedHKT": "2026-03-11T20:59:11+08:00",
+      "lastVerifiedHKT": "2026-03-11T23:56:06+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 75,
       "provisional": true,

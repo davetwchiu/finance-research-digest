@@ -400,7 +400,7 @@ def _decision_view(ticker: str, sig: dict, score: Score, evidence_quality: int, 
         "<div class='decision-grid'>"
         f"<div class='decision-metric'><span class='meta-label'>Action stance</span><span class='meta-value'>{stance.upper()}</span></div>"
         f"<div class='decision-metric'><span class='meta-label'>Macro sensitivity</span><span class='meta-value'>{macro_sensitivity.upper()}</span></div>"
-        f"<div class='decision-metric'><span class='meta-label'>Technical score</span><span class='meta-value'>{score.ta}/44</span></div>"
+        f"<div class='decision-metric'><span class='meta-label'>Setup score</span><span class='meta-value'>{score.ta}/44</span></div>"
         f"<div class='decision-metric'><span class='meta-label'>Fundamental score</span><span class='meta-value'>{score.fundamentals}/40</span></div>"
         "</div></div>"
     )
@@ -438,9 +438,9 @@ def build_page(ticker: str, sig: dict, f: dict, funds: dict[str, dict], fdoc: di
 <p><a href='../index.html'>← Back</a> · <a href='../{report_path}'>Daily report</a></p>
 <h1>{ticker} — Atlas research brief</h1>
 <div class='card'><h2>Verification status</h2><div class='meta-grid'><div class='meta-item'><span class='meta-label'>Last verified</span><span class='meta-value'>{last_verified_hkt} HKT</span></div><div class='meta-item'><span class='meta-label'>Freshness state</span><span class='meta-value'>{freshness_state}</span></div><div class='meta-item'><span class='meta-label'>Evidence quality score</span><span class='meta-value'>{evidence_quality}/100</span></div><div class='meta-item'><span class='meta-label'>TradingView mapping</span><span class='meta-value'>{_tv_symbol(ticker)}</span></div></div></div>
+<div class='card'><h2>At a glance</h2><p><span class='pill'>Status: {status}</span><span class='pill'>Score: {score.total}/100</span><span class='pill'>Setup: {score.ta}</span><span class='pill'>Fundamentals: {score.fundamentals}</span><span class='pill'>Freshness age: {_fmt(age_h,1,'h')}</span></p>{plain_language_html}<p class='muted'>Hard rule: no evidence, no claim. Thin evidence stays clearly labeled instead of being dressed up as conviction.</p></div>
 {decision_html}
 {stale_banner}{prov_banner}
-<div class='card'><h2>At a glance</h2><p><span class='pill'>Status: {status}</span><span class='pill'>Score: {score.total}/100</span><span class='pill'>TA: {score.ta}</span><span class='pill'>Fundamentals: {score.fundamentals}</span><span class='pill'>Freshness age: {_fmt(age_h,1,'h')}</span></p>{plain_language_html}<p class='muted'>Hard rule: no evidence, no claim. Thin evidence stays clearly labeled instead of being dressed up as conviction.</p></div>
 <details class='card'><summary>Technical evidence, catalysts, and verification notes</summary>
 <div class='card'><h2>1. What changed in last 72h</h2>{changed_html}</div>
 <div class='card'><h2>2. Business reality</h2>{biz_html}</div>
