@@ -99,9 +99,9 @@
       <div class="card">
         <h2>Latest Report — Executive Summary</h2>
         <div id="execSummaryTime" class="muted">Last updated: loading...</div>
-        <div id="execSummaryMacro" class="muted" style="margin-top:6px">Macro: loading...</div>
-        <div id="execSummaryPolicy" class="muted" style="margin-top:6px">Policy: loading...</div>
-        <div id="execSummaryDelta" class="muted" style="margin-top:6px">Change vs yesterday: loading...</div>
+        <div id="execSummaryMacro" class="muted" style="margin-top:8px">Macro: loading...</div>
+        <div id="execSummaryPolicy" class="muted" style="margin-top:8px">Policy: loading...</div>
+        <div id="execSummaryDelta" class="muted" style="margin-top:8px">Key takeaway: loading...</div>
         <div class="row" style="margin-top:10px">
           <a class="btn" id="latestReportBtn" href="./reports/">Open full report</a>
         </div>
@@ -490,18 +490,18 @@ async function loadExecSummary(){
     const macro = j.macro || (Array.isArray(j.watchlist) ? `Market snapshot across ${j.watchlist.length} tracked names updated.` : 'No macro summary yet.');
     const policy = j.policy || 'Policy summary pending next macro-format run.';
     const updatedTs = j.updatedAt || j.updated_at || null;
-    const delta = j.delta || (updatedTs ? `Data refresh timestamp: ${updatedTs}` : 'No delta summary yet.');
+    const delta = j.delta || 'No key takeaway summary yet.';
     ts.textContent = `Last updated: ${fmtHKT(updatedTs)}`;
     m.textContent = `Macro: ${macro}`;
     p.textContent = `Policy: ${policy}`;
-    d.textContent = `Change vs yesterday: ${delta}`;
+    d.textContent = `Key takeaway: ${delta}`;
     setLastUpdated(updatedTs);
     if(j.latestReportPath){ b.href = j.latestReportPath; }
   }catch{
     ts.textContent = 'Last updated: unavailable';
     m.textContent = 'Macro: Summary will appear after next report run.';
     p.textContent = 'Policy: Summary will appear after next report run.';
-    d.textContent = 'Change vs yesterday: Summary will appear after next report run.';
+    d.textContent = 'Key takeaway: Summary will appear after next report run.';
     setLastUpdated(null);
   }
 }
