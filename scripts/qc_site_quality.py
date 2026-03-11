@@ -58,6 +58,18 @@ def _index_uses_summary_updatedat(index_html: Path) -> bool:
     return "summaryHours = _hoursOld(j.updatedAt);" in s
 
 
+def _index_has_site_refresh_signal(index_html: Path) -> bool:
+    s = index_html.read_text(encoding="utf-8", errors="ignore")
+    # Guard the extra site-refresh timestamp wiring so homepage freshness does
+    # not silently look older than the ticker/local-analysis refresh cycle.
+    required = (
+        "fetch('./data/cache/site_version.json?ts='+Date.now(), {cache:'no-store'})",
+        "const siteRefreshTs = j.updated_at_hkt || j.updated_at || null;",
+        "lastUpdated.textContent = `${base} · site refresh ${fmtHKT(siteRefreshTs)}`;",
+    )
+    return all(part in s for part in required)
+
+
 def _index_uses_fresh_signals_source(index_html: Path) -> bool:
     s = index_html.read_text(encoding="utf-8", errors="ignore")
     return "./data/cache/signals_local.json" in s or "signals_local.json" in s
@@ -136,6 +148,8 @@ def main() -> int:
         fails.append("index missing deep-analysis stale indicator wiring")
     if not _index_uses_summary_updatedat(index_html):
         fails.append("index freshness uses wrong summary timestamp field (expect updatedAt)")
+    if not _index_has_site_refresh_signal(index_html):
+        fails.append("index missing site-refresh timestamp wiring")
     if not _index_uses_fresh_signals_source(index_html):
         fails.append("index is not wired to the fresh local signals source")
 
