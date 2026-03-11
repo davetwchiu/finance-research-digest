@@ -202,10 +202,8 @@ def _delivery_failures_are_already_recovered(
     return recovered_at is not None and recovered_at >= latest_failed_at
 
 
-def _has_recent_delivery_failure_evidence(delivery_health: Dict[str, Any], latest_run: Dict[str, Any]) -> bool:
-    if int(delivery_health.get("recent_fail_count") or 0) > 0:
-        return True
-    err = str(latest_run.get("error") or "").strip().lower()
+def _error_looks_like_delivery_failure(error_text: Any) -> bool:
+    err = str(error_text or "").strip().lower()
     if not err:
         return False
     delivery_error_markers = (
@@ -217,6 +215,23 @@ def _has_recent_delivery_failure_evidence(delivery_health: Dict[str, Any], lates
         "message thread not found",
     )
     return any(marker in err for marker in delivery_error_markers)
+
+
+
+def _has_recent_delivery_failure_evidence(delivery_health: Dict[str, Any], latest_run: Dict[str, Any]) -> bool:
+    if _error_looks_like_delivery_failure(latest_run.get("error")):
+        return True
+    if _error_looks_like_delivery_failure(latest_run.get("deliveryError")):
+        return True
+    if int(delivery_health.get("recent_fail_count") or 0) <= 0:
+        return False
+    latest_failed_at = _parse_iso_utc(delivery_health.get("latest_failed_at_utc"))
+    latest_run_at = _run_ts_to_utc(latest_run.get("ts"))
+    if latest_failed_at is None or latest_run_at is None:
+        return True
+    # Ignore stale failed-queue residue when the latest run failed for a non-delivery
+    # reason (for example, an in-session edit mismatch) after the last queue failure.
+    return latest_failed_at >= latest_run_at
 
 
 def _repo_path(value: str) -> str:
