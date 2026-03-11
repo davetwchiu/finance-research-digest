@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-03-11T14:00:23+08:00",
+  "updatedAt": "2026-03-11T18:04:13+08:00",
   "count": 14,
-  "market": "14 recent SEC filing(s) matched the current watchlist in the last 45 days.",
-  "tech": "This panel tracks hard company disclosures, not headlines. Use it to verify whether the business story actually changed.",
-  "risk": "If a name has no recent filing here, that does not mean nothing happened \u2014 only that no target SEC form was found in the recent window.",
+  "market": "14 recent SEC filing(s) matched the current watchlist in the last 45 days. The five freshest filings were re-read from the primary SEC documents on this run.",
+  "tech": "This panel tracks hard company disclosures, not headlines. The latest report now prioritizes filing-specific layman takeaways instead of generic form descriptions.",
+  "risk": "Not every older filing in the 45-day window was re-read on this cycle; the newest/relevant filings were prioritized first. If a filing could not be fully read, the report states that explicitly.",
   "latestPath": "./reports/filings/2026-03-11.html"
 }
