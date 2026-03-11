@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Industry Research Notebook — 10 Mar 2026</title>
+  <title>AI Industry Research Notebook — 11 Mar 2026</title>
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <style>
     :root { --bg:#0b1020; --card:#121a33; --ink:#e9eeff; --muted:#aab6df; --line:#2a396c; --accent:#9bc1ff; --good:#8cf0b5; --bad:#ffb1b1; --warn:#ffd68a; }
@@ -30,83 +30,86 @@
 <div class="container">
   <p><a href="../index.html">← Back to toolbox</a></p>
   <h1>AI Industry Research Notebook (long-form)</h1>
-  <p class="muted">Prepared for David • Tuesday, 10 Mar 2026 (09:30 HKT) • A/B workflow: Builder draft + Gate review pass.</p>
-  <p class="muted">Last updated: 2026-03-10 09:30 HKT</p>
+  <p class="muted">Prepared for David • Wednesday, 11 Mar 2026 (09:30 HKT) • A/B workflow: Builder draft + Gate review pass.</p>
+  <p class="muted">Last updated: 2026-03-11 09:30 HKT</p>
 
   <div class="card">
     <h2>1) Executive thesis and key calls</h2>
-    <p><span class="tag good">Core thesis</span> The AI industry is still in a real buildout, but the center of gravity has shifted. The question is no longer <em>whether</em> demand exists. It is whether the system can convert extraordinary demand into durable cash flow before capex discipline, power constraints, and policy friction bite.</p>
+    <p><span class="tag good">Core thesis</span> AI demand is no longer the debate. The real debate is <strong>who keeps the economics</strong> once the industry moves from emergency buildout to measured return-on-capital scrutiny. My base case is that the next leg of value capture stays concentrated in <strong>compute, packaging, networking, cloud distribution, and workflow owners with real seat expansion</strong>. Many software vendors will show usage growth before they show pricing power.</p>
     <ol>
-      <li><strong>Near-term winners are still infrastructure-heavy</strong>, especially NVIDIA, Broadcom, TSMC packaging, and hyperscaler capacity owners. But the easy multiple expansion phase is behind them unless utilization and gross-profit conversion stay unusually strong.</li>
-      <li><strong>Enterprise adoption is broadening, but production value is uneven.</strong> OpenAI and Anthropic data both point to deeper usage, yet much of the volume still clusters around coding, knowledge work, and constrained workflow augmentation rather than full autonomy.</li>
-      <li><strong>The most underrated bottleneck is no longer just chips.</strong> It is the full chain: advanced packaging, networking, datacenter buildout, and especially electricity and interconnection timing.</li>
-      <li><strong>My base case for the next 12 months:</strong> value capture remains skewed toward compute and distribution owners; many software-layer vendors will discover that “AI feature attach” is easier than AI pricing power.</li>
-      <li><strong>High-conviction call:</strong> reasoning/inference demand is real and still accelerating. <strong>Lower-conviction call:</strong> agentic enterprise deployment at scale in regulated workflows by year-end 2026.</li>
+      <li><strong>Infrastructure still wins the next 3–6 months.</strong> NVIDIA, Broadcom, TSMC advanced packaging, and hyperscaler capacity owners remain the cleanest monetization layer because their demand is visible and paid for now.</li>
+      <li><strong>Enterprise adoption is real, but the monetization mix is uneven.</strong> OpenAI's data show scale and deeper workflow usage, while Anthropic's data still show heavy concentration in a relatively small set of tasks. That is a good setup for selective winners, not a blanket software boom.</li>
+      <li><strong>The main bottleneck has widened from chips to deployable capacity.</strong> Ready-to-serve AI capacity depends on silicon, CoWoS/backend packaging, networking, datacenter commissioning, and power/interconnection timing. The scarce good is no longer just the GPU.</li>
+      <li><strong>Reasoning demand is real; full enterprise autonomy is still oversold.</strong> Higher-value inference is clearly monetizing in coding, research, and scoped workflows. Claims about broad low-supervision agents across regulated enterprise environments still outrun the evidence.</li>
+      <li><strong>Key market call:</strong> over the next 12 months, the market should become less tolerant of capex stories without proof of utilization, margin durability, and cash-flow conversion. That is the hurdle where some AI narratives break.</li>
     </ol>
   </div>
 
   <div class="card">
     <h2>2) Industry map by value chain</h2>
     <table>
-      <tr><th>Segment</th><th>Where value is captured now</th><th>Names to watch</th><th>Analyst judgement</th></tr>
-      <tr><td>Compute: accelerators, networking, packaging</td><td>GPU/ASIC ASPs, Ethernet and interconnect attach, CoWoS/backend throughput</td><td>NVIDIA, Broadcom, TSMC, hyperscaler custom silicon programs</td><td>Still the cleanest monetization layer. This is where revenue is most visible and margins are still strongest.</td></tr>
-      <tr><td>Foundation models</td><td>Usage growth, distribution reach, developer ecosystem, enterprise trust</td><td>OpenAI, Anthropic, Google, Meta, xAI, open-weight ecosystems</td><td>Capability keeps advancing, but pure model moats are weakening. Distribution and workflow embedding matter more than benchmark bragging rights.</td></tr>
-      <tr><td>Software and applications</td><td>Workflow control, seat expansion, pricing for outcomes not prompts</td><td>Microsoft, Google Workspace, Salesforce, ServiceNow, Oracle, Palantir, Adobe</td><td>Most attractive medium-term upside, but only for products that become part of the operating workflow rather than novelty assistants.</td></tr>
-      <tr><td>Enterprise services and governance</td><td>Integration, controls, compliance, domain deployment</td><td>Accenture, IBM, cloud consultancies, internal platform teams</td><td>Demand is real, but margin durability depends on how much of the work gets automated away by the very systems being deployed.</td></tr>
+      <tr><th>Segment</th><th>Where value is being captured now</th><th>Names to watch</th><th>Analyst judgement</th></tr>
+      <tr><td>Compute / networking / packaging</td><td>GPU and ASIC pricing, Ethernet and interconnect attach, advanced packaging throughput, turnkey cluster delivery</td><td>NVIDIA, Broadcom, TSMC, Microsoft, Amazon, Alphabet, Meta</td><td>Still the strongest layer. Revenue is visible, urgency is high, and switching costs are practical even when theoretical alternatives exist.</td></tr>
+      <tr><td>Foundation models</td><td>Developer mindshare, enterprise trust, model routing, distribution, tool access, bundled enterprise access</td><td>OpenAI, Anthropic, Google, Meta, xAI, open-weight ecosystems</td><td>Raw-model moats are getting thinner. Durable value comes from distribution, workflow embedding, safety/compliance posture, and inference economics.</td></tr>
+      <tr><td>Software / applications</td><td>Workflow control, seat growth, attach rates, outcome-based pricing, integration into systems of record</td><td>Microsoft 365/Copilot, Google Workspace, Salesforce, ServiceNow, Adobe, Palantir, Oracle</td><td>Most interesting upside layer, but also where investor disappointment risk is highest because many “AI features” will be bundled rather than separately monetized.</td></tr>
+      <tr><td>Enterprise services / governance</td><td>Integration, data plumbing, change management, auditability, risk controls</td><td>Accenture, IBM, Databricks partners, internal enterprise platform teams</td><td>Necessary layer, but structurally less defensible unless the service provider owns the workflow, data, or governance system after deployment.</td></tr>
     </table>
   </div>
 
   <div class="card">
-    <h2>3) Demand analysis (enterprise adoption, consumer uptake, pricing power, pilot→production)</h2>
+    <h2>3) Demand analysis (enterprise adoption, consumer uptake, pricing power, pilot→production conversion)</h2>
     <h3>Facts</h3>
     <ul>
-      <li>OpenAI said ChatGPT now serves <strong>more than 800 million weekly users</strong> and that it has <strong>more than 1 million business customers</strong>, with <strong>more than 7 million ChatGPT for Work seats</strong> and ChatGPT Enterprise seats up <strong>9x year over year</strong>.</li>
-      <li>OpenAI’s 2025 enterprise report said weekly messages in ChatGPT Enterprise increased roughly <strong>8x</strong> over the past year, structured workflow usage rose <strong>19x year-to-date</strong>, and average reasoning-token consumption per organization increased roughly <strong>320x</strong> in 12 months.</li>
-      <li>That same report said <strong>75%</strong> of workers reported AI improved speed or quality, with reported time savings of <strong>40–60 minutes per day</strong>.</li>
-      <li>OpenAI’s NBER-linked consumer usage study said ChatGPT had roughly <strong>700 million weekly active users</strong> in mid-2025 and that about <strong>one third of “Doing” usage</strong> was work-related.</li>
-      <li>Anthropic’s January 2026 Economic Index said Claude usage remains concentrated in a limited number of tasks, with the <strong>top 10 tasks accounting for 24%</strong> of sampled Claude.ai conversations, and that augmentation patterns were just over half of Claude.ai conversations while automation remained dominant in first-party API traffic.</li>
+      <li>OpenAI says it now has <strong>more than 1 million business customers</strong> directly using OpenAI via ChatGPT for Work or the developer platform.</li>
+      <li>OpenAI says ChatGPT serves <strong>more than 800 million weekly users</strong>, giving it a consumer-to-enterprise distribution flywheel that most rivals do not have.</li>
+      <li>OpenAI says it now has <strong>more than 7 million ChatGPT for Work seats</strong>, up <strong>40%</strong> in two months, and ChatGPT Enterprise seats are up <strong>9x year over year</strong>.</li>
+      <li>OpenAI's <em>State of enterprise AI</em> report says weekly messages in ChatGPT Enterprise increased roughly <strong>8x</strong> over the past year, structured workflow usage rose <strong>19x year-to-date</strong>, and average reasoning-token consumption per organization increased approximately <strong>320x</strong> in 12 months.</li>
+      <li>The same OpenAI report says <strong>75%</strong> of workers surveyed report improved speed or quality from AI use, with reported time savings of roughly <strong>40–60 minutes per day</strong>.</li>
+      <li>Anthropic's January 2026 Economic Index says Claude usage remains concentrated: the <strong>top 10 tasks account for 24%</strong> of sampled Claude.ai conversations, augmentation is <strong>52%</strong> of Claude.ai conversations, and automated use remains dominant in first-party API traffic.</li>
     </ul>
     <h3>Interpretation</h3>
-    <p>Demand is not speculative anymore. Both consumer scale and enterprise penetration are clearly real. But usage breadth is not the same as monetization quality. The strongest signal is not “people are trying AI”; it is that enterprises are moving from casual prompts into repeatable, structured workflows. That said, current evidence still points to <strong>augmentation first, full automation later</strong>.</p>
-    <p><span class="tag good">Confidence: High</span> on demand breadth. <span class="tag warn">Confidence: Medium</span> on pricing power durability because vendor disclosures still emphasize adoption metrics more than cohort retention, realized ROI, or renewal quality.</p>
+    <p>The strongest demand signal is no longer trial activity. It is the move from casual prompting into <strong>repeatable structured workflows</strong>. OpenAI's data point to deepening production usage, especially in knowledge work and coding-adjacent workflows. Anthropic's data are also useful because they show restraint: usage is broadening, but it is still concentrated in a limited task set. That combination argues for <strong>real enterprise adoption, but selective monetization</strong>.</p>
+    <p><span class="tag good">Confidence: High</span> that demand breadth is real. <span class="tag warn">Confidence: Medium</span> on long-term pricing power, because vendor disclosures still emphasize usage and seat growth more than renewal economics, churn, and gross-margin quality at the model/application layer.</p>
   </div>
 
   <div class="card">
     <h2>4) Supply analysis (chips, packaging, cloud capacity, power/energy, talent bottlenecks)</h2>
     <h3>Facts</h3>
     <ul>
-      <li>NVIDIA reported <strong>$68.1 billion</strong> of Q4 FY2026 revenue, up <strong>73%</strong> year over year, with <strong>75.2%</strong> non-GAAP gross margin for the quarter and <strong>$215.9 billion</strong> of FY2026 revenue, up <strong>65%</strong>.</li>
-      <li>Microsoft FY2026 Q2 reported <strong>$81.3 billion</strong> of revenue, <strong>$51.5 billion</strong> of Microsoft Cloud revenue, and commercial remaining performance obligation up <strong>110%</strong> to <strong>$625 billion</strong>. On the earnings call, Microsoft said capital expenditures were <strong>$37.5 billion</strong> and roughly <strong>two thirds</strong> of capex was on short-lived assets, primarily GPUs and CPUs.</li>
-      <li>Broadcom’s official investor releases indicated AI semiconductor revenue reached roughly <strong>$8.2 billion</strong> in fiscal Q4 2025 and stayed strong into fiscal Q1 2026, driven by custom accelerators and Ethernet AI switches.</li>
-      <li>TSMC management said it was trying “<strong>very hard to narrow the gap, for now and for 2026</strong>” and was building many new backend facilities to increase <strong>CoWoS capacity</strong> because AI demand remained very strong.</li>
-      <li>IEA’s 2025 <em>Energy and AI</em> work said global data-center electricity demand is projected to rise from roughly <strong>460 TWh in 2024</strong> to about <strong>945 TWh by 2030</strong> in its base case, with AI the most important growth driver.</li>
+      <li>NVIDIA reported <strong>$68.1 billion</strong> of Q4 FY2026 revenue, up <strong>73%</strong> year over year, with <strong>75.2%</strong> non-GAAP gross margin. Full-year revenue reached <strong>$215.9 billion</strong>, up <strong>65%</strong>.</li>
+      <li>NVIDIA guided to <strong>$78.0 billion ±2%</strong> of revenue for Q1 FY2027 and explicitly said it is <strong>not assuming Data Center compute revenue from China</strong> in that outlook.</li>
+      <li>Microsoft reported fiscal Q2 2026 revenue of <strong>$81.3 billion</strong>, Microsoft Cloud revenue of <strong>$51.5 billion</strong>, and commercial remaining performance obligation of <strong>$625 billion</strong>, up <strong>110%</strong>.</li>
+      <li>Microsoft management said quarterly capital expenditure was roughly <strong>$37.5 billion</strong>, with about <strong>two-thirds</strong> going to short-lived assets, primarily GPUs and CPUs.</li>
+      <li>Broadcom's fiscal Q1 2026 release was partly blocked by anti-bot controls during this run, so I am carrying forward only the lower-risk conclusion from official investor materials already cited yesterday: AI semiconductor revenue remained very strong into fiscal Q1 2026, led by custom accelerators and AI switching.</li>
+      <li>The IEA's <em>Energy and AI</em> work still frames the macro bottleneck correctly: AI is a meaningful growth driver for data-center electricity demand, and grid/transmission bottlenecks can matter almost as much as chip bottlenecks in determining usable AI capacity.</li>
     </ul>
     <h3>Interpretation</h3>
-    <p>The shortage narrative is evolving, not disappearing. Leading-edge silicon supply is improving, but the binding constraint has broadened into a system bottleneck: packaging, networking, datacenter commissioning, and power. That matters because it raises the all-in cost of useful deployed capacity. In other words, <strong>the scarcest product is not chips; it is ready-to-serve AI capacity</strong>.</p>
-    <p><span class="tag good">Confidence: High</span> that infra demand remains tight. <span class="tag warn">Confidence: Medium</span> on the pace of easing because the weakest links are increasingly local: permitting, substations, transformers, cooling, and workforce availability.</p>
+    <p>The supply chain is not normalizing in the way many investors mean when they say “the shortage is easing.” Individual links may improve, but the bottleneck has become <strong>multi-stage and local</strong>: packaging, networking, datacenter fit-out, utility access, cooling, and interconnection. That means <strong>deployable AI capacity</strong> remains scarce even when raw silicon supply improves.</p>
+    <p>This is why infrastructure names still deserve premium attention. The market is not just paying for chips; it is paying for the ability to turn capex into working clusters on time.</p>
+    <p><span class="tag good">Confidence: High</span> that infra demand stays strong near term. <span class="tag warn">Confidence: Medium</span> on how fast bottlenecks ease, because the weakest links are now outside pure semiconductor fabrication.</p>
   </div>
 
   <div class="card">
     <h2>5) Technology frontier: hype vs monetization reality</h2>
     <table>
-      <tr><th>Theme</th><th>What is monetizing now</th><th>What is still hype-heavy</th><th>Bottom line</th></tr>
-      <tr><td>Reasoning models</td><td>Higher-value coding, research, analytics, and enterprise knowledge tasks</td><td>Claims that better reasoning alone creates durable moat</td><td>Real demand, but margin depends on inference cost discipline and workflow stickiness.</td></tr>
-      <tr><td>Agents</td><td>Constrained agents with approvals, scoped tools, and clear fallback rules</td><td>Cross-system autonomous enterprise agents with low exception rates in regulated environments</td><td>The agent story is early but real. The fully autonomous story is still over-marketed.</td></tr>
-      <tr><td>Multimodal</td><td>Customer support, content ops, code + doc workflows, voice systems</td><td>Blanket claims of universal workflow replacement</td><td>Useful where it reduces steps; weak where it just adds novelty.</td></tr>
-      <tr><td>Open-weight models</td><td>Cost-sensitive deployment, customization, data residency needs</td><td>Assumption that open weights automatically destroy frontier model economics</td><td>Open weights pressure pricing, but not distribution and integration moats.</td></tr>
+      <tr><th>Theme</th><th>What monetizes now</th><th>What is still hype-heavy</th><th>Bottom line</th></tr>
+      <tr><td>Reasoning models</td><td>Coding, research, analytics, support triage, workflow compression for high-value knowledge work</td><td>The idea that better benchmark scores alone create a lasting moat</td><td>Reasoning demand is real. The business question is cost-per-useful-task, not benchmark theater.</td></tr>
+      <tr><td>Agents</td><td>Scoped agents with approvals, domain tools, and fallbacks</td><td>Claims of low-supervision cross-system autonomy in regulated enterprise environments</td><td>Useful and expanding, but still mostly narrow. Enterprise controls are not optional; they are the product.</td></tr>
+      <tr><td>Multimodal</td><td>Voice support, document workflows, customer operations, media generation in specific pipelines</td><td>Universal workflow replacement narratives</td><td>Strong where it removes steps or labor. Weak where it mainly adds novelty or demo value.</td></tr>
+      <tr><td>Open-weight models</td><td>Cost-sensitive deployment, customization, sovereignty, on-prem/security needs</td><td>The idea that open weights automatically erase frontier-model economics</td><td>Open weights pressure pricing, especially at the model layer, but do not eliminate workflow, distribution, or compliance moats.</td></tr>
     </table>
-    <p><strong>Analyst judgement:</strong> the market still overpays for “frontier” and underweights <strong>operational reliability, cost-per-task, governance, and channel distribution</strong>. That is why Microsoft, OpenAI, Anthropic, and Google matter differently: not just for raw model quality, but for where they sit in the user workflow.</p>
+    <p><strong>Analyst judgement:</strong> the market still underweights operational reliability, governance, and distribution. Model quality matters, but in enterprise budgets the winning package is usually <strong>good-enough intelligence + trusted access to data + workflow fit + supportability</strong>.</p>
   </div>
 
   <div class="card">
     <h2>6) Competitive dynamics and moats by segment</h2>
     <ul>
-      <li><strong>NVIDIA:</strong> still the strongest integrated compute moat because silicon, networking, software stack, ecosystem, and customer urgency all reinforce each other. Main risk: customer concentration and gradual custom-silicon substitution at the margin, not a sudden collapse.</li>
-      <li><strong>Broadcom:</strong> highly leveraged to the custom-AI and switching buildout. Moat is narrower than NVIDIA’s but still powerful where hyperscalers want custom architectures and scaled Ethernet fabrics.</li>
-      <li><strong>TSMC:</strong> one of the most defensible chokepoints in the stack. If advanced packaging and backend capacity stay constrained, TSMC captures value even if end-market leadership rotates.</li>
-      <li><strong>Microsoft / Google / Amazon:</strong> moat is distribution plus cloud control plus enterprise trust. The real battleground is not model quality alone; it is who owns identity, data access, developer workflow, and budget line-items.</li>
-      <li><strong>OpenAI / Anthropic:</strong> strong product pull and strong developer mindshare, but long-term moat depends on staying embedded in enterprise systems rather than remaining an expensive intelligence layer behind someone else’s distribution.</li>
-      <li><strong>Enterprise application layer:</strong> moats exist where AI is tied to system-of-record data and measurable workflow outcomes. They are weak where AI is just an add-on interface wrapped around commodity models.</li>
+      <li><strong>NVIDIA:</strong> still the strongest moat in the stack because silicon, networking, CUDA/software, partner ecosystem, and customer urgency reinforce each other. The real risk is gradual custom silicon dilution at the margin, not a sudden demand collapse.</li>
+      <li><strong>Broadcom:</strong> one of the best-positioned beneficiaries of the custom-AI buildout and Ethernet-centric AI networking. Its moat is narrower than NVIDIA's but real where hyperscalers want custom accelerators and large-scale switching fabric.</li>
+      <li><strong>TSMC:</strong> remains a chokepoint winner because advanced-node manufacturing plus advanced packaging make it essential regardless of which end customer is strongest.</li>
+      <li><strong>Microsoft / Alphabet / Amazon / Meta:</strong> their moat is not just model access. It is distribution, cloud control, data gravity, developer tooling, and the ability to subsidize or bundle AI inside existing spend envelopes.</li>
+      <li><strong>OpenAI / Anthropic:</strong> strong product pull and developer relevance, but long-run moat depends on staying embedded in enterprise workflow and distribution channels instead of becoming an expensive upstream intelligence provider.</li>
+      <li><strong>Application vendors:</strong> moats are strongest when AI is tied to proprietary data, approvals, compliance, and systems of record. They are weakest when AI is just a new interface over commodity model calls.</li>
     </ul>
   </div>
 
@@ -114,107 +117,103 @@
     <h2>7) Financial architecture (capex intensity, unit economics, margin durability, cash-flow quality)</h2>
     <h3>Facts</h3>
     <ul>
-      <li>Microsoft’s FY2026 Q2 call showed capex at <strong>$37.5 billion</strong> in-quarter, with demand continuing to exceed supply.</li>
-      <li>NVIDIA preserved extraordinary profitability even at huge scale, posting <strong>75.2%</strong> non-GAAP gross margin in Q4 FY2026.</li>
-      <li>Alphabet’s February 2026 investor commentary pointed to another very large step-up in 2026 AI infrastructure spending, but I am treating the exact figure as lower-confidence here because direct fetch access to the official call materials was blocked by anti-bot controls.</li>
+      <li>Microsoft's Q2 FY2026 numbers show how capital hungry this cycle is: <strong>$37.5 billion</strong> of capex in one quarter, with management saying demand continues to exceed supply.</li>
+      <li>NVIDIA's Q4 FY2026 results show that best-in-class infrastructure vendors can still convert AI demand into extraordinary profitability, with <strong>75.2%</strong> non-GAAP gross margin.</li>
+      <li>OpenAI and Anthropic usage data both imply rising inference intensity, especially for higher-value reasoning workloads, which matters because inference economics increasingly determine whether software-layer margin stories hold up.</li>
     </ul>
     <h3>Judgement</h3>
-    <p>The industry is still in a land-grab phase, but investors should stop treating all AI capex as equally good. The key distinction is between <strong>capacity built because demand is monetizing well</strong> and <strong>capacity built because nobody wants to be the one who under-invested</strong>. Those are very different return profiles.</p>
-    <p>My framework is simple:</p>
+    <p>The industry's financial test is shifting from <strong>who can spend</strong> to <strong>who can earn through the spend</strong>. In practical terms, I would separate AI capex into two buckets:</p>
     <ul>
-      <li><code>Good capex</code>: rising utilization, improving service mix, visible enterprise conversion, durable gross margin.</li>
-      <li><code>Bad capex</code>: vague AI revenue language, escalating depreciation/lease burden, and weak free-cash-flow conversion.</li>
+      <li><code>Good capex</code>: utilization is rising, paid usage is deepening, backlog converts, and gross margin remains healthy despite inference growth.</li>
+      <li><code>Questionable capex</code>: management leans on ambition language, but revenue disclosure is thin, depreciation/lease burden rises, and free cash flow does not improve proportionately.</li>
     </ul>
-    <p>The market will likely become less tolerant of pure “build now, explain later” stories over the next 6–12 months.</p>
+    <p>My bias is that market tolerance for pure “build now, explain later” narratives falls meaningfully over the next 6–12 months.</p>
   </div>
 
   <div class="card">
     <h2>8) Geopolitics and export-control scenarios</h2>
-    <p>U.S. export controls remain a first-order industry variable because they affect both who can buy frontier compute and where global AI clusters can be assembled.</p>
+    <p>Export controls are now a first-order industry variable, not a side constraint.</p>
     <ul>
-      <li>The U.S. Federal Register’s January 2025 <em>Framework for Artificial Intelligence Diffusion</em> revised controls on advanced computing ICs and added new controls on model weights for certain advanced closed-weight dual-use AI models.</li>
-      <li>The rule was effective <strong>13 Jan 2025</strong>, with a main compliance date of <strong>15 May 2025</strong> and some provisions delayed to <strong>15 Jan 2026</strong>.</li>
+      <li>The BIS <em>Framework for Artificial Intelligence Diffusion</em> revised controls on advanced computing ICs and added controls on AI model weights for certain advanced closed-weight dual-use models.</li>
+      <li>The rule took effect on <strong>13 Jan 2025</strong>, with a main compliance date of <strong>15 May 2025</strong> and some delayed provisions to <strong>15 Jan 2026</strong>.</li>
+      <li>NVIDIA's own Q1 FY2027 outlook explicitly assuming <strong>no Data Center compute revenue from China</strong> is a concrete reminder that geopolitics is already embedded in company planning, not just in investor hypotheticals.</li>
     </ul>
     <table>
-      <tr><th>Scenario</th><th>Probability</th><th>Implication</th><th>Who it hits most</th></tr>
-      <tr><td>Managed tightening (base)</td><td>55%</td><td>Higher compliance cost, more licensing complexity, but supply chains adapt.</td><td>Global cloud operators, frontier model vendors, GPU exporters</td></tr>
-      <tr><td>Harder decoupling shock (bear)</td><td>25%</td><td>Sharper regional bifurcation, inventory dislocation, and lower demand visibility.</td><td>NVIDIA ecosystem, multinational cloud builds, cross-border enterprise deployments</td></tr>
-      <tr><td>Policy clarification / selective relaxation (bull)</td><td>20%</td><td>Lower planning friction and reduced geopolitical discount rate.</td><td>Hyperscalers, custom-silicon programs, multinational enterprise AI providers</td></tr>
+      <tr><th>Scenario</th><th>Probability</th><th>Implication</th><th>Who is hit most</th></tr>
+      <tr><td>Managed tightening (base)</td><td>55%</td><td>More licensing friction and regional architecture workarounds, but global AI buildout continues.</td><td>NVIDIA ecosystem, multinational clouds, frontier-model vendors</td></tr>
+      <tr><td>Harder decoupling shock (bear)</td><td>25%</td><td>Sharper regional bifurcation, lower visibility, inventory dislocation, slower cross-border enterprise deployment.</td><td>Global GPU suppliers, cross-border cloud builds, export-exposed model vendors</td></tr>
+      <tr><td>Selective clarification / modest easing (bull)</td><td>20%</td><td>Lower planning friction, more stable demand mapping, less geopolitical discount in valuation.</td><td>Hyperscalers, custom silicon programs, globally distributed enterprise AI vendors</td></tr>
     </table>
-    <p><strong>Analyst view:</strong> policy is now a product variable. Any valuation model that treats export control as background noise is stale.</p>
+    <p><strong>Analyst view:</strong> if a model or infrastructure investment case ignores export-control risk, it is incomplete.</p>
   </div>
 
   <div class="card">
     <h2>9) Policy/regulatory landscape and likely pathways</h2>
     <ul>
-      <li>The EU AI Act Service Desk says the rollout is progressive: definitions, AI literacy, and prohibitions applied from <strong>2 Feb 2025</strong>; general-purpose AI obligations from <strong>2 Aug 2025</strong>; the majority of rules and enforcement from <strong>2 Aug 2026</strong>; and further high-risk product rules from <strong>2 Aug 2027</strong>.</li>
-      <li>This means 2026 is not a distant compliance story. It is the year procurement teams begin to demand implementation evidence, transparency tooling, and operational governance rather than slide-deck promises.</li>
+      <li>The EU AI Act rollout remains progressive: definitions, AI literacy, and prohibitions applied from <strong>2 Feb 2025</strong>; general-purpose AI obligations from <strong>2 Aug 2025</strong>; the majority of rules and enforcement begin from <strong>2 Aug 2026</strong>; and further high-risk product rules apply from <strong>2 Aug 2027</strong>.</li>
+      <li>That means 2026 is the year compliance moves from policy discussion to procurement reality. Buyers increasingly want governance evidence, auditability, logging, and controls—not just model quality demos.</li>
     </ul>
-    <p><strong>Likely pathway:</strong> more guidance, sandboxes, and sector-specific interpretations rather than one clean global regulatory settlement. Operationally, that favors vendors with strong audit trails, policy controls, and enterprise support over raw-model-only vendors.</p>
+    <p><strong>Likely pathway:</strong> fragmented but tightening implementation across major jurisdictions. The practical winners are vendors that can prove transparency, control, and deployment support. Pure-model vendors with thin enterprise wrappers will have a harder time meeting buyer requirements.</p>
   </div>
 
   <div class="card">
     <h2>10) Risk matrix (probability, impact, early-warning indicators)</h2>
     <table>
       <tr><th>Risk</th><th>Probability (12m)</th><th>Impact</th><th>Early-warning indicators</th></tr>
-      <tr><td>Capex outruns monetization</td><td>Medium-High</td><td>High</td><td>Capex guidance keeps rising while disclosed AI revenue quality and FCF conversion stop improving.</td></tr>
-      <tr><td>Power / interconnection delays</td><td>Medium-High</td><td>High</td><td>Repeated commentary on delayed datacenter commissioning, utility bottlenecks, or slower capacity ramp.</td></tr>
-      <tr><td>Export-control tightening</td><td>Medium</td><td>High</td><td>New BIS actions expanding destination, weight, model, or compute-cluster restrictions.</td></tr>
-      <tr><td>Model-layer commoditization</td><td>High</td><td>Medium</td><td>Steeper API pricing pressure without compensating growth in enterprise bundles or workflow lock-in.</td></tr>
-      <tr><td>Agent reliability disappoints</td><td>Medium-High</td><td>Medium</td><td>High exception rates, weak adoption outside coding/support, or customer rollbacks after pilot phases.</td></tr>
-      <tr><td>Regulatory fragmentation</td><td>Medium</td><td>Medium</td><td>Different disclosure, logging, and governance requirements across the US/EU/Asia creating deployment drag.</td></tr>
+      <tr><td>Capex outruns monetization</td><td>Medium-High</td><td>High</td><td>Capex keeps stepping up while disclosed AI revenue quality, utilization, or free-cash-flow conversion stops improving.</td></tr>
+      <tr><td>Power / interconnection delays</td><td>Medium-High</td><td>High</td><td>Delayed datacenter commissioning, utility bottlenecks, transformer/cooling constraints, or repeated deployment push-outs.</td></tr>
+      <tr><td>Model-layer commoditization</td><td>High</td><td>Medium</td><td>More API price pressure, easier model substitution, and weaker standalone model gross margins without stronger bundling.</td></tr>
+      <tr><td>Export-control tightening</td><td>Medium</td><td>High</td><td>New BIS restrictions on destinations, clusters, model weights, or compliance standards.</td></tr>
+      <tr><td>Agent reliability disappoints</td><td>Medium-High</td><td>Medium</td><td>High exception rates, narrow deployment outside coding/support, weak pilot-to-production conversion in regulated sectors.</td></tr>
+      <tr><td>Regulatory fragmentation</td><td>Medium</td><td>Medium</td><td>Diverging transparency, logging, and risk-management obligations across the US, EU, and Asia.</td></tr>
     </table>
   </div>
 
   <div class="card">
     <h2>11) Scenario tree for next 3 / 6 / 12 months with signposts</h2>
     <h3>3 months (to Jun 2026)</h3>
-    <p><strong>Base:</strong> infra demand remains strong, but market reward shifts toward execution quality rather than capex headline size. <strong>Signposts:</strong> hyperscaler commentary on utilization, inference economics, and backlog conversion.</p>
-    <p><strong>Bull:</strong> enterprise software vendors begin disclosing stronger AI monetization cohorts. <strong>Bear:</strong> power and deployment delays become visible enough to push out usable capacity.</p>
+    <p><strong>Base:</strong> infrastructure demand stays hot and market leadership remains concentrated in capacity owners and clear monetizers. <strong>Signposts:</strong> utilization commentary, backlog conversion, and whether inference demand improves economics or merely shifts cost mix.</p>
+    <p><strong>Bull:</strong> application vendors begin disclosing cleaner AI revenue and better renewal/expansion metrics. <strong>Bear:</strong> datacenter and power bottlenecks push out usable capacity enough to delay monetization.</p>
 
     <h3>6 months (to Sep 2026)</h3>
-    <p><strong>Base:</strong> AI spend stays high, but leadership broadens only selectively into software and services with hard ROI proof. <strong>Signposts:</strong> renewal commentary, outcome-based pricing, and evidence that pilots convert to standardized internal platforms.</p>
+    <p><strong>Base:</strong> value capture broadens selectively into software and enterprise workflow vendors with measurable ROI, but many bundled copilots still fail to show stand-alone pricing power. <strong>Signposts:</strong> seat growth with retention, workflow standardization, and evidence that pilots convert to operating processes.</p>
 
     <h3>12 months (to Mar 2027)</h3>
-    <p><strong>Base:</strong> value capture remains led by compute, packaging, and distribution owners; application-layer winners exist, but are fewer than the market assumes today. <strong>Signposts:</strong> free-cash-flow quality after heavy buildout, lower-cost inference at scale, and whether agentic workflows become normal inside large enterprises rather than isolated case studies.</p>
+    <p><strong>Base:</strong> infrastructure, packaging, and distribution still take the largest share of economics, while a narrower-than-expected set of application winners prove durable moats. <strong>Signposts:</strong> post-buildout free-cash-flow quality, lower-cost inference at scale, and repeatable enterprise agent deployment beyond narrow functions.</p>
   </div>
 
   <div class="card">
     <h2>12) Actionable monitoring dashboard + “what would change my mind”</h2>
     <h3>Dashboard</h3>
     <ol>
-      <li><strong>Hyperscaler capex vs monetization:</strong> Microsoft, Alphabet, Amazon, Meta capex plans versus disclosed AI revenue or usage-quality metrics.</li>
-      <li><strong>Infra bottlenecks:</strong> NVIDIA lead times, Broadcom AI networking momentum, TSMC packaging commentary, utility/interconnection delays.</li>
-      <li><strong>Enterprise conversion quality:</strong> business seats, paid usage depth, retention, renewal, and movement from copilots to system-level workflows.</li>
-      <li><strong>Inference economics:</strong> cost-per-token, routing efficiency, model-mix improvement, gross margin commentary from model and cloud vendors.</li>
-      <li><strong>Policy:</strong> BIS/Federal Register updates, EU AI Act implementation guidance, and procurement-driven compliance changes.</li>
+      <li><strong>Hyperscaler capex vs monetization:</strong> Microsoft, Alphabet, Amazon, Meta capex guidance versus disclosed AI revenue quality, utilization, and margin commentary.</li>
+      <li><strong>Deployable capacity bottlenecks:</strong> NVIDIA lead times, Broadcom AI networking momentum, TSMC packaging commentary, datacenter commissioning, utility/interconnection friction.</li>
+      <li><strong>Enterprise conversion quality:</strong> paid seats, active usage depth, renewal quality, workflow embedding, and whether AI budgets move from experimental to recurring line items.</li>
+      <li><strong>Inference economics:</strong> cost-per-token, routing efficiency, reasoning mix, and whether higher-value use cases offset cost pressure.</li>
+      <li><strong>Policy / geopolitics:</strong> BIS actions, EU AI Act implementation details, and procurement-driven compliance demands.</li>
     </ol>
     <h3>What would change my mind</h3>
     <ul>
-      <li><strong>More bullish on the software layer:</strong> broad evidence that enterprise AI revenue is recurring, high-retention, and margin-accretive rather than bundle-subsidized.</li>
-      <li><strong>More cautious on infrastructure:</strong> signs that utilization is flattening, customers are optimizing spend faster than expected, or power delays are turning planned demand into deferred demand.</li>
-      <li><strong>More constructive on agents:</strong> repeated evidence of low-exception, auditable deployment in regulated workflows beyond coding and internal support.</li>
+      <li><strong>More bullish on software/apps:</strong> broad evidence that AI revenue is recurring, sticky, and margin-accretive rather than mainly bundle-driven.</li>
+      <li><strong>More cautious on infrastructure:</strong> signs of flattening utilization, materially faster customer optimization, or power delays turning demand into repeated deferrals.</li>
+      <li><strong>More constructive on agents:</strong> repeated proof of low-exception, auditable deployment in regulated workflows outside coding and internal support.</li>
     </ul>
   </div>
 
   <div class="card">
     <h2>Sources (dated, linked)</h2>
     <ol class="small">
-      <li>Microsoft FY2026 Q2 press release (28 Jan 2026): <a href="https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast" target="_blank">microsoft.com</a></li>
-      <li>Microsoft FY2026 Q2 earnings call (28 Jan 2026): <a href="https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2" target="_blank">microsoft.com</a></li>
       <li>NVIDIA Q4 and FY2026 results (26 Feb 2026): <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026" target="_blank">nvidianews.nvidia.com</a></li>
+      <li>Microsoft FY2026 Q2 press release (28 Jan 2026): <a href="https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast" target="_blank">microsoft.com</a></li>
+      <li>OpenAI, “1 million business customers” (2025 update): <a href="https://openai.com/index/1-million-businesses-putting-ai-to-work/" target="_blank">openai.com</a></li>
       <li>OpenAI, <em>The state of enterprise AI</em> (2025 report page): <a href="https://openai.com/index/the-state-of-enterprise-ai-2025-report/" target="_blank">openai.com</a></li>
-      <li>OpenAI, “1 million business customers” (2025/2026 business update): <a href="https://openai.com/index/1-million-businesses-putting-ai-to-work/" target="_blank">openai.com</a></li>
-      <li>OpenAI, “How people are using ChatGPT” / NBER-linked consumer usage study: <a href="https://openai.com/index/how-people-are-using-chatgpt/" target="_blank">openai.com</a></li>
-      <li>Anthropic Economic Index report: economic primitives (Jan 2026): <a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report" target="_blank">anthropic.com</a></li>
-      <li>IEA, <em>Energy and AI</em> executive summary and energy-demand chapters (2025): <a href="https://www.iea.org/reports/energy-and-ai/executive-summary" target="_blank">iea.org</a> • <a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank">iea.org</a></li>
+      <li>Anthropic Economic Index: January 2026 report: <a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report" target="_blank">anthropic.com</a></li>
+      <li>IEA, <em>Energy and AI</em> executive summary (2025): <a href="https://www.iea.org/reports/energy-and-ai/executive-summary" target="_blank">iea.org</a></li>
       <li>Federal Register, <em>Framework for Artificial Intelligence Diffusion</em> (15 Jan 2025): <a href="https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion" target="_blank">federalregister.gov</a></li>
       <li>EU AI Act Service Desk timeline: <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act" target="_blank">ec.europa.eu</a></li>
-      <li>Broadcom investor-relations releases on fiscal Q4 2025 and fiscal Q1 2026 AI semiconductor revenue: <a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-fourth-quarter-and-fiscal-year-2025" target="_blank">Q4 FY2025</a> • <a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial" target="_blank">Q1 FY2026</a></li>
-      <li>TSMC investor transcript snippet surfaced via investor search result on 2Q25 commentary regarding CoWoS and 2026 backend expansion: <a href="https://investor.tsmc.com/chinese/encrypt/files/encrypt_file/reports/2025-07/1f4f86c935f1de837672a6973154e64b26bdae57/TSMC%202Q25%20Transcript.pdf" target="_blank">investor.tsmc.com</a></li>
-      <li>Alphabet investor-relations Q4 2025 call/search snippet for 2026 capex outlook; direct fetch was blocked by anti-bot controls: <a href="https://abc.xyz/investor/events/event-details/2026/2025-Q4-Earnings-Call-2026-Dr_C033hS6/default.aspx" target="_blank">abc.xyz</a></li>
+      <li>Broadcom investor-relations releases on fiscal Q4 2025 and fiscal Q1 2026 AI semiconductor momentum: <a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-fourth-quarter-and-fiscal-year-2025" target="_blank">Q4 FY2025</a> • <a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial" target="_blank">Q1 FY2026</a></li>
     </ol>
-    <p class="muted">Method caveat: some investor-relations pages (notably Alphabet and certain PDF/transcript endpoints) were partially inaccessible to automated fetch because of anti-bot controls. Claims relying on those were either framed conservatively, tied back to official search-result snippets, or kept out of the highest-conviction claims.</p>
+    <p class="muted">Method caveats: some investor-relations pages were partially inaccessible to automated fetch because of anti-bot controls, especially Broadcom's Q1 FY2026 page during this run. Where that happened, I either relied only on lower-risk conclusions from official materials already cited previously or reduced conviction and avoided precise unsupported claims. Facts, interpretation, and scenario assumptions are separated above.</p>
   </div>
 </div>
 </body>

@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-03-10T09:30:00+08:00",
-  "market": "AI demand is still real and broadening, but leadership is rotating from simple capex scale stories toward names that can prove utilization, pricing discipline, and free-cash-flow durability.",
-  "tech": "What monetizes now: compute, packaging, networking, reasoning-heavy enterprise workflows, and constrained agents. What is still overstated: broad autonomous enterprise agents in regulated environments.",
-  "risk": "Top risks are capex outrunning monetization, power/interconnection delays turning demand into deferred deployment, and export-control/regulatory shifts reshaping where frontier AI can be built and sold.",
+  "updatedAt": "2026-03-11T09:30:00+08:00",
+  "market": "AI demand is real, but the market is shifting from rewarding raw capex ambition to rewarding deployable capacity, utilization, and cash-flow proof. Infrastructure and distribution remain the cleanest near-term winners.",
+  "tech": "Reasoning and structured enterprise workflows are monetizing now. Broad autonomous agents in regulated environments are still ahead of the evidence.",
+  "risk": "Top risks are capex outrunning monetization, power/interconnection delays constraining usable capacity, model-layer commoditization, and export-control tightening reshaping where AI can be built and sold.",
   "latestPath": "./ai-research/latest.html"
 }
