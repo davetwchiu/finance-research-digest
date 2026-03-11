@@ -218,18 +218,27 @@ def build(signals_doc: Dict[str, Any]) -> Dict[str, Any]:
         key=lambda kv: (kv[1]["avg_sma20_gap_pct"] if kv[1]["avg_sma20_gap_pct"] is not None else 999.0),
     )[0]
 
+    high_names = ", ".join(x["ticker"] for x in high_attention[:3]) or "none"
+    watch_names = ", ".join(x["ticker"] for x in watch[:3]) or "none"
+    weak_names = ", ".join(x["ticker"] for x in low[-3:]) or "none"
+
     conclusions: List[str] = [
         f"Regime is {regime.replace('_', ' ')} with composite score {_round(composite, 1)} (breadth {_round(breadth_score,1)}, momentum {_round(momentum_score,1)}, volatility {_round(volatility_score,1)}).",
         f"Breadth shows {above20}/{valid} above SMA20 and {above50}/{valid} above SMA50.",
         f"Momentum is {'supportive' if avg_rsi >= 52 else 'soft'} with average RSI {_round(avg_rsi,1)}.",
         f"Volatility proxy averages {_round(avg_atr_pct,2)}% ATR/price ({'contained' if avg_atr_pct <= 3.2 else 'elevated'}).",
         f"Strongest theme by SMA20 gap proxy: {strongest_theme}; weakest: {weakest_theme}.",
-        f"Triage distribution: {len(high_attention)} high_attention, {len(watch)} watch, {len(low)} low_priority.",
+        f"Triage is concentrated in {len(high_attention)} high-attention names ({high_names}) and {len(watch)} watch names ({watch_names}).",
+        f"Weakest near-term setups are concentrated in {weak_names}; avoid broad aggression while the regime stays {regime.replace('_', ' ')}.",
         f"Signal quality: missing field rate {_round((missing_fields/field_slots)*100.0,1)}%, stale-indicator rate {_round((stale_count/max(total,1))*100.0,1)}%.",
     ]
 
     if len(high_attention) >= 5:
         conclusions.append("Action bias: prioritize high_attention names first before broad watchlist review.")
+    elif len(high_attention) > 0:
+        conclusions.append(f"Action bias: focus first on {high_names} before spending time on the low-priority tail.")
+    else:
+        conclusions.append(f"Action bias: no clear leadership; keep attention on {watch_names} and wait for confirmation.")
 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
