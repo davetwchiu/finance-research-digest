@@ -367,25 +367,31 @@ def _decision_view(ticker: str, sig: dict, score: Score, evidence_quality: int, 
         macro_sensitivity = "lower"
 
     why_now = []
-    if trend_ok:
-        why_now.append("price is above both the 20-day and 50-day trend lines")
-    elif weak_trend:
-        why_now.append("price is still below both the 20-day and 50-day trend lines")
+    gap20 = ((close - sma20) / sma20 * 100.0) if close is not None and sma20 not in (None, 0) else None
+    gap50 = ((close - sma50) / sma50 * 100.0) if close is not None and sma50 not in (None, 0) else None
+    if trend_ok and gap20 is not None and gap50 is not None:
+        why_now.append(f"price is above trend support (+{gap20:.1f}% vs 20-day, +{gap50:.1f}% vs 50-day)")
+    elif weak_trend and gap20 is not None and gap50 is not None:
+        why_now.append(f"price is still below trend support ({gap20:.1f}% vs 20-day, {gap50:.1f}% vs 50-day)")
     else:
         why_now.append("price is mixed across the key trend lines")
 
     if rsi is not None:
         if rsi >= 60:
-            why_now.append("momentum is constructive without yet looking fully blown out")
+            why_now.append(f"RSI {rsi:.1f} keeps momentum constructive without looking fully blown out")
         elif rsi <= 40:
-            why_now.append("momentum is still weak and needs stabilization")
+            why_now.append(f"RSI {rsi:.1f} still points to weak momentum that needs stabilization")
         else:
-            why_now.append("momentum is neutral, so the next move needs confirmation")
+            why_now.append(f"RSI {rsi:.1f} is neutral, so the next move still needs confirmation")
+
+    if atr is not None and close not in (None, 0):
+        atr_pct = atr / close * 100.0
+        why_now.append(f"ATR is running at {atr_pct:.1f}% of price, so swing risk is {'high' if atr_pct >= 8 else 'elevated' if atr_pct >= 5 else 'contained'}")
 
     if provisional:
-        why_now.append("the page is still provisional, so business/catalyst proof is not strong enough for full conviction")
+        why_now.append(f"the page is still provisional because one or more verification gates remain open (surface score {evidence_quality}/100)")
     else:
-        why_now.append("the verification stack is strong enough to lean more on the setup")
+        why_now.append(f"the verification stack is strong enough to lean more on the setup ({evidence_quality}/100)")
 
     html = (
         "<div class='decision-shell'>"

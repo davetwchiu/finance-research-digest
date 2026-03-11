@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-11T03:56:01.626222+00:00",
-  "source_generated_at": "2026-03-11T03:56:01.526715+00:00",
+  "generated_at": "2026-03-11T06:55:56.355977+00:00",
+  "source_generated_at": "2026-03-11T06:55:56.280012+00:00",
   "count": {
     "total": 15,
     "valid": 15,
@@ -64,7 +64,7 @@
       },
       {
         "ticker": "BBAI",
-        "atr14_pct_of_close": 8.57
+        "atr14_pct_of_close": 8.59
       }
     ]
   },
@@ -109,7 +109,7 @@
     },
     {
       "ticker": "BBAI",
-      "atr14_pct_of_close": 8.57
+      "atr14_pct_of_close": 8.59
     }
   ],
   "signals": {
@@ -196,9 +196,9 @@
     },
     "TSLA": {
       "ok": true,
-      "close": 399.235,
-      "sma20": 408.6527,
-      "rsi14": 42.64,
+      "close": 399.24,
+      "sma20": 408.653,
+      "rsi14": 42.65,
       "tags": [
         "trend_down"
       ]
