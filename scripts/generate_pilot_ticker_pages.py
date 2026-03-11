@@ -242,7 +242,7 @@ def _catalyst_block(ticker: str) -> tuple[str, int, bool]:
     verified = 0
     for c in cats[:2]:
         lis.append(f"<li><strong>{c['date']}</strong> ({_countdown(c['date'])}) — {c['name']}. Expected impact path: {c['impact']}</li>")
-    note = "<p class='warn'>These are macro/policy calendar anchors, not issuer-confirmed event dates. Earnings or company-specific event timing remains unverified in this run.</p>"
+    note = "<p class='warn'>Calendar note: these are the next macro windows most likely to move the setup. Company-specific event timing is still unverified in this run, so do not treat this as a confirmed earnings calendar.</p>"
     return "<ul>" + "".join(lis) + "</ul>" + note, verified, True
 
 
@@ -389,7 +389,7 @@ def _decision_view(ticker: str, sig: dict, score: Score, evidence_quality: int, 
         why_now.append(f"ATR is running at {atr_pct:.1f}% of price, so swing risk is {'high' if atr_pct >= 8 else 'elevated' if atr_pct >= 5 else 'contained'}")
 
     if provisional:
-        why_now.append(f"the page is still provisional because one or more verification gates remain open (surface score {evidence_quality}/100)")
+        why_now.append(f"verification is still incomplete, so conviction should stay capped (surface score {evidence_quality}/100)")
     else:
         why_now.append(f"the verification stack is strong enough to lean more on the setup ({evidence_quality}/100)")
 
