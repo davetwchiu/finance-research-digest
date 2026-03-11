@@ -69,32 +69,6 @@
       <div class="muted" id="siteLastUpdated">Last updated: loading…</div>
     </div>
 
-    <div class="card" id="globalFreshnessCard" style="margin-top:12px">
-      <h2>System Freshness</h2>
-      <div id="globalFreshnessVerdict" class="muted">Verdict: loading...</div>
-      <div id="globalFreshnessDetail" class="muted" style="margin-top:6px">Details: loading...</div>
-    </div>
-
-    <div class="card" id="atlasLocalIntel" style="margin-top:14px">
-      <h2>Atlas Local Intelligence</h2>
-      <div id="atlasIntelPanelTime" class="muted">Generated: loading...</div>
-      <div id="atlasIntelFreshness" class="muted" style="margin-top:6px">Snapshot: loading...</div>
-      <div id="atlasIntelBreadth" class="muted" style="margin-top:6px">Breadth: loading...</div>
-      <div id="atlasIntelRisk" class="muted" style="margin-top:6px">Risk: loading...</div>
-      <div id="atlasIntelMovers" class="muted" style="margin-top:6px">Top movers: loading...</div>
-      <div id="atlasIntelVol" class="muted" style="margin-top:6px">Top volatility: loading...</div>
-    </div>
-
-    <details class="card" id="atlasDeepLocalCard" style="margin-top:12px">
-      <summary><strong>Atlas Deep Local Analysis</strong> <span class="muted" id="atlasDeepHeadline">loading...</span></summary>
-      <div id="atlasDeepPanelTime" class="muted" style="margin-top:8px">Generated: loading...</div>
-      <div id="atlasDeepRegime" class="muted" style="margin-top:6px">Regime: loading...</div>
-      <div id="atlasDeepTriage" class="muted" style="margin-top:6px">Triage: loading...</div>
-      <div id="atlasDeepQuality" class="muted" style="margin-top:6px">Quality: loading...</div>
-      <div id="atlasDeepThemes" class="muted" style="margin-top:6px">Themes: loading...</div>
-      <ul id="atlasDeepConclusions" class="muted" style="margin-top:8px; padding-left:18px"></ul>
-    </details>
-
     <div class="grid grid-3">
       <div class="card">
         <h2>Latest Report — Executive Summary</h2>
@@ -671,14 +645,11 @@ async function loadWebsiteVersion(){
 (async ()=>{
   await syncWatchlistFromRepo();
   await loadSignals();
-  loadAtlasLocalIntelligence();
-  loadAtlasDeepLocalAnalysis();
   loadExecSummary();
   loadFrontBreaking();
   loadAISummary();
   loadDefenceSummary();
   loadFilingsSummary();
-  loadGlobalFreshness();
   loadWebsiteVersion();
 })();
 </script>
