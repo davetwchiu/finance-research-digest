@@ -341,7 +341,12 @@ def _decision_view(ticker: str, sig: dict, score: Score, evidence_quality: int, 
         action = "Actionable on confirmation — good candidate if price proves itself."
         stance = "actionable"
     elif weak_trend or evidence_quality < 65:
-        action = "Wait for proof — structure or evidence still needs work."
+        if weak_trend and evidence_quality < 65:
+            action = "Wait for proof — trend is weak and the evidence stack is still incomplete."
+        elif weak_trend:
+            action = "Wait for proof — price is still below trend support."
+        else:
+            action = "Wait for proof — the setup lacks enough verified business or catalyst evidence."
         stance = "wait"
     else:
         action = "Watch closely — setup is improving but not clean enough for size."

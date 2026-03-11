@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-11T08:31:17+08:00",
+  "generated_at": "2026-03-11T08:57:41+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -103,20 +103,20 @@
           }
         },
         {
-          "title": "RBC Capital Markets Lifts Broadcom (AVGO) Price Target, Points to Bullish FY27 Commentary - Finviz",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxObThyV3R2ejBqRV96X2k5YnEtMVJkVC1kRm9xZ1RDckFHZnV6WmpZMkJPa3EtekpsajdCa0tYdFdsY1hIVFdZWEt6elpwUmdVRlV4Xzg4Z3pIU1Frd0NEQ2xSVEVZS2l1cmlGRlZWZ2NkYUtPam1CSEdoenV0Z0VkUEhBWUZVRUE5bUtwTUl5TXJoZ2lqZC1KVm9qVndnQkdyV3E5X19Hd1o0UGYxVW5TNXEybzFScUl5?oc=5",
-          "published_hkt": "2026-03-11T01:17:46+08:00",
-          "source": "Finviz",
+          "title": "What Are The Risks Threatening AVGO Stock\u2019s Run? - Forbes",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPNDg2eUZXdjhIbWxTMTMxNWo3UVZWYnRxbDBYcnRnVlZPMTFveXZpN1dqYl9FTmxncXAyUU1TRjdrNlZrTXk5X2hUcUk0cGZQM09VOHRjemxDVTUwczVSWXhRWlFlbHZXb2RUYjNYbFZhajBTOW5YcU5adUhMR1RaZmIwdkMwYlRESGJYM0dpVVJNWHdQSTJXYlRsTGJXVTM5MVB0aXI0R0k?oc=5",
+          "published_hkt": "2026-02-26T16:00:00+08:00",
+          "source": "Forbes",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
           }
         },
         {
-          "title": "What Are The Risks Threatening AVGO Stock\u2019s Run? - Forbes",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPNDg2eUZXdjhIbWxTMTMxNWo3UVZWYnRxbDBYcnRnVlZPMTFveXZpN1dqYl9FTmxncXAyUU1TRjdrNlZrTXk5X2hUcUk0cGZQM09VOHRjemxDVTUwczVSWXhRWlFlbHZXb2RUYjNYbFZhajBTOW5YcU5adUhMR1RaZmIwdkMwYlRESGJYM0dpVVJNWHdQSTJXYlRsTGJXVTM5MVB0aXI0R0k?oc=5",
-          "published_hkt": "2026-02-26T16:00:00+08:00",
-          "source": "Forbes",
+          "title": "RBC Capital Markets Lifts Broadcom (AVGO) Price Target, Points to Bullish FY27 Commentary - Finviz",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxObThyV3R2ejBqRV96X2k5YnEtMVJkVC1kRm9xZ1RDckFHZnV6WmpZMkJPa3EtekpsajdCa0tYdFdsY1hIVFdZWEt6elpwUmdVRlV4Xzg4Z3pIU1Frd0NEQ2xSVEVZS2l1cmlGRlZWZ2NkYUtPam1CSEdoenV0Z0VkUEhBWUZVRUE5bUtwTUl5TXJoZ2lqZC1KVm9qVndnQkdyV3E5X19Hd1o0UGYxVW5TNXEybzFScUl5?oc=5",
+          "published_hkt": "2026-03-11T01:17:46+08:00",
+          "source": "Finviz",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -256,10 +256,10 @@
       },
       "items": [
         {
-          "title": "Nvidia Stock Forecast Ahead of GTC 2026 \u2013 Bulls Raise the Bar - TipRanks",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQlFPVGZfdWJwdWx1a21XMUpaU1Q4Z3lrOGl5R0llSnVvclp6alp4T0c3a3VmTTU4bEtwNk1NcS1hNHFrNk5lNm4xd05lZk9rSUtKbnJJbzUxbEJuSkhNaloyM2p3bzlKbmhhVU93QW1HZkxnSGxhdVRrUXF6eEJlQlh6WG9zS3hReFVud0U5b2ZldlE?oc=5",
-          "published_hkt": "2026-03-10T21:40:35+08:00",
-          "source": "TipRanks",
+          "title": "Nvidia in focus as BofA reiterates Buy ahead of GTC (NVDA:NASDAQ) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPWGlNOER5Q2w2d2JuNGo0UHZ1TWhQQmRIcHo5VnJCUUt3c1dlV2JhLUhHbnFZWm9VWHgyVWZPOU15MkU0ZG1XY3pPSDVqekgweXpkSzVmTG5YNy0tTjNYYmRCbi1LUWRObGc1LXg5MFhKY3ZDeXh3aFlabXdMVUQyZGVHWnI3RmNRSExKZjBRR0NSbjA?oc=5",
+          "published_hkt": "2026-03-10T20:39:07+08:00",
+          "source": "Seeking Alpha",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -277,7 +277,7 @@
         },
         {
           "title": "Nvidia GTC Is Coming. What It Means for the Stock. - Barron's",
-          "url": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxPdWkwMzJhcllJdjFPR2owWDFTRlhZV2NDN1RjWmJWbWtma2wzdkNrZkRaSmlDSlQ0bTZVMFFUR3ExOXVZYnRYXzNBOUctOFJ0RVA3MWUyWDZONE8tazg4ZFItdVB4UjJfZFpoQ2VCekZLMUJXb2tvQ1NMYjF2NzB1dDJadXVTSkM4UENnYlNqVVRHVjBrRFU1RS1wWXdXNll5TmpvX3pIV0UzNmd5MEFGMmQ4ZEhteU40czVTeEhiMVJpcFNickdXRkgzaUJVclZWUWh3aGU1NzhxR3ZyOUptMjdYbklFNkR4dmRva0Uxa2lvOFU0RWgtdWZCWGNXSTNVRzl6emFOV3BvanNNTGg1RFBQWWZlTU1CaTRNUFJUYnViZ2RVOVZIR3ZNcUtoUmc2cFppUlozTmVFei10T3lzSnZSVXFtUGM3aTBQSnI1ODR3NDkySkVQSWdobkpOc3p0TXcyMEhTLXZCLWRfSGxmZC0tMGVtX0VkVHJlZy1sVQ?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxPVk5iU3dCdnYyVmYtYzhjOWVtQ3Z4a3l6Ym0wclZ1akxFOThTUnJFWVFOU1Q0aF9JQi1FSTZIX21aZXZ3S05jUXRCSWJmU0tHUVNiNGZwYmJ0TjdfaWVCb2pUaUszTWJPcEF2Q20ySWVuMkpiV0NXY3dRWUhheXVoYmJJRk9IMVAxb3poN0V6bUt3Y2NzbVo5b0toclI4YmkyQVp1TlRtMXotbVpOUWJ2MldOVnhzT2lvUjZsb3lMazRWZG5NMkQ5NGRjT2pYRnNBc01rbG9iNkFSaWFHckYzYW5qcDAxdlc4STdOLU0xVVFjdzRsam9zOUN5MW5XSUVIdDJwRm90ODhRbjlkS0xzQzVSS0w3VklXaVZEM21JU19kSEJwdXptSng5S1hQVTFnOUh5Wm1hRTZYTWE3ek10ekRMWkpGMXd1dFpHVEVGOVVuM3pNRUJmOGc4VXl2WmtuX0RsVlhISkdCWEEtWVhSOTd3Q1FWYmt4VDd5Yzh6UQ?oc=5",
           "published_hkt": "2026-03-11T03:19:00+08:00",
           "source": "Barron's",
           "impact": {
@@ -554,10 +554,10 @@
     "TSLA": {
       "query": "Tesla OR TSLA stock",
       "summary": {
-        "label": "Constructive \u2014 positive-news skew",
-        "positive_count": 1,
-        "negative_count": 0,
-        "high_impact_count": 3
+        "label": "Caution \u2014 negative-news skew",
+        "positive_count": 0,
+        "negative_count": 1,
+        "high_impact_count": 1
       },
       "items": [
         {
@@ -581,33 +581,33 @@
           }
         },
         {
-          "title": "Tesla (TSLA) releases Q4 2025 financial results: slight beat on earnings - Electrek",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNX0ZKRlI1T2tSMHpFRWV4UDBaZmszVThHR05qVVExN3cwZnRYc3JXVzBybk5kVmY4WnRnelotS3RMZUQ5WkpwT09OUlpjclFoTUVvZGNyT3JpbzRZSkRjaWtVcUNDQ0VCbzVPN19IcTFOOXQybTZOcFJlM0VjNTBsN0Vldk5Ob3c2ZVZRSkZ3TldrcXBicEM0aTluM0JCQjlZZ1E4?oc=5",
-          "published_hkt": "2026-01-28T16:00:00+08:00",
-          "source": "Electrek",
-          "impact": {
-            "sentiment": "positive",
-            "severity": "high"
-          }
-        },
-        {
-          "title": "Tesla (TSLA) Q4 2025 earnings preview: another year of decline in the books - Electrek",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxORDNVQnpxS29XbGRsYmkyMUVFRHp0Yk1OWW9HUXNrTlpOekExVVYwQXBuLUVSWE1JWjZwWlN6amtJS1ZQOEZnMlBqU28zVmFQc2NGeXpWLXRIOHAwQVl6U0ZMdzRNZjZEcDBMc25HNHNaN2xfLS13RlhCdWt1aUY5REowSG5IT1hOVEc5REV5LThXZw?oc=5",
-          "published_hkt": "2026-01-27T16:00:00+08:00",
-          "source": "Electrek",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "high"
-          }
-        },
-        {
           "title": "Why Tesla Stock Got a Boost From a Battery Supplier\u2019s Earnings - Barron's",
-          "url": "https://news.google.com/rss/articles/CBMijgNBVV95cUxNOFpXT2JZcXU2c21ZYldqb29yc2I3REJLU25uN0ZzOHZRcG9LWk1USnpiX2RLZVBKZmhLN1dUamdaVkc4UmFGVHptaXlBT3ZqaEdtMWZ0WWs0SEw2WHdENm90dlRPWkxzMFphVnQ2NlNuNGhEZW9TdnpmTk44SEhENlIzV2lpR2o4MEw3ZVI1N0xUY0l6ODlaNTJqbWtSNnFKWllpQ1M2V0FoYjN1cTE2QjV2YV9HOW9FTlhITnZfckpncklObHVrTU44dDM0VzJYMW5EYk1iWnZFX3JZakx0N0dvQkptb0NHVktoeDBfbDFlMjAzMERzUndWTjdGaWpYbDNIazljUjRoZmRVdnJjR2otUHVuZGNCUnBEN0JzSnhKTVhRVVZ3LUxnZHFjZzljVmxEM2FjN0NkNmFaSkNGWndRdERzREpRbWJTeU93SXpSQjR1R1NzZmVHOGFuampUbTZSVGFTNGhQejRGUC1qUG40OWl1enQwQUtZWk9TQkFyNE9vU1Nob0h2cUd6UQ?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMijgNBVV95cUxNZlVXNW16Ukw3aVVzWlllNUptNU9aMnBuMDN3blpadHk3RF90QnhvdlpXc20tYWNqMG01cl9BNmhaZEhCRmVLTFJaUkFlblhOUFF0dkJ5NUhVVERjWk5WV0cyMlBiYmY5Qm9pLTh5MUVIazdaSzVpZ3Mta24yN3JINTBVdVNLWEdkc0t5OFVaaVdKa3VaRlVsaE9lZUVOT3NBQlhQYzdBUldvcUhjdmJqZE15NVQzb3pMa3ZsVHY1STBqQXJOS2dxalZsM0dzZkxVUUpkWHY3cVV0cFRtQWtwOUFXR2FwVVE0MzcyWWNfdjBBYkZjaXNaUkxsaW5wQnZPQWdJVlJIMFlWc05zLXFwM2lnQm5lQUJKM3FVMnp0aDNLWk9VX3N0RWFqYnpneDl6MnlUSVpXa2ZJZGVVNEhqUW1iT0lCVTNkb1EteFA4X1FDS2JiWnZSRzZhSGhSUi1EajdkWnZVSTQxbXI0a0FNTHUtZ1g1WDdUMWNBVThqUncta1hFZU05TlJsYUQ0UQ?oc=5",
           "published_hkt": "2026-03-11T04:17:00+08:00",
           "source": "Barron's",
           "impact": {
             "sentiment": "neutral",
             "severity": "high"
+          }
+        },
+        {
+          "title": "Why Tesla stock is surging on Tuesday - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPUXNmRkduODhDWXpzZnR4QjF6YjMwUTd1TXJCMTRpcEI2U053eGJqeEdSWVN0dUlxOVRhbVNKbFAwbE9LNGlqeEhIcVdaQzVXSmx6bG9VLS11aG1qZWxLX2t5b1FsYnpUel9YMVR3ak4yMkxwVHZCeU5zSFJ2aVVGTzU5U0hzaVBxLVBsaXpmWDVaeEJ0Nkp1d3BB?oc=5",
+          "published_hkt": "2026-03-10T23:54:32+08:00",
+          "source": "TradingView",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "Tesla Stock Hits Five-Month Low as Sales Drop and Autonomous Push Accelerates - eletric-vehicles.com",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeEYyckU1VG1HbnR3X2RIRjdPZGVabExyQjJrMC0xSGpBRldkMHFUTk52OGRhZzVxcDVpZTVrcVZrWXFLWTJrVjZsUzF6U2QtVjZjVy1zeUZhTkpZbjRoeXU5VkVYaUtXeTkwdi1UZDNnb1pkV2prQ016Z1BwcVJ2YUNBQmJWTktEZjl6RnpDZmdMNXlyeEZuZ1RPOVU3eUVpbTU2OGFhR1JwZGw3YjM4VHFJOA?oc=5",
+          "published_hkt": "2026-03-10T00:13:32+08:00",
+          "source": "eletric-vehicles.com",
+          "impact": {
+            "sentiment": "negative",
+            "severity": "medium"
           }
         }
       ]
@@ -642,16 +642,6 @@
           }
         },
         {
-          "title": "TSMC Jan-Feb revenue rises 30% amid strong global AI demand (TSM:NYSE) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPaGZLcFFkc3BhWU9jYW1MNjZlZTQySVF0ZDFDTWN3b09DVWY4SDRoa2NmSlk2eFNQUlpxN2gyQmlKd21GY0lyUi02U1J6SzdJMk9zZVVhY2U3Mm13bXNaNWdzQzV0YmlwS1R0aVY1UDcxQTJWS29CUlQ3bHJ1bndOdlJuTUExaVpOdUtLNFgzaDdidVdqbEJtMnhpRjM?oc=5",
-          "published_hkt": "2026-03-10T14:54:00+08:00",
-          "source": "Seeking Alpha",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
           "title": "Is Taiwan Semiconductor Stock Going to $500? - The Motley Fool",
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZ2RfN3lfUEgtWlk1bGRycTdYMDZiZFZYZnB5TVJ5RmhKSHVTcm5OZWZNblloVHpobmxyYUdzZXZNUVVWdFpNTXFDWk1HS1VQOUdfMFFXdS1aQW8wel9vT0NtLU1oM0pnM2NpT1YxTjF1QWNVS3JtSVd5Tm4tQjFfRUxuYmR2anJaTzdJN1pB?oc=5",
           "published_hkt": "2026-03-07T23:47:00+08:00",
@@ -669,6 +659,16 @@
           "impact": {
             "sentiment": "positive",
             "severity": "medium"
+          }
+        },
+        {
+          "title": "TSMC Jan-Feb revenue rises 30% amid strong global AI demand (TSM:NYSE) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPaGZLcFFkc3BhWU9jYW1MNjZlZTQySVF0ZDFDTWN3b09DVWY4SDRoa2NmSlk2eFNQUlpxN2gyQmlKd21GY0lyUi02U1J6SzdJMk9zZVVhY2U3Mm13bXNaNWdzQzV0YmlwS1R0aVY1UDcxQTJWS29CUlQ3bHJ1bndOdlJuTUExaVpOdUtLNFgzaDdidVdqbEJtMnhpRjM?oc=5",
+          "published_hkt": "2026-03-10T14:54:00+08:00",
+          "source": "Seeking Alpha",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
           }
         }
       ]
@@ -764,20 +764,20 @@
           }
         },
         {
-          "title": "Google unveils new multimodal Gemini Embedding 2 model (GOOG:NASDAQ) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPd2RfLVJUbXFYa1JEcm1nOGhSMnFvWEI5eGhFU0tOU3ZEUkFEbktMM3BMYmZvYVd0QklKcWQ4MFdOVUZfbS04UFJBN2czM2lobTNhX091c1BYOE02U1RLTDhTR0poNG5HVmFKTEFjaWRLVElsTWJfNVRrV1JfYlRXN1NvNzE3S0d2LTlTQ0xVWktDWWplMkFv?oc=5",
-          "published_hkt": "2026-03-11T00:31:59+08:00",
-          "source": "Seeking Alpha",
+          "title": "Why Alphabet Inc. (GOOG) Outpaced the Stock Market Today - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNkljS010eTZwNV9ZMjJ4eUk4MnF0VV9IZk1oc0wyQzNBQWJ0TFEwR09taGZ4MHlPcUdtZmVPczNKSC1KMHdSSHlBTzRGa1FXWWl0R3pJSi0ybnBNLUI0cXRqd0N3bHczWDNCVGRieWxHQ2kzcUctUUs5LVhhX0NBNEJn?oc=5",
+          "published_hkt": "2026-03-10T05:45:04+08:00",
+          "source": "Yahoo Finance",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
           }
         },
         {
-          "title": "Why Alphabet Inc. (GOOG) Outpaced the Stock Market Today - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNkljS010eTZwNV9ZMjJ4eUk4MnF0VV9IZk1oc0wyQzNBQWJ0TFEwR09taGZ4MHlPcUdtZmVPczNKSC1KMHdSSHlBTzRGa1FXWWl0R3pJSi0ybnBNLUI0cXRqd0N3bHczWDNCVGRieWxHQ2kzcUctUUs5LVhhX0NBNEJn?oc=5",
-          "published_hkt": "2026-03-10T05:45:04+08:00",
-          "source": "Yahoo Finance",
+          "title": "Google unveils new multimodal Gemini Embedding 2 model (GOOG:NASDAQ) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPd2RfLVJUbXFYa1JEcm1nOGhSMnFvWEI5eGhFU0tOU3ZEUkFEbktMM3BMYmZvYVd0QklKcWQ4MFdOVUZfbS04UFJBN2czM2lobTNhX091c1BYOE02U1RLTDhTR0poNG5HVmFKTEFjaWRLVElsTWJfNVRrV1JfYlRXN1NvNzE3S0d2LTlTQ0xVWktDWWplMkFv?oc=5",
+          "published_hkt": "2026-03-11T00:31:59+08:00",
+          "source": "Seeking Alpha",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"

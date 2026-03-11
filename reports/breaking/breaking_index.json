@@ -1,14 +1,6 @@
 {
   "items": [
     {
-      "id": "2026-03-11-summary",
-      "time": "Summary",
-      "createdAt": "2026-03-11T00:00:00+08:00",
-      "title": "TSLA — Reuters snippet indicates a U.S. Autopilot probe has turned more serious, with prosecutors reportedly focusing on securities and wire-fraud angles. This would raise legal/regulatory risk around Tesla's autonomy narrative if confirmed in full",
-      "summary": "TSLA — Reuters snippet indicates a U.S. Autopilot probe has turned more serious, with prosecutors reportedly focusing on securities and wire-fraud angles. This would raise legal/regulatory risk around Tesla's autonomy narrative if confirmed in full",
-      "path": "./2026-03-11.md"
-    },
-    {
       "id": "2026-03-10-2026-03-10-20:36-hkt",
       "time": "2026-03-10 20:36 HKT",
       "createdAt": "2026-03-10T20:36:00+08:00",
@@ -59,14 +51,6 @@
     {
       "id": "2026-02-25-2026-02-25-12:57-hkt-—-provision",
       "time": "2026-02-25 12:57 HKT — Provisional: U.S. official says no Nvidia H200 chips have been sold to Chinese customers yet",
-      "createdAt": "2026-02-25T12:57:00+08:00",
-      "title": "Breaking alert",
-      "summary": "Breaking alert",
-      "path": "./2026-02-25.md"
-    },
-    {
-      "id": "2026-02-25-2026-02-25-12:57-hkt-—-monitor-c",
-      "time": "2026-02-25 12:57 HKT — Monitor checkpoint (no second independent material catalyst)",
       "createdAt": "2026-02-25T12:57:00+08:00",
       "title": "Breaking alert",
       "summary": "Breaking alert",
