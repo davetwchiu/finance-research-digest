@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-03-11T15:55:57.581448+00:00",
-  "source_generated_at": "2026-03-11T15:55:57.462936+00:00",
+  "generated_at": "2026-03-11T18:55:56.928539+00:00",
+  "source_generated_at": "2026-03-11T18:55:56.798256+00:00",
   "inputs": {
     "signals_total": 15,
     "signals_valid": 15
   },
   "market_regime": {
     "label": "neutral",
-    "composite_score": -6.75,
+    "composite_score": -18.78,
     "components": {
-      "breadth": 26.67,
-      "momentum": -0.24,
-      "volatility": -33.17
+      "breadth": 16.0,
+      "momentum": -0.93,
+      "volatility": -33.85
     },
     "metrics": {
-      "above_sma20": 10,
+      "above_sma20": 9,
       "above_sma50": 4,
-      "avg_rsi14": 49.84,
-      "avg_atr_pct_of_price": 6.517
+      "avg_rsi14": 49.38,
+      "avg_atr_pct_of_price": 6.585
     }
   },
   "themes": {
@@ -26,13 +26,13 @@
       "members": [
         {
           "ticker": "AAPL",
-          "gap_sma20_pct": -1.35,
-          "gap_sma50_pct": -1.06
+          "gap_sma20_pct": -1.51,
+          "gap_sma50_pct": -1.22
         },
         {
           "ticker": "AVGO",
-          "gap_sma20_pct": 3.29,
-          "gap_sma50_pct": 2.16
+          "gap_sma20_pct": 3.06,
+          "gap_sma50_pct": 1.92
         },
         {
           "ticker": "NVDA",
@@ -41,88 +41,88 @@
         },
         {
           "ticker": "TSLA",
-          "gap_sma20_pct": 0.06,
-          "gap_sma50_pct": -3.58
+          "gap_sma20_pct": -0.32,
+          "gap_sma50_pct": -3.96
         },
         {
           "ticker": "TSM",
-          "gap_sma20_pct": -2.57,
-          "gap_sma50_pct": 3.21
+          "gap_sma20_pct": -2.77,
+          "gap_sma50_pct": 2.99
         },
         {
           "ticker": "GOOG",
-          "gap_sma20_pct": 0.61,
-          "gap_sma50_pct": -3.38
+          "gap_sma20_pct": 0.21,
+          "gap_sma50_pct": -3.77
         }
       ],
-      "avg_sma20_gap_pct": 0.01,
-      "avg_sma50_gap_pct": -0.45
+      "avg_sma20_gap_pct": -0.22,
+      "avg_sma50_gap_pct": -0.68
     },
     "defence/space": {
       "count": 6,
       "members": [
         {
           "ticker": "KTOS",
-          "gap_sma20_pct": -1.47,
-          "gap_sma50_pct": -8.99
+          "gap_sma20_pct": -2.22,
+          "gap_sma50_pct": -9.7
         },
         {
           "ticker": "ONDS",
-          "gap_sma20_pct": -2.61,
-          "gap_sma50_pct": -10.21
+          "gap_sma20_pct": -5.62,
+          "gap_sma50_pct": -13.08
         },
         {
           "ticker": "PLTR",
-          "gap_sma20_pct": 6.71,
-          "gap_sma50_pct": -3.13
+          "gap_sma20_pct": 7.63,
+          "gap_sma50_pct": -2.26
         },
         {
           "ticker": "RDW",
-          "gap_sma20_pct": 9.11,
-          "gap_sma50_pct": -2.76
+          "gap_sma20_pct": 7.24,
+          "gap_sma50_pct": -4.48
         },
         {
           "ticker": "RKLB",
-          "gap_sma20_pct": 1.95,
-          "gap_sma50_pct": -6.71
+          "gap_sma20_pct": 1.21,
+          "gap_sma50_pct": -7.41
         },
         {
           "ticker": "LITE",
-          "gap_sma20_pct": 2.06,
-          "gap_sma50_pct": 33.67
+          "gap_sma20_pct": 2.87,
+          "gap_sma50_pct": 34.76
         }
       ],
-      "avg_sma20_gap_pct": 2.62,
-      "avg_sma50_gap_pct": 0.31
+      "avg_sma20_gap_pct": 1.85,
+      "avg_sma50_gap_pct": -0.36
     },
     "energy/materials": {
       "count": 1,
       "members": [
         {
           "ticker": "UUUU",
-          "gap_sma20_pct": -4.51,
-          "gap_sma50_pct": -3.35
+          "gap_sma20_pct": -6.25,
+          "gap_sma50_pct": -5.16
         }
       ],
-      "avg_sma20_gap_pct": -4.51,
-      "avg_sma50_gap_pct": -3.35
+      "avg_sma20_gap_pct": -6.25,
+      "avg_sma50_gap_pct": -5.16
     },
     "diversified": {
       "count": 2,
       "members": [
         {
           "ticker": "BBAI",
-          "gap_sma20_pct": 2.04,
-          "gap_sma50_pct": -17.3
+          "gap_sma20_pct": 2.28,
+          "gap_sma50_pct": -17.09
         },
         {
           "ticker": "COHR",
-          "gap_sma20_pct": 0.57,
-          "gap_sma50_pct": 13.38
+          "gap_sma20_pct": 1.41,
+          "gap_sma50_pct": 14.36
         }
       ],
-      "avg_sma20_gap_pct": 1.3,
-      "avg_sma50_gap_pct": -1.96
+      "avg_sma20_gap_pct": 1.84,
+      "avg_sma50_gap_pct": -1.37
     }
   },
   "signal_quality": {
@@ -198,14 +198,6 @@
         "reasons": [
           "above_sma20"
         ]
-      },
-      {
-        "ticker": "TSLA",
-        "priority": "watch",
-        "score": 0.5,
-        "reasons": [
-          "above_sma20"
-        ]
       }
     ],
     "low_priority": [
@@ -240,6 +232,12 @@
         "ticker": "AAPL",
         "priority": "low_priority",
         "score": -1.3,
+        "reasons": []
+      },
+      {
+        "ticker": "TSLA",
+        "priority": "low_priority",
+        "score": -1.7,
         "reasons": []
       },
       {
@@ -332,14 +330,6 @@
         ]
       },
       {
-        "ticker": "TSLA",
-        "priority": "watch",
-        "score": 0.5,
-        "reasons": [
-          "above_sma20"
-        ]
-      },
-      {
         "ticker": "BBAI",
         "priority": "low_priority",
         "score": -0.4,
@@ -373,6 +363,12 @@
         "reasons": []
       },
       {
+        "ticker": "TSLA",
+        "priority": "low_priority",
+        "score": -1.7,
+        "reasons": []
+      },
+      {
         "ticker": "KTOS",
         "priority": "low_priority",
         "score": -2.6,
@@ -399,12 +395,12 @@
     ]
   },
   "conclusions": [
-    "Regime is neutral with composite score -6.7 (breadth 26.7, momentum -0.2, volatility -33.2).",
-    "Breadth shows 10/15 above SMA20 and 4/15 above SMA50.",
-    "Momentum is soft with average RSI 49.8.",
-    "Volatility proxy averages 6.52% ATR/price (elevated).",
+    "Regime is neutral with composite score -18.8 (breadth 16.0, momentum -0.9, volatility -33.9).",
+    "Breadth shows 9/15 above SMA20 and 4/15 above SMA50.",
+    "Momentum is soft with average RSI 49.4.",
+    "Volatility proxy averages 6.59% ATR/price (elevated).",
     "Strongest theme by SMA20 gap proxy: defence/space; weakest: energy/materials.",
-    "Triage is concentrated in 3 high-attention names (AVGO, LITE, COHR) and 5 watch names (TSM, GOOG, NVDA).",
+    "Triage is concentrated in 3 high-attention names (AVGO, LITE, COHR) and 4 watch names (TSM, GOOG, NVDA).",
     "Weakest near-term setups are concentrated in KTOS, ONDS, UUUU; avoid broad aggression while the regime stays neutral.",
     "Signal quality: missing field rate 0.0%, stale-indicator rate 0.0%."
   ]
