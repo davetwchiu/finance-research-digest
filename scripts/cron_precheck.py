@@ -414,6 +414,11 @@ def main() -> int:
             reasons.append(base_reason)
 
     has_delivery_failure_evidence = _has_recent_delivery_failure_evidence(delivery_health, latest_run)
+    suspected_delivery_gap = (
+        repeated_not_delivered.get("not_delivered_meaningful_tail_runs", 0) >= 2
+        and not has_delivery_failure_evidence
+        and latest_job_state.get("last_delivery_status") not in (None, "delivered")
+    )
     if (
         latest_run.get("deliveryStatus") != "delivered"
         and _summary_is_meaningful(latest_run.get("summary"))
@@ -426,6 +431,8 @@ def main() -> int:
         and has_delivery_failure_evidence
     ):
         reasons.append(f"breaking_job_state_delivery:{latest_job_state.get('last_delivery_status')}")
+    elif suspected_delivery_gap:
+        reasons.append("breaking_delivery_gap_suspected_without_failed_queue_evidence")
 
     if repeated_not_delivered.get("not_delivered_meaningful_tail_runs", 0) >= 2:
         reasons.append(
@@ -455,6 +462,7 @@ def main() -> int:
         "watchlist_breaking_latest_run": latest_run,
         "watchlist_breaking_delivery_audit": repeated_not_delivered,
         "delivery_recovered_after_failure": delivery_recovered_after_failure,
+        "suspected_delivery_gap_without_failed_queue_evidence": suspected_delivery_gap,
     }
 
     print(json.dumps(out, indent=2))
