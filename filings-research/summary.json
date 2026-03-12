@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-03-12T17:56:00+08:00",
-  "count": 9,
-  "market": "AVGO remains the highest-signal filing on the watchlist: the 10-Q showed $19.3B revenue, $7.35B net income, roughly $45B of remaining performance obligations, and continued buybacks, while ONDS was the most strategically interesting small-cap filing because the BIRD acquisition package made its airborne defense footprint more concrete.",
-  "tech": "This rebuild is document-led rather than template-led: six filings were read from primary text, ONDS also used attached official materials, and lower-signal governance/deal filings were clearly demoted into secondary notes instead of being padded into fake full analysis.",
-  "risk": "Main caveats: ONDS still needs proof of revenue/margin contribution, BBAI's balance-sheet improvement did not fix a weak 2025 income statement, RDW still shows execution messiness, and some older watchlist filings were intentionally omitted from deep analysis rather than overclaimed.",
+  "updatedAt": "2026-03-12T18:06:12+08:00",
+  "count": 14,
+  "market": "14 recent SEC filing(s) matched the current watchlist in the last 45 days.",
+  "tech": "Latest run attempted primary-document reads for recent filings and completed 8 filing-level writeups from SEC primary text.",
+  "risk": "If a card explicitly says the primary filing read was partial or incomplete, treat that note as a hard limitation rather than a hidden assumption.",
   "latestPath": "./reports/filings/2026-03-12.html"
 }
