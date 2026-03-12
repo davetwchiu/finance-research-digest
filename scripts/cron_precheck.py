@@ -274,6 +274,23 @@ def _has_recent_delivery_failure_evidence(delivery_health: Dict[str, Any], lates
     return latest_failed_at >= latest_run_at
 
 
+def _latest_meaningful_run(recent_runs: list[Dict[str, Any]]) -> Dict[str, Any]:
+    for run in reversed(recent_runs):
+        if run.get("status") != "ok":
+            continue
+        if not _summary_is_meaningful(run.get("summary")):
+            continue
+        return {
+            "ts": run.get("ts"),
+            "status": run.get("status"),
+            "deliveryStatus": run.get("deliveryStatus"),
+            "delivered": run.get("delivered"),
+            "summary": run.get("summary"),
+            "error": run.get("error"),
+        }
+    return {"missing": True}
+
+
 def _summarize_not_delivered_streak(recent_runs: list[Dict[str, Any]]) -> Dict[str, Any]:
     meaningful = 0
     latest_meaningful_summary = None
@@ -398,6 +415,7 @@ def main() -> int:
     latest_job_state = _load_job_state(Path(args.jobs_path), args.breaking_job_id)
     latest_run = _load_latest_run(Path(args.breaking_run_log))
     recent_runs = _load_recent_runs(Path(args.breaking_run_log), args.breaking_run_audit_limit)
+    latest_public_alert_run = _latest_meaningful_run(recent_runs)
     repeated_not_delivered = _summarize_not_delivered_streak(recent_runs)
     delivery_recovered_after_failure = _delivery_failures_are_already_recovered(
         delivery_health,
@@ -482,6 +500,12 @@ def main() -> int:
         "telegram_delivery_health": delivery_health,
         "watchlist_breaking_job_state": latest_job_state,
         "watchlist_breaking_latest_run": latest_run,
+        "watchlist_breaking_latest_public_alert_run": latest_public_alert_run,
+        "watchlist_breaking_latest_public_alert_not_delivered": (
+            latest_public_alert_run.get("missing") is not True
+            and latest_public_alert_run.get("deliveryStatus") != "delivered"
+            and latest_public_alert_run.get("delivered") is not True
+        ),
         "watchlist_breaking_delivery_audit": repeated_not_delivered,
         "delivery_recovered_after_failure": delivery_recovered_after_failure,
         "suspected_delivery_gap_without_failed_queue_evidence": suspected_delivery_gap,
