@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-03-11T21:56:21+00:00",
-  "generated_at_hkt": "2026-03-12T05:56:21+08:00",
+  "generated_at_utc": "2026-03-12T00:31:17+00:00",
+  "generated_at_hkt": "2026-03-12T08:31:17+08:00",
   "report": "reports/2026-03-11.html",
   "pages": {
     "AAPL": {
       "ticker": "AAPL",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 69,
       "provisional": true,
@@ -27,7 +27,7 @@
     },
     "AVGO": {
       "ticker": "AVGO",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 85,
       "provisional": true,
@@ -49,7 +49,7 @@
     },
     "BBAI": {
       "ticker": "BBAI",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 76,
       "provisional": true,
@@ -71,7 +71,7 @@
     },
     "KTOS": {
       "ticker": "KTOS",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 73,
       "provisional": true,
@@ -93,7 +93,7 @@
     },
     "NVDA": {
       "ticker": "NVDA",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -115,7 +115,7 @@
     },
     "ONDS": {
       "ticker": "ONDS",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 73,
       "provisional": true,
@@ -137,7 +137,7 @@
     },
     "PLTR": {
       "ticker": "PLTR",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -159,7 +159,7 @@
     },
     "RDW": {
       "ticker": "RDW",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 79,
       "provisional": true,
@@ -181,7 +181,7 @@
     },
     "RKLB": {
       "ticker": "RKLB",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 79,
       "provisional": true,
@@ -203,7 +203,7 @@
     },
     "TSLA": {
       "ticker": "TSLA",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -225,7 +225,7 @@
     },
     "TSM": {
       "ticker": "TSM",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 82,
       "provisional": true,
@@ -247,7 +247,7 @@
     },
     "UUUU": {
       "ticker": "UUUU",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 65,
       "provisional": true,
@@ -269,7 +269,7 @@
     },
     "GOOG": {
       "ticker": "GOOG",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 72,
       "provisional": true,
@@ -291,7 +291,7 @@
     },
     "LITE": {
       "ticker": "LITE",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 83,
       "provisional": true,
@@ -313,7 +313,7 @@
     },
     "COHR": {
       "ticker": "COHR",
-      "lastVerifiedHKT": "2026-03-12T05:56:05+08:00",
+      "lastVerifiedHKT": "2026-03-12T08:31:03+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 75,
       "provisional": true,
