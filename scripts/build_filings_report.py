@@ -250,6 +250,18 @@ def enrich_8k(item: dict[str, Any], filing_text: str, exhibit_texts: list[str]) 
             "verification": verification,
         }
 
+    if "palantir partners with ondas and world view" in low and ("ai flight director" in low or "warp speed" in low or "skyweaver" in low):
+        return {
+            "what_happened": "Ondas filed an 8-K furnishing a March 12 press release and fact sheet announcing a strategic partnership with Palantir and World View to build an AI-enabled multi-domain intelligence, surveillance and reconnaissance platform.",
+            "layman_version": "Plain English: Ondas is trying to plug Palantir's software brain into World View's high-altitude balloon sensors and Ondas' drones, ground robots, and counter-drone systems so military and security customers can run one connected ISR stack instead of separate tools.",
+            "why_it_matters_now": "This is more than a branding press release because the filing lays out concrete program areas: Palantir Warp Speed for production/operations, AI Flight Director for mission planning, and SkyWeaver for onboard edge intelligence. It also says work on optimizing World View's systems has already begun and broader portfolio integration could start as early as Q4 2026.",
+            "what_changed": "Before this filing, Ondas had separate pieces of a defense/autonomy story. Now it is explicitly trying to become part of a larger command-and-control and persistent ISR architecture spanning the stratosphere, air, and ground, with Palantir providing the operational software layer.",
+            "positives": "Adds a high-credibility partner in Palantir; gives Ondas a clearer software-and-systems narrative instead of just hardware assets; could make Ondas' platforms more relevant for larger defense and homeland-security programs if the integration works.",
+            "risks": "This is still partnership-stage disclosure, not booked revenue or signed large customer awards. The filing leans heavily on forward-looking language, and the claimed value depends on execution across three companies plus actual customer adoption. Investors should not confuse architecture ambition with near-term financial proof.",
+            "watch_next": "Watch for pilot deployments, named customer wins, any timeline details around Q4 2026 integration, and whether Ondas starts quantifying backlog, revenue contribution, or software-enabled margin upside from the Palantir/World View relationship.",
+            "verification": verification,
+        }
+
     if "variable compensation plan" in low and "fiscal year 2027" in low:
         ceo = re.search(r"Jen-Hsun Huang.*?\$([\d,]+)\s+200%", text, re.I)
         cfo = re.search(r"Colette M\. Kress.*?\$([\d,]+)\s+150%", text, re.I)
