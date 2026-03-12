@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import ssl
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -12,6 +13,9 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 MODULES = "financialData,defaultKeyStatistics,summaryDetail,price"
+SEC_TICKERS_URL = "https://www.sec.gov/files/company_tickers_exchange.json"
+SEC_COMPANYFACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json"
+SEC_UA = "AtlasMarketIntelligence/1.0 david@example.com"
 
 
 def _val(x: Any) -> float | None:
@@ -38,6 +42,60 @@ def _to_yahoo_symbol(ticker: str) -> str:
     return ticker.replace(".", "-")
 
 
+def _fetch_json(url: str, headers: dict[str, str] | None = None) -> dict[str, Any]:
+    req = Request(url, headers=headers or {})
+    with urlopen(req, timeout=25, context=ssl.create_default_context()) as r:
+        return json.loads(r.read().decode("utf-8"))
+
+
+def _latest_from_fact(fact_block: dict[str, Any]) -> float | None:
+    if not isinstance(fact_block, dict):
+        return None
+    units = fact_block.get("units") or {}
+    candidates = []
+    for unit_values in units.values():
+        for row in unit_values or []:
+            val = row.get("val")
+            end = row.get("end") or ""
+            frame = row.get("frame") or ""
+            fy = row.get("fy") or 0
+            fp = row.get("fp") or ""
+            if val is None:
+                continue
+            candidates.append((str(end), str(frame), int(fy or 0), str(fp), float(val)))
+    if not candidates:
+        return None
+    candidates.sort(reverse=True)
+    return candidates[0][4]
+
+
+def _growth_from_fact(fact_block: dict[str, Any]) -> float | None:
+    if not isinstance(fact_block, dict):
+        return None
+    units = fact_block.get("units") or {}
+    rows = []
+    for unit_values in units.values():
+        for row in unit_values or []:
+            val = row.get("val")
+            fy = row.get("fy")
+            fp = row.get("fp")
+            if val is None or fy is None:
+                continue
+            rows.append((int(fy), str(fp), float(val)))
+    if len(rows) < 2:
+        return None
+    rows.sort(reverse=True)
+    latest = rows[0][2]
+    prev = None
+    for fy, fp, val in rows[1:]:
+        if fp == rows[0][1]:
+            prev = val
+            break
+    if prev in (None, 0):
+        return None
+    return (latest - prev) / prev
+
+
 def fetch_quote_summary(ticker: str) -> dict[str, Any]:
     symbol = _to_yahoo_symbol(ticker)
     hosts = ["query2.finance.yahoo.com", "query1.finance.yahoo.com"]
@@ -53,9 +111,7 @@ def fetch_quote_summary(ticker: str) -> dict[str, Any]:
     for host in hosts:
         url = f"https://{host}/v10/finance/quoteSummary/{quote(symbol)}?modules={MODULES}"
         try:
-            req = Request(url, headers=headers)
-            with urlopen(req, timeout=20) as r:
-                payload = json.loads(r.read().decode("utf-8"))
+            payload = _fetch_json(url, headers=headers)
             result = (((payload.get("quoteSummary") or {}).get("result") or [None])[0]) or {}
             if result:
                 return result
@@ -65,6 +121,50 @@ def fetch_quote_summary(ticker: str) -> dict[str, Any]:
     if last_error:
         raise last_error
     return {}
+
+
+def _load_sec_ticker_map() -> dict[str, dict[str, Any]]:
+    doc = _fetch_json(SEC_TICKERS_URL, headers={"User-Agent": SEC_UA, "Accept": "application/json"})
+    out: dict[str, dict[str, Any]] = {}
+    for row in doc.get("data", []) or []:
+        if len(row) >= 3:
+            cik, company, ticker = row[0], row[1], str(row[2]).upper()
+            out[ticker] = {"cik": str(cik).zfill(10), "company": company}
+    return out
+
+
+def fetch_sec_companyfacts(ticker: str, sec_map: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    meta = sec_map.get(ticker)
+    if not meta:
+        raise ValueError("ticker not found in SEC map")
+    url = SEC_COMPANYFACTS_URL.format(cik=meta["cik"])
+    facts = _fetch_json(url, headers={"User-Agent": SEC_UA, "Accept": "application/json"})
+    facts_usgaap = ((facts.get("facts") or {}).get("us-gaap") or {})
+    revenue = _latest_from_fact(facts_usgaap.get("RevenueFromContractWithCustomerExcludingAssessedTax") or facts_usgaap.get("Revenues"))
+    revenue_growth = _growth_from_fact(facts_usgaap.get("RevenueFromContractWithCustomerExcludingAssessedTax") or facts_usgaap.get("Revenues"))
+    cash = _latest_from_fact(facts_usgaap.get("CashAndCashEquivalentsAtCarryingValue") or facts_usgaap.get("CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"))
+    debt = _latest_from_fact(facts_usgaap.get("LongTermDebtAndFinanceLeaseObligations") or facts_usgaap.get("LongTermDebt") or facts_usgaap.get("DebtInstrumentCarryingAmount"))
+    gross_profit = _latest_from_fact(facts_usgaap.get("GrossProfit"))
+    op_cash = _latest_from_fact(facts_usgaap.get("NetCashProvidedByUsedInOperatingActivities"))
+    capex = _latest_from_fact(facts_usgaap.get("PaymentsToAcquirePropertyPlantAndEquipment"))
+    fcf = None
+    if op_cash is not None and capex is not None:
+        fcf = op_cash - abs(capex)
+    gross_margin = None
+    if gross_profit is not None and revenue not in (None, 0):
+        gross_margin = gross_profit / revenue
+    return {
+        "company": facts.get("entityName") or meta["company"] or ticker,
+        "market_cap_b": 0.0,
+        "revenue_growth_yoy_pct": round((revenue_growth or 0.0) * 100.0, 2),
+        "fcf_margin_pct": round(((fcf / revenue) * 100.0) if fcf is not None and revenue not in (None, 0) else 0.0, 2),
+        "gross_margin_pct": round((gross_margin or 0.0) * 100.0, 2),
+        "forward_pe": 0.0,
+        "peg": 0.0,
+        "net_cash_b": round((((cash or 0.0) - (debt or 0.0)) / 1_000_000_000.0), 2),
+        "source_links": [url],
+        "source_status": "auto-sec-companyfacts",
+    }
 
 
 def build_one(ticker: str, result: dict[str, Any]) -> dict[str, Any]:
@@ -138,6 +238,12 @@ def main() -> int:
     refreshed = dict(existing_tickers)
     success = 0
     failures: list[str] = []
+    sec_success = 0
+    sec_map: dict[str, dict[str, Any]] = {}
+    try:
+        sec_map = _load_sec_ticker_map()
+    except Exception as e:
+        print(f"WARN SEC map: {e}")
 
     for t in watchlist:
         try:
@@ -146,19 +252,31 @@ def main() -> int:
                 raise ValueError("empty quoteSummary result")
             refreshed[t] = build_one(t, result)
             success += 1
-            print(f"OK {t}")
+            print(f"OK {t} yahoo")
+            continue
+        except Exception as e:
+            print(f"WARN {t} yahoo: {e}")
+
+        try:
+            if not sec_map:
+                raise ValueError("SEC map unavailable")
+            refreshed[t] = fetch_sec_companyfacts(t, sec_map)
+            success += 1
+            sec_success += 1
+            print(f"OK {t} sec")
         except Exception as e:
             failures.append(t)
             if t in refreshed:
                 refreshed[t]["source_status"] = "curated-preserved"
-            print(f"WARN {t}: {e}")
+            print(f"WARN {t} sec: {e}")
 
     out: dict[str, Any] = {
         "as_of": as_of,
-        "source_note": "Auto-refresh from Yahoo when available; preserves existing curated entries on fetch failures.",
+        "source_note": "Auto-refresh from Yahoo when available; falls back to SEC companyfacts for U.S. issuers; preserves existing curated entries on fetch failures.",
         "refresh_status": {
             "attempted": len(watchlist),
             "refreshed": success,
+            "refreshed_via_sec": sec_success,
             "failed": len(failures),
             "coverage_pct": round((success / len(watchlist)) * 100.0, 1) if watchlist else 0.0,
             "failed_tickers": failures,
