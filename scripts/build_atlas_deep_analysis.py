@@ -218,9 +218,16 @@ def build(signals_doc: Dict[str, Any]) -> Dict[str, Any]:
         key=lambda kv: (kv[1]["avg_sma20_gap_pct"] if kv[1]["avg_sma20_gap_pct"] is not None else 999.0),
     )[0]
 
-    high_names = ", ".join(x["ticker"] for x in high_attention[:3]) or "none"
-    watch_names = ", ".join(x["ticker"] for x in watch[:3]) or "none"
-    weak_names = ", ".join(x["ticker"] for x in low[-3:]) or "none"
+    def _top_names(rows: List[Dict[str, Any]], limit: int = 4) -> str:
+        return ", ".join(x["ticker"] for x in rows[:limit]) or "none"
+
+    def _weakest_names(rows: List[Dict[str, Any]], limit: int = 3) -> str:
+        weakest = sorted(rows, key=lambda x: (x["score"], x["ticker"]))[:limit]
+        return ", ".join(x["ticker"] for x in weakest) or "none"
+
+    high_names = _top_names(high_attention)
+    watch_names = _top_names(watch)
+    weak_names = _weakest_names(low)
 
     conclusions: List[str] = [
         f"Regime is {regime.replace('_', ' ')} with composite score {_round(composite, 1)} (breadth {_round(breadth_score,1)}, momentum {_round(momentum_score,1)}, volatility {_round(volatility_score,1)}).",
