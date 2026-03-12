@@ -154,7 +154,7 @@ def main() -> int:
     if current is not None:
         all_sections.append((current, buf))
     chosen_title, chosen_body = title, body
-    for sec_title, sec_body in reversed(all_sections):
+    for sec_title, sec_body in all_sections:
         if is_public_alert(sec_title, sec_body):
             chosen_title, chosen_body = sec_title, sec_body
             break
