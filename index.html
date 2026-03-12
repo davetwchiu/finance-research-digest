@@ -108,9 +108,9 @@
       <div class="card">
         <h2>SEC Filings Watch — Executive Summary</h2>
         <div id="filingsSummaryTime" class="muted">Last updated: loading...</div>
-        <div id="filingsSummaryMarket" class="muted" style="margin-top:6px">Coverage: loading...</div>
-        <div id="filingsSummaryTech" class="muted" style="margin-top:6px">What it is: loading...</div>
-        <div id="filingsSummaryRisk" class="muted" style="margin-top:6px">Caveat: loading...</div>
+        <div id="filingsSummaryMarket" class="muted" style="margin-top:8px">Top filing takeaway: loading...</div>
+        <div id="filingsSummaryTech" class="muted" style="margin-top:8px">Why it matters: loading...</div>
+        <div id="filingsSummaryRisk" class="muted" style="margin-top:8px">Affected names / caveat: loading...</div>
         <div class="row" style="margin-top:10px"><a class="btn ghost" id="filingsResearchBtn" href="./filings-research/latest.html">Open latest filings report</a><a class="btn ghost" href="./reports/filings/">Open archive</a></div>
       </div>
     </div>
@@ -579,15 +579,15 @@ async function loadFilingsSummary(){
     if(!res.ok) throw new Error('no filings summary');
     const j = await res.json();
     ts.textContent = `Last updated: ${fmtHKT(j.updatedAt)}`;
-    m.textContent = `Coverage: ${j.market || 'No filings summary yet.'}`;
-    t.textContent = `What it is: ${j.tech || 'No filings summary yet.'}`;
-    r.textContent = `Caveat: ${j.risk || 'No filings summary yet.'}`;
+    m.textContent = `Top filing takeaway: ${j.market || 'No filings summary yet.'}`;
+    t.textContent = `Why it matters: ${j.tech || 'No filings summary yet.'}`;
+    r.textContent = `Affected names / caveat: ${j.risk || 'No filings summary yet.'}`;
     if(j.latestPath){ b.href = j.latestPath; }
   }catch{
     ts.textContent = 'Last updated: unavailable';
-    m.textContent = 'Coverage: filings summary will appear after the filings monitor runs.';
-    t.textContent = 'What it is: this panel tracks 10-Q, 10-K, and 8-K filings for the current watchlist.';
-    r.textContent = 'Caveat: no filings summary has been generated yet.';
+    m.textContent = 'Top filing takeaway: filings summary will appear after the filings monitor runs.';
+    t.textContent = 'Why it matters: this panel should surface the most important filing-backed implication, not describe the panel itself.';
+    r.textContent = 'Affected names / caveat: no filings summary has been generated yet.';
   }
 }
 

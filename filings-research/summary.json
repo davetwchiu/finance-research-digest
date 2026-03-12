@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-03-12T17:22:00+08:00",
-  "count": 14,
-  "market": "Recent filing-backed watchlist developments include ONDS disclosing the BIRD acquisition share registration while underscoring that BIRD adds airborne missile-protection and ISR systems already deployed across 700+ aircraft and 40+ aircraft types.",
-  "tech": "This panel should treat filing-backed breaking news as a document-reading task: headline first, SEC filing next, then layman interpretation.",
-  "risk": "Registration-for-resale still creates potential stock overhang, and strategic fit does not equal proven earnings accretion; integration and revenue proof still matter.",
+  "updatedAt": "2026-03-12T17:40:00+08:00",
+  "count": 7,
+  "market": "ONDS: the BIRD acquisition filing makes Ondas' move deeper into airborne defense more concrete, not just because of the 6.93 million registered shares, but because the attached company materials frame BIRD as a missile-protection and ISR platform already deployed across 700+ aircraft and 40+ aircraft types.",
+  "tech": "This matters because it upgrades ONDS from a narrower autonomous-systems story toward a more credible airborne defense platform story, although the market still needs proof of revenue contribution, margin quality, and integration execution.",
+  "risk": "Affected names: ONDS directly. Main caveat: the filing still includes a resale-registration / stock-overhang angle, so strategic improvement does not yet equal proven earnings accretion.",
   "latestPath": "./reports/filings/2026-03-12.html"
 }
