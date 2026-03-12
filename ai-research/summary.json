@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-03-11T09:30:00+08:00",
-  "market": "AI demand is real, but the market is shifting from rewarding raw capex ambition to rewarding deployable capacity, utilization, and cash-flow proof. Infrastructure and distribution remain the cleanest near-term winners.",
-  "tech": "Reasoning and structured enterprise workflows are monetizing now. Broad autonomous agents in regulated environments are still ahead of the evidence.",
-  "risk": "Top risks are capex outrunning monetization, power/interconnection delays constraining usable capacity, model-layer commoditization, and export-control tightening reshaping where AI can be built and sold.",
+  "updatedAt": "2026-03-12T09:30:00+08:00",
+  "market": "AI remains an infrastructure-led market: revenue and cash conversion are still cleanest at the compute, networking, and capacity-owner layers. The market is starting to separate productive AI capex from narrative-heavy spend.",
+  "tech": "Enterprise adoption is real and deepening, especially in coding, research, and structured workflows. Broad autonomous agents are still narrower in practice than the marketing suggests.",
+  "risk": "Top risks are capex outrunning monetization, power and deployment bottlenecks limiting usable capacity, model-layer commoditization, and export-control tightening reshaping global demand maps.",
   "latestPath": "./ai-research/latest.html"
 }
