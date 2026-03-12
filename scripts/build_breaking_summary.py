@@ -21,12 +21,13 @@ def parse_latest_section(md: str) -> tuple[str | None, list[str]]:
     sections: list[tuple[str, list[str]]] = []
     buf: list[str] = []
     for line in lines:
-        if line.startswith('## ') or line.startswith('### '):
+        if line.startswith('## '):
             if current is not None:
                 sections.append((current, buf))
-            current = line.split(' ', 1)[1].strip()
+            current = line[3:].strip()
             buf = []
         elif current is not None:
+            # Keep nested ### title lines inside the current timestamp block.
             buf.append(line)
     if current is not None:
         sections.append((current, buf))
