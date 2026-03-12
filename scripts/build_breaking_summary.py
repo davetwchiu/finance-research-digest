@@ -81,6 +81,9 @@ def summarize(section_title: str, body: list[str]) -> dict:
 
     bullets = [ln.strip() for ln in body if ln.strip()]
     for ln in bullets:
+        if ln.startswith('### '):
+            event = ln[4:].strip()
+            continue
         plain = re.sub(r'\*\*([^*]+)\*\*', r'\1', ln)
         low = plain.lower()
         if low.startswith(('- event:', '- material alert candidate:')):
@@ -94,6 +97,8 @@ def summarize(section_title: str, body: list[str]) -> dict:
         elif low.startswith('- decision:') and 'no alert' in low:
             status = 'no_material_change'
             event = clean_value(plain.split(':', 1)[1])
+        elif plain and not summary and len(plain) > 40 and not plain.startswith(('### ','## ')):
+            summary = plain
 
     if not summary:
         for ln in bullets:

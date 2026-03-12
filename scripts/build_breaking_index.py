@@ -38,14 +38,20 @@ def clean_value(line: str) -> str:
 def extract_title_summary(body: list[str]) -> tuple[str, str]:
     title = ''
     summary = ''
+    # Newer files may put the real article title on a nested ### line immediately after the ## timestamp line.
     for ln in body:
         s = ln.strip()
+        if s.startswith('### '):
+            title = s[4:].strip()
+            continue
         plain = re.sub(r'\*\*([^*]+)\*\*', r'\1', s)
         low = plain.lower()
         if low.startswith(('- event:', '- material alert candidate:', '- summary:')) and not title:
             title = clean_value(plain.split(':', 1)[1])
         if low.startswith(('- summary:', '- interpretation:', '- fact:', '- facts:')) and not summary:
             summary = clean_value(plain.split(':', 1)[1])
+        elif plain and not summary and not plain.startswith(('### ','## ')) and len(plain) > 40:
+            summary = plain
     if not title:
         title = summary or 'Breaking alert'
     if not summary:
