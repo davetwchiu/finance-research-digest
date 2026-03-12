@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-12T08:31:03+08:00",
+  "generated_at": "2026-03-12T08:57:24+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -287,7 +287,7 @@
         },
         {
           "title": "Nvidia GTC Is Coming. What It Means for the Stock. - Barron's",
-          "url": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxPWjhjeWF4YnNIdV9OY2tkY1U1R2drN3V0d29iSlkxaDF0ZC1rNXpCRjdlRE9TdF9EaGhXSWxTemVMQkctWDBDek53RTE3WDMzOXk4Y3hLLW5LMU45T0lqdHlMc0REMWlSeDBWaTBWVUxQVFozb1NGWkxZVFdGVlgyenlFOWk2blNWRF9OWmU2aG1mTGFlYUtkeEVtT3EwMmZxTXVodzZGWUhHcTBpek4tSEZmU0QtbzVoY2NPZnpmUmRyOGVMc2phelZkNjJpRkI1d2VLUFd1UUc4RmstdzE1YWdSTUhzT0x4a2VwZWl0WHFCMVNqbGhreXM0cUU2M05zc0V4cmJSQ2hiNmN2MUpKWDJRZDgxNGhrTndxVndUa2dhbExPb3huWllOMHl1TnhTdTc3TnJva1ZjcnFMdU51QzlNT2paQ2ZNTmtScjN4ZDNTUWY2YTZ6WmxmLWVETGpKNm1FOXRaUHluM1hyWjI2cFlwVG5NUTV3Q2U5UHRkbw?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxOVS1yMUpjYmoxZFNFeS1wWEItaHB3Y3g1VVRhdWstaTBHa1ppaWNjeUs3VV9LTmJQb2MwWElZTzBwUklBU19OdUlpVXZmaGFDSTE5MkNXZFljdGJpRElZSG9aaUhLTVVuNGs0bFRQVGRCbU5LNlNyTlljTXpXZHREOEFkaEpZY0tXWUt3S3NkOFRHT1REWW5KZ3JaQlBXZ0Q3VzdId0dkcWgteUVuNmt1dnJFa3lMNXdET1NmWFhSUFAwa045MmIwLS0wOWpMSTVPODc3dVFRellKeWlCMlktdHI2NThVT3RhVGVTVDU1VmV2a2ZQdUN4VnFLdE42S0xCRlNPWGJOMFlCMUpqZGgxRzNLS196RWxFN0pvX0oyUGV5XzdlR3JmR3VhdWc2YzFWaENBWWpQc0RpZzRwWF90VE05cjNfRVlXZUV3OGRqSUFqUjQwd05xZ19Qb3R2dGJKWXZRZmtCNjBTSVN6VFlUcjJINEtxQ3JCQUxieTA4NA?oc=5",
           "published_hkt": "2026-03-11T23:06:00+08:00",
           "source": "Barron's",
           "impact": {
@@ -310,10 +310,10 @@
     "ONDS": {
       "query": "ONDS OR ONDS stock",
       "summary": {
-        "label": "Watch \u2014 high-impact headlines present",
-        "positive_count": 2,
+        "label": "Caution \u2014 negative-news skew",
+        "positive_count": 1,
         "negative_count": 2,
-        "high_impact_count": 1
+        "high_impact_count": 2
       },
       "items": [
         {
@@ -347,6 +347,16 @@
           }
         },
         {
+          "title": "Ondas Stock Falls Wednesday Despite Strong Revenue, Israel Contract News - Benzinga",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOOXVjQmlRVFRMdExKOGtVY1RxZS1lTlFnQzJ2aUJzXzNCNEdfdVE2aWM5X29XRWNNOGdqMjdYeGloa01iUzJCMUdVRnJiQy1ZWnhmZmY4ZUQ4TXVsUzlYdVhXbE1aNlFvWERPdDVHOGN1SS00V19rWV9RZXN6ZGdoYTRpMDBodXVBMDVNeFc0Zzl3OXptQy14QUNOUWs3RUxGQ2lnTTRtcDZkd3ZuV2F6bjZqZmR0Xy1TRGpkeHFLSk9CZERCQVFHSS1CU0c?oc=5",
+          "published_hkt": "2026-03-12T02:23:31+08:00",
+          "source": "Benzinga",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "high"
+          }
+        },
+        {
           "title": "Ondas (ONDS) Shares Decline Despite Strong Revenue Projections a - GuruFocus",
           "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQcUxiOXlZWmh6NEZ5d1FMS1hQZ1ZUYjE1TXFRdHdaZ0N2WWR4Y1p5RExUZTYxbXVfREFoUEhRQ3d3Y185UklfUU1OMVhodDZDRmFhU3lYUW5Bb1BEOTduWHZKSW52V0M1THVfZWEweEJNX05kQl9HTkNTSDNJLUp3ZGs5b1lQQkRBSFcwS3djZFdvZW5BZmJXNGw3YVpUMVhyZkpLb0pzNHUybjhNMTVlZEhTbGR0QU5qanlyeWpvaWN5aVk?oc=5",
           "published_hkt": "2026-03-12T03:45:13+08:00",
@@ -354,16 +364,6 @@
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
-          }
-        },
-        {
-          "title": "Is It Too Late To Consider Ondas (ONDS) After Its Sharp Multi Year Share Price Surge? - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQQk9nc3BKVmtKNmQtS3Bhb2xYTnh1cGw2ZGt3TWpBM2RseGt3MmxWcDBrSWl6UmJ1MlVIa2o4V3prNGlpc3AweTNLM2RsSUFNV2xIT21sUDVkcFNFZVJuOGtrUlEyTk5fWGV4b2ppYnhKNXpoVEpUQUQxTVR1UGh2LQ?oc=5",
-          "published_hkt": "2026-03-02T16:00:00+08:00",
-          "source": "Yahoo Finance",
-          "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
           }
         }
       ]
@@ -557,7 +557,7 @@
         "label": "Watch \u2014 high-impact headlines present",
         "positive_count": 0,
         "negative_count": 0,
-        "high_impact_count": 1
+        "high_impact_count": 2
       },
       "items": [
         {
@@ -601,13 +601,13 @@
           }
         },
         {
-          "title": "TSLA Stock Quote Price and Forecast - CNN",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9qejEtbzhHOHJnMXJRWUVEbUxyUFF0RnJuNEtEN0U4Mk4wTlIycHNTejNyYTJYQlRDMFRCMllMcGJtNV81S0RNME9IZFBSZkRJ?oc=5",
-          "published_hkt": "2026-03-09T17:01:41+08:00",
-          "source": "CNN",
+          "title": "Why Tesla Stock Got a Boost From a Battery Supplier\u2019s Earnings - Barron's",
+          "url": "https://news.google.com/rss/articles/CBMijgNBVV95cUxOSVZMS284QmRkc1ZGNDJ0Y0RvUDgtLU1UUllQNE9RVU9NYTE4aWxIMWpRZ25hSjJQN0NvWXNlZU40bWRyTkd6WUJJM3hhV3Bmbl9hcWw1Z3oxVDdUaGRDUU5DbkFtTkhIeTFyeGZzZEZTV3hlQXJHYWpJRndVcENxeEpVb3kwbzBxMlJrWWpQeU4zZzhsa0V0d01DUURoT2NqNXkteURIZUMxV1lsOHBqUFBFdmM3aXhqM1B2RU5rTXQtckRVSkZMNHQ2RnVMYjB1LU1RaC1wVmFSVVBVSHNDWlhMTk1RcGNnb0hXX29vV0JBM0RwZlFmbmJiZ3RKUlo0SUNxTktZbHczSnE2UWl6RkVsekRyZ2wxRGZ6N1pRd3EtM1BRUk9rLXJPSHpTSVBXRzRlUFByZW9FWGFBeTVYcGNFMTdxcWlvc1hMRVpldkFuZ0t2N0dqLVdJWWRwb1lXNmtjWldBZHZoRFVDME1CX2haY0U5WFg3RWRJdVhZMHdsQ2NoRHo3bGVzYVRRUQ?oc=5",
+          "published_hkt": "2026-03-11T04:17:00+08:00",
+          "source": "Barron's",
           "impact": {
             "sentiment": "neutral",
-            "severity": "low"
+            "severity": "high"
           }
         }
       ]
@@ -662,9 +662,9 @@
           }
         },
         {
-          "title": "Is Taiwan Semiconductor Stock Going to $500? - The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZ2RfN3lfUEgtWlk1bGRycTdYMDZiZFZYZnB5TVJ5RmhKSHVTcm5OZWZNblloVHpobmxyYUdzZXZNUVVWdFpNTXFDWk1HS1VQOUdfMFFXdS1aQW8wel9vT0NtLU1oM0pnM2NpT1YxTjF1QWNVS3JtSVd5Tm4tQjFfRUxuYmR2anJaTzdJN1pB?oc=5",
-          "published_hkt": "2026-03-07T23:47:00+08:00",
+          "title": "Where Will TSMC Stock Be in 3 Years? - The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSlNwd1NVOEYwWTJQdWUxNTFoUmNVYnF0Q1FZelFGOFZtdG9TOF9LMGFQVUgya3hRWXQ3ZTBxRUFRRXBvWGhJbk9Ia3IwVWdrLUlUOUM5V0JEQm92ZkNubl85U0xDdGpFWVpZcEIxcllJRWllaGI4SlhPdVFJZnBkcEt0QWc?oc=5",
+          "published_hkt": "2026-02-19T16:00:00+08:00",
           "source": "The Motley Fool",
           "impact": {
             "sentiment": "neutral",
@@ -799,7 +799,7 @@
       "query": "LITE OR LITE stock",
       "summary": {
         "label": "Neutral \u2014 no strong catalyst signal",
-        "positive_count": 1,
+        "positive_count": 0,
         "negative_count": 0,
         "high_impact_count": 0
       },
@@ -816,8 +816,8 @@
         },
         {
           "title": "Can Indium Phosphide Capacity Expansion Drive Growth for LITE's Stock? - The Globe and Mail",
-          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxObk1IcFdFSUFMeWRsaUdHU0pUcV9OeDJqbjl0dHFLY2dkdjVuLUdfMzRiSXNaNDZPNkx6YWhRcE1NUjlDYlo1a0NxMnJxWlFFQkFoaHhmZ2QtdTEzZWo2NFJvM1JRN09VdjdYcjgwT0phd3l6LTF0NnA1VW5fTldHQjh1cTZBWGFUZWJDV24yX1ZPS0d6VXFvcHZIWjM2RmlYaHYySFlRYWFIRWVTcmxkWUM1S0p1cHZtNlFqM2htaXpLcFhKc3lFUUpuRFV0Z1phSW54Q00xYXgyQi1zTU02QVRSVThkRVk?oc=5",
-          "published_hkt": "2026-03-11T22:04:41+08:00",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQUVdNbjEzZnBPZHM4UkZZcTRVYVh3MzNrVTlkNEI1WTZ6ajhoSU1CWXVpOGpqdWtQcW56TjlvV2F2Y0NQTUY0dXNXTjdWZzRnbW4xV2xGcE9hbnRLbkVPV0V4ekM0YlA0QU1ya3psR2JIRXBGclJMekNMVV9OMTduUk44aUhraDRuVzNMbVNwc05NRkNCMElFYkNjV1dEWF9wNG9XOWp1YW9IdVlOM3ZQTVE2SDNQcG5vRTFNa0hDeVBjMEJrQ01EbUUydDcybVVRMHV5bGtSSF9MNWJBekhHSFM3Zy15dVU?oc=5",
+          "published_hkt": "2026-03-11T22:09:31+08:00",
           "source": "The Globe and Mail",
           "impact": {
             "sentiment": "neutral",
@@ -845,13 +845,13 @@
           }
         },
         {
-          "title": "Lumentum Holdings Inc. $LITE Shares Sold by Capital World Investors - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSTFfRThsRDdvWHF6aTAwWnluOGFhZTdwcE5DNW5tazl3eUwzUDlva3dqdzNBMDJrdEJtaEhhNXUyNmQ5OGxJRHBFc0w3bE0telRKaURoSnpPeFhOdnBlQWtPeFlwVS03Q0JQdVBld2JMS1VPSThqTDlBU2hPQ1h1bnpNbi1GeUZxb3lfaENhcUtfdFFKbTl1NGUxR2ZNV29adTZ5SXlkYUJCSHE4NkRlODRDNWJnNHhTa3FGb3N2UGIxSjl0?oc=5",
-          "published_hkt": "2026-03-11T16:40:48+08:00",
-          "source": "MarketBeat",
+          "title": "Lumentum, Coherent, and Vertiv Added to the S&P 500 As AI Stocks Dominate Rebalancing - 24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPc29ET0FiN1J5TldNMGswNXR1VEpuNHFxX1Q3T3ZWaDlZRmdjYnIwbkt6SXlxVGlKMW1MQ0dsSXlwc0E0VFJzTlZSblZKRmY0ZDBXbXhOU0RiQmVHX1lsSlkyMzJmMUdYeFpQQ3IzRkdGRU9KMUpYLVBRdHRUN254VEhMV28ydTdRZ1BuM0lIYjFyV29CVjVKU0MzVHBOS09FMDQ0RWxvXzRrXzJiZnoteVd2anNVd1NaVkJjOGFyRnRyTlVu?oc=5",
+          "published_hkt": "2026-03-07T06:51:26+08:00",
+          "source": "24/7 Wall St.",
           "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
+            "sentiment": "neutral",
+            "severity": "low"
           }
         }
       ]
@@ -896,20 +896,20 @@
           }
         },
         {
-          "title": "InP Advantage: COHR's Means to Solid Financials & Scalability - TradingView",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxObjAwYjZKR05KaVZYWEJsWXJWN1Fqc3E0MkxzMzBIMlFxVV96Vk5ONHpSTjNOTHNNcDJVQ1QxN2U5eDh6di1MSnpNVEc0QXRtYUhsWTJsWFppcGtrcXFkZDY2Sjd1dTdTcFZ0eDBmaDdmVUxvRUFydUpMMW5TUmhreFZQdFlMWUU4bFBJWVRsM0hrMGlLN2NTa0U1MkJ1MklpSkZhQkRTRnU0azljNGpudGxiQmk?oc=5",
-          "published_hkt": "2026-03-11T21:34:00+08:00",
-          "source": "TradingView",
+          "title": "Why Coherent Is A Strong Buy After Rising Nearly 15% (NYSE:COHR) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOSHFPQV9LRVR6UGtBTV9SMjNjem82MzVjRUpScnhEeXlvcTlOcEt3eElYWTJSeEkzWENzcGlnQzI0ZG9TdUlMWGZJQzl6cHZzTVdoSDZ4YzdDODYzd29tY0Ezc0JpNWNzWW56R3otM3U0OU82UlBkcmg4TW8xd1VmclYxV3dyeDB1SkVtQVNfNG1Ydw?oc=5",
+          "published_hkt": "2026-03-02T16:00:00+08:00",
+          "source": "Seeking Alpha",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
           }
         },
         {
-          "title": "Why Coherent Is A Strong Buy After Rising Nearly 15% (NYSE:COHR) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOSHFPQV9LRVR6UGtBTV9SMjNjem82MzVjRUpScnhEeXlvcTlOcEt3eElYWTJSeEkzWENzcGlnQzI0ZG9TdUlMWGZJQzl6cHZzTVdoSDZ4YzdDODYzd29tY0Ezc0JpNWNzWW56R3otM3U0OU82UlBkcmg4TW8xd1VmclYxV3dyeDB1SkVtQVNfNG1Ydw?oc=5",
-          "published_hkt": "2026-03-02T16:00:00+08:00",
-          "source": "Seeking Alpha",
+          "title": "Optical-Tech Stocks Looking Sharp: Ciena Up 9%, Lumentum Rises 8%, Coherent Climbs 7% - 24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQX2hsZXU1enRmOEdhUWxDNDQwVGx3OVpuYkFlSG5mRG5TVGVxWUdPU0RtMVd5YUJsQm9BTzU2MnhvUE9ZWGdCMlhmeGZrLUNBdzlNeHBLMi1qbk1sZDg1ZTJOMHBSOWdXbEFGVXhYSWNBZnJMTkV0VEloT01ReXF2NkltbXJfLWV2ZmlwNmpMZW1yRjBYclVSOTRwRkRyY3R0YWg4d3R0dDZBajBXOFJmdERVRXhVajY0UHpqNkVwMm4?oc=5",
+          "published_hkt": "2026-03-11T01:48:43+08:00",
+          "source": "24/7 Wall St.",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"

@@ -344,12 +344,12 @@ function fmtHKT(ts){
 }
 
 async function loadAtlasLocalIntelligence(){
-  const panelTime=document.getElementById('atlasIntelPanelTime');
-  const freshness=document.getElementById('atlasIntelFreshness');
-  const breadth=document.getElementById('atlasIntelBreadth');
-  const risk=document.getElementById('atlasIntelRisk');
-  const movers=document.getElementById('atlasIntelMovers');
-  const vol=document.getElementById('atlasIntelVol');
+  const panelTime=document.getElementById('atlasSnapshotPanelTime');
+  const freshness=document.getElementById('atlasSnapshotFreshness');
+  const breadth=document.getElementById('atlasSnapshotBreadth');
+  const risk=document.getElementById('atlasSnapshotRisk');
+  const movers=document.getElementById('atlasSnapshotMovers');
+  const vol=document.getElementById('atlasSnapshotVol');
 
   try{
     const [snapshotRes, fundamentalsRes] = await Promise.all([

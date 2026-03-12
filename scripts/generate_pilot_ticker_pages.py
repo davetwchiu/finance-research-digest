@@ -276,11 +276,11 @@ def _plain_language_summary(ticker: str, sig: dict, score: Score) -> str:
         elif atr_pct >= 5:
             risk = "volatility is elevated, so expect wider swings than the benchmark"
 
-    stance = "watchlist name, not an aggressive chase"
+    stance = "constructive, but better bought on orderly pullbacks than on excitement"
     if score.total >= 75:
-        stance = "actionable only if price confirms the move"
+        stance = "actionable only if price keeps confirming with follow-through"
     elif score.total <= 50:
-        stance = "mostly a monitoring name until price and evidence improve"
+        stance = "a prove-it setup; keep it on watch until price and evidence firm up"
 
     lead = trend_bits[0] if trend_bits else "setup is mixed"
     second = trend_bits[1] if len(trend_bits) > 1 else momentum
