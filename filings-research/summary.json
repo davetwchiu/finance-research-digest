@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-03-12T22:03:05+08:00",
+  "updatedAt": "2026-03-12T22:04:36+08:00",
   "count": 14,
-  "market": "14 recent SEC filing(s) matched the current watchlist in the last 45 days.",
-  "tech": "Latest run attempted primary-document reads for recent filings and completed 8 filing-level writeups from SEC primary text.",
-  "risk": "If a card explicitly says the primary filing read was partial or incomplete, treat that note as a hard limitation rather than a hidden assumption.",
+  "market": "ONDS: Ondas filed an 8-K furnishing a March 12 press release and fact sheet announcing a strategic partnership with Palantir and World View to build an AI-enabled multi-domain intelligence, surveillance and reconnaissance platform.",
+  "tech": "This is more than a branding press release because the filing lays out concrete program areas: Palantir Warp Speed for production/operations, AI Flight Director for mission planning, and SkyWeaver for onboard edge intelligence. It also says work on optimizing World View's systems has already begun and broader portfolio integration could start as early as Q4 2026.",
+  "risk": "Affected names / caveat: ONDS directly. This is still partnership-stage disclosure, not booked revenue or signed large customer awards. The filing leans heavily on forward-looking language, and the claimed value depends on execution across three companies plus actual customer adoption. Investors should not confuse architecture ambition with near-term financial proof.",
   "latestPath": "./reports/filings/2026-03-12.html"
 }

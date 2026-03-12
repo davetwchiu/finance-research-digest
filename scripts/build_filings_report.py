@@ -433,12 +433,28 @@ def build_report(watchlist: list[str], out_root: Path) -> tuple[Path, dict[str, 
     latest_path = "./reports/filings/" + archive_path.name
     count = len(findings)
     enriched = sum(1 for x in findings if x.get("analysis"))
+
+    best_item = next((x for x in findings if x.get("analysis")), findings[0] if findings else None)
+    if best_item and best_item.get("analysis"):
+        a = best_item["analysis"]
+        market = f"{best_item['ticker']}: {a['what_happened']}"
+        tech = f"{a['why_it_matters_now']}"
+        risk = f"Affected names / caveat: {best_item['ticker']} directly. {a['risks']}"
+    elif best_item:
+        market = f"{best_item['ticker']}: {best_item['executiveSummary']}"
+        tech = best_item['whyItMatters']
+        risk = f"Affected names / caveat: {best_item['ticker']} directly. Primary filing read was not completed in full, so treat this as a narrower filing note."
+    else:
+        market = "No recent 10-Q, 10-K, or 8-K filings were found for the current watchlist in the last 45 days."
+        tech = "Summary timestamp refreshed; no new target filing was found."
+        risk = "Affected names / caveat: none."
+
     latest_summary = {
         "updatedAt": stamp.isoformat(),
         "count": count,
-        "market": f"{count} recent SEC filing(s) matched the current watchlist in the last 45 days." if count else "No recent 10-Q, 10-K, or 8-K filings were found for the current watchlist in the last 45 days.",
-        "tech": f"Latest run attempted primary-document reads for recent filings and completed {enriched} filing-level writeups from SEC primary text." if count else "Summary timestamp refreshed; no new target filing was found.",
-        "risk": "If a card explicitly says the primary filing read was partial or incomplete, treat that note as a hard limitation rather than a hidden assumption.",
+        "market": market,
+        "tech": tech,
+        "risk": risk,
         "latestPath": latest_path,
     }
 
@@ -465,8 +481,8 @@ a{{color:#9bb8ff}} .wrap{{max-width:980px;margin:0 auto}} .card{{border:1px soli
 </head>
 <body><div class='wrap'>
 <p><a href='../../index.html'>← Back to Atlas</a> · <a href='./index.html'>Filing archive</a></p>
-<div class='card'><h1>SEC filings watch</h1><p class='muted'>Generated: {stamp.isoformat()} · Watchlist filings monitor for 10-Q, 10-K, and 8-K.</p>
-<p>This page is for hard-disclosure monitoring. It is most useful when you want to know whether a company actually filed something material, not just showed up in headlines.</p>
+<div class='card'><h1>SEC filings watch</h1><p class='muted'>Generated: {stamp.isoformat()} · Watchlist filings review for 10-Q, 10-K, and 8-K.</p>
+<p>This page should surface the most decision-useful filing-backed developments first, in plain English, with explicit caveats where read depth is incomplete.</p>
 <h2>Executive summary</h2><ul>{exec_lines}</ul></div>
 {''.join(cards) if cards else "<div class='card'><h2>No recent target filings found</h2><p class='muted'>Nothing in the current watchlist matched 10-Q / 10-K / 8-K in the recent 45-day window.</p></div>"}
 </div></body></html>"""
