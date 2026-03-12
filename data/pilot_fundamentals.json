@@ -1,77 +1,228 @@
 {
   "as_of": "2026-03-12",
-  "source_note": "Auto-refresh from Yahoo when available; preserves existing curated entries on fetch failures.",
+  "source_note": "Auto-refresh from Yahoo when available; falls back to SEC companyfacts for U.S. issuers; preserves existing curated entries on fetch failures.",
   "refresh_status": {
     "attempted": 15,
-    "refreshed": 0,
-    "failed": 15,
-    "coverage_pct": 0.0,
-    "failed_tickers": [
-      "AAPL",
-      "AVGO",
-      "BBAI",
-      "KTOS",
-      "NVDA",
-      "ONDS",
-      "PLTR",
-      "RDW",
-      "RKLB",
-      "TSLA",
-      "TSM",
-      "UUUU",
-      "GOOG",
-      "LITE",
-      "COHR"
-    ]
+    "refreshed": 15,
+    "refreshed_via_yahoo": 0,
+    "refreshed_via_sec": 15,
+    "yahoo_401_count": 0,
+    "yahoo_skipped_due_to_cooldown": 15,
+    "yahoo_cooldown_active": true,
+    "failed": 0,
+    "coverage_pct": 100.0,
+    "failed_tickers": []
   },
   "tickers": {
     "NVDA": {
-      "company": "NVIDIA",
-      "market_cap_b": 4480.0,
-      "revenue_growth_yoy_pct": 80.0,
-      "fcf_margin_pct": 46.0,
-      "gross_margin_pct": 75.0,
-      "forward_pe": 38.0,
-      "peg": 1.2,
-      "net_cash_b": 27.0,
+      "company": "NVIDIA CORP",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 61.4,
+      "fcf_margin_pct": 380.27,
+      "gross_margin_pct": 570.2,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": 2.14,
       "source_links": [
-        "https://www.sec.gov/edgar/search/#/q=NVIDIA%2520CORP",
-        "https://investor.nvidia.com/",
-        "https://finance.yahoo.com/quote/NVDA/financials"
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
       ],
-      "source_status": "curated-preserved"
+      "source_status": "auto-sec-companyfacts"
     },
     "PLTR": {
-      "company": "Palantir",
-      "market_cap_b": 320.0,
-      "revenue_growth_yoy_pct": 33.0,
-      "fcf_margin_pct": 27.0,
-      "gross_margin_pct": 81.0,
-      "forward_pe": 95.0,
-      "peg": 2.8,
-      "net_cash_b": 3.6,
+      "company": "Palantir Technologies Inc.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 50.57,
+      "fcf_margin_pct": 46.94,
+      "gross_margin_pct": 82.37,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": 1.22,
       "source_links": [
-        "https://www.sec.gov/edgar/search/#/q=Palantir%2520Technologies%2520Inc",
-        "https://investors.palantir.com/",
-        "https://finance.yahoo.com/quote/PLTR/financials"
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001321655.json"
       ],
-      "source_status": "curated-preserved"
+      "source_status": "auto-sec-companyfacts"
     },
     "TSLA": {
-      "company": "Tesla",
-      "market_cap_b": 1300.0,
-      "revenue_growth_yoy_pct": 12.0,
-      "fcf_margin_pct": 7.0,
-      "gross_margin_pct": 18.0,
-      "forward_pe": 66.0,
-      "peg": 2.5,
-      "net_cash_b": 21.0,
+      "company": "Tesla, Inc.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 2.94,
+      "fcf_margin_pct": 6.56,
+      "gross_margin_pct": 18.03,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": 9.93,
       "source_links": [
-        "https://www.sec.gov/edgar/search/#/q=Tesla%252C%2520Inc",
-        "https://ir.tesla.com/",
-        "https://finance.yahoo.com/quote/TSLA/financials"
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
       ],
-      "source_status": "curated-preserved"
+      "source_status": "auto-sec-companyfacts"
+    },
+    "AAPL": {
+      "company": "Apple Inc.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 15.65,
+      "fcf_margin_pct": 35.86,
+      "gross_margin_pct": 48.16,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": -43.18,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "AVGO": {
+      "company": "Broadcom Inc.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 29.47,
+      "fcf_margin_pct": 41.48,
+      "gross_margin_pct": 68.13,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": -51.88,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "BBAI": {
+      "company": "BigBear.ai Holdings, Inc.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 13.98,
+      "fcf_margin_pct": -33.27,
+      "gross_margin_pct": 22.31,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": -0.02,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001836981.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "KTOS": {
+      "company": "KRATOS DEFENSE & SECURITY SOLUTIONS, INC.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 17.41,
+      "fcf_margin_pct": 0.0,
+      "gross_margin_pct": 22.86,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": 0.26,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001069258.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "ONDS": {
+      "company": "Ondas Inc.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 104.19,
+      "fcf_margin_pct": -261.97,
+      "gross_margin_pct": 25.79,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": 0.43,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001646188.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "RDW": {
+      "company": "Redwire Corporation",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 3.51,
+      "fcf_margin_pct": -56.89,
+      "gross_margin_pct": 5.15,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": 0.01,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001819810.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "RKLB": {
+      "company": "ROCKET LAB CORP",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 38.94,
+      "fcf_margin_pct": -53.47,
+      "gross_margin_pct": 34.43,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": 0.68,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001819994.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "TSM": {
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 0.0,
+      "fcf_margin_pct": 0.0,
+      "gross_margin_pct": 0.0,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": 0.0,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "UUUU": {
+      "company": "Energy Fuels Inc.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 1.64,
+      "fcf_margin_pct": -164.95,
+      "gross_margin_pct": 0.58,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": -0.61,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001385849.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "GOOG": {
+      "company": "ALPHABET INC.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 12.04,
+      "fcf_margin_pct": 81.2,
+      "gross_margin_pct": 0.0,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": -18.38,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "LITE": {
+      "company": "Lumentum Holdings Inc.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 10.79,
+      "fcf_margin_pct": 1.51,
+      "gross_margin_pct": 14.6,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": -1.75,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001633978.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
+    },
+    "COHR": {
+      "company": "Coherent Corp.",
+      "market_cap_b": 0.0,
+      "revenue_growth_yoy_pct": 17.4,
+      "fcf_margin_pct": -9.12,
+      "gross_margin_pct": 0.0,
+      "forward_pe": 0.0,
+      "peg": 0.0,
+      "net_cash_b": -2.49,
+      "source_links": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000820318.json"
+      ],
+      "source_status": "auto-sec-companyfacts"
     }
   }
 }

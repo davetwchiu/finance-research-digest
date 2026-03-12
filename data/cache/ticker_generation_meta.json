@@ -1,209 +1,11 @@
 {
-  "generated_at_utc": "2026-03-12T00:57:32+00:00",
-  "generated_at_hkt": "2026-03-12T08:57:32+08:00",
+  "generated_at_utc": "2026-03-12T09:58:11+00:00",
+  "generated_at_hkt": "2026-03-12T17:58:11+08:00",
   "report": "reports/2026-03-12.html",
   "pages": {
     "AAPL": {
       "ticker": "AAPL",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 69,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "fundamentals feed unavailable for peer comparison",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 0,
-      "catalystVerifiedCount": 0,
-      "score": 48,
-      "decision": {
-        "stance": "wait",
-        "macroSensitivity": "lower",
-        "actionText": "Wait for proof \u2014 price is still below trend support."
-      }
-    },
-    "AVGO": {
-      "ticker": "AVGO",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 85,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer comparison limited",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 65,
-      "decision": {
-        "stance": "actionable",
-        "macroSensitivity": "medium",
-        "actionText": "Actionable on confirmation \u2014 good candidate if price proves itself."
-      }
-    },
-    "BBAI": {
-      "ticker": "BBAI",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 76,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer comparison limited",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 47,
-      "decision": {
-        "stance": "watch",
-        "macroSensitivity": "high",
-        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
-      }
-    },
-    "KTOS": {
-      "ticker": "KTOS",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 73,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer comparison limited",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 41,
-      "decision": {
-        "stance": "wait",
-        "macroSensitivity": "high",
-        "actionText": "Wait for proof \u2014 price is still below trend support."
-      }
-    },
-    "NVDA": {
-      "ticker": "NVDA",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 100,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer fundamentals unavailable",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 3,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 100,
-      "decision": {
-        "stance": "actionable",
-        "macroSensitivity": "medium",
-        "actionText": "Actionable on confirmation \u2014 good candidate if price proves itself."
-      }
-    },
-    "ONDS": {
-      "ticker": "ONDS",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 73,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer comparison limited",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 41,
-      "decision": {
-        "stance": "wait",
-        "macroSensitivity": "high",
-        "actionText": "Wait for proof \u2014 price is still below trend support."
-      }
-    },
-    "PLTR": {
-      "ticker": "PLTR",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 100,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer fundamentals unavailable",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 3,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 90,
-      "decision": {
-        "stance": "watch",
-        "macroSensitivity": "medium",
-        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
-      }
-    },
-    "RDW": {
-      "ticker": "RDW",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 79,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer comparison limited",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 52,
-      "decision": {
-        "stance": "watch",
-        "macroSensitivity": "high",
-        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
-      }
-    },
-    "RKLB": {
-      "ticker": "RKLB",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
-      "freshnessState": "fresh",
-      "evidenceQualityScore": 79,
-      "provisional": true,
-      "reasons": [
-        "business reality missing segment/customer proof",
-        "peer comparison limited",
-        "catalyst calendar unverified"
-      ],
-      "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
-      "catalystVerifiedCount": 0,
-      "score": 52,
-      "decision": {
-        "stance": "watch",
-        "macroSensitivity": "high",
-        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
-      }
-    },
-    "TSLA": {
-      "ticker": "TSLA",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -216,7 +18,198 @@
       "businessEvidenceCount": 3,
       "moatComparePoints": 2,
       "catalystVerifiedCount": 0,
+      "score": 75,
+      "decision": {
+        "stance": "wait",
+        "macroSensitivity": "lower",
+        "actionText": "Wait for proof \u2014 price is still below trend support."
+      }
+    },
+    "AVGO": {
+      "ticker": "AVGO",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 4,
+      "catalystVerifiedCount": 0,
+      "score": 97,
+      "decision": {
+        "stance": "actionable",
+        "macroSensitivity": "medium",
+        "actionText": "Actionable on confirmation \u2014 good candidate if price proves itself."
+      }
+    },
+    "BBAI": {
+      "ticker": "BBAI",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "peer comparison limited",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 60,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "high",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
+    },
+    "KTOS": {
+      "ticker": "KTOS",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 4,
+      "catalystVerifiedCount": 0,
+      "score": 54,
+      "decision": {
+        "stance": "wait",
+        "macroSensitivity": "high",
+        "actionText": "Wait for proof \u2014 price is still below trend support."
+      }
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 3,
+      "catalystVerifiedCount": 0,
+      "score": 97,
+      "decision": {
+        "stance": "actionable",
+        "macroSensitivity": "medium",
+        "actionText": "Actionable on confirmation \u2014 good candidate if price proves itself."
+      }
+    },
+    "ONDS": {
+      "ticker": "ONDS",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 3,
+      "catalystVerifiedCount": 0,
+      "score": 63,
+      "decision": {
+        "stance": "wait",
+        "macroSensitivity": "high",
+        "actionText": "Wait for proof \u2014 price is still below trend support."
+      }
+    },
+    "PLTR": {
+      "ticker": "PLTR",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "peer comparison limited",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 2,
+      "catalystVerifiedCount": 0,
+      "score": 88,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "medium",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
+    },
+    "RDW": {
+      "ticker": "RDW",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 4,
+      "catalystVerifiedCount": 0,
+      "score": 60,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "high",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
+    },
+    "RKLB": {
+      "ticker": "RKLB",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 4,
+      "catalystVerifiedCount": 0,
       "score": 74,
+      "decision": {
+        "stance": "watch",
+        "macroSensitivity": "high",
+        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+      }
+    },
+    "TSLA": {
+      "ticker": "TSLA",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
+      "freshnessState": "fresh",
+      "evidenceQualityScore": 100,
+      "provisional": true,
+      "reasons": [
+        "business reality missing segment/customer proof",
+        "catalyst calendar unverified"
+      ],
+      "whatChangedEvidenceCount": 4,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 4,
+      "catalystVerifiedCount": 0,
+      "score": 67,
       "decision": {
         "stance": "watch",
         "macroSensitivity": "medium",
@@ -225,20 +218,19 @@
     },
     "TSM": {
       "ticker": "TSM",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 82,
+      "evidenceQualityScore": 100,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
-        "peer comparison limited",
         "catalyst calendar unverified"
       ],
       "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 4,
       "catalystVerifiedCount": 0,
-      "score": 59,
+      "score": 67,
       "decision": {
         "stance": "watch",
         "macroSensitivity": "medium",
@@ -247,20 +239,19 @@
     },
     "UUUU": {
       "ticker": "UUUU",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 65,
+      "evidenceQualityScore": 100,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
-        "fundamentals feed unavailable for peer comparison",
         "catalyst calendar unverified"
       ],
       "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 0,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 3,
       "catalystVerifiedCount": 0,
-      "score": 41,
+      "score": 49,
       "decision": {
         "stance": "wait",
         "macroSensitivity": "high",
@@ -269,20 +260,20 @@
     },
     "GOOG": {
       "ticker": "GOOG",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 72,
+      "evidenceQualityScore": 100,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
-        "fundamentals feed unavailable for peer comparison",
+        "peer comparison limited",
         "catalyst calendar unverified"
       ],
       "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 0,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 2,
       "catalystVerifiedCount": 0,
-      "score": 54,
+      "score": 73,
       "decision": {
         "stance": "watch",
         "macroSensitivity": "lower",
@@ -291,20 +282,19 @@
     },
     "LITE": {
       "ticker": "LITE",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 83,
+      "evidenceQualityScore": 100,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
-        "peer comparison limited",
         "catalyst calendar unverified"
       ],
       "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
-      "moatComparePoints": 1,
+      "businessEvidenceCount": 3,
+      "moatComparePoints": 4,
       "catalystVerifiedCount": 0,
-      "score": 61,
+      "score": 74,
       "decision": {
         "stance": "actionable",
         "macroSensitivity": "high",
@@ -313,9 +303,9 @@
     },
     "COHR": {
       "ticker": "COHR",
-      "lastVerifiedHKT": "2026-03-12T08:57:24+08:00",
+      "lastVerifiedHKT": "2026-03-12T17:56:25+08:00",
       "freshnessState": "fresh",
-      "evidenceQualityScore": 75,
+      "evidenceQualityScore": 100,
       "provisional": true,
       "reasons": [
         "business reality missing segment/customer proof",
@@ -323,10 +313,10 @@
         "catalyst calendar unverified"
       ],
       "whatChangedEvidenceCount": 4,
-      "businessEvidenceCount": 0,
+      "businessEvidenceCount": 3,
       "moatComparePoints": 0,
       "catalystVerifiedCount": 0,
-      "score": 61,
+      "score": 74,
       "decision": {
         "stance": "actionable",
         "macroSensitivity": "high",
