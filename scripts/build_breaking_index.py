@@ -93,18 +93,16 @@ def is_public_alert(section_title: str, body: list[str]) -> bool:
 
 
 def parse_created_at(file_date: str, section_title: str) -> str:
-    # Handle variants like:
-    # 2026-03-11 05:36 HKT — ...
-    # 05:36 HKT / 16:36 UTC
-    # 03:36 HKT watchlist-breaking-news
+    # Prefer the HKT timestamp attached to the file date.
+    # Newer titles may also include a full UTC timestamp; do not parse that as HKT.
     section_title = section_title.strip()
+    m = re.search(r'(\d{2}:\d{2})\s*HKT', section_title)
+    if m:
+        return datetime.fromisoformat(f"{file_date}T{m.group(1)}:00+08:00").isoformat()
     if re.match(r'^\d{4}-\d{2}-\d{2}', section_title):
         m = re.search(r'(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2})', section_title)
         if m:
             return datetime.fromisoformat(f"{m.group(1)}T{m.group(2)}:00+08:00").isoformat()
-    m = re.search(r'(\d{2}:\d{2})\s*HKT', section_title)
-    if m:
-        return datetime.fromisoformat(f"{file_date}T{m.group(1)}:00+08:00").isoformat()
     return datetime.fromisoformat(f"{file_date}T00:00:00+08:00").isoformat()
 
 

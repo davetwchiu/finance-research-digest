@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "id": "2026-03-12-12:37-hkt---2026-03-12-04:37-utc",
+      "time": "12:37 HKT / 2026-03-12 04:37 UTC",
+      "createdAt": "2026-03-12T12:37:00+08:00",
+      "title": "Ondas just moved deeper into defense with the BIRD acquisition closing",
+      "summary": "Ondas disclosed in an 8-K that it acquired BIRD Aerosystems and registered 6.93 million shares tied to the deal. The direct signal is strategic, not cosmetic: Ondas is adding airborne missile-protection and ISR products already deployed across more than 700 aircraft and 40-plus aircraft types.",
+      "path": "./2026-03-12.md"
+    },
+    {
+      "id": "2026-03-12-11:37-hkt---2026-03-12-03:37-utc",
+      "time": "11:37 HKT / 2026-03-12 03:37 UTC",
+      "createdAt": "2026-03-12T11:37:00+08:00",
+      "title": "New U.S. trade probes just reopened tariff risk across the watchlist supply chain",
+      "summary": "Reuters reported the U.S. opened new Section 301 unfair-trade probes that could lead to fresh tariffs by this summer against China, the EU, India, Japan, South Korea, and Mexico. Full Reuters text was not directly accessible in this run, but the source quality is high and the signal is clear: trade risk is broadening again beyond a single-country headline.",
+      "path": "./2026-03-12.md"
+    },
+    {
+      "id": "2026-03-12-09:37-hkt---2026-03-12-01:37-utc",
+      "time": "09:37 HKT / 2026-03-12 01:37 UTC",
+      "createdAt": "2026-03-12T09:37:00+08:00",
+      "title": "Gulf-shipping attacks just revived the oil/yield squeeze on the watchlist",
+      "summary": "Reuters reported that more ships were struck near the Strait of Hormuz and in Iraqi waters, sending oil higher again and pushing Asian shares lower. That matters because this is not just ongoing war noise; it is fresh evidence that the shipping disruption is widening despite the reserve-release response.",
+      "path": "./2026-03-12.md"
+    },
+    {
       "id": "2026-03-12-06:36-hkt---2026-03-11-22:36-utc",
       "time": "06:36 HKT / 2026-03-11 22:36 UTC",
       "createdAt": "2026-03-12T06:36:00+08:00",
