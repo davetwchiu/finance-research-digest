@@ -9,6 +9,7 @@ import ssl
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
@@ -16,6 +17,9 @@ MODULES = "financialData,defaultKeyStatistics,summaryDetail,price"
 SEC_TICKERS_URL = "https://www.sec.gov/files/company_tickers_exchange.json"
 SEC_COMPANYFACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json"
 SEC_UA = "AtlasMarketIntelligence/1.0 david@example.com"
+YAHOO_HEALTH_PATH = Path("data/cache/fundamentals_source_health.json")
+YAHOO_COOLDOWN_HOURS = 24
+YAHOO_FAIL_THRESHOLD = 3
 
 
 def _val(x: Any) -> float | None:
@@ -94,6 +98,30 @@ def _growth_from_fact(fact_block: dict[str, Any]) -> float | None:
     if prev in (None, 0):
         return None
     return (latest - prev) / prev
+
+
+def _load_yahoo_health() -> dict[str, Any]:
+    if not YAHOO_HEALTH_PATH.exists():
+        return {}
+    try:
+        return json.loads(YAHOO_HEALTH_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _save_yahoo_health(doc: dict[str, Any]) -> None:
+    YAHOO_HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
+    YAHOO_HEALTH_PATH.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
+
+
+def _yahoo_in_cooldown(now: datetime, health: dict[str, Any]) -> bool:
+    until = health.get("cooldown_until")
+    if not until:
+        return False
+    try:
+        return datetime.fromisoformat(until) > now
+    except Exception:
+        return False
 
 
 def fetch_quote_summary(ticker: str) -> dict[str, Any]:
@@ -233,29 +261,58 @@ def main() -> int:
     existing_tickers = dict((existing.get("tickers") or {}))
 
     hkt = timezone(timedelta(hours=8))
-    as_of = datetime.now(hkt).date().isoformat()
+    now = datetime.now(hkt)
+    as_of = now.date().isoformat()
 
     refreshed = dict(existing_tickers)
     success = 0
     failures: list[str] = []
     sec_success = 0
+    yahoo_success = 0
+    yahoo_401_count = 0
+    yahoo_skipped_due_to_cooldown = 0
     sec_map: dict[str, dict[str, Any]] = {}
+    health = _load_yahoo_health()
+    yahoo_cooldown = _yahoo_in_cooldown(now, health)
     try:
         sec_map = _load_sec_ticker_map()
     except Exception as e:
         print(f"WARN SEC map: {e}")
 
     for t in watchlist:
-        try:
-            result = fetch_quote_summary(t)
-            if not result:
-                raise ValueError("empty quoteSummary result")
-            refreshed[t] = build_one(t, result)
-            success += 1
-            print(f"OK {t} yahoo")
-            continue
-        except Exception as e:
-            print(f"WARN {t} yahoo: {e}")
+        yahoo_error = None
+        if not yahoo_cooldown:
+            try:
+                result = fetch_quote_summary(t)
+                if not result:
+                    raise ValueError("empty quoteSummary result")
+                refreshed[t] = build_one(t, result)
+                success += 1
+                yahoo_success += 1
+                print(f"OK {t} yahoo")
+                continue
+            except HTTPError as e:
+                yahoo_error = e
+                print(f"WARN {t} yahoo: {e}")
+                if e.code == 401:
+                    yahoo_401_count += 1
+                    if yahoo_401_count >= YAHOO_FAIL_THRESHOLD:
+                        yahoo_cooldown = True
+                        health.update({
+                            "status": "cooldown",
+                            "reason": "repeated-401",
+                            "last_failure_at": now.replace(microsecond=0).isoformat(),
+                            "cooldown_until": (now + timedelta(hours=YAHOO_COOLDOWN_HOURS)).replace(microsecond=0).isoformat(),
+                            "consecutive_401": yahoo_401_count,
+                        })
+                        _save_yahoo_health(health)
+                        print(f"INFO yahoo disabled for {YAHOO_COOLDOWN_HOURS}h after repeated 401s")
+            except Exception as e:
+                yahoo_error = e
+                print(f"WARN {t} yahoo: {e}")
+        else:
+            yahoo_skipped_due_to_cooldown += 1
+            print(f"INFO {t} yahoo skipped due to cooldown")
 
         try:
             if not sec_map:
@@ -270,13 +327,27 @@ def main() -> int:
                 refreshed[t]["source_status"] = "curated-preserved"
             print(f"WARN {t} sec: {e}")
 
+    if yahoo_success > 0:
+        health.update({
+            "status": "ok",
+            "reason": "healthy",
+            "last_success_at": now.replace(microsecond=0).isoformat(),
+            "consecutive_401": 0,
+        })
+        health.pop("cooldown_until", None)
+        _save_yahoo_health(health)
+
     out: dict[str, Any] = {
         "as_of": as_of,
         "source_note": "Auto-refresh from Yahoo when available; falls back to SEC companyfacts for U.S. issuers; preserves existing curated entries on fetch failures.",
         "refresh_status": {
             "attempted": len(watchlist),
             "refreshed": success,
+            "refreshed_via_yahoo": yahoo_success,
             "refreshed_via_sec": sec_success,
+            "yahoo_401_count": yahoo_401_count,
+            "yahoo_skipped_due_to_cooldown": yahoo_skipped_due_to_cooldown,
+            "yahoo_cooldown_active": yahoo_cooldown,
             "failed": len(failures),
             "coverage_pct": round((success / len(watchlist)) * 100.0, 1) if watchlist else 0.0,
             "failed_tickers": failures,
