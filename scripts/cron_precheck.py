@@ -183,11 +183,24 @@ def _load_recent_runs(run_log_path: Path, limit: int) -> list[Dict[str, Any]]:
     return out
 
 
+def _summary_looks_like_transport_garbage(summary: Any) -> bool:
+    if not isinstance(summary, str):
+        return False
+    s = summary.strip().lower()
+    if not s:
+        return False
+    html_markers = ("<html", "<!doctype html", "<head>", "<meta name=", "<style")
+    return s.startswith(html_markers)
+
+
+
 def _summary_is_meaningful(summary: Any) -> bool:
     if not isinstance(summary, str):
         return False
     s = summary.strip().lower()
     if not s:
+        return False
+    if _summary_looks_like_transport_garbage(s):
         return False
     boring_prefixes = (
         "no new ",
@@ -266,19 +279,27 @@ def _summarize_not_delivered_streak(recent_runs: list[Dict[str, Any]]) -> Dict[s
     latest_meaningful_summary = None
     consecutive_tail = 0
     consecutive_tail_without_error = 0
+    tail_titles: list[str] = []
     for run in recent_runs:
+        if run.get("status") != "ok":
+            continue
         if not _summary_is_meaningful(run.get("summary")):
             continue
         meaningful += 1
         latest_meaningful_summary = run.get("summary")
 
     for run in reversed(recent_runs):
+        if run.get("status") != "ok":
+            continue
         if not _summary_is_meaningful(run.get("summary")):
             continue
         delivered = run.get("deliveryStatus") == "delivered" or run.get("delivered") is True
         if delivered:
             break
         consecutive_tail += 1
+        summary = str(run.get("summary") or "").strip()
+        if summary:
+            tail_titles.append(summary.splitlines()[0][:160])
         if not _error_looks_like_delivery_failure(run.get("error")):
             consecutive_tail_without_error += 1
     return {
@@ -287,6 +308,7 @@ def _summarize_not_delivered_streak(recent_runs: list[Dict[str, Any]]) -> Dict[s
         "not_delivered_meaningful_tail_runs": consecutive_tail,
         "not_delivered_without_error_tail_runs": consecutive_tail_without_error,
         "latest_meaningful_summary": latest_meaningful_summary,
+        "not_delivered_tail_titles": tail_titles,
     }
 
 
