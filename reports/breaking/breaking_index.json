@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "id": "2026-03-12-16:37-hkt---2026-03-12-08:37-utc",
+      "time": "16:37 HKT / 2026-03-12 08:37 UTC",
+      "createdAt": "2026-03-12T16:37:00+08:00",
+      "title": "Pentagon carve-out for Anthropic just reduces a live Palantir overhang",
+      "summary": "Reuters reported the Pentagon told senior leaders that Anthropic tools may keep running beyond the previously announced six-month phase-out if they are deemed critical to national security. Full Reuters text was not directly accessible in this run, but the source quality is high and the signal is clear: the Defense Department is leaving itself room to keep important Anthropic-linked workflows alive instead of forcing a hard cutoff.",
+      "path": "./2026-03-12.md"
+    },
+    {
       "id": "2026-03-12-12:37-hkt---2026-03-12-04:37-utc",
       "time": "12:37 HKT / 2026-03-12 04:37 UTC",
       "createdAt": "2026-03-12T12:37:00+08:00",
