@@ -88,6 +88,9 @@ python3 scripts/build_breaking_summary.py \
 python3 scripts/build_breaking_index.py \
   --breaking-dir reports/breaking \
   --output reports/breaking/breaking_index.json
+python3 scripts/verify_breaking_sync.py \
+  --summary reports/breaking/breaking_summary.json \
+  --index reports/breaking/breaking_index.json
 
 # Fail fast if latest report contains repeated long paragraphs.
 python3 scripts/report_dup_guard.py --reports-dir reports --min-len 120 --max-duplicates 0
