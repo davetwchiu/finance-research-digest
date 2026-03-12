@@ -69,7 +69,7 @@ def is_public_alert(section_title: str, body: list[str]) -> bool:
     ]
     if any(m in text or m in title for m in negative_markers):
         return False
-    positive_markers = ['material alert candidate', '- event:', 'summary:', 'what happened']
+    positive_markers = ['material alert candidate', '- event:', 'summary:', '### ', 'what happened', 'why it matters', 'watchlist impact']
     return any(m in text or m in title for m in positive_markers)
 
 

@@ -79,9 +79,10 @@ def is_public_alert(section_title: str, body: list[str]) -> bool:
     positive_markers = [
         'material alert candidate',
         '- event:',
-        '## 00:36 hkt',
-        '## 2026-',
+        '### ',
         'what happened',
+        'why it matters',
+        'watchlist impact',
     ]
     if any(m in text or m in title for m in positive_markers):
         if title.strip() == 'summary':
