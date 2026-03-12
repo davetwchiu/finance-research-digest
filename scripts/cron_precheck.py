@@ -157,6 +157,32 @@ def _load_latest_run(run_log_path: Path) -> Dict[str, Any]:
     }
 
 
+def _load_recent_runs(run_log_path: Path, limit: int) -> list[Dict[str, Any]]:
+    if limit <= 0 or not run_log_path.exists():
+        return []
+    try:
+        lines = [line for line in run_log_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    except Exception:
+        return []
+    out: list[Dict[str, Any]] = []
+    for line in lines[-limit:]:
+        try:
+            row = json.loads(line)
+        except Exception:
+            continue
+        out.append(
+            {
+                "ts": row.get("ts"),
+                "status": row.get("status"),
+                "deliveryStatus": row.get("deliveryStatus"),
+                "delivered": row.get("delivered"),
+                "summary": row.get("summary"),
+                "error": row.get("error"),
+            }
+        )
+    return out
+
+
 def _summary_is_meaningful(summary: Any) -> bool:
     if not isinstance(summary, str):
         return False
@@ -235,6 +261,35 @@ def _has_recent_delivery_failure_evidence(delivery_health: Dict[str, Any], lates
     return latest_failed_at >= latest_run_at
 
 
+def _summarize_not_delivered_streak(recent_runs: list[Dict[str, Any]]) -> Dict[str, Any]:
+    meaningful = 0
+    latest_meaningful_summary = None
+    consecutive_tail = 0
+    consecutive_tail_without_error = 0
+    for run in recent_runs:
+        if not _summary_is_meaningful(run.get("summary")):
+            continue
+        meaningful += 1
+        latest_meaningful_summary = run.get("summary")
+
+    for run in reversed(recent_runs):
+        if not _summary_is_meaningful(run.get("summary")):
+            continue
+        delivered = run.get("deliveryStatus") == "delivered" or run.get("delivered") is True
+        if delivered:
+            break
+        consecutive_tail += 1
+        if not _error_looks_like_delivery_failure(run.get("error")):
+            consecutive_tail_without_error += 1
+    return {
+        "inspected_runs": len(recent_runs),
+        "meaningful_runs": meaningful,
+        "not_delivered_meaningful_tail_runs": consecutive_tail,
+        "not_delivered_without_error_tail_runs": consecutive_tail_without_error,
+        "latest_meaningful_summary": latest_meaningful_summary,
+    }
+
+
 def _repo_path(value: str) -> str:
     p = Path(value)
     if p.is_absolute():
@@ -271,6 +326,12 @@ def main() -> int:
         "--breaking-run-log",
         default=os.path.expanduser("~/.openclaw/cron/runs/a33f17c0-a671-4387-80ed-137144f38f3d.jsonl"),
         help="Run log path for watchlist-breaking-news.",
+    )
+    ap.add_argument(
+        "--breaking-run-audit-limit",
+        type=int,
+        default=8,
+        help="How many recent breaking-job runs to inspect for repeated not-delivered streaks.",
     )
     args = ap.parse_args()
 
@@ -314,6 +375,8 @@ def main() -> int:
     )
     latest_job_state = _load_job_state(Path(args.jobs_path), args.breaking_job_id)
     latest_run = _load_latest_run(Path(args.breaking_run_log))
+    recent_runs = _load_recent_runs(Path(args.breaking_run_log), args.breaking_run_audit_limit)
+    repeated_not_delivered = _summarize_not_delivered_streak(recent_runs)
     delivery_recovered_after_failure = _delivery_failures_are_already_recovered(
         delivery_health,
         latest_job_state,
@@ -364,6 +427,12 @@ def main() -> int:
     ):
         reasons.append(f"breaking_job_state_delivery:{latest_job_state.get('last_delivery_status')}")
 
+    if repeated_not_delivered.get("not_delivered_meaningful_tail_runs", 0) >= 2:
+        reasons.append(
+            "breaking_delivery_streak_not_delivered:"
+            f"{repeated_not_delivered.get('not_delivered_meaningful_tail_runs', 0)}"
+        )
+
     llm_needed = len(reasons) > 0
     out = {
         "llm_needed": llm_needed,
@@ -384,6 +453,7 @@ def main() -> int:
         "telegram_delivery_health": delivery_health,
         "watchlist_breaking_job_state": latest_job_state,
         "watchlist_breaking_latest_run": latest_run,
+        "watchlist_breaking_delivery_audit": repeated_not_delivered,
         "delivery_recovered_after_failure": delivery_recovered_after_failure,
     }
 
