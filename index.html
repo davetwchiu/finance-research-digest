@@ -344,6 +344,7 @@ function fmtHKT(ts){
 }
 
 async function loadAtlasLocalIntelligence(){
+  const headline=document.getElementById('atlasSnapshotHeadline');
   const panelTime=document.getElementById('atlasSnapshotPanelTime');
   const freshness=document.getElementById('atlasSnapshotFreshness');
   const breadth=document.getElementById('atlasSnapshotBreadth');
@@ -368,6 +369,16 @@ async function loadAtlasLocalIntelligence(){
     const refreshed = refresh.refreshed ?? null;
     const attempted = refresh.attempted ?? null;
 
+    const local = j.local_intelligence || {};
+    const breadthPct20 = Number(local.breadth_pct_above_sma20);
+    const breadthPct50 = Number(local.breadth_pct_above_sma50);
+    const headlineBits = [];
+    if(Number.isFinite(breadthPct20)) headlineBits.push(`${breadthPct20.toFixed(1)}% > SMA20`);
+    if(Number.isFinite(breadthPct50)) headlineBits.push(`${breadthPct50.toFixed(1)}% > SMA50`);
+    if(Number.isFinite(Number(rk.avg_rsi14))) headlineBits.push(`avg RSI ${Number(rk.avg_rsi14).toFixed(1)}`);
+    headline.textContent = headlineBits.length ? `(${headlineBits.join(' · ')})` : '(snapshot ready)';
+    headline.className = 'muted';
+
     panelTime.textContent = `Generated: ${fmtHKT(j.generated_at)}`;
     freshness.textContent = `Snapshot: ${fmtHKT(j.generated_at)}${j.source_generated_at ? ` (signals source ${fmtHKT(j.source_generated_at)})` : ''}`;
     if(coverage !== null && coverage < 50){
@@ -385,6 +396,8 @@ async function loadAtlasLocalIntelligence(){
     const topVol = Array.isArray(j.top_volatility) ? j.top_volatility.slice(0,3).map(x=>`${x.ticker} ${x.atr14_pct_of_close}% ATR`) : [];
     vol.textContent = topVol.length ? `Top volatility: ${topVol.join(' · ')}` : 'Top volatility: n/a';
   }catch{
+    headline.textContent = '(not generated)';
+    headline.className = 'muted';
     panelTime.textContent = 'Generated: unavailable';
     freshness.textContent = 'Snapshot: local snapshot not generated yet.';
     breadth.textContent = 'Breadth: run local pipeline to populate local breadth metrics.';
@@ -424,14 +437,22 @@ async function loadAtlasDeepLocalAnalysis(){
     const generatedValid = !Number.isNaN(generatedDt.getTime());
     const ageHours = generatedValid ? ((Date.now() - generatedDt.getTime()) / 36e5) : null;
     const stale = ageHours !== null && ageHours > 24;
-
-    headline.textContent = `(${fmtHKT(j.generated_at)}${stale ? ' · stale >24h' : ''})`;
-    headline.className = generatedValid ? (stale ? 'err' : 'ok') : 'muted';
-    panelTime.textContent = `Generated: ${fmtHKT(j.generated_at)}`;
-    regime.textContent = `Regime: ${(mr.label||'n/a').toUpperCase()} | score ${mr.composite_score ?? 'n/a'} (breadth ${comp.breadth ?? 'n/a'}, momentum ${comp.momentum ?? 'n/a'}, volatility ${comp.volatility ?? 'n/a'}).`;
     const hi = Array.isArray(tq.high_attention) ? tq.high_attention : [];
     const watch = Array.isArray(tq.watch) ? tq.watch : [];
     const low = Array.isArray(tq.low_priority) ? tq.low_priority : [];
+
+    const hiHeadline = hi.slice(0,2).map(x=>x.ticker).join(', ');
+    const watchHeadline = watch.slice(0,2).map(x=>x.ticker).join(', ');
+    const headlineParts = [];
+    if(mr.label) headlineParts.push(String(mr.label).replace(/_/g,' ').toUpperCase());
+    if(hiHeadline) headlineParts.push(`high attention ${hiHeadline}`);
+    else if(watchHeadline) headlineParts.push(`watch ${watchHeadline}`);
+    else headlineParts.push(fmtHKT(j.generated_at));
+    if(stale) headlineParts.push('stale >24h');
+    headline.textContent = `(${headlineParts.join(' · ')})`;
+    headline.className = generatedValid ? (stale ? 'err' : 'ok') : 'muted';
+    panelTime.textContent = `Generated: ${fmtHKT(j.generated_at)}`;
+    regime.textContent = `Regime: ${(mr.label||'n/a').toUpperCase()} | score ${mr.composite_score ?? 'n/a'} (breadth ${comp.breadth ?? 'n/a'}, momentum ${comp.momentum ?? 'n/a'}, volatility ${comp.volatility ?? 'n/a'}).`;
     const hiTickers = hi.slice(0,3).map(x=>`${x.ticker}${(x.score ?? null)===null?'':`(${x.score})`}`).join(', ');
     triage.textContent = `Triage: ${hi.length} high_attention${hiTickers ? ` [${hiTickers}]` : ''} · ${watch.length} watch · ${low.length} low_priority.`;
     quality.textContent = `Quality: missing ${sq.missing_data_pct ?? 'n/a'}% · stale ${sq.stale_indicator_pct ?? 'n/a'}%${coverage !== null ? ` · fundamentals refresh ${coverage.toFixed(0)}%` : ''}.`;
