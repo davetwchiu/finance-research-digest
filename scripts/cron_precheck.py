@@ -331,6 +331,23 @@ def _summarize_not_delivered_streak(recent_runs: list[Dict[str, Any]]) -> Dict[s
     }
 
 
+def _delivery_state_is_explicitly_not_delivered(run: Dict[str, Any]) -> bool:
+    delivery_status = run.get("deliveryStatus")
+    if isinstance(delivery_status, str):
+        status = delivery_status.strip().lower()
+        if status == "delivered":
+            return False
+        if status in {"not-delivered", "failed", "error"}:
+            return True
+    delivered = run.get("delivered")
+    if delivered is True:
+        return False
+    if delivered is False:
+        return True
+    return False
+
+
+
 def _is_recent_not_delivered_public_alert(
     latest_public_alert_run: Dict[str, Any],
     now_utc: datetime,
@@ -340,7 +357,7 @@ def _is_recent_not_delivered_public_alert(
         return False
     if latest_public_alert_run.get("status") != "ok":
         return False
-    if latest_public_alert_run.get("deliveryStatus") == "delivered" or latest_public_alert_run.get("delivered") is True:
+    if not _delivery_state_is_explicitly_not_delivered(latest_public_alert_run):
         return False
     alert_run_at = _run_ts_to_utc(latest_public_alert_run.get("ts"))
     if alert_run_at is None:
@@ -610,8 +627,7 @@ def main() -> int:
         "watchlist_breaking_latest_public_alert_summary": latest_public_alert_summary,
         "watchlist_breaking_latest_public_alert_not_delivered": (
             latest_public_alert_run.get("missing") is not True
-            and latest_public_alert_run.get("deliveryStatus") != "delivered"
-            and latest_public_alert_run.get("delivered") is not True
+            and _delivery_state_is_explicitly_not_delivered(latest_public_alert_run)
         ),
         "watchlist_breaking_latest_public_alert_not_delivered_recent": fresh_public_alert_not_delivered,
         "watchlist_breaking_latest_public_alert_recovery_should_send": latest_public_alert_recovery_should_send,
