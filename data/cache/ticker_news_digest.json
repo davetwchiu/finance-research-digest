@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-12T20:56:23+08:00",
+  "generated_at": "2026-03-13T08:50:57+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -32,13 +32,23 @@
           }
         },
         {
-          "title": "Rep. David Taylor Sells Apple Inc. (NASDAQ:AAPL) Stock - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQOENTWExCc21ZY0tqQ2ZnS2d3ZmI0bWpPVUZneWlDT05qVFNsX3EybnhOVVJULXEteElUNldqVWtlaVF3djBPdjE0Qnc3bkd0MjVJaFFYdUhueUNGUm5LYzlvb1lQT291MDk1ZXpuSFJfQnVNZ3U0Vm01NW1zdTV6UmY2NmdjbFZ6WWlGYWxxZzdEMmUyRDRIbWN1UUoxZWNXc0dPZlB3?oc=5",
-          "published_hkt": "2026-03-10T14:08:40+08:00",
+          "title": "Apple Inc. $AAPL Stock Position Lifted by DNB Asset Management AS - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcW44RGpua2w2cExSSHpqai0zUnFJZkRZRjhqSVpTdjZMOHljUGZLbFdMVjM3T29rYUlsT2NOb3FrUy1GN1RFQ0M5ZWwwWWRUaWJjcEJLZVNsajF5QkxiXzRoaDBYTFhxQTdGbGl2YXVNTnpGZ0Q0V05OUmlNLWFOeDlvSllsRkJZQ2JyY3dCQlNqdnlYNDZ0UXl2YXIxa1loYi1LV0E5MDNjTHBNeDljVGxsb1ZBaGVQQWdrMGhQU2RvZw?oc=5",
+          "published_hkt": "2026-03-12T15:44:32+08:00",
           "source": "MarketBeat",
           "impact": {
             "sentiment": "positive",
             "severity": "medium"
+          }
+        },
+        {
+          "title": "Apple | AAPL Stock Price, Company Overview & News - Forbes",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5rWDNjOGl0aWxxdkhOMjkwZHdyR0ptVVhFaVJOUDVtZW9XYlk2b3RtTkdoWmY0ajMyUE16Wm5WN0VlUkVsa24zYmhJcHdMNmZF?oc=5",
+          "published_hkt": "2026-02-10T16:00:00+08:00",
+          "source": "Forbes",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
           }
         },
         {
@@ -50,30 +60,20 @@
             "sentiment": "neutral",
             "severity": "low"
           }
-        },
-        {
-          "title": "Apple: The 2.5 Billion Device Machine - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQcXB0LWxMUlA4MnFkNFlzTXBjRnJNUU9TajNpYlZpWmhtUS1WZVRqN1dwTXVzV2MxUHYzb2dNZmY1YXFWdUxXVEVqVmxjaTdVY1JXN3p0ME1ua2xCVVNkQmhkaFNjM3ZHNHhpZ1g4UFd1OURCdzdSNVI3UUlFcUJXa2V5Zw?oc=5",
-          "published_hkt": "2026-02-23T16:00:00+08:00",
-          "source": "Seeking Alpha",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
         }
       ]
     },
     "AVGO": {
       "query": "Broadcom Inc. OR AVGO stock",
       "summary": {
-        "label": "Watch \u2014 high-impact headlines present",
-        "positive_count": 0,
+        "label": "Constructive \u2014 positive-news skew",
+        "positive_count": 1,
         "negative_count": 0,
         "high_impact_count": 1
       },
       "items": [
         {
-          "title": "Broadcom: A Once In A Generation Opportunity That Won't Last (NASDAQ:AVGO) - Seeking Alpha",
+          "title": "Broadcom: A Once-In-A-Generation Opportunity That Won't Last (NASDAQ:AVGO) - Seeking Alpha",
           "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPLU1KV3BFd2RRaS1IQ2pJdDZNSmRKS2RyQmxOSlU2S2I5TEY2MTIzUVZEOVNLVEdzaERvSWw5ZWNPSEtlajFDbGNIUXNEOFpCMGM5TExfSEYwb24tU1RxRnZzTzRLNUN4NXdUdThPdU84bWhSb0hFV0tsRmdQcWNwUFBBNVBmel91cU5US1pWck5uV2VjNk1jM05FMFFnVlJM?oc=5",
           "published_hkt": "2026-03-11T00:21:01+08:00",
           "source": "Seeking Alpha",
@@ -83,40 +83,40 @@
           }
         },
         {
-          "title": "Citi Lowers PT on Broadcom Inc. (AVGO) Stock - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9iX3JlMVNtVjNiZVdGWWl5UVNHZzZySHJKZWhUYnZEVFA4UjdrdzFHbnk2R0lXNGIyV2FqMklUOWFjcmEwbFZxV0ZyXzJLblNGdlYwY0h4czhXSEN5cG1la2JGNjZtS3NiaHBIQVdfOGpjejliN2xGYWgxeHJPUQ?oc=5",
-          "published_hkt": "2026-02-23T16:00:00+08:00",
-          "source": "Yahoo Finance",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "Broadcom Inc (NASDAQ:AVGO) Combines Strong Growth with Bullish Technical Setup - ChartMill",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQY09OZm56cm5ZSVJwTTVidFBwM0FUc2RZVGx0M0Y0OXNCSk50eGZjdkNaM1ItVlAyTDNsQ3FkYnhzb2FibDlMVG9RMXlCZVZ5YVF3RzdlbVpFaFpvd3Vxa1V3Z2lST1htclhSbzR4YVc1NEwycGVSSTYzcm1EVVctMEk3MVJTc3p5U1g1bUU2bmFwSFE2WGlfeDNWQTBZU1hVZWZhRndwTjdIRjZaUXU0a0FKYWsxTUZCVEtXOXpZY2pQN0JHYUE?oc=5",
-          "published_hkt": "2026-03-11T19:01:21+08:00",
-          "source": "ChartMill",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "Broadcom Taurus chip doubles AI bandwidth per optical lane - Stock Titan",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOQ09taFJNdzdldFZLTUU4Ym8wQ1BqeHM5MjRnYk8tNmd0ajVZZnJtc0g3M09uSkJVWF96M3VKbFAwUGhXSklhaFgzb3hETzlxX1BFbHFDaURmV0hXY2JmcHB2QTFKSVQ4MDE2X1NwSndFcWRQUGZfMHFBQlQ5WXZpbldFdTNLMUJIZlJEVDR3aTVJcTFSd0lNR190cXRjMC1YalR5ckxvTUdRVFpFREcyTTIwZkNWczh0S3l3OQ?oc=5",
-          "published_hkt": "2026-03-11T21:00:00+08:00",
+          "title": "Inside Broadcom tech built to power the world\u2019s largest AI clusters - Stock Titan",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdV9CNFJZa1pvUm1rVWxFZVRtd0RhTDBkM1A4Z3VpS1dzYlRXcWlPYXlYU1JDNl9NZVVnWndYSHNYYTdBRVhpV3V6Qml6ekdBb2xPTS1DWklaMEtLSDk1Slo3RGVmTjlIa3JlVEx5aWtlclFldVNmT19ERUM1OEtJbzlGNm0zVUk0Q0ZMSE03ZGR5SUZkZ1dtendsY3U2XzZUcmVYTDNxX2dmUFZCc185ZHJ5N0tfdw?oc=5",
+          "published_hkt": "2026-03-13T04:15:00+08:00",
           "source": "Stock Titan",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "After Earnings, Is Broadcom Stock a Buy, a Sell, or Fairly Valued? - Morningstar",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZ0tlbl9nOWJfRUdjcjd0T2R2elVpN2tCWGxYb3ZvNU80VUhadkJpUEV3Z3ZRMU9TN2tqcW5NVUJXajgyMUpkUEt0a0NZelJGWVJ6d1lkSmgxYm9NLVNGbVRGRmQwN2FodmE2RWNDVEp2Z1JHeUVwZ3ZxaUVlLUY3bGFfdkJlV2lBUXV0azlpY1B6OVIwN0xjcFVfOA?oc=5",
+          "published_hkt": "2026-03-12T18:10:59+08:00",
+          "source": "Morningstar",
           "impact": {
             "sentiment": "neutral",
             "severity": "high"
           }
         },
         {
-          "title": "What's Going On With Broadcom Stock Wednesday? - Broadcom (NASDAQ:AVGO) - Benzinga",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSVRURVVCXy1rZzhLZmk3aDBDbVQ5YXZVa0JJRkFybjNTaW5TblhHTjA2Y01uS3p6bmpfWHFwem9TSVpkLU5xaWZDUXFnMW5NQS03RXd6bGdBcm5jMTR4eXlLZ2VnOS1IM0lqU3FnWDJTM3lLcHRBWVRCaVBoV0FMTEdlM3FvLXFiMDBLWllmazhYNUdWQWJISDF3dzNhQmpfbGlOdGFCWEg1T3B2NjZpOHFHWFhCVExr?oc=5",
-          "published_hkt": "2026-03-12T02:17:58+08:00",
-          "source": "Benzinga",
+          "title": "Broadcom Inc. $AVGO Shares Sold by Watchtower Advisors LP - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbTZJNEt0Njd2VlE3VXNhWVBJNzlNa1I0UlIzWHFLdXhQZ2FfNjBRc1N1NHZzR25pQ25BMl9Xd0ZTemRJalhZYkh5ZHhzc042NTloSEpBYVpuNnJSMmduUlg0cTdhc0Q0NkZQR1VVdWhZU0N4d1p6WEJLTl9Hd1NUZE1yMzZkWEhJS25NQ29JRTQ3MlJ4WXdrakowYW42WEdlTnJXbVdEQlExbXk5Z2xZQnQ2cGhjWnM?oc=5",
+          "published_hkt": "2026-03-12T20:34:23+08:00",
+          "source": "MarketBeat",
+          "impact": {
+            "sentiment": "positive",
+            "severity": "medium"
+          }
+        },
+        {
+          "title": "DA Davidson Raises Price Target on Broadcom (AVGO) - Insider Monkey",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOejczMmlXcGlrdmZaNlYzaFZHa0RoRkpIOEFLTmlhUlFRQjk1dTQ5T3luRUNJTTR1c0g3ZFA0b2hzcHItcFMzX3BaVW0wR1VLeXAwR2ZFZFRxQXYwdVlPaDdCMFlrRnFqYWpoRHRfV3EwckozUURpWW55WFkyVklWYzJ6OEoyTHRwdGRLUUdwTEFxLU5HWVVV0gGfAUFVX3lxTE1ESWVnV2RTb2xiM1RTWnIyZDFSWnYzNER1VjhVeHpIbGZBSkhHYlhkcWxGYTMya2N4aElBSE5uMWQ4X3F4cFE1ZUhROHJ1NkZCM0ZtbU5Da21BaXhZTHNXNVBSdG1MV0hXUThycUZvTUlIck9LNWdKOHJ1MlJRRElEdEpCdGFjZ3J0YnVWdDU2Y2FvY1lvUUFKWmJUYTRkSQ?oc=5",
+          "published_hkt": "2026-03-13T02:26:39+08:00",
+          "source": "Insider Monkey",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -154,9 +154,9 @@
           }
         },
         {
-          "title": "BigBear.ai (NYSE:BBAI) Stock Price Up 1.6% - Still a Buy? - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNOUV6SWZTQ1VCWmk0LTdCSVp1cThMMVF3TUQ4Q1d0dHFvSXB2SUhZZEFQM19nWm1QWVFlWkd5UW9xNEJrY29rSVQxTTZSNGhvSHBUZEJiWktrN3RhQVc5SXdTbmdVeFRucTNOT1NlalBlZThQMDZ6V1M3cnlCcHdld1RPdW40NW9FT2F3dHlCLUVabzlnakFDX3lNSHdrbVA2cTVVNQ?oc=5",
-          "published_hkt": "2026-03-12T05:37:32+08:00",
+          "title": "BigBear.ai (NYSE:BBAI) Shares Down 2.5% - Should You Sell? - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVk0zZDZlQXlWTkRIMS1aS2FhUElRSThqUTQ3QllXV1Q0QzcweUp0aHktWUxtWExXMmtrUVp0XzZTNXZLVnFXeXhkY3g0SHVMaDJMdFZleHFLQXdoLUw3NlNaTkpvV0ZlVjZhbVVucEJhU29xakttS2UwVC0zWnU0VHVmN1hoUXc2STFZbEExV05aN0IzY1l3MzVidzBtS2FoMkdlNkdR?oc=5",
+          "published_hkt": "2026-03-13T05:26:39+08:00",
           "source": "MarketBeat",
           "impact": {
             "sentiment": "positive",
@@ -174,10 +174,10 @@
           }
         },
         {
-          "title": "Why BigBear.ai (BBAI) Is Up 7.3% After Mixed Q4 Results And New 2026 Outlook - simplywall.st",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOclhMeE9EbWdQS1RVUkZxbWlvR29KTEo2M1ZseWlha1RacWFqeFNETVV5Z2xkUHM2V0tzNDBVckZ5eloxbkhIVnl2MS10alBvdlZxbVhQM2RKNVpXY21rSW9xQURTMUM4bWxiTUlFc2pMakxsUkg3SUhDdnJnUm1Ybi0wNHFSc25qbDBGRUNWV05sQ3BoaG9aY2hpYm03NnJxeGhibUUyVXBoMUF5Y2hoOGFiNEpIcGJkS2V2NmxTY0dXTXNHY0ZqTDNvREZPUEdW0gHWAUFVX3lxTE5MeVJnV0szRFVkbzZVLVB3azhFQy1FbzBfbUNEenktbW5Jd0I5WmRjZ1hQaFloVVNrejMtSDdPUS1FUl9mdnM4LXZqSjFWeUdvZGhKaHVDV1E3ZndJalpSWTF6QkFUbm0wZW9ObTlFNFlvLS1XRlRaZUNqTjFpajlrdnFDa204Z2dOS2NqaXlXemZsYjdqSm9HN3BKdEN1eFhoMDA0NFBYMUI4UTctbWpIQ1NaYXRhbTkxMFluaGJkdU1OQVE0VTA2ellIZDdFMURoTnJiYVE?oc=5",
-          "published_hkt": "2026-03-07T19:21:33+08:00",
-          "source": "simplywall.st",
+          "title": "BigBear.ai cuts debt over 90%, stacks $462M cash and investments - Stock Titan",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNT2pZUTlyeXpSdlpmbl9xTFVIaVdQVG5OQWRrSTNKWG9hWW5jVXNNbWpfNDN6OUsyanhfMmJVcHp0OERCNXhvNG5NdG9wRkJNblpIcFlGZ0g3d1BzNDExcmYyNXdXU2VvY2VVUzJ6NDM5UUgtNk5ncEVVR1hobXdyOUVQWGExWEZaZl8wLXZzSndaTEgyZTdHUU9scUhaeU9MRGlFMGRuejE1ZDJDMU5uY09mM3NQOC1kelE?oc=5",
+          "published_hkt": "2026-03-02T16:00:00+08:00",
+          "source": "Stock Titan",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -190,10 +190,20 @@
       "summary": {
         "label": "Caution \u2014 negative-news skew",
         "positive_count": 0,
-        "negative_count": 2,
+        "negative_count": 3,
         "high_impact_count": 3
       },
       "items": [
+        {
+          "title": "Franklin Resources Inc. Has $391.74 Million Position in Kratos Defense & Security Solutions, Inc. $KTOS - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPbHNaWGRDazJHWGxjT2tTQWZKblJHWTVwbXhrZDNVYnRKMzYza3NzQkFOTlZ0a2RVaWVSNkVkNDVaN2hpZXptQWwtZHBCUlR3ZkotcmZlTnE0OW9VMTZoSV84X2ZYLW8wMHQtV2E5bFZHbXZ2ODVET1p5N1dMa2d2NEp4Y25qc1dQV1VGb0tSN2tVWTkwWF81X2hUNExRSWs4cTNYaDFaTXg4TlFBUWhCcGp6WGVUQ3U3eER1U2VrVzg2WV8wNFdEcDZFS2wyU2VCVVBvRkRHUGI3V3J0N2dsUlc1c1dsSC1HVlRpVw?oc=5",
+          "published_hkt": "2026-03-12T18:37:30+08:00",
+          "source": "MarketBeat",
+          "impact": {
+            "sentiment": "negative",
+            "severity": "high"
+          }
+        },
         {
           "title": "Kratos: Multiple Growth Drivers To Launch This Stock (NASDAQ:KTOS) - Seeking Alpha",
           "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQQzkwd0hybHE5V1pRVGFFUEttZFpuUnh2WFZhSks3MmdubXNCTy0xWWRERndCd2FVUnIwWmpiZEJfYjZJYm5kV2V2TjJ0Q0tHSzdFUVViaUdFaXRRV2ZER2R0Nk52ZEp5Z25HeXpneDNZNTJjQlhBV2ltemEweDNqWlFIYjFOaTBKSG45TExVWi1mT2ZvcG44?oc=5",
@@ -205,30 +215,10 @@
           }
         },
         {
-          "title": "Kratos Defense & Security Solutions, Inc. $KTOS Shares Acquired by Barclays PLC - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQU2t6UE9kQ0M2UEdvcl9SQ3d1ZldxTTB2TElHQUdfT2ZWbHdzd1lzRUZ1RmJVM1hhbFVFRmV5LWxiWGxhQS1IclVNanRWUUtkUG5Ea2ZOSkFtTGE1czdkRDJ5cVZsZnpuYUhMMEh3bXUtLTlob0ItQ0plbXQ5ODFuQWxObGJJeTZPeUFaQlpYeGdtZXZ3VlhSaXNxTTlGR25SUF82MllZUkZRNlh0MTdWSXNuSTN1TWtvdE1fRVd5Z1pEazlnNnYzeHZ3c3pzaEJP?oc=5",
-          "published_hkt": "2026-03-11T15:27:54+08:00",
-          "source": "MarketBeat",
-          "impact": {
-            "sentiment": "negative",
-            "severity": "high"
-          }
-        },
-        {
-          "title": "Vanguard Group Inc's Strategic Acquisition in Kratos Defense & S - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeTRqZEwwcWpFUWNrcm9tRkRjRE1scmx3OU16cnI2eG4zUjhKTUlkTExCaUZfTUp1bzZxUDBCVUJkNUNxQlZtYjlna2NIUDdKN3ZtdUNtbF9tdDlqTXZWLUlPbGx2QUFVZDd5aXF5Y2xWeTRDV0JlSFk4enByNUJsclJEdUxtekF0Z3FwcV8zUE9kSkIydGUxLVN5MW92bzRvSXF0cDBCSFV4V1k0eEZ0SjFBNllsaExqN0taVHZn?oc=5",
-          "published_hkt": "2026-03-12T08:47:58+08:00",
-          "source": "GuruFocus",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "high"
-          }
-        },
-        {
-          "title": "KTOS Stock Outperforms Industry: What Should Investors do Now? - The Globe and Mail",
-          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNWmd0SzhMdk5DaE1pWEtCaUVCNDZpbW9uRTVKd0xSMmxUVVpOZ2lURUN1bTRVclc0NlF1cExScFFhbzQyZ3EwTjcxSTZubjA0YlhBS0RXMlN6SkwtUjUwYzF4bTIxbm1xRjhCVm9pZGJNRGRjVzJVWTdsRFpDRU1yaUszSHBGTHBkZ1dZcnBGX3NLNEtpMDVnMEY0amZhOElGanh0YkJfcE8tVGpWWllYS2Y4dGRTVzFKOFA3Qml5LUwyUFNuZU5LRzN2cklsa1Ewbll5dXhXczdaSC12N2pN?oc=5",
-          "published_hkt": "2026-03-11T23:24:00+08:00",
-          "source": "The Globe and Mail",
+          "title": "KTOS Stock Outperforms Industry: What Should Investors do Now? - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMUhKbXZlNE92TG5BU0RPNXdXa1NFc3pzQzNiTHFOZTBUYWhLV0hkc3MxN214WThOQ0p0dE1ycHBjRUtXRFBVSXFSWkUzWVF2NXJ0YkdmbE5ITmNla0FhLXFMcklXOGNEN3ZtWDBRcERaUnkyN2pOWUVXQm5ZT1JqSVo2OF9FckRUQTAwQ1BsMDRkU09yQlpsWGdEVnNGcHI1bGxHRnY3V3VnVWJ0Z1cxVTV0ck9xRm8?oc=5",
+          "published_hkt": "2026-03-11T22:19:00+08:00",
+          "source": "TradingView",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -243,6 +233,16 @@
             "sentiment": "negative",
             "severity": "high"
           }
+        },
+        {
+          "title": "Is It Too Late To Consider Kratos Defense & Security Solutions (KTOS) After 7x Three Year Surge? - simplywall.st",
+          "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQcVFxZS1uQmtkZVNXX1Z3bER6MlJueUk5RTgzbHM1eFpycmtQdEhRSHdoVjMtNXhjbjFGQ0RvM0NFSTJCQzNIZDJ3RHZvN0ZvQ2VoSlZoSVRvYmNYaGYtd09GWnMzRTlDdE5Rbk9OVEJkcnRySnM0V2Q0MTNFN2VUTW52MUpvSGc3c2NMdGNGbjRRTGJROW56NE54QUZVbzJsNWRGX2djVWN2Y0tzdGUzelRWTVhUaU5yWGI5ZzZldWxQZ2JWVnVxcGMzbl9HVHB4N1ZrclJQSGx5NTdxQ2tITWRDMjlzWkhNM240aUhR0gHzAUFVX3lxTE9xaHRqQ1lSUVRPZEh4ZFZIWEs4UjZkdHhMTzUybXNsUHg4dm1hOGIwN3h6WE9kTkFxVWNLYnBRdHNnYWlRNHBBY0ZHN3llWjdBODh1V0dHWXhvV1o2VmZwX0FVRHNHVE4yVHpZbGRvTnVCOUhrX2VjODNkUnJSbmxTd1FFRHg4dmJWb1lUVFNCWk0zUUNvR1l1TnVHcGtXUlQ1OGtwY2FnSzJEOFZiSzI5Rm85Qm9abldIYVVlaGc3b1E1Q09Gcml6dnBfaGE3MklzOVZIWkc4TXBfMTNSdkRBaXBzZy1fMWZDUWM4M2htOGtXYw?oc=5",
+          "published_hkt": "2026-03-08T06:32:35+08:00",
+          "source": "simplywall.st",
+          "impact": {
+            "sentiment": "negative",
+            "severity": "high"
+          }
         }
       ]
     },
@@ -250,15 +250,25 @@
       "query": "NVIDIA CORP OR NVDA stock",
       "summary": {
         "label": "Neutral \u2014 no strong catalyst signal",
-        "positive_count": 1,
+        "positive_count": 0,
         "negative_count": 0,
         "high_impact_count": 0
       },
       "items": [
         {
-          "title": "Should You Buy Nvidia Stock While It's Below $200? - The Motley Fool",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNR3VHZXdKV2daZTlKUk9HZWRHRnNXelk5Q3ZwaTdVeGZUdlRMNnRFX3RCOElmWlIwYTJiZVdFcjgxMkpCZTBQc0t2UjdHUi1wM25HSlNqamtNRTJKNTRhRFQtQUdMRkx0ZHR4d0ZpNWFxTk12WllfQnpxQWJCTUNHSkpESWFON3JuN1EtelF5YWJSYkhV?oc=5",
-          "published_hkt": "2026-03-12T04:05:00+08:00",
+          "title": "Investors Worry About The \u2018B Word\u2019 With Nvidia Stock at These Levels | NVDA - 247wallst.com",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPX0p1anNRWlVCODFqeGJBT0lvVFFRclVxQTdnemZzVDRpdlFNMGU0NUF2NDlZcjM0dkhpTUlKYXJYaW51OU0yanV2eXkyS19VdV9YV09CUkdDbjRTMU0wVW9BZS10czlJYXBDRUJlcUNlMTNqeElHVHB5NEZMeVhuQ3VrbnV0bENoaTBFM1Zfd1lGdWFZMFd3MmdhX0VnTXJXNlhmNVJ5MnBxZEdWUlhVVFhYdU9udw?oc=5",
+          "published_hkt": "2026-03-12T21:20:36+08:00",
+          "source": "247wallst.com",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "Here's What I Think Is Going On With Nvidia Stock - The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWGdIY2hGX3NtZjhZNmViX3FubDlxSzBrS2ZzalZkNGNOdEFyaVRCQ0hLX2drbGtDSFBpQkNsZVQ3aE9feVZTbTB4TGVndG5ENk5mQkVrUUt4SUhEVG5jdHhzVkV4UnVIMEtXVmlLcWJkUTU4eUdZM0Zwb0xyMmQ0cEttOEhBTWc2T010Zl9mei1td2lHT0E?oc=5",
+          "published_hkt": "2026-03-12T21:12:00+08:00",
           "source": "The Motley Fool",
           "impact": {
             "sentiment": "neutral",
@@ -266,10 +276,20 @@
           }
         },
         {
-          "title": "New Buy Rating for Nvidia (NVDA), the Technology Giant - The Globe and Mail",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOWmI1MWFHZHpvZk9sd0tQSnVqbVhPQW4wRUVHOHhmdU84UFhfanBwYXJQalpGLVhpbUtsUTZscGd6NTJlRU5wc29YSVJ0Unk5bnh3OURpS193LVRkVi1Oa1FHUzNKQUZwNEpNcnhRU1R5elNFQVRKVHNfLWxMellESEw3LVpuZGplSzljOWI3empoc3VjV2hXcW12Z05HanRlWUZYMHhiTnY4MWFyUWFQbENNVW9jcUx4LWkwc25DMkI5WndqZVFjYTFHVnBHNUJ3?oc=5",
-          "published_hkt": "2026-03-12T17:36:50+08:00",
-          "source": "The Globe and Mail",
+          "title": "Why Nvidia\u2019s Moat Keeps Expanding (NASDAQ:NVDA) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5hZnZMOTJQMl9zT0o0TU5vVlJHY09LR1lSVDZlSHZfMHRiZ1dCRG4xSEJlbUZtOUo5SDk5T3NmSUdzbEU2WmQyOUJNLXhVZVc3WkwyTVQ5V2ZXNk1HMjl1bUJ0TzFwQzVDcHcybWdsdnRUWXZjZHRiWHVBZTU?oc=5",
+          "published_hkt": "2026-03-13T04:18:33+08:00",
+          "source": "Seeking Alpha",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "Top Analyst William Stein Weighs In on Nvidia Stock (NVDA) Ahead of \u2018The Super Bowl of AI\u2019 - TipRanks",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSG9GSkN4N3hXQVZ0U0Vza3c2UXdxZWM3LUQ1bGduOHZtMDlTc0FXR3FmazU3R2NQTXRKRi1wT0s3TUFGN3dPTmpCQklUdGZMc1dOZzRFNFU2V05Ed191VjRmYlNPaWhvZ1djeVVaV09LVndGYkt4UXNNelRjRTFqTWhtblhfX0JXeW9uVVI1QXFBOXlZTVBERmJoTmNCMWlWdVg0QlRxWEdwZ1FoTlJkcEhJdS1GWkE?oc=5",
+          "published_hkt": "2026-03-12T22:02:35+08:00",
+          "source": "TipRanks",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -284,36 +304,16 @@
             "sentiment": "neutral",
             "severity": "low"
           }
-        },
-        {
-          "title": "Nvidia Stock: The Market Is Wrong (NASDAQ:NVDA) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9JTFd1dld2N0dWWU5zZEgteWVmTWdVTzhBYmx5X0lCaXZCRVE4NlkxaFFpVEFLdjlPejEyZFhMcVVBNzZQQWtWNXczYnh4a2RJVHdVSExtVTJFUnB2RzZLTXVqOVdJSjk4aWpWUjJGU2lsT2VMVHc?oc=5",
-          "published_hkt": "2026-03-08T22:40:00+08:00",
-          "source": "Seeking Alpha",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "NVIDIA Corporation $NVDA Stock Position Trimmed by Xponance Inc. - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWmpQdW5udWpZT3V4MzRJTFJCc0d1V1hqbXZNQmFGWERZa19SSF84SHlNZEJFY3FLcmZ1TjNTNDBLNzJBcnQtRnA4alZWSWRQa1dxcmZoTlNDX3BOa2xaYXRTX3pvSUF5cFdHTkloSE0tREtvZUQ5eDlwZkpYbUFVU1pNcDVZd0RVd3JleUNoZjVsRHpmWWtNdFlNQ2RRajRlZW83cFAyUFZrcUZueUNkbWFnblJ6YzhxSmFwdHdodkM?oc=5",
-          "published_hkt": "2026-03-12T20:00:11+08:00",
-          "source": "MarketBeat",
-          "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
-          }
         }
       ]
     },
     "ONDS": {
       "query": "Ondas Inc. OR ONDS stock",
       "summary": {
-        "label": "Watch \u2014 high-impact headlines present",
-        "positive_count": 2,
-        "negative_count": 2,
-        "high_impact_count": 2
+        "label": "Neutral \u2014 no strong catalyst signal",
+        "positive_count": 1,
+        "negative_count": 0,
+        "high_impact_count": 0
       },
       "items": [
         {
@@ -327,23 +327,13 @@
           }
         },
         {
-          "title": "Ondas (NASDAQ:ONDS) Stock Price Down 1.8% - Should You Sell? - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUXBjVlNUMFdOZWdTSm52N0QxMlBrOHNUQllFczhWQmFOMzlOejQxTWlEYjA3VXhMNTFHcjNLa21vNVl2bklwSWsxMzl4dWd3MTFpSFFSNGc3eTF3TFUzX2k3bnFaZlJQZEFVTHVQOG9ZU0NUTXpqQ00yamNWYU02QTg3NHVhUU0wYVV5OFlpdzkxSDZSRFNxemdfa19lbDhvQjVxclRGZXp5QQ?oc=5",
-          "published_hkt": "2026-03-12T05:39:37+08:00",
-          "source": "MarketBeat",
+          "title": "Drone Stock On The Move After Palantir Partnership - Schaeffer's Investment Research",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPR2xJQ2hkM09CeXR2ZXMtX0hIT2daeUxyX1MwRklSVFBCYVhjNlpiamhmVHAzME5OVTBnOEl4Q3FMREpvRzg4RFRQNVZnNnFuOGwxRzBaXzFMaTJ1dTZUNGdYdHFVUzVld00yM2FxaUFlU2NMVi1rbUNYZVZyTVNhRUxHTFRZMUx0X1NsTVZxMXUzS3FfQ1hEUFVXckk3SjJYTlZzUlN0QnpjUlZmVUE?oc=5",
+          "published_hkt": "2026-03-12T21:45:55+08:00",
+          "source": "Schaeffer's Investment Research",
           "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
-          }
-        },
-        {
-          "title": "Ondas (ONDS) Is Down 7.9% After New Defense Orders And Border Security Deal - What's Changed - simplywall.st",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNWXR0UF9aUmZFTG94R1NTRk5UYWJQaXJMZ1Faandia2dpVm9BQUp3di1JeEhyUzNFTVdNVzRhRUxtX2dsSHcwU2pPU2FnZFpZVkFMZkZjYl9pd19RRUtMdWhFMEoyZ2M1WWtsVXQ5NXNVS3d4NFRhbEVoZXVBZzFudHVRZVJrNTQ0cU1lMjVLQWM5eUZLb2RMa3djYUo0YVc0N3BscEdwLWgtM0NSSlRyLVQ2WVVnRmxXMGlyatIBwgFBVV95cUxQdFVmcFJ0ZFZFNUliNzRGcVJsWXBhb2N2enF5czNjM2Q2SFZEcU5OVDh4b2hJZ1FoN21QSWlmOGh3SFlDbXdiWFRkU1ZFOUpKb01NYlZNVnYtMTRnd1NSTENHOXoyN3ctR2pad1RyeHJ6OGJRdnF4NFdMVTdwaEo3N1pOUmVoNXliVTdqczkwZHJVTmpaaHltWFlBa1N1SG85bzcwU2ZOMHk4eW5nbEx2X2NiZlpadTlIM2tJOXZ1TDBmUQ?oc=5",
-          "published_hkt": "2026-03-10T04:26:07+08:00",
-          "source": "simplywall.st",
-          "impact": {
-            "sentiment": "negative",
-            "severity": "high"
+            "sentiment": "neutral",
+            "severity": "low"
           }
         },
         {
@@ -357,13 +347,23 @@
           }
         },
         {
-          "title": "Ondas (ONDS) Stock; Climbs After BIRD Acquisition Boosts Missile-Defense Portfolio - CoinCentral",
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9KMnVlWXItdDRuRWZEeWEwTnRCU1A0Y1FkQzhjTTRnczRRbmY2VjJXZE5kRUNQZlVVLWJrQVlpNlNQQW1FZHpidjc3M3lpcTNPVDc5emJZeGxqT2RyclRNdkxRdWJTM0Rlemw2cm5lako4NDBEWkQyZndzYnlEUUE?oc=5",
-          "published_hkt": "2026-03-12T18:26:50+08:00",
-          "source": "CoinCentral",
+          "title": "Ondas: From Penny Stock To Defense Contender (NASDAQ:ONDS) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMkZoRWEycWZZTkF5NW1jZ3VnYzRHUDdrbWlMU2VvN2hIRjRHU1pXczV6RVlJdlpOOWxhRzNRZ0sxc0h6N2ZlNDVKcWprSERLaUt4YWFxYzRpTG10bHdyNXZXUHdhaHl4dk11SXVmaTU1YUZFbUdRdFJLQUUzY3ZZUUo0STU0bkFXd3dtMg?oc=5",
+          "published_hkt": "2026-03-03T16:00:00+08:00",
+          "source": "Seeking Alpha",
           "impact": {
-            "sentiment": "negative",
-            "severity": "high"
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "Ondas Inc (ONDS) Stock Price Up 6.12% on Mar 10 - GuruFocus",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNdVo5dUI2ZDVfRnAxRDdQeE0wT09ITFQ1WllfSHNvWEVTeXBOc08wbmhkRzl0MlYzVW9XQTMxdGVKeUNLNDJMZERDQlRFbEdSaVpIMnhrcVFkWl9HX0QxZjBqZUE2LVBqdFA3cVRMd0lVLWFtYkN5TlVXTEJoN3hUQW8tb1RVLXhWbUE?oc=5",
+          "published_hkt": "2026-03-11T00:21:25+08:00",
+          "source": "GuruFocus",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
           }
         }
       ]
@@ -372,11 +372,21 @@
       "query": "Palantir Technologies Inc. OR PLTR stock",
       "summary": {
         "label": "Neutral \u2014 no strong catalyst signal",
-        "positive_count": 2,
+        "positive_count": 1,
         "negative_count": 0,
         "high_impact_count": 0
       },
       "items": [
+        {
+          "title": "Palantir Is Down 27% \u2014 Is This a Collapse or a Buying Opportunity? - 247wallst.com",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMzhGQVg5VWxyUmhLdjVISGRWSncyanBOX1phMXdBRGcyR2JKbFhnNjlaNXE4YzJkRlFxemVqallVdjFjNkkwZXpleWFXTDdVWi14Y090cm04SXJsLXRjMFlWVGt6cUJGLWcxR3hqaG05TndKZkhKRFA0M0xhT0VJb0I4a29wYWg1TFZRR01sQ3lLMkxZWXhwbW1ZQmJ3a3VfbEF1OWxjMnJtUEk?oc=5",
+          "published_hkt": "2026-03-12T21:26:19+08:00",
+          "source": "247wallst.com",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
         {
           "title": "Palantir Technologies Inc. $PLTR Shares Sold by Shannon River Fund Management LLC - MarketBeat",
           "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNWlF5Qjh4RUo1NEx3bjlWalJJRV9CR0RwNzZwU1ZDUUlQczB3SUM2OFJUTV94elI0NVRDcGE0ZnpObVdKWHhHVEZaMkYzV2ZrUFllVlhnQnczV29TaTlHYXBPekxRWlRXcF9KT1hkN0FxUHRKTk5LQnVTRE82YTEzZ3hWREJmNnd2VDgwZllsSW5RcVVVcjFqd0c4ODhjNGNfS2M4V016TGR2cHFrZEdxaXBFOVVqMEdnOVZOSTNrSjVHcTRUMHJ6ekdOOVZCSmMzNHJUWUh0RQ?oc=5",
@@ -408,23 +418,13 @@
           }
         },
         {
-          "title": "Palantir: Hard To Sell A Company That Benefits From Geopolitical Conflicts - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWkk3X3o5WGxMSUdwV3NicmNQSXZaeWhFbm5pN3lLYkRoeDU2amhzcEZ4eE0zakxrLWxKM2xSNUN0dC1kdVIzdmpzV29pd2FRNU9WVmxlYzFQYTZNcnl0THZiRVotaE5CRUFxQjh4bHpwbTEza1BvMElUZG96ZEhLeEZOYjlRVWZGNG1HMllZSE9VTkhUTWt1NFluUlBPRlYwZFlKVExHekNCUEtlMUdoLTJfcw?oc=5",
-          "published_hkt": "2026-03-11T12:23:56+08:00",
-          "source": "Seeking Alpha",
+          "title": "Why Is Palantir Stock Falling Thursday? - Benzinga",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMUY3eS14ZTNVa0VHMlJ2LTJOSkJ4X3BkaHlQcDBLUVNwTF9UX3VsUDBUVXlvMnRoN3RVRDUwN3lDMDh4dnY4SVM0Zms5U0xpUXJMODFmWnRXR0tHZllLeEVvR1QxRjJJVTNMSlNzNHh0OXJtaE1FRDc2bEJoTVI1NWxHbTI0SzRRV2NSTTk4NnZjbzZFMTVfRHRvMlM5aC1E?oc=5",
+          "published_hkt": "2026-03-12T17:40:44+08:00",
+          "source": "Benzinga",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
-          }
-        },
-        {
-          "title": "Palantir Technologies Inc. $PLTR Shares Bought by Franklin Resources Inc. - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQT2ptYThRZTFzWXZHSkhqQ2JoSXBvMjRxZlJMU3plMVlCaXB1WmpXS0s3aVN5Y1Q2Sm1jYl9VQlBROVFSOWEyX0NkTFFobXMxcFlxckhzN1ZCRks1NURlQS10Q2ctRnRTY3JRQk93WTRCREF6ZjlYOXBXcnhaZWtwdVRrY2RTN29TUUFJWkdNLWF2UUdncXJOSjR5TlEyeFdqNnlFVXVSVlo3dTlQQ1R1eUViR2hvUHVpODVQb2FjVjhOeVZWdjB2WVZMRQ?oc=5",
-          "published_hkt": "2026-03-12T18:41:46+08:00",
-          "source": "MarketBeat",
-          "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
           }
         }
       ]
@@ -439,16 +439,6 @@
       },
       "items": [
         {
-          "title": "Assessing Redwire (RDW) Valuation After Truist Upgrade And Recent Defense Expansion - simplywall.st",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPaGVmckp3WUFEQXVHSWJIOThnOW1qaURZVVU2R1hGQWZlRjJaeGViVFVVS21YaXI0UlVlN3Z6S1JsZ1ZRR2hQbE9jYnpQYXF3ektiWlhpN3BwN2pmRHRrd2t3Z2phX1gyVTV6SFp1dHNQbXVzRVEwdm1zdS1SMGV5VzFCcVhneFBndC1jTmtiTnZYaEE5UE9SWnFFXy1pVnlpRGoxdXJhM3BBY1BFcHIxTzV0VkRheVV2NTVVSXUzUjRSbU1yMHhz0gHMAUFVX3lxTE5yYV91aV92NDZXcVU4aHlUNUtoU1lFdDNXZy1iQlFaNkhrd2paekRMVDFhT0YzQjJpeC16ZzFBUm9aTmJRWVQ0RFBtYVdlM1dPYlBuM09DUjg1ZzItYkR6TnA1aWZhUjYzeHhtb05mdWhVazVxUFRPU0M0VHk4TU5kckdES0pjbTFlSW8tQmJNZEY3YW83VzFSVXJPZjhuYXYtV2FIbmhrVGU3NVA3WWVTQ3dqNGJyUkRkdUJ2Wk0xQ1pFSTc0OFhUUDU4Vg?oc=5",
-          "published_hkt": "2026-03-12T18:48:13+08:00",
-          "source": "simplywall.st",
-          "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
-          }
-        },
-        {
           "title": "Why Redwire Corporation Stock Popped Today - The Motley Fool",
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQaW9Wb1czU24tQjVaSHlVX19TcjllS2pHOTdBajdJeUx4SVVCZGJFRU1ta2dGOXhwX3hmX3BzVTctZXBoLXhXbWFRX2lWSmUwUjhKcTlwUGpyYS1VbnQ1WGR0QjFsWWkwTm9WS0s3bjM1SmZLVXpGQzh4R3NYLWdjUUNMaHBFcGV4SGRERDN3?oc=5",
           "published_hkt": "2026-03-10T01:19:00+08:00",
@@ -456,6 +446,16 @@
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
+          }
+        },
+        {
+          "title": "Assessing Redwire (RDW) Valuation After Truist Upgrade And Recent Defense Expansion - simplywall.st",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcmFfdWlfdjQ2V3FVOGh5VDVLaFNZRXQzV2ctYkJRWjZIa3dqWnpETFQxYU9GM0IyaXgtemcxQVJvWk5iUVlUNERQbWFXZTNXT2JQbjNPQ1I4NWcyLWJEek5wNWlmYVI2M3h4bW9OZnVoVWs1cVBUT1NDNFR5OE1OZHJHREtKY20xZUlvLUJiTWRGN2FvN1cxUlVyT2Y4bmF2LVdhSG5oa1RlNzVQN1llU0N3ajRiclJEZHVCdlpNMUNaRUk3NDhYVFA1OFbSAcwBQVVfeXFMTnJhX3VpX3Y0NldxVThoeVQ1S2hTWUV0M1dnLWJCUVo2SGt3alp6RExUMWFPRjNCMml4LXpnMUFSb1pOYlFZVDREUG1hV2UzV09iUG4zT0NSODVnMi1iRHpOcDVpZmFSNjN4eG1vTmZ1aFVrNXFQVE9TQzRUeThNTmRyR0RLSmNtMWVJby1CYk1kRjdhbzdXMVJVck9mOG5hdi1XYUhuaGtUZTc1UDdZZVNDd2o0YnJSRGR1QnZaTTFDWkVJNzQ4WFRQNThW?oc=5",
+          "published_hkt": "2026-03-12T18:48:15+08:00",
+          "source": "simplywall.st",
+          "impact": {
+            "sentiment": "positive",
+            "severity": "medium"
           }
         },
         {
@@ -469,10 +469,10 @@
           }
         },
         {
-          "title": "Redwire (NYSE:RDW) Stock Rating Upgraded by Truist Financial - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMFBQeFF5ZUVBczBkSUNYLU16VWtBZWRaZEhoVVpHRnh3bUxwVDVueWRGekFPWVFCSzktVy1QcG5JdGZyU3VmWkp1X3dJbldGd1hObFp2WTJ2MG83VTFOQ3lWUVFmYkk2aVlnbXJHdzZ5cUpMdThGUTVzbW5OR0E3TExsVDBTWlY5RFJpZnZBQTBUVWZjbHgxMFRjel9tZGdsd3NsNTZlekY1Q2ZBSi1OUA?oc=5",
-          "published_hkt": "2026-03-09T20:41:16+08:00",
-          "source": "MarketBeat",
+          "title": "Redwire Stock (+13%): Truist Upgrade to \u2018Buy\u2019 Cites Margin Expansion - Trefis",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNU3FfSkk1eFZDbXBUb1JGZVp6cTJkUzRURUtqQjBGdnEwNmlaRXdEZ1otRVpQVmxJMDNXd3NKNkpEZi1rcnF1UlZXSXpzV05JMW5hc3UxOUVNZzU1RjVCcVRQbXhvT0RjREpFXzRzVmg3dG9ta0RPVWJUZ0d4cWY0LUhOUEZDaWtkRXRJWkc3QTdIX0UwVjNLU3N0UUo2Tlp2NW1wZGRNM2o2WE8xbjh4bmlueXVINjVjOExIdXNn?oc=5",
+          "published_hkt": "2026-03-10T17:40:26+08:00",
+          "source": "Trefis",
           "impact": {
             "sentiment": "positive",
             "severity": "medium"
@@ -491,12 +491,12 @@
       ]
     },
     "RKLB": {
-      "query": "ROCKET LAB CORP OR RKLB stock",
+      "query": "ROCKET LAB CORPORATION OR RKLB stock",
       "summary": {
-        "label": "Neutral \u2014 no strong catalyst signal",
-        "positive_count": 1,
+        "label": "Constructive \u2014 positive-news skew",
+        "positive_count": 2,
         "negative_count": 0,
-        "high_impact_count": 0
+        "high_impact_count": 1
       },
       "items": [
         {
@@ -510,29 +510,9 @@
           }
         },
         {
-          "title": "Rocket Lab Corporation $RKLB Shares Bought by First Trust Advisors LP - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOdlhZWmc4YmZETFpldDAzX0xfRlNsTHRpc1FJeTg4eFVZMGlzcDJ0RW5wdmgybllrNnBwd191eHJ3RDZpV01na2VpcFB0c1NlRkxrQ1V0Y1d3c0lnYVhWRXZxVUlnX0ZNS0NpZllHdzNsTVRzZDA1cDNzTXE5T3V0ZEsxVGIxRng2SzQzY2Y3SW1XdHN2em00eHJmVzZUeEdLSVEyZVJNTzN6WDF2dDRBUllKQUdoU2F2VkZUelNCTUZVckU1QzRjOA?oc=5",
-          "published_hkt": "2026-03-12T17:45:10+08:00",
-          "source": "MarketBeat",
-          "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
-          }
-        },
-        {
-          "title": "How Investors Are Reacting To Rocket Lab (RKLB) Dual-Site Launches And New Space Power Ambitions - simplywall.st",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPVjJOV09KSldNdGVSaGE1bWk4clN4cnA0N2pSSFBYVVZvbHE2RE1KcV9NY3ZLV1hndVlwNkhkd3FaQ045endaVElBc0NnTlg1b1VFSGVPU3FPdnZlOS0wYXZKMjVtSG9RVzlfN1BOZE40RnFGdWV2NWc1eWxQZzE3cW5EWnd1a01yQ1JsWXN2dHhteEFScGJHTXJ0UzRKU08xYzhWRTdRaml0VFpvdmY0V3Axcm02dEF1Nk1NT1JQUTRfbGhpemI5eDVqUkphbXPSAdQBQVVfeXFMT1p2TXZLc2NWc2VsX25yeVZqcXhQNmJyVWpqOWJLRGhBd0FmZHJPTXhwd3hMN0lxT0djaHlvdEpib3BrSm1aamRJdnUtYllBWDFjZ0llb1JwXy1URDBoSDd6R0lGa05jdm5oWXlpNTF5bmw4SDI2dGxCLS03R2NtZUhKRVhDdWh5LVdRcXVCZGJ1emZ2RndHMjBfWHUxSnM5c3YzUXFfcGs0SnRVdmVVVi00YVM3RWJ3NFpnWVphdHhrQU1qUVFJendlbU1QdVlQb1FlX1o?oc=5",
-          "published_hkt": "2026-03-12T13:08:32+08:00",
-          "source": "simplywall.st",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "Why Rocket Lab (RKLB) Stock Is Up Today - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBkU3A1eVpfLVB4V2J6QzBaTXJocjJJUXhJYmlpNUp0clg2djl3U0FmNVJCRmhleXZ2ZlF3WGNtRUdqTk5udW11VGJyOGI0T2M0RWFxNXVCdTZQZmFMYUpYam9pWDhwUmt2eXB5bUJ2V3l4MERoWmpxVjktaw?oc=5",
-          "published_hkt": "2026-03-07T09:19:00+08:00",
+          "title": "Assessing Rocket Lab (RKLB) Valuation After Strong One Year Shareholder Returns - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPd3Y5UGJOaHhrcmhyeHpaVlpzbjlhNE94ZHlrRTZvc3JVMjVWRG5hd2FpbEtCZ0c0VlNYbUtpRUxJdTRPQi1ITURVTzY1S1Zjb0lfMFBoTUpFdzdfZnpLS0I2YXZROU5tOUxYQ095eUVLOV9XS2dSUWpubTRDNjBLR2FkSGR3ajRS?oc=5",
+          "published_hkt": "2026-03-13T01:10:22+08:00",
           "source": "Yahoo Finance",
           "impact": {
             "sentiment": "neutral",
@@ -540,13 +520,33 @@
           }
         },
         {
-          "title": "What Is Going On With Rocket Lab Stock On Wednesday? - Benzinga",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZm5ZUmdQcTJ6WmVPRU83bERZb3huVWF4dXh2YW5lWTZkX1F2MEhhemhvYXBKVHhOZXdOVm5nc3ZUQi0yRHRnZFQzNDh3RDgzQTFiaWhEYTE1emFENjEtd25hQUEyWkk5cjduNUlQSjUtM3VZVkt0Snp5QVpBa0pEbm5QYXlCaDY4YzZYUEVpMk8wTTV0WXR1RjEzNHV3UnViQzNYVw?oc=5",
-          "published_hkt": "2026-03-12T00:57:37+08:00",
-          "source": "Benzinga",
+          "title": "Rocket Lab (NASDAQ:RKLB) Shares Down 5% - Here's What Happened - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQX0g1eTJoVzU2Z0FJamlSUFl3NTVrTmw2cnNGaGlVVVVoSm05NDdZWlUzaUx1MjNsS3ZDNFJHXzRxenZqRmcwZElRZ2ViUUc0YTBkbml4d09Hek85WE9aZ0JCeUlKNTZYNlE3eVhpT1dXSzdlZDZnRTZZRmR3elFQNkhWNGtCZkoxbHpNMV9obm92QlZfdXRWd2JORHl6bmFIajc3QlhPZnVLY1pjblE?oc=5",
+          "published_hkt": "2026-03-13T05:30:46+08:00",
+          "source": "MarketBeat",
+          "impact": {
+            "sentiment": "positive",
+            "severity": "medium"
+          }
+        },
+        {
+          "title": "Rocket Lab vs. Intuitive Machines: The New Space Race Stock Showdown - 247wallst.com",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObE5HaThFdzBxMWR4aTRzYTNyQVp4QlVxaVhodUF1WGFyZWRWVG5IeXVUNUhqQ2tlaGpfUkpEN0Z1MndTM2czUE9ZSG9TNGxERS1zTks1NnpMVFBJRlpOcDNEMmN0NWVMRzNFQi0yODh6UjVHWUdfM2tHUEk1WlVHV0lJRm9WZlZYallNR2RENEZDSkJFR0tOTm5LRWRGb0lFTzBPNXFTdzh4eUlDcHY4?oc=5",
+          "published_hkt": "2026-03-12T20:58:38+08:00",
+          "source": "247wallst.com",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
+          }
+        },
+        {
+          "title": "Why Rocket Lab's Newest Acquisition Could Fuel a Surge in 2027 - The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeXRxSFJFUWR5bnNwSWZsWjY0cElKLWVBc2hBOTBJcDNBUWV6alA4V0tlZTdodnFRRFpCXzRCc2oxZzBrZzlhWUJ6ajA0bXNPV2JSclpyMDA2ZnZxQ3lXTVh2WmUzdTJRZlJScE91OEx0UDVtSGFjcHBwcmFzSk5XQ1hKZlQ2MV9ySVJPMnRrZnlZeUlyclNBVg?oc=5",
+          "published_hkt": "2026-03-10T05:30:00+08:00",
+          "source": "The Motley Fool",
+          "impact": {
+            "sentiment": "positive",
+            "severity": "high"
           }
         }
       ]
@@ -561,16 +561,6 @@
       },
       "items": [
         {
-          "title": "Tesla Inc Stock (TSLA) Moved Up by 3.27% on Mar 11: A Full Analysis - TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdV9GVkNfSlBDMUJaRmtBN3A1V1NCaS1NREJDUHBSR1FVRmVMUzBOTUxyaHpnVUtzRkQybDhJYmlHb0tvTDRYM1piM0JQbzBoVUJOVkx5RTh4X0txSTYwWWtBLUdueXA0bl9MdjdpXzRiQkMzU093XzZNVW1naVpvbFVR?oc=5",
-          "published_hkt": "2026-03-11T22:16:02+08:00",
-          "source": "TradingKey",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
           "title": "Tesla, Inc. $TSLA Stock Holdings Decreased by Legal & General Group Plc - MarketBeat",
           "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOcnpEdGw1U1c0VWJ3YndXY1RHRUdkZnQtcWZ5cGZsVko5Q0s1VFJMNFU1ZnIzRVhWM2tNc19QX2V2LVJiWU9JZ0xDM254bHJOTHBJcTJWSnM2YUt2bzRIbWJpQWpJT3UtU01jaTdYclVHYk1QUGNFZ1pkS1pHOTZDeUUzc1hzMzFiYzA1QXV5RVhHMGxQamZIeHFxZDZDZW1sQnZGZkVJM3E2SE84dVFEUncwODRjZTFJbXV3dlVzUEFZM01UbkE?oc=5",
           "published_hkt": "2026-03-10T18:57:52+08:00",
@@ -581,29 +571,39 @@
           }
         },
         {
-          "title": "Tesla (TSLA) Live Share price, Invest From India - INDmoney",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1qYnRYb1o3OWxVa1N0ZUp1Zi11LVBHaUNTNGhON1ZxSUM2bzh3VW9jeGpoVWdkd2tQRklodWtpYnQ2aHBNLXR6THNqMm83RlcxY1QtTU02eUd3MDd0RHlTUVpzQmVEYml0X1IzenlB?oc=5",
-          "published_hkt": "2026-03-12T03:59:59+08:00",
-          "source": "INDmoney",
+          "title": "Tesla Inc Stock (TSLA) Moved Up by 3.27% on Mar 11: A Full Analysis - TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdV9GVkNfSlBDMUJaRmtBN3A1V1NCaS1NREJDUHBSR1FVRmVMUzBOTUxyaHpnVUtzRkQybDhJYmlHb0tvTDRYM1piM0JQbzBoVUJOVkx5RTh4X0txSTYwWWtBLUdueXA0bl9MdjdpXzRiQkMzU093XzZNVW1naVpvbFVR?oc=5",
+          "published_hkt": "2026-03-11T22:16:02+08:00",
+          "source": "TradingKey",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
           }
         },
         {
-          "title": "Lucid (LCID) and Rivian (RIVN) Stocks Jump as Oil Rises but Tesla (TSLA) Stock Lags - 24/7 Wall St.",
+          "title": "Tesla Stock Quotes, Company News And Chart Analysis - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSzZVOXVEYXlod1RJM18wNmhteHZNVjhTVUhOb2ZXMXNDd0JHX3czT0RmS3VBeFl0UUN5ckhOZUV2ckpCby1sc0hsa3FJQzByczR3Zm45OHNRSUhnMVpfbVg2X2MtYVZwd3lRVk5WMzhPZkFERUl5UmpmNVVFTFNsNEVXd0NpVW5Lc1BFYnFLRHNydHoxbW5QNUlpOE1mT3B2RVE?oc=5",
+          "published_hkt": "2026-03-12T02:13:00+08:00",
+          "source": "Investor's Business Daily",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "Lucid (LCID) and Rivian (RIVN) Stocks Jump as Oil Rises but Tesla (TSLA) Stock Lags - 247wallst.com",
           "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTURwWk1ERWN2UHdxZm5jRW9OR1daQ0FyQmc3X0s5a3BtdEE2UVNKQXRLWE42aXVlV21MRUlRN3pLTEVBSmlWWFktaUw2QXJoSnM1a1FnLXMteUxHaW1rNFdSQ0pHYUNFeVMwVmJ3X25ST3lJdnN4STk4ZXduZHdWaEZMSTRaN0JWanBzNVpHN2hlMXYxS1V3VWlLR3YyUjFzOV9iaDRGR1pEZXZ3aXVlLWg3T0RMTnBteTRhRkl3?oc=5",
           "published_hkt": "2026-03-10T04:02:56+08:00",
-          "source": "24/7 Wall St.",
+          "source": "247wallst.com",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
           }
         },
         {
-          "title": "Tesla (TSLA) Stock; Holds Steady as Finance VP Sendil Palani Announces Departure - MEXC",
-          "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9oV0dxU0xuQWJrdkE5bktoVkE2VDhCQUVHUTZxSW1ULU9ZZjN1SXhjQV92THEzV20wVk00NUwwZjlyWjE2VGxB?oc=5",
-          "published_hkt": "2026-03-10T17:27:15+08:00",
+          "title": "Tesla (TSLA) Stock Climbs as Its Biggest Battery Maker Crushes Estimates - MEXC",
+          "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1BQWwwZkVtNnEyVWNnRm5OWmhfT0EtWFl3VER5RVl5OXFCenByV2FjZlhIbzlEZkRpNWhjZ1BNTDNZLUhyRHBz?oc=5",
+          "published_hkt": "2026-03-10T23:28:15+08:00",
           "source": "MEXC",
           "impact": {
             "sentiment": "neutral",
@@ -622,6 +622,16 @@
       },
       "items": [
         {
+          "title": "Taiwan Semiconductor Manufacturing (TSM) reports Feb 2026 revenue data - MSN",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOR01FYk1pMWh1TGt5VE50R0Q3bXg0ajkxVEdPSDBFZXVIN3VlM2RhOFlIdEJTZ2haT18yemRKUGQyOHZVWHR2Q0NyZ2UzbGtNTjV3MWpHQVBHX2VOZnhsTE04SzhfMFI0TVRlLU94SEg4RFdUbEJRUGJvQzdQQmRhdnpjWnQ1ZjdSdmdjVFhBX2gyN243S0VVQ3NVR193eVVILUpZb2xWTVppazEtRjhpOEtaTnd1dWJvT1JTVS1KTzZSU0NqcE1LS0NOV1VuYlJfdG9vYUlZcVBfSXN4OEZJ?oc=5",
+          "published_hkt": "2026-03-13T02:51:30+08:00",
+          "source": "MSN",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
           "title": "8,701 Shares in Taiwan Semiconductor Manufacturing Company Ltd. $TSM Bought by Shannon River Fund Management LLC - MarketBeat",
           "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNVlRnNFBtYVZHWHR2cE1NUDA0VGlqWFFSNnVocl9BUDYxYWhVYTlKaUhPT2I4WDFsbHotN1JZeFdPeHVib092ZDF3ZDF1c0dhLTQzZzZ1STU5N21xaUJ1OVZ3bWIxQmFSY2s1SjZkVDZXWmhMLTc2ZmMyZzV0VXJOXzJPMGJ6dHN0cS16Uk5sSkd2Zy1OSk1wUUJwaTZ3UmRGajNJQVlkb0VnVHA5QllkN1pUX1JDTDNjNjRsUHpydGZaTi1QTUx5UzdvNV9Oak9yenhfV0pueTMtdUN3UVZuX3pjV29KQTI4LWNuZFJXS1pCQ0FKWWRaeHc1NmxTdUE?oc=5",
           "published_hkt": "2026-03-12T20:20:21+08:00",
@@ -632,9 +642,19 @@
           }
         },
         {
-          "title": "TSMC: Recent Fears Make This Another Bargain Buying Opportunity (NYSE:TSM) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOek81ZktFU0I2M3BCc0FzQ1ZNcldwdUNraElEQVhoa0lIcGN3Q2xQSHliMWpmRTlOS2tlMUVSZUw3Njl3ZVZnSDh2SHFYWDBsb3dMM1B4eGtTUnJtUTN4LTBOWkdZVlI1cHY2bzZHZE1kV1pkVW9XVDM1dU16Z3JiS2c2dVNXamVzTWdtQ3FxM0htM1NhMUgyazI2eWQ3ai1ZcjV6VXZB?oc=5",
-          "published_hkt": "2026-03-11T23:30:00+08:00",
+          "title": "Taiwan Semiconductor Stock Slides Thursday: What's Happening? - Benzinga",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQd1VuTXdfUmNYel9wN0czNDNsdTVlRmd4R0lYaDBhcEtRZTFGS2t4b0FQSFhSMDVuZ0NPR1M3bEZ3QWxSYmN1WnpZYjdENlBaYXd6NC1td1RKUkFWeDFxSlNrZmpVNUVMMFg4dmxFLTlUUEVzTFI5YjhoTWNIU3RsX2lBQ3I5RElDV2d1U0F1eUgyMnNFaGhvZGRnTy1fZ2Z5c3dlOUx1N0NGRFNDWjBIVWo5X096Vk91RS1Z?oc=5",
+          "published_hkt": "2026-03-13T01:30:16+08:00",
+          "source": "Benzinga",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "Taiwan Semiconductor: Loading Up On The Dip (NYSE:TSM) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSzlvMml0Q3p5TFdPdENjbTJwYTNHb1BEc2xRTm9ZTDlhVjVhNXVKRERlajBlSjlaUVN1cXgxb2VIR0NQOGo4TjJqRFN3QWxoQ1Y3UDUyZkNqMXRaT2JsVjRtS0tBVzBvdUlNSzNkWGZ4QXctZEYyR0FTVlZjQnJFT2hTWHd5OXZEWjJ1SnhB?oc=5",
+          "published_hkt": "2026-03-11T19:30:39+08:00",
           "source": "Seeking Alpha",
           "impact": {
             "sentiment": "neutral",
@@ -646,26 +666,6 @@
           "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcHl2bWl2UzZESmR3YVJWSzFJbFNZZzQwdk1ySGQwQUhDSndaeF9Ra1BKQzV4QlFqVzJkZEp4RDFyNjlLUWhKczM5WDZsc2IzLWJ4UDNiRkt1SUNSajJkY29lTGZZYUk1QjF2eW5yMVhuTmRjX2plMmZrYjJvblJVbWVSQ1F0cWFrZzVVQVp1OUs5YzJ4S2Jz?oc=5",
           "published_hkt": "2026-03-09T21:00:06+08:00",
           "source": "Yahoo Finance",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "TSM Soars 34% in Six Months: Is the Stock Still Worth Buying? - The Globe and Mail",
-          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTy1BcXZEM3FORjhITk5TY0UwT0tMT1RuX2ZzUUMwdi1FWDByYjNzSDVqS1JnekVOaUtrWjIyclJBdUpmamJrV0ppWDF0cDNkdWRLQi05dFp6M0hUVEVLQlRHNUgyMWVGUGNqM1Z3QnoyanZBa2dia19TU3JGdjN2ZFBVVUh5SnJfTHdhbTBfZmFSRnVOZkdKTE84UHc4MVJMVjcyXzZudGttMmdCZVdJMU5JZktnVmUyWFJMSER4cTlwRDdfNlZ0WEJZTVN0VkppaTk0dzVpTmI?oc=5",
-          "published_hkt": "2026-03-11T21:49:24+08:00",
-          "source": "The Globe and Mail",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "Chip Foundry TSMC Says Its Sales Rose 22% In February - Investor's Business Daily",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPSXhrdmx0Nzd4ZFRLNDA0VXdfZnRJRlhCb0s1VGxSanZFRVNGUkVQbTcwYzRfbG5aUldVQW96YTA0Nm45TmtoMTZpS0NvQjBBZ1BPMkVkdGpUN0E2dVJWY0NLejQtQ0JsNnZJT1dIV040c2RTZEw2ZXNJejJ0NTVfZVdJTmJfOUFsR0lCRU1hd19HRmhxcnNCcmV5bE5iTkE?oc=5",
-          "published_hkt": "2026-03-11T05:23:00+08:00",
-          "source": "Investor's Business Daily",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -683,16 +683,6 @@
       },
       "items": [
         {
-          "title": "Dennis Lyle Higgs Sells 6,000 Shares of Energy Fuels (NYSEAMERICAN:UUUU) Stock - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPaFNvamRJNEVZeElwQlBTcXNnX3lqV0QydUQySk9UQS11RFdEX0N6VVRDQk8zRm1TT1ZEU1Q4WExTaVI3eXkwUnhuUGxqTjZqUExkMkg0cHdFYnRBRTFSQjdwLWdGZmstRmNqVDNrOUUzNFpwSGZlVTVxWVZWbDctREJpV0VzRzFYc211bzFLOW54WHIwZGp6ZnhVbl8xYzNiM21WWFo5Mlg2WmhIdURpcVBSbGN4bTBSSHRyWWNFeUhneENPZkVz?oc=5",
-          "published_hkt": "2026-03-12T02:41:21+08:00",
-          "source": "MarketBeat",
-          "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
-          }
-        },
-        {
           "title": "Energy Fuels Announces 2025 Results and 2026 Guidance - Energy Fuels",
           "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxObm9IVUFtY3RUb1RDR2liT0pNVGZxT2RGRE9qUmdGNHN3YjBOVi12THJEOWdFbFUyTVhreE9iNlJvcTdJLW5UazNBdlFpVDM3VkF0REJsaGNvOGQtbUFKSy1wMUhkVW1Vc2VfOGFleVFZXzJ3dVk2MVNQNWFqMzc4Zkk4WlVpaHJ4dG5KdUk5QWVRZEJoY2RwZ3BYY2pEd1k?oc=5",
           "published_hkt": "2026-02-26T16:00:00+08:00",
@@ -703,13 +693,13 @@
           }
         },
         {
-          "title": "Filas Barbara Appelin, director at Energy Fuels, sells $97k in stock - Investing.com",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPbklWV3lqWXFYMWhpUm5CaHl1eWF6OWxPbWlBRjdKTjUtS2VadXFCM1BJQlp3X09TbXBVc1BjSW9OajZnNEJlZ3NScXhsbXlabGhWUWIyZjhHYlRLZElEaWVzMi13ajdGalJrZnRQZ0kzN2UyQm84Uzdxek82d1RGUkNzN0xZZWR1dzc2QzZjSXBlUG1aNDYtN0owZmg1STRsaTBYaEJ2MzdUQ2h0TmhWM1Q0aC1NdE1iWjhzRlFsTThtVldXc1p2dW5n?oc=5",
-          "published_hkt": "2026-03-12T01:06:38+08:00",
-          "source": "Investing.com",
+          "title": "Energy Fuels (TSE:EFR) Stock Price Crosses Below 50-Day Moving Average - What's Next? - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNW0yZkNTdnFEMndUMktiMXZXbDU4eEtUd0lZSHNTTnpSVkcwdERzRnhlcThqakpUTTZnZVphMTR5QlJVWExkTG80NjZKMktqLURaTVdwMDZyaXNEUHpuZVhBOEk2bS1vVFVhdVdMeEpJYl9XWHFfczV5NTB3NkhNUV9kU0xlb0J6LWVKME5vOS1xSWgzdGREQld6ZmU3ZmxyWGN4ZFBVRTFpN3hNZDEzMUxFR3JOVnk3WW44b2FxOEtIRVRVQUhZQy1KWG0?oc=5",
+          "published_hkt": "2026-03-12T16:27:01+08:00",
+          "source": "MarketBeat",
           "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
+            "sentiment": "positive",
+            "severity": "medium"
           }
         },
         {
@@ -723,10 +713,20 @@
           }
         },
         {
-          "title": "Insider Sell: Barbara Filas Sells 5,000 Shares of Energy Fuels I - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNS0k0TWhGeG5rQUNBR3pERnhTMTFYZHY0OVprdW5fTUZjYjhONnoyblVOQkdoZnZUZThCQVU2d2s5QWI5RzdoQmZ1TGR3MWhpUGhMd192aUkxQTlQMl9hVXZFUEY2bV9FMTA1cFRuMzFHN2UtXzJ4VmpFTU51bHh3TjVwLUctVUNnMi03Ulk3LW5uVkJqN3EyemFRbFNJRmNRbXdsd3NVdllDVGRn?oc=5",
-          "published_hkt": "2026-03-12T02:32:56+08:00",
-          "source": "GuruFocus",
+          "title": "Here's How Much You Would Have Made Owning Energy Fuels Stock In The Last 10 Years - Sahm",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOTm5fV3RLbXZzdXRTRDVqaEpHMW9RZ1F1NTZncVhjaXlIOERsQ1YzNk9jNmd1eUJZUDc1bkh3OXpsZTNsVnEwMEZYT0FqYTZ3NXowYTQwYUNmLVYxYVF1R3V4bzlETzNMVklOdWdCUVgtR29BYUZNSlR0RkxjTHYzajEyQUJsczhQNGI4RFhvSHFadGNZeHhyQko4cll2aEFVV3pGUmYzVi1jZmxZSVBXXzdKbWQ1VUlGQXpJTzJoRXpodDR3WkswQ3g5Zi0tQQ?oc=5",
+          "published_hkt": "2026-03-09T15:00:00+08:00",
+          "source": "Sahm",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "Filas Barbara Appelin, director at Energy Fuels, sells $97k in stock - Investing.com",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPbklWV3lqWXFYMWhpUm5CaHl1eWF6OWxPbWlBRjdKTjUtS2VadXFCM1BJQlp3X09TbXBVc1BjSW9OajZnNEJlZ3NScXhsbXlabGhWUWIyZjhHYlRLZElEaWVzMi13ajdGalJrZnRQZ0kzN2UyQm84Uzdxek82d1RGUkNzN0xZZWR1dzc2QzZjSXBlUG1aNDYtN0owZmg1STRsaTBYaEJ2MzdUQ2h0TmhWM1Q0aC1NdE1iWjhzRlFsTThtVldXc1p2dW5n?oc=5",
+          "published_hkt": "2026-03-12T01:06:38+08:00",
+          "source": "Investing.com",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -737,22 +737,12 @@
     "GOOG": {
       "query": "ALPHABET INC. OR GOOG stock",
       "summary": {
-        "label": "Constructive \u2014 positive-news skew",
+        "label": "Neutral \u2014 no strong catalyst signal",
         "positive_count": 2,
         "negative_count": 0,
-        "high_impact_count": 1
+        "high_impact_count": 0
       },
       "items": [
-        {
-          "title": "Connor Clark & Lunn Investment Management Ltd. Grows Stock Position in Alphabet Inc. $GOOG - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOUkNJUmN4T3IzN2dGalNDWkdjeFBoSWd2eGYxNE54cDRULWxVX3g5QmdjTUducl9ObGpuZFpzNmUyTVNVOUZSaHpzT1NUeGw3T0NJOGcxZ0tqY1Q5UWZrTTBZWnR0bUt1QzQ1MzFERVZ6LThHd2hhb21WdFJDSHE3U0ZBb3d3ZUZLTXpoX1BZOUI3VXk1R3QydEVBeG5aRU1takJRY0tEd0dLbHdGZ3Q2QzRaN185Y1dkWXFmQ3N5U1Exc0VtdS1kT1pUR3VRQ0U5ZVdjTUp3aktxZ2FNM3o4?oc=5",
-          "published_hkt": "2026-03-12T16:26:58+08:00",
-          "source": "MarketBeat",
-          "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
-          }
-        },
         {
           "title": "Why Alphabet Inc. (GOOG) Outpaced the Stock Market Today - Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNkljS010eTZwNV9ZMjJ4eUk4MnF0VV9IZk1oc0wyQzNBQWJ0TFEwR09taGZ4MHlPcUdtZmVPczNKSC1KMHdSSHlBTzRGa1FXWWl0R3pJSi0ybnBNLUI0cXRqd0N3bHczWDNCVGRieWxHQ2kzcUctUUs5LVhhX0NBNEJn?oc=5",
@@ -764,33 +754,43 @@
           }
         },
         {
-          "title": "Google\u2019s GFiber to merge with Astound Broadband, form independent provider (GOOG:NASDAQ) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcjBxVDRCakVERC04ZWplMFYwazVaUVA5alA3Ykh0ZnJaNHpCdHVFaWhXWEVyVDVMV1FFeEdGOGpXU205VFdBTk9ka21EZWRZcTBsQUltLWdJNjJ0MnRKOWl6a0pVNFdDNS0ySXlDcExjc0xZLUQ5bXBGSnloSHhsMFFhQnl5c3V2dDZWS1pWOEl1anU4OV9oVDNCbFZlSmJLQndUTGZKWW5jTF9RZVUw?oc=5",
-          "published_hkt": "2026-03-12T12:54:19+08:00",
-          "source": "Seeking Alpha",
+          "title": "Connor Clark & Lunn Investment Management Ltd. Grows Stock Position in Alphabet Inc. $GOOG - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOUkNJUmN4T3IzN2dGalNDWkdjeFBoSWd2eGYxNE54cDRULWxVX3g5QmdjTUducl9ObGpuZFpzNmUyTVNVOUZSaHpzT1NUeGw3T0NJOGcxZ0tqY1Q5UWZrTTBZWnR0bUt1QzQ1MzFERVZ6LThHd2hhb21WdFJDSHE3U0ZBb3d3ZUZLTXpoX1BZOUI3VXk1R3QydEVBeG5aRU1takJRY0tEd0dLbHdGZ3Q2QzRaN185Y1dkWXFmQ3N5U1Exc0VtdS1kT1pUR3VRQ0U5ZVdjTUp3aktxZ2FNM3o4?oc=5",
+          "published_hkt": "2026-03-12T16:26:58+08:00",
+          "source": "MarketBeat",
           "impact": {
-            "sentiment": "neutral",
-            "severity": "high"
+            "sentiment": "positive",
+            "severity": "medium"
           }
         },
         {
-          "title": "Alphabet Inc. (GOOG) Announced Expanded Partnership Between Waystar and Google Cloud - Finviz",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaU5iOUVWeUpOLTBJOEtJYmtsR1MwYndzNkFGLTZTczhMaGRNZUhTZlNOZG14SDNKNWtaUEJ2aXg0LUh3bU5CdTN4dHpsblFNekRNRlNIal8yeHV0V0FSQ2p5Z0pXZDcycGtNRXBVemNuWERVWjIzbXZGUmtGQ3dXSE9JbFFFS3huZzVEZnJ6ZWhQbmVjZ2c1dm5leFM3b2tYN0QxMFVIX2kzbXluVkRZQkV3?oc=5",
-          "published_hkt": "2026-03-10T20:01:37+08:00",
-          "source": "Finviz",
+          "title": "Google closes $32B deal to acquire Wiz (GOOG:NASDAQ) - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVUI5TzVjVzFvN1U0Y3BhbzMtSmNOT2JDeGduVHpRM0E3Zzh6STFrampLT25fMWpZdjhzNS1rdk5LakktR3I0bFdmWUVSMTRlN0JSbzB0MHRsR1VQRXlCVml2V2pOVl9LZUpHTkZvazM3RDgtU0RtWkdWUVNKekg5Nw?oc=5",
+          "published_hkt": "2026-03-11T20:47:14+08:00",
+          "source": "Seeking Alpha",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
           }
         },
         {
-          "title": "Alphabet Inc. $GOOG is Douglass Winthrop Advisors LLC's 2nd Largest Position - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPalJsdk01X3VJYXI3Q1VFS1F4TnlmZnAwV2NjWUEyVm9lbGxTdGZJVFE3Ukd3VkJteDlFUTczNkV3cnZ2NGZienBzWTlFUjNsOFBRS04zUjhFWUZXTFd2cHFVb2dhcE1PeWZwVEJ5WUdZZGJ4cFZWcUZ6bG1lNWNIVU15djNKX2lvY0dCQkNmcU5GT3R0QjljS2tMcVRjS2lQNVZIRjJ4U0lmSklTSWFyam50LVVxQ2Q2WmZGcVJ5REFVaXlNRXIxYnFXLUppbUU?oc=5",
-          "published_hkt": "2026-03-12T17:04:51+08:00",
-          "source": "MarketBeat",
+          "title": "Alphabet Stock Has Surged on AI Momentum. Is It Still a Buy? | Morningstar Nordics - Morningstar",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNcmc2ZnNuakNtbHpJVW1DeEZobmttUVRVQzZ3RGYxV1hFZFhfX0NYdUkxaDJfM1poTk41TVotdEhwZXN2ODllZW9nY2pVc0prc3V0bXdsMzZBYVBIT1k1U0hBakZ0MC1EZFJ5dmpGa2RYNDVOZzA1V1FTYlRBNi0zNGRKOE0yUVk2eTBiSm05RG5YUTNCQ2xHOVhhZDBBQQ?oc=5",
+          "published_hkt": "2025-12-31T16:00:00+08:00",
+          "source": "Morningstar",
           "impact": {
             "sentiment": "positive",
             "severity": "medium"
+          }
+        },
+        {
+          "title": "Google stock in focus as Russell investments cuts Alphabet stake by 2.5% but still holds $1.38 billion - The Economic Times",
+          "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPNHpuUUZtVFZtMFhkcWxBSkR6MDRWcC04cElOMGd4TmNUekhrT192NFBLNlBYc2tTU3JVd1B2MEViZ08yeVJqTGJ5QV9xYW05bjV2NjU2MnhrWjJuOHpYNTF5S2EzeS02Z0FCZGlWdEFkTWt0YnI1TkY0c0RnQzA1OWgxR0VLVksxbkUweVVTTWd6TTJrdUdBM2JjYnE5RGdpRTZIZVFxOTc3dVNsR1lkVlhJZUJYMjdYdkQwbktXTFIzUjZVZVpPZ0lnYm1XeEpleUZCbWZOdjNhNWx2c25WdzdTdTR0cE85UEdWQUtoak54NWZRSHVHZXlOY2dKc1lRRDBySnlXNNIBjAJBVV95cUxOWUJZVzh0QzR0Nm9ObVRranBTTmtEakZqMXBjMmJjSXMyOEx6XzdrbHNrZUxRX1NXa0xjZk5MRVlOY2NoZFFRSVA1VzJ0cHFxX2xvUGN1TWhYUHpTTTRrQWllTmN1X3FjNzBoYTIyeFBxdUhTTjJabGpUSVBza3czdjVWT1dwT25EVlJ5TGpKWENDa2xiM3BZTmtHMFpySjhEanJEQ0lTbUlzenREeWZJZGtCOTZVNGkyU0UyWW9fd1Juc0JVVHY0NzE2b2g0XzFBeGJjOGVKNnczM3RYX1JWdkZWTlh1QnJXbmM0dW0tWnpYMTZQZUdwNUpZMWdOaFprcG5VRkdERnF4N0Fx?oc=5",
+          "published_hkt": "2026-03-09T20:28:25+08:00",
+          "source": "The Economic Times",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
           }
         }
       ]
@@ -799,11 +799,31 @@
       "query": "Lumentum Holdings Inc. OR LITE stock",
       "summary": {
         "label": "Neutral \u2014 no strong catalyst signal",
-        "positive_count": 1,
+        "positive_count": 2,
         "negative_count": 0,
         "high_impact_count": 0
       },
       "items": [
+        {
+          "title": "Assessing Lumentum Holdings (LITE) After A 74% Year To Date Share Price Surge - simplywall.st",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPaGxVNDlhalNpYktVR3VTWFVlZDM2aFNSWWFobm9zNFg4M2VPSTFfRkQtRTh2Mm4zdHRFMDF1R25aS3lTX2Q3Zjd0UmU5Vl93TVczQzRsUThWOHlnZUEyYVdudzRZb1Q1cllFX25ZcWJDZlJiNzY2YTgtZ2xFWDJMWUxDQlpLdkFqT3pWQzZOam9CNHU0dUpsZkhQMGh3VUhHUktZYzZBS2RNdDF6M283V1ZQeXVlUkxWM1NLNUpVZk9FT0JyVXlJVzN1ZVbSAdIBQVVfeXFMTkxBa3ZxSDkwMGxNMXliRk5qd29IdGJjcjAxclVzYnBNWUhVZ21Uemxwb1ptWWJRVGlzZU45NjdSUWI5SzZjd0NRNl90R2hVMGFlZXNmU1Fqbk1aNEVUV1JXWmdfMms3Q2J4WUhzZ192R2t6cko0ekdjZ0gwY0tiZDhoUTdOZ3M4cjVacHI2SUlFeXZwcDdyUmV5VjM0LTc1VWp6a1VMMzMwXy1hZ1FBVFV2SFpscjlUY0RxZDMtWHR3T09FcnZEQUEzSHBIX2VaY0NB?oc=5",
+          "published_hkt": "2026-03-12T22:35:25+08:00",
+          "source": "simplywall.st",
+          "impact": {
+            "sentiment": "positive",
+            "severity": "medium"
+          }
+        },
+        {
+          "title": "Lumentum's AI Optics Inflection Is No Longer Subtle - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQMVhvS0RMSUxHMG5ySXhYd2dCNVZVRFNuQ1J4dmdsaXA4ajVUSmoxMklrVXhXRmVFSm02eGpGQjZUeUV2X3BFeUZCQkZiQzlEQWplcXZ0RFpkY1V2UDVTWTN4dm81bDZnS2V0U0IwMzVIOFI1aExTZHJiSHdKNFdfMk04ZjB4dVJJZDN6SmgxVjJ6akRO?oc=5",
+          "published_hkt": "2026-03-12T22:25:33+08:00",
+          "source": "Seeking Alpha",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
         {
           "title": "Fieldview Capital Management LLC Purchases New Shares in Lumentum Holdings Inc. $LITE - MarketBeat",
           "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPMUpJQ19QQklubElhbUI0b29fSmJEZ3VmblVPMFpqMEY4VE9NR2t3c1NUaU9zLUJVOVBnc1JUUFNoeVlfVXlieFZPay1HaXo4bFgwMS1jZHhUOGZhZ2VKYVRVU01YOGdZd1RXUUxkZnNpeDg1SXhpQ2NCZzZpc1h5YlA1VmFWSV84OTNvMmU1Sm9aMGRaMHNWVW05bmxQQTczbDVIX05yWmc4aDFGOWVqZUZKWDhHckl6TElWUV92RjdXOVczTDFoR3pEMGs0cGZqUEIzNUg4VUl0WWdp?oc=5",
@@ -815,10 +835,10 @@
           }
         },
         {
-          "title": "Lumentum\u2019s Massive Run Now Faces A Reality Check (NASDAQ:LITE) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNWUtyT3Z0Y1NKbHg2Q3dnSW5JcUxmU1QyS1ZIZi1VZGZKXzgzNkNxMktEdkVicnpnT2h6R1NhV05vYkFQQ1owX3dwOVZ0UE00VGg3Z0R0RkMza0xOTjVvMjM3OEp4RlVvbzFyVDNlWFRDOHRQWFI2b0lfWmZrdE9kU2ItTlJDWDBXeHJHcmoxQ1NLdw?oc=5",
-          "published_hkt": "2026-03-06T23:43:47+08:00",
-          "source": "Seeking Alpha",
+          "title": "Lumentum falls 4.7% as investors digest NVIDIA deal terms and S&P 500-driven volatility - Quiver Quantitative",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUlg3RHEyU2JMSDlSbmNOd3o5d3g0WDR4MWxfVVJxRHdxSUpFWG5sYm5ZYjZ6QUk1MGQtQmdzX1daVmJhS1kwOS1EZG94b3F4dGFsUW5xTXFxb2NuTEhFMGNVOHgxMkJXNVdUWTJTMXBRTWpidmdIR25ZRHVPRzB6LVM5MjNOb2ZtZFNKeS1RUGNNZWhsRmNoZzRpRVdrV2lSZzJQT3dCTldRUGF0WS1CZ0JIOWlHaTFvWThPSU5vdnA0QQ?oc=5",
+          "published_hkt": "2026-03-12T22:50:00+08:00",
+          "source": "Quiver Quantitative",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -829,26 +849,6 @@
           "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQNVZnLUQ3SDFNVEFxZFUyb1VGUF9KWkRwVTVzVWVrX2RoWWhRX084QWo3czFnUmhqNGJtaU5Lc0dHUjgyNnNFRlM1LUo2SUw1S09teVJJOTR1clF3QlhRdXMzTXJQWjB0OGt3alNHc3BHSEVMVWZneEgtXzhxRk5YNmFYS2U1cDZOZlZCQ3Z1RQ?oc=5",
           "published_hkt": "2026-03-10T15:43:10+08:00",
           "source": "Yahoo Finance",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "Dear Lumentum Stock Fans, Mark Your Calendars for March 23 - FinancialContent",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQaGczMDBsTXJpY2pSTjNpMEFFcWJYQXl5SVpIRGpUSkwxelB0NzJOeWFoU09DcWx0aHNaVE85NUxlWDdfOHlrdGZnZzJLRVh2M0hncjVPT3J5WDNuanROeFNyazFWd1dORkMyRDdSaXR0Q1BodzdCVFhoX1RZcURhN2t4R1RnTHRieVM5MXk3bEM4T05YT3ZkN3JkRi1od1g0bGpCLS1rYmF6dUpIRmczUkw4YkpRZUxqMThvUm53QjB6a1NCbGEw?oc=5",
-          "published_hkt": "2026-03-12T04:54:00+08:00",
-          "source": "FinancialContent",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "Optical tech maker Lumentum climbs from MidCap 400 into S&P 500 - Stock Titan",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSUVmemlpM3BNYVFjYnlRRW56blRYX2diQmRBVUFpT0NsdXlIbXJUWjlyZnU0NXhaLUVPWEFjd1BxS2lDbldURUJvN2pDWTZhWUtVUDlVNHZRM2I2WjdFYUpMaGdweTZ1UVdCWUpYOXpMMnhjYXhFZEs2UmJtSWt5dk1adGIxRm1zU0lR?oc=5",
-          "published_hkt": "2026-03-10T20:00:00+08:00",
-          "source": "Stock Titan",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -876,10 +876,10 @@
           }
         },
         {
-          "title": "Coherent director Skaggs sells $856,550 in stock - Investing.com",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUzRycjg4WjFCWTlIUFFnbHdsSzRBZEVIQzU5UmJWckFvTk5ySXVwTXhSVGRKc29oYkpOTHpUZTR2Y1VjRUtMZmFJVWVtdHRWeENKTExIcmQ1VkJWQVI0Nm10NXoyc1FPZmdEZXVjTTkyM0ItZExOc3NJNG1mUjRDNmRDMk96YTBPTmpPeHJwSVNYLU1XeUl3aGg3dGJGeXhHR1ZFMzZoWnd4c3hjc3RvOVBtRVpmZGpEV2RN?oc=5",
-          "published_hkt": "2026-03-12T07:24:19+08:00",
-          "source": "Investing.com",
+          "title": "Why Coherent (COHR) Stock Is Trading Up Today - Finviz",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5qVUZncGVTdkVzdkJlNHRIbkh4dzJsWVdoMzVPVXQ1QmZaYW1EdmZ4WmVNdUs3NUU2UmdrUWVBRUFUekYzMkVvVzd4djJYYWhRRmFsWkwyeERlczdPTFA3YWRjTi11aXBlZ1k3eHpHZlJVOUJiZllwQ1dqakpfdVU?oc=5",
+          "published_hkt": "2026-03-11T00:52:01+08:00",
+          "source": "Finviz",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -896,20 +896,20 @@
           }
         },
         {
-          "title": "Coherent Jumps On S&P 500 Inclusion News - Sahm",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSUxXX09OSzhCODB3cHZXUE16ZF8tYkpMTExLX0FfTGt1N3ViT0JmUTBQOFZWZ3VQM3JjQnhqVUpYaGFzdWFEMlRKMWFuN1RkME5LVlc3SXpnN2VOaEdrX1JySk5RejJhNHY2VmdDeVdtNTladXJxMEQxZHRmZXNWWnFPdk1jXzZPVkVpRFp6bWVRUE5seVE?oc=5",
-          "published_hkt": "2026-03-11T05:05:44+08:00",
-          "source": "Sahm",
+          "title": "COHR Stock: TD Cowen Initiates Coverage with Buy Rating | COHR S - GuruFocus",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSTZlUWZNVGFERXloZl9KX3hHYmtyWTZ4a3U5OFV6YTJlbVl3eHVVQzNBQXR0TFJrMHQzSGhOZk5sbDZyWFNNcFlQRk8yV3J1ZXBnQmhvQ1RmTXhVQ2JPSklxWkpwc0ZaU0dWMmtfa21BLUtYa2VNcVQ1Qk10ZktJTXQzY2V0QjNscktJb0I2b3JzYkVZQTFpMnhFd1A0RlgyUFZnMWstWVlJNmRSV1E?oc=5",
+          "published_hkt": "2026-03-12T21:46:33+08:00",
+          "source": "GuruFocus",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
           }
         },
         {
-          "title": "Why Coherent (COHR) Stock Is Trading Up Today - Barchart.com",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTUpid0IxQ1U1WF9aRzF4dTU5WWJqMHhBd1cxbE9ZelotLVVjWTJzU2ZXejBGRXRXY1hBdl9SdjR5V3pqeHNtLUZPZWI0Z3g2WlhYQlNsbXMxMzljTlQ2T3FMWkg2eXRzWDdtMW5ZbTZIWngyOVNSUUItQzlka1lVbV8tMk9qemtVd2E4bjQxdw?oc=5",
-          "published_hkt": "2026-03-11T00:40:43+08:00",
-          "source": "Barchart.com",
+          "title": "Coherent Jumps On S&P 500 Inclusion News - Sahm",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSUxXX09OSzhCODB3cHZXUE16ZF8tYkpMTExLX0FfTGt1N3ViT0JmUTBQOFZWZ3VQM3JjQnhqVUpYaGFzdWFEMlRKMWFuN1RkME5LVlc3SXpnN2VOaEdrX1JySk5RejJhNHY2VmdDeVdtNTladXJxMEQxZHRmZXNWWnFPdk1jXzZPVkVpRFp6bWVRUE5seVE?oc=5",
+          "published_hkt": "2026-03-11T05:05:44+08:00",
+          "source": "Sahm",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"

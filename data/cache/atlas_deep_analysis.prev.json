@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-12T08:28:39.384652+00:00",
-  "source_generated_at": "2026-03-12T08:28:39.254707+00:00",
+  "generated_at": "2026-03-12T12:57:36.147709+00:00",
+  "source_generated_at": "2026-03-12T12:55:59.908178+00:00",
   "inputs": {
     "signals_total": 15,
     "signals_valid": 15
@@ -406,7 +406,7 @@
     "Momentum is soft with average RSI 49.9.",
     "Volatility proxy averages 6.55% ATR/price (elevated).",
     "Strongest theme by SMA20 gap proxy: defence/space; weakest: energy/materials.",
-    "Triage is concentrated in 4 high-attention names (AVGO, NVDA, LITE) and 4 watch names (TSM, GOOG, PLTR).",
+    "Triage is concentrated in 4 high-attention names (AVGO, NVDA, LITE, COHR) and 4 watch names (TSM, GOOG, PLTR, TSLA).",
     "Weakest near-term setups are concentrated in KTOS, ONDS, UUUU; avoid broad aggression while the regime stays neutral.",
     "Signal quality: missing field rate 0.0%, stale-indicator rate 0.0%."
   ]

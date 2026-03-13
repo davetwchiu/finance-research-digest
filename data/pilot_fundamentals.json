@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-03-12",
+  "as_of": "2026-03-13",
   "source_note": "Auto-refresh from Yahoo when available; falls back to SEC companyfacts for U.S. issuers; preserves existing curated entries on fetch failures.",
   "refresh_status": {
     "attempted": 15,
@@ -141,7 +141,7 @@
       "source_status": "auto-sec-companyfacts"
     },
     "RKLB": {
-      "company": "ROCKET LAB CORP",
+      "company": "ROCKET LAB CORPORATION",
       "market_cap_b": 0.0,
       "revenue_growth_yoy_pct": 38.94,
       "fcf_margin_pct": -53.47,
