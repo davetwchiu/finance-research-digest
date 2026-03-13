@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-13T07:16:42.382309+00:00",
+  "generated_at": "2026-03-13T10:16:40.351292+00:00",
   "source": "yahoo_chart_v8",
   "count": 15,
   "signals": {
@@ -122,24 +122,24 @@
       "ok": true,
       "source_ticker": "ONDS",
       "latest": {
-        "open": 10.07,
+        "open": 10.085,
         "high": 10.84,
         "low": 9.8,
         "close": 10.33,
-        "volume": 134603664.0
+        "volume": 135701000.0
       },
       "indicators": {
-        "sma20": 10.2505,
-        "sma50": 11.0508,
+        "sma20": 10.1825,
+        "sma50": 11.024,
         "rsi14": 50.317733,
         "macd": {
-          "macd": -0.116198,
-          "signal": -0.142044,
-          "hist": 0.025846
+          "macd": -0.141617,
+          "signal": -0.148506,
+          "hist": 0.006888
         },
-        "atr14": 1.128968
+        "atr14": 1.135811
       },
-      "samples": 252
+      "samples": 251
     },
     "PLTR": {
       "ok": true,
@@ -169,23 +169,23 @@
       "source_ticker": "RDW",
       "latest": {
         "open": 9.32,
-        "high": 9.7099,
+        "high": 9.71,
         "low": 9.04,
         "close": 9.48,
-        "volume": 14806665.0
+        "volume": 15589500.0
       },
       "indicators": {
-        "sma20": 8.873,
-        "sma50": 9.9244,
+        "sma20": 8.7935,
+        "sma50": 9.8936,
         "rsi14": 51.587805,
         "macd": {
-          "macd": -0.039123,
-          "signal": -0.15396,
-          "hist": 0.114837
+          "macd": -0.066355,
+          "signal": -0.182669,
+          "hist": 0.116314
         },
-        "atr14": 0.91246
+        "atr14": 0.931118
       },
-      "samples": 252
+      "samples": 251
     },
     "RKLB": {
       "ok": true,
@@ -214,24 +214,24 @@
       "ok": true,
       "source_ticker": "TSLA",
       "latest": {
-        "open": 405.100006,
+        "open": 405.179993,
         "high": 406.5,
         "low": 394.649994,
         "close": 395.01001,
-        "volume": 59382702.0
+        "volume": 60774000.0
       },
       "indicators": {
-        "sma20": 405.0175,
-        "sma50": 420.7206,
+        "sma20": 406.1205,
+        "sma50": 421.909,
         "rsi14": 41.718912,
         "macd": {
-          "macd": -6.730365,
-          "signal": -6.952957,
-          "hist": 0.222592
+          "macd": -6.599713,
+          "signal": -7.008605,
+          "hist": 0.408892
         },
-        "atr14": 14.067772
+        "atr14": 14.238369
       },
-      "samples": 252
+      "samples": 251
     },
     "TSM": {
       "ok": true,

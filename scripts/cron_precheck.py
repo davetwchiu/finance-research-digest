@@ -347,6 +347,42 @@ def _is_recent_not_delivered_public_alert(
     return age_hours <= max(0.0, max_age_hours)
 
 
+def _load_breaking_summary(summary_path: Path) -> Dict[str, Any]:
+    payload = _load(summary_path)
+    if not payload:
+        return {"missing": True}
+    title = str(payload.get("title") or "").strip()
+    summary = str(payload.get("summary") or "").strip()
+    last_checked_at = payload.get("lastCheckedAt")
+    if not title and not summary:
+        return {"missing": True}
+    combined = title if not summary else f"{title}\n\n{summary}"
+    return {
+        "ts": last_checked_at,
+        "status": "ok",
+        "deliveryStatus": None,
+        "delivered": None,
+        "summary": combined,
+        "error": None,
+        "source": "breaking_summary",
+    }
+
+
+def _prefer_latest_public_alert_run(
+    recent_run_alert: Dict[str, Any],
+    summary_alert: Dict[str, Any],
+) -> Dict[str, Any]:
+    if recent_run_alert.get("missing") is True:
+        return summary_alert
+    if summary_alert.get("missing") is True:
+        return recent_run_alert
+    recent_ts = _run_ts_to_utc(recent_run_alert.get("ts"))
+    summary_ts = _run_ts_to_utc(summary_alert.get("ts"))
+    if summary_ts is not None and (recent_ts is None or summary_ts >= recent_ts):
+        return summary_alert
+    return recent_run_alert
+
+
 def _repo_path(value: str) -> str:
     p = Path(value)
     if p.is_absolute():
@@ -389,6 +425,11 @@ def main() -> int:
         type=int,
         default=8,
         help="How many recent breaking-job runs to inspect for repeated not-delivered streaks.",
+    )
+    ap.add_argument(
+        "--breaking-summary-path",
+        default=_repo_path("reports/breaking/breaking_summary.json"),
+        help="Latest public breaking summary path used as fallback delivery-gap evidence.",
     )
     ap.add_argument(
         "--breaking-public-alert-max-age-hours",
@@ -439,7 +480,12 @@ def main() -> int:
     latest_job_state = _load_job_state(Path(args.jobs_path), args.breaking_job_id)
     latest_run = _load_latest_run(Path(args.breaking_run_log))
     recent_runs = _load_recent_runs(Path(args.breaking_run_log), args.breaking_run_audit_limit)
-    latest_public_alert_run = _latest_meaningful_run(recent_runs)
+    latest_public_alert_run_from_runs = _latest_meaningful_run(recent_runs)
+    latest_public_alert_run_from_summary = _load_breaking_summary(Path(args.breaking_summary_path))
+    latest_public_alert_run = _prefer_latest_public_alert_run(
+        latest_public_alert_run_from_runs,
+        latest_public_alert_run_from_summary,
+    )
     repeated_not_delivered = _summarize_not_delivered_streak(recent_runs)
     delivery_recovered_after_failure = _delivery_failures_are_already_recovered(
         delivery_health,

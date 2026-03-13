@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-13T07:16:42.460280+00:00",
-  "source_generated_at": "2026-03-13T07:16:42.382309+00:00",
+  "generated_at": "2026-03-13T10:16:40.414902+00:00",
+  "source_generated_at": "2026-03-13T10:16:40.351292+00:00",
   "count": {
     "total": 15,
     "valid": 15,
@@ -29,12 +29,12 @@
         "close_vs_sma20_pct": 8.33
       },
       {
-        "ticker": "TSM",
-        "close_vs_sma20_pct": -7.07
+        "ticker": "RDW",
+        "close_vs_sma20_pct": 7.81
       },
       {
-        "ticker": "RDW",
-        "close_vs_sma20_pct": 6.84
+        "ticker": "TSM",
+        "close_vs_sma20_pct": -7.07
       },
       {
         "ticker": "UUUU",
@@ -48,7 +48,7 @@
     "top_volatility": [
       {
         "ticker": "ONDS",
-        "atr14_pct_of_close": 10.93
+        "atr14_pct_of_close": 11.0
       },
       {
         "ticker": "LITE",
@@ -60,7 +60,7 @@
       },
       {
         "ticker": "RDW",
-        "atr14_pct_of_close": 9.63
+        "atr14_pct_of_close": 9.82
       },
       {
         "ticker": "COHR",
@@ -74,12 +74,12 @@
       "close_vs_sma20_pct": 8.33
     },
     {
-      "ticker": "TSM",
-      "close_vs_sma20_pct": -7.07
+      "ticker": "RDW",
+      "close_vs_sma20_pct": 7.81
     },
     {
-      "ticker": "RDW",
-      "close_vs_sma20_pct": 6.84
+      "ticker": "TSM",
+      "close_vs_sma20_pct": -7.07
     },
     {
       "ticker": "UUUU",
@@ -93,7 +93,7 @@
   "top_volatility": [
     {
       "ticker": "ONDS",
-      "atr14_pct_of_close": 10.93
+      "atr14_pct_of_close": 11.0
     },
     {
       "ticker": "LITE",
@@ -105,7 +105,7 @@
     },
     {
       "ticker": "RDW",
-      "atr14_pct_of_close": 9.63
+      "atr14_pct_of_close": 9.82
     },
     {
       "ticker": "COHR",
@@ -162,7 +162,7 @@
     "ONDS": {
       "ok": true,
       "close": 10.33,
-      "sma20": 10.2505,
+      "sma20": 10.1825,
       "rsi14": 50.32,
       "tags": [
         "trend_up"
@@ -180,7 +180,7 @@
     "RDW": {
       "ok": true,
       "close": 9.48,
-      "sma20": 8.873,
+      "sma20": 8.7935,
       "rsi14": 51.59,
       "tags": [
         "trend_up"
@@ -198,7 +198,7 @@
     "TSLA": {
       "ok": true,
       "close": 395.01,
-      "sma20": 405.0175,
+      "sma20": 406.1205,
       "rsi14": 41.72,
       "tags": [
         "trend_down"
