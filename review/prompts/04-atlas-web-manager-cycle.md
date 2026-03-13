@@ -34,8 +34,8 @@ Proactive reliability policy:
 
 Breaking-news delivery check (mandatory):
 - Audit latest runs of job `watchlist-breaking-news` (id: a33f17c0-a671-4387-80ed-137144f38f3d).
-- Confirm whether Telegram group `telegram:-3851523537` received digest delivery.
-- If latest run has meaningful summary but `deliveryStatus` is not delivered, send one concise fallback digest message to `telegram:-3851523537` and note that it is a delivery recovery.
+- Confirm whether Telegram group `telegram:-1003851523537` received digest delivery.
+- If latest run has meaningful summary but `deliveryStatus` is not delivered, send one concise fallback digest message to `telegram:-1003851523537` and note that it is a delivery recovery.
 - Include this check result in every supervisor report.
 
 Rules:

@@ -410,7 +410,7 @@ def main() -> int:
     ap.add_argument("--snapshot", default=_repo_path("data/cache/atlas_snapshot.json"))
     ap.add_argument("--high-threshold", type=int, default=4)
     ap.add_argument("--max-age-hours", type=float, default=24.0)
-    ap.add_argument("--telegram-target", default="telegram:-3851523537")
+    ap.add_argument("--telegram-target", default="telegram:-1003851523537")
     ap.add_argument(
         "--delivery-lookback-hours",
         type=float,
