@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-13T19:16:38.877126+00:00",
-  "source_generated_at": "2026-03-13T19:16:38.821805+00:00",
+  "generated_at": "2026-03-13T22:16:32.954708+00:00",
+  "source_generated_at": "2026-03-13T22:16:32.900348+00:00",
   "count": {
     "total": 15,
     "valid": 15,
@@ -12,7 +12,7 @@
     "universe": 15
   },
   "risk": {
-    "avg_rsi14": 45.48,
+    "avg_rsi14": 45.13,
     "overbought_rsi70": 0,
     "oversold_rsi30": 0,
     "rsi_universe": 15
@@ -20,104 +20,104 @@
   "local_intelligence": {
     "breadth_pct_above_sma20": 13.3,
     "breadth_pct_above_sma50": 13.3,
-    "avg_rsi14": 45.48,
+    "avg_rsi14": 45.13,
     "overbought_count": 0,
     "oversold_count": 0,
     "top_movers": [
       {
         "ticker": "UUUU",
-        "close_vs_sma20_pct": -10.88
+        "close_vs_sma20_pct": -11.23
       },
       {
         "ticker": "RDW",
-        "close_vs_sma20_pct": 6.57
+        "close_vs_sma20_pct": 8.01
       },
       {
         "ticker": "TSM",
-        "close_vs_sma20_pct": -6.29
+        "close_vs_sma20_pct": -6.24
       },
       {
         "ticker": "PLTR",
-        "close_vs_sma20_pct": 5.9
+        "close_vs_sma20_pct": 5.72
       },
       {
-        "ticker": "AAPL",
-        "close_vs_sma20_pct": -4.51
+        "ticker": "LITE",
+        "close_vs_sma20_pct": -5.08
       }
     ],
     "top_volatility": [
       {
         "ticker": "ONDS",
-        "atr14_pct_of_close": 10.97
+        "atr14_pct_of_close": 11.03
       },
       {
         "ticker": "UUUU",
-        "atr14_pct_of_close": 10.46
+        "atr14_pct_of_close": 10.52
       },
       {
         "ticker": "RDW",
-        "atr14_pct_of_close": 9.65
+        "atr14_pct_of_close": 9.51
       },
       {
         "ticker": "LITE",
-        "atr14_pct_of_close": 9.35
+        "atr14_pct_of_close": 9.47
       },
       {
         "ticker": "COHR",
-        "atr14_pct_of_close": 8.31
+        "atr14_pct_of_close": 8.39
       }
     ]
   },
   "top_movers_proxy": [
     {
       "ticker": "UUUU",
-      "close_vs_sma20_pct": -10.88
+      "close_vs_sma20_pct": -11.23
     },
     {
       "ticker": "RDW",
-      "close_vs_sma20_pct": 6.57
+      "close_vs_sma20_pct": 8.01
     },
     {
       "ticker": "TSM",
-      "close_vs_sma20_pct": -6.29
+      "close_vs_sma20_pct": -6.24
     },
     {
       "ticker": "PLTR",
-      "close_vs_sma20_pct": 5.9
+      "close_vs_sma20_pct": 5.72
     },
     {
-      "ticker": "AAPL",
-      "close_vs_sma20_pct": -4.51
+      "ticker": "LITE",
+      "close_vs_sma20_pct": -5.08
     }
   ],
   "top_volatility": [
     {
       "ticker": "ONDS",
-      "atr14_pct_of_close": 10.97
+      "atr14_pct_of_close": 11.03
     },
     {
       "ticker": "UUUU",
-      "atr14_pct_of_close": 10.46
+      "atr14_pct_of_close": 10.52
     },
     {
       "ticker": "RDW",
-      "atr14_pct_of_close": 9.65
+      "atr14_pct_of_close": 9.51
     },
     {
       "ticker": "LITE",
-      "atr14_pct_of_close": 9.35
+      "atr14_pct_of_close": 9.47
     },
     {
       "ticker": "COHR",
-      "atr14_pct_of_close": 8.31
+      "atr14_pct_of_close": 8.39
     }
   ],
   "signals": {
     "AAPL": {
       "ok": true,
-      "close": 250.94,
-      "sma20": 262.7905,
-      "rsi14": 35.22,
+      "close": 250.12,
+      "sma20": 262.7495,
+      "rsi14": 34.55,
       "tags": [
         "trend_down",
         "momentum_cold"
@@ -125,9 +125,9 @@
     },
     "AVGO": {
       "ok": true,
-      "close": 324.4,
-      "sma20": 329.548,
-      "rsi14": 45.51,
+      "close": 322.16,
+      "sma20": 329.436,
+      "rsi14": 44.36,
       "tags": [
         "trend_down"
       ]
@@ -143,108 +143,108 @@
     },
     "KTOS": {
       "ok": true,
-      "close": 88.45,
-      "sma20": 91.0565,
-      "rsi14": 45.89,
+      "close": 87.53,
+      "sma20": 91.0105,
+      "rsi14": 45.02,
       "tags": [
         "trend_down"
       ]
     },
     "NVDA": {
       "ok": true,
-      "close": 180.9,
-      "sma20": 184.987,
-      "rsi14": 45.86,
+      "close": 180.25,
+      "sma20": 184.9545,
+      "rsi14": 45.22,
       "tags": [
         "trend_down"
       ]
     },
     "ONDS": {
       "ok": true,
-      "close": 10.22,
-      "sma20": 10.245,
-      "rsi14": 49.43,
+      "close": 10.16,
+      "sma20": 10.242,
+      "rsi14": 48.97,
       "tags": [
         "trend_down"
       ]
     },
     "PLTR": {
       "ok": true,
-      "close": 151.22,
-      "sma20": 142.8,
-      "rsi14": 53.47,
+      "close": 150.95,
+      "sma20": 142.7865,
+      "rsi14": 53.16,
       "tags": [
         "trend_up"
       ]
     },
     "RDW": {
       "ok": true,
-      "close": 9.455,
-      "sma20": 8.8718,
-      "rsi14": 51.39,
+      "close": 9.59,
+      "sma20": 8.8785,
+      "rsi14": 52.39,
       "tags": [
         "trend_up"
       ]
     },
     "RKLB": {
       "ok": true,
-      "close": 68.425,
-      "sma20": 70.6803,
-      "rsi14": 44.75,
+      "close": 68.41,
+      "sma20": 70.6795,
+      "rsi14": 44.73,
       "tags": [
         "trend_down"
       ]
     },
     "TSLA": {
       "ok": true,
-      "close": 392.38,
-      "sma20": 404.886,
-      "rsi14": 40.53,
+      "close": 391.2,
+      "sma20": 404.827,
+      "rsi14": 40.02,
       "tags": [
         "trend_down"
       ]
     },
     "TSM": {
       "ok": true,
-      "close": 338.1,
-      "sma20": 360.8125,
-      "rsi14": 42.56,
+      "close": 338.31,
+      "sma20": 360.823,
+      "rsi14": 42.68,
       "tags": [
         "trend_down"
       ]
     },
     "UUUU": {
       "ok": true,
-      "close": 18.7487,
-      "sma20": 21.0369,
-      "rsi14": 42.27,
+      "close": 18.67,
+      "sma20": 21.033,
+      "rsi14": 42.04,
       "tags": [
         "trend_down"
       ]
     },
     "GOOG": {
       "ok": true,
-      "close": 301.36,
-      "sma20": 306.1985,
-      "rsi14": 40.17,
+      "close": 301.46,
+      "sma20": 306.2035,
+      "rsi14": 40.25,
       "tags": [
         "trend_down"
       ]
     },
     "LITE": {
       "ok": true,
-      "close": 630.15,
-      "sma20": 656.19,
-      "rsi14": 52.51,
+      "close": 622.5,
+      "sma20": 655.8075,
+      "rsi14": 51.75,
       "tags": [
         "trend_down"
       ]
     },
     "COHR": {
       "ok": true,
-      "close": 245.25,
-      "sma20": 250.876,
-      "rsi14": 50.8,
+      "close": 242.76,
+      "sma20": 250.7515,
+      "rsi14": 50.01,
       "tags": [
         "trend_down"
       ]
