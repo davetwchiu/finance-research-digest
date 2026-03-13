@@ -500,10 +500,11 @@ def main() -> int:
         and has_delivery_failure_evidence
     ):
         reasons.append(f"breaking_job_state_delivery:{latest_job_state.get('last_delivery_status')}")
+
+    if fresh_public_alert_not_delivered:
+        reasons.append("breaking_latest_public_alert_not_delivered_recent")
     elif suspected_delivery_gap:
         reasons.append("breaking_delivery_gap_suspected_without_failed_queue_evidence")
-    elif fresh_public_alert_not_delivered:
-        reasons.append("breaking_latest_public_alert_not_delivered_recent")
 
     if repeated_not_delivered.get("not_delivered_meaningful_tail_runs", 0) >= 2:
         reasons.append(
