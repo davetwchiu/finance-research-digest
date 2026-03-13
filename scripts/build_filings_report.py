@@ -300,6 +300,18 @@ def enrich_8k(item: dict[str, Any], filing_text: str, exhibit_texts: list[str]) 
             "verification": verification,
         }
 
+    if "annual meeting of stockholders" in low and "march 22, 2026" in low and "item 5.08 shareholder director nominations" in low:
+        return {
+            "what_happened": "Rocket Lab filed an 8-K to announce that its 2026 annual meeting is expected to be held on May 20, 2026, and because that date shifts by more than 30 days from last year’s meeting, stockholder proposals and director nominations for inclusion or consideration must reach the company by March 22, 2026.",
+            "layman_version": "This is mostly a shareholder-calendar filing, not a business or earnings update. Rocket Lab is telling investors: our annual meeting timing changed, so if you want to submit proposals or nominate directors, the deadline is now much sooner and fixed at March 22.",
+            "why_it_matters_now": "It matters mainly for governance process, not operations. Anyone trying to influence the proxy, submit a shareholder proposal, or nominate a board candidate now has a specific deadline tied to the rescheduled meeting date.",
+            "what_changed": "The key change is the meeting timetable. Because the 2026 annual meeting is moving enough versus the 2025 anniversary date, Rocket Lab had to formally reset the shareholder submission window instead of relying on the usual anniversary-based timing.",
+            "positives": "The company is making the governance timeline explicit in an SEC filing rather than leaving investors to infer it from a later proxy. That reduces procedural ambiguity for active shareholders.",
+            "risks": "For ordinary investors, this filing adds almost nothing about launches, backlog, margins, spacecraft demand, or cash flow. It is easy to overread it as business news when it is really an administrative governance notice.",
+            "watch_next": "Watch for Rocket Lab’s actual proxy materials, annual-meeting agenda, any shareholder proposals that emerge, and—more importantly for the stock—the next operating filing or business update that says something substantive about execution.",
+            "verification": verification,
+        }
+
     trigger = "important corporate event"
     if "acquisition" in low:
         trigger = "an acquisition-related event"
@@ -342,6 +354,49 @@ def maybe_enrich(item: dict[str, Any]) -> dict[str, str] | None:
     if item["form"] == "8-K":
         return enrich_8k(item, filing_text, exhibit_texts)
     return None
+
+
+def materiality_score(item: dict[str, Any]) -> int:
+    score = 0
+    form = item.get("form", "")
+    analysis = item.get("analysis") or {}
+    text = " ".join(
+        str(analysis.get(k, ""))
+        for k in ("what_happened", "layman_version", "why_it_matters_now", "risks")
+    ).lower()
+
+    if form == "10-K":
+        score += 5
+    elif form == "10-Q":
+        score += 4
+    elif form == "8-K":
+        score += 3
+
+    boosts = [
+        "revenue",
+        "net income",
+        "operating income",
+        "acquisition",
+        "partnership",
+        "financial results",
+        "earnings",
+        "backlog",
+        "cash",
+        "debt",
+    ]
+    penalties = [
+        "annual meeting",
+        "shareholder-calendar",
+        "director nominations",
+        "governance process",
+        "administrative governance notice",
+        "executive compensation",
+        "ceo gets paid",
+    ]
+
+    score += sum(2 for token in boosts if token in text)
+    score -= sum(3 for token in penalties if token in text)
+    return score
 
 
 def build_card(item: dict[str, Any]) -> str:
@@ -434,7 +489,13 @@ def build_report(watchlist: list[str], out_root: Path) -> tuple[Path, dict[str, 
     count = len(findings)
     enriched = sum(1 for x in findings if x.get("analysis"))
 
-    best_item = next((x for x in findings if x.get("analysis")), findings[0] if findings else None)
+    ranked = sorted(
+        findings,
+        key=lambda x: (materiality_score(x), x.get("filingDate", ""), x.get("ticker", "")),
+        reverse=True,
+    )
+
+    best_item = next((x for x in ranked if x.get("analysis")), ranked[0] if ranked else None)
     if best_item and best_item.get("analysis"):
         a = best_item["analysis"]
         market = f"{best_item['ticker']}: {a['what_happened']}"
@@ -458,7 +519,7 @@ def build_report(watchlist: list[str], out_root: Path) -> tuple[Path, dict[str, 
         "latestPath": latest_path,
     }
 
-    top = findings[:5]
+    top = ranked[:5]
     exec_lines = "".join(
         f"<li><strong>{escape(x['ticker'])}</strong> — {escape(x['form'])} filed {escape(x['filingDate'])}. "
         + (escape(x['analysis']['what_happened']) if x.get('analysis') else escape(x['laymanSummary']))

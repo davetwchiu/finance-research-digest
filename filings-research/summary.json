@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-03-12T22:04:36+08:00",
+  "updatedAt": "2026-03-13T10:04:05+08:00",
   "count": 14,
-  "market": "ONDS: Ondas filed an 8-K furnishing a March 12 press release and fact sheet announcing a strategic partnership with Palantir and World View to build an AI-enabled multi-domain intelligence, surveillance and reconnaissance platform.",
-  "tech": "This is more than a branding press release because the filing lays out concrete program areas: Palantir Warp Speed for production/operations, AI Flight Director for mission planning, and SkyWeaver for onboard edge intelligence. It also says work on optimizing World View's systems has already begun and broader portfolio integration could start as early as Q4 2026.",
-  "risk": "Affected names / caveat: ONDS directly. This is still partnership-stage disclosure, not booked revenue or signed large customer awards. The filing leans heavily on forward-looking language, and the claimed value depends on execution across three companies plus actual customer adoption. Investors should not confuse architecture ambition with near-term financial proof.",
-  "latestPath": "./reports/filings/2026-03-12.html"
+  "market": "AVGO: Revenue was $19,311 million versus $14,916 million a year ago (29.5%), and net income was $7,349 million versus $5,503 million (33.5%). Gross profit rose to $13,157 million from $10,145 million, and operating income increased to $8,563 million from $6,260 million. The balance sheet showed $14,174 million of cash and about $66,057 million of total debt at quarter-end.",
+  "tech": "The filing also confirms fresh financing activity: the company issued $4,500 million of senior unsecured notes during the quarter. Management was aggressive with capital returns, buying back 23 million shares for $7,850 million. The dividend per share rose to $0.65 from $0.59 a year earlier.",
+  "risk": "Affected names / caveat: AVGO directly. Debt remains large in absolute dollars, so rates/refinancing and integration discipline still matter. The filing discusses risk around AI-related customer purchasing models and financing structures, which could affect revenue timing or cash generation if customer behavior shifts. Quarter-end cash declined from the prior quarter, so watch whether future quarters rebuild liquidity after buybacks and financing moves.",
+  "latestPath": "./reports/filings/2026-03-13.html"
 }
