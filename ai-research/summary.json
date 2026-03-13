@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-03-12T09:30:00+08:00",
-  "market": "AI remains an infrastructure-led market: revenue and cash conversion are still cleanest at the compute, networking, and capacity-owner layers. The market is starting to separate productive AI capex from narrative-heavy spend.",
-  "tech": "Enterprise adoption is real and deepening, especially in coding, research, and structured workflows. Broad autonomous agents are still narrower in practice than the marketing suggests.",
-  "risk": "Top risks are capex outrunning monetization, power and deployment bottlenecks limiting usable capacity, model-layer commoditization, and export-control tightening reshaping global demand maps.",
+  "updatedAt": "2026-03-13T09:33:00+08:00",
+  "market": "AI is still an infrastructure-and-distribution market first. NVIDIA and Microsoft remain the cleanest evidence-backed monetizers, while broad app-layer profit capture is still less proven than the narrative suggests.",
+  "tech": "Enterprise adoption is deepening in structured workflows and reasoning-heavy usage, but real commercial value is still concentrated in coding, search, support, and other high-value knowledge tasks rather than everywhere at once.",
+  "risk": "Main risks are power and capacity bottlenecks, capex outrunning downstream software monetization, model-layer commoditization, and tighter export-control or compliance regimes splitting the market by geography and policy.",
   "latestPath": "./ai-research/latest.html"
 }
