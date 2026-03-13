@@ -329,6 +329,24 @@ def _summarize_not_delivered_streak(recent_runs: list[Dict[str, Any]]) -> Dict[s
     }
 
 
+def _is_recent_not_delivered_public_alert(
+    latest_public_alert_run: Dict[str, Any],
+    now_utc: datetime,
+    max_age_hours: float,
+) -> bool:
+    if latest_public_alert_run.get("missing") is True:
+        return False
+    if latest_public_alert_run.get("status") != "ok":
+        return False
+    if latest_public_alert_run.get("deliveryStatus") == "delivered" or latest_public_alert_run.get("delivered") is True:
+        return False
+    alert_run_at = _run_ts_to_utc(latest_public_alert_run.get("ts"))
+    if alert_run_at is None:
+        return True
+    age_hours = (now_utc - alert_run_at).total_seconds() / 3600.0
+    return age_hours <= max(0.0, max_age_hours)
+
+
 def _repo_path(value: str) -> str:
     p = Path(value)
     if p.is_absolute():
@@ -371,6 +389,12 @@ def main() -> int:
         type=int,
         default=8,
         help="How many recent breaking-job runs to inspect for repeated not-delivered streaks.",
+    )
+    ap.add_argument(
+        "--breaking-public-alert-max-age-hours",
+        type=float,
+        default=12.0,
+        help="Flag a fresh undelivered public breaking alert even without failed-queue residue, up to this age window.",
     )
     args = ap.parse_args()
 
@@ -459,6 +483,11 @@ def main() -> int:
         and not has_delivery_failure_evidence
         and latest_job_state.get("last_delivery_status") not in (None, "delivered")
     )
+    fresh_public_alert_not_delivered = _is_recent_not_delivered_public_alert(
+        latest_public_alert_run,
+        now_utc,
+        args.breaking_public_alert_max_age_hours,
+    )
     if (
         latest_run.get("deliveryStatus") != "delivered"
         and _summary_is_meaningful(latest_run.get("summary"))
@@ -473,6 +502,8 @@ def main() -> int:
         reasons.append(f"breaking_job_state_delivery:{latest_job_state.get('last_delivery_status')}")
     elif suspected_delivery_gap:
         reasons.append("breaking_delivery_gap_suspected_without_failed_queue_evidence")
+    elif fresh_public_alert_not_delivered:
+        reasons.append("breaking_latest_public_alert_not_delivered_recent")
 
     if repeated_not_delivered.get("not_delivered_meaningful_tail_runs", 0) >= 2:
         reasons.append(
@@ -506,6 +537,8 @@ def main() -> int:
             and latest_public_alert_run.get("deliveryStatus") != "delivered"
             and latest_public_alert_run.get("delivered") is not True
         ),
+        "watchlist_breaking_latest_public_alert_not_delivered_recent": fresh_public_alert_not_delivered,
+        "breaking_public_alert_max_age_hours": args.breaking_public_alert_max_age_hours,
         "watchlist_breaking_delivery_audit": repeated_not_delivered,
         "delivery_recovered_after_failure": delivery_recovered_after_failure,
         "suspected_delivery_gap_without_failed_queue_evidence": suspected_delivery_gap,
