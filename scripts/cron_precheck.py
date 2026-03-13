@@ -559,6 +559,13 @@ def main() -> int:
         )
 
     llm_needed = len(reasons) > 0
+    latest_public_alert_summary = latest_public_alert_run.get("summary") if isinstance(latest_public_alert_run, dict) else None
+    latest_public_alert_title = latest_public_alert_run.get("title") if isinstance(latest_public_alert_run, dict) else None
+    latest_public_alert_recovery_should_send = bool(
+        fresh_public_alert_not_delivered
+        and _summary_is_meaningful(latest_public_alert_summary)
+    )
+
     out = {
         "llm_needed": llm_needed,
         "reasons": reasons,
@@ -579,12 +586,15 @@ def main() -> int:
         "watchlist_breaking_job_state": latest_job_state,
         "watchlist_breaking_latest_run": latest_run,
         "watchlist_breaking_latest_public_alert_run": latest_public_alert_run,
+        "watchlist_breaking_latest_public_alert_title": latest_public_alert_title,
+        "watchlist_breaking_latest_public_alert_summary": latest_public_alert_summary,
         "watchlist_breaking_latest_public_alert_not_delivered": (
             latest_public_alert_run.get("missing") is not True
             and latest_public_alert_run.get("deliveryStatus") != "delivered"
             and latest_public_alert_run.get("delivered") is not True
         ),
         "watchlist_breaking_latest_public_alert_not_delivered_recent": fresh_public_alert_not_delivered,
+        "watchlist_breaking_latest_public_alert_recovery_should_send": latest_public_alert_recovery_should_send,
         "breaking_public_alert_max_age_hours": args.breaking_public_alert_max_age_hours,
         "watchlist_breaking_delivery_audit": repeated_not_delivered,
         "delivery_recovered_after_failure": delivery_recovered_after_failure,
