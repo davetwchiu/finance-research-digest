@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-03-13T01:21:36.088388+00:00",
-  "source_generated_at": "2026-03-13T01:21:35.951139+00:00",
+  "generated_at": "2026-03-13T04:16:34.714087+00:00",
+  "source_generated_at": "2026-03-13T04:16:34.614712+00:00",
   "inputs": {
     "signals_total": 15,
     "signals_valid": 15
   },
   "market_regime": {
     "label": "risk_off",
-    "composite_score": -64.79,
+    "composite_score": -64.63,
     "components": {
       "breadth": -26.67,
       "momentum": -4.48,
-      "volatility": -33.65
+      "volatility": -33.48
     },
     "metrics": {
       "above_sma20": 5,
       "above_sma50": 3,
       "avg_rsi14": 47.01,
-      "avg_atr_pct_of_price": 6.565
+      "avg_atr_pct_of_price": 6.548
     }
   },
   "themes": {
@@ -112,8 +112,8 @@
       "members": [
         {
           "ticker": "BBAI",
-          "gap_sma20_pct": 0.29,
-          "gap_sma50_pct": -18.57
+          "gap_sma20_pct": 0.37,
+          "gap_sma50_pct": -18.08
         },
         {
           "ticker": "COHR",
@@ -121,8 +121,8 @@
           "gap_sma50_pct": 8.94
         }
       ],
-      "avg_sma20_gap_pct": -1.49,
-      "avg_sma50_gap_pct": -4.82
+      "avg_sma20_gap_pct": -1.45,
+      "avg_sma50_gap_pct": -4.57
     }
   },
   "signal_quality": {
@@ -377,10 +377,10 @@
     ]
   },
   "conclusions": [
-    "Regime is risk off with composite score -64.8 (breadth -26.7, momentum -4.5, volatility -33.6).",
+    "Regime is risk off with composite score -64.6 (breadth -26.7, momentum -4.5, volatility -33.5).",
     "Breadth shows 5/15 above SMA20 and 3/15 above SMA50.",
     "Momentum is soft with average RSI 47.0.",
-    "Volatility proxy averages 6.56% ATR/price (elevated).",
+    "Volatility proxy averages 6.55% ATR/price (elevated).",
     "Strongest theme by SMA20 gap proxy: defence/space; weakest: energy/materials.",
     "Triage is concentrated in 1 high-attention names (AVGO) and 1 watch names (PLTR).",
     "Weakest near-term setups are concentrated in KTOS, RKLB, UUUU; avoid broad aggression while the regime stays risk off.",

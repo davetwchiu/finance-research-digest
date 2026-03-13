@@ -1,7 +1,7 @@
 {
-  "time": "08:53 HKT / 2026-03-13 00:53 UTC",
-  "title": "Palantir and Ondas just formalized a filing-backed ISR partnership with World View",
-  "summary": "Ondas disclosed in an 8-K that it, Palantir, and World View entered a strategic partnership to build a multi-domain ISR stack linking stratospheric balloons, autonomous aerial and ground systems, and Palantir’s AIP software. The filing says work is already underway and integration across Ondas’ portfolio could begin as early as 4Q26, but it does not disclose contract economics.",
+  "time": "09:56 HKT / 2026-03-13 01:56 UTC",
+  "title": "Palantir and NVIDIA just teamed up on a sovereign AI reference stack",
+  "summary": "Palantir announced a sovereign AI operating-system reference architecture with NVIDIA aimed at customers that need on-premise, edge, or sovereign-cloud control over models, data, and deployment. The stack pairs Palantir’s AIP/Foundry/Apollo/Rubix layer with NVIDIA Blackwell Ultra systems and networking, positioning the offer as a turnkey AI datacenter blueprint rather than a point integration.",
   "confidence": "unknown",
   "lastCheckStatus": "ok",
   "lastCheckConfidence": "unknown",
