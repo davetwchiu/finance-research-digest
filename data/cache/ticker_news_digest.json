@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-13T08:50:57+08:00",
+  "generated_at": "2026-03-13T09:21:59+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -32,9 +32,9 @@
           }
         },
         {
-          "title": "Apple Inc. $AAPL Stock Position Lifted by DNB Asset Management AS - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcW44RGpua2w2cExSSHpqai0zUnFJZkRZRjhqSVpTdjZMOHljUGZLbFdMVjM3T29rYUlsT2NOb3FrUy1GN1RFQ0M5ZWwwWWRUaWJjcEJLZVNsajF5QkxiXzRoaDBYTFhxQTdGbGl2YXVNTnpGZ0Q0V05OUmlNLWFOeDlvSllsRkJZQ2JyY3dCQlNqdnlYNDZ0UXl2YXIxa1loYi1LV0E5MDNjTHBNeDljVGxsb1ZBaGVQQWdrMGhQU2RvZw?oc=5",
-          "published_hkt": "2026-03-12T15:44:32+08:00",
+          "title": "Rep. David Taylor Sells Apple Inc. (NASDAQ:AAPL) Stock - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQOENTWExCc21ZY0tqQ2ZnS2d3ZmI0bWpPVUZneWlDT05qVFNsX3EybnhOVVJULXEteElUNldqVWtlaVF3djBPdjE0Qnc3bkd0MjVJaFFYdUhueUNGUm5LYzlvb1lQT291MDk1ZXpuSFJfQnVNZ3U0Vm01NW1zdTV6UmY2NmdjbFZ6WWlGYWxxZzdEMmUyRDRIbWN1UUoxZWNXc0dPZlB3?oc=5",
+          "published_hkt": "2026-03-10T14:08:40+08:00",
           "source": "MarketBeat",
           "impact": {
             "sentiment": "positive",
@@ -190,8 +190,8 @@
       "summary": {
         "label": "Caution \u2014 negative-news skew",
         "positive_count": 0,
-        "negative_count": 3,
-        "high_impact_count": 3
+        "negative_count": 2,
+        "high_impact_count": 2
       },
       "items": [
         {
@@ -225,16 +225,6 @@
           }
         },
         {
-          "title": "What's Driving the Market Sentiment Around Kratos Defense & Security Solutions Inc? - Sahm",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNeDdGdGlwNEQxNFpVWF9qSnYyU21nbnhiaTIwS2F6TlRJYnpqQ1B0VnVqMDYwYTJGalExQmNmc3Z3MnpiZWxzOWo3dkc2aEduS1FXUVZFY01zMUJVYjFpUUEwWXcya0pWWmg3SFBxa2J6ZWNPZnhQVUNQQ3h2aE5OSjlvWHdJcVVIQUNCa2V4NEc0TjlfeG1TTFlkWTBLWmVoNTIxNWZrMlF0R0hOeVJSQlJ5Q29KVEg3UWZ4Q1A1MHNOTWttS1dWTXlyTQ?oc=5",
-          "published_hkt": "2026-03-09T15:00:00+08:00",
-          "source": "Sahm",
-          "impact": {
-            "sentiment": "negative",
-            "severity": "high"
-          }
-        },
-        {
           "title": "Is It Too Late To Consider Kratos Defense & Security Solutions (KTOS) After 7x Three Year Surge? - simplywall.st",
           "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQcVFxZS1uQmtkZVNXX1Z3bER6MlJueUk5RTgzbHM1eFpycmtQdEhRSHdoVjMtNXhjbjFGQ0RvM0NFSTJCQzNIZDJ3RHZvN0ZvQ2VoSlZoSVRvYmNYaGYtd09GWnMzRTlDdE5Rbk9OVEJkcnRySnM0V2Q0MTNFN2VUTW52MUpvSGc3c2NMdGNGbjRRTGJROW56NE54QUZVbzJsNWRGX2djVWN2Y0tzdGUzelRWTVhUaU5yWGI5ZzZldWxQZ2JWVnVxcGMzbl9HVHB4N1ZrclJQSGx5NTdxQ2tITWRDMjlzWkhNM240aUhR0gHzAUFVX3lxTE9xaHRqQ1lSUVRPZEh4ZFZIWEs4UjZkdHhMTzUybXNsUHg4dm1hOGIwN3h6WE9kTkFxVWNLYnBRdHNnYWlRNHBBY0ZHN3llWjdBODh1V0dHWXhvV1o2VmZwX0FVRHNHVE4yVHpZbGRvTnVCOUhrX2VjODNkUnJSbmxTd1FFRHg4dmJWb1lUVFNCWk0zUUNvR1l1TnVHcGtXUlQ1OGtwY2FnSzJEOFZiSzI5Rm85Qm9abldIYVVlaGc3b1E1Q09Gcml6dnBfaGE3MklzOVZIWkc4TXBfMTNSdkRBaXBzZy1fMWZDUWM4M2htOGtXYw?oc=5",
           "published_hkt": "2026-03-08T06:32:35+08:00",
@@ -242,6 +232,16 @@
           "impact": {
             "sentiment": "negative",
             "severity": "high"
+          }
+        },
+        {
+          "title": "Why Kratos Defense Stock Keeps Going Down - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPRE84eG9QS1EyT2czeHVIbVpCdzk0U0FkandBRmZpUTBqLUppTkZaYW1GZzJZU3Rtei00SUpSS0ZSOGZabURmcXdCTlpiTnZUcUUycWh0OFFLNlhNaC1tRHhicUZJYzhtd0pzNmJuQ0JxQzhCUU0zZ1dGWGFyWG5IQjlR?oc=5",
+          "published_hkt": "2026-02-27T16:00:00+08:00",
+          "source": "Yahoo Finance",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
           }
         }
       ]
@@ -450,8 +450,8 @@
         },
         {
           "title": "Assessing Redwire (RDW) Valuation After Truist Upgrade And Recent Defense Expansion - simplywall.st",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcmFfdWlfdjQ2V3FVOGh5VDVLaFNZRXQzV2ctYkJRWjZIa3dqWnpETFQxYU9GM0IyaXgtemcxQVJvWk5iUVlUNERQbWFXZTNXT2JQbjNPQ1I4NWcyLWJEek5wNWlmYVI2M3h4bW9OZnVoVWs1cVBUT1NDNFR5OE1OZHJHREtKY20xZUlvLUJiTWRGN2FvN1cxUlVyT2Y4bmF2LVdhSG5oa1RlNzVQN1llU0N3ajRiclJEZHVCdlpNMUNaRUk3NDhYVFA1OFbSAcwBQVVfeXFMTnJhX3VpX3Y0NldxVThoeVQ1S2hTWUV0M1dnLWJCUVo2SGt3alp6RExUMWFPRjNCMml4LXpnMUFSb1pOYlFZVDREUG1hV2UzV09iUG4zT0NSODVnMi1iRHpOcDVpZmFSNjN4eG1vTmZ1aFVrNXFQVE9TQzRUeThNTmRyR0RLSmNtMWVJby1CYk1kRjdhbzdXMVJVck9mOG5hdi1XYUhuaGtUZTc1UDdZZVNDd2o0YnJSRGR1QnZaTTFDWkVJNzQ4WFRQNThW?oc=5",
-          "published_hkt": "2026-03-12T18:48:15+08:00",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPaGVmckp3WUFEQXVHSWJIOThnOW1qaURZVVU2R1hGQWZlRjJaeGViVFVVS21YaXI0UlVlN3Z6S1JsZ1ZRR2hQbE9jYnpQYXF3ektiWlhpN3BwN2pmRHRrd2t3Z2phX1gyVTV6SFp1dHNQbXVzRVEwdm1zdS1SMGV5VzFCcVhneFBndC1jTmtiTnZYaEE5UE9SWnFFXy1pVnlpRGoxdXJhM3BBY1BFcHIxTzV0VkRheVV2NTVVSXUzUjRSbU1yMHhz0gHMAUFVX3lxTE5yYV91aV92NDZXcVU4aHlUNUtoU1lFdDNXZy1iQlFaNkhrd2paekRMVDFhT0YzQjJpeC16ZzFBUm9aTmJRWVQ0RFBtYVdlM1dPYlBuM09DUjg1ZzItYkR6TnA1aWZhUjYzeHhtb05mdWhVazVxUFRPU0M0VHk4TU5kckdES0pjbTFlSW8tQmJNZEY3YW83VzFSVXJPZjhuYXYtV2FIbmhrVGU3NVA3WWVTQ3dqNGJyUkRkdUJ2Wk0xQ1pFSTc0OFhUUDU4Vg?oc=5",
+          "published_hkt": "2026-03-12T18:48:13+08:00",
           "source": "simplywall.st",
           "impact": {
             "sentiment": "positive",
@@ -622,10 +622,10 @@
       },
       "items": [
         {
-          "title": "Taiwan Semiconductor Manufacturing (TSM) reports Feb 2026 revenue data - MSN",
-          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOR01FYk1pMWh1TGt5VE50R0Q3bXg0ajkxVEdPSDBFZXVIN3VlM2RhOFlIdEJTZ2haT18yemRKUGQyOHZVWHR2Q0NyZ2UzbGtNTjV3MWpHQVBHX2VOZnhsTE04SzhfMFI0TVRlLU94SEg4RFdUbEJRUGJvQzdQQmRhdnpjWnQ1ZjdSdmdjVFhBX2gyN243S0VVQ3NVR193eVVILUpZb2xWTVppazEtRjhpOEtaTnd1dWJvT1JTVS1KTzZSU0NqcE1LS0NOV1VuYlJfdG9vYUlZcVBfSXN4OEZJ?oc=5",
-          "published_hkt": "2026-03-13T02:51:30+08:00",
-          "source": "MSN",
+          "title": "Taiwan Semiconductor Manufacturing (TSM) Reports Feb 2026 Revenue Data - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOejlCLUdFeHBQVTNERjdsRTFDSkQtQTlmNmZJOGtXbU92UWxMNU1XUEYwd1BRSjJHUXFyS1NBVU5KVUxReERtTTVneVhRZE5fSlVNYllqdzN0N2NWY0J0VTRqaVpRY3p4YmlmcmJzX2JRaTBpVmxrQzFHRTdVR0premVBTFdlXzJJaTd6d3dnUzRJemNIMmFz?oc=5",
+          "published_hkt": "2026-03-13T01:57:44+08:00",
+          "source": "Yahoo Finance",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -662,10 +662,10 @@
           }
         },
         {
-          "title": "Taiwan Semiconductor Manufacturing Company Ltd. (TSM) Is a Trending Stock: Facts to Know Before Betting on It - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcHl2bWl2UzZESmR3YVJWSzFJbFNZZzQwdk1ySGQwQUhDSndaeF9Ra1BKQzV4QlFqVzJkZEp4RDFyNjlLUWhKczM5WDZsc2IzLWJ4UDNiRkt1SUNSajJkY29lTGZZYUk1QjF2eW5yMVhuTmRjX2plMmZrYjJvblJVbWVSQ1F0cWFrZzVVQVp1OUs5YzJ4S2Jz?oc=5",
-          "published_hkt": "2026-03-09T21:00:06+08:00",
-          "source": "Yahoo Finance",
+          "title": "Chip Foundry TSMC Says Its Sales Rose 22% In February - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPSXhrdmx0Nzd4ZFRLNDA0VXdfZnRJRlhCb0s1VGxSanZFRVNGUkVQbTcwYzRfbG5aUldVQW96YTA0Nm45TmtoMTZpS0NvQjBBZ1BPMkVkdGpUN0E2dVJWY0NLejQtQ0JsNnZJT1dIV040c2RTZEw2ZXNJejJ0NTVfZVdJTmJfOUFsR0lCRU1hd19HRmhxcnNCcmV5bE5iTkE?oc=5",
+          "published_hkt": "2026-03-11T05:23:00+08:00",
+          "source": "Investor's Business Daily",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"

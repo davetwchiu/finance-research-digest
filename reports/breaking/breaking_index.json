@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "id": "2026-03-13-08:53-hkt---2026-03-13-00:53-utc",
+      "time": "08:53 HKT / 2026-03-13 00:53 UTC",
+      "createdAt": "2026-03-13T08:53:00+08:00",
+      "title": "Palantir and Ondas just formalized a filing-backed ISR partnership with World View",
+      "summary": "Ondas disclosed in an 8-K that it, Palantir, and World View entered a strategic partnership to build a multi-domain ISR stack linking stratospheric balloons, autonomous aerial and ground systems, and Palantir’s AIP software. The filing says work is already underway and integration across Ondas’ portfolio could begin as early as 4Q26, but it does not disclose contract economics.",
+      "path": "./2026-03-13.md"
+    },
+    {
       "id": "2026-03-12-22:37-hkt---2026-03-12-14:37-utc",
       "time": "22:37 HKT / 2026-03-12 14:37 UTC",
       "createdAt": "2026-03-12T22:37:00+08:00",
@@ -233,6 +241,6 @@
       "path": "./2026-03-05.md"
     }
   ],
-  "lastCheckedAt": "2026-03-12T00:36:00+08:00",
+  "lastCheckedAt": "2026-03-13T08:53:00+08:00",
   "lastCheckStatus": "ok"
 }

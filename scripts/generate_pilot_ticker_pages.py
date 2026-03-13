@@ -91,6 +91,21 @@ def _fmt(v: float | None, digits: int = 2, suffix: str = "") -> str:
     return f"{v:.{digits}f}{suffix}"
 
 
+def _clean_fundamental(metric: str, value: Any) -> float | None:
+    num = _num(value)
+    if num is None:
+        return None
+    if metric in {"market_cap_b", "forward_pe", "peg"} and num <= 0:
+        return None
+    if metric == "gross_margin_pct" and (num <= 0 or abs(num) > 100):
+        return None
+    if metric == "fcf_margin_pct" and abs(num) > 100:
+        return None
+    if metric == "revenue_growth_yoy_pct" and abs(num) > 500:
+        return None
+    return num
+
+
 def _load_json(path: str) -> dict:
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
@@ -122,10 +137,10 @@ def _compute_score(sig: dict, f: dict) -> Score:
     if close and atr:
         atr_pct = atr / close * 100.0
         ta += 10 if atr_pct <= 3 else (7 if atr_pct <= 5 else 3)
-    rev = _num(f.get("revenue_growth_yoy_pct"))
-    gm = _num(f.get("gross_margin_pct"))
-    pe = _num(f.get("forward_pe"))
-    fcf = _num(f.get("fcf_margin_pct"))
+    rev = _clean_fundamental("revenue_growth_yoy_pct", f.get("revenue_growth_yoy_pct"))
+    gm = _clean_fundamental("gross_margin_pct", f.get("gross_margin_pct"))
+    pe = _clean_fundamental("forward_pe", f.get("forward_pe"))
+    fcf = _clean_fundamental("fcf_margin_pct", f.get("fcf_margin_pct"))
     fundamentals = 0
     if rev is not None:
         fundamentals += 14 if rev >= 20 else (9 if rev >= 8 else 4)
@@ -160,7 +175,7 @@ def _countdown(date_str: str) -> str:
 
 def _peer_row(ticker: str, peer: str, funds: dict[str, dict]) -> str:
     p = funds.get(peer) or {}
-    return f"<li><strong>{peer}</strong>: rev growth {_fmt(_num(p.get('revenue_growth_yoy_pct')),1,'%')} · gross margin {_fmt(_num(p.get('gross_margin_pct')),1,'%')} · fwd P/E {_fmt(_num(p.get('forward_pe')),1,'x')} · market cap {_fmt(_num(p.get('market_cap_b')),1,'B')}.</li>"
+    return f"<li><strong>{peer}</strong>: rev growth {_fmt(_clean_fundamental('revenue_growth_yoy_pct', p.get('revenue_growth_yoy_pct')),1,'%')} · gross margin {_fmt(_clean_fundamental('gross_margin_pct', p.get('gross_margin_pct')),1,'%')} · fwd P/E {_fmt(_clean_fundamental('forward_pe', p.get('forward_pe')),1,'x')} · market cap {_fmt(_clean_fundamental('market_cap_b', p.get('market_cap_b')),1,'B')}.</li>"
 
 
 def _fundamentals_refresh_note(fdoc: dict, ticker: str) -> str:
@@ -193,12 +208,17 @@ def _business_reality(ticker: str, f: dict) -> tuple[str, int, bool]:
     links = f.get("source_links") or []
     as_of = f.get("as_of") or datetime.now(HKT).date().isoformat()
     facts = []
-    if _num(f.get("market_cap_b")) is not None:
-        facts.append(f"<li><strong>{as_of}</strong> — market cap approx {_fmt(_num(f.get('market_cap_b')),2,'B')} based on Yahoo quote data. <a href='{links[0] if links else '#'}'>source</a></li>")
-    if _num(f.get("revenue_growth_yoy_pct")) is not None:
-        facts.append(f"<li><strong>{as_of}</strong> — revenue growth approx {_fmt(_num(f.get('revenue_growth_yoy_pct')),2,'%')} and FCF margin {_fmt(_num(f.get('fcf_margin_pct')),2,'%')}. <a href='{links[0] if links else '#'}'>source</a></li>")
-    if _num(f.get("gross_margin_pct")) is not None:
-        facts.append(f"<li><strong>{as_of}</strong> — gross margin approx {_fmt(_num(f.get('gross_margin_pct')),2,'%')} and forward P/E {_fmt(_num(f.get('forward_pe')),2,'x')}. <a href='{links[1] if len(links) > 1 else (links[0] if links else '#') }'>source</a></li>")
+    market_cap = _clean_fundamental("market_cap_b", f.get("market_cap_b"))
+    revenue_growth = _clean_fundamental("revenue_growth_yoy_pct", f.get("revenue_growth_yoy_pct"))
+    fcf_margin = _clean_fundamental("fcf_margin_pct", f.get("fcf_margin_pct"))
+    gross_margin = _clean_fundamental("gross_margin_pct", f.get("gross_margin_pct"))
+    forward_pe = _clean_fundamental("forward_pe", f.get("forward_pe"))
+    if market_cap is not None:
+        facts.append(f"<li><strong>{as_of}</strong> — market cap approx {_fmt(market_cap,2,'B')} based on Yahoo quote data. <a href='{links[0] if links else '#'}'>source</a></li>")
+    if revenue_growth is not None or fcf_margin is not None:
+        facts.append(f"<li><strong>{as_of}</strong> — revenue growth approx {_fmt(revenue_growth,2,'%')} and FCF margin {_fmt(fcf_margin,2,'%')}. <a href='{links[0] if links else '#'}'>source</a></li>")
+    if gross_margin is not None or forward_pe is not None:
+        facts.append(f"<li><strong>{as_of}</strong> — gross margin approx {_fmt(gross_margin,2,'%')} and forward P/E {_fmt(forward_pe,2,'x')}. <a href='{links[1] if len(links) > 1 else (links[0] if links else '#') }'>source</a></li>")
     missing_segment_customer = True
     extra = "<p class='warn'>Segment/customer evidence is insufficiently verified in the current automated run; treat business-quality conclusions as provisional until primary IR/10-Q detail is attached.</p>"
     return ("<ul>" + "".join(facts[:3]) + "</ul>" + extra) if facts else ("<p><strong>insufficient verified data</strong> — no dated revenue/segment/customer evidence was available in the current run.</p>"), len(facts[:3]), missing_segment_customer
@@ -210,14 +230,14 @@ def _moat_compare(ticker: str, f: dict, funds: dict[str, dict], fdoc: dict) -> t
         return "<p><strong>insufficient verified data</strong> — peer set unavailable.</p>", 0, "peer set unavailable"
 
     own_metrics = [
-        _num(f.get("revenue_growth_yoy_pct")),
-        _num(f.get("gross_margin_pct")),
-        _num(f.get("forward_pe")),
-        _num(f.get("market_cap_b")),
+        _clean_fundamental("revenue_growth_yoy_pct", f.get("revenue_growth_yoy_pct")),
+        _clean_fundamental("gross_margin_pct", f.get("gross_margin_pct")),
+        _clean_fundamental("forward_pe", f.get("forward_pe")),
+        _clean_fundamental("market_cap_b", f.get("market_cap_b")),
     ]
     own_has_data = any(v is not None for v in own_metrics)
     own = (
-        f"<p><strong>{ticker}</strong>: rev growth {_fmt(_num(f.get('revenue_growth_yoy_pct')),1,'%')} · gross margin {_fmt(_num(f.get('gross_margin_pct')),1,'%')} · fwd P/E {_fmt(_num(f.get('forward_pe')),1,'x')} · market cap {_fmt(_num(f.get('market_cap_b')),1,'B')}.</p>"
+        f"<p><strong>{ticker}</strong>: rev growth {_fmt(_clean_fundamental('revenue_growth_yoy_pct', f.get('revenue_growth_yoy_pct')),1,'%')} · gross margin {_fmt(_clean_fundamental('gross_margin_pct', f.get('gross_margin_pct')),1,'%')} · fwd P/E {_fmt(_clean_fundamental('forward_pe', f.get('forward_pe')),1,'x')} · market cap {_fmt(_clean_fundamental('market_cap_b', f.get('market_cap_b')),1,'B')}.</p>"
         if own_has_data
         else f"<p><strong>{ticker}</strong>: current run has no verified fundamentals feed for peer comparison, so this section stays technical-first until the feed recovers.</p>"
     )
