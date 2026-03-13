@@ -347,6 +347,16 @@ def _is_recent_not_delivered_public_alert(
     return age_hours <= max(0.0, max_age_hours)
 
 
+def _summary_title(summary: str) -> Optional[str]:
+    if not isinstance(summary, str):
+        return None
+    for line in summary.splitlines():
+        candidate = line.strip()
+        if candidate:
+            return candidate[:160]
+    return None
+
+
 def _load_breaking_summary(summary_path: Path) -> Dict[str, Any]:
     payload = _load(summary_path)
     if not payload:
@@ -356,12 +366,15 @@ def _load_breaking_summary(summary_path: Path) -> Dict[str, Any]:
     last_checked_at = payload.get("lastCheckedAt")
     if not title and not summary:
         return {"missing": True}
+    if not title:
+        title = _summary_title(summary) or ""
     combined = title if not summary else f"{title}\n\n{summary}"
     return {
         "ts": last_checked_at,
         "status": "ok",
         "deliveryStatus": None,
         "delivered": None,
+        "title": title or None,
         "summary": combined,
         "error": None,
         "source": "breaking_summary",
