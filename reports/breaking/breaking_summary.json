@@ -1,11 +1,11 @@
 {
-  "time": "09:56 HKT / 2026-03-13 01:56 UTC",
-  "title": "Palantir and NVIDIA just teamed up on a sovereign AI reference stack",
-  "summary": "Palantir announced a sovereign AI operating-system reference architecture with NVIDIA aimed at customers that need on-premise, edge, or sovereign-cloud control over models, data, and deployment. The stack pairs Palantir’s AIP/Foundry/Apollo/Rubix layer with NVIDIA Blackwell Ultra systems and networking, positioning the offer as a turnkey AI datacenter blueprint rather than a point integration.",
+  "time": "22:57 HKT / 2026-03-13 14:57 UTC",
+  "title": "Airbus just moved Kratos’ Valkyrie deeper into Europe’s sovereign combat-drone stack",
+  "summary": "Airbus said it is preparing two Kratos Valkyrie aircraft for a first flight later this year with Airbus’ sovereign European MARS mission system, with the stated goal of offering the German Air Force an operational uncrewed collaborative combat aircraft capability by 2029. This is official Airbus disclosure, and it moves the story from generic partnership language toward a defined flight-test and fielding timeline.",
   "confidence": "unknown",
   "lastCheckStatus": "ok",
   "lastCheckConfidence": "unknown",
   "lastCheckSourceQuality": "unknown",
   "path": "./2026-03-13.md",
-  "lastCheckedAt": "2026-03-13T08:53:00+08:00"
+  "lastCheckedAt": "2026-03-13T22:57:00+08:00"
 }

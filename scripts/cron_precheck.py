@@ -278,14 +278,16 @@ def _latest_meaningful_run(recent_runs: list[Dict[str, Any]]) -> Dict[str, Any]:
     for run in reversed(recent_runs):
         if run.get("status") != "ok":
             continue
-        if not _summary_is_meaningful(run.get("summary")):
+        summary = run.get("summary")
+        if not _summary_is_meaningful(summary):
             continue
         return {
             "ts": run.get("ts"),
             "status": run.get("status"),
             "deliveryStatus": run.get("deliveryStatus"),
             "delivered": run.get("delivered"),
-            "summary": run.get("summary"),
+            "title": _summary_title(summary) if isinstance(summary, str) else None,
+            "summary": summary,
             "error": run.get("error"),
         }
     return {"missing": True}
@@ -350,10 +352,15 @@ def _is_recent_not_delivered_public_alert(
 def _summary_title(summary: str) -> Optional[str]:
     if not isinstance(summary, str):
         return None
-    for line in summary.splitlines():
-        candidate = line.strip()
-        if candidate:
-            return candidate[:160]
+    lines = [line.strip() for line in summary.splitlines()]
+    for idx, line in enumerate(lines):
+        if line.lower() == "headline:" and idx + 1 < len(lines):
+            headline = lines[idx + 1].strip()
+            if headline:
+                return headline[:160]
+    for line in lines:
+        if line:
+            return line[:160]
     return None
 
 

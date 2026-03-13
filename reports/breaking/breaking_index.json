@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "id": "2026-03-13-22:57-hkt---2026-03-13-14:57-utc",
+      "time": "22:57 HKT / 2026-03-13 14:57 UTC",
+      "createdAt": "2026-03-13T22:57:00+08:00",
+      "title": "Airbus just moved Kratos’ Valkyrie deeper into Europe’s sovereign combat-drone stack",
+      "summary": "Airbus said it is preparing two Kratos Valkyrie aircraft for a first flight later this year with Airbus’ sovereign European MARS mission system, with the stated goal of offering the German Air Force an operational uncrewed collaborative combat aircraft capability by 2029. This is official Airbus disclosure, and it moves the story from generic partnership language toward a defined flight-test and fielding timeline.",
+      "path": "./2026-03-13.md"
+    },
+    {
       "id": "2026-03-13-09:56-hkt---2026-03-13-01:56-utc",
       "time": "09:56 HKT / 2026-03-13 01:56 UTC",
       "createdAt": "2026-03-13T09:56:00+08:00",
@@ -249,6 +257,6 @@
       "path": "./2026-03-05.md"
     }
   ],
-  "lastCheckedAt": "2026-03-13T08:53:00+08:00",
+  "lastCheckedAt": "2026-03-13T22:57:00+08:00",
   "lastCheckStatus": "ok"
 }

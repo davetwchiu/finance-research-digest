@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-03-13T13:17:11+00:00",
-  "generated_at_hkt": "2026-03-13T21:17:11+08:00",
+  "generated_at_utc": "2026-03-13T19:17:27+00:00",
+  "generated_at_hkt": "2026-03-14T03:17:27+08:00",
   "report": "reports/2026-03-13.html",
   "pages": {
     "AAPL": {
       "ticker": "AAPL",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -27,7 +27,7 @@
     },
     "AVGO": {
       "ticker": "AVGO",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -39,16 +39,16 @@
       "businessEvidenceCount": 2,
       "moatComparePoints": 4,
       "catalystVerifiedCount": 0,
-      "score": 97,
+      "score": 77,
       "decision": {
-        "stance": "actionable",
+        "stance": "wait",
         "macroSensitivity": "medium",
-        "actionText": "Actionable on confirmation \u2014 good candidate if price proves itself."
+        "actionText": "Wait for proof \u2014 price is still below trend support."
       }
     },
     "BBAI": {
       "ticker": "BBAI",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -61,16 +61,16 @@
       "businessEvidenceCount": 2,
       "moatComparePoints": 2,
       "catalystVerifiedCount": 0,
-      "score": 60,
+      "score": 54,
       "decision": {
-        "stance": "watch",
+        "stance": "wait",
         "macroSensitivity": "high",
-        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+        "actionText": "Wait for proof \u2014 price is still below trend support."
       }
     },
     "KTOS": {
       "ticker": "KTOS",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -91,7 +91,7 @@
     },
     "NVDA": {
       "ticker": "NVDA",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -103,7 +103,7 @@
       "businessEvidenceCount": 1,
       "moatComparePoints": 3,
       "catalystVerifiedCount": 0,
-      "score": 64,
+      "score": 59,
       "decision": {
         "stance": "wait",
         "macroSensitivity": "medium",
@@ -112,7 +112,7 @@
     },
     "ONDS": {
       "ticker": "ONDS",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -124,16 +124,16 @@
       "businessEvidenceCount": 2,
       "moatComparePoints": 3,
       "catalystVerifiedCount": 0,
-      "score": 72,
+      "score": 66,
       "decision": {
-        "stance": "watch",
+        "stance": "wait",
         "macroSensitivity": "high",
-        "actionText": "Watch closely \u2014 setup is improving but not clean enough for size."
+        "actionText": "Wait for proof \u2014 price is still below trend support."
       }
     },
     "PLTR": {
       "ticker": "PLTR",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -155,7 +155,7 @@
     },
     "RDW": {
       "ticker": "RDW",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -176,7 +176,7 @@
     },
     "RKLB": {
       "ticker": "RKLB",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -197,7 +197,7 @@
     },
     "TSLA": {
       "ticker": "TSLA",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -218,7 +218,7 @@
     },
     "TSM": {
       "ticker": "TSM",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -239,7 +239,7 @@
     },
     "UUUU": {
       "ticker": "UUUU",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -260,7 +260,7 @@
     },
     "GOOG": {
       "ticker": "GOOG",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -282,7 +282,7 @@
     },
     "LITE": {
       "ticker": "LITE",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 100,
       "provisional": true,
@@ -303,7 +303,7 @@
     },
     "COHR": {
       "ticker": "COHR",
-      "lastVerifiedHKT": "2026-03-13T21:16:54+08:00",
+      "lastVerifiedHKT": "2026-03-14T03:17:01+08:00",
       "freshnessState": "fresh",
       "evidenceQualityScore": 90,
       "provisional": true,
