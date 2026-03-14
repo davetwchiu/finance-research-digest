@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-14T09:38:29.075589+00:00",
-  "source_generated_at": "2026-03-14T09:38:28.938298+00:00",
+  "generated_at": "2026-03-14T09:47:30.175666+00:00",
+  "source_generated_at": "2026-03-14T09:44:14.830952+00:00",
   "inputs": {
     "signals_total": 15,
     "signals_valid": 15
@@ -369,12 +369,12 @@
   },
   "conclusions": [
     "Regime is risk off with composite score -98.3 (breadth -58.7, momentum -7.3, volatility -32.4).",
-    "Breadth shows 2/15 above SMA20 and 2/15 above SMA50.",
+    "Breadth shows only 2/15 above SMA20 and 2/15 above SMA50, so upside participation is narrow.",
     "Momentum is soft with average RSI 45.1.",
     "Volatility proxy averages 6.44% ATR/price (elevated).",
-    "Strongest theme by SMA20 gap proxy: defence/space; weakest: energy/materials.",
-    "Triage is concentrated in 0 high-attention names (none) and 1 watch names (PLTR).",
+    "Relative strength is led by defence/space (-0.28% avg SMA20 gap) while energy/materials is the weakest pocket (-10.8%).",
+    "Triage leaders right now are PLTR, COHR, LITE; only 0 names qualify as high attention and 1 as watch.",
     "Weakest near-term setups are concentrated in BBAI, KTOS, ONDS; avoid broad aggression while the regime stays risk off.",
-    "Signal quality: missing field rate 0.0%, stale-indicator rate 0.0%."
+    "Action bias: capital preservation first \u2014 stalk PLTR for confirmation, but do not treat the rest of the list as ready risk-on entries."
   ]
 }

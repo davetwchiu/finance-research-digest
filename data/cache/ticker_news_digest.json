@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-14T17:39:51+08:00",
+  "generated_at": "2026-03-14T17:44:38+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -7,7 +7,7 @@
       "summary": {
         "label": "Neutral \u2014 no strong catalyst signal",
         "positive_count": 2,
-        "negative_count": 0,
+        "negative_count": 1,
         "high_impact_count": 0
       },
       "items": [
@@ -18,6 +18,16 @@
           "source": "MarketBeat",
           "impact": {
             "sentiment": "positive",
+            "severity": "medium"
+          }
+        },
+        {
+          "title": "Apple (AAPL) Stock Rises as Company Slashes China App Store Commissions to 25% - MEXC",
+          "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9DdGRpWktXOWNxSnRkWEZ6Z2RaUF9TTnVmSWRVZUJ3U09Hc2dHRjJPYkU1YlZHdkRQLV8zbDd5VU9PSjBOLV9R?oc=5",
+          "published_hkt": "2026-03-14T07:59:53+08:00",
+          "source": "MEXC",
+          "impact": {
+            "sentiment": "negative",
             "severity": "medium"
           }
         },
@@ -46,16 +56,6 @@
           "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1SdFVoRUQ3WjRST21saXpCVkF0QzRuaHFXWE4tdy1KSTdIWWI1aHJLSE56WjljblA4ejJmQXpEQXRBS0JoazFKUmFNVlJaN1V1aUlTaXZRQUF4bFpYOFc4N2txRFFtUFlyelZET3BOVkY4UTBkdzFzRERDRmlZVDg?oc=5",
           "published_hkt": "2026-01-24T16:00:00+08:00",
           "source": "Yahoo Finance",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "Apple (AAPL) Stock Forecast for 2026, 2027, 2028\u20132030 and Beyond - LiteFinance",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOQjhTSUdRdzFBRjRyeFFZUS1oRU1VWlpUa3hVYi15dmhad3BudXpNNXVOczUzUV9XN0ZlYkFmc2t0Z2Jna1BoOVBlWVd2Q3lOX1pmRjZ5Y0FRblcySjlYaERjZ21sWl9samhoZUFpUWFTUEZPLURyTjBXMUZuNU9LQ21jQTRtaF8xaVQ4bGRxMmFuRm94ZnV4QkxkSDdzQjlE?oc=5",
-          "published_hkt": "2026-03-11T15:00:00+08:00",
-          "source": "LiteFinance",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -561,6 +561,16 @@
       },
       "items": [
         {
+          "title": "Tesla Stock Quotes, Company News And Chart Analysis - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSzZVOXVEYXlod1RJM18wNmhteHZNVjhTVUhOb2ZXMXNDd0JHX3czT0RmS3VBeFl0UUN5ckhOZUV2ckpCby1sc0hsa3FJQzByczR3Zm45OHNRSUhnMVpfbVg2X2MtYVZwd3lRVk5WMzhPZkFERUl5UmpmNVVFTFNsNEVXd0NpVW5Lc1BFYnFLRHNydHoxbW5QNUlpOE1mT3B2RVE?oc=5",
+          "published_hkt": "2026-03-14T01:22:00+08:00",
+          "source": "Investor's Business Daily",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
           "title": "Tesla: Finally Some Good News (NASDAQ:TSLA) - Seeking Alpha",
           "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9CYWc5cUZ1SjMyZ2ptYWFGYVRkcjBNZUtQU3MzYnJNVE82cWpqSmlBYmpTb2hVYmpzdWhmMy1Od0xFWGNhOVRXel8ya2ZmaS1RLVFfQWsyNndNRG1LTVlZbkhSQ0pCZXFnLWJPRmp5d0N1cng2YnFCaA?oc=5",
           "published_hkt": "2026-03-12T04:28:26+08:00",
@@ -599,36 +609,26 @@
             "sentiment": "neutral",
             "severity": "low"
           }
-        },
-        {
-          "title": "Tesla (TSLA) Stock; Holds Steady as Finance VP Sendil Palani Announces Departure - MEXC",
-          "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9oV0dxU0xuQWJrdkE5bktoVkE2VDhCQUVHUTZxSW1ULU9ZZjN1SXhjQV92THEzV20wVk00NUwwZjlyWjE2VGxB?oc=5",
-          "published_hkt": "2026-03-10T17:27:15+08:00",
-          "source": "MEXC",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
         }
       ]
     },
     "TSM": {
       "query": "Taiwan Semiconductor Manufacturing Company Limited OR TSM stock",
       "summary": {
-        "label": "Constructive \u2014 positive-news skew",
+        "label": "Neutral \u2014 no strong catalyst signal",
         "positive_count": 2,
         "negative_count": 0,
-        "high_impact_count": 1
+        "high_impact_count": 0
       },
       "items": [
         {
-          "title": "Taiwan Semiconductor Manufacturing Company Ltd. $TSM Stock Position Lifted by Bank OZK - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNemNDT0tJNUpqaHlaRDVPSWJTdEJ6V01xRjBIU2dRck5RU01Kb0ZFbzNwRHdUNnNhMjIzdENXTG5HdllmMkgwOENvME1lb0RRUVFRRUd4YVNJMS1pS2JfRGZibE1XQkRPZmMxbnFmUDRESDFLZ3Q2ejJtaWxXbHBORjdPMVZ5REppQlVUWmFSSEk1V0dLTGtqVkg2QUpOMTRhUElmUUx0dzl0blFxbDd2UFQzOEZ2ZFZwXzBIU0kyNUVGSXRZMUxHblNBcVB1M3ZEbGtEd0k3eU9oZDNOSFE?oc=5",
-          "published_hkt": "2026-03-14T15:39:44+08:00",
+          "title": "Taiwan Semiconductor Manufacturing Company Ltd. $TSM Stock Position Boosted by FORA Capital LLC - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQY1NzcHpSWXdNT0tuM2N2NFdUdmtIWmN5aG1kSWtsUzN0MU95eGZ5dnA5eDBtdHZQamxKV3dKZU45eXF4c0NBZEEzdzd2eGgyODJKNHVQMkZTV0h4SjJYeWhpNXRlTkVDUzh4M1F1ME9WUU00QXRMcklHSVowSlhpWjVoeEp5NDhGU3dHTjFDeHNrZmlQSlVmZXJuWXRzQllrQjlhMGVOa3ZTSzQxSk5VQTlKZW44QWpVcmt0MDZWNll1R21yOVNkQlF3QXR3cFJMbFZ3a0ZTLTF4cGp2V2M3anhRWERBbzVxNlE?oc=5",
+          "published_hkt": "2026-03-14T15:51:59+08:00",
           "source": "MarketBeat",
           "impact": {
             "sentiment": "positive",
-            "severity": "high"
+            "severity": "medium"
           }
         },
         {
@@ -653,8 +653,8 @@
         },
         {
           "title": "Up Over 100% in 1 Year, Should You Buy Taiwan Semiconductor Manufacturing Company Right Now? - The Globe and Mail",
-          "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPakNlcHNIZ19KTlgwVElubUtZTVYxQjFlN3VJM3FDRU1tTHF3THc1MkNmOEN4N2steEo3aGtpdzZUS2s1RXlscFFObEpGejlmTnFaN1lVQl9mRl9MUGJpTkVOaXdob0tvbmk1eWFldHhvc0pSamsxZXFQempnUmlOZkE0RWJoZmI3ZUJESEdVWHp3MHVwQUtocURsOUo4bExnc2NmNXV2TzFxWTVRNlEzcDRCYzVqUkdhd18wN3dTdWIyTGlEVmxMaDhsSUhKVmNpVFJicm9idDFTTXJxbExoMzZKNXpRSzdQNUtSV3BXajZrYnNUY3dKdDV4RVVfaUR0Q0E?oc=5",
-          "published_hkt": "2026-03-13T21:35:00+08:00",
+          "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOeG0xbVZreHRaR1pscUczcDFaUzZ6X2xwb0ltdlJGaDB1U2NBNlNkNEZjbUpHVEl0S1hLVXhSV3lGckNWSXYwOFpjWUpBODF2RW1OVVBEOHFMWURrZUE5R2hMcDg1WE1TenlyRWZKa25NLVpIQTFQMDJoVi1WeHBMQ1RyZUVBUVA5QllqbThIX1FxbFZvWFhPcmF5aEYzNWtwQy1yUWdJRG14c21MN3pQSkhINm1Gai1ZVVdKY2FVQVpWTzVrVi12NHdHVVhpUHFTa2h2UV9yMkwtVWU0LUVOUEk0Ny1qaDliRTZacVF5ZTJaY3ZkSUtuRGYtaldXZkJtd3Rz?oc=5",
+          "published_hkt": "2026-03-13T22:11:27+08:00",
           "source": "The Globe and Mail",
           "impact": {
             "sentiment": "neutral",
@@ -662,10 +662,10 @@
           }
         },
         {
-          "title": "TSMC: Recent Fears Make This Another Bargain Buying Opportunity (NYSE:TSM) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOek81ZktFU0I2M3BCc0FzQ1ZNcldwdUNraElEQVhoa0lIcGN3Q2xQSHliMWpmRTlOS2tlMUVSZUw3Njl3ZVZnSDh2SHFYWDBsb3dMM1B4eGtTUnJtUTN4LTBOWkdZVlI1cHY2bzZHZE1kV1pkVW9XVDM1dU16Z3JiS2c2dVNXamVzTWdtQ3FxM0htM1NhMUgyazI2eWQ3ai1ZcjV6VXZB?oc=5",
-          "published_hkt": "2026-03-11T23:30:00+08:00",
-          "source": "Seeking Alpha",
+          "title": "Taiwan Semiconductor Manufacturing (TSM) Reports Feb 2026 Revenue Data - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOejlCLUdFeHBQVTNERjdsRTFDSkQtQTlmNmZJOGtXbU92UWxMNU1XUEYwd1BRSjJHUXFyS1NBVU5KVUxReERtTTVneVhRZE5fSlVNYllqdzN0N2NWY0J0VTRqaVpRY3p4YmlmcmJzX2JRaTBpVmxrQzFHRTdVR0premVBTFdlXzJJaTd6d3dnUzRJemNIMmFz?oc=5",
+          "published_hkt": "2026-03-13T01:57:44+08:00",
+          "source": "Yahoo Finance",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"

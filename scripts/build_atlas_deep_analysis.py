@@ -229,23 +229,30 @@ def build(signals_doc: Dict[str, Any]) -> Dict[str, Any]:
     watch_names = _top_names(watch)
     weak_names = _weakest_names(low)
 
+    strongest_gap = themes.get(strongest_theme, {}).get("avg_sma20_gap_pct")
+    weakest_gap = themes.get(weakest_theme, {}).get("avg_sma20_gap_pct")
+    ranked_names = _top_names(triage_sorted, 3)
+
+    if regime == "risk_off" and len(high_attention) == 0:
+        action_bias = f"Action bias: capital preservation first — stalk {watch_names} for confirmation, but do not treat the rest of the list as ready risk-on entries."
+    elif len(high_attention) >= 5:
+        action_bias = "Action bias: prioritize high_attention names first before broad watchlist review."
+    elif len(high_attention) > 0:
+        action_bias = f"Action bias: focus first on {high_names} before spending time on the low-priority tail."
+    else:
+        action_bias = f"Action bias: no clear leadership; keep attention on {watch_names} and wait for confirmation."
+
     conclusions: List[str] = [
         f"Regime is {regime.replace('_', ' ')} with composite score {_round(composite, 1)} (breadth {_round(breadth_score,1)}, momentum {_round(momentum_score,1)}, volatility {_round(volatility_score,1)}).",
-        f"Breadth shows {above20}/{valid} above SMA20 and {above50}/{valid} above SMA50.",
+        f"Breadth shows only {above20}/{valid} above SMA20 and {above50}/{valid} above SMA50, so upside participation is narrow.",
         f"Momentum is {'supportive' if avg_rsi >= 52 else 'soft'} with average RSI {_round(avg_rsi,1)}.",
         f"Volatility proxy averages {_round(avg_atr_pct,2)}% ATR/price ({'contained' if avg_atr_pct <= 3.2 else 'elevated'}).",
-        f"Strongest theme by SMA20 gap proxy: {strongest_theme}; weakest: {weakest_theme}.",
-        f"Triage is concentrated in {len(high_attention)} high-attention names ({high_names}) and {len(watch)} watch names ({watch_names}).",
+        f"Relative strength is led by {strongest_theme} ({strongest_gap}% avg SMA20 gap) while {weakest_theme} is the weakest pocket ({weakest_gap}%).",
+        f"Triage leaders right now are {ranked_names}; only {len(high_attention)} names qualify as high attention and {len(watch)} as watch.",
         f"Weakest near-term setups are concentrated in {weak_names}; avoid broad aggression while the regime stays {regime.replace('_', ' ')}.",
+        action_bias,
         f"Signal quality: missing field rate {_round((missing_fields/field_slots)*100.0,1)}%, stale-indicator rate {_round((stale_count/max(total,1))*100.0,1)}%.",
     ]
-
-    if len(high_attention) >= 5:
-        conclusions.append("Action bias: prioritize high_attention names first before broad watchlist review.")
-    elif len(high_attention) > 0:
-        conclusions.append(f"Action bias: focus first on {high_names} before spending time on the low-priority tail.")
-    else:
-        conclusions.append(f"Action bias: no clear leadership; keep attention on {watch_names} and wait for confirmation.")
 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
