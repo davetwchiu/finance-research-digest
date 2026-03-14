@@ -207,6 +207,7 @@ def _summary_is_meaningful(summary: Any) -> bool:
         "no fresh ",
         "no material ",
         "no public breaking alert",
+        "no publishable breaking alert",
         "breaking monitor checkpoint",
     )
     return not s.startswith(boring_prefixes)
