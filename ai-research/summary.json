@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-03-13T09:33:00+08:00",
-  "market": "AI is still an infrastructure-and-distribution market first. NVIDIA and Microsoft remain the cleanest evidence-backed monetizers, while broad app-layer profit capture is still less proven than the narrative suggests.",
-  "tech": "Enterprise adoption is deepening in structured workflows and reasoning-heavy usage, but real commercial value is still concentrated in coding, search, support, and other high-value knowledge tasks rather than everywhere at once.",
-  "risk": "Main risks are power and capacity bottlenecks, capex outrunning downstream software monetization, model-layer commoditization, and tighter export-control or compliance regimes splitting the market by geography and policy.",
+  "updatedAt": "2026-03-14T17:55:00+08:00",
+  "market": "AI still screens as an infrastructure-and-distribution market first: NVIDIA and Microsoft remain the clearest evidence-backed monetizers, while broad software profit capture is still less proven than usage growth headlines imply.",
+  "tech": "Enterprise adoption is deepening in coding, search, support, and structured workflow automation, but current evidence still points to concentrated high-value use cases rather than universal monetization across the app layer.",
+  "risk": "Main risks are power and energization bottlenecks, capex outrunning downstream monetization, model-layer commoditization, and policy regimes that increasingly split AI markets by geography and compliance burden.",
   "latestPath": "./ai-research/latest.html"
 }
