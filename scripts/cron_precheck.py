@@ -370,6 +370,11 @@ def _is_recent_not_delivered_public_alert(
 def _summary_title(summary: str) -> Optional[str]:
     if not isinstance(summary, str):
         return None
+    # First, check explicit title field if present (from source payload)
+    if isinstance(summary, dict):
+        title = summary.get("title")
+        if isinstance(title, str) and title.strip():
+            return title.strip()[:160]
     lines = [line.strip() for line in summary.splitlines()]
     for idx, line in enumerate(lines):
         if line.lower() == "headline:" and idx + 1 < len(lines):
