@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-03-14T17:55:00+08:00",
-  "market": "AI still screens as an infrastructure-and-distribution market first: NVIDIA and Microsoft remain the clearest evidence-backed monetizers, while broad software profit capture is still less proven than usage growth headlines imply.",
-  "tech": "Enterprise adoption is deepening in coding, search, support, and structured workflow automation, but current evidence still points to concentrated high-value use cases rather than universal monetization across the app layer.",
-  "risk": "Main risks are power and energization bottlenecks, capex outrunning downstream monetization, model-layer commoditization, and policy regimes that increasingly split AI markets by geography and compliance burden.",
-  "latestPath": "./ai-research/latest.html"
+  "macro": "AI industry in risk-off macro environment: oil above $100, sticky yields; only select watchlist names above trend checkpoints",
+  "policy": "March FOMC window constrains aggressive risk-taking without cooler oil and lower yields",
+  "delta": "No macro all-clear post-market; PLTR and RDW clearest relative-strength pockets in fragile board",
+  "latestReportPath": "./reports/2026-03-17.html",
+  "updatedAt": "2026-03-17T09:34:00+08:00"
 }

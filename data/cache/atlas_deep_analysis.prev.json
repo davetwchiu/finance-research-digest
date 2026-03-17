@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-14T09:46:50.623984+00:00",
-  "source_generated_at": "2026-03-14T09:44:14.830952+00:00",
+  "generated_at": "2026-03-16T09:57:05.049919+00:00",
+  "source_generated_at": "2026-03-16T09:57:04.889505+00:00",
   "inputs": {
     "signals_total": 15,
     "signals_valid": 15
@@ -375,6 +375,6 @@
     "Relative strength is led by defence/space (-0.28% avg SMA20 gap) while energy/materials is the weakest pocket (-10.8%).",
     "Triage leaders right now are PLTR, COHR, LITE; only 0 names qualify as high attention and 1 as watch.",
     "Weakest near-term setups are concentrated in BBAI, KTOS, ONDS; avoid broad aggression while the regime stays risk off.",
-    "Signal quality: missing field rate 0.0%, stale-indicator rate 0.0%."
+    "Action bias: capital preservation first \u2014 stalk PLTR for confirmation, but do not treat the rest of the list as ready risk-on entries."
   ]
 }

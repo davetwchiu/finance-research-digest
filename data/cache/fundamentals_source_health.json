@@ -1,7 +1,7 @@
 {
   "status": "cooldown",
   "reason": "repeated-401",
-  "last_failure_at": "2026-03-13T18:16:40+08:00",
-  "cooldown_until": "2026-03-14T18:16:40+08:00",
+  "last_failure_at": "2026-03-16T17:57:05+08:00",
+  "cooldown_until": "2026-03-17T17:57:05+08:00",
   "consecutive_401": 3
 }

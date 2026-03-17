@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "id": "2026-03-16-why-it-matters",
+      "time": "Why It Matters",
+      "createdAt": "2026-03-16T00:00:00+08:00",
+      "title": "The upgrade counters recent EV sector weakness amid elevated oil prices and geopolitical tensions. Tesla remains the top bet in the AI/robotics narrative, with Cybercab being the primary catalyst investors are waiting for. Optimus potential could ultimately outpace automotive business valuation.",
+      "summary": "The upgrade counters recent EV sector weakness amid elevated oil prices and geopolitical tensions. Tesla remains the top bet in the AI/robotics narrative, with Cybercab being the primary catalyst investors are waiting for. Optimus potential could ultimately outpace automotive business valuation.",
+      "path": "./2026-03-16.md"
+    },
+    {
+      "id": "2026-03-16-watchlist-impact",
+      "time": "Watchlist Impact",
+      "createdAt": "2026-03-16T00:00:00+08:00",
+      "title": "- Direct Impact: TSLA – Immediate catalyst from analyst rating change, price target at $425",
+      "summary": "- Direct Impact: TSLA – Immediate catalyst from analyst rating change, price target at $425",
+      "path": "./2026-03-16.md"
+    },
+    {
       "id": "2026-03-13-22:57-hkt---2026-03-13-14:57-utc",
       "time": "22:57 HKT / 2026-03-13 14:57 UTC",
       "createdAt": "2026-03-13T22:57:00+08:00",
@@ -257,6 +273,6 @@
       "path": "./2026-03-05.md"
     }
   ],
-  "lastCheckedAt": "2026-03-13T22:57:00+08:00",
+  "lastCheckedAt": "2026-03-16T00:00:00+08:00",
   "lastCheckStatus": "ok"
 }
