@@ -108,11 +108,21 @@ def summarize(section_title: str, body: list[str]) -> dict:
             if low.startswith(('- summary:', '- interpretation:', '- fact:', '- facts:', '- watchlist relevance:')):
                 summary = clean_value(plain.split(':', 1)[1])
                 break
+        # Fallback: synthesize from first non-header, non-empty bullet
+        if not summary:
+            for ln in bullets:
+                if ln and not ln.startswith('### '):
+                    summary = ln.strip().replace('**', '').replace('*', '')
+                    break
+
+    if not summary:
+        summary = 'Latest breaking monitor entry logged.'
+    
     title = event or summary or 'Breaking alert'
     return {
         'time': section_title,
         'title': title,
-        'summary': summary or 'Latest breaking monitor entry logged.',
+        'summary': summary,
         'confidence': confidence.lower() if confidence else 'unknown',
         'lastCheckStatus': status,
         'lastCheckConfidence': confidence.lower() if confidence else 'unknown',

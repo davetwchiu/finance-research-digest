@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-03-17T21:44:38+08:00",
+  "items": [
+    {
+      "ticker": "AAPL",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "AVGO",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "BBAI",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "KTOS",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "NVDA",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "ONDS",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "PLTR",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "RDW",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "RKLB",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "TSLA",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "TSM",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "UUUU",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "GOOG",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "LITE",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "ticker": "COHR",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}
