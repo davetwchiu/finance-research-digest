@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-03-17",
+  "as_of": "2026-03-19",
   "source_note": "Auto-refresh from Yahoo when available; falls back to SEC companyfacts for U.S. issuers; preserves existing curated entries on fetch failures.",
   "refresh_status": {
     "attempted": 15,
