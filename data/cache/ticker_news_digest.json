@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T14:30:17+08:00",
+  "generated_at": "2026-03-20T14:47:39+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -226,8 +226,8 @@
         },
         {
           "title": "Why Kratos Defense Stock Dropped Today - The Globe and Mail",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZ0cxUTFobW9VM2R5V1drSVlhM1YtbXo2UjlBR3c0VnhXd2dSYlhENHdmemRxYjB6Ti1HOVhUam5md3UyMDdkN3JuT1lYRk02YXZMajZTQzdodlJfa0FhUjdPYjM2YjNja1kyRld1NXBwTUo4WlRPMWVMUWs4NDJEVDI1Zmlod2dqeWhtb1UxMmtKNVZyM2VFUENHRDR5Yng2SEtBZkVkMElaYjBpc3E1VWlVYldBOFo0WExrRUIwcw?oc=5",
-          "published_hkt": "2026-03-20T01:16:16+08:00",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdjROT1JLcm42aGtDVWFwMXBsU09LLWdsMDdobmMtODdvU1lyajU2QkJnVmxqVDJNQmVOQ2pJcTRnbExDc3hEWVZubUFDYjQ1S1ptQ1hKUTU2VTJMYlBlOVJTNmdqQUhFeU5RUTZ2eTdsb294NEhVZGU4N0tHU281bXExX0l3cUQ0R2tBRS14a3NBcVZNdTFpVjNMN2pMVWRXWHc1T0lmTFVjVFFhM2xDeEYtNG1aaURlejdPVG9RVQ?oc=5",
+          "published_hkt": "2026-03-20T01:21:19+08:00",
           "source": "The Globe and Mail",
           "impact": {
             "sentiment": "negative",
@@ -268,7 +268,7 @@
         {
           "title": "1 Artificial Intelligence (AI) Stock With Generational Wealth Potential - The Motley Fool",
           "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWXFzVzJHVkVkcXBSRVZVRS1NeEVVSllNV3NoV3ltcFFhUnM1WGJaSXZteGtPalhCRmt5bXZNREZGY0ZsNWIyekk5N2ZsY3AtYmlObktBSDl6R2U3and6WDE4dFV1ZDdpNkduM0hHLXc1ME9DN19pdkJmMEplR0xJOVEtdVNiYTFHWFA0dFQ0OTVxU3dNcGRvaA?oc=5",
-          "published_hkt": "2026-03-20T10:38:13+08:00",
+          "published_hkt": "2026-03-20T11:15:00+08:00",
           "source": "The Motley Fool",
           "impact": {
             "sentiment": "neutral",
@@ -372,7 +372,7 @@
       "query": "Palantir Technologies Inc. OR PLTR stock",
       "summary": {
         "label": "Neutral \u2014 no strong catalyst signal",
-        "positive_count": 2,
+        "positive_count": 1,
         "negative_count": 0,
         "high_impact_count": 0
       },
@@ -398,6 +398,16 @@
           }
         },
         {
+          "title": "PLTR Stock Price, Quote & Chart | PALANTIR TECHNOLOGIES INC-A (NASDAQ:PLTR) - ChartMill",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1qN3BjWWxqQ3ZfeThyR3d1Z3lNU0V1SjlpN1VOUXBhOVZ1T1kyRXFRTGV0c1Jlbm9sWHk3dmxtNVBVTFJ5YjZ4VkxOYXdwTmZxVlNaQ0h2NUhxSjhtSmkw?oc=5",
+          "published_hkt": "2026-03-17T15:00:00+08:00",
+          "source": "ChartMill",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
           "title": "Palantir Technologies Inc. (PLTR) Exceeds Market Returns: Some Facts to Consider - Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOc1l2WEktUFk0NDZ4ZjVaZXhEb3FadVltVTMtczQ1YUVOQ2dvU1QyV2wtY2JfdE5GQXZINENzclg5dXFSajFWbF81TXhZN3A1Mjh6V2VkOXRGTkxHRmdBWUlmN0libFlHTHNsd1ViN0N4RmtsU3lWU0FnU0FHNjI1bjJkSVZObjlza28zdw?oc=5",
           "published_hkt": "2026-03-17T05:45:03+08:00",
@@ -408,23 +418,13 @@
           }
         },
         {
-          "title": "Palantir Stock Is Out Of Favor, Let's See If The Growth Engine Is Still Intact (PLTR) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQNXB3akdnc1huMHdrZzdmSUtzZVotZDJrelNJMUx4Yk5EcDBxV0x5WlRIZGtQeklvWXU3RlhReDMzMXM2TllpQnl1ZTZ2MkRsNkhiazNyRUc0LXJCSEpYVVlCODktay12MkczTkVLOWpveThoOUE2WUlNRUNLYWtaeFMtbTQ1STVUYXpwUm5xNXhHaGJkR0RXTEdGajNaLUVzcWNWZEFabmFfX3RISjZ5Y0VnT2FUYTFD?oc=5",
-          "published_hkt": "2026-03-18T01:57:44+08:00",
-          "source": "Seeking Alpha",
+          "title": "Why analysts are bullish on Palantir Technologies Inc. (PLTR) - MSN",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbm10a3ZtLW1uSGM2THlRd1FBSWxMZ1pFbzdLRlpLcV9tUl9wa1dSWnBORzYxeG81SFRvX01wOFZsV3ZTTkR0LXdQNmxncGNEbTNLeEEwcV92MnRKVVQxSEhpbEszYjEyWkh1MF9LdTVFLWo3bnl2ZFluTG9JWjRONHE4dFRCYlVaNk5JN2Z6WXZYbEozTFpRZTBoWDBYWGZnSDl2cVJ6bURic0wtU3BXcEgtV2Rva2ZKQ0RrRENuTnVyX1JH?oc=5",
+          "published_hkt": "2026-03-19T01:23:44+08:00",
+          "source": "MSN",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
-          }
-        },
-        {
-          "title": "Swiss Life Asset Management Ltd Boosts Stock Position in Palantir Technologies Inc. $PLTR - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOSGExekJKSGxveUlZbkNsQUFqb3RhS1hDeGpJdjVGLXJSTWFfZy00Z19BSGNyZUhaWEIyZkNZS3c0T1pCQUZ3LVQ4U3FRNlFNd1BtSUFqSjNuMFoxU2RBVG84NEdUV0RXYlFmM3E3VFd3MjRwU0FkVV9IbTlZeVg5bHFHZExOcVVhZXRpSGlWMFdOZzFRYmkyY2E4ZUU2UVJVTVAxUEc0Q0xUdUR0ekdwN29UTDZOb3VDV2hwbTJUY2dKc19jZHBKajlkT2xsdFgxTWVkNXNwbTFJeGZKZ0dVdGln?oc=5",
-          "published_hkt": "2026-03-19T19:58:57+08:00",
-          "source": "MarketBeat",
-          "impact": {
-            "sentiment": "positive",
-            "severity": "medium"
           }
         }
       ]
@@ -615,9 +615,9 @@
     "TSM": {
       "query": "Taiwan Semiconductor Manufacturing Company Limited OR TSM stock",
       "summary": {
-        "label": "Caution \u2014 negative-news skew",
+        "label": "Watch \u2014 high-impact headlines present",
         "positive_count": 1,
-        "negative_count": 2,
+        "negative_count": 1,
         "high_impact_count": 1
       },
       "items": [
@@ -642,9 +642,19 @@
           }
         },
         {
-          "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Stock Rating Lowered by Zacks Research - MarketBeat",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPVDBjTnZRYXA5c3Nxek9jWS1BeVNlUkN4OTQtaXVnaGZPc2JBbEFXbllEVERzcFh5YkFyeU04VmJjdGwtMTd0VmhJTFdGZjJxTk54OEtqNFozd3lBYkRZUjhhSXNwNHl3YTNMRnMwajU1X1czTjNpUi1IY3RuU19IaVZuc2xOaEpDSTVQcGY4V2R2QXN0bTd0bzZnOHhhZ0hTSkEtYnJualpQUUU3OTUzS1RScEdTRXdfbDBRTXpxTzZjYXg2NXQxc1k4U291TTJG?oc=5",
-          "published_hkt": "2026-03-19T18:36:19+08:00",
+          "title": "How To Buy Taiwan Semiconductor Manufacturing Company (TSM) Stocks & Shares - Forbes",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9fSERucUlxSWtLS1M3Tk1oOHdqQkROM0tUbHZLMDhlZDd0Yng3N3dOeWdsLTNWZXU2SmlzOXl5NVI4azc1cmhkU1FPODM3VEFYbGN2WWN1azlULWJLZE40VG5KV1MxZF92Z1d6UUJ4cTd6VDhSVlNuTG0wTTZZUQ?oc=5",
+          "published_hkt": "2026-03-18T06:36:00+08:00",
+          "source": "Forbes",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Stock Price Up 1.7% - Should You Buy? - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeHA4U1Buai0tLTl6UFl4cXoyd01sb0twMHctSGFEYk5Rbk1ocDQyV09aTENNeXVsZmpRc1ZFSkdRVnQ2Tm5iajVmcURWOHNRWDJpTG5ObGx2c1ptVG5ZYm55T1l1OGw5QUd5Z3Q3c1Q4dUozNFpBNzUzaF9YRGtCazg4Sy05MDNJaU56NWtyemozbk8tQ0FJUUhsRHduMHJ5b1NFaXZJTUdaMnpaUHBRMXUwN2dJQjFCUmxpYzVUOHhNX0w2MlM1Ug?oc=5",
+          "published_hkt": "2026-03-18T05:59:57+08:00",
           "source": "MarketBeat",
           "impact": {
             "sentiment": "positive",
@@ -659,16 +669,6 @@
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
-          }
-        },
-        {
-          "title": "TSMC (NYSE: TSM) opens 2026 AGM resolution submission period for ADS holders - Stock Titan",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQM3NnbldHVzYxbkVrcHRPemVkUVAtcVFSa2lvcVhTNUZmRUFTaUtaNDZNNm9CdWFLY2R4b0gzSExOelVNRFluRTBrM1I3MlNERW5VTDhoaVBEWjJudnFrcjQtNV82cXRvc21HUzI1bWxYXzlOemUxajQ5aDkzNVg3VHJZbm1PRkFhMk1zOWNJNXdBeGNmN0V3MGRrZUN3NU9XbXNpME5pRWZMLU1sUDNoY1g4dUhERnhna2FhNm8yUDA3ejZEYXB2MEJB?oc=5",
-          "published_hkt": "2026-03-17T18:34:26+08:00",
-          "source": "Stock Titan",
-          "impact": {
-            "sentiment": "negative",
-            "severity": "medium"
           }
         }
       ]
@@ -845,10 +845,10 @@
           }
         },
         {
-          "title": "Lumentum's OCS & CPO Strength Reflects Broader Demand: What's Ahead? - The Globe and Mail",
-          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbTNhUUdpTzRybnJ0TF9tYk5BMXFIUjJkY282UUdTd2pCMDI1YjRacTRvNWwwVXBkdjFBUThvSjNucEJsZnlNUWhtcXhzZ1oxbFJvczRTR3BsWGJfb28zTFZZSnBLSldpbVpoOGxQWEs3aVZzSmk5NUc0aGdvdm03VEZncGJiMVYzU0ZzZXJyZ2NLZUhpVjlEZXdGcG9QZ0M2bFVlcUIwOHFxMzRWc0o4Q3REVzY2UXBNa2pLcDh5bGhzbTQzcldkX2JMZFNQZDF2NzVNY2p3VlgzanhnbFQw?oc=5",
-          "published_hkt": "2026-03-20T00:25:27+08:00",
-          "source": "The Globe and Mail",
+          "title": "Lumentum leaps after revealing long-term quarterly revenue run rate of $2B at OFC: Stifel - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOZHhqaXBka185LWJaSlM2YVp5LTFSb3lnZWtBNW1vcEdLMnFtSHptcVBoOHdMQVZkMlVadEVKWU8xOUxQSFpmVEY3S0J6VHJJWExKOUhoZUUwNjNNQThqLXJnOHd3WnZ5UFhiS2xjYzRSazdYSXU4QmFleFlQSTFZeUNVdDIwSWVqWXMxM0xWLVBtRXhLeXp0a1dmVWVTY3Brdm5yQVZZTThMY0dreC0zU3FDY3lxMVpaeEZUOTloSTNjSUk?oc=5",
+          "published_hkt": "2026-03-18T21:46:24+08:00",
+          "source": "Seeking Alpha",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
@@ -886,16 +886,6 @@
           }
         },
         {
-          "title": "As Coherent Locks Down a Bigger Nvidia Deal, Should You Buy, Sell, or Hold COHR Stock? - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPeDE1TUZ6eFJ3OS01bE1HT29RWVBJLXJjbUxvVWVaUm54eHA2bUd2WUZ5VmR1SlNsS2tpdmJsME9jZ2poN25mVEFvZ1JXUHQ5MmJxYTY0YVNhRGFIaW5NYmMxQ0Q3cUI3UnBab1pnUUNpamZrUVFlaEpfNVZnVl9qWkg5dU44UQ?oc=5",
-          "published_hkt": "2026-03-03T16:00:00+08:00",
-          "source": "Yahoo Finance",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
           "title": "Why Coherent Is A Strong Buy After Rising Nearly 15% (NYSE:COHR) - Seeking Alpha",
           "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOSHFPQV9LRVR6UGtBTV9SMjNjem82MzVjRUpScnhEeXlvcTlOcEt3eElYWTJSeEkzWENzcGlnQzI0ZG9TdUlMWGZJQzl6cHZzTVdoSDZ4YzdDODYzd29tY0Ezc0JpNWNzWW56R3otM3U0OU82UlBkcmg4TW8xd1VmclYxV3dyeDB1SkVtQVNfNG1Ydw?oc=5",
           "published_hkt": "2026-03-02T16:00:00+08:00",
@@ -910,6 +900,16 @@
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE95UXUwQVRpdXdNMjdUczQ0MVQwWHo2U2xjc05EdDh1ZGNTWG5JQ1JjaHB2TWJNZFptTVNvbHVkcU9NaWtCSEhjWmxLLUVFM1ZReEJyajFCNk14UVJIRW44?oc=5",
           "published_hkt": "2026-03-16T15:00:00+08:00",
           "source": "ChartMill",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
+          "title": "As Coherent Locks Down a Bigger Nvidia Deal, Should You Buy, Sell, or Hold COHR Stock? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPeDE1TUZ6eFJ3OS01bE1HT29RWVBJLXJjbUxvVWVaUm54eHA2bUd2WUZ5VmR1SlNsS2tpdmJsME9jZ2poN25mVEFvZ1JXUHQ5MmJxYTY0YVNhRGFIaW5NYmMxQ0Q3cUI3UnBab1pnUUNpamZrUVFlaEpfNVZnVl9qWkg5dU44UQ?oc=5",
+          "published_hkt": "2026-03-03T16:00:00+08:00",
+          "source": "Yahoo Finance",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
