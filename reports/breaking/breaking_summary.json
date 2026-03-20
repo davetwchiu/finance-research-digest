@@ -1,11 +1,11 @@
 {
-  "time": "Lululemon Misses Guidance on Weak 2026 Outlook",
-  "title": "Body: Lululemon (LULU) lowered fiscal 2026 guidance on Tuesday, with Q1 2026 sales guidance of $2.40–$2.43B (vs. $2.47B estimated) and EPS guidance of $1.63–$1.68 (vs. $2.07 estimated). Full-year sales guidance of $11.35–$11.50B also came in below the $11.52B market expectation.",
-  "summary": "Body: Lululemon (LULU) lowered fiscal 2026 guidance on Tuesday, with Q1 2026 sales guidance of $2.40–$2.43B (vs. $2.47B estimated) and EPS guidance of $1.63–$1.68 (vs. $2.07 estimated). Full-year sales guidance of $11.35–$11.50B also came in below the $11.52B market expectation.",
-  "confidence": "unknown",
+  "time": "2026-03-20 14:58 HKT",
+  "title": "Nvidia locks in AWS supply deal for 1 million chips through 2027",
+  "summary": "Reuters reported Nvidia will sell 1 million GPU chips plus related AI systems to Amazon Web Services by the end of 2027, with shipments starting this year and extending through 2027",
+  "confidence": "high",
   "lastCheckStatus": "ok",
-  "lastCheckConfidence": "unknown",
-  "lastCheckSourceQuality": "unknown",
-  "path": "./2026-03-18.md",
-  "lastCheckedAt": "2026-03-19T06:21:05+08:00"
+  "lastCheckConfidence": "high",
+  "lastCheckSourceQuality": "reuters interview with nvidia executive ian buck; filing-backed text not applicable from the source available",
+  "path": "./2026-03-20.md",
+  "lastCheckedAt": "2026-03-20T14:58:00+08:00"
 }

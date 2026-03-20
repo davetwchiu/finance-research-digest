@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T14:47:39+08:00",
+  "generated_at": "2026-03-20T14:53:03+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -226,8 +226,8 @@
         },
         {
           "title": "Why Kratos Defense Stock Dropped Today - The Globe and Mail",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdjROT1JLcm42aGtDVWFwMXBsU09LLWdsMDdobmMtODdvU1lyajU2QkJnVmxqVDJNQmVOQ2pJcTRnbExDc3hEWVZubUFDYjQ1S1ptQ1hKUTU2VTJMYlBlOVJTNmdqQUhFeU5RUTZ2eTdsb294NEhVZGU4N0tHU281bXExX0l3cUQ0R2tBRS14a3NBcVZNdTFpVjNMN2pMVWRXWHc1T0lmTFVjVFFhM2xDeEYtNG1aaURlejdPVG9RVQ?oc=5",
-          "published_hkt": "2026-03-20T01:21:19+08:00",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZ0cxUTFobW9VM2R5V1drSVlhM1YtbXo2UjlBR3c0VnhXd2dSYlhENHdmemRxYjB6Ti1HOVhUam5md3UyMDdkN3JuT1lYRk02YXZMajZTQzdodlJfa0FhUjdPYjM2YjNja1kyRld1NXBwTUo4WlRPMWVMUWs4NDJEVDI1Zmlod2dqeWhtb1UxMmtKNVZyM2VFUENHRDR5Yng2SEtBZkVkMElaYjBpc3E1VWlVYldBOFo0WExrRUIwcw?oc=5",
+          "published_hkt": "2026-03-20T01:16:16+08:00",
           "source": "The Globe and Mail",
           "impact": {
             "sentiment": "negative",
@@ -555,21 +555,11 @@
       "query": "Tesla, Inc. OR TSLA stock",
       "summary": {
         "label": "Neutral \u2014 no strong catalyst signal",
-        "positive_count": 1,
+        "positive_count": 2,
         "negative_count": 0,
         "high_impact_count": 0
       },
       "items": [
-        {
-          "title": "Tesla (TSLA) Stock Price, Quote, News & History - Benzinga",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFB6dkpQaV82YW5nbS10bGtGVzVzb3JseXBOTzZUb3VwdEtjQy1idVV1WU9iVV9TeFF3aXNHeXFKYW9UdW93ZDM3TmY1OA?oc=5",
-          "published_hkt": "2026-03-20T10:50:41+08:00",
-          "source": "Benzinga",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
         {
           "title": "Tesla Stock Quotes, Company News And Chart Analysis - Investor's Business Daily",
           "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSzZVOXVEYXlod1RJM18wNmhteHZNVjhTVUhOb2ZXMXNDd0JHX3czT0RmS3VBeFl0UUN5ckhOZUV2ckpCby1sc0hsa3FJQzByczR3Zm45OHNRSUhnMVpfbVg2X2MtYVZwd3lRVk5WMzhPZkFERUl5UmpmNVVFTFNsNEVXd0NpVW5Lc1BFYnFLRHNydHoxbW5QNUlpOE1mT3B2RVE?oc=5",
@@ -608,6 +598,16 @@
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
+          }
+        },
+        {
+          "title": "Wedbush Analyst Dan Ives Upbeat on Tesla Inc. (TSLA) Despite Lower Delivery Numbers - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUUVzYWVVTzFfNUZsNy12S1NJMDVicUdYT0dWZzJJMTJzX29aUHZMeWtfdWN3VkdHZTliLUF3d1NkNVYwdXhySGZtOXEwdDY4YUt6bE1WLWhvcDJnd2FvcmxuUkoyc3RpNG1XTEJaNVJUVld2djd2R2FqOEFJYW9Nb21OZw?oc=5",
+          "published_hkt": "2026-01-07T16:00:00+08:00",
+          "source": "Yahoo Finance",
+          "impact": {
+            "sentiment": "positive",
+            "severity": "medium"
           }
         }
       ]
@@ -886,6 +886,16 @@
           }
         },
         {
+          "title": "As Coherent Locks Down a Bigger Nvidia Deal, Should You Buy, Sell, or Hold COHR Stock? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPeDE1TUZ6eFJ3OS01bE1HT29RWVBJLXJjbUxvVWVaUm54eHA2bUd2WUZ5VmR1SlNsS2tpdmJsME9jZ2poN25mVEFvZ1JXUHQ5MmJxYTY0YVNhRGFIaW5NYmMxQ0Q3cUI3UnBab1pnUUNpamZrUVFlaEpfNVZnVl9qWkg5dU44UQ?oc=5",
+          "published_hkt": "2026-03-03T16:00:00+08:00",
+          "source": "Yahoo Finance",
+          "impact": {
+            "sentiment": "neutral",
+            "severity": "low"
+          }
+        },
+        {
           "title": "Why Coherent Is A Strong Buy After Rising Nearly 15% (NYSE:COHR) - Seeking Alpha",
           "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOSHFPQV9LRVR6UGtBTV9SMjNjem82MzVjRUpScnhEeXlvcTlOcEt3eElYWTJSeEkzWENzcGlnQzI0ZG9TdUlMWGZJQzl6cHZzTVdoSDZ4YzdDODYzd29tY0Ezc0JpNWNzWW56R3otM3U0OU82UlBkcmg4TW8xd1VmclYxV3dyeDB1SkVtQVNfNG1Ydw?oc=5",
           "published_hkt": "2026-03-02T16:00:00+08:00",
@@ -900,16 +910,6 @@
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE95UXUwQVRpdXdNMjdUczQ0MVQwWHo2U2xjc05EdDh1ZGNTWG5JQ1JjaHB2TWJNZFptTVNvbHVkcU9NaWtCSEhjWmxLLUVFM1ZReEJyajFCNk14UVJIRW44?oc=5",
           "published_hkt": "2026-03-16T15:00:00+08:00",
           "source": "ChartMill",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
-        {
-          "title": "As Coherent Locks Down a Bigger Nvidia Deal, Should You Buy, Sell, or Hold COHR Stock? - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPeDE1TUZ6eFJ3OS01bE1HT29RWVBJLXJjbUxvVWVaUm54eHA2bUd2WUZ5VmR1SlNsS2tpdmJsME9jZ2poN25mVEFvZ1JXUHQ5MmJxYTY0YVNhRGFIaW5NYmMxQ0Q3cUI3UnBab1pnUUNpamZrUVFlaEpfNVZnVl9qWkg5dU44UQ?oc=5",
-          "published_hkt": "2026-03-03T16:00:00+08:00",
-          "source": "Yahoo Finance",
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
