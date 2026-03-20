@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T14:19:29+08:00",
+  "generated_at": "2026-03-20T14:30:17+08:00",
   "source_note": "Google News RSS + heuristic impact scoring (title-based).",
   "tickers": {
     "AAPL": {
@@ -226,8 +226,8 @@
         },
         {
           "title": "Why Kratos Defense Stock Dropped Today - The Globe and Mail",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdjROT1JLcm42aGtDVWFwMXBsU09LLWdsMDdobmMtODdvU1lyajU2QkJnVmxqVDJNQmVOQ2pJcTRnbExDc3hEWVZubUFDYjQ1S1ptQ1hKUTU2VTJMYlBlOVJTNmdqQUhFeU5RUTZ2eTdsb294NEhVZGU4N0tHU281bXExX0l3cUQ0R2tBRS14a3NBcVZNdTFpVjNMN2pMVWRXWHc1T0lmTFVjVFFhM2xDeEYtNG1aaURlejdPVG9RVQ?oc=5",
-          "published_hkt": "2026-03-20T01:21:19+08:00",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZ0cxUTFobW9VM2R5V1drSVlhM1YtbXo2UjlBR3c0VnhXd2dSYlhENHdmemRxYjB6Ti1HOVhUam5md3UyMDdkN3JuT1lYRk02YXZMajZTQzdodlJfa0FhUjdPYjM2YjNja1kyRld1NXBwTUo4WlRPMWVMUWs4NDJEVDI1Zmlod2dqeWhtb1UxMmtKNVZyM2VFUENHRDR5Yng2SEtBZkVkMElaYjBpc3E1VWlVYldBOFo0WExrRUIwcw?oc=5",
+          "published_hkt": "2026-03-20T01:16:16+08:00",
           "source": "The Globe and Mail",
           "impact": {
             "sentiment": "negative",
@@ -738,21 +738,11 @@
       "query": "ALPHABET INC. OR GOOG stock",
       "summary": {
         "label": "Neutral \u2014 no strong catalyst signal",
-        "positive_count": 0,
+        "positive_count": 1,
         "negative_count": 0,
         "high_impact_count": 0
       },
       "items": [
-        {
-          "title": "Google (GOOGL) Live Share Price, Invest from India - INDmoney",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPXzJCSTlfQVdkamZzM2IxejRUdU9MYW9MUFY1RGNQbDJBWUhMMjBoMVJ3S2NXY2FmTXhLQ2FrVXZ3Q3lWNzJHSmEtbW9CaEN2ZUdNWUVSaW9rU2JOVjJsejFCMUZCazhDUlZGbW5laGNPQ3R2dFNDMjV3cTVxZ2NqQTM2MVJpQnc?oc=5",
-          "published_hkt": "2026-03-20T00:09:31+08:00",
-          "source": "INDmoney",
-          "impact": {
-            "sentiment": "neutral",
-            "severity": "low"
-          }
-        },
         {
           "title": "Alphabet Stock Price Rallies Even As Macro Cues Temper Tech Demand - Seeking Alpha",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQb1RreVpKUDRqUXFOMmFyTkw5QjdRcmtERHdYSmJZOVpjTkNTZmppd2hKWE5rdjJuYWRaNk5OTFl3TWphTnhVX1d5akxkTThOeHBkN3oyM2pBN013TTZsRnJqYWxzOFpMeDhOSWpja1lCaVNtTlc5eUhhMmtxcWF6ekxaT2UtT2d2alVnSmpMNzhPR1FadmJsb0ZTMk82TTl6N0lYa3BxX0F4Y1E?oc=5",
@@ -791,6 +781,16 @@
           "impact": {
             "sentiment": "neutral",
             "severity": "low"
+          }
+        },
+        {
+          "title": "Farallon Capital Management LLC Trims Stock Position in Alphabet Inc. $GOOG - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOZmI0SHY4T1BZU2V0Z0ZPRTljNkFnQnlpVnp5WmdBU2txanNaNmJjbzdUdkczc0kyYWNHbjFVWkR0MlZmbEhER29qelRQdGdMUkpnN2Vodk1lcGVRUWRoYWtaWndqby0waVM3ZVB6NGVEazBWd0o2R21wQ21DSXYzam5pbWZ2eTdQV0hrZ3J5T3BPR2tKYzBBazViNHhGaGoxeFVReGlUQnByMGFTcGJ3UWRMcml5NVhRTEFvTTJsaEFHVVRMTGx3a1VpZ1pMb3c?oc=5",
+          "published_hkt": "2026-03-16T18:38:07+08:00",
+          "source": "MarketBeat",
+          "impact": {
+            "sentiment": "positive",
+            "severity": "medium"
           }
         }
       ]
