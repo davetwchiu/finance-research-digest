@@ -1,7 +1,7 @@
 {
-  "macro": "Risk-off composite at -49.59 keeps the tape narrow with only 6/15 names above the 20-day and just three above the 50-day; oil stubbornly above $101 means leadership is limited to the defense / autonomy pocket.",
-  "policy": "The Fed is effectively on hold while crude and the Hormuz risk premium keep the 10-year near the mid-4s, so semis / AI remain trapped until oil and yields both normalize.",
-  "delta": "Lululemon guidance cut plus the continuing crude supply fear are the only fresh data points, which keeps discretionary fragile and the defensive posture intact.",
-  "latestReportPath": "./reports/2026-03-19.html",
-  "updatedAt": "2026-03-19T08:53:33+08:00"
+  "macro": "Risk-off composite at -49.59 keeps the tape narrow with only 6/15 names above the 20-day and just three above the 50-day; Hormuz energy risk keeps crude above $101 so leadership is limited to the defense / autonomy pocket.",
+  "policy": "The Fed is effectively on hold while Hormuz oil disruption keeps the 10-year in the mid-4s, so semis / AI remain trapped until oil and yields both normalize.",
+  "delta": "IEA now estimates ~8 mb/d of Hormuz-linked supply offline, so crude premium plus this macro stress are the only fresh inputs keeping the tape defensive even after today’s midday refresh.",
+  "latestReportPath": "./reports/2026-03-20.html",
+  "updatedAt": "2026-03-20T11:55:37+08:00"
 }

@@ -8,6 +8,9 @@ from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
 HKT = timezone(timedelta(hours=8))
+BASE = Path(__file__).resolve().parent.parent
+WATCHLIST_PATH = BASE / "watchlist.json"
+WATCHLIST_TICKER_RE = re.compile(r"\*\*([A-Z0-9]{1,6})\b")
 
 
 def latest_breaking_file(breaking_dir: Path) -> Path | None:
@@ -40,6 +43,30 @@ def clean_value(line: str) -> str:
     line = re.sub(r'^[-*]\s*', '', line).strip()
     line = re.sub(r'^\*\*[^:]{1,40}:\*\*\s*', '', line).strip()
     return line.strip().rstrip('.')
+
+
+def load_watchlist() -> set[str]:
+    if not WATCHLIST_PATH.exists():
+        return set()
+    try:
+        data = json.loads(WATCHLIST_PATH.read_text(encoding='utf-8'))
+    except json.JSONDecodeError:
+        return set()
+
+    if isinstance(data, dict):
+        candidates = data.get('watchlist') or []
+    else:
+        candidates = data
+    if isinstance(candidates, dict):
+        candidates = candidates.get('watchlist') or []
+    if not isinstance(candidates, list):
+        return set()
+    return {str(x).upper().strip() for x in candidates if str(x).strip()}
+
+
+def extract_body_tickers(body: list[str]) -> set[str]:
+    text = "\n".join(body)
+    return {m.group(1) for m in WATCHLIST_TICKER_RE.finditer(text)}
 
 
 def parse_checked_at(section_title: str, latest_name: str) -> str:
@@ -168,6 +195,15 @@ def main() -> int:
         if is_public_alert(sec_title, sec_body):
             chosen_title, chosen_body = sec_title, sec_body
             break
+
+    watchlist = load_watchlist()
+    if watchlist:
+        body_tickers = extract_body_tickers(chosen_body)
+        matches = watchlist & body_tickers
+        if not matches:
+            print('Latest breaking entry has no watchlist tickers; keeping previous summary.')
+            return 0
+        print('Breaking summary matches watchlist tickers:', ', '.join(sorted(matches)))
 
     payload = summarize(chosen_title, chosen_body)
     payload['path'] = f'./{latest.name}'
